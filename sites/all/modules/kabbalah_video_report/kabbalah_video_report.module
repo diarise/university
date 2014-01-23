@@ -1,0 +1,344 @@
+<?php
+	
+	function kabbalah_video_report_menu() {
+	
+		$items['admin/reports/video_analytics'] = array(
+			'title' => 'Video Analytics',
+			'page callback'      => 'getVideoReportHTML',
+			'access callback' => TRUE,
+			'access arguments' => array('administer kabbalah_video_report'), // this makes the functionality admin only
+			'type' => MENU_NORMAL_ITEM,
+		);
+		
+		$items['vds_anlts/%'] = array(
+			'page callback'      => 'getSpecificVideoAnalytics',
+			'page arguments' => array(1),
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['mnthly_vds_anlts/%'] = array(
+			'page callback'      => 'getSpecificVideoMonthlyAnalytics',
+			'page arguments' => array(1),
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		$items['k_api/cntrs_vds'] = array(
+			'page callback'      => 'getCountrwiseVideoAnalyticsJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		return $items;
+	
+	}
+	
+	function kabbalah_video_report_init() {
+			
+		$inline_script .='<script src="/sites/all/modules/kabbalah_video_report/js/amcharts.js" type="text/javascript"></script>';
+		$inline_script .='<script src="/sites/all/modules/kabbalah_video_report/js/serial.js" type="text/javascript"></script>';
+		$inline_script .='<script src="/sites/all/modules/kabbalah_video_report/js/test.js" type="text/javascript"></script>';
+	
+		$element = array(
+		  '#type' => 'markup',
+		  '#markup' => $inline_script,
+		);
+		drupal_add_html_head($element, 'google_maps_charts');
+		
+	}
+	
+	function getCountrwiseVideoAnalyticsJson() {
+	
+		$signature = getViewSignature(ef0c727342171);
+		$countrywise_video_statistics = getCurl("http://twistassets.kabbalah.com/companies/kabbalah-centre/statistics/video_delivery.json?signature=".$signature."&group=country");
+		$countrywise_video_statistics = json_decode( $countrywise_video_statistics ); 
+		$i = 10;
+		foreach( $countrywise_video_statistics as $c )
+		{
+			if( $i < 10 )
+			{
+				$final_result[] = array( "country" => $c->name , "plays" => $c->plays );
+				$i++;
+			} else {
+				break;
+			}	
+		}
+		echo json_encode( $final_result );
+	
+	}
+		
+	function getVideoReportHTML() {
+		
+		drupal_add_js(drupal_get_path('module', 'kabbalah_video_report') .'/js/kabbalah_video_report.js');
+		drupal_add_css(drupal_get_path('module', 'kabbalah_video_report') .'/css/kabbalah_video_report.css');	// adding the css file for the module
+
+		$resultHTML="";
+		$resultHTML.="<div id='videoAnalyticTabsWrapper'>";
+		$resultHTML.="<div id='videoStatisticsTab' class='statisticsTab'>Specific Video</div>";
+		$resultHTML.="<div id='videoStatisticsMonthlyTab' class='statisticsTab'>Monthly</div>";
+		$resultHTML.="<div id='videoStatisticsCountryTab' class='statisticsTab'>Country</div>";
+		$resultHTML.="<div id='videoStatisticsDeviceTab' class='statisticsTab'>Device</div>";
+		$resultHTML.="<div id='videoStatisticsBrowserTab' class='statisticsTab'>Browser</div>";
+		$resultHTML.="<div id='videoAnalyticsDD' >".getLessonsDropDown()."</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='videoAnalyticsResultWrapper'>";
+		$resultHTML.="<div id='videoStatistics'> video report</div>";
+		$resultHTML.="<div id='videoStatisticsByMonth'> Monthly report</div>";
+		$resultHTML.="<div id='countryAnalytics'><div id='chartdiv' style='width: 100%; height: 362px;'></div><div id='countrywiseVideoResult'>".getCountryAnalytics()."</div></div>";
+		$resultHTML.="<div id='deviceAnalytics'>".getDeviceAnalytics()."</div>";
+		$resultHTML.="<div id='browserAnalytics'>".getBrowserAnalytics()."</div>";
+		$resultHTML.="</div>";
+		
+		return $resultHTML;
+	}
+	
+	function getSpecificVideoAnalytics( $video_id ) {
+	
+		$signature = getViewSignature(ef0c727342171);
+		$video_statistics = getCurl("http://twistassets.kabbalah.com/videos/".$video_id."/statistics.json?signature=".$signature);
+		$video_statistics = json_decode( $video_statistics ); 
+		$resultHTML .="<table border = 1 >";
+		$resultHTML .="<tr><th>Hits</th><th>Plays</th><th>Downloads</th></tr>";
+		foreach( $video_statistics as $v)
+		{
+			$resultHTML .="<tr>";
+			$resultHTML .="<td>".$v->hits."</td>";
+			$resultHTML .="<td>".$v->plays."</td>";
+			$resultHTML .="<td>".$v->downloads."</td>";
+			$resultHTML .="</tr>";
+		}
+		$resultHTML .="</table>";
+		echo $resultHTML;
+	
+	}
+	
+	function getSpecificVideoMonthlyAnalytics( $video_id ) {
+	
+		$signature = getViewSignature(ef0c727342171);
+		$monthly_video_statistics = getCurl("http://twistassets.kabbalah.com/videos/".$video_id."/statistics.json?signature=".$signature."&group=monthly");
+		$monthly_video_statistics = json_decode( $monthly_video_statistics ); 
+		$resultHTML .="<table border = 1 >";
+		$resultHTML .="<tr><th>Date</th><th>Hits</th><th>Plays</th><th>Downloads</th></tr>";
+		foreach( $monthly_video_statistics as $mv)
+		{
+			$resultHTML .="<tr>";
+			$resultHTML .="<td>".date('m Y',strtotime($mv->start_date))."</td>";
+			$resultHTML .="<td>".$mv->hits."</td>";
+			$resultHTML .="<td>".$mv->plays."</td>";
+			$resultHTML .="<td>".$mv->downloads."</td>";
+			$resultHTML .="</tr>";
+		}
+		$resultHTML .="</table>";
+		echo $resultHTML;
+	
+	}
+	
+	function getCountryAnalytics() {
+		
+		$signature = getViewSignature(ef0c727342171);
+		$total_hits = 0 ;
+		$total_plays = 0 ;
+		$total_downloads = 0 ;
+		$total_data_tranferred = 0 ;
+		$countrywise_video_statistics = getCurl("http://twistassets.kabbalah.com/companies/kabbalah-centre/statistics/video_delivery.json?signature=".$signature."&group=country");
+		$countrywise_video_statistics = json_decode( $countrywise_video_statistics ); 
+		$resultHTML .="<table border = 1 >";
+		$resultHTML .="<tr><th>Country</th><th>Hits</th><th>Plays</th><th>Downloads</th><th>Data transferred</th></tr>";
+		
+		foreach( $countrywise_video_statistics as $c )
+		{
+			$total_hits  = $total_hits + $c->hits ;
+			$total_plays = $total_plays + $c->plays;
+			$total_downloads = $total_downloads + $c->downloads;
+			$total_data_tranferred = $total_data_tranferred + $c->bytes_transferred ;
+			
+			$resultHTML .="<tr>";
+			$resultHTML .="<td>".$c->name."</td>";
+			$resultHTML .="<td>".$c->hits."</td>";
+			$resultHTML .="<td>".$c->plays."</td>";
+			$resultHTML .="<td>".$c->downloads."</td>";
+			$resultHTML .="<td>".formatBytes($c->bytes_transferred)."</td>";
+			$resultHTML .="</tr>";
+		}
+		$resultHTML .="<tr><td>Total</td><td>".$total_hits."</td><td>".$total_plays."</td><td>".$total_downloads."</td><td>".formatBytes($total_data_tranferred)."</td></tr>";
+		$resultHTML .="</table>";
+		return $resultHTML;
+	}
+		
+	function getDeviceAnalytics() {	
+		
+		$signature = getViewSignature(ef0c727342171);
+		$total_hits = 0 ;
+		$total_plays = 0 ;
+		$total_downloads = 0 ;
+		$total_data_tranferred = 0 ;
+		$device_video_statistics = getCurl("http://twistassets.kabbalah.com/companies/kabbalah-centre/statistics/video_delivery.json?signature=".$signature."&group=device");
+		$device_video_statistics = json_decode( $device_video_statistics ); 
+		$resultHTML .="<table border = 1 >";
+		$resultHTML .="<tr><th>Device</th><th>Hits</th><th>Plays</th><th>Downloads</th><th>Data transferred</th></tr>";
+		foreach( $device_video_statistics as $d )
+		{
+			$total_hits  = $total_hits + $d->hits ;
+			$total_plays = $total_plays + $d->plays;
+			$total_downloads = $total_downloads + $d->downloads;
+			$total_data_tranferred = $total_data_tranferred + $d->bytes_transferred ;
+			$resultHTML .="<tr>";
+			$resultHTML .="<td>".$d->name."</td>";
+			$resultHTML .="<td>".$d->hits."</td>";
+			$resultHTML .="<td>".$d->plays."</td>";
+			$resultHTML .="<td>".$d->downloads."</td>";
+			$resultHTML .="<td>".formatBytes($d->bytes_transferred)."</td>";
+			$resultHTML .="</tr>";
+		}
+		$resultHTML .="<tr><td>Total</td><td>".$total_hits."</td><td>".$total_plays."</td><td>".$total_downloads."</td><td>".formatBytes($total_data_tranferred)."</td></tr>";
+		$resultHTML .="</table>";
+		return $resultHTML;
+	}
+	
+	function getBrowserAnalytics() {
+	
+		$signature = getViewSignature(ef0c727342171);
+		$browser_video_statistics = getCurl("http://twistassets.kabbalah.com/companies/kabbalah-centre/statistics/video_delivery.json?signature=".$signature."&group=browser");
+		$browser_video_statistics = json_decode( $browser_video_statistics ); 
+		
+		$ie_total_hits = 0 ;
+		$ie_total_plays = 0 ;
+		$ie_total_downloads = 0 ;
+		$ie_total_data_tranferred = 0 ;
+		
+		$chrome_total_hits = 0 ;
+		$chrome_total_plays = 0 ;
+		$chrome_total_downloads = 0 ;
+		$chrome_total_data_tranferred = 0 ;
+		
+		$ff_total_hits = 0 ;
+		$ff_total_plays = 0 ;
+		$ff_total_downloads = 0 ;
+		$ff_total_data_tranferred = 0 ;
+		
+		$opera_total_hits = 0 ;
+		$opera_total_plays = 0 ;
+		$opera_total_downloads = 0 ;
+		$opera_total_data_tranferred = 0 ;
+		
+		$safari_total_hits = 0 ;
+		$safari_total_plays = 0 ;
+		$safari_total_downloads = 0 ;
+		$safari_total_data_tranferred = 0 ;
+		
+		$all_total_hits = 0 ;
+		$all_total_plays = 0 ;
+		$all_total_downloads = 0 ;
+		$all_total_data_tranferred = 0 ;
+		
+		foreach( $browser_video_statistics as $b )
+		{
+			if ( strstr($b->name,'Internet Explorer') ) 
+			{
+				$ie_total_hits  = $ie_total_hits + $b->hits ;
+				$ie_total_plays = $ie_total_plays + $b->plays;
+				$ie_total_downloads = $ie_total_downloads + $b->downloads;
+				$ie_total_data_tranferred = $ie_total_data_tranferred + $b->bytes_transferred ;
+	
+			 }elseif( strstr($b->name,'Chrome') ){
+			
+				$chrome_total_hits  = $chrome_total_hits + $b->hits ;
+				$chrome_total_plays = $chrome_total_plays + $b->plays;
+				$chrome_total_downloads = $chrome_total_downloads + $b->downloads;
+				$chrome_total_data_tranferred = $chrome_total_data_tranferred + $b->bytes_transferred ;
+			
+			}elseif( strstr($b->name,'Firefox') ){
+			
+				$ff_total_hits  = $ff_total_hits + $b->hits ;
+				$ff_total_plays = $ff_total_plays + $b->plays;
+				$ff_total_downloads = $ff_total_downloads + $b->downloads;
+				$ff_total_data_tranferred = $ff_total_data_tranferred + $b->bytes_transferred ;
+			
+			}elseif( strstr($b->name,'Opera') ){
+			
+				$opera_total_hits  = $opera_total_hits + $b->hits ;
+				$opera_total_plays = $opera_total_plays + $b->plays;
+				$opera_total_downloads = $opera_total_downloads + $b->downloads;
+				$opera_total_data_tranferred = $opera_total_data_tranferred + $b->bytes_transferred ;
+			
+			}elseif( strstr($b->name,'Safari') ){
+			
+				$safari_total_hits  = $safari_total_hits + $b->hits ;
+				$safari_total_plays = $safari_total_plays+ $b->plays;
+				$safari_total_downloads = $safari_total_downloads + $b->downloads;
+				$safari_total_data_tranferred = $safari_total_data_tranferred + $b->bytes_transferred ;
+			
+			}else {
+			
+				$all_total_hits  = $all_total_hits + $b->hits ;
+				$all_total_plays = $all_total_plays+ $b->plays;
+				$all_total_downloads = $all_total_downloads + $b->downloads;
+				$all_total_data_tranferred = $all_total_data_tranferred + $b->bytes_transferred ;
+			
+			}
+	
+		}
+		$total_hits = $ie_total_hits + $chrome_total_hits + $ff_total_hits + $opera_total_hits + $safari_total_hits + $all_total_hits ;
+		$total_plays = $ie_total_plays + $chrome_total_plays + $ff_total_plays + $opera_total_plays + $safari_total_plays + $all_total_plays ;
+		$total_downloads = $ie_total_downloads + $chrome_total_downloads + $ff_total_downloads + $opera_total_downloads + $safari_total_downloads + $all_total_downloads ;
+		$total_data_tranferred = $ie_total_data_tranferred + $chrome_total_data_tranferred + $ff_total_data_tranferred + $opera_total_data_tranferred + $safari_total_data_tranferred + $all_total_data_tranferred ;
+		
+		$resultHTML .="<table border = 1 >";
+		$resultHTML .="<tr><th>Browser</th><th>Hits</th><th>Plays</th><th>Downloads</th><th>Data transferred</th></tr>";
+		$resultHTML .="<tr><td>Internet Explorer</td><td>".$ie_total_hits."</td><td>".$ie_total_plays."</td><td>".$ie_total_downloads."</td><td>".formatBytes($ie_total_data_tranferred)."</td></tr>";
+		$resultHTML .="<tr><td>Chrome</td><td>".$chrome_total_hits."</td><td>".$chrome_total_plays."</td><td>".$chrome_total_downloads."</td><td>".formatBytes($chrome_total_data_tranferred)."</td></tr>";
+		$resultHTML .="<tr><td>Firefox</td><td>".$ff_total_hits."</td><td>".$ff_total_plays."</td><td>".$ff_total_downloads."</td><td>".formatBytes($ff_total_data_tranferred)."</td></tr>";
+		$resultHTML .="<tr><td>Opera</td><td>".$opera_total_hits."</td><td>".$opera_total_plays."</td><td>".$opera_total_downloads."</td><td>".formatBytes($opera_total_data_tranferred)."</td></tr>";
+		$resultHTML .="<tr><td>Safari</td><td>".$safari_total_hits."</td><td>".$safari_total_plays."</td><td>".$safari_total_downloads."</td><td>".formatBytes($safari_total_data_tranferred)."</td></tr>";
+		$resultHTML .="<tr><td>Unknown</td><td>".$all_total_hits."</td><td>".$all_total_plays."</td><td>".$all_total_downloads."</td><td>".formatBytes($all_total_data_tranferred)."</td></tr>";
+		$resultHTML .="<tr><td>Total</td><td>".$total_hits."</td><td>".$total_plays."</td><td>".$total_downloads."</td><td>".formatBytes($total_data_tranferred)."</td></tr>";
+		$resultHTML .="</table>";
+		return $resultHTML;
+	}
+	
+	function getViewSignature( $licenseKey ) {
+		$url = "http://twistassets.kabbalah.com/api/view_key?licenseKey=" . urlencode($licenseKey);
+		return getCurl($url);
+	}
+	
+	function getCurl( $url ) {
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url );
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$data = curl_exec($ch);
+		curl_close($ch);
+		return $data ? $data : "";
+	}
+	
+	function getLessonsDropDown() {
+		
+		$lessonArray = array();
+		$sql =  "SELECT n.nid,n.title,lv.field_lesson_video_twistage_existing_videos,n2.title as course_title".
+				" FROM {node} n".
+				" LEFT JOIN {node_revision} nr ON ( n.nid = nr.nid )".
+				" LEFT JOIN {field_data_field_lesson_video} lv ON ( nr.nid = lv.entity_id AND nr.vid = lv.revision_id )".
+				" LEFT JOIN {field_revision_field_type_of_lesson} tol ON ( nr.nid = tol.entity_id AND nr.vid = tol.revision_id )".
+				" LEFT JOIN {field_revision_field_course_list} cl ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id )".
+				" LEFT JOIN {node} n2 ON ( cl.field_course_list_nid = n2.nid )".
+				" WHERE n.status =1".
+				" and tol.field_type_of_lesson_tid = 555".	
+				" and n.type IN('lesson')". 
+				" order by n2.title";
+		
+		$result = db_query( $sql);
+		$resultHTML = "<select id='lessonDD'>";
+		foreach( $result as $record ) {
+			$resultHTML .="<option value='".$record->field_lesson_video_twistage_existing_videos."'>".$record->course_title." :: ".$record->title."</option>";
+		}
+		$resultHTML .= "</select>";
+		return $resultHTML;	
+	
+	}
+	
+	function formatBytes($size, $precision = 2)	{
+		$base = log($size) / log(1024);
+		$suffixes = array('', ' KB', ' MB', ' GB', ' TB');   
+		return round(pow(1024, $base - floor($base)), $precision) . $suffixes[floor($base)];
+	}

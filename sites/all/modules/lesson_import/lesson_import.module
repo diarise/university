@@ -1,0 +1,219 @@
+<?php
+	function lesson_import_init(){
+		global $user;
+		//if($user->uid==1) dump_pre(menu_get_object());
+	}
+	function lesson_import_menu(){
+		$items['lesson_import']=array(
+			'page callback' => 'drupal_get_form',
+			'page arguments' => array('import_lesson_form'),
+			'access arguments' => array('administer site configuration'),
+		);
+		$items['primary_taxonomy_fix/%/%']=array(
+			'page callback' => 'add_primary_topics',
+			'page arguments' => array(1,2),
+			'access arguments' => array('administer site configuration'),
+		);
+		return $items;
+	}
+	function import_lesson_form(){
+		$form=array();
+		$form['json_input']=array(
+			'#type' => 'textarea',
+			'#title' => 'JSON Input',
+		);
+		$form['submit'] = array(
+			'#type' => 'submit',
+			'#value' => 'Submit',
+		);
+		return $form;
+	}
+	function import_lesson_form_submit($form,$form_state=array()){
+		$nodes=json_decode($form['json_input']['#value']);
+		if(!is_array($nodes)) $nodes=array($nodes);
+		$nids=array();
+		//dump_pre($nodes);
+		foreach($nodes as $anode){
+			$node=(object) $anode;
+			if(import_lesson($node)){
+				$nids[]=$node->nid;
+			};
+		}
+		dump_pre(implode('|',$nids));
+	}
+	function migrate_teacher($tid){
+		static $teachers, $tids;
+		if(!is_array($teachers)){
+			$teachers=array();
+			$raw=array(array("3144","Ariel Grunwald"),array("3206","Batsheva Zimerman"),array("3927","Chagai Shouster"),array("3205","David Benzaquen"),array("197","David Ghiyam"),array("5770","David Mats (????? ????)"),array("5978","David Naor"),array("5979","Deborah Naor"),array("195","Eitan Yardeni"),array("3925","Elisheva Balas"),array("2082","Eliyahu Jian"),array("3012","Eliyahu Yardeni"),array("4614","Haggai Fridman"),array("1875","Jamie Greene"),array("198","Kabbalah University"),array("192","Karen Berg"),array("214","Meir Yeshurun"),array("194","Michael Berg"),array("1886","Michal Berg"),array("610","Monica Berg"),array("3839","Mordechay Balas"),array("3479","Moshe Rosenberg"),array("191","Rav Berg"),array("4235","Roni Shoshan"),array("196","Ruth Rosenberg"),array("2200","Shalom Sharabi"),array("1695","Yael Yardeni"),array("193","Yehuda Berg"),array("3926","Yehuda Sivan "),array("5653","Yehudit Halfon"),array("5679","Yoel Waisberg"));
+			foreach($raw as $term){
+				$aterm=@db_query('SELECT tid FROM taxonomy_term_data WHERE name=:name AND vid=:vid',array(':name'=>$term[1],':vid'=>7))->fetchObject();
+				if($aterm){
+					$tids[$term[0]*1]=$aterm->tid;
+				}else{
+					//dump_pre($term);
+				}
+				$teachers[$term[0]*1]=$term[1];
+			}
+		}
+		return $tids[$tid];
+	}
+	function get_teacher_id($name){
+		static $teachers;
+		if(!is_array($teachers)){
+			$res=json_decode(file_get_contents('https://kabbalah.com/teachers_titles_json'));
+			foreach($res as $teacher){
+				$teachers[strtolower($teacher->title)]=$teacher->nid;
+			}
+			//dump_pre($teachers);
+		}
+		return $teachers[strtolower($name)];
+	}
+	function import_lesson($onode){
+		//dump_pre($onode);
+		//return;
+		$node=new StdClass();
+		$node->title=$onode->title;
+		$node->type='lesson';
+		
+		$node->uid=1;
+		$node->name='root';
+		$node->changed=time();
+		$node->comment = 2;
+		$node->promote = 1;
+		$node->moderate = 0;
+		$node->sticky = 0;
+		$node->tnid = 0;
+		$node->translate = 0;
+		$node->body['und'][0]['value']=$onode->field_article_description[0]->value;
+		$node->body['und'][0]['format']='full_html';
+		
+		$node->field_type_of_lesson['und'][0]['tid'] = 555;
+		//$node->field_author['und'][0]['tid'] = migrate_teacher($onode->field_article_author[0]->value);
+		if(isset($node->author) && is_array($node->author)){
+			$lterm=@db_query('SELECT * FROM taxonomy_term_data WHERE name=:name AND vid=:vid',array(':name'=>$node->author['name'],':vid'=>7))->fetchObject();
+			if(is_object($lterm)){
+				$tid=$lterm->tid;
+			}else{
+				unset($term->tid);
+				$nterm=new StdClass;
+				$nterm->name=$node->author['name'];
+				$nterm->vid=7;
+				$tid=taxonomy_term_save($nterm);
+			};
+			$node->field_author['und'][]=array('tid'=>$tid);
+		}
+		if(isset($node->primary_topic) && is_array($node->primary_topic)){
+			$lterm=@db_query('SELECT * FROM taxonomy_term_data WHERE name=:name AND vid=:vid',array(':name'=>$node->primary_topic['name'],':vid'=>4))->fetchObject();
+			if(is_object($lterm)){
+				$tid=$lterm->tid;
+			}else{
+				unset($term->tid);
+				$nterm=new StdClass;
+				$nterm->name=$node->primary_topic['name'];
+				$nterm->vid=4;
+				$tid=taxonomy_term_save($nterm);
+			};
+			$node->field_primary_topic['und'][]=array('tid'=>$tid);
+		}
+		if(isset($node->secondary_topic) && is_array($node->secondary_topic)){
+			$lterm=@db_query('SELECT * FROM taxonomy_term_data WHERE name=:name AND vid=:vid',array(':name'=>$node->secondary_topic['name'],':vid'=>5))->fetchObject();
+			if(is_object($lterm)){
+				$tid=$lterm->tid;
+			}else{
+				unset($term->tid);
+				$nterm=new StdClass;
+				$nterm->name=$node->secondary_topic['name'];
+				$nterm->vid=5;
+				$tid=taxonomy_term_save($nterm);
+			};
+			$node->field_secondary_topic['und'][]=array('tid'=>$tid);
+		}
+		
+		$node->field_recorded_date['und'][0]['value'] = $onode->field_article_date[0]->value;
+		
+		$node->field_lesson_highlights['und'][0]['value']=$onode->field_article_summary[0]->value;
+		$node->field_lesson_highlights['und'][0]['format']='full_html';
+		$node->field_audio_link['und'][0]['value']=$onode->field_lesson_audio_url[0]->value;
+		$node->field_video_cdn_link['und'][0]['value']=$onode->field_lesson_video_url[0]->value;
+		
+		$node->field_lesson_video['und'][0]=array(
+			'twistage_existing_videos' => $onode->field_twistage_existing_video[0]->value,
+			'twistage_existing_category' => $onode->field_twistage_exist_category[0]->value
+		);
+		
+		foreach($onode->taxonomy as $aterm){
+			$term=(object)$aterm;
+			$nvid=tvid_map($term->vid*1);
+			if($nvid){
+				$lterm=@db_query('SELECT * FROM taxonomy_term_data WHERE name=:name AND vid=:vid',array(':name'=>$term->name,':vid'=>tvid_map($term->vid)))->fetchObject();
+				if(is_object($lterm)){
+					$tid=$lterm->tid;
+				}else{
+					unset($term->tid);
+					$nterm=new StdClass;
+					$nterm->name=$term->name;
+					$nterm->vid=$nvid;
+					$tid=taxonomy_term_save($nterm);
+				};
+				$field=tvid_map($term->vid,true);
+				//dump_pre(array($term,$tid));
+				$node->{$field}['und'][]=array('tid'=>$tid);
+			}
+		}
+		$node = node_submit($node);
+		$node->created=$onode->created;
+		node_save($node);
+		return true;
+	}
+	function tvid_map($vid,$name=false){
+		switch($vid){
+			case 7:
+				return $name?'field_course':2;
+			case 5:
+				return $name?'field_lesson_keywords':3;
+			case 3:
+				return $name?'field_primary_topic':4;
+			case 6:
+				return $name?'field_secondary_topic':5;
+		}
+		return false;
+	}
+	function add_primary_topics($s=1,$r=50){
+		$s=($s-1)*$r;
+		$ptopics=array(
+			17=>taxonomy_get_term(11),
+			50=>taxonomy_get_term(5),
+			63=>taxonomy_get_term(6),
+			
+		);
+		$res=db_query("SELECT nid FROM node WHERE type='lesson' ORDER BY nid LIMIT $s, $r");
+		$nodes=array();
+		while($row=db_fetch_object($res)){
+			$node=node_load($row->nid);
+			foreach($node->taxonomy as $term){
+				if($term->vid==6){
+					$found=false;
+					$tid=$term->tid;
+					while(!$found){
+						$parent=$parent=taxonomy_get_parents($tid);
+						if(empty($parent)){
+							$found=true;
+						}else{
+							$pterm=array_pop($parent);
+							$tid=$pterm->tid;
+							if(isset($ptopics[$tid])){
+								$found=true;
+								$node->taxonomy[$tid]=$ptopics[$tid];
+								node_save($node);
+							}
+						}
+						
+					}
+					
+				}
+			}
+			//dump_pre($node->nid);
+		}
+		return '';
+	}

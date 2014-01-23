@@ -1,0 +1,25 @@
+.statisticsTab {
+    background: none repeat scroll 0 0 #C0C0C0;
+    float: left;
+    height: 50px;
+    padding: 10px;
+    width: 100px;
+	border: 0.5px solid;
+}
+
+#videoAnalyticTabsWrapper{
+    margin-top: 50px;
+}
+
+#videoAnalyticsResultWrapper {
+    clear: both;
+    padding-top: 50px;
+}
+
+.hidden {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+

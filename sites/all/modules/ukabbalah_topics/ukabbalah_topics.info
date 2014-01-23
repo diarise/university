@@ -1,0 +1,6 @@
+name = UKabbalah Courses By Topics Page 
+description = " Get the topics from Ukabbalah, creates a topics page to group the topics with parent taxonomy terms and then display them in carousels"
+core = 7.x
+version = "7.22"
+core = "7.x"
+package = Kabbalah Custom Modules

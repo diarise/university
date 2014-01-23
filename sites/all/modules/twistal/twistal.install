@@ -1,0 +1,185 @@
+<?php
+function twistal_schema() {
+	$schema = array();
+	$schema['twistal_data'] = array(
+		'description' => t('Information about Twistage videos that are known to Drupal'),
+		'fields' => array(
+			'vid' => array(
+				'description' => t('The video ID assigned by Twistage'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'pid' => array(
+				'description' => t('The {twistage_profile} this video belongs to'),
+				'type' => 'int',
+				'unsigned' => TRUE,
+			),
+			'site_key' => array(
+				'description' => t('The site key of the site the video belongs to (profiles can encompass multiple sites)'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'title' => array(
+				'description' => t('Video title, supplied by Twistage'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'status' => array(
+				'description' => t('Video status identifier, supplied by Twistage'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'availability' => array(
+				'description' => t('Video availability identifier, supplied by Twistage'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'created' => array(
+				'description' => t('The Unix timestamp when the video record was created'),
+				'type' => 'int',
+				'not null' => TRUE,
+				'default' => 0,
+			),
+			'publisher' => array(
+				'description' => t('Video publisher name, supplied by Twistage'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'play_active' => array(
+				'description' => t('Whether to play this video when rendering the page or block for this profile'),
+				'type' => 'int',
+				'not null' => TRUE,
+				'default' => 0,
+				'size' => 'tiny',
+			),
+			'play_order' => array(
+				'description' => t('Assigned play order within the video\'s profile'),
+				'type' => 'int',
+				'not null' => TRUE,
+				'default' => 0,
+				'size' => 'tiny',
+			),
+			'syndicated' => array(
+				'description' => t('Flag to determine whether the video has been sent out for syndication'),
+				'type' => 'int',
+				'not null' => TRUE,
+				'default' => 0,
+				'size' => 'tiny',
+			), 
+			'data' => array(
+				'description' => t('Additional serialized data'),
+				'type' => 'text',
+			),
+		), // fields
+		'indexes' => array(
+			'vid' => array('vid'),
+			'pid' => array('pid'),
+		), // indexes
+		'primary key' => array('vid'),
+	);
+	$schema['twistal_assets'] = array(
+		'description' => t('Twistage Video Assets'),
+		'fields' => array(
+			'vid' => array(
+				'description' => t('The video ID assigned by Twistage'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+			),
+			'aid' => array(
+				'description' => t('Asset ID'),
+				'type' => 'int',
+				'length' => 4,
+				'not null' => TRUE,
+			),
+			'data' => array(
+				'description' => t('Data'),
+				'type' => 'text',
+				'not null' => TRUE,
+			)
+		),
+		'unique keys' => array(
+			'asset' => array('aid'),
+		),
+	);
+	$schema['tags_twistal'] = array(
+		'description' => t('Twistage Video Tags'),
+		'fields' => array(
+			'vid' => array(
+				'description' => t('The video ID assigned by Twistage'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+			),
+			'tag' => array(
+				'description' => t('The tag name'),
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+			),
+		),
+		'indexes' => array(
+			'vid' => array('vid'),
+			'tag' => array('tag'),
+		),
+		'primary key' => array('vid', 'tag'),
+	);
+	return $schema;
+}
+function twistal_install() {
+  variable_set('twistal_profiles',_twistal_profile());
+  variable_set('twistal_bookmark',array('page',1));
+}
+function twistal_uninstall() {
+ // db_query('DROP TABLE tags_twistal');
+  variable_del('twistal_profiles');
+  variable_del('twistal_bookmark');
+}
+function _twistal_profile(){
+	$profiles=array(
+		array(
+			'name' => 'twistage_video',
+			'description' => 'Twistage Video',
+			'company' => 'kabbalah-centre',
+			'site_name' => 'default',
+			'site_key' => 'b6daac3cf452d',
+			'site_username' => 'bill@commonplaces.com',
+			'type' => 'data',
+			'path' => '',
+			'page_header' => '',
+			'page_header_format' => '2',
+			'page_footer' => '',
+			'page_footer_format' => '2',
+			'show_table' => '0',
+			'width' => '620',
+			'height' => '382',
+			'autoplay' => '1',
+			'preroll_company' => '',
+			'preroll_site_name' => '',
+			'preroll_site_key' => '',
+			'preroll_url' => '',
+			'username' => '',
+			'password' => '',
+			'op' => 'Save',
+			'submit' => 'Save',
+			'delete' => 'Delete',
+			'form_build_id' => 'form-ac12cdacf75970be7eb821340b408195',
+			'form_token' => '19d3230fbc0d751d49dc0e61cc7a5df9',
+			'form_id' => 'twistal_profile_admin_form',
+			'pid' => '0',
+		)
+	);
+	return $profiles;
+}

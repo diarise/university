@@ -1,0 +1,680 @@
+<?php
+		
+	// List of API's used on ukabbalah.com website
+	
+	function kabbalah_apis_menu() {
+		
+		$items['k_api/slds'] = array(
+			'page callback'      => 'getSlideshowApiData',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['k_api/bgnr_crs'] = array(               // Made this a PAGE
+			'page callback'      => 'getBeginnersCourses',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['k_api/recently_added_lsns'] = array(              
+			'page callback'      => 'getRecentlyAddedLessonsJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		$items['k_api/recently_added_crs'] = array(              
+			'page callback'      => 'getRecentlyAddedCoursesJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		$items['k_api/recommended_lsns'] = array(               // Made this a PAGE
+			'page callback'      => 'getRecommendedLessonsJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		$items['k_api/free_lsns'] = array(               // Made this a PAGE
+			'page callback'      => 'getFreeLessonsJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		$items['k_api/crs'] = array(               // Made this a PAGE
+			'page callback'      => 'getCoursesJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['k_api/tchrs'] = array(               // Made this a PAGE
+			'page callback'      => 'getTeachersJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['k_api/onl_dmd_evts'] = array(               // Made this a PAGE
+			'page callback'      => 'getOnlineTopicsJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['k_search_api/art/%'] = array(               // Made this a PAGE
+			'page callback'      => 'getSearchArticlesJson',
+			'page arguments' => array(2),
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		return $items;
+	  }
+	  
+	function getSearchArticlesJson( $keyword ) {
+	
+		$sql =  "SELECT n.nid,n.type,n.title,il.field_image_cdn_link_value,lv.field_lesson_video_twistage_existing_videos,b.body_value,n.changed,ti.tid,td.name".
+				" FROM {node} n".
+				" LEFT JOIN {node_revision} nr ON ( n.nid = nr.nid and n.vid = nr.vid )".
+				" LEFT JOIN {field_data_field_image_cdn_link} il ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id )".
+				" LEFT JOIN {field_data_field_lesson_video} lv ON ( nr.nid = lv.entity_id AND nr.vid = lv.revision_id )".
+				" LEFT JOIN {field_revision_body} b ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id )".
+				" LEFT JOIN {taxonomy_index} ti ON( nr.nid = ti.nid )".
+				" LEFT JOIN {taxonomy_term_data} td ON( ti.tid = td.tid)".
+				" WHERE n.status =1".
+				" and td.vid IN (7,13)".
+				" and ( td.name like '%".$keyword."%'".
+				" OR n.title like '%".$keyword."%'".
+				" OR b.body_value like '%".$keyword."%' )". 
+				" and n.type IN('lesson','course')". 
+				" order by n.type , td.vid , n.changed desc";
+		
+		$result = db_query( $sql);
+		$result_arr = getQueryResults( $result );
+		echo json_encode( $result_arr);
+	} 
+	
+	function getQueryResults( $result ) {
+	
+		$result_arr = array();
+		foreach ($result as $record) {	
+			$title = $record->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$title = str_replace(array('&'), array('and'), $title);
+			$teaser  = get_clean_body( $record->body_value , 150 );
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
+			if( $record->type == "course") {
+				$thumbnail = $record->field_image_cdn_link_value;
+			} else {
+				$thumbnail = 'http://twistassets.kabbalah.com/videos/'.$record->field_lesson_video_twistage_existing_videos.'/screenshots/350w.jpg';
+			}
+			
+			$node = node_load($record->nid , NULL, TRUE);
+			$author_name = array();
+			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+			foreach( $vocab_terms1 as $t )	{	$author_name[] = $t->name; }
+		
+			$secondary_topics = array();
+			$vocab_terms2 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			foreach( $vocab_terms2 as $t )	{	$secondary_topics[] = $t->name; }
+			
+			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+			foreach( $vocab_terms3 as $t )	{	$membership = $t->name; }
+			
+			$result_arr[ $record->nid  ]=  array(
+								  "node_type" => $record->type ,
+								  "title"=> $title ,		
+								  "teaser" => $teaser , 
+								  "date" => date( 'F jS, Y',$record->changed ),
+								  "thumbnail" => $thumbnail , 
+								  "path" => $path , 
+								  "author" => implode( "," , $author_name ), 
+								  "membership" => $membership,
+								  "keywords" => implode( "," , $secondary_topics )
+							);	
+		}
+		return $result_arr;
+	}
+	
+	function getSlideshowApiData() {
+	
+		$sql = 	"SELECT n.nid,n.title,n.changed,il.field_event_image_cdn_link_value,b.body_value,plv.field_event_path_link_value,st.field_sub_title_value,cs.field_color_selector_value,dso.field_display_order_value ".
+				"FROM node n ".
+				"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
+				"LEFT JOIN {field_revision_field_event_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+				"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+				"LEFT JOIN {field_revision_field_event_path_link plv} ON ( nr.nid = plv.entity_id AND nr.vid = plv.revision_id ) ".
+				"LEFT JOIN {field_revision_field_sub_title st} ON ( nr.nid = st.entity_id AND nr.vid = st.revision_id ) ".
+				"LEFT JOIN {field_revision_field_color_selector cs} ON ( nr.nid = cs.entity_id AND nr.vid = cs.revision_id ) ".
+				"LEFT JOIN {field_revision_field_display_order dso} ON ( nr.nid = dso.entity_id AND nr.vid = dso.revision_id ) ".
+				"WHERE n.status =1 ".
+				"AND n.type = 'slideshow' ".
+				"ORDER BY dso.field_display_order_value ASC,n.changed DESC";
+	
+		$result = db_query( $sql );
+	
+		$result_array = array();
+			
+		foreach ($result as $record) 
+		{
+			$path = $record->field_event_path_link_value;
+			$title = $record->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$subtitle = $record->field_sub_title_value;
+			$subtitle = preg_replace("/&#?[a-z0-9]+;/i","",$subtitle); // removes $nbsp
+			$teaser  = get_clean_body( $record->body_value , 0 );
+			$result_array[] = array(  'path' => $path , 
+									  'title' => $title , 
+									  'subtitle' => $subtitle ,
+									  'teaser' => $teaser,		
+									  'field_color_selector_value' => $record->field_color_selector_value , 
+									  'field_image_link_value' => $record->field_event_image_cdn_link_value );	
+		}
+		echo json_encode( $result_array );	
+	}
+	
+	function getBeginnersCourses() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_revision_field_beginner_course_ bc} ON ( bc.entity_id = nr.nid AND bc.revision_id = nr.vid )
+				WHERE n.status =1
+				AND n.type = 'course'
+				AND bc.field_beginner_course__value = 1
+				ORDER BY n.changed DESC limit 10";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{
+			$node = node_load($nid = $record->nid , $record->revision_id );
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			
+			if( sizeof($node->field_this_course_contains) > 0 )
+			{
+				if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+				else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+				else $media_type = 'bothAdVdImg';
+			} else {
+
+				$media_type = 'bothAdVdImg';
+			}
+			$result_array[] = array(  'node_type' => $node->type,
+									  'title' => $title , 
+									  'author' => $author->name ,
+									  'path' => $path , 
+									  'teaser' => $teaser,		
+									  'membership' => $membership->name,
+									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,
+									  'created' => date('F jS, Y',$node->created),
+									  'media_type' => $media_type
+								    );	
+		}
+		echo json_encode( $result_array );				
+	}
+	
+	function getBeginnersCoursesForCoursesPage() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_revision_field_beginner_course_ bc} ON ( bc.entity_id = nr.nid AND bc.revision_id = nr.vid )
+				WHERE n.status =1
+				AND n.type = 'course'
+				AND bc.field_beginner_course__value = 1
+				ORDER BY n.changed DESC limit 10";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{
+			$node = node_load($nid = $record->nid , $record->revision_id );
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			if( sizeof($node->field_this_course_contains) > 0 )
+			{
+				if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+				else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+				else $media_type = 'bothAdVdImg';
+			} else {
+
+				$media_type = 'bothAdVdImg';
+			}
+			$result_array[] = array(  'title' => $title , 
+									  'image_link' => $node->field_image_cdn_link['und'][0]['value'] ,
+									  'path' => $path ,
+									  'teaser' => $teaser,		
+									  'author' => $author->name ,
+									  'date_created' => date('F jS, Y',$node->created),
+									  'membership' => $membership->name,
+									  'media_type' => $media_type
+								    );	
+		}
+		return $result_array;				
+	}
+
+	function getRecentlyAddedLessonsJson() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				WHERE n.status =1
+				AND n.type = 'lesson'
+				ORDER BY n.changed DESC LIMIT 6";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{
+			
+			$node = node_load($nid = $record->nid , $record->revision_id );
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
+			
+			$result_array[] = array(  'node_type' => $node->type,
+									  'title' => $title , 
+									  'author' => $author->name ,
+									  'path' => $path , 
+									  'teaser' => $teaser,		
+									  'membership' => $membership->name,
+									  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' ,
+									  'created' => date('F jS, Y',$node->changed),
+									  'media_type' => $media_type->name
+									);
+		}
+		echo json_encode( $result_array );				
+
+	}
+	
+	function getRecentlyAddedCoursesJson() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				WHERE n.status =1
+				AND n.type = 'course'
+				ORDER BY n.changed DESC LIMIT 6";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{	
+			$node = node_load($nid = $record->nid , $record->revision_id );
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			
+			if( sizeof($node->field_this_course_contains) > 0 )
+			{
+				if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+				else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+				else $media_type = 'bothAdVdImg';
+			} else {
+
+				$media_type = 'bothAdVdImg';
+			}
+			
+			
+			$result_array[] = array(  'node_type' => $node->type,
+									  'title' => $title , 
+									  'author' => $author->name ,
+									  'path' => $path , 
+									  'teaser' => $teaser,		
+									  'membership' => $membership->name,
+									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,
+									  'created' => date('F jS, Y',$node->changed),
+									  'media_type' => $media_type
+									);
+		}
+		echo json_encode( $result_array );				
+	}
+		
+	function getRecommendedLessonsJson() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_data_field_recommened_for_month rm} ON ( rm.entity_id = nr.nid AND rm.revision_id = nr.vid )
+				WHERE n.status =1
+				AND n.type = 'lesson'
+				AND rm.field_recommened_for_month_value = 0
+				ORDER BY n.changed DESC";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{
+			
+			$node = node_load($nid = $record->nid , $record->revision_id );
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			
+			$recommended_date = $node->field_recommended_date['und'][0]['value'];
+			$recommended_date_month = date('m',strtotime($recommended_date));
+			$recommended_date_year = date('Y',strtotime($recommended_date));
+			
+			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
+			
+			if( $recommended_date_month == date('m',time()) && $recommended_date_year == date('Y',time()) )
+			{
+				$result_array[] = array(  'node_type' => $node->type,
+										  'title' => $title , 
+										  'author' => $author->name ,
+										  'path' => $path , 
+										  'teaser' => $teaser,		
+										  'membership' => $membership->name,
+										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' ,
+										  'created' => date('F jS, Y',$node->changed),
+										  'media_type' => $media_type->name
+										);
+			}							
+		}
+		echo json_encode( $result_array );				
+	
+	
+	}
+	
+	function getFreeLessonsJson() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid )
+				LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid)
+				WHERE n.status =1
+				AND n.type = 'lesson'
+				AND td.vid = 12
+				AND td.name = 'Free'
+				ORDER BY n.changed DESC LIMIT 6";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{
+			
+			$node = node_load($nid = $record->nid , $record->revision_id );
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			
+			$recommended_date = $node->field_recommended_date['und'][0]['value'];
+			$recommended_date_month = date('m',strtotime($recommended_date));
+			$recommended_date_year = date('Y',strtotime($recommended_date));
+			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
+			
+			$result_array[] = array(  'node_type' => $node->type,
+										  'title' => $title , 
+										  'author' => $author->name ,
+										  'path' => $path , 
+										  'teaser' => $teaser,		
+										  'membership' => $membership->name,
+										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' ,
+										  'created' => date('F jS, Y',$node->changed),
+										  'media_type' => $media_type->name
+										);							
+										
+		}
+		echo json_encode( $result_array );				
+	
+	
+	}
+	
+	function getCoursesJson() {
+	
+		$vnames = getTermNames();
+		$result_array = array();
+		$resultHTML = "";
+		$counter = 1;
+		
+		$beginners_courses = getBeginnersCoursesForCoursesPage();
+		$result_array['Beginners Courses'] = array( "term_name" => 'Beginner\'s Courses' , "term_desc" => 'If you are new to the teachings of The Kabbalah Centre, start here' , "term_articles" => $beginners_courses );
+		
+		foreach( $vnames as $id => $vname)	{
+					
+			$sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed,ti.tid,td.name ".
+					"FROM {node n} ".
+					"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
+					"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+					"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
+					"LEFT JOIN {field_data_field_type_of_course toc} ON ( nr.nid = toc.entity_id AND nr.vid = toc.revision_id ) ".
+					"LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
+					"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
+					"WHERE n.status =1 ".
+					"AND td.vid = 14 ".
+					"AND td.name = '".$vname."' ".
+					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 562) ".
+					"ORDER BY n.changed DESC";
+			
+			$result = "";
+			$result = db_query( $sql );
+			
+			$vname_articles = array();
+			
+			
+			foreach( $result as $record ) {
+			
+				$title = $record->title;
+				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+				$teaser  = get_clean_body( $record->body_value , 100 );
+				$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
+				$node = node_load($record->nid , NULL, TRUE);
+				$image_link = $record->field_image_cdn_link_value;
+				$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			
+				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
+				
+				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+				foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
+				
+				if( sizeof($node->field_this_course_contains) > 0 )
+				{
+					if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+					else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+					else $media_type = 'bothAdVdImg';
+				} else {
+
+					$media_type = 'bothAdVdImg';
+				}
+
+				
+				$vname_articles[] = array(  'title' => $title , 
+											'image_link' => $image_link ,
+											'path' => $path , 
+											'teaser' => $teaser , 
+											'author' => $author_name , 
+											'date_created' => date( 'F jS, Y',$record->changed ) ,
+											'membership' => $membership->name,
+											'media_type' => $media_type
+										  );
+										  
+			}
+			
+			
+			$result_array[$vname] = array( "term_name" => $vname , "term_desc" => $p_topic_description , "term_articles" => $vname_articles );
+			
+		}	
+		echo json_encode( $result_array );
+	}
+		
+	function getTeachersJson() {
+	
+		$vnames = getTermNames1();
+		$result_array = array();
+		$resultHTML = "";
+		$counter = 1;
+		
+		foreach( $vnames as $id => $vname)	{
+					
+			$sql =  "SELECT n.nid,n.type,n.title,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed,ti.tid,td.name ".
+					"FROM {node n} ".
+					"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
+					"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+					"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
+					"LEFT JOIN {field_data_field_type_of_course toc} ON ( nr.nid = toc.entity_id AND nr.vid = toc.revision_id ) ".
+					"LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
+					"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
+					"WHERE n.status =1 ".
+					"AND td.vid = 7 ".
+					"AND td.name = '".$vname."' ".
+					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 562) ".
+					"ORDER BY n.changed DESC";
+		
+			$result = "";
+			$result = db_query( $sql );
+			
+			foreach( $result as $record ) {
+			
+				$title = $record->title;
+				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+				$teaser  = get_clean_body( $record->body_value , 100 );
+				$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
+				
+				$node = node_load($record->nid , NULL, TRUE);
+				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
+				
+				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+				foreach( $vocab_terms4 as $t )	{	$primary_topic = $t->name; }
+
+				$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);		
+				
+				if( sizeof($node->field_this_course_contains) > 0 )
+				{
+					if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+					else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+					else $media_type = 'bothAdVdImg';
+				} else {
+
+					$media_type = 'bothAdVdImg';
+				}
+				
+				
+				
+				$result_array[$vname][] = array( 'title' => $title , 
+												 'image_link' => $record->field_image_cdn_link_value ,
+												 'path' => $path , 
+												 'teaser' => $teaser , 
+												 'author' => $author_name , 
+												 'date_created' => date( 'F jS, Y',$record->changed ),
+												 'primary_topic' => $primary_topic ,
+												 'membership' => $membership->name,
+												 'media_type' => $media_type												 
+										  ); 
+			}
+		}	
+		echo json_encode( $result_array );
+	}
+	
+	function getOnlineTopicsJson() {
+	
+		$vnames = getTermNames2();
+		$result_array = array();
+		$resultHTML = "";
+		$counter = 1;
+		
+		foreach( $vnames as $id => $vname)	{
+					
+			$sql =  "SELECT n.nid,n.type,n.title,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed,ti.tid,td.name,toc.field_type_of_course_tid ".
+					"FROM {node n} ".
+					"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
+					"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+					"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
+					"LEFT JOIN {field_data_field_type_of_course toc} ON ( nr.nid = toc.entity_id ) ".
+					"LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
+					"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
+					"WHERE n.status =1 ".
+					"AND td.vid = 10 ".
+					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 563) ".
+					"AND td.name = '".$vname."' ".
+					"ORDER BY n.changed DESC";
+			
+			$result = "";
+			$result = db_query( $sql );
+			$vname_articles = array();
+			foreach( $result as $record ) {
+			
+				$title = $record->title;
+				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+				$teaser  = get_clean_body( $record->body_value , 100 );
+				$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
+				
+				$node = node_load($record->nid , NULL, TRUE);
+				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
+				
+				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+				foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
+				
+				$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+				
+				if( sizeof($node->field_this_course_contains) > 0 )
+				{
+					if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+					else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+					else $media_type = 'bothAdVdImg';
+				} else {
+
+					$media_type = 'bothAdVdImg';
+				}
+
+				
+				$vname_articles[] = array(  'title' => $title , 
+											'image_link' => $record->field_image_cdn_link_value ,
+											'path' => $path , 
+											'teaser' => $teaser , 
+											'author' => $author_name , 
+											'date_created' => date( 'F jS, Y',$record->changed ) ,
+											'membership' => $membership->name,
+											'media_type' => $media_type
+										  ); 
+			}
+			$result_array[$vname] = array( "term_name" => $vname , "term_desc" => $p_topic_description , "term_articles" => $vname_articles );
+		}	
+		echo json_encode( $result_array );
+		
+	}
+	
+	function get_clean_body( $body , $limit = 100 ) { // $limit = 0 means no limit
+	
+		$body = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $body);
+		$body = preg_replace('#<object(.*?)>(.*?)</object>#is', '', $body);
+		$teaser = preg_replace('#<img(.*?)>#is', '', $body);
+		$teaser = preg_replace("/&#?[a-z0-9]+;/i","",$teaser); // removeds $nbsp
+		$teaser = stripslashes($teaser);
+		$teaser = strip_tags($teaser);
+		if( $limit != 0 )$teaser = substr( $teaser , 0 , $limit );
+		if( $teaser != false ) return $teaser;
+		else return "";
+	
+	}
+	

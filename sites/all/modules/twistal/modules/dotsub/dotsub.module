@@ -1,0 +1,140 @@
+<?php
+
+function dotsub_menu(){
+	$items['admin/settings/twistal/dotsub'] = array(
+		'title' => 'Dotsub Settings',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('dotsub_settings'),
+		'access arguments' => array('administer twistal'),
+		'type' => MENU_LOCAL_TASK
+	);
+	$items['dotsub/transcript/%/%'] = array(
+		'type' => MENU_CALLBACK,
+		'page callback' => 'dotsub_transcript',
+		'page arguments' => array(2,3),
+		'access callback' => true
+	);
+	$items['twistal/dotsub/captions/%/%'] = array(
+		'type' => MENU_CALLBACK,
+		'page callback' => 'loadDotsubCaption',
+		'page arguments' => array(3,4),
+		'access callback' => true,
+	);
+	return $items;
+}
+function dotsub_transcript($vid,$lang){
+	$dotsub=new DotsubApi($vid);
+	exit($dotsub->fetchTranscript($lang));
+}
+function dotsub_jwplayer_settings_alter(&$jwplayer){
+	global $user;
+	$dotsub=new DotsubApi($jwplayer['video']->vid, $jwplayer['video']->dotsub_settings);
+	
+	$captions=$dotsub->loadDotsubCaptions();
+	if($captions){
+		$jwplayer['settings']['playlist'][0]['captions']=$captions;
+		$jwplayer['settings']['captions'] = array(
+			'back' => false,
+			'color' => 'FFFFFF',
+			'fontsize' => 20,
+		);
+		if($jwplayer['video']->dotsub_settings['autostart_subtitles']){
+			drupal_add_js('
+				jQuery(document).ready(function(){
+					jwplayer(Drupal.settings.dotsub.player_id).onCaptionsList(function(){
+						for(i=0;i<this.config.playlist[0].captions.length;i++){
+							if(this.config.playlist[0].captions[i].autostart){
+								jwplayer(Drupal.settings.dotsub.player_id).setCurrentCaptions(this.config.playlist[0].captions[i].autostart);
+							}
+						}
+					});
+				});
+			','inline');
+		}
+		drupal_add_js('
+			jQuery(document).ready(function(){
+				jwplayer(Drupal.settings.dotsub.player_id).onCaptionsList(function(){
+					jQuery("#"+Drupal.settings.dotsub.player_id+" .jwcc .jwoverlay").css({width:"'.$dotsub->settings['caption_box_width'].'"});
+				});
+			});
+		','inline');
+		if($dotsub->settings['transcript']){
+			$langs=$dotsub->getLanguages(); 
+			$select=array(
+				'lang_select'=>array(
+					'#type' => 'select',
+					'#options' => array_merge(array('none' => 'Load Transcript'), $langs),
+					'#attributes' => array(
+						'class' => array('trans-lang-select')
+					),
+					'#default_value' => $jwplayer['video']->dotsub_settings['default_language']
+				)
+			);
+			$languageSelect=drupal_render($select);
+			$jwplayer['suffix'][]='<div class="transcription">'.$languageSelect.'<div class="transcript-content"></div></div>';
+			drupal_add_js(drupal_get_path('module', 'dotsub').'/includes/transcript.js');
+			drupal_add_css(drupal_get_path('module', 'dotsub').'/includes/transcript.css');
+			$settings['dotsub']['trans_id']=$jwplayer['video']->vid;
+		}
+		$settings['dotsub']['player_id']=$jwplayer['player_id'];
+		drupal_add_js($settings,'setting');
+		if(myDevice()->isMobile()){
+			$settings=array(
+				'dotsub' => array(
+					'username' => $dotsub->user,
+					'externalId' => $jwplayer['video']->vid,
+					'language' => "en",
+					'enableLanguageSelection' => true,
+					'enableSubtitles' => true,
+				)
+			);
+			drupal_add_css(drupal_get_path('module', 'dotsub').'/includes/ds-ipad.css');
+			drupal_add_js(drupal_get_path('module', 'dotsub').'/includes/ds-ipad.js');
+			drupal_add_js($settings,'setting');
+		}
+	}
+}
+function _dotsub_settings($v=false){
+	$settings=array(
+		'user'=>'',
+		'cache'=>false,
+		'cache_destination'=>'/dotsub',
+		'transcript' => true,
+		'caption_box_width' => 150,
+		'default_language' => ''
+	);
+	return $v?array_merge($settings,$v):variable_get('dotsub_settings',$settings);
+}
+function dotsub_settings(){
+//file_directory_path()
+	$settings=_dotsub_settings();
+	$form['user']=array(
+		'#title' => 'Dotsub Username',
+		'#type' => 'textfield',
+		'#default_value' => $settings['user']
+	);
+	$form['transcript']=array(
+		'#title' => 'Enable interactive transcript - Beta',
+		'#type' => 'checkbox',
+		'#default_value' => $settings['transcript']
+	);
+	$form['caption_box_width']=array(
+		'#title' => 'Width of caption box (in pixels)',
+		'#type' => 'textfield',
+		'#default_value' => $settings['caption_box_width'],
+	);
+	$form['submit']=array(
+		'#type' => 'submit',
+		'#value' => 'Submit',
+	);
+	return $form;
+}
+function dotsub_settings_submit($form,$form_state){
+	variable_set('dotsub_settings',_dotsub_settings($form_state['values']));
+}
+function loadDotsubCaption($ref,$file){
+	
+	$spl=explode('.',$file);
+	$api=new DotsubApi($ref);
+	exit($api->getDotsubCaption($spl[0],$spl[1]));
+}

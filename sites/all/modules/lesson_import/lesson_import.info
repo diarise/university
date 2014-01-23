@@ -1,0 +1,4 @@
+name =  Import Lessons
+description = Script to import ukab lessons
+core = 7.x
+package = Custom

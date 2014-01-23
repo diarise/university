@@ -1,0 +1,628 @@
+<?php
+function twistal_menu(){
+	$items['admin/settings/twistal'] = array(
+		'title' => t('Twistage for Drupal'),
+		'description' => t('Manage Twistage integration.'),
+		'type' => MENU_NORMAL_ITEM,
+		'page callback' => 'twistal_settings_page',
+		'access arguments' => array('administer twistal'),
+		'file' => 'includes/twistal.admin.inc'
+	);
+	$items['admin/settings/twistal/list'] = array(
+		'title' => t('Manage profiles'),
+		'type' => MENU_DEFAULT_LOCAL_TASK,
+		'access arguments' => array('administer twistal'),
+		'weight' => -5,
+	  );
+	$items['admin/settings/twistal/create'] = array(
+		'title' => t('Create profile'),
+		'type' => MENU_LOCAL_TASK,
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('twistal_profile_admin_form'),
+		'access arguments' => array('administer twistal'),
+		'file' => 'includes/twistal.admin.inc',
+		'weight' => -2,
+	);
+	$items['admin/settings/twistal/profile'] = array(
+		'title' => t('Twistage Profile'),
+		'type' => MENU_CALLBACK,
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('twistal_profile_admin_form', 4),
+		'access arguments' => array('administer twistal'),
+		'file' => 'includes/twistal.admin.inc'
+	);
+	$items['admin/settings/twistal/video/%']=array(
+		'title' => 'Twistal Video Data',
+		'type' => MENU_CALLBACK,
+		'page callback' => 'twistal_video_data_view',
+		'page arguments' => array(4),
+		'access arguments' => array('administer twistal'),
+		'file' => 'includes/twistal.admin.inc'
+	);
+	$items['admin/settings/twistal/video']=array(
+		'title' => 'Twistal Video Search',
+		'type' => MENU_CALLBACK,
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('twistal_video_info'),
+		'access arguments' => array('administer twistal'),
+		'file' => 'includes/twistal.admin.inc'
+	);
+	$items['twistage/hook'] = array(
+		'type' => MENU_CALLBACK,
+		'page callback' => 'twistage_hooks',
+		'access callback' => true
+	);
+	$items['twistage/ahah/%/%'] = array(
+	  'page callback' => 'twistage_ahah_handle',  
+	  'page arguments' => array(2,3),
+	  'access arguments' => array('access content'),
+	  'type' => MENU_CALLBACK,  
+	);
+	
+	$items['twistage/getnode/%'] = array(
+	  'page callback' => 'twistage_getnode',  
+	  'page arguments' => array(2),
+	  'access arguments' => array('access content'),
+	  'type' => MENU_CALLBACK,  
+	);
+	return $items;
+}//end of menu hook
+
+
+/**
+ * define the permissions for this module.
+ */
+function twistal_perm() {
+	return array(
+		'administer twistal' => array('title' => 'Administer Twistal'),
+		'access twistage video' => array('title' => 'Access Twistage Videos'),
+		'access twistage audio' => array('title' => 'Access Twistage Audio'),
+		'download twistage video' => array('title' => 'Download Twistage Video'),
+		'download twistage audio' => array('title' => 'Download Twistage Audio'),
+		'upload twistage' => array('title' => 'Upload Twistage Content'),
+	);
+}
+
+/**
+ * define the 'Existing twistage video field info'
+ */
+function twistal_field_info() {
+  return array(
+    'twistage_existing' => array(
+      'label' => t('Existing Twistage Video'),
+      'description' => t('Allows an existing twistage video to be added'),
+	  'settings' => array(),
+      'instance_settings' => array('prefix' => '', 'suffix' => ''),
+      'default_widget' => 'twistage_existing',
+      'default_formatter' => 'twistage_existing',
+    )
+  );
+}
+
+/**
+ * define the 'Existing twistage video field widget info'
+ */
+function twistal_field_widget_info() {
+  return array(
+    'twistage_existing' => array(
+      'label' => t('Twistage Existing Video'),
+      'field types' => array('twistage_existing'),
+	  'settings' => array(),
+	  'behaviors' => array(
+		'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+        'default value' => FIELD_BEHAVIOR_NONE,
+      ),
+    ),
+  );
+}
+
+/**
+ * define the widget form api for 'twistage existing category' and 'twistage exsiting video'
+ */
+function twistal_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+  $element += array(
+    '#type' => $instance['widget']['type'],
+    '#default_value' => isset($items[$delta]) ? $items[$delta] : '',
+  );
+  drupal_add_js(drupal_get_path('module','twistal').'/twistal.js');
+  $list_opt=array('none'=>'-Select Video-');
+	$defaults=array(
+		'twistage_existing_category' => 0,
+		'twistage_existing_videos' => 0,
+		'default_language' => 0,
+		'autostart_subtitles' => 0,
+		'autostart_transcript' => 0,
+	);
+	if(isset($element['#default_value']) && is_array($element['#default_value'])){
+		foreach($defaults as $key=>$val){
+			if(isset($element['#default_value'][$key])) $defaults[$key]=$element['#default_value'][$key];
+		}
+	}
+	if(isset($form_state['values']) && is_array($form_state['values']) && isset($form_state['values'][$element['#field_name']])){
+		foreach($defaults as $key=>$val){
+			$lang=field_language('node', $form['#node'], $form_state['triggering_element']['#parents'][0], null);
+			if(isset($form_state['values'][$element['#field_name']][$lang][0][$key])) $defaults[$key]=$form_state['values'][$element['#field_name']][$lang][0][$key];
+		}
+	}
+	$list_opt = get_twistage_video_select($defaults['twistage_existing_category'],1);
+	$api=twistal(0);
+	
+	if((isset($_POST['op']) && $_POST['op']=="Video not in list") || (count($list_opt)==1 && $defaults['twistage_existing_category'])){
+		$api=twistal(0);
+		$data=$api->fetch_videos_by_tag($defaults['twistage_existing_category']);
+		$list_opt=array('-Select a Video-');
+		foreach($data->videos as $video){
+			if($video->status=="available"){
+				import_twistal_video($video->video_id);
+				$list_opt[$video->video_id]=$video->title;
+			}
+		}
+		
+	}
+	$tags=variable_get('twistal_tags',array());
+	if(empty($tags)) $tags=sync_twistage_tags();
+	$default_image = '';
+	$description = 'Please choose twistage category from "Existing Category"';
+	
+	if($defaults['twistage_existing_videos']){
+		
+		$twistage_url = "http://twistassets.kabbalah.com/videos/".$defaults['twistage_existing_videos']."/screenshots/150w.jpg";
+		$default_image = '<img src="'.$twistage_url.'" width="150">';
+		$description = '';
+		if(!isset($list_opts[$defaults['twistage_existing_videos']])){
+			$vid=$defaults['twistage_existing_videos'];
+			$api=twistal(0);
+			$video=$api->load_from_url('http://twistassets.kabbalah.com/videos/'.$vid.'.json',array());
+			$twistvid=new twistage_video();
+			$twistvid->import($video,$api->profile->pid);
+			if(!$twistvid->save()){
+				//if(user_access('administer twistal')) drupal_set_message(t('There was a problem syncing this video'));
+			}else{
+				$list_opt = get_twistage_video_select($defaults['twistage_existing_category'],1);
+			}
+		}
+	}
+	$element['twistage_existing_category'] = array(
+        '#title'=>'Existing Category',
+		'#type' => 'select',
+		'#default_value' => $defaults['twistage_existing_category'],
+		'#options' => $tags,
+		'#suffix' =>'<div id="existing_category_handle_wrapper"></div>',
+		'#ajax' => array(
+			'callback' => '_populate_twistage_videos',
+			'event' => 'change',
+			'wrapper' => 'existing_video_handle_wrapper',
+			'method' => 'replace',
+			'effect' => 'fade',           
+		),
+	);
+	$element['twistage_existing_videos'] = array(
+		'#title'=>'Existing Videos',
+		'#type' => 'select',
+		'#default_value' => $defaults['twistage_existing_videos'],
+		'#options' => $list_opt,
+		'#description'=> t($description),
+		'#count' => 9,
+		'#delta'=> 0,
+		'#attributes' => array('onChange' => 'updateTwistalThumb()'),
+		'#prefix' => '<div id="existing_video_handle_wrapper">',
+		'#suffix' =>'</div>',
+		'#ajax' => array(
+			'callback' => '_twistage_video_select',
+			'event' => 'change',
+			'wrapper' => 'dotsub_lang_select_wrapper',
+			'method' => 'replace',
+			'effect' => 'fade',           
+		),
+	);
+	$element['twistage_existing_reload']=array(
+		'#type' => 'button',
+		'#value' => 'Video not in list',
+		'#ajax' => array(
+			'callback' => '_populate_twistage_videos',
+			'event' => 'click',
+			'wrapper' => 'existing_video_handle_wrapper',
+			'method' => 'replace',        
+		),
+	);
+	$element['displayvideo'] = array(
+		'#markup' => '<div id="display-existing-video" style="margin:20px;clear:both;">'.$default_image.'</div>',
+		'#delta'=> 0,   
+	);
+	$vid=$defaults['twistage_existing_videos'];
+	//if($vid){
+		$ds=new DotsubApi($vid);
+		$langs=$ds->getLanguages($defaults['default_language']);
+		if(!is_array($langs) || empty($langs)) $langs=array('No Languages Available');
+		$element['default_language'] = array(
+			'#title' => 'Default Subtitle Language',
+			'#type' => 'select',
+			'#options' => $langs,
+			'#prefix' => '<div id="dotsub_lang_select_wrapper">',
+			'#suffix' => '</div>',
+			'#default_value' => $defaults['default_language'],
+		);
+		$element['autostart_subtitles'] = array(
+			'#type' => 'select',
+			'#title' => 'Autostart Subtitles',
+			'#options' => array('1' => 'On', '0' => 'Off'),
+			'#default_value' => $defaults['autostart_subtitles']
+		);
+		$element['autostart_transcript'] = array(
+			'#type' => 'select',
+			'#title' => 'Autostart Transcript',
+			'#options' => array('1' => 'On', '0' => 'Off'),
+			'#default_value' => $defaults['autostart_transcript']
+		);
+	//}
+	//$element['dotsub']=$dotsub;
+  return $element;
+}
+function twistal_field_widget_error($element, $error, $form, &$form_state) {
+  form_error($element['value'], $error['message']);
+}
+function twistal_field_schema($field) {
+  switch ($field['type']) {
+    case 'twistage_existing':
+      $columns['twistage_existing_category'] = array('type' => 'varchar', 'length' => 255, 'not null' => FALSE, 'sortable' => TRUE, 'default' => '');
+	  $columns['twistage_existing_videos'] = array('type' => 'varchar', 'length' => 255, 'not null' => FALSE, 'sortable' => TRUE, 'default' => '');
+	  $columns['autostart_subtitles'] = array('type' => 'int', 'length' => 1, 'sortable' => TRUE, 'default' => 0);
+	  $columns['autostart_transcript'] = array('type' => 'int', 'length' => 1, 'sortable' => TRUE, 'default' => 0);
+	  $columns['default_language'] = array('type' => 'varchar', 'length' => 10, 'not null' => FALSE, 'sortable' => TRUE, 'default' => null);
+      return array('columns' => $columns);
+  }
+}
+function twistal_element_info() {
+	$elements = array(
+		'twistage_existing' =>
+			array(
+				'#input' => TRUE,
+				//'#process' => array('twistage_existing_process'),
+			),
+		);
+	return $elements;
+}
+function twistage_existing_process($element, &$form_state, $form) {
+	return $element;
+}
+function twistal_field_is_empty($item,$field){
+  if (!isset($item['twistage_existing_videos']) || (empty($item['twistage_existing_videos']) && (string) $item['twistage_existing_videos'] !== '0')) {
+    return TRUE;
+  }
+  return FALSE;
+}
+function _populate_twistage_videos(&$form,$form_state,$test=0){
+	$lang=field_language('node', $form['#node'], $form_state['triggering_element']['#parents'][0], null);
+	return $form[$form_state['triggering_element']['#parents'][0]][$lang][0]['twistage_existing_videos'];
+}
+function _twistage_video_select(&$form,$form_state,$test=0){
+	$lang=field_language('node', $form['#node'], $form_state['triggering_element']['#parents'][0], null);
+	return $form[$form_state['triggering_element']['#parents'][0]][$lang][0]['default_language'];
+}
+function twistal_field_formatter_info() {
+  return array(
+    'twistage_existing' => array(
+       'label' => t('Twistage External Video'),
+       'field types' => array('twistage_existing'),
+    ),
+  );
+}
+function twistal_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+	$vid=$items[0]['twistage_existing_videos'];
+	if(strlen($vid)<5) return '';
+	$pid = 0;
+	$video=new twistage_video($vid);
+	$assets=$video->assets;
+	if(!isset($assets) || empty($assets) || substr($video->title,0,2)=='a:'){
+		$video=import_twistal_video($vid);
+	}
+	$video->pid=$pid;
+	$video->nid=$entity->nid;
+	$video->dotsub_settings=$items[0];
+	$tags=db_query("SELECT * FROM tags_twistal WHERE vid='$vid'")->fetchAllAssoc('tag');
+	foreach($tags as $tag=>$row){
+		$ntags[]=$tag;
+	}
+	$video->tags=$ntags;
+	if(!$video) return '';
+	$profile = new twistage_profile($video->pid);
+	$preroll_url = '';  
+	if($profile->preroll && isset($profile->preroll_url)){
+		$preroll_url = $profile->preroll_url;
+	}
+	
+	if (arg(0) == 'node' && is_numeric(arg(1))) $nodeid = arg(1);
+    $relatedVideos="/twistage/getnode/".$nodeid.".xml";
+	return array(array('#markup'=>theme('jwplayer_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
+}
+function twistage_hooks(){
+	if($_POST['vid']) import_twistal_video($_POST['vid']);
+}
+function import_twistal_video($vid){
+	$api=twistal(0);
+	$video=$api->load_from_url('http://twistassets.kabbalah.com/videos/'.$vid.'.json',array());
+	$twistvid=new twistage_video();
+	$twistvid->import($video,$api->profile->pid);
+	if(!$twistvid->save()){
+		//drupal_set_message(t('There was a problem syncing this video'));
+	}else{
+		return $twistvid;
+	}
+}
+function twistal_jwplayer_settings_alter(&$jwplayer){
+	$video=$jwplayer['video'];
+	$width=$jwplayer['settings']['width'];
+	if(!isset($video->assets) || empty($video->assets)){
+		//$video=import_twistal_video($video->vid);
+	}
+	$profile = new twistage_profile($video->pid);
+	if(count($video->assets)<5) $video=import_twistal_video($video->vid);
+	if (isset($preroll->vid) && $preroll->vid) {
+		$preroll->hide_controller = TRUE;
+		array_unshift($videos, $preroll);
+	}
+	$video_id=$video->vid;
+	$assets=array();
+	foreach($video->assets as $asset){
+		switch(strtolower(substr($asset->video_format_name,0,5))){
+			case 'mediu':
+				$assets['medium']=$asset;
+				break;
+			case 'small':
+				$assets['small']=$asset;
+				break;
+			case 'large':
+				$assets['large']=$asset;
+				break;
+			case 'ipad_':
+				$assets['mobile']=$asset;
+				break;
+		}
+	}
+	$jwplayer['settings']['playlist'][0]['image']="http://twistassets.kabbalah.com/videos/$video_id/screenshots/$width"."w.jpg";
+	//$jwplayer['settings']['playlist'][0]['ga']=array('idstring'=>"title",'trackingobject'=>"pageTracker");
+	$jwplayer['settings']['playlist'][0]['sources']=array();
+	if(isset($assets['mobile']) && isset($assets['medium'])) $jwplayer['settings']['playlist'][0]['sources'][] = array('file'=>str_replace('file.mp4','play.mp4',$assets[myDevice()->isMobile()?'mobile':'medium']->download_url), 'label'=>myDevice()->isMobile()?'Mobile':'Medium');
+	if(isset($assets['small'])) $jwplayer['settings']['playlist'][0]['sources'][] = array('file'=>str_replace('file.mp4','play.mp4',$assets['small']->download_url),'label'=>"Small");
+	if(isset($assets['large'])) $jwplayer['settings']['playlist'][0]['sources'][] = array('file'=>str_replace('file.mp4','play.mp4',$assets['large']->download_url),'label'=>"Large");
+}
+function sync_twistage_tags(){
+	$api=twistal(0);
+	$p=1;
+	$tags[0]='-Select One-';
+	while($data=$api->fetch_video_tags($p)){
+		foreach($data->tags as $tagi){
+			$tags[$tagi->name.'']=$tagi->name;
+		}
+		$p++;
+		if($data->page_info->is_last_page==1) break;
+	}
+	variable_set('twistal_tags',$tags);
+	return $tags;
+}
+/*
+ * Returns keyed array usable for select lists of videos with specific tags
+ */
+ function get_twistage_video_select($tags, $pid=1){
+	if(!$tags || $tags=='') return array('-none-');
+	$option = db_query("SELECT v.vid, v.title FROM twistal_data AS v LEFT JOIN tags_twistal AS t ON t.vid=v.vid WHERE tag='$tags' AND availability='available' ORDER BY created DESC")->fetchAllKeyed();
+	asort($option);
+	//array_unshift($option,'-none-');
+	//dsm($option);
+	return $option;
+}
+if(!function_exists('_get_field_name')){
+	function _get_field_name($field,$entity='node',$type=false){
+		$query='SELECT fc.field_name FROM field_config AS fc LEFT JOIN field_config_instance AS fci ON fci.field_name=fc.field_name WHERE fci.entity_type=:entity AND fc.type=:field';
+		$args=array(':entity' => $entity, ':field' => $field);
+		if($type){
+			$query.=' AND fci.bundle=:bundle';
+			$args[':bundle']=$type;
+		}
+		return db_query($query,$args)->fetchCol();
+	}
+}
+function twistal_preprocess_node(&$vars){
+	include_once('includes/twistal.api.inc');
+	$fields=_get_field_name('twistage_existing');
+	$vars['video_subtitles']=array();
+	$vars['video_length']=array();
+	foreach($fields as $field){
+		if(isset($vars[$field]) && isset($vars[$field][0])){
+			$video_subtitles=array();
+			$video=new twistage_video($vars[$field][0]['twistage_existing_videos']);
+			$asset=array_shift(array_values($video->assets));
+			$video_length = gmdate("H:i:s", $asset->duration);
+			
+			$dotsub=new DotsubApi($video->vid);
+			$captions=$dotsub->loadDotsubCaptions();
+			foreach($captions as $caption){
+				$video_subtitles[]=$caption['label'];
+			}
+			$vars['video_subtitles'][]=$video_subtitles;
+			$vars['video_length'][]=$video_length;
+		}
+	}
+	if(count($vars['video_subtitles'])==1) $vars['video_subtitles']=$vars['video_subtitles'][0];
+	if(count($vars['video_length'])==1) $vars['video_length']=$vars['video_length'][0];
+}
+function twistal_views_api() {
+  return array(
+    'api' => views_api_version(),
+  );
+}
+class twistal_views_handler_duration_field extends views_handler_field_entity{
+	function option_definition() {
+		$options = parent::option_definition();
+		return $options;
+	}
+
+	function options_form(&$form, &$form_state) {
+		parent::options_form($form, $form_state);
+	}
+	function render($values) {
+		if ($entity = $this->get_value($values)) {
+			return $this->render_duration($entity, $values);
+		}
+	}
+	function render_duration($node, $values){
+		$fields=_get_field_name('twistage_existing','node',$node->type);
+		if(empty($fields)) return '';
+		$res=db_query('SELECT data FROM twistal_data LEFT JOIN field_data_'.$fields[0].' AS fd ON fd.'.$fields[0].'_twistage_existing_videos=twistal_data.vid WHERE fd.entity_id='.$node->nid)->fetchCol();
+		$data=unserialize($res[0]);
+		foreach($data['assets'] as $asset){
+			if($asset->is_main_asset==1) return gmdate("H:i:s", $asset->duration);
+		}
+	}
+}
+class twistal_views_handler_subtitle_field extends views_handler_field_entity{
+	function option_definition() {
+		$options = parent::option_definition();
+		return $options;
+	}
+
+	function options_form(&$form, &$form_state) {
+		parent::options_form($form, $form_state);
+	}
+	function render($values) {
+		if ($entity = $this->get_value($values)) {
+			return $this->get_subtitles($entity, $values);
+		}
+	}
+	function get_subtitles($node, $values){
+		$fields=_get_field_name('twistage_existing','node',$node->type);
+		if(empty($fields)) return '';
+		$vid=db_query('SELECT '.$fields[0].'_twistage_existing_videos AS vid FROM field_data_'.$fields[0].' WHERE entity_id='.$node->nid)->fetchCol();
+		$dotsub=new DotsubApi($vid[0]);
+		$captions=$dotsub->loadDotsubCaptions();
+		if(empty($captions)) return '';
+		$video_subtitles=array();
+		foreach($captions as $caption){
+			$video_subtitles[]=$caption['label'];
+		}
+		return '<ul><li>'.implode('</li><li>',$video_subtitles).'</li></ul>';
+	}
+}
+
+class twistal_views_handler_videoid_field extends views_handler_field_entity{
+	function option_definition() {
+		$options = parent::option_definition();
+		return $options;
+	}
+
+	function options_form(&$form, &$form_state) {
+		parent::options_form($form, $form_state);
+	}
+	function render($values) {
+		if ($entity = $this->get_value($values)) {
+			return $this->get_vid($entity, $values);
+		}
+	}
+	function get_vid($node, $values){
+		$fields=_get_field_name('twistage_existing','node',$node->type);
+		if(empty($fields)) return '';
+		$vid=db_query('SELECT '.$fields[0].'_twistage_existing_videos AS vid FROM field_data_'.$fields[0].' WHERE entity_id='.$node->nid)->fetchCol();
+		return $vid[0];
+	}
+}
+
+function twistal_views_data(){
+	$data['node']['twistage_duration']=array(
+		'field' => array(
+			'title' => t('Video Duration'),
+			'help' => t('The duration of the main asset of a twistage video.'),
+			'handler' => 'twistal_views_handler_duration_field',
+		),
+	);
+	$data['node']['twistage_subtitles']=array(
+		'field' => array(
+			'title' => t('Video Subtitles'),
+			'help' => t('The available subtitles for a twistage video.'),
+			'handler' => 'twistal_views_handler_subtitle_field',
+		),
+	);
+	$data['node']['twistage_videoid']=array(
+		'field' => array(
+			'title' => t('Video Id'),
+			'help' => t('The available video id for a twistage video.'),
+			'handler' => 'twistal_views_handler_videoid_field',
+		),
+	);
+  return $data;
+}
+/*
+ *  Returns list of tags for videos in a keyed array usable in select list
+ */
+function get_twistage_video_tags_select(){
+	$result=db_query('SELECT DISTINCT tag FROM tags_twistal ORDER BY tag ASC')->fetchAllAssoc('tag');
+	$tags=array_combine(array_keys($result),array_keys($result));
+	array_unshift($tags,'Select category');
+	return $tags;
+}
+function twistal($pid){
+	static $o;
+	if(!is_object($o)) $o=new twistage_api($pid);
+	return $o;
+}
+function twistal_profiles($update=false){
+	static $profiles;
+	if(!is_array($profiles) || $update){
+		$profiles=variable_get('twistal_profiles',array());
+	}
+	return $profiles;
+}
+/*
+ *	Miscellanious helper functions
+ */
+
+if(!function_exists('dump_pre')){
+	function dump_pre($m){
+		drupal_set_message('<pre>'.print_r($m,1).'</pre>');
+	}
+}
+function myDevice(){
+	static $device;
+	if(!is_object($device)){
+		$device=new Mobile_Detect();
+	}
+	return $device;
+}
+
+function twistage_getnode($getnode){
+$nid = node_load($getnode);
+$courseId= $nid->field_course_list[und][0][nid];
+$eventId= $nid->field_event_list[und][0][nid];
+if($courseId ){
+$eventId = 'NULL';
+}else{
+$courseId = 'NULL';
+}
+try{
+$result=db_query('SELECT n.nid,n.title,vid.field_lesson_video_twistage_existing_videos
+					FROM node n
+					LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid)
+					LEFT JOIN {field_data_field_course_list courselist} ON ( nr.nid = courselist.entity_id ) 
+					LEFT JOIN {field_data_field_event_list eventlist} ON ( nr.nid = eventlist.entity_id ) 
+					LEFT JOIN {field_data_field_lesson_video vid} ON ( nr.nid = vid.entity_id )  
+					WHERE n.status =1
+					AND courselist.field_course_list_nid  = '.$courseId .' OR eventlist.field_event_list_nid  = '.$eventId .'');
+}
+catch(exception $e){
+	print_r($e);
+}
+
+  $relatedRss='<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">';
+  $relatedRss.='<channel>';
+  foreach($result as $value){
+  $relatedRss.=  '<item>';
+  $relatedRss.= '<title>'.$value->title.'</title>';
+  $relatedRss.= '<link> /'.drupal_get_path_alias('node/'.$value->nid).'</link>';
+  $relatedRss.=   '<media:thumbnail url="http://twistassets.kabbalah.com/videos/'.$value->field_lesson_video_twistage_existing_videos.'/screenshots/150w.jpg"/>';
+  //$relatedRss.=  '<media:content url="http://example.com/videos/28839.mp4" type="video/mp4" />';
+  $relatedRss.=  '</item>';
+  }
+  $relatedRss.='</channel>';
+  $relatedRss.='</rss>';
+  
+echo $relatedRss;
+}

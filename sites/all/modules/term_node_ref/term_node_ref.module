@@ -1,0 +1,147 @@
+<?php
+
+function term_node_ref_field_info() {
+  return array(
+    'term_node_ref' => array(
+      'label' => t('Node Reference By Term'),
+      'description' => t('Adds AJAX handling to a term reference field to populate a select list of nodes with that term'),
+	  'settings' => array('taxonomy_field' => '', 'node_type' => ''),
+      'instance_settings' => array('prefix' => '', 'suffix' => ''),
+      'default_widget' => 'term_node_ref',
+      'default_formatter' => 'term_node_ref',
+    )
+  );
+}
+function term_node_ref_field_widget_info() {
+  return array(
+    'term_node_ref' => array(
+      'label' => t('Node Reference By Term'),
+      'field types' => array('term_node_ref'),
+	  'settings' => array(),
+	  'behaviors' => array(
+		'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+        'default value' => FIELD_BEHAVIOR_NONE,
+      ),
+    ),
+  );
+}
+function term_node_ref_field_widget_form_alter(&$entity, $form_state, $context){
+	if(!isset($entity['#entity']->type)) return;
+	$fields=_get_field_name('term_node_ref','node',$entity['#entity']->type);
+	if(empty($fields)) return;
+	$field=field_info_field($fields[0]);
+	if($entity['#field_name']==$field['settings']['taxonomy_field']){
+		$entity['#ajax'] = array(
+			'callback' => '_term_node_nid_ajax',
+			'event' => 'change',
+			'wrapper' => 'term_node_ref_wrapper',
+			'method' => 'replace',
+			'effect' => 'fade',
+		);
+	}
+}
+function _term_node_nid_ajax(&$form,$form_state,$test=0){
+	$fields=_get_field_name('term_node_ref','node',$entity['#entity']->type);
+	
+	return $form[$fields[0]];
+}
+function term_node_ref_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+	$element += array(
+		'#type' => $instance['widget']['type'],
+		'#default_value' => isset($items[$delta]) ? $items[$delta] : array('nid'=>0),
+	);
+	$term_field=$field['settings']['taxonomy_field'];
+	$term_data=field_get_items('node', $form['#node'], $term_field);
+	$tid=$term_data[0]['tid'];
+	if(isset($form_state['values']) && is_array($form_state['values']) && isset($form_state['values'][$field['settings']['taxonomy_field']])){
+		$lang=field_language('node', $form['#node'], $term_field, null);
+		$tid=$form_state['values'][$field['settings']['taxonomy_field']][$lang][0]['tid'];
+	}
+	$type=$field['settings']['node_type'];
+	$table='field_data_'.$term_field;
+	$value=$term_field.'_tid';
+	$options=db_query("SELECT n.nid, n.title FROM node AS n LEFT JOIN $table AS ftable ON ftable.entity_id=n.nid WHERE ftable.$value=:tid AND n.type=:type",array(':tid'=>$tid,':type'=>$type))->fetchAllKeyed();
+	$element['nid']=array(
+		'#type' => 'select',
+		'#options' => $options,
+		'#title' => $instance['label'],
+		'#default_value' => $element['#default_value']['nid'],
+		'#prefix' => '<div id="term_node_ref_wrapper">',
+		'#suffix' => '</div>'
+	);
+	return $element;
+}
+function term_node_ref_field_widget_error($element, $error, $form, &$form_state) {
+  form_error($element['value'], $error['message']);
+}
+function term_node_ref_field_schema($field) {
+  switch ($field['type']) {
+    case 'term_node_ref':
+      $columns['nid'] = array('type' => 'int', 'unsigned' => true);
+      return array('columns' => $columns);
+  }
+}
+function term_node_ref_element_info() {
+	$elements = array(
+		'term_node_ref' =>
+			array(
+				'#input' => TRUE,
+				//'#process' => array('twistage_existing_process'),
+			),
+		);
+	return $elements;
+}
+function term_node_ref_process($element, &$form_state, $form=array()) {
+	return $element;
+}
+function term_node_ref_field_is_empty($item,$field){
+  if (!isset($item['nid']) || empty($item['nid']) || $item['nid']==0) {
+    return TRUE;
+  }
+  return FALSE;
+}
+function term_node_ref_field_formatter_info() {
+  return array(
+    'term_node_ref' => array(
+       'label' => t('Node Reference By Term'),
+       'field types' => array('term_node_ref'),
+    ),
+  );
+}
+function term_node_ref_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+	$results=array();
+	foreach($items as $item){
+		$title=db_query('SELECT title FROM node WHERE nid='.$item['nid'])->fetchField();
+		$results[]='<a href="/'.drupal_get_path_alias('node/'.$item['nid']).'">'.$title.'</a>';
+	}
+	if(empty($results)) return '';
+	return array(array('#markup'=>'<ul><li>'.implode('</li><li>',$results).'</li></ul>'));
+}
+function term_node_ref_field_settings_form($field, $instance, $has_data){
+	$settings = $field['settings'];
+	$bundle=field_info_instances('node',$instance['bundle']);
+	$fields=_get_field_name('taxonomy_term_reference',$entity='node',$instance['bundle']);
+	$options=array();
+	foreach($fields as $field){
+		if(isset($bundle[$field])){
+			$options[$field]=$bundle[$field]['label'];
+		}
+	}
+	$form['taxonomy_field'] = array(
+		'#type' => 'select',
+		'#options' => $options,
+		'#title' => t('Term Field'),
+		'#default_value' => $settings['taxonomy_field'],
+		'#required' => TRUE,
+		'#description' => t('The term reference field that determines the taxonomy filter for nodes referenced by this field.'),
+	);
+	$form['node_type'] = array(
+		'#type' => 'select',
+		'#options' => node_type_get_names(),
+		'#title' => 'Node Type',
+		'#default_value' => $settings['node_type'],
+		'#required' => true,
+		'#description' => 'Node types that may be referenced by this field'
+	);
+	return $form;
+}

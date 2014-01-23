@@ -1,0 +1,8 @@
+name = Twistage Dotsub Integration
+description = Caption support integrated into the jwplayer used by the twistal module
+package = Twistal
+files[] = includes/dotsub.api.inc
+dependencies[] = twistal
+dependencies[] = jwplayer
+core = 7.x
+version = 7.x-1.0

@@ -1,0 +1,154 @@
+<?php
+	// Block implementation 
+	// Step 1: Block Info
+	function ukabbalah_courses_by_parent_block_info() {
+    
+		$blocks['courses_grid_view'] = array(		
+			'info' => t('Courses for a Parent Course'),
+		);
+
+		return $blocks;
+	}
+	
+	// Step 2: Block View Implementation
+	function ukabbalah_courses_by_parent_block_view($delta = '') {
+	
+		// The $delta parameter tells us which block is being requested.
+		switch ($delta) 
+		{
+			case 'courses_grid_view':
+				// Create your block content here
+				$block['subject'] = t('Courses');
+				$block['content'] = kabbalah_courses_grid_view_show();
+				break;
+				
+		}
+
+		return $block;
+	}
+	
+	function kabbalah_courses_grid_view_show() {
+	
+		$node = menu_get_object();
+		if ($node && $node->nid && $node->type == 'parent_course') 
+		{
+			$parent_nid = $node->nid;
+			$sql =  "SELECT n.nid,n.type,n.title,st.field_subtitle_value,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed ".
+					"FROM {node n} ".
+					"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid) ".
+					"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+					"LEFT JOIN {field_data_field_subtitle st} ON ( nr.nid = st.entity_id AND nr.vid = st.revision_id ) ".
+					"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
+					"WHERE n.status =1 ".
+					"AND n.type in ('course') ". 
+					"AND pc.field_parent_course_nid =".$parent_nid." ".
+					"ORDER BY n.changed DESC";
+		
+			$result = "";
+			$result = db_query( $sql );
+			$resultHTML  = "";
+			$resultHTML .= "<ul class='masonry'>";
+		
+			foreach( $result as $record ) {
+			
+				$title = $record->title;
+				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+				
+				$subtitle = $record->field_subtitle_value;
+				$subtitle = preg_replace("/&#?[a-z0-9]+;/i","",$subtitle); // removes $nbsp
+				
+				
+				$body = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $record->body_value);
+				$body = preg_replace('#<object(.*?)>(.*?)</object>#is', '', $body);
+				$teaser = preg_replace('#<img(.*?)>#is', '', $body);
+				$teaser = preg_replace("/&#?[a-z0-9]+;/i","",$teaser); // removeds $nbsp
+				$teaser = stripslashes($teaser);
+				$teaser = strip_tags($teaser);
+				$pos=strpos($teaser, ' ', 100);
+				$teaser = substr( $teaser , 0 ,$pos);
+				$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
+				$node = node_load($record->nid , NULL, TRUE);
+				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }					  
+				$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+				
+				
+				$resultHTML .= "<li class='masonry-brick'>";
+				$resultHTML .= "<span class = 'imagesCont'>";
+                $resultHTML .= "<img src = '".$record->field_image_cdn_link_value."' class = 'theImage'>";
+                $resultHTML .= "<a href =".$path.">"; 
+                $resultHTML .= "<span class ='theDescCont'>";
+                $resultHTML .= "<span class='theTitle'>";
+           
+				if( sizeof($node->field_this_course_contains) > 0 )
+				{
+					if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+					else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+					else $media_type = 'bothAdVdImg';
+				} else {
+
+					$media_type = 'bothAdVdImg';
+				}	
+				
+				$resultHTML .= "<span class= '".$media_type."'></span>";
+				if( $subtitle != "" )
+				{
+				 $resultHTML .= "<span class = 'theJsonTitle'>".$subtitle."</span>";
+				} else {
+				 $resultHTML .= "<span class = 'theJsonTitle'>".$title."</span>";
+				}
+                $resultHTML .= "</span>";
+
+                $resultHTML .= "<span class='teachingsTopicAndDate'>";
+                $resultHTML .= $author_name;
+                $resultHTML .= " | ";
+                $resultHTML .= date( 'F jS, Y',$record->changed );
+                $resultHTML .= "</span>";
+				$resultHTML .= "<span class= '".$membership->name."'></span>";
+				$resultHTML .= "<span class='theTeaser'>";
+                $resultHTML .= "<p>".$teaser."</p>";
+                $resultHTML .= "<span class = 'readMore'>";
+                $resultHTML .= "read more"; 
+                $resultHTML .="</span>";
+                $resultHTML .="</span>";
+                $resultHTML .="</span>";
+                $resultHTML .="</a>";
+                $resultHTML .="</span>"; 
+				
+				
+				// $resultHTML .= "<div class = 'imagesCont'>";
+				// $resultHTML .= "<img src = '".$record->field_image_cdn_link_value."' class = 'imageStyle'>";
+				// $resultHTML .= "<a href ='".$path."'>";				
+				// $resultHTML .= "<span class ='descCont'>";
+				// $resultHTML .= "<span class='titleWrapper'>";
+				// $resultHTML .= "<span class='artImg'>";
+				// $resultHTML .= "</span>";
+				
+				// if( $subtitle != "" )
+				// {
+					// $resultHTML .= "<span class = 'theJsonTitle'>".$subtitle."</span>";
+				// } else {
+					// $resultHTML .= "<span class = 'theJsonTitle'>".$title."</span>";
+				// }
+				
+				// $resultHTML .= "</span>";
+				// $resultHTML .= "<span class='teachingsTopicAndDate'>".$author_name." | ".date( 'F jS, Y',$record->changed )."</span>";
+				// $resultHTML .= "<span class='teaser'>";
+				// $resultHTML .= "<p>".$teaser."</p>";
+				// $resultHTML .= "<span class = 'teachersPath'>read more</span>";
+				// $resultHTML .= "</span>";
+				// $resultHTML .= "</span>";
+				// $resultHTML .= "</span>";
+				// $resultHTML .= "</a></div>";
+				$resultHTML .= "</li>";																			  
+			
+			
+			
+			
+			}
+			$resultHTML .= "</ul>";
+			return 	$resultHTML;
+		}	
+	}
+	

@@ -1,0 +1,27 @@
+.transcription h3, .transcription select{
+	float:left;
+}
+.transcript-content{
+	max-height:230px;
+	overflow:auto;
+	clear:both;
+	position:relative;
+	margin-bottom:5px;
+	background: #fff;
+	padding: 0 20px;
+}
+.transcript-content .hover,.transcript-content .current{
+	background:#d4e6ec;
+	color: #433a3a;
+	padding: 0 5px;
+}
+.transcript-time{
+    font-family: ProxiRegular;
+    font-size: 15px;
+    font-weight: normal;
+    color: #433a3a;
+    line-height: 22px;
+}
+#jwplayer1_controlbar_cc_overlay .jwmenu .jwoption{
+	height:inherit;
+}

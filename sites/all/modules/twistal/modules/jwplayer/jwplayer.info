@@ -1,0 +1,5 @@
+name = JW Player 6
+description = Integration for JW Player 6
+package = Twistal
+core = 7.x
+version = 7.x-1.0

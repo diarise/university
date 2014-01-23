@@ -1,0 +1,1417 @@
+
+/* CSS Document */
+@font-face {
+	font-family: 'ProxiLight';
+	src: url('ProximaNova-Light.eot');
+	src: url('ProximaNova-Light?#iefix');
+	src: local('☺'), url('ProximaNova-Light.woff') format('woff'), url('ProximaNova-Light.ttf') format('truetype'), url('ProximaNova-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ProxiRegular';
+	src: url('ProximaNova-Reg-webfont.eot');
+	src: local('☺'), url('ProximaNova-Reg-webfont.woff') format('woff'), url('ProximaNova-Reg-webfont.ttf') format('truetype'), url('ProximaNova-Reg-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'ProxiRegItalic';
+    src: url('ProximaNova-RegItalic-webfont.eot');
+    src: local('☺'),url('ProximaNova-RegItalic-webfont.svg') format('svg'), url('ProximaNova-RegItalic-webfont.woff') format('woff'), url('ProximaNova-RegItalic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'ProxiBold';
+	src: url('ProximaNova-Bold-webfont.eot');
+	src: local('☺'), url('ProximaNova-Bold-webfont.woff') format('woff'), url('ProximaNova-Bold-webfont.ttf') format('truetype'), url('ProximaNova-Bold-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'ProxiRegular';
+    -webkit-font-smoothing: antialiased;
+}
+p {
+	font-family: 'ProxiRegular';
+	font-weight: normal;
+	color: #433b3a;
+	text-align: left;
+	font-size: 16px;
+	line-height: 24px;
+}
+a {
+  color: #9C1F19;
+  text-decoration: none;
+}
+a:hover {
+  color: #53100d;
+  text-decoration: none;
+}
+em {
+    font-family: 'ProxiRegItalic';
+    font-style: normal;
+}
+strong {
+  font-family: 'ProxiBold';
+  font-weight: normal;
+}
+#slideshow ul {
+    margin: 0;
+}
+h1#page-title {
+    color: #999999;
+    float: left;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 24px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    width: 700px;
+}
+h2 {
+    font-size:30px; 
+    line-height: 32px;
+    color: #433a3a;
+    font-family: 'ProxiRegular';
+    text-transform: uppercase;
+    font-weight: normal;
+}
+h3 {
+    height: 30px;
+    margin: 0 auto;
+    max-width: 1600px;
+    min-width: 920px;
+    padding-bottom: 20px;
+}
+h3 a {
+    color: #999999;
+    font-family: ProxiLight;
+    font-size: 40px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+/* Header - Top */
+
+#topHeaderWrapper {
+    background-color: #cccccc;
+    height: 30px;
+    padding: 10px 0;
+}
+.topHeader {
+    margin: 0 auto;
+    min-width: 940px;
+    max-width: 1580px;
+    padding-right: 20px;
+}
+#topImageCont{
+    float: left;
+    margin-left: 20px;
+    margin-top: -3px;
+}
+.topHeader #topImageCont {
+    padding-left: 0 !important;
+}
+#headerSearchLinksWrapper {
+    float: none !important;
+    width: 100%;
+}
+#headerLinks .donate, #headerSearchLinksWrapper {
+    margin-right: 0 !important;
+}
+#headerLinks{
+    float:none;
+}
+#headerLinks a:hover {
+  color: #9C1F19;
+}
+#headerDonateButton {
+    float: left;
+    background: #9c1f19;
+    width: 65px;
+    height: 26px;
+    margin-right: 20px;
+    margin-top: 2px;
+    text-align: center;
+    line-height: 22px;
+}
+#headerDonateButton a {
+    font-family: 'ProxiRegular';
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+}
+#headerSearch {
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+.globalSearchSection{
+	width: 300px;
+}
+
+/* Header - Universal */
+#block-nice-menus-2 .content ul#nice-menu-2 li:nth-child(3) {
+    background: url("../images/nav-triangle-wht.png") no-repeat scroll center bottom transparent;
+}
+ul#nice-menu-2 li.menu-412 a{
+    color: #9C1F19;
+}
+#headerLinks .region-universalmenu{
+    float: left;
+    margin-left: 20px;
+}
+#headerLinks .donate, #headerSearchLinksWrapper {
+    margin-right: 0 !important;
+}
+#headerLinks .donate, .donateFloat {
+    float: right;
+    margin-left: 20px;
+    text-align: center;
+}
+#headerLinks .donate, .donateFloat {
+    background-color: #9C1F19;
+    height: 26px;
+    margin-right: 30px;
+    width: 65px;
+}
+#headerLinks .donate a, .donateFloat a {
+    color: #FFFFFF;
+    line-height: 26px;
+}
+#headerLinks a, .donateFloat {
+    font-size: 12px !important;
+    text-transform: capitalize !important;
+}
+.donateFloat {
+    display: none;
+}
+.donateFloatFix {
+    display: inline;
+}
+.donateFloat {
+    margin: 4px 10px 0;
+}
+#headerLinks a {
+    color: #433A3A;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#universalMenuWrapper{
+    background:url("../images/shadow_universal_bar.png") repeat-x;
+    height: 48px;
+}
+#universalMenuWrapper .topHeader {
+  padding-right: 0 !important;
+}
+ul.menu li {
+  margin: 0;
+}
+.universalMenu ul{
+	/*width: 100%;*/
+	margin: 0 auto;
+	text-align: center;
+	height: 40px;
+    padding: 10px 20px 0 0;
+}
+.universalMenu li{	
+	margin: 0px;
+	padding: 0 42px 0 0 !important;
+	list-style-type: none;
+	overflow: hidden;
+	text-align: center;
+	display: inline;	
+}
+.universalMenu ul.menu li.last{
+    padding-right: 0px!important;
+}
+.universalMenu li a {
+	font-size: 16px;
+	font-family: 'ProxiRegular';
+	color: #ffffff;
+	text-decoration: none;
+}
+ .universalMenu li a:hover {
+	color: #FF665F;
+	font-family: 'ProxiRegular';
+}
+ .universalMenu li a.active {
+	color: #ffffff;
+	font-family: 'ProxiBold';
+}
+#block-nice-menus-2 .content ul#nice-menu-2 li:nth-child(3) {
+    background: url("../images/nav-triangle-wht.png") no-repeat scroll center bottom transparent;
+}
+#headerLinks ul#nice-menu-2 li a:nth-child(3) {
+    color: #9C1F19!important;
+}
+/* Header - Local Menu */
+/**/
+#mainContentLogoMenuWrapper, #mainOuterContentLogoMenuWrapper {
+    background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom transparent;
+    height: 40px;
+    position: relative;
+    z-index: 140;
+}
+.scrolling{
+    z-index: 1400!important;
+}
+#newMainContentLogoTitle {
+    float: left;
+    text-align: right;
+    width: 268px;
+    margin-top: 7px;
+}
+#newMainContentLogoTitle a {
+    color: #9C1F19;
+    font-size: 15px;
+}
+#newMainContentLogoTitle a {
+    color: #9C1F19;
+    font-size: 15px;
+}
+#headerSearch {
+    float: right;
+    margin-top: -4px;
+}
+.globalSearchSection {
+    line-height: 20px;
+    width: 180px;
+}
+#outerMenu ul.nice-menu li a {
+    color: #433A3A;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.highlightTopic ul#nice-menu-1 .menu-406 a,
+.highlightHome ul#nice-menu-1 .menu-218 a,
+.highlightAuthors ul#nice-menu-1 .menu-407 a,
+.highlightDemand ul#nice-menu-1 .menu-444 a{
+   color: #9C1F19; 
+}
+/**/
+#mainoutercontentLogoMenuWrapper {
+    background: url("../images/shadow_local_menu.png") repeat-x 100px 100%;
+    position: relative;
+    height: 100px;
+    z-index: 140;  
+}
+#mainContentLogo a{
+    font-family: 'ProxiRegular',Arial, Helvetica,sans-serif;
+    font-size: 30px;
+    color: #127795;
+    text-decoration: none;
+    text-transform: uppercase; 
+    text-align: center;
+    padding-top: 11px;
+    display:block;
+}
+#block-nice-menus-2{
+    text-align: center;
+}
+
+#block-nice-menus-2{
+    text-align: center;
+}
+#block-nice-menus-2 ul#nice-menu-2:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+#block-nice-menus-2 ul#nice-menu-2 {
+    border: medium none;
+    float: none;
+    text-align: center;
+}
+#block-nice-menus-2 .content ul#nice-menu-2 li{
+    border:none;
+}
+#block-nice-menus-2 .content ul#nice-menu-2 li.last {
+    padding-right:0;
+}
+
+ul #nice-menu-2 a{
+    padding: 0px!important;
+}
+#block-nice-menus-2 #nice-menu-2 li{
+    border: medium none;
+    display: inline-block;
+    float: none;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#block-nice-menus-2 #nice-menu-2 li.first {
+  margin-left: 0 !important;
+}
+#block-nice-menus-2 #nice-menu-2 li.last {
+  margin-right: 0 !important;
+}
+#block-nice-menus-2 .menu-2280{
+    padding-left: 0!important;
+} 
+#block-nice-menus-2 .content ul#nice-menu li a{
+    color:#433a3a;
+    font-size:18px;
+    text-decoration:none;
+    text-transform: uppercase;
+}
+#block-nice-menus-2 .content ul.nice-menu li.last a{
+    margin-left: 0px; 
+}
+#block-nice-menus-2 .content ul.nice-menu li a:hover{
+    color:#9c1f19;
+}
+#block-nice-menus-2 .content ul.nice-menu li a.active{
+    /*color:#9c1f19; */
+}
+#mainContentMenu {
+    float: left;
+    margin-left: 32px;
+    margin-top: 8px;
+}
+#nice-menu-2 {
+    margin: 0 auto;
+    z-index: 200;
+}
+#block-nice_menus-1 .content ul.nice-menu {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#outerMenu ul.nice-menu li.first {
+    margin-left: 0 !important;
+}
+#outerMenu ul.nice-menu li.last {
+    margin-right: 0 !important;
+}
+#outerMenu ul.nice-menu li {
+    display: inline-block;
+    float: none;
+    margin: 0 5px;
+}
+#block-nice_menus-1 .content ul.nice-menu li {
+    border: medium none;
+}
+ul.nice-menu li {
+    background-image: none;
+    margin: 0;
+    padding-left: 0;
+}
+ul.nice-menu-down li {
+    border-top: 1px solid #CCCCCC;
+}
+ul.nice-menu li {
+    border-top: 0 none;
+    float: left;
+}
+ul li {
+    list-style: none outside none;
+}
+.scrolling {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+}
+.scrolling .topHeader {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+.scrolling #newMainContentLogoTitle {
+    margin-left: 20px;
+    text-align: left;
+    width: auto;
+}
+#outerMenu{
+    margin-bottom:-4px;
+}
+/* Main Content Area */
+
+#aboutus {
+    margin: 0 auto;
+    width: 960px;
+}
+#about-left {
+    float: left;
+    width: 500px;
+    margin-top: 20px;
+}
+#about-left h2 {
+    width: 350px;
+}
+#about-right {
+    float: right;
+    padding: 40px;
+    width: 280px;
+    background: #f5f5f5;
+}
+#about-right p {
+    font-size: 14px; 
+    line-height: 20px; 
+    color: #433a3a;
+    margin: 0; 
+}
+#about-right p.hoursTitle, #about-right p.addressTitle {
+    color: #9c1f19; 
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+#about-right p.hoursTitle {
+    margin-top: 30px;
+}
+.hours {
+     position: absolute;
+    right: 20px;
+    text-align: right;
+}
+
+/************************social media section*********************/
+
+#SocialMediaWrapper{
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+    margin-top: -5px; 
+    background:#e6e6e6;
+    float: left;
+}
+#SocialMedia{
+    width: 940px;
+    height: 300px;
+    padding: 0px 20px 0px 20px; 
+    margin: 0 auto;     
+}
+#fpSocialMediaBlock1{
+    width: 218px;
+    height: 260px;
+    float: left;
+    padding: 20px 20px 20px 62px;
+    margin-right: 20px;
+    background:url(../images/icon-twitter-dark-60x41.png)#fff 8px 20px no-repeat;
+}
+.tweet-authorphoto{
+    display: none;
+}
+div ul li .tweet-author a{
+    color: #433A3A;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+}
+div ul li .tweet-author a:hover {
+    color: #9C1F19;
+}
+div ul li .tweet-text{
+    color: #433A3A;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+}
+div ul li .tweet-text a{
+    color: #9c1f19;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+}
+div ul li .tweet-text a:hover, .twitLink a:hover {
+    color: #53100d;
+}
+div.tweets-pulled-listing .tweet-time a{
+    color: #433a3a;
+    font-family: ProxiRegItalic;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none;
+}
+.twitLink a{
+    color: #9c1f19;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 17px;
+    margin-top: 8px;
+    text-decoration: none;
+}
+#fpSocialMediaBlock2{
+    float: left;
+    margin-right: 20px;
+    width: 300px;
+}
+#fpSocialMediaBlock3{
+    width: 200px;
+    height: 260px;
+    float: left;
+    padding: 20px 20px 20px 80px;
+    background:url(../images/icon-qoute-dark-59x41.png)#fff 8px 20px no-repeat;
+}
+#fpSocialMediaBlock3 p {
+    font-family: ProxiRegular;
+    font-style: italic;
+    line-height: 20px !important;
+    margin-top: 0;
+    padding-top: 0;
+}
+#block-views-tweets-block{
+    color: #443A3A;
+    font-family: ProxiRegular;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 20px;
+}
+.twitLink a{
+    margin-top: 0;
+}
+#block-block-5 .content p{
+     margin-top: 0;
+}
+#block-views-tweets-block li{
+    margin: 0 0 0 16px;
+}
+#block-views-tweets-block .views-field.views-field-created-time {
+    display: block;
+    margin-top: 8px;
+}
+#block-block-18 p{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+#block-block-18 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    width: 300px;
+}
+#views_slideshow_singleframe_main_testimonial-block_1 p{
+    color: #433A3A;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.pluginSkinLight{
+    background-color:#FFFFFF !important;
+}
+#block-block-4 p {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0;
+    height: 299px;
+}
+/* About Page */
+
+#mainContentBody {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 940px;
+}
+#maincontent {
+    float: left;
+    padding-top: 50px;
+    width: 700px;
+}
+#sidemenu { 
+    width:180px; 
+    float:right; 
+    background:#f5f5f5;
+    padding: 20px 20px 20px 20px;
+}
+#block-menu-menu-about-menu .content ul.menu{
+    padding-bottom: 0;
+    padding-left: 0;
+}
+#block-menu-menu-about-menu .content ul.menu li{
+    list-style: none;
+}
+#block-menu-menu-about-menu .content ul.menu li a{ 
+    color:#9c1f19;
+    font-size:16px;
+    line-height:19px;
+}
+#block-menu-menu-about-menu .content ul.menu li a:hover {
+    color: #53100d;
+}
+#block-menu-menu-about-menu .content ul.menu li a.active{ 
+    color:#433a3a;
+    font-size:16px;
+    line-height:19px;
+}
+#block-menu-menu-about-menu .content ul.menu li ul {
+    margin-left: 15px;
+}
+#fplocationclasses, #fplocationevents {
+    clear: both;
+    float: left;
+    height: 220px;
+    padding: 70px 0 0;
+    width: 100%;
+}
+#fplocationevents ul, #fplocationclasses ul {
+    margin-top: 20px;
+}
+/****************Text editor styles****************/
+
+.translation-text {
+    font-family: Georgia;
+    font-size: 15px;
+    line-height: 24px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: justify;
+}
+.translation-text span {
+    background-color: #efefef;
+}
+.hebrew-text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 21px;
+    line-height: 30px;
+    text-align: justify;
+    color: #433b3a;
+    margin: 12px 40px 12px 40px;
+}
+.hebrew-text-2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 21px;
+    line-height: 30px;
+    color: #433b3a;
+    text-align: right;
+    text-align: justify;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.small-text, .smalltext {
+    font-family: ProxiRegular;
+    font-size: 12px;
+    line-height: 17px;
+    color: #433b3a;
+}
+.small-text-2, .smalltext2 {
+    font-family: ProxiRegular;
+    font-size: 12px;
+    line-height: 17px;
+    color: #433b3a;
+    margin: 0 40px;
+}
+.small-title {
+    font-family: ProxiRegular;
+    font-size: 16px;
+    line-height: 24px;
+    color: #433a3a;
+    margin: 0 0 10px;
+}
+.regular-text, .regulartext {
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #433b3a;
+    text-align: left;
+}
+.regular-text-indent {
+    font-family: ProxiRegular;
+    font-size: 16px;
+    line-height: 24px;
+    color: #433a3a;
+    margin: 10px 40px 10px 40px;
+}
+.big-text, .bigtext {
+    font-family: ProxiRegular;
+    font-weight:normal;
+    font-size:20px;
+    line-height: 28px;
+    color:#433b3a;
+    text-align:left;
+}
+.quote-regular, .quoteregular {
+    font-family:Georgia;
+    font-weight:normal;
+    font-size:16px;
+    line-height: 25px;
+    color:#433b3a;
+    text-align:left;
+    padding-right:40px;
+    padding-left:40px;
+}
+.quote-big, .quotebig {
+    font-family:Georgia;
+    font-weight:normal;
+    font-style:italic;
+    font-size:21px;
+    line-height: 30px;
+    color:#8b8b8b;
+    text-align:left;
+}
+.story {
+    font-family:Georgia;
+    font-weight:normal;
+    font-style:italic;
+    font-size:17px;
+    line-height: 26px;
+    color:#433b3a;
+    text-align:left;
+    padding-right:40px;
+    padding-left:40px;
+}
+.internatitle {
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:24px;
+    line-height: 24px;
+    color:#433b3a;
+    text-align:left;
+    text-transform:uppercase;
+    margin: 48px 0 12px;
+}
+.title {
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:30px;
+    line-height: 24px;
+    color:#433b3a;
+    text-align:left;
+    text-transform:uppercase;
+}
+/****************END Text editor styles****************/
+
+/****************Multimedia pages**********************/
+
+#wrapperVideoSection{
+    background-color: #433a3a;
+    height: 100%;
+    width:100%;
+    float: left;
+    margin-bottom: 39px;
+    padding-top: 24px;
+}
+#videoSection{
+    margin: auto;
+    width: 940px;
+    padding-top: 24px;
+}
+#titleMultimedia{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:25px;
+    line-height: 29px;
+    color:#fff;
+    text-align:left;
+    display: block;
+}
+#courseNameMultimedia{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:19px;
+    line-height: 26px;
+    color:#fff;
+    text-align:left;
+}
+#primaryTopicMultimedia, .pipe{
+    font-family: ProxiLight;
+    font-weight:normal; 
+    font-size:15px;
+    line-height: 26px;
+    color:#fff;
+    text-align:left;
+    text-transform: uppercase;
+} 
+#authorNameMultimedia,#dateMultimedia{
+    font-family: ProxiLight;
+    font-weight:normal; 
+    font-size:15px;
+    line-height: 26px;
+    color:#fff;
+    text-align:right;
+    display: block;
+}
+#wrapperInfoMultimedia {
+    width: 70%;
+    float: left;
+}
+.pipe{
+    margin: 0 20px;
+}
+#video-control {
+    margin: 31px auto 30px;
+    width: 620px;
+}
+.videocontent {
+    margin: auto;
+    width: 620px;
+    clear: both;
+}
+.videotitles {
+    margin: auto;
+    width: 940px;
+}
+#classesDescription{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:16px;
+    line-height: 25px;
+    color:#433a3a; 
+    text-align: left;
+    margin-bottom: 40px;
+}
+.titleDescription{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:18px;
+    color:#9c1f19;
+    text-transform: uppercase; 
+    margin-bottom: 6px;
+}
+#audio-control{
+    margin: 31px auto 30px;
+}
+/*----------------footer---------------*/
+ #footer {
+    float: left;
+    width: 100%;
+    background-color: #433A3A;
+    padding-bottom: 22px;
+ }
+#footerwrapper{
+    margin:0 auto;
+    padding-right:20px;
+    padding-left:20px;
+    width:940px;
+}
+#footerlinks{
+    clear: both;
+    padding-top: 32px;
+    float: left;
+}
+.footerlinks{
+    float:left; 
+    margin-right: 20px;
+}
+.footerlinks .block .content ul.menu{
+    list-style:none;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.footerlinks .block .content ul.menu li{
+    margin-left: 0px;
+    padding: 0px;
+}
+.footerlinks .block .content ul.menu li{
+    list-style:none;
+}
+#copywrite{
+    clear: both;
+    color:#fff;
+}
+#copywrite a{
+    color:#ffffff;
+}
+#copywrite a:hover{
+  color:#ff665f;
+}
+.pipeCopywrite{
+  margin-right: 12px;
+  margin-left: 12px;
+}
+#copywrite #block-block-2 p{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff!important;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#copywrite #block-block-2{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#copywrite #block-block-2 a{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#copywrite #block-block-2 a:hover{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ff665f;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#copywrite #block-block-1 {
+  width: 940px;
+  height: 20px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+#footerlinks{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#footerlinks a{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#footerlinks a:hover{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ff665f;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#footer1 {
+  width: 220px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  float: left;
+}
+#footer2 {
+  width: 220px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  float: left;
+}
+#footer3 {
+  width: 220px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  float: left;
+}
+#footer4 {
+  width: 220px;
+  margin-right: 0px;
+  margin-bottom: 23px;
+  margin-top: -1px;float: left;
+}
+#footerFlagGlobalWrapper{
+  width: 940px;
+  margin: auto;
+}
+.footerFlagWrapper{
+  margin-right: 12px;
+  float: left;
+}
+.footerFlagWrapperLast{
+  width: 140px;
+  margin-right:0px;
+  float: left;
+}
+.footerFlagWrapper {
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #fff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.footerFlagWrapper a {
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #fff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.footerFlagWrapper a:hover {
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ff665f;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.footerPipe{
+   margin-left: 7px;
+   margin-right: 7px; 
+}
+.footerFlagWrapperLast {
+  font-family: ProxiRegular;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  color: #fff;
+}
+.footerFlagWrapperLast a {
+  font-family: ProxiRegular;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+}
+.footerFlagWrapperLast a:hover {
+  font-family: ProxiRegular;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  color: #ff665f;
+}
+.flagLocation{
+  float: left;
+  width:18px;
+  height: 12px;
+  margin-bottom: 8px;
+}
+.nameLocation{
+  float: left;
+  width:110px;
+  height: 12px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-top: -4px;
+}
+#footerFlagFindWrapper{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: left;
+  color: #71dfff;
+  text-transform: uppercase;
+}
+#newsLettersTitle{
+  font-family: ProxiRegular;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: left;
+  color: #71dfff;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+#footerlinks h2{
+    color: #71DFFF;
+    font-family: ProxiRegular;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-bottom: 0px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+input.newsLettersForm{
+    width: 175px;
+    height: 23px;
+    background: #cccccc;
+    border: none;
+    padding-bottom: 0;
+    padding-top: 4px;
+    padding-left: 7px;
+    font-family: ProxiRegular;
+    font-size: 12px;
+    color: #433a3a;
+}
+.newsLettersFormBtn{
+    width: 33px;
+    height: 27px;
+    background: #ccc;
+    border: none;
+    margin-left: -5px;
+    font-family: ProxiRegular;
+    font-size: 15px;
+    font-weight: bold;
+}
+.newsLettersFormBtn:hover {
+    cursor: pointer;
+}
+#newsLettersFormWrapper{
+    width: 100%;
+    margin-bottom: 34px;
+}
+.formNewsletter{
+    background: #CCCCCC;
+    width: 216px;
+}
+#socialMediaWrapper img {
+  margin-right: 10px;
+}
+
+/* End of Footer Section */
+/*fix broken slideshow*/
+#slideshow{
+    float: left;
+}
+#outerMenu{
+   width: 100%; 
+}
+/**/
+
+#lessonCollectionSection {
+    clear: both;
+    margin: 48px auto 50px;
+    width: 940px;
+}
+#block-views-lesson-collection-block .view-content {
+    max-height: 500px;
+    /*overflow: scroll;*/
+    overflow-x:hidden; 
+}
+
+/** course page**/
+.wrapperCours{
+    margin: auto;
+    width: 940px
+}
+#contentAuthorImages{
+    float: left;
+    width: 460px;
+    margin:26px 40px 31px 0;
+}
+#contentAuthorInfo{
+    float: left;
+    width: 440px;
+    margin:26px 0 0 0;
+}
+#contentAuthorImages img{
+    width: 460px;
+    height: 259px;
+    float: left;
+    margin-bottom: 16px;
+}
+/*#contentAuthorImages img:nth-child(2){
+    width: 100px;
+    height: 100px;
+    margin-top: -39px;
+    float: left;
+}*/
+#contentAuthorImages > span {
+    /*float: left;*/
+    /*margin-left: 120px;
+    margin-top: -45px;*/
+    clear: both;
+    font-size:15px; 
+    line-height: 32px;
+    color: #fff;
+    font-family: ProxiRegular;
+    font-weight: normal;
+}
+#contentAuthorImages > span a{
+    color: #4dcff5; ;
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size:14px;
+}
+#contentAuthorInfo > span {
+    display: block;
+    color: #fff;
+    font-family: ProxiRegular;
+    font-weight: normal;
+}
+#titleCourse{
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+#supTitleCourse{
+    font-size: 19px;
+    line-height: 26px;
+    text-transform: capitalize;
+}
+#topicCourse,#infoCourse{
+    font-size: 15px;
+    line-height: 26px;
+    font-family: ProxiLight;
+}
+#infoCourse{
+    line-height: 25px;
+}
+#lessonCollectionSection h2{
+    font-size: 21px;
+    font-family: ProxiRegular;
+    color: #9c1f19;
+    text-transform: uppercase;
+    text-align: left; 
+}
+#edit-field-portion-tid-wrapper label,
+#edit-field-portion-tid-wrapper .views-widget,
+#edit-field-secondary-topic-tid-wrapper label,
+#edit-field-secondary-topic-tid-wrapper .views-widget{
+    float: left;
+    margin-right: 20px;
+}
+#edit-submit-lesson-collection{
+    margin-top: -2px;
+}
+#lessonCollectionSection table {
+    width: 100%;
+    font-size: 15px;
+    line-height: 33px;
+    font-family: ProxiLight;
+    color: #433a3a;
+    text-align: left;
+    font-weight: normal;
+    margin-top: 13px;
+}
+#lessonCollectionSection table tr:hover{
+    background: #e1edf1;
+}
+#lessonCollectionSection table thead tr:hover{
+    background: none;
+}
+#lessonCollectionSection table thead tr{
+    border-top: 1px solid #aaa6a6;
+    border-bottom: 1px solid #aaa6a6;
+}
+#lessonCollectionSection table{
+    border-bottom: 1px solid #aaa6a6;
+}
+#lessonCollectionSection table thead tr th{
+    border-bottom: none;
+}
+#lessonCollectionSection table thead tr th img{
+    margin-left: 5px;
+}
+#lessonCollectionSection table thead tr th.views-align-left{
+    font-weight: normal!important;
+}
+#lessonCollectionSection table thead tr,
+#lessonCollectionSection table thead tr a{
+    font-size: 12px;
+    font-family: ProxiRegular;
+    color: #9c1f19; 
+    text-align: left;
+    font-weight: normal!important;
+}
+#lessonCollectionSection table td a{
+    color: #127795;
+    font-size: 14px;
+}
+#lessonCollectionSection table td.active{
+    background: none;
+}
+#lessonCollectionSection .view-lesson-collection span{
+    display: block;
+}
+#edit-field-portion-tid-wrapper label,
+#edit-field-secondary-topic-tid-wrapper label{
+    font-size: 14px;
+    line-height: 18px;
+    font-family: ProxiLight;
+    color: #433a3a;
+    text-align: left;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+#courseDescription{
+    margin: auto;
+    width: 700px;
+    clear: both;
+}
+span.lessonsCourse {
+    background: url("../images/dd_arrow.png") no-repeat scroll 188px 10px #FCFCFC!important;
+    border: 1px solid #CCCCCC;
+    color: #433B3A;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ProxiRegular;
+    font-size: 15px;
+    height: 26px;
+    line-height: 27px;
+    margin-top: -26px;
+    text-align: left;
+    text-indent: 10px;
+    width: 210px;
+    z-index: 1;
+}
+#lessonCollectionSection form select{
+    width: 210px;
+}
+#lessonCollectionSection form option{
+    width: 182px;
+}
+#preReqsTitle{
+    color: #FFFFFF;
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+}
+#preReqs a{
+    color:#4dcff5;
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase; 
+}
+.lessonTitle {
+    float: left;
+    width: 450px;
+}
+.lessonRecordedDate {
+    float: left;
+    width: 100px;
+}
+.lessonWatchLink {
+    float: left;
+    width: 45px;
+}
+#eSocial{
+    margin-top: 135px;
+    margin-bottom: 17px;
+}
+.sharethis{
+    border-top: 1px solid #7c7575;
+    padding-top: 10px;
+}
+#topicCourseTitle,#topicCourse{
+    display: inline!important;
+}
+#topicCourse{
+    text-transform: uppercase;
+}
+#courseDescription > p {
+    text-align: justify;
+}
+.stButton{
+    margin-left: 0!important;
+}
+.st_facebook_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/facebook_icon_white.png) no-repeat!important;
+    width: 26px!important;
+}
+.st_twitter_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/twitter_icon_white.png) no-repeat!important;
+     width: 39px !important;
+}
+.st_googleplus_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/googleplus_icon_white.png) no-repeat!important;
+    width: 37px !important;
+}
+.st_email_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/email_icon_white.png) no-repeat!important;
+    width: 34px !important;
+}
+.st_sharethis_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/social_media_icon_white.png) no-repeat!important;
+    width: 37px !important;
+}
+.st_pinterest_large{
+    display: none!important;
+}

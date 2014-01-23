@@ -1,0 +1,5 @@
+name = Taxonomy Node Reference
+description = Adds a field that is dependant on existing taxonomy field to supply node references filtered by the term and a type
+package = Content
+core = 7.x
+version = 7.x-1.0

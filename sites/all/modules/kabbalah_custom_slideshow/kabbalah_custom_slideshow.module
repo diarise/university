@@ -1,0 +1,35 @@
+<?php
+
+	// Step 1: Block Info
+	function kabbalah_custom_slideshow_block_info() {
+    
+		$blocks['custom_slideshow'] = array(		
+			'info' => t('Kabbalah Custom Slideshow'),
+		);
+		return $blocks;
+	}
+	
+	// Step 2: Block View Implementation
+	function kabbalah_custom_slideshow_block_view($delta = '') {
+	
+		// The $delta parameter tells us which block is being requested.
+		switch ($delta) 
+		{
+			case 'custom_slideshow':
+				// Create your block content here
+				$block['subject'] = t('Kabbalah Custom Slideshow for front page');
+				$block['content'] = kabbalah_custom_slideshow_show();
+				break;
+		}
+
+		return $block;
+	}
+		
+	function kabbalah_custom_slideshow_show() {
+
+		drupal_add_css(drupal_get_path('module', 'kabbalah_custom_slideshow') .'/css/kabbalah_custom_slideshow.css');	
+		drupal_add_js(drupal_get_path('module', 'kabbalah_custom_slideshow') .'/js/json_head_slideshow.js');	// adding the js file for the module	
+		
+	}
+	
+	// // D7 - End of Block Hook Implementation

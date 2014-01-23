@@ -1,0 +1,20 @@
+#kcomTestimonialsSlideshow { 
+    position: relative; 
+}
+
+#kcomTestimonialsSlideshow > div { 
+    position: absolute; 
+   /* top: 10px; 
+    left: 10px; */
+    right: 0; 
+   /* bottom: 10px; */
+}
+
+#kcomTestimonialsSlideshow{
+    color: #433A3A;
+    font-family: ProxiRegular;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}

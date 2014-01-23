@@ -1,0 +1,76 @@
+; $Id: framework.info,v 1.4.2.4 2011/02/18 05:26:30 andregriffin Exp $
+name = ukabbalah
+description = Framework is a blank canvas used by theme developers for English UKabbalah site.
+package = Core
+core = 7.x
+engine = phptemplate
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/ie.css
+stylesheets[all][] = css/tooltipster.css
+
+;scripts[] = js/hover.js
+scripts[] = js/persistheader.js
+scripts[] = js/custum_select_drop_down.js
+scripts[] = js/hoverVideo.js
+scripts[] = js/scrolTable.js
+scripts[] = js/lessons_collection.js
+scripts[] = js/parent_course.js 
+scripts[] = js/isotope.js
+scripts[] = js/jquery.isotope.min.js
+scripts[] = js/jquery.masonry.min.js
+scripts[] = js/flag.js
+scripts[] = js/jquery.tooltipster.min.js
+scripts[] = js/author_tooltip.js
+
+regions[search] = Search
+regions[universalMenu] = Universal Menu
+regions[menu]          = Local Menu
+
+regions[slideshow]= Slideshow
+regions[aboutusleft] = About us Left
+regions[aboutusright] = About us Right
+regions[pageaboutus] =  About us
+regions[fpevents] = Front Page Events
+regions[fpclasses] = Front Page Classes
+
+regions[fpbeginnerscourses] = Front Page Beginners Courses Carousal
+regions[fprecentlyadded] = Front Page Recently Added Lessons/Courses Carousal
+regions[fprecommendedcourses] = Front Page Recommended Courses Carousal
+regions[fpfreelessons] = Front Page Free Lessons Carousal
+
+regions[coursesforparentcourse] = Course By Parent Course Collection
+
+
+regions[content] = Content
+regions[aboutmenu]  = About Menu
+regions[eventsidebar] = Event Side Bar
+regions[comments] = Comments
+
+
+regions[lessoncollection] = Course Lesson Collection
+regions[pagelessoncollection] = Lesson Collection
+
+
+regions[ktweet] = K tweet
+regions[kfacebook] = K facebook
+regions[ktestimonials] = K testimonials
+
+regions[footer1] = Footer 1
+regions[footer2] = Footer 2
+regions[footer3] = Footer 3
+regions[footer4] = Footer 4
+regions[copywrite] = Copywrite
+
+regions[help]           = Help
+regions[footer]         = Footer
+regions[page_top]       = Page top
+regions[page_bottom]    = Page bottom
+
+
+
+; Information added by drupal.org packaging script on 2011-02-18
+version = "7.x-3.4"
+core = "7.x"
+project = "framework"
+datestamp = "1298008602"
+

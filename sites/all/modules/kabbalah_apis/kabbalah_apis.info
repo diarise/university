@@ -1,0 +1,6 @@
+name = UKabbalah.com API's
+description = " List of API's used on ukabbalah.com "
+core = 7.x
+version = "7.22"
+core = "7.x"
+package = Kabbalah Custom Modules

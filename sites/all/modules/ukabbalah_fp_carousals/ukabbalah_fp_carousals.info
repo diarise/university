@@ -1,0 +1,6 @@
+name = UKabbalah Front Page Carousals
+description = " Creates the Beginners Courses, Recently Added, Recommended carousals "
+core = 7.x
+version = "7.22"
+core = "7.x"
+package = Kabbalah Custom Modules

@@ -1,0 +1,8 @@
+name = Twistage Drupal Integration
+description = Integration and API to connect a twistage account to the local site
+package = Twistal
+files[] = includes/twistal.api.inc
+files[] = includes/twistal.admin.inc
+files[] = includes/mobile_detect.inc
+core = 7.x
+version = 7.x-1.0

@@ -1,0 +1,76 @@
+<?php
+
+	// Implementation hook_menu() 	 
+	function ukabbalah_online_demand_events_menu() {
+		
+		$items = array();
+			
+		$items['on-demand-events'] = array(               // Made this a PAGE
+			'page callback'      => 'getOnlineDemandTopicsHtmlStructure',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+				
+		return $items;
+		
+	}
+	
+	// Get the HTML base Structure for the topics page
+	function getOnlineDemandTopicsHtmlStructure() {
+
+		drupal_add_css(drupal_get_path('module', 'ukabbalah_online_demand_events') .'/css/ukabbalah_online_demand_events.css');	
+		drupal_add_js(drupal_get_path('module', 'ukabbalah_online_demand_events') .'/js/ukabbalah_online_demand_events.js');
+		$resultHTML = "";
+		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<span id='teachingsSectionTitle'>".t('ON DEMAND EVENTS')."</span>";	
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='authorDDWrapper'>";
+		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
+		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown2()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='topicDDWrapper'>";
+		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
+		$resultHTML.="<span id='topicDD'>".getTopicDropDown2()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingResultSection'></div>";
+		return $resultHTML;	
+	}
+	
+	// Returns the Primary Topics Dropdown HTML
+	function getTopicDropDown2() {
+		$topics =  taxonomy_get_tree( 14 ); // vid = 14 for Primary Topics
+		$resultHTML = "<select id='teachings_topicDD'>";
+		$resultHTML .="<option value='all'>All</option>";
+		foreach( $topics as $t ) {
+			$resultHTML .="<option value='cat".$t->tid."'>".$t->name."</option>";
+		}
+		$resultHTML .= "</select>";
+		return $resultHTML;
+	}
+		
+	// Returns the Authors Dropdown HTML	
+	function getTeachersDropDown2() {
+		
+		$teachers =  taxonomy_get_tree( 7 ); // vid = 7 for Authors
+		$resultHTML = "<select id='teachings_teachersDD'>";
+		$resultHTML .="<option value='all'>All</option>";
+		foreach( $teachers as $t ) {
+			$resultHTML .="<option value='cat".$t->tid."'>".$t->name."</option>";
+		}
+		$resultHTML .= "</select>";
+		return $resultHTML;
+		
+	}
+	
+	// Get an associative array tid=>tname for primary topics
+	function getTermNames2()	{
+	
+		$topics =  taxonomy_get_tree( 10 ); // vid = 4 for Primary Topics
+		$vnames = array();
+		foreach( $topics as $t ) {
+			$vnames[$t->tid] = $t->name;
+		}
+		return $vnames;
+	}

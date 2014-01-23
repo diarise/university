@@ -1,0 +1,61 @@
+<?php
+	function _is_imobile() {
+	  foreach (array('iphone', 'ipod', 'ipad') as $needle) {
+		if (stripos($_SERVER["HTTP_USER_AGENT"], $needle) !== false) return true;
+	  }
+	  return false;
+	}
+	function theme_jwplayer_video($args){
+		$video=$args['video'];
+		$width = isset($args['width'])?$args['width']:512;
+		$height = isset($args['height'])?$args['height']:288;
+		$autoplay = isset($args['autoplay'])?$args['autoplay']:NULL;
+		$skin ='/'.drupal_get_path('module','jwplayer').'/includes/five.xml';
+		$file = $args['file'];
+		static $players;
+		if(!is_array($players)){
+			$jwplayerjs = array(
+			  '#tag' => 'script',
+			  '#attributes' => array(
+				'src' => '/'.drupal_get_path('module','jwplayer').'/includes/jwplayer.js',
+				'type' => 'text/javascript',
+			  ),
+			);
+			$jwplayerkey = array(
+			  '#tag' => 'markup',
+			  '#markup' => '<script type="text/javascript">jwplayer.key="EMiSmgYruQJsCca0ZeZej55r95Tvni0Ldhb6XwUF+ag=";</script>'
+			);
+			//drupal_add_html_head($jwplayerjs,'jwplayer-js');
+			//drupal_add_html_head($jwplayerkey,'jwplayer-key');
+			drupal_add_js(drupal_get_path('module','jwplayer').'/includes/jwplayer.js');
+			drupal_add_js('jwplayer.key="EMiSmgYruQJsCca0ZeZej55r95Tvni0Ldhb6XwUF+ag=";','inline');
+			$players=array();
+
+		}
+		$player_id='jwplayer'.(count($players)+1);
+		$players[]=$player_id;
+		if(!is_string($video)) $jwplayer['video']=$video;
+		$jwplayer['player_id']=$player_id;
+		$jwplayer['settings']=array(
+			'height' => 380 ,//$height,
+			'width' => 645, //$width,
+			//'autostart' => $autoplay,
+			'related'=>array('file'=>$file),
+			'skin'=> $skin,
+			);
+		drupal_alter('jwplayer_settings',$jwplayer);
+		$html='<div id="playerbase"><span id="'.$player_id.'">No video</span></div>
+			<script type="text/javascript">
+				jwplayer("'.$player_id.'").setup('.json_encode($jwplayer['settings']).');
+			</script>';
+		if(isset($jwplayer['prefix'])) $html=implode('',$jwplayer['prefix']).$html;
+		if(isset($jwplayer['suffix'])) $html.=implode('',$jwplayer['suffix']);
+		return $html;
+	}
+	function jwplayer_theme($existing, $type, $theme, $path) {
+		return array(
+			'jwplayer_video' => array(
+				'arguments' => array('videos' => NULL, 'width' => 150, 'height' => NULL,'file'=>NULL, 'autoplay' => NULL),
+			),
+		);
+	}

@@ -1,0 +1,325 @@
+#slides {
+  display: none;
+	width:980px;
+  margin: auto;
+}
+#slides .slidesjs-navigation {
+  margin-top:3px;
+}
+#slides .slidesjs-previous {
+  float: left;
+}
+#slides .slidesjs-next {
+  float: left;
+}
+.slidesjs-pagination {
+  float: left;
+  list-style: none;
+  margin-top: -18px;
+  z-index:10;
+  top: -20px;
+  left: -63px;
+  cursor: pointer;
+  height: 20px;
+  position: relative;
+  width: 100px;
+  z-index: 10;
+}
+.slidesjs-pagination li {
+  float: left;
+  width: 13px;
+  margin-right: 5px
+}
+.slidesjs-pagination li a {
+  display: block;
+  width: 13px;
+  height: 0;
+  padding-top: 13px;
+  background-image: url(../img/pagination.png);
+  background-position: 0 0;
+  float: left;
+  overflow: hidden;
+}
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+  background-position: 0 -13px
+}
+.slidesjs-pagination li a:hover {
+  background-position: 0 -26px
+}
+.navbar {
+  overflow: hidden
+}
+#slides {
+  display: none
+}
+.slidesInfoWrapper {
+  float: left;
+  width: 980px;
+}
+.slidesImage{
+	float: left;
+}
+.slidesImage img{
+	width:620px;
+	height:349px;	
+}
+.slidesInfoDesc {
+  float: left;
+  width: 360px;
+  height:349px;
+  background: #5e792f;
+}   
+   
+/*-----------Start slides info desc-----*/
+
+.slidesTitle{
+	font-family: ProxiRegular;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 32px;
+	color:#ffffff;
+	text-transform: uppercase;
+	text-align: left;
+	width: 280px;
+  margin-top: 34px;
+  margin-left: 40px;
+  display: block;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */	
+}
+.slidesTitle a{
+	font-family: ProxiRegular;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 32px;
+	color:#ffffff;
+	text-transform: uppercase;
+	text-align: left;
+	width: 280px;
+	text-decoration: none;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */	
+}
+.slidesTitle a:hover{
+	font-family: ProxiRegular;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 32px;
+	color:#FF665F;
+	text-transform: uppercase;
+	text-align: left;
+	width: 280px;
+	text-decoration: none;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */	
+}
+.slidesSubTitle{
+	font-family: ProxiLight;
+	font-size: 24px;
+	line-height: 26px;
+	color:#ffffff;
+	text-transform: uppercase;
+	text-align: left;
+	width: 280px;
+	margin-top: 9px;
+  margin-left: 40px;
+  display: block;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.slidesBody{
+	font-family: ProxiLight;
+	font-size: 18px;
+	line-height: 26px;
+	color:#ffffff;
+	text-align: left;
+	width: 280px;
+	margin-top: 8px;
+  margin-left: 40px;
+  display: block;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.slidesBody p{
+  font-family: ProxiLight;
+  font-size: 18px;
+  line-height: 26px;
+  color:#ffffff;
+}
+.slidesReadMore {
+	font-family: ProxiLight;
+	font-size: 18px;
+	line-height: 26px;
+	color:#ffffff;
+	text-align: left;
+	text-transform: uppercase;
+	width: 280px;
+	text-decoration: none;
+  margin-left: 40px;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.slidesReadMore a {
+  font-family: ProxiLight;
+  font-size: 18px;
+  line-height: 26px;
+  color:#ffffff;
+  text-align: left;
+  text-transform: uppercase;
+  width: 280px;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.slidesReadMore a:hover {
+	font-family: ProxiLight;
+	font-size: 18px;
+	line-height: 26px;
+	color:#FFF;
+	text-align: left;
+	text-transform: uppercase;
+	width: 280px;
+	/*text-decoration: underline;*/
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+
+/*---------------slide show-----------*/
+.slidesjs-previous{
+  background-image: url("../img/banner_arrow_left.png");
+  background-repeat: no-repeat;
+  top: -199px;
+  color: transparent;
+  cursor: pointer;
+  float: right;
+  height: 37px;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-left: 0px;
+  text-indent: -1000em;
+  width: 27px;
+  z-index: 10;
+}
+.slidesjs-next{
+  background-image: url("../img/banner_arrow_right.png");
+  background-repeat: no-repeat;
+  top: -199px;
+  left: 893px;
+  color: transparent;
+  cursor: pointer;
+  float: right;
+  height: 37px;
+  position: relative;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 0px;
+  padding-left: 0px;
+  text-indent: -1000em;
+  width: 27px;
+  z-index: 10;
+}
+
+/* this one if for the navigation bar of sslideshow event */
+
+.activeNav {
+  width: 12px;
+  height: 12px;
+  background-image: url(../img/no_active_pagination.png)!important;
+  color: transparent;
+}
+.imgNav li {
+  width: 12px;
+  height: 12px;
+  background-image: url(../img/active_pagination.png);
+  color: transparent;
+}
+#frontMiddle .imgNav{
+  padding-left: 9px!important
+}
+
+
+/***---*/
+
+#slideshow {
+    background: none repeat scroll 0 0 / 100% auto #433A3A;
+   /* box-shadow: 0 4px 4px #DCDCDC;*/
+    height: 349px;
+    position: relative;
+    width: 100%;
+    top: -5px;
+}
+#goRight{
+   color: transparent;
+   background: url("../img/banner_arrow_right.png") no-repeat 11px;
+   height: 37px;
+   /*width: 27px;*/
+}
+#goLeft{
+   color: transparent;
+   background: url("../img/banner_arrow_left.png") no-repeat right;
+   height: 37px;
+   /*width: 27px;*/
+}
+
+
+.darkyellow{
+   background-color:#dca119;
+}
+.orange{
+  background-color:#d06700;
+}
+.grassgreen{
+   background-color:#aaa122; 
+}
+.darkgreen{
+   background-color:#827b00; 
+}
+.green{
+   background-color:#5e792f; 
+}
+.lightblue{
+  background-color:#408194;
+}
+.blue{
+  background-color:#026987; 
+}
+.ultramarine{
+  background-color: #424380;
+}
+.darklilac{
+  background-color:#6c326b; 
+}
+.darkred{
+  background-color:#812924; 
+}
+.brown{
+background-color:#653a24;   
+}
+.lightbrown{
+  background-color:#855a43;
+}
+.lightgrey{
+  background-color:#8d8888; 
+}
+.grey{
+  background-color: #6d6767;
+}
+.darkgrey{
+  background-color:#433a3a; 
+}
+.verydarkyellow{
+	background-color:#d09100; 
+}
+.darkorange{
+	background-color:#d24700; 
+}
+.darkpink{
+	background-color:#c72384; 
+}
+.red{
+	background-color:#9b0a0a; 
+}
+.lightbrightbrown{
+	background-color:#843d18; 
+}
+.warmgrey{
+	background-color:#746464; 
+}
+.darkblue{
+  background-color: #033c54;
+}

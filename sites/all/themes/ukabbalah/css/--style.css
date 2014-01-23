@@ -1,0 +1,2058 @@
+
+/* CSS Document */
+@font-face {
+    font-family: 'ProxiLight';
+    src: url('ProximaNova-Light.eot');
+    src: url('ProximaNova-Light?#iefix');
+    src: local('☺'),url('ProximaNova-Light.svg') format('svg'), url('ProximaNova-Light.woff') format('woff'), url('ProximaNova-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProxiRegular';
+    src: url('ProximaNova-Reg-webfont.eot');
+    src: local('☺'),url('ProximaNova-Reg-webfont.svg') format('svg'), url('ProximaNova-Reg-webfont.woff') format('woff'), url('ProximaNova-Reg-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProxiRegular';
+    src: url('ProximaNova-RegItalic-webfont.eot');
+    src: local('☺'),url('ProximaNova-RegItalic-webfont.svg') format('svg'), url('ProximaNova-RegItalic-webfont.woff') format('woff'), url('ProximaNova-RegItalic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ProxiRegular';
+    src: url('.ProximaNova-Bold-webfont.eot');
+    src: local('☺'), url('ProximaNova-Bold-webfont.svg') format('svg'), url('ProximaNova-Bold-webfont.woff') format('woff'), url('ProximaNova-Bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'ProxiRegular';
+    -webkit-font-smoothing: antialiased;
+}
+p {
+	font-family: 'ProxiRegular';
+	font-weight: normal;
+	color: #433b3a;
+	text-align: left;
+	font-size: 16px;
+	line-height: 24px;
+}
+a {
+  color: #9C1F19;
+  text-decoration: none;
+}
+a:hover {
+  color: #53100d;
+  text-decoration: none;
+}
+em {
+    font-family: 'ProxiRegular';
+    font-style: italic;
+}
+strong {
+  font-family: 'ProxiBold';
+  font-weight: normal;
+}
+#slideshow ul {
+    margin: 0;
+}
+h1#page-title {
+    color: #999999;
+    float: left;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 24px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    width: 700px;
+}
+h2 {
+    font-size:30px; 
+    line-height: 32px;
+    color: #433a3a;
+    font-family: 'ProxiRegular';
+    text-transform: uppercase;
+    font-weight: normal;
+}
+h3 {
+    height: 30px;
+    margin: 0 auto;
+    max-width: 1600px;
+    min-width: 920px;
+    padding-bottom: 20px;
+}
+h3 a {
+    color: #999999;
+    font-family: ProxiLight;
+    font-size: 40px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+/* Header - Top */
+
+#topHeaderWrapper {
+    background-color: #cccccc;
+    height: 30px;
+    padding: 10px 0;
+}
+.topHeader {
+    margin: 0 auto;
+    min-width: 940px;
+    max-width: 1580px;
+    padding-right: 20px;
+}
+#topImageCont{
+    float: left;
+    margin-left: 20px;
+    margin-top: -3px;
+}
+.topHeader #topImageCont {
+    padding-left: 0 !important;
+}
+#headerSearchLinksWrapper {
+    float: none !important;
+    width: 100%;
+    margin-right: 0 !important;
+}
+#headerLinks{
+    float:none;
+}
+#headerLinks a:hover {
+  color: #9C1F19;
+}
+#headerDonateButton {
+    float: left;
+    background: #9c1f19;
+    width: 65px;
+    height: 26px;
+    margin-right: 20px;
+    margin-top: 2px;
+    text-align: center;
+    line-height: 22px;
+}
+#headerDonateButton a {
+    font-family: 'ProxiRegular';
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+}
+#headerSearch {
+    margin-bottom: 10px;
+    float: right;
+    margin-top: -4px;
+}
+.globalSearchSection{
+	width: 300px;
+}
+
+/* Header - Universal */
+#block-nice-menus-2 .content ul#nice-menu-2 li:nth-child(3) {
+    background: url("../images/nav-triangle-wht.png") no-repeat scroll center bottom transparent;
+}
+ul#nice-menu-2 li.menu-412 a{
+    color: #9C1F19;
+}
+#headerLinks .region-universalmenu{
+    float: left;
+    margin-left: 20px;
+}
+#headerLinks .donate{
+    float: right;
+    margin-left: 20px;
+    text-align: center;
+    background-color: #9C1F19;
+    height: 26px;
+    margin-right: 0px;
+    width: 65px;
+}
+.donateFloat {
+    background-color: #9C1F19;
+    display: none;
+    float: right;
+    font-size: 12px !important;
+    height: 26px;
+    margin: 4px 20px 0;
+    text-align: center;
+    text-transform: capitalize !important;
+    width: 65px;
+}
+#headerLinks .donate a, .donateFloat a {
+    color: #FFFFFF;
+    line-height: 26px;
+}
+#headerLinks a {
+    font-size: 12px !important;
+    text-transform: capitalize !important;
+    color: #433A3A;
+    text-decoration: none;
+}
+.donateFloatFix {
+    display: inline;
+}
+#universalMenuWrapper{
+    background:url("../images/shadow_universal_bar.png") repeat-x;
+    height: 48px;
+}
+#universalMenuWrapper .topHeader {
+  padding-right: 0 !important;
+}
+ul.menu li {
+  margin: 0;
+}
+.universalMenu ul{
+	margin: 0 auto;
+	text-align: center;
+	height: 40px;
+    padding: 10px 20px 0 0;
+}
+.universalMenu li{	
+	margin: 0px;
+	padding: 0 42px 0 0 !important;
+	list-style-type: none;
+	overflow: hidden;
+	text-align: center;
+	display: inline;	
+}
+.universalMenu ul.menu li.last{
+    padding-right: 0px!important;
+}
+.universalMenu li a {
+	font-size: 16px;
+	font-family: 'ProxiRegular';
+	color: #ffffff;
+	text-decoration: none;
+}
+ .universalMenu li a:hover {
+	color: #FF665F;
+	font-family: 'ProxiRegular';
+}
+ .universalMenu li a.active {
+	color: #ffffff;
+	font-family: 'ProxiBold';
+}
+#block-nice-menus-2 .content ul#nice-menu-2 li:nth-child(3) {
+    background: url("../images/nav-triangle-wht.png") no-repeat scroll center bottom transparent;
+}
+#headerLinks ul#nice-menu-2 li a:nth-child(3) {
+    color: #9C1F19!important;
+}
+/* Header - Local Menu */
+
+#mainOuterContentLogoMenuWrapper {
+    background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom transparent;
+    height: 40px;
+    position: relative;
+    z-index: 140;
+}
+.scrolling{
+    z-index: 1400!important;
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+}
+#newMainContentLogoTitle {
+    float: left;
+    text-align: right;
+    width: 268px;
+    margin-top: 7px;
+}
+#newMainContentLogoTitle a {
+    color: #9C1F19;
+    font-size: 15px;
+}
+.globalSearchSection {
+    line-height: 20px;
+    width: 180px;
+}
+#outerMenu ul.nice-menu li a {
+    color: #433A3A;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.highlightTopic ul#nice-menu-1 .menu-406 a,
+.highlightHome ul#nice-menu-1 .menu-218 a,
+.highlightAuthors ul#nice-menu-1 .menu-407 a,
+.highlightDemand ul#nice-menu-1 .menu-444 a{
+   color: #9C1F19; 
+}
+/**/
+#mainoutercontentLogoMenuWrapper {
+    background: url("../images/shadow_local_menu.png") repeat-x 100px 100%;
+    position: relative;
+    height: 100px;
+    z-index: 140;  
+}
+#mainContentLogo a{
+    font-family: 'ProxiRegular',Arial, Helvetica,sans-serif;
+    font-size: 30px;
+    color: #127795;
+    text-decoration: none;
+    text-transform: uppercase; 
+    text-align: center;
+    padding-top: 11px;
+    display:block;
+}
+#block-nice-menus-2{
+    text-align: center;
+}
+#block-nice-menus-2 ul#nice-menu-2:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+#block-nice-menus-2 ul#nice-menu-2 {
+    border: medium none;
+    float: none;
+    text-align: center;
+}
+#block-nice-menus-2 .content ul#nice-menu-2 li{
+    border:none;
+}
+#block-nice-menus-2 .content ul#nice-menu-2 li.last {
+    padding-right:0;
+}
+
+ul #nice-menu-2 a{
+    padding: 0px!important;
+}
+#block-nice-menus-2 #nice-menu-2 li{
+    border: medium none;
+    display: inline-block;
+    float: none;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#block-nice-menus-2 #nice-menu-2 li.first {
+  margin-left: 0 !important;
+}
+#block-nice-menus-2 #nice-menu-2 li.last {
+  margin-right: 0 !important;
+}
+#block-nice-menus-2 .menu-2280{
+    padding-left: 0!important;
+} 
+#block-nice-menus-2 .content ul#nice-menu li a{
+    color:#433a3a;
+    font-size:18px;
+    text-decoration:none;
+    text-transform: uppercase;
+}
+#block-nice-menus-2 .content ul.nice-menu li.last a{
+    margin-left: 0px; 
+}
+#block-nice-menus-2 .content ul.nice-menu li a:hover{
+    color:#9c1f19;
+}
+#block-nice-menus-2 .content ul.nice-menu li a.active{
+    /*color:#9c1f19; */
+}
+#mainContentMenu {
+    float: left;
+    margin-left: 32px;
+    margin-top: 8px;
+}
+#nice-menu-2 {
+    margin: 0 auto;
+    z-index: 200;
+}
+#block-nice_menus-1 .content ul.nice-menu {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#outerMenu ul.nice-menu li.first {
+    margin-left: 0 !important;
+}
+#outerMenu ul.nice-menu li.last {
+    margin-right: 0 !important;
+}
+#outerMenu ul.nice-menu li {
+    display: inline-block;
+    float: none;
+    margin: 0 5px;
+    border-top: 0 none;
+}
+#block-nice_menus-1 .content ul.nice-menu li {
+    border: medium none;
+}
+ul.nice-menu li {
+    background-image: none;
+    /*margin: 0;*/
+    padding-left: 0;
+    /*border-top: 0 none;
+    float: left;*/
+}
+ul.nice-menu-down li {
+    border-top: 1px solid #CCCCCC;
+}
+ul li {
+    list-style: none outside none;
+}
+.scrolling .topHeader {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+.scrolling #newMainContentLogoTitle {
+    margin-left: 20px;
+    text-align: left;
+    width: auto;
+}
+#outerMenu{
+    margin-bottom:-4px;
+    width: 100%; 
+}
+/* Main Content Area */
+
+#aboutus {
+    margin: 0 auto;
+    width: 960px;
+}
+#about-left {
+    float: left;
+    width: 500px;
+    margin-top: 20px;
+}
+#about-left h2 {
+    width: 350px;
+}
+#about-right {
+    float: right;
+    padding: 40px;
+    width: 280px;
+    background: #f5f5f5;
+}
+#about-right p {
+    font-size: 14px; 
+    line-height: 20px; 
+    color: #433a3a;
+    margin: 0; 
+}
+#about-right p.hoursTitle, #about-right p.addressTitle {
+    color: #9c1f19; 
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+#about-right p.hoursTitle {
+    margin-top: 30px;
+}
+.hours {
+     position: absolute;
+    right: 20px;
+    text-align: right;
+}
+
+/************************social media section*********************/
+
+#SocialMediaWrapper{
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+    margin-top: -5px; 
+    background:#e6e6e6;
+    float: left;
+}
+#SocialMedia{
+    width: 940px;
+    height: 300px;
+    padding: 0px 20px 0px 20px; 
+    margin: 0 auto;     
+}
+#fpSocialMediaBlock1{
+    width: 218px;
+    height: 260px;
+    float: left;
+    padding: 20px 20px 20px 62px;
+    margin-right: 20px;
+    background:url(../images/icon-twitter-dark-60x41.png)#fff 8px 20px no-repeat;
+}
+.tweet-authorphoto{
+    display: none;
+}
+div ul li .tweet-author a{
+    color: #433A3A;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+}
+div ul li .tweet-author a:hover {
+    color: #9C1F19;
+}
+div ul li .tweet-text{
+    color: #433A3A;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+}
+div ul li .tweet-text a{
+    color: #9c1f19;
+    font-family: ProxiRegular;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+}
+div ul li .tweet-text a:hover, .twitLink a:hover {
+    color: #53100d;
+}
+div.tweets-pulled-listing .tweet-time a{
+    color: #433a3a;
+    font-family: ProxiRegular;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none;
+}
+.twitLink a{
+    color: #9c1f19;
+    font-family: ProxiRegular;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 17px;
+    margin-top: 8px;
+    text-decoration: none;
+    margin-top: 0;
+}
+#fpSocialMediaBlock2{
+    float: left;
+    margin-right: 20px;
+    width: 300px;
+}
+#fpSocialMediaBlock3{
+    width: 200px;
+    height: 260px;
+    float: left;
+    padding: 20px 20px 20px 80px;
+    background:url(../images/icon-qoute-dark-59x41.png)#fff 8px 20px no-repeat;
+}
+#fpSocialMediaBlock3 p {
+    font-family: ProxiRegular;
+    font-style: italic;
+    line-height: 20px !important;
+    margin-top: 0;
+    padding-top: 0;
+}
+#block-views-tweets-block{
+    color: #443A3A;
+    font-family: ProxiRegular;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 20px;
+}
+#block-block-5 .content p{
+     margin-top: 0;
+}
+#block-views-tweets-block li{
+    margin: 0 0 0 16px;
+}
+#block-views-tweets-block .views-field.views-field-created-time {
+    display: block;
+    margin-top: 8px;
+}
+#block-block-18 p{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+#block-block-18 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    width: 300px;
+}
+#views_slideshow_singleframe_main_testimonial-block_1 p{
+    color: #433A3A;
+    font-family: ProxiRegItalic;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.pluginSkinLight{
+    background-color:#FFFFFF !important;
+}
+#block-block-4 p {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0;
+    height: 299px;
+}
+/* About Page */
+
+#mainContentBody {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 940px;
+}
+#maincontent {
+    float: left;
+    padding-top: 50px;
+    width: 700px;
+}
+#sidemenu { 
+    width:180px; 
+    float:right; 
+    background:#f5f5f5;
+    padding: 20px 20px 20px 20px;
+}
+#block-menu-menu-about-menu .content ul.menu{
+    padding-bottom: 0;
+    padding-left: 0;
+}
+#block-menu-menu-about-menu .content ul.menu li{
+    list-style: none;
+}
+#block-menu-menu-about-menu .content ul.menu li a{ 
+    color:#9c1f19;
+    font-size:16px;
+    line-height:19px;
+}
+#block-menu-menu-about-menu .content ul.menu li a:hover {
+    color: #53100d;
+}
+#block-menu-menu-about-menu .content ul.menu li a.active{ 
+    color:#433a3a;
+}
+#block-menu-menu-about-menu .content ul.menu li ul {
+    margin-left: 15px;
+}
+#fplocationclasses, #fplocationevents {
+    clear: both;
+    float: left;
+    height: 220px;
+    padding: 70px 0 0;
+    width: 100%;
+}
+#fplocationevents ul, #fplocationclasses ul {
+    margin-top: 20px;
+}
+/****************Text editor styles****************/
+
+.translation-text {
+    font-family: Georgia;
+    font-size: 15px;
+    line-height: 24px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: justify;
+}
+.translation-text span {
+    background-color: #efefef;
+}
+.hebrew-text {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 21px;
+    line-height: 30px;
+    text-align: justify;
+    color: #433b3a;
+    margin: 12px 40px 12px 40px;
+}
+.hebrew-text-2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 21px;
+    line-height: 30px;
+    color: #433b3a;
+    text-align: right;
+    text-align: justify;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.small-text, .smalltext {
+    font-family: ProxiRegular;
+    font-size: 12px;
+    line-height: 17px;
+    color: #433b3a;
+}
+.small-text-2, .smalltext2 {
+    font-family: ProxiRegular;
+    font-size: 12px;
+    line-height: 17px;
+    color: #433b3a;
+    margin: 0 40px;
+}
+.small-title {
+    font-family: ProxiRegular;
+    font-size: 16px;
+    line-height: 24px;
+    color: #433a3a;
+    margin: 0 0 10px;
+}
+.regular-text, .regulartext {
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #433b3a;
+    text-align: left;
+}
+.regular-text-indent {
+    font-family: ProxiRegular;
+    font-size: 16px;
+    line-height: 24px;
+    color: #433a3a;
+    margin: 10px 40px 10px 40px;
+}
+.big-text, .bigtext {
+    font-family: ProxiRegular;
+    font-weight:normal;
+    font-size:20px;
+    line-height: 28px;
+    color:#433b3a;
+    text-align:left;
+}
+.quote-regular, .quoteregular {
+    font-family:Georgia;
+    font-weight:normal;
+    font-size:16px;
+    line-height: 25px;
+    color:#433b3a;
+    text-align:left;
+    padding-right:40px;
+    padding-left:40px;
+}
+.quote-big, .quotebig {
+    font-family:Georgia;
+    font-weight:normal;
+    font-style:italic;
+    font-size:21px;
+    line-height: 30px;
+    color:#8b8b8b;
+    text-align:left;
+}
+.story {
+    font-family:Georgia;
+    font-weight:normal;
+    font-style:italic;
+    font-size:17px;
+    line-height: 26px;
+    color:#433b3a;
+    text-align:left;
+    padding-right:40px;
+    padding-left:40px;
+}
+.internatitle {
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:24px;
+    line-height: 24px;
+    color:#433b3a;
+    text-align:left;
+    text-transform:uppercase;
+    margin: 48px 0 12px;
+}
+.title {
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:30px;
+    line-height: 24px;
+    color:#433b3a;
+    text-align:left;
+    text-transform:uppercase;
+}
+/****************END Text editor styles****************/
+
+/****************Multimedia pages**********************/
+
+#wrapperVideoSection{
+    background-color: #433a3a;
+    height: 100%;
+    width:100%;
+    float: left;
+    padding-bottom: 13px;
+}
+.audioSection #eSocial .sharethis{
+    border: none;
+    float: right;
+}
+.audioSection #eSocial{
+    float: none!important;
+    width: 670px!important;
+    margin-top: -21px!important;
+}
+#videoSection{
+    margin: auto;
+    width: 940px;
+    padding-top: 24px;
+}
+#videoSocialIconeWrapper {
+    margin: auto;
+    width: 707px;
+}
+#videoSocialIconeWrapper .st_facebook_large,
+#videoSocialIconeWrapper .st_twitter_large,
+#videoSocialIconeWrapper .st_googleplus_large,
+#videoSocialIconeWrapper .st_email_large,
+#videoSocialIconeWrapper .st_sharethis_large{
+    display: inherit;
+}
+#videoSocialIconeWrapper #eSocial{
+    width: auto!important;
+    margin-left: 45px!important;
+    margin-top: 237px!important;
+    float: left;
+}
+.st_email_large {
+    margin-left: -2px;
+    margin-top: -2px;
+}
+.st_sharethis_large{
+    margin-top: -1px;
+}
+.st_sharethis_large{
+    margin-left:-3px;
+}
+#markViewedWrapper input[type="checkbox"] {
+    display: none;
+}
+#markViewedWrapper input[type="checkbox"] + label {
+    background-color: #433A3A;
+    border: 1px solid #7C7575;
+    display: inline-block;
+    margin-left: -27px;
+    margin-right: 5px;
+    padding: 6px;
+    position: relative;
+    top: 1px;
+}
+#markViewedWrapper input[type="checkbox"]:checked + label:after {
+    color: #fff;
+    content: "✔";
+    left: 3px;
+    line-height: 12px;
+    position: absolute;
+    top: 0;
+}
+#optionVideo #eSocial{
+    float: right;
+    border: none;
+    width: auto!important;
+    margin-left: 20px!important;
+}
+#optionVideo #eSocial .sharethis{
+    border: none;
+}
+#transcriptWrapper{
+    margin-left: 51px;
+}
+#markViewedWrapper span{
+    color: #fff;
+    font-family: ProxiRegular;
+    font-size: 14px;
+    font-weight: normal;
+}
+#optionVideo{
+    margin: auto;
+    width: 620px;
+}
+#transcriptWrapper,#downloadAudio{
+    float: left;
+}
+#markViewedWrapper {
+    float: right;
+    width: auto;
+    margin-right: 34px;
+    margin-top: -25px;
+}
+.optionAudio #downloadAudio{
+    background:#433a3a!important;
+    display: inline-block;
+    height: 27px;
+    width: 115px;
+    margin: -51px 0 0 -10px;
+}
+.optionAudio #markViewedWrapper{
+    float: left;
+    margin-left: 165px;
+    margin-top: -49px;
+    width: auto;
+}
+.optionAudio #downloadAudio a{
+    color: #fff!important;
+}
+#downloadAudio{
+    background: url("http://cdn1.kabbalah.com/university/icons/dropdown_arrow_blue.png") no-repeat scroll 115px 10px!important;
+    display: inline-block;
+    height: 27px;
+    width: 170px;
+    margin: -28px 0 0 -35px;
+}
+#downloadAudio a{
+    color: #fff;
+    font-family: ProxiRegular;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 26px;
+}
+#downloadAudio a span{
+    color: #71DfFF;
+}
+#titleMultimedia{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:25px;
+    line-height: 29px;
+    color:#433a3a;
+    text-align:left;
+    display: block;
+}
+#courseNameMultimedia{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:19px;
+    line-height: 26px;
+    color:#433a3a;
+    text-align:left;
+}
+#primaryTopicMultimedia, .pipe{
+    font-family: ProxiLight;
+    font-weight:normal; 
+    font-size:15px;
+    line-height: 26px;
+    color:#433a3a;
+    text-align:left;
+    text-transform: uppercase;
+} 
+#authorNameMultimedia,#dateMultimedia{
+    font-family: ProxiLight;
+    font-weight:normal; 
+    font-size:15px;
+    line-height: 26px;
+    color:#433a3a;
+    text-align:right;
+    display: block;
+}
+#wrapperInfoMultimedia {
+    width: 70%;
+    float: left;
+}
+#wrapperAuthorDate {
+    float: left;
+    width: 30%;
+}
+.pipe{
+    margin: 0 20px;
+}
+#video-control {
+    margin: 31px auto 30px;
+    width: 620px;
+    float: left;
+}
+.videocontent {
+    margin: auto;
+    clear: both;
+}
+.videoContent {
+    margin: auto;
+    clear: both;
+    width: 620px;
+    padding-top: 60px;
+}
+#videoTitlesWrapper {
+    background: none repeat scroll 0 0 #F5F5F5;
+    width: 100%;
+    float: left;
+    /*margin-bottom: 60px;*/
+}
+.videotitles {
+    clear: both;
+    height: 120px;
+    margin: auto;
+    width: 940px; 
+    margin-top: 20px
+}
+#classesDescription{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:16px;
+    line-height: 25px;
+    color:#433a3a; 
+    text-align: left;
+    margin-bottom: 40px;
+}
+.titleDescription{
+    font-family: ProxiRegular;
+    font-weight:normal; 
+    font-size:18px;
+    color:#9c1f19;
+    text-transform: uppercase; 
+    margin-bottom: 16px;
+}
+#audio-control{
+    margin: 31px auto 30px;
+}
+/*----------------footer---------------*/
+ #footer {
+    float: left;
+    width: 100%;
+    background-color: #433A3A;
+    padding-bottom: 22px;
+ }
+#footerwrapper{
+    margin:0 auto;
+    padding-right:20px;
+    padding-left:20px;
+    width:940px;
+}
+.footerlinks{
+    float:left; 
+    margin-right: 20px;
+}
+.footerlinks .block .content ul.menu{
+    list-style:none;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.footerlinks .block .content ul.menu li{
+    margin-left: 0px;
+    padding: 0px;
+    list-style:none;
+}
+#copywrite{
+    clear: both;
+    color:#fff;
+}
+#copywrite a{
+    color:#ffffff;
+}
+#copywrite a:hover{
+  color:#ff665f;
+}
+.pipeCopywrite{
+  margin-right: 12px;
+  margin-left: 12px;
+}
+#copywrite #block-block-2 p{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff!important;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#copywrite #block-block-2{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#copywrite #block-block-2 a{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#copywrite #block-block-2 a:hover{
+  color: #ff665f;
+}
+#copywrite #block-block-1 {
+  width: 940px;
+  height: 20px;
+  margin: auto;
+  margin-bottom: 25px;
+}
+#footerlinks{
+  clear: both;
+  padding-top: 32px;
+  float: left;
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#footerlinks a{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+#footerlinks a:hover{
+  color: #ff665f;
+}
+#footer1,#footer2,#footer3 {
+  width: 220px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  float: left;
+}
+#footer4 {
+  width: 220px;
+  margin-right: 0px;
+  margin-bottom: 23px;
+  margin-top: -1px;float: left;
+}
+#footerFlagGlobalWrapper{
+  width: 940px;
+  margin: auto;
+}
+.footerFlagWrapperLast{
+  width: 140px;
+  margin-right:0px;
+  float: left;
+}
+.footerFlagWrapper {
+  margin-right: 12px;
+  float: left;
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #fff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.footerFlagWrapper a {
+  font-family: ProxiRegular;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: left;
+  color: #fff;
+  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+}
+.footerFlagWrapper a:hover {
+  color: #ff665f;
+}
+.footerPipe{
+   margin-left: 7px;
+   margin-right: 7px; 
+}
+.footerFlagWrapperLast {
+  font-family: ProxiRegular;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  color: #fff;
+}
+.footerFlagWrapperLast a {
+  font-family: ProxiRegular;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+}
+.footerFlagWrapperLast a:hover {
+  color: #ff665f;
+}
+.flagLocation{
+  float: left;
+  width:18px;
+  height: 12px;
+  margin-bottom: 8px;
+}
+.nameLocation{
+  float: left;
+  width:110px;
+  height: 12px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-top: -4px;
+}
+#footerFlagFindWrapper{
+  font-family: ProxiRegular;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: left;
+  color: #71dfff;
+  text-transform: uppercase;
+}
+#newsLettersTitle{
+  font-family: ProxiRegular;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: left;
+  color: #71dfff;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+#footerlinks h2{
+    color: #71DFFF;
+    font-family: ProxiRegular;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 22px;
+    margin-bottom: 0px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+input.newsLettersForm{
+    width: 175px;
+    height: 23px;
+    background: #cccccc;
+    border: none;
+    padding-bottom: 0;
+    padding-top: 4px;
+    padding-left: 7px;
+    font-family: ProxiRegular;
+    font-size: 12px;
+    color: #433a3a;
+}
+.newsLettersFormBtn{
+    width: 33px;
+    height: 27px;
+    background: #ccc;
+    border: none;
+    margin-left: -5px;
+    font-family: ProxiRegular;
+    font-size: 15px;
+    font-weight: bold;
+}
+.newsLettersFormBtn:hover {
+    cursor: pointer;
+}
+#newsLettersFormWrapper{
+    width: 100%;
+    margin-bottom: 34px;
+}
+.formNewsletter{
+    background: #CCCCCC;
+    width: 216px;
+}
+#socialMediaWrapper img {
+  margin-right: 10px;
+}
+
+/* End of Footer Section */
+/*fix broken slideshow*/
+#slideshow{
+    float: left;
+}
+/**/
+
+#lessonCollectionSection {
+    clear: both;
+    margin: auto;
+    width: 940px;
+}
+#block-views-lesson-collection-block, #block-views-lesson-collection-block-1{
+    float:left;
+    margin: 44px 0 85px;
+    width: 940px;
+}
+/*#block-views-lesson-collection-block .view-content {
+    max-height: 500px;
+    overflow-x:hidden; 
+}*/
+
+/** course page**/
+.wrapperCours{
+    margin: auto;
+    width: 940px
+}
+#contentAuthorImages{
+    float: left;
+    width: 460px;
+    margin: 50px 40px 6px 0;
+}
+#contentAuthorInfo{
+    float: left;
+    width: 440px;
+    margin:43px 0 0 0;
+}
+#contentAuthorImages img{
+    width: 460px;
+    height: 259px;
+    float: left;
+    margin-bottom: 9px;
+}
+#contentAuthorImages > span {
+    clear: both;
+    font-size:15px; 
+    line-height: 32px;
+    color: #fff;
+    font-family: ProxiRegular;
+    font-weight: normal;
+}
+#contentAuthorImages > span a{
+    color: #4dcff5; ;
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size:14px;
+}
+#wrapperInfoCour {
+    float: left;
+    height: 208px;
+    width: 100%;
+}
+#wrapperPrice {
+    background: none repeat scroll 0 0 #544C4C;
+    float: left;
+    height: 29px;
+    padding: 15px 0 14px 15px;
+    width: 425px;
+}
+#wrapperButton {
+    float: left;
+    margin-top: 8px;
+}
+.buttonMember{
+    background: url(http://cdn1.kabbalah.com/university/icons/become_member_button.png) no-repeat;
+    width: 169px;
+    height: 29px;
+    display: inline-block;   
+}
+.buttonMember a{
+    text-align: center;
+    color: #FFFFFF;
+    font-family: ProxiRegular;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+}
+.priceLogin a {
+    font-weight: normal;
+    display: inline;
+    text-transform: capitalize;
+    border-bottom: 1px solid #7f7979;
+    margin-left: 16px;
+    color: #FFFFFF;
+    font-family: ProxiRegular;
+    font-size: 14px;
+}
+#wrapperInfoCour > span {
+    display: block;
+    color: #fff;
+    font-family: ProxiRegular;
+    font-weight: normal;
+}
+#titleCourse{
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: capitalize;
+}
+#supTitleCourse{
+    font-size: 19px;
+    line-height: 26px;
+    text-transform: capitalize;
+}
+#topicCourse,#infoCourse{
+    font-size: 15px;
+    line-height: 26px;
+    font-family: ProxiLight;
+}
+#infoCourse{
+    line-height: 25px;
+}
+#lessonCollectionSection h2{
+    font-size: 21px;
+    font-family: ProxiRegular;
+    color: #9c1f19;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 16px; 
+}
+#block-views-lesson-collection-block .view-filters,#block-views-lesson-collection-block-1 .view-filters {
+    float: right;
+    margin-top: -88px;
+    width: 584px;
+}
+#edit-field-portion-tid-wrapper label,
+#edit-field-portion-tid-wrapper .views-widget,
+#edit-field-secondary-topic-tid-wrapper label,
+#edit-field-secondary-topic-tid-wrapper .views-widget,
+#edit-field-author-tid-wrapper label{
+    /*float: left;*/
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#edit-field-author-tid-wrapper .views-widget{
+    margin-top: 10px;
+} 
+.views-exposed-widgets > div{
+    float: right!important;
+}
+.views-exposed-form .views-exposed-widget{
+    padding: 0;
+}
+#edit-submit-lesson-collection{
+    margin-top: -2px;
+}
+.views-field.views-field-twistage-subtitles ul{
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+}
+.views-field.views-field-twistage-subtitles li {
+    display: inline;
+    margin-right: 10px;
+}
+#lessonCollectionSection table {
+    width: 940px!important;
+    font-size: 15px;
+    line-height: 33px;
+    font-family: ProxiLight;
+    color: #433a3a;
+    text-align: left;
+    font-weight: normal;
+    /*margin-top: 13px;*/
+    /*border-bottom: 1px solid #aaa6a6;*/
+}
+tbody{
+    border-top: none!important;
+}
+.tablescroll_wrapper {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    width: 940px!important;
+    overflow-x: hidden!important;
+}
+
+#lessonCollectionSection table thead tr{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+#lessonCollectionSection table thead tr th{
+    padding-right:0px; 
+}
+.Video{
+    background: url(http://cdn1.kabbalah.com/university/icons/icon_video_light_grey.png) no-repeat 8px 6px;
+    width: 32px;
+    height: 32px;
+}
+.views-field-twistage-subtitles span{
+    background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png) no-repeat 8px 9px;
+    color: transparent;
+}
+#lessonCollectionSection table thead tr th.views-field-twistage-subtitles{
+    background: none!important;
+    color: #9C1F19!important;
+}
+#lessonCollectionSection tr:hover{
+    background: #e1edf1;
+}
+/*#lessonCollectionSection table{
+    border-bottom: 1px solid #aaa6a6;
+}*/
+#lessonCollectionSection table thead tr th{
+    border-bottom: none;
+}
+#lessonCollectionSection table thead tr th img{
+    margin-left: 5px;
+}
+#lessonCollectionSection table thead tr th.views-align-left{
+    font-weight: normal!important;
+}
+#lessonCollectionSection table thead tr,
+#lessonCollectionSection table thead tr a{
+    font-size: 12px;
+    font-family: ProxiRegular;
+    color: #9c1f19; 
+    text-align: left;
+    font-weight: normal!important;
+    background: none!important
+}
+#lessonCollectionSection table td a{
+    color: #127795;
+    font-size: 14px;
+}
+#lessonCollectionSection table td.active{
+    background: none;
+}
+#lessonCollectionSection .view-lesson-collection span{
+    display: block;
+}
+#edit-field-portion-tid-wrapper label,
+#edit-field-secondary-topic-tid-wrapper label,
+#edit-field-author-tid-wrapper label{
+    color: #999999;
+    font-family: ProxiRegular;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+    text-align: left;
+    text-transform: capitalize;
+}
+#courseDescription{
+    float: left;
+    height: 100%;
+    width: 100%;
+    background: #f2f1f1;
+}
+span.lessonsCourse {
+    background: url("../images/dd_arrow.png") no-repeat scroll 158px 10px #fff!important;
+    border: 1px solid #CCCCCC;
+    color: #433a3a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: ProxiRegular;
+    font-size: 14px;
+    height: 30px;
+    line-height: 28px;
+    margin-top: -26px;
+    text-align: left;
+    text-indent: 10px;
+    width: 180px;
+    z-index: 1;
+}
+.transcription .lessonsCourse{
+    display: block!important;
+}
+.transcription span.lessonsCourse {
+    background: url("http://cdn1.kabbalah.com/university/icons/dropdown_arrow_blue.png") no-repeat scroll 316px 10px!important;
+    border: 0;
+    color: #71dfff; 
+    cursor: pointer;
+    display: inline-block;
+    font-family: ProxiRegular;
+    font-size: 14px;
+    height: 26px;
+    line-height: 27px;
+    margin-top: -28px;
+    margin-left: -8px;
+    text-align: left;
+    text-indent: 10px;
+    width: 330px;
+    z-index: 1;
+    text-transform: uppercase;
+}
+.transcription span.lessonsCourse:before{
+    content: "View Live Transcript";
+    color: #fff;
+    margin-right: 10px;
+    text-transform: capitalize;
+}
+.transcription .form-type-select{
+    margin-bottom: 9px!important;
+}
+#transcriptWrapper label{
+    float: left;
+    font-family: ProxiRegular;
+    font-size: 16px;
+    font-weight: normal;
+    color: #433a3a;
+    line-height: 14px;
+    padding-left: 10px;
+}
+.transcription select{
+    float: none!important;
+}
+.trans-lang-select.form-select {
+    width: 330px;
+}
+#lessonCollectionSection form select{
+    width: 180px;
+}
+#lessonCollectionSection form option{
+    width: 152px;
+}
+#preReqsTitle{
+    color: #FFFFFF;
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+}
+#preReqs a{
+    color:#4dcff5;
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase; 
+}
+.lessonTitle {
+    float: left;
+    width: 450px;
+}
+.lessonRecordedDate {
+    float: left;
+    width: 100px;
+}
+.lessonWatchLink {
+    float: left;
+    width: 45px;
+}
+#contentAuthorInfo #eSocial{
+    margin-top: 135px!important;
+    margin-bottom: 17px!important;
+    width: 440px!important;
+}
+#wrapperVideoSection #eSocial {
+    margin: auto;
+    width: 940px;
+}
+.videocontent #eSocial {
+    margin: auto;
+    width: 640px!important;
+}
+.sharethis{
+    border-top: 1px solid #7c7575;
+    padding-top: 10px;
+}
+#courseDescription #eSocial .sharethis{
+    border-top: none!important;
+    padding-top: 0!important;
+    float: right;
+    margin-bottom: 15px;
+}
+#language{
+    float: left;
+    color:#433b3a;
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+}
+#courseDescription #eSocial{
+    margin: auto;
+    width: 700px;
+    border-bottom: 1px solid #C2C1C1;
+    padding-top: 30px;
+    height: 37px;
+}
+#optionVideo .sharethis{
+    padding-top: 0px;
+}
+#topicCourseTitle,#topicCourse{
+    display: inline!important;
+}
+#topicCourse{
+    text-transform: uppercase;
+}
+#courseDescription > p {
+    margin: 30px auto;
+    text-align: justify;
+    width: 700px;
+    line-height: 25px;
+}
+#courseDescription > ul {
+    color: #433B3A;
+    font-family: ProxiRegular;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 25px;
+    margin: auto auto 30px;
+    padding-left: 0;
+    text-align: left;
+    width: 700px;
+}
+.stButton{
+    margin-left: 0!important;
+}
+.st_facebook_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/facebook_icon_white.png) no-repeat!important;
+    width: 26px!important;
+}
+.st_twitter_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/twitter_icon_white.png) no-repeat!important;
+     width: 39px !important;
+}
+.st_googleplus_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/googleplus_icon_white.png) no-repeat!important;
+    width: 37px !important;
+}
+.st_email_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/email_icon_white.png) no-repeat!important;
+    width: 34px !important;
+}
+.st_sharethis_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/social_media_icon_white.png) no-repeat!important;
+    width: 37px !important;
+}
+.st_pinterest_large{
+    display: none!important;
+}
+#courseDescription .st_facebook_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/facebook_icon.png) no-repeat!important;
+    width: 26px!important;
+}
+#courseDescription .st_twitter_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/twitter_icon.png) no-repeat!important;
+     width: 39px !important;
+}
+#courseDescription .st_googleplus_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/googleplus_icon.png) no-repeat!important;
+    width: 37px !important;
+}
+#courseDescription .st_email_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/email_icon.png) no-repeat!important;
+    width: 34px !important;
+}
+#courseDescription .st_sharethis_large .stLarge{
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/social_media_icon.png) no-repeat!important;
+    width: 37px !important;
+}
+/***/
+div.jp-audio{
+    margin: auto;
+}
+.videocontent #eSocial{
+    margin: auto;
+    /*width: 940px;*/
+}
+#classResources {
+    background: none repeat scroll 0 0 #ECECEC;
+    float: left;
+    padding: 15px 20px;
+    margin-bottom: 51px;
+    width: 560px;
+}
+#classHighlights ul{
+    padding-left: 15px;
+    margin-top: -8px;
+    margin-bottom: 29px;
+}
+#classHighlights li {
+    list-style: disc outside none;
+    color:#433a3a; 
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 3px;
+}
+.resourceTitle > a{
+    color:#127795;  
+    font-family: ProxiRegular;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    margin-right: 35px;
+    vertical-align: super;
+}
+.resourceFile {
+    background: url("../images/icon_pdf.png") no-repeat scroll 0 0 transparent;
+    margin-right: 14px;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+#classesDescription > p {
+    color: #433A3A;
+    font-family: ProxiRegular;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 25px;
+    /*margin-bottom: -8px;
+    margin-top: -10px;*/
+    text-align: left;
+}
+.videocontent .sharethis{
+    border-top: none;
+}
+#lessonCollectionSection .Audio {
+    background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
+    height: 13px;
+    width: 25px;
+}
+
+/**grid display***/
+#mainContentWrapper,#courseByParentWrapper {
+    clear: both;
+    margin: auto;
+    max-width: 1600px;
+    min-width: 940px;
+    padding: 0 10px 40px;
+}
+.topicwrapper {
+    float: left;
+    margin: 0 10px 40px;
+    cursor: pointer;
+    overflow: hidden;
+    width: 300px;
+    height: 170px;
+}
+.topicItemTitle {
+    margin: 0 10px;
+}
+.topicItemTitle a {
+    color: #433A3A !important;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 7px;
+    text-align: left;
+    text-transform: uppercase;
+    width: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+.topicTermnDate {
+    font-size: 12px;
+    margin: 0 10px;
+    padding-bottom: 10px;
+}
+.topicItemText {
+    color: #433A3A !important;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 10px 5px;
+    text-align: left;
+}
+.topicItemText span a {
+    text-transform: capitalize;
+    color: #127795;
+}
+#mainContentWrapper h1#page-title, #courseByParentWrapper h1#page-title {
+    margin-left: 8px;
+    margin-top: 47px;
+    width: 940px;
+    float: none;
+}
+/*@media (max-width: 1000px) {
+    #mainContentWrapper h1#page-title  {
+            margin-left: 89px;
+            width: 785px;
+    }
+}*/
+.topicItemImage a {
+    height: auto !important;
+    text-decoration: none !important;
+    overflow: hidden;
+    width: 300px;
+}
+.topicItemImage img {
+    float: left;
+    height: 170px;
+    width: 300px;
+    z-index: -10;
+}
+.topicTextWrapper {
+    background: url("../images/sliding_white_bg_3.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 180px;
+    padding-top: 15px;
+    width: 300px;
+}
+/*.block.block-system {
+    margin-top: 30px;
+}*/
+.sticky-header{
+    display: none!important;
+}
+#list img,#grid img {
+    float: left;
+    height: 16px;
+    margin: 10px 0 10px 10px;
+    width: 16px;
+}
+/*****/
+
+.imagesCont,.contWrapper {
+    cursor: pointer;
+    float: left;
+    height: 170px;
+    /*margin: 0 10px 40px;*/
+    overflow: hidden;
+    width: 300px;
+}
+.imagesCont a/*, .contWrapper:hover*/ {
+    cursor: pointer;
+    overflow: hidden;
+    width: 300px;
+}
+.imagesCont img, .contWrapper img {
+    float: left;
+    height: 170px;
+    width: 300px;
+    z-index: -10;
+}
+.descCont,.theDescCont {
+    background: url("../images/sliding_white_bg_3.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 180px;
+    margin-top: -59px;
+    padding-top: 5px;
+    width: 300px;
+}
+.jsonTitle,.theJsonTitle {
+    padding-bottom: 4px!important;
+    width: 280px;
+    display: block;
+}
+.jsonTitle,.theJsonTitle {
+    color: #433A3A !important;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 0;
+    padding-bottom: 7px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 280px;
+}
+.teachingsTopicAndDate,.theDate {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    color: #433A3A !important;
+    display: inline-block;
+}
+.teaser,.theTeaser {
+    color: #433A3A !important;
+    display: block;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+}
+.teaser p,.theTeaser p {
+    color: #433A3A !important;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    margin-top: 0 !important;
+    text-align: left;
+}
+#block-ukabbalah-courses-by-parent-courses-grid-view li {
+    float: left;
+    height: 170px;
+    margin: 0 10px 40px;
+    overflow: hidden;
+    width: 300px;
+}
+#block-ukabbalah-courses-by-parent-courses-grid-view ul{
+    padding-left: 0;
+}
+/**home page**/
+
+#carousal1Wrapper,#carousal2Wrapper,#carousal3Wrapper {
+    float: left;
+    width: 100%;
+}
+#block-ukabbalah-fp-carousals-carousal1 > h2,#block-ukabbalah-fp-carousals-carousal2 > h2 ,#block-ukabbalah-fp-carousals-carousal3 > h2{
+    margin: 39px auto 3px;
+    width: 940px;
+    color: #999;
+}
+.carrouselFix{
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+.vidImg{
+    background: url(http://cdn1.kabbalah.com/university/icons/icon_audio.png) no-repeat;
+    height: 13px;
+    width: 16px;
+    float: left;
+    margin-right: 7px;
+    margin-top: 1px;
+}
+.Premium{
+    background: url(http://cdn1.kabbalah.com/university/icons/icon_lock.png) no-repeat;
+    float: left;
+    height: 13px;
+    margin-right: 7px;
+    width: 11px;
+    margin-top: 1px; 
+}
+.articleImg,.topicItemTitle span{
+    background: url(http://cdn1.kabbalah.com/university/icons/article.png) no-repeat;
+    float: left;
+    height: 13px;
+    margin-right: 7px;
+    width: 11px;
+    margin-top: 11px; 
+}
+.topicItemTitle span{
+    margin-top: 2px!important;
+}
+.topicTermnDate span a{
+    color: #433a3a;
+}
+.theTitle,.titleWrapper {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.teachersPath,.readMore{
+    color: #127795; 
+}
+.rightArrowStyleHome{
+    position: relative;
+}
+/*#edit-field-secondary-topic-und{
+    height:500px;
+}*/
+#teachingsSectionHeaderBar .lessonsCourse{
+    display: block;
+}
+#authorDDWrapper, #topicDDWrapper {
+    float: left;
+    width: 313px;
+}
+#topicDDtext, #teachersDDtext, #teachersDD,#topicDD {
+    float: left;
+}
+#teachings_teachersDD, #teachings_topicDD {
+    width: 182px;
+}
+.preVideoImg {
+    width: 940px;
+    margin: 20px auto auto;
+}
+.preVideoImg img{
+    float: left;
+}
+.preVideoImg .videotitles{
+    float: right;
+    width: 290px;
+    height: 242px;
+    clear: none;
+    margin-top: 0;
+}
+.preVideoImg #titleMultimedia,
+.preVideoImg #courseNameMultimedia,
+.preVideoImg #pipe,
+.preVideoImg #primaryTopicMultimedia,
+.preVideoImg #authorNameMultimedia,
+.preVideoImg #dateMultimedia{
+    color: #fff;
+}
+.preVideoImg #wrapperInfoMultimedia,.preVideoImg #wrapperAuthorDate{
+    width: 290px;
+}
+.preVideoImg #authorNameMultimedia, .preVideoImg #dateMultimedia{
+    text-align: left;
+}
+.preVideoImg .pipe{
+    display: none;
+}
+.preVideoImg #wrapperPrice{
+    width: 275px;
+    margin-left: 30px
+}
+.preVideoImg .sharethis{
+    float: right;
+    width: 290px;  
+    margin-top: 16px; 
+}
+.artImg {
+    background: url("http://cdn1.kabbalah.com/university/icons/article.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 13px;
+    margin-right: 7px;
+    margin-top: 0px;
+    width: 11px;
+}
+.transcript-content {
+    width: 605px;
+}
+.audioSection .preVideoImg img{
+    width: 620px;
+}
+/*.not-logged-in #wrapperVideoSection {
+    margin-bottom: 60px;
+}*/

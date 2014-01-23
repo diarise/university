@@ -1,0 +1,196 @@
+<?php
+   
+   
+   function kabbalah_ukab_lesson_node_import_menu() {
+   
+	$items = array();
+		
+		$items['updateNodeAuthor'] = array(               // Made this a PAGE
+			'page callback' => 'updateNodeAuthor',
+			'access callback' => TRUE,
+			'type' => MENU_NORMAL_ITEM,
+		);
+		
+		
+		return $items;
+   }
+   
+   
+   function updateNodeAuthor() {
+   
+		$sql ="SELECT n.nid,n.created,nr.vid,al.field_audio_link_value
+				FROM {node} n
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_revision_field_audio_link al} ON ( al.entity_id = nr.nid AND al.revision_id = nr.vid )
+				WHERE n.status =1
+				AND al.field_audio_link_value !=''
+				AND n.type = 'lesson'";
+				//AND n.nid NOT IN (1448,1455)";
+		
+		$result = db_query( $sql );
+		foreach ($result as $record) 
+		{
+			
+			if( strstr($record->field_audio_link_value, 'rav_berg') )
+			{	
+			
+				echo $record->field_audio_link_value."::".$record->nid."<br><br>";
+				
+				/*
+				// taxonomy author
+				
+				//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",524,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_author
+				db_query("INSERT INTO field_data_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,524)");
+				
+				//iii) Insert into field_revision_field_author
+				db_query("INSERT INTO field_revision_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,524)");
+				
+				
+				// taxonomy type of lesson
+				
+				//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",554,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_type_of_lesson
+				db_query("INSERT INTO field_data_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,554)");
+				
+				//iii) Insert into field_revision_field_type_of_lesson
+				db_query("INSERT INTO field_revision_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,554)");
+				
+				print $record->nid.",<br>";
+				//break;
+				*/
+			}
+		}
+		
+		
+		
+		
+		/* UPDATE LESSON VIDEO TAXONOMY AUTHOR AND TYPE OF LESSON
+		
+		$sql = "SELECT n.nid,n.created,nr.vid,lv.field_lesson_video_twistage_existing_category
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_revision_field_lesson_video lv} ON ( lv.entity_id = nr.nid AND lv.revision_id = nr.vid )
+				WHERE n.status =1
+				AND lv.field_lesson_video_twistage_existing_category = 'david benzaquen'
+				AND n.type = 'lesson'";
+								 
+		$result = db_query( $sql );
+		foreach ($result as $record) 
+		{
+			// taxonomy author
+			
+				//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",505,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_author
+				db_query("INSERT INTO field_data_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,505)");
+				
+				//iii) Insert into field_revision_field_author
+				db_query("INSERT INTO field_revision_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,505)");
+				
+			// taxonomy type of lesson
+				
+				//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",555,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_type_of_lesson
+				db_query("INSERT INTO field_data_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,555)");
+				
+				//iii) Insert into field_revision_field_type_of_lesson
+				db_query("INSERT INTO field_revision_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,555)");
+			
+			
+			print $record->nid.",<br>";
+			//break;
+		
+		}
+		
+		*/
+		
+		/*$sql ="SELECT n.nid,n.created,nr.vid,al.field_audio_link_value
+				FROM {node} n
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_revision_field_audio_link al} ON ( al.entity_id = nr.nid AND al.revision_id = nr.vid )
+				WHERE n.status =1
+				AND al.field_audio_link_value !=''
+				AND n.type = 'lesson'
+				AND n.nid NOT IN(972,973,1008,1009,1010,1011,1014,1026,1027,1029,1033,1034,1037,1041,1042,1046,1050,1059,1060,1061,1062,
+				1065,1067,1074,1076,1081,1083,1085,1086,1091,1094,1098,1099,1101,1104,1108,1109,1110,1111,1112,1117,1120,1122,1125,1126,
+				1127,1131,1136,1139,1140,1142,1144,1147,1148,1150,1152,1156,1161,1212,1237,1244,1247,1249,1261,1262,1277,1280,1283,1286,
+				1288,1291,1293,1309)";*/
+				
+		/*$sql = "SELECT n.nid,n.created,nr.vid,lv.field_lesson_video_twistage_existing_category
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_revision_field_lesson_video lv} ON ( lv.entity_id = nr.nid AND lv.revision_id = nr.vid )
+				WHERE n.status =1
+				AND lv.field_lesson_video_twistage_existing_category = 'batsheva zimerman'
+				AND n.type = 'lesson'
+				AND n.nid NOT IN(1254,1255,1256,1257,1258,1259,1300,1301,1304,1307,1308,1311,1317,1319,1321,1322,1323,1326,1331,1333,1334,1335,1341,1344,1346,1347,1350,1351,1357,1359)";
+		
+		
+		$result = db_query( $sql );
+		foreach ($result as $record) 
+		{				
+			
+			/*
+			//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",503,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_author
+				db_query("INSERT INTO field_data_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,503)");
+				
+				//iii) Insert into field_revision_field_author
+				db_query("INSERT INTO field_revision_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,503)");
+				
+				
+				//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",555,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_type_of_lesson
+				db_query("INSERT INTO field_data_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,555)");
+				
+				//iii) Insert into field_revision_field_type_of_lesson
+				db_query("INSERT INTO field_revision_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,555)");
+			*/
+			
+			//print $record->nid."<br>";
+			
+			/*if( strstr($record->field_audio_link_value, 'batsheva_zimerman') )
+			{	
+				
+				
+				//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",503,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_author
+				db_query("INSERT INTO field_data_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,503)");
+				
+				//iii) Insert into field_revision_field_author
+				db_query("INSERT INTO field_revision_field_author(entity_type,bundle,entity_id,revision_id,language,delta,field_author_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,503)");
+				
+				
+				//i) Insert into taxonomy_index
+				db_query( "INSERT INTO taxonomy_index(nid,tid,created) VALUES (".$record->nid.",554,".$record->created.")" );
+						
+				//ii) Insert into field_data_field_type_of_lesson
+				db_query("INSERT INTO field_data_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,554)");
+				
+				//iii) Insert into field_revision_field_type_of_lesson
+				db_query("INSERT INTO field_revision_field_type_of_lesson(entity_type,bundle,entity_id,revision_id,language,delta,field_type_of_lesson_tid) VALUES ('node','lesson',".$record->nid.",".$record->vid.",'und',0,554)");
+				
+				
+				//print $record->nid."<br>";
+				//break;
+			}*/
+			
+		//}
+			
+		exit;	
+		return "done";
+   }
