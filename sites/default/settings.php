@@ -215,9 +215,9 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'ukabbalahdevdb',
-      'username' => 'ukabbalahdevdb',
-      'password' => 'ukabbalahdevdb',
+      'database' => 'universitylive',
+      'username' => 'universitylive',
+      'password' => 'universitylivedb$$$',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
