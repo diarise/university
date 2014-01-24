@@ -749,7 +749,7 @@
 			$node = node_load($nid = $record->nid , $record->revision_id );
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 			foreach( $vocab_terms1 as $t )	{	$authors[] = $t->name; }
 			$primary_topic = taxonomy_term_load($node->field_primary_topic['und'][0]['tid']);
 			$secondary_topics = array();
