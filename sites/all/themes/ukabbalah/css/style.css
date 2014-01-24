@@ -2964,13 +2964,27 @@ div.jp-audio {
 
 /**start scrollling filter**/
 /**end scrollling filter**/
-/* line 2417, ../sass/style.scss */
+/* line 2416, ../sass/style.scss */
+.scrollingTitle {
+  background: #fff;
+  position: fixed !important;
+  position: relative;
+  z-index: 140;
+  top: 0;
+  margin: 0 !important;
+  width: 100%;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  z-index: 1400 !important;
+}
+
+/* line 2428, ../sass/style.scss */
 .scrollingFilter {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
   position: relative;
   z-index: 140;
-  top: 25px;
+  top: 46px;
   width: 100%;
   min-width: 100% !important;
   max-width: 100% !important;
