@@ -7,6 +7,7 @@
 	    $('#teachingsSectionHeaderBar').toggleClass('scrollingFilter', $(window).scrollTop() > $('#pageregion').offset().top);
 	    $('#teachingsControlSectionInnerWrapper').toggleClass('teachingsBarInnerWrapper parent_topic', $(window).scrollTop() > $('#pageregion').offset().top);
 	    $('#teachingsBarInnerWrapper').toggleClass('teachingsBarInnerWrapper parent_topic', $(window).scrollTop() > $('#pageregion').offset().top);
+	    $('#page-title').toggleClass('scrollingFilter', $(window).scrollTop() > $('#pageregion').offset().top);
 	});
 
 var resizeTimer;

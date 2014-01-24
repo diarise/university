@@ -764,32 +764,12 @@ ul.masonry{
     text-transform: uppercase;
 }
 
-// @media only screen and (max-width: 1580px) {
-//     #teachingsControlSection,#teachingsSectionHeaderBar{
-//       padding-left:0px;
-//     }
-// }
-
-// @media (max-width: 960px) {
-//   #teachingsControlSectionInnerWrapper,#teachingsSectionHeaderBar{
-//       padding-left:20px;
-//     }
-// }
-
-
-// #teachingsSectionHeaderBar {
-//     float: right;
-//     margin-top: 2px;
-// }
  #teachingsSectionHeaderBar {
     height: 65px;
     margin: 10px auto -6px;
     max-width: 1580px;
     min-width: 940px;
     padding-bottom: 1px;
-    // padding-left:20px;
-    // padding-right:20px;
-    // border-bottom: 1px solid #CCCCCC;
 }
 #teachingsBarInnerWrapper{
   padding-bottom:3px!important;
@@ -2425,11 +2405,7 @@ div.jp-audio{
 
 
 /**end scrollling filter**/
-#teachingsSectionHeaderBar{
-    
-    // height: 40px;
-    
-}
+
 .scrollingTitle{
   background: #fff;
     position: fixed !important;
