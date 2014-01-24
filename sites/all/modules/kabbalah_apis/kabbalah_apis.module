@@ -75,6 +75,12 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		$items['k_api/get_video_lesson_by_course'] = array(       // Mapped from /get_articles
+			'page callback'      => 'getVideoLessonByCourseId',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
 		return $items;
 	  }
 	  
@@ -764,6 +770,7 @@
 					if ( in_array($author, $authors) ) {
 					
 						$result_arr[]=  array(
+										  "course_id"=> $node->nid ,	
 										  "title"=> $title ,
 										  "author"=> implode( "," , $authors ),
 										  "date" => date( 'F jS, Y',$node->changed ),
@@ -777,7 +784,8 @@
 				} else {
 				
 					$result_arr[]=  array(
-										 "title"=> $title ,
+										  "course_id"=> $node->nid ,	
+										  "title"=> $title ,
 										  "author"=> implode( "," , $authors ),
 										  "date" => date( 'F jS, Y',$node->changed ),
 										  "topic"=> $primary_topic->name ,
@@ -791,6 +799,77 @@
 		
 		echo json_encode_unicode($result_arr);
 	
+	}
+	
+	function getVideoLessonByCourseId() {
+	
+		if( isset($_GET['course_id']) ) {
+		
+			$course_id = $_GET['course_id'];
+			$sql = "SELECT n.nid , n.title as lesson_title, cl.field_course_list_nid , el.field_event_list_nid , n2.title
+					FROM {node n}
+					LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+					LEFT JOIN {field_data_field_event_list el} ON ( nr.nid = el.entity_id AND nr.vid = el.revision_id )
+					LEFT JOIN {field_data_field_course_list cl} ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id )
+					LEFT JOIN {node n2} ON ( cl.field_course_list_nid = n2.nid OR el.field_event_list_nid = n2.nid )
+					WHERE n.status =1
+					AND n.type = 'lesson'
+					AND n2.nid = '".$course_id."'
+					ORDER BY n.changed DESC";
+			
+			// Processing the results
+			$result = db_query( $sql );
+			$result_arr = array();
+			foreach ($result as $record) {
+			
+				$node = node_load($nid = $record->nid , $record->revision_id );
+				$title = $node->title;
+				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+				$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+				foreach( $vocab_terms1 as $t )	{	$authors[] = $t->name; }
+				$primary_topic = taxonomy_term_load($node->field_primary_topic['und'][0]['tid']);
+				$secondary_topics = array();
+				$vocab_terms2 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+				foreach( $vocab_terms2 as $t )	{	$secondary_topics[] = $t->name; }
+				$body  = get_clean_body( $node->body['und'][0]['value'] , 0 );
+				$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+				$highlights = get_clean_body( $node->field_lesson_highlights['und'][0]['value'] , 0 );
+				$resources = array();
+				
+				 if( sizeof( $node->field_lesson_resources) > 0  ) {
+				
+					$wrapper = entity_metadata_wrapper('node', $node);
+					foreach ($wrapper->field_lesson_resources as $i)
+					{
+						$resources[] = array( 
+												"resource_link" => $i->field_file_link->value() , 
+												"resource_description" => $i->field_file_description->value() 
+										);
+					}
+				 }
+			
+			
+				$result_arr[]=  array(  "title"=> $title ,
+										"author"=> implode( "," , $authors ),
+										"date" => date( 'F jS, Y',$node->changed ),
+										"topic"=> $primary_topic->name ,
+										"keywords" => implode( "," , $secondary_topics ),
+										"body" => $body , 
+										"image" => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' , 
+										"video_id" => $node->field_lesson_video[und][0][twistage_existing_videos],
+										"path" => $path,
+										"highlights" => $highlights,
+										"resources" => $resources
+								);
+			}
+			echo json_encode_unicode($result_arr);
+		
+		
+		} else {
+			
+			return "You need to send a title with the url";
+		}
+		
 	}
 	
 	function json_encode_unicode($data) {
