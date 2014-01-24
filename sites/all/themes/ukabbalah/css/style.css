@@ -2961,3 +2961,20 @@ div.jp-audio {
 .watch-width {
   width: 110px !important;
 }
+
+/**start scrollling filter**/
+/**end scrollling filter**/
+/* line 2411, ../sass/style.scss */
+#teachingsSectionHeaderBar {
+  background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
+  position: relative;
+  z-index: 140;
+}
+
+/* line 2418, ../sass/style.scss */
+.scrollingFilter {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1400 !important;
+}

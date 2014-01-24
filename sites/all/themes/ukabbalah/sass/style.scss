@@ -2385,6 +2385,46 @@ div.jp-audio{
     width: 110px !important;
 }
 
+/**start scrollling filter**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**end scrollling filter**/
+#teachingsSectionHeaderBar{
+    background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
+    // height: 40px;
+    position: relative;
+    z-index: 140;
+}
+
+.scrollingFilter {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 1400 !important;
+}
+
+
+
+
 
 
 
