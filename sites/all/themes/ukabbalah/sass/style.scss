@@ -2413,13 +2413,23 @@ div.jp-audio{
     // height: 40px;
     
 }
-
+.scrollingTitle{
+  background: #fff;
+    position: fixed !important;
+    position: relative;
+    z-index: 140;
+    top: 25px;
+    width: 100%;
+    min-width: 100%!important;
+    max-width: 100%!important;
+    z-index: 1400 !important;
+}
 .scrollingFilter {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
     position: relative;
     z-index: 140;
-    top: 25px;
+    top: 50px;
     width: 100%;
     min-width: 100%!important;
     max-width: 100%!important;
