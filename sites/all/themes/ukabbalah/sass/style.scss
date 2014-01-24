@@ -747,8 +747,8 @@ ul.masonry{
     margin: auto;
     max-width: 1580px;
     min-width: 940px;
-    padding: 20px;
-    padding-bottom:16px;
+    padding: 20px 0 16px;
+    // padding-bottom:16px;
     // background-color:#f5f5f5;
     height:20px;
     margin-top: 24px;
@@ -763,6 +763,20 @@ ul.masonry{
     text-decoration: none;
     text-transform: uppercase;
 }
+
+// @media only screen and (max-width: 1580px) {
+//     #teachingsControlSection,#teachingsSectionHeaderBar{
+//       padding-left:0px;
+//     }
+// }
+
+// @media (max-width: 960px) {
+//   #teachingsControlSectionInnerWrapper,#teachingsSectionHeaderBar{
+//       padding-left:20px;
+//     }
+// }
+
+
 // #teachingsSectionHeaderBar {
 //     float: right;
 //     margin-top: 2px;
@@ -773,8 +787,8 @@ ul.masonry{
     max-width: 1580px;
     min-width: 940px;
     padding-bottom: 1px;
-    padding-left:20px;
-    padding-right:20px;
+    // padding-left:20px;
+    // padding-right:20px;
     // border-bottom: 1px solid #CCCCCC;
 }
 #teachersDDtext {
@@ -2428,7 +2442,7 @@ div.jp-audio{
 .scrollingFilter {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
-    padding:0!important;
+    
     z-index: 140;
     top: 46px;
     width: 100%;
@@ -2441,6 +2455,7 @@ div.jp-audio{
     max-width: 1580px;
     min-width: 940px;
     margin: auto;
+    padding:0!important;
 }
 
 
