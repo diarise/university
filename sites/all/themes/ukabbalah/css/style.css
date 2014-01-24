@@ -2971,7 +2971,7 @@ div.jp-audio {
   position: relative;
   z-index: 140;
   top: 0;
-  margin: 0;
+  margin: 0 !important;
   width: 100%;
   min-width: 100% !important;
   max-width: 100% !important;
