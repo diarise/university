@@ -41,6 +41,13 @@
 	    "width": $(".masonry").width() - 20,                  
 	});
 
+	$(".scrollingFilter").css({
+	    "overflow": "hidden",
+	    "margin-left": "auto",
+	    "margin-right": "auto",
+	    "left": (100% -$(".parent_topic").width()) / 2,                  
+	});
+
  
 	var resizeTimer;
 	$(window).resize(function(){
