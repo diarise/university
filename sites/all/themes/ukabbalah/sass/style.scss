@@ -791,9 +791,9 @@ ul.masonry{
     // padding-right:20px;
     // border-bottom: 1px solid #CCCCCC;
 }
-#teachingsBarInnerWrapper{
-  padding-bottom:3px;
-}
+// #teachingsBarInnerWrapper{
+//   padding-bottom:3px;
+// }
 #teachersDDtext {
     margin-left: 0 !important;
 }
@@ -2445,7 +2445,6 @@ div.jp-audio{
 .scrollingFilter {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
-    
     z-index: 140;
     top: 46px;
     width: 100%;
@@ -2458,7 +2457,7 @@ div.jp-audio{
     max-width: 1580px;
     min-width: 940px;
     margin: auto;
-    padding:0!important;
+    // padding:0!important;
 }
 
 

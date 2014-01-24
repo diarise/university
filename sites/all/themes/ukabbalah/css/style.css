@@ -953,11 +953,6 @@ ul.masonry {
   padding-bottom: 1px;
 }
 
-/* line 794, ../sass/style.scss */
-#teachingsBarInnerWrapper {
-  padding-bottom: 3px;
-}
-
 /* line 797, ../sass/style.scss */
 #teachersDDtext {
   margin-left: 0 !important;
@@ -2993,10 +2988,9 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2457, ../sass/style.scss */
+/* line 2456, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
   margin: auto;
-  padding: 0 !important;
 }
