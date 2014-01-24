@@ -5,6 +5,6 @@
 	    $('#headerDonateButtonFloat').toggleClass('headerDonateButtonFloatAppear', $(window).scrollTop() > $('#outerMenu').offset().top);
 	    $('#teachingsControlSection').toggleClass('scrollingTitle', $(window).scrollTop() > $('#pageregion').offset().top);
 	    $('#teachingsSectionHeaderBar').toggleClass('scrollingFilter', $(window).scrollTop() > $('#pageregion').offset().top);
-	    $('#teachingsBarInnerWrapper').toggleClass('parent_topic', $(window).scrollTop() > $('#pageregion').offset().top);
+	    $('#teachingsBarInnerWrapper').toggleClass('teachingsBarInnerWrapper', $(window).scrollTop() > $('#pageregion').offset().top);
 	});
 })(jQuery);
