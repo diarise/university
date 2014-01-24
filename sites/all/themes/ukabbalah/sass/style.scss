@@ -763,9 +763,15 @@ ul.masonry{
     text-decoration: none;
     text-transform: uppercase;
 }
-@media screen and (min-width: 980px) {
+@media screen and (max-width: 940px) {
     #teachingsControlSection,#teachingsSectionHeaderBar{
       padding-left:20px;
+    }
+  }
+
+@media screen and (min-width: 1580px) {
+    #teachingsControlSection,#teachingsSectionHeaderBar{
+      padding-left:0px;
     }
   }
 // #teachingsSectionHeaderBar {
