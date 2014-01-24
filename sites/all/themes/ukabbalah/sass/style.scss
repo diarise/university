@@ -2421,6 +2421,8 @@ div.jp-audio{
     z-index: 140;
     top: 25px;
     width: 100%;
+    min-width: 100%!important;
+    max-width: 100%!important;
     z-index: 1400 !important;
 }
 
