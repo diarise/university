@@ -22,9 +22,12 @@
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_online_demand_events') .'/js/ukabbalah_online_demand_events.js');
 		$resultHTML = "";
 		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('ON DEMAND EVENTS')."</span>";	
 		$resultHTML.="</div>";
+		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
 		$resultHTML.="<div id='authorDDWrapper'>";
 		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
 		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown2()."</span>";
@@ -32,6 +35,7 @@
 		$resultHTML.="<div id='topicDDWrapper'>";
 		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
 		$resultHTML.="<span id='topicDD'>".getTopicDropDown2()."</span>";
+		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingResultSection'></div>";
