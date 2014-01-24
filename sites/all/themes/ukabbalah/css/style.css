@@ -953,6 +953,11 @@ ul.masonry {
   padding-bottom: 1px;
 }
 
+/* line 794, ../sass/style.scss */
+#teachingsBarInnerWrapper {
+  padding-bottom: 3px !important;
+}
+
 /* line 797, ../sass/style.scss */
 #teachersDDtext {
   margin-left: 0 !important;
