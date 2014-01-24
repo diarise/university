@@ -764,12 +764,12 @@
 					if ( in_array($author, $authors) ) {
 					
 						$result_arr[]=  array(
-										  "title"=> htmlentities($title) ,
+										  "title"=> $title ,
 										  "author"=> implode( "," , $authors ),
 										  "date" => date( 'F jS, Y',$node->changed ),
 										  "topic"=> $primary_topic->name ,
 										  "keywords" => implode( "," , $secondary_topics ),
-										  "body" => htmlentities($body) , 
+										  "body" => $body , 
 										  "image" => $node->field_image_cdn_link['und'][0]['value'] , 
 										  "path" => $path
 										);
@@ -777,18 +777,20 @@
 				} else {
 				
 					$result_arr[]=  array(
-										  "title"=> htmlentities($title) ,
+										 "title"=> $title ,
 										  "author"=> implode( "," , $authors ),
 										  "date" => date( 'F jS, Y',$node->changed ),
 										  "topic"=> $primary_topic->name ,
 										  "keywords" => implode( "," , $secondary_topics ),
-										  "body" => htmlentities($body) , 
+										  "body" => $body , 
 										  "image" => $node->field_image_cdn_link['und'][0]['value'] , 
 										  "path" => $path
 										);
 				}
 		}
 		
+		print_r( $result_arr );
+		echo json_encode($result_arr);
 		echo json_encode_unicode($result_arr);
 	
 	}
