@@ -706,11 +706,12 @@ span.jsonTitle {
     color: $colorBrown;
     display: inline-block;
 }
-.termgroup{
+.teachingsTopicAndDate{
   width: 286px;
 }
 .theDate {
-    @extend .teachingsTopicAndDate
+    @extend .teachingsTopicAndDate;
+    width: auto;
 }
 .teaser {
     color: $colorBrown;
