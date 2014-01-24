@@ -790,7 +790,7 @@
 		}
 		
 		print_r( $result_arr );
-		
+		echo json_encode($result_arr);
 		echo json_encode_unicode($result_arr);
 	
 	}
