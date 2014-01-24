@@ -34,7 +34,7 @@
 	    "height": 80,                
 	});
 
-	$(".termDesc").css({
+	$(".termDesc, #teachingsControlSectionInnerWrapper, #teachingsBarInnerWrapper").css({
 	    "overflow": "hidden",
 	    "margin-left": "auto",
 	    "margin-right": "auto",
@@ -50,7 +50,7 @@
 	          "width" : $(".masonry").width() - 20
 	  });
 
-		  $("#mainContentWrapper .view-filters,#mainContentWrapper .termDesc").css({
+		  $("#mainContentWrapper .view-filters,#mainContentWrapper .termDesc, #teachingsControlSectionInnerWrapper, #teachingsBarInnerWrapper").css({
 	          "width" : $(".masonry").width() - 20
 	  });
 		}, 200);  
