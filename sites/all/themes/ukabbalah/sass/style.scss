@@ -769,11 +769,13 @@ ul.masonry{
 //       padding-left:0px;
 //     }
 // }
-@media only screen and (max-width: 980px) {
-     #teachingsControlSection,#teachingsSectionHeaderBar{
+
+@media (max-width: 980px) {
+  #teachingsControlSection,#teachingsSectionHeaderBar{
       padding-left:20px;
     }
 }
+
 
 // #teachingsSectionHeaderBar {
 //     float: right;
