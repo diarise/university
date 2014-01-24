@@ -22,11 +22,14 @@
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_topics') .'/js/json_carousel.js');
 		$resultHTML = "";
 		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('COURSES')."</span>";
 		$resultHTML.="<span id ='list'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_topics/images/list.ico'></a></span>";
 		$resultHTML.="<span id ='grid'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_topics/images/grid.ico'></a></span>";	
 		$resultHTML.="</div>";
+		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
 		$resultHTML.="<div id='authorDDWrapper'>";
 		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
 		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
@@ -34,6 +37,7 @@
 		$resultHTML.="<div id='topicDDWrapper'>";
 		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
 		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
+		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
