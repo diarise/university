@@ -2993,7 +2993,7 @@ div.jp-audio {
 }
 
 /* line 2440, ../sass/style.scss */
-#teachingsBarInnerWrapper {
+.teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
   padding-bottom: 1px;
