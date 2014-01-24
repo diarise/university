@@ -69,8 +69,8 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
-		$items['k_api/get_videos'] = array(       // Mapped from /get_articles
-			'page callback'      => 'getVideosInfoJson',
+		$items['k_api/get_video_courses'] = array(       // Mapped from /get_articles
+			'page callback'      => 'getVideoCoursesInfoJson',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
@@ -684,9 +684,63 @@
 	
 	}
 	
-	function getVideosInfoJson() {
+	function getVideoCoursesInfoJson() {
 	
-		return "test";
+		if( isset($_GET['author']) && isset($_GET['topic']) ) {
+		
+			$author = $_GET['author'] ; 
+			$topic = $_GET['topic'] ; 
+			
+			if( $author == 'none' && $topic == 'none' ) {
+			
+				$sql = "SELECT *
+						FROM {node n}
+						LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+						WHERE n.status =1
+						AND n.type = 'course'
+						ORDER BY n.changed";
+			
+			} else if ( $author != 'none' && $topic == 'none' ) {
+						
+				$sql = "SELECT *
+						FROM {node n}
+						LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+						LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid )
+						LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid)
+						WHERE n.status =1
+						AND td.vid = 7
+						AND td.name='".$author."'
+						AND n.type = 'course'
+						ORDER BY n.changed DESC";
+				
+				
+				
+			} else if ( ($author == 'none' && $topic != 'none') || ($author != 'none' && $topic != 'none') ) {
+			
+				$sql = "SELECT *
+						FROM {node n}
+						LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+						LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid )
+						LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid)
+						WHERE n.status =1
+						AND td.vid = 14
+						AND td.name='".$topic."'
+						AND n.type = 'course'
+						ORDER BY n.changed DESC";			
+			}
+			
+		}
+		else {
+			
+			$sql = "SELECT *
+					FROM {node n}
+					LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+					WHERE n.status =1
+					AND n.type = 'course'
+					ORDER BY n.changed";
+		}
+		
+		return $sql;
 	
 	}
 	
