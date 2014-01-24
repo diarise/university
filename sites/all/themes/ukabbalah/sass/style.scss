@@ -1535,6 +1535,36 @@ h3 {
     text-transform: uppercase; 
     margin-bottom: 16px;
 }
+
+/**/
+
+#classHighlights input {
+    display: none;
+}
+#classHighlights input ~ .titleDescription {
+    cursor: pointer;
+}
+#ac-1 ~ ul  {
+    height: 0;
+    overflow: auto; //hidden
+    transition: height 0.3s ease-in-out 0s;
+}
+ #classHighlights input:checked ~ ul {
+    max-height: 140px; 
+    height: auto;
+    transition: height 0.5s ease-in-out 0s;
+}
+ #classHighlights input ~ .titleDescription:after{
+    content: "+";
+    padding-left:20px;
+}
+ #classHighlights input:checked ~ .titleDescription:after{
+    content: "-";
+    padding-left:20px;
+}
+
+
+/**/
 #audio-control{
     margin: 31px auto 30px;
 }

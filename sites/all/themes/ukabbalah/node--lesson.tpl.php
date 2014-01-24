@@ -160,7 +160,8 @@
 		<!-- Class Highlights -->
 		<?php if( $node->field_lesson_highlights['und'][0]['value'] != "" ) { ?>
 		<div id="classHighlights">
-			<div class="titleDescription">Highlights</div>
+			<input type="checkbox" id="ac-1">
+			<label class="titleDescription" for="ac-1">Highlights</label>
 			<?php print $node->field_lesson_highlights['und'][0]['value']; ?>
 		</div>
 		<?php } ?>
