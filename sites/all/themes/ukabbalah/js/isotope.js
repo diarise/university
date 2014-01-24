@@ -41,12 +41,19 @@
 	    "width": $(".masonry").width() - 20,                  
 	});
 
+	$(".scrollingFilter").css({
+	    "overflow": "hidden",
+	    "margin-left": "auto",
+	    "margin-right": "auto",
+	    "width": $(".parent_topic").width() - 20,                  
+	});
+
  
 	var resizeTimer;
 	$(window).resize(function(){
 	clearTimeout(resizeTimer);
   	resizeTimer = setTimeout(function() {
-		  $("#mainContentWrapper h1").css({
+		  $("#mainContentWrapper h1, #maincontentTopics .scrollingFilter").css({
 	          "width" : $(".masonry").width() - 20
 	  });
 
