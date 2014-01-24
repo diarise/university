@@ -21,9 +21,12 @@
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_authors') .'/js/ukabbalah_authors.js');
 		$resultHTML = "";
 		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('TEACHERS')."</span>";	
 		$resultHTML.="</div>";
+		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
 		$resultHTML.="<div id='authorDDWrapper'>";
 		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
 		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown1()."</span>";
@@ -31,6 +34,7 @@
 		$resultHTML.="<div id='topicDDWrapper'>";
 		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
 		$resultHTML.="<span id='topicDD'>".getTopicDropDown1()."</span>";
+		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingResultSection'></div>";
