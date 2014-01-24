@@ -69,6 +69,12 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		$items['k_api/get_videos'] = array(       // Mapped from /get_articles
+			'page callback'      => 'getVideosInfoJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
 		return $items;
 	  }
 	  
@@ -675,6 +681,12 @@
 		if( $limit != 0 )$teaser = substr( $teaser , 0 , $limit );
 		if( $teaser != false ) return $teaser;
 		else return "";
+	
+	}
+	
+	function getVideosInfoJson() {
+	
+		return "test";
 	
 	}
 	
