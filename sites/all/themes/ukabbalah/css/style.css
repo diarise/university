@@ -944,12 +944,6 @@ ul.masonry {
   text-transform: uppercase;
 }
 
-@media (max-width: 960px) {
-  /* line 774, ../sass/style.scss */
-  #teachingsControlSectionInnerWrapper, #teachingsSectionHeaderBar {
-    padding-left: 20px;
-  }
-}
 /* line 784, ../sass/style.scss */
 #teachingsSectionHeaderBar {
   height: 65px;
