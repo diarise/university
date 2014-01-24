@@ -944,7 +944,7 @@ ul.masonry {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 980px) {
   /* line 767, ../sass/style.scss */
   #teachingsControlSection, #teachingsSectionHeaderBar {
     padding-left: 20px;
