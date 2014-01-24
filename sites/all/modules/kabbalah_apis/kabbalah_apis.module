@@ -764,12 +764,12 @@
 					if( $author == $author_info->name )	{
 					
 						$result_arr[]=  array(
-										  "title"=> $title ,
+										  "title"=> htmlentities($title) ,
 										  "author"=> implode( "," , $authors ),
 										  "date" => date( 'F jS, Y',$node->changed ),
 										  "topic"=> $primary_topic->name ,
 										  "keywords" => implode( "," , $secondary_topics ),
-										  "body" => $body , 
+										  "body" => htmlentities($body) , 
 										  "image" => $node->field_image_cdn_link['und'][0]['value'] , 
 										  "path" => $path
 										);
