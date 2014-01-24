@@ -2428,7 +2428,7 @@ div.jp-audio{
 .scrollingFilter {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
-    position: relative;
+    padding:0!important;
     z-index: 140;
     top: 46px;
     width: 100%;
@@ -2437,7 +2437,11 @@ div.jp-audio{
     margin: auto;
     z-index: 1400 !important;
 }
-
+.teachingsBarInnerWrapper{
+    max-width: 1580px;
+    min-width: 940px;
+    margin: auto;
+}
 
 
 
