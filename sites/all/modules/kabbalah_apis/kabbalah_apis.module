@@ -761,7 +761,7 @@
 			
 			if( (isset($_GET['author']) && isset($_GET['topic'])) && ($author != 'none' && $topic != 'none' ))	{
 				
-					if( $author == $author_info->name )	{
+					if ( in_array($author, $authors) ) {
 					
 						$result_arr[]=  array(
 										  "title"=> htmlentities($title) ,
