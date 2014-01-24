@@ -749,7 +749,8 @@
 			$node = node_load($nid = $record->nid , $record->revision_id );
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-			$author_info = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+			foreach( $vocab_terms1 as $t )	{	$authors[] = $t->name; }
 			$primary_topic = taxonomy_term_load($node->field_primary_topic['und'][0]['tid']);
 			$secondary_topics = array();
 			$vocab_terms2 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
@@ -764,7 +765,7 @@
 					
 						$result_arr[]=  array(
 										  "title"=> $title ,
-										  "author"=> $author_info->name ,
+										  "author"=> implode( "," , $authors ),
 										  "date" => date( 'F jS, Y',$node->changed ),
 										  "topic"=> $primary_topic->name ,
 										  "keywords" => implode( "," , $secondary_topics ),
@@ -777,7 +778,7 @@
 				
 					$result_arr[]=  array(
 										  "title"=> $title ,
-										  "author"=> $author_info->name ,
+										  "author"=> implode( "," , $authors ),
 										  "date" => date( 'F jS, Y',$node->changed ),
 										  "topic"=> $primary_topic->name ,
 										  "keywords" => implode( "," , $secondary_topics ),
