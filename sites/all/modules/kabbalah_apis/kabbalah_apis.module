@@ -727,8 +727,7 @@
 						AND td.name='".$topic."'
 						AND n.type = 'course'
 						ORDER BY n.changed DESC";			
-			}
-			
+			}	
 		}
 		else {
 			
@@ -740,7 +739,56 @@
 					ORDER BY n.changed";
 		}
 		
-		return $sql;
+		
+		// Run the query and process result
+		
+		$result = db_query( $sql );
+		$result_arr = array();
+		foreach ($result as $record) 
+		{
+			$node = node_load($nid = $record->nid , $record->revision_id );
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$author_info = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$primary_topic = taxonomy_term_load($node->field_primary_topic['und'][0]['tid']);
+			$secondary_topics = array();
+			$vocab_terms2 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			foreach( $vocab_terms2 as $t )	{	$secondary_topics[] = $t->name; }
+			$body  = get_clean_body( $node->body['und'][0]['value'] , 0 );
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			
+			
+			if( (isset($_GET['author']) && isset($_GET['topic'])) && ($author != 'none' && $topic != 'none' ))	{
+				
+					if( $author == $author_info->name )	{
+					
+						$result_arr[]=  array(
+										  "title"=> $title ,
+										  "author"=> $author_info->name ,
+										  "date" => date( 'F jS, Y',$node->changed ),
+										  "topic"=> $primary_topic->name ,
+										  "keywords" => implode( "," , $secondary_topics ),
+										  "body" => $body , 
+										  "image" => $node->field_image_cdn_link['und'][0]['value'] , 
+										  "path" => $path
+										);
+					}
+				} else {
+				
+					$result_arr[]=  array(
+										  "title"=> $title ,
+										  "author"=> $author_info->name ,
+										  "date" => date( 'F jS, Y',$node->changed ),
+										  "topic"=> $primary_topic->name ,
+										  "keywords" => implode( "," , $secondary_topics ),
+										  "body" => $body , 
+										  "image" => $node->field_image_cdn_link['und'][0]['value'] , 
+										  "path" => $path
+										);
+				}
+		}
+		
+		echo json_encode_unicode($result_arr);
 	
 	}
 	
