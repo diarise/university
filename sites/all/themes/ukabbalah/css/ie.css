@@ -1,6 +1,5 @@
-/*For IE 9 and below*/
-
-/*collections landing page*/
-.page-node-144 ul li.leaf {list-style-type:none}
-
-#nice-menu-3 li {margin-left:25px}
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
