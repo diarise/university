@@ -3002,9 +3002,10 @@ div.jp-audio {
 /* line 2436, ../sass/style.scss */
 .scrollingView-filters {
   top: 50px;
+  border-bottom: none !important;
 }
 
-/* line 2439, ../sass/style.scss */
+/* line 2440, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
