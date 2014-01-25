@@ -2981,7 +2981,7 @@ div.jp-audio {
 }
 
 /* line 2421, ../sass/style.scss */
-.scrollingFilter, .scrollingTermDesc {
+.scrollingFilter, .scrollingTermDesc, .scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
   z-index: 140;
@@ -2996,9 +2996,10 @@ div.jp-audio {
 /* line 2432, ../sass/style.scss */
 .scrollingTermDesc {
   top: 35px;
+  height: 36px;
 }
 
-/* line 2435, ../sass/style.scss */
+/* line 2436, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
