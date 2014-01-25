@@ -8,7 +8,7 @@
         $('#teachingsControlSectionInnerWrapper').toggleClass('teachingsBarInnerWrapper parent_topic', $(window).scrollTop() > $('#pageregion').offset().top);
         $('#teachingsBarInnerWrapper').toggleClass('teachingsBarInnerWrapper parent_topic', $(window).scrollTop() > $('#pageregion').offset().top);
         $('#page-title').toggleClass('scrollingTitle', $(window).scrollTop() > $('#pageregion').offset().top);
-        $('.termDesc').toggleClass('scrollingFilter', $(window).scrollTop() > $('#pageregion').offset().top);
+        $('.termDesc').toggleClass('scrollingTermDesc', $(window).scrollTop() > $('#pageregion').offset().top);
     });
 
     var resizeTimer;
