@@ -2995,17 +2995,22 @@ div.jp-audio {
 
 /* line 2432, ../sass/style.scss */
 .scrollingTermDesc {
-  top: 35px;
+  top: 75px;
   height: 36px;
 }
 
 /* line 2436, ../sass/style.scss */
 .scrollingView-filters {
-  top: 50px;
+  top: 106px;
   border-bottom: none !important;
 }
 
 /* line 2440, ../sass/style.scss */
+#page-title.scrollingTitle {
+  top: 46px;
+}
+
+/* line 2443, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
