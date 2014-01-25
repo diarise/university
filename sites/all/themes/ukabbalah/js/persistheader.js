@@ -10,7 +10,7 @@
         $('#page-title').toggleClass('scrollingTitle', $(window).scrollTop() > $('#pageregion').offset().top);
         $('.termDesc').toggleClass('scrollingTermDesc', $(window).scrollTop() > $('#pageregion').offset().top);
         $('.view-filters').toggleClass('scrollingView-filters', $(window).scrollTop() > $('#pageregion').offset().top){
-        		$('#mainOuterContentLogoMenuWrapper').removClass('scrolling', $(window).scrollTop() > $('#outerMenu').offset().top);
+        		$('#mainOuterContentLogoMenuWrapper').removClass('scrolling');
         };
     });
 
