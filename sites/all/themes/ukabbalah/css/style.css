@@ -3001,7 +3001,7 @@ div.jp-audio {
 }
 
 /* line 2488, ../sass/style.scss */
-#lessonCollectionSection .tablescroll_head th:nth-child(2),
-#lessonCollectionSection .tablescroll_wrapper td:nth-child(2) {
+#lessonCollectionSection table thead tr th:nth-child(2),
+#lessonCollectionSection table td:nth-child(2) {
   width: 500px !important;
 }
