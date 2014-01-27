@@ -2484,7 +2484,7 @@ div.jp-audio{
 
 
 
-#lessonCollectionSection .tablescroll_head th :nth-child(2),
-#lessonCollectionSection .tablescroll_head td :nth-child(2){
+#lessonCollectionSection .tablescroll_head th:nth-child(2),
+#lessonCollectionSection .tablescroll_wrapper td:nth-child(2){
   width: 500px!important;
 }
