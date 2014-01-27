@@ -115,36 +115,7 @@
                 $resultHTML .="</span>";
                 $resultHTML .="</a>";
                 $resultHTML .="</span>"; 
-				
-				
-				// $resultHTML .= "<div class = 'imagesCont'>";
-				// $resultHTML .= "<img src = '".$record->field_image_cdn_link_value."' class = 'imageStyle'>";
-				// $resultHTML .= "<a href ='".$path."'>";				
-				// $resultHTML .= "<span class ='descCont'>";
-				// $resultHTML .= "<span class='titleWrapper'>";
-				// $resultHTML .= "<span class='artImg'>";
-				// $resultHTML .= "</span>";
-				
-				// if( $subtitle != "" )
-				// {
-					// $resultHTML .= "<span class = 'theJsonTitle'>".$subtitle."</span>";
-				// } else {
-					// $resultHTML .= "<span class = 'theJsonTitle'>".$title."</span>";
-				// }
-				
-				// $resultHTML .= "</span>";
-				// $resultHTML .= "<span class='teachingsTopicAndDate'>".$author_name." | ".date( 'F jS, Y',$record->changed )."</span>";
-				// $resultHTML .= "<span class='teaser'>";
-				// $resultHTML .= "<p>".$teaser."</p>";
-				// $resultHTML .= "<span class = 'teachersPath'>read more</span>";
-				// $resultHTML .= "</span>";
-				// $resultHTML .= "</span>";
-				// $resultHTML .= "</span>";
-				// $resultHTML .= "</a></div>";
 				$resultHTML .= "</li>";																			  
-			
-			
-			
 			
 			}
 			$resultHTML .= "</ul>";
