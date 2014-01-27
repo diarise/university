@@ -3000,8 +3000,12 @@ div.jp-audio {
   margin: auto;
 }
 
-/* line 2488, ../sass/style.scss */
-#lessonCollectionSection table thead tr th:nth-child(2),
+/* line 2487, ../sass/style.scss */
+#lessonCollectionSection table thead tr th:nth-child(2) {
+  width: 530px !important;
+}
+
+/* line 2490, ../sass/style.scss */
 #lessonCollectionSection table td:nth-child(2) {
   width: 500px !important;
 }
