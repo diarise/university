@@ -2999,3 +2999,9 @@ div.jp-audio {
   min-width: 940px;
   margin: auto;
 }
+
+/* line 2488, ../sass/style.scss */
+#lessonCollectionSection .tablescroll_head th :nth-child(2),
+#lessonCollectionSection .tablescroll_head td :nth-child(2) {
+  width: 500px !important;
+}

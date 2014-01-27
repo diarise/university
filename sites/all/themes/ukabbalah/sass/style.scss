@@ -2481,3 +2481,10 @@ div.jp-audio{
 // .tablescroll_head tr th:nth-child(1){
 //     width: 35px !important;
 // }
+
+
+
+#lessonCollectionSection .tablescroll_head th :nth-child(2),
+#lessonCollectionSection .tablescroll_head td :nth-child(2){
+  width: 500px!important;
+}
