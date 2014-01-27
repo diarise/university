@@ -104,8 +104,8 @@
                 $resultHTML .= $author_name;
                 $resultHTML .= " | ";
                 $resultHTML .= date( 'F jS, Y',$record->changed );
-                $resultHTML .= "</span>";
-				$resultHTML .= "<span class= '".$membership->name."'></span>";
+                $resultHTML .= "<span class= '".$membership->name."'></span>";
+				$resultHTML .= "</span>";
 				$resultHTML .= "<span class='theTeaser'>";
                 $resultHTML .= "<p>".$teaser."</p>";
                 $resultHTML .= "<span class = 'readMore'>";
