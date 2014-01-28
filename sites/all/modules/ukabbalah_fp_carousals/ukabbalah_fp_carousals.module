@@ -72,7 +72,7 @@
 		drupal_add_js(array('fp_vars2' => array('divid' => 'recentlyAddedLessons','jsonurl'=>$jsonurl1)), 'setting');
 		drupal_add_js(array('fp_vars4' => array('divid' => 'recentlyAddedCourses','jsonurl'=>$jsonurl2)), 'setting');
 		
-		return "<div id='recentTabWrapper'><span id='recentLessonTab' class='recentTab activeTap'>LESSONS</span><span id='recentCourseTab' class='recentTab'>COURSES</span><span class='allRecentlyAdded'><a href='/courses'>view all</a></span></div><div id='recentlyAddedLessons'></div><div id='recentlyAddedCourses'></div>";
+		return "<div id='recentTabWrapper'><span id='recentLessonTab' class='recentTab activeTap'>LESSONS</span><span id='recentCourseTab' class='recentTab'>COURSES</span><span class='allRecentlyAdded'></span></div><div id='recentlyAddedLessons'></div><div id='recentlyAddedCourses'></div>";
 	
 	}
 	
