@@ -2991,19 +2991,24 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2431, ../sass/style.scss */
+/* line 2420, ../sass/style.scss */
+.scrollingFilter {
+  padding-bottom: 10px !important;
+}
+
+/* line 2434, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
   margin: auto;
 }
 
-/* line 2475, ../sass/style.scss */
+/* line 2478, ../sass/style.scss */
 #lessonCollectionSection table thead tr th:nth-child(2) {
   width: 530px !important;
 }
 
-/* line 2478, ../sass/style.scss */
+/* line 2481, ../sass/style.scss */
 #lessonCollectionSection table td:nth-child(2) {
   width: 500px !important;
 }
