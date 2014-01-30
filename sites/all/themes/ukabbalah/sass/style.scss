@@ -1538,29 +1538,33 @@ h3 {
 
 /**/
 
-#classHighlights input {
+#classHighlights input, #classesDescription input{
     display: none;
 }
-#classHighlights input ~ .titleDescription {
+#classHighlights input ~ .titleDescription, #classesDescription input ~ .titleDescription{
     cursor: pointer;
 }
-#ac-1 ~ ul  {
+#ac-1 ~ ul, #ac-0 ~ p  {
     height: 0;
     overflow: auto; //hidden
     transition: height 0.3s ease-in-out 0s;
 }
- #classHighlights input:checked ~ ul {
+ #classHighlights input:checked ~ ul, #classesDescription input:checked ~ p {
     max-height: 140px; 
     height: auto;
     transition: height 0.5s ease-in-out 0s;
 }
- #classHighlights input ~ .titleDescription:after{
+ #classHighlights input ~ .titleDescription:after,  #classesDescription input ~ .titleDescription:after{
     content: "+";
     padding-left:20px;
 }
- #classHighlights input:checked ~ .titleDescription:after{
+ #classHighlights input:checked ~ .titleDescription:after, #classesDescription input:checked ~ .titleDescription:after{
     content: "-";
     padding-left:20px;
+}
+
+#classHighlights > p {
+    display: none;
 }
 
 

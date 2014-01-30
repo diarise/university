@@ -152,7 +152,8 @@
 		<!-- Class Description -->
 		<?php if( $node->body['und'][0]['value'] != "" ) { ?>
 		<div id="classesDescription">
-			<div class="titleDescription">class description</div>
+			<input type="checkbox" id="ac-0">
+			<label  class="titleDescription" for="ac-1">class description</label>
 			<?php  	print $node->body['und'][0]['value']; ?>
 		</div>
 		<?php } ?>
