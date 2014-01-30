@@ -1758,6 +1758,12 @@ h3 {
     text-align: left;
     font-weight: normal;
 }
+.view-content thead {
+    // border-bottom: 1px solid #CCCCCC;
+    // border-top: 1px solid #CCCCCC;
+    float: left;
+    width: 940px;
+}
 .view-content tbody {
     float: left;
     max-height: 300px;
