@@ -978,7 +978,9 @@ ul.masonry{
 }
 #views-exposed-form-taxonomy-term-page select,
 #views-exposed-form-beginners-course-collection-page select{
-  width: 180px;
+  cursor: pointer;
+  height: 30px;
+  padding-right:40px;
 }
 // #views-exposed-form-taxonomy-term-page .views-exposed-widgets.clearfix{
 //     margin-top: -88px;
