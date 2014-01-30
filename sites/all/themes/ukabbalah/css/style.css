@@ -2178,7 +2178,6 @@ h3 a {
 
 /* line 1765, ../sass/style.scss */
 .view-content tbody {
-  float: left;
   max-height: 300px;
   overflow-x: hidden;
   overflow-y: scroll;
