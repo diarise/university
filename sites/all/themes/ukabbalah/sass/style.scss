@@ -1777,7 +1777,19 @@ h3 {
     display: inline-block;
     width: 940px;
 }
-
+#lessonCollectionSection table thead tr th:nth-child(1){
+  width: 34px;
+}
+#lessonCollectionSection table thead tr th:nth-child(2) {
+    width: 509px !important;
+}
+#lessonCollectionSection table thead tr th:nth-child(3) {
+    width: 65px;
+}
+#lessonCollectionSection table thead tr th:nth-child(4),
+#lessonCollectionSection table thead tr th:nth-child(5) {
+    width: 72px;
+}
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
     padding: 5px 0;
