@@ -2208,15 +2208,15 @@ h3 a {
 
 /* line 1789, ../sass/style.scss */
 #lessonCollectionSection table thead tr th:nth-child(3),
-#lessonCollectionSection table thead tr td:nth-child(3) {
+#lessonCollectionSection table tbody tr td:nth-child(3) {
   width: 65px;
 }
 
 /* line 1795, ../sass/style.scss */
 #lessonCollectionSection table thead tr th:nth-child(4),
 #lessonCollectionSection table thead tr th:nth-child(5),
-#lessonCollectionSection table thead tr td:nth-child(4),
-#lessonCollectionSection table thead tr td:nth-child(5) {
+#lessonCollectionSection table tbody tr td:nth-child(4),
+#lessonCollectionSection table tbody tr td:nth-child(5) {
   width: 72px;
 }
 

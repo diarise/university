@@ -1786,13 +1786,13 @@ h3 {
   width: 509px;
 }
 #lessonCollectionSection table thead tr th:nth-child(3),
-#lessonCollectionSection table thead tr td:nth-child(3) {
+#lessonCollectionSection table tbody tr td:nth-child(3) {
     width: 65px;
 }
 #lessonCollectionSection table thead tr th:nth-child(4),
 #lessonCollectionSection table thead tr th:nth-child(5),
-#lessonCollectionSection table thead tr td:nth-child(4),
-#lessonCollectionSection table thead tr td:nth-child(5) {
+#lessonCollectionSection table tbody tr td:nth-child(4),
+#lessonCollectionSection table tbody tr td:nth-child(5) {
     width: 72px;
 }
 .tablescroll_wrapper {
