@@ -2976,34 +2976,6 @@ div.jp-audio {
   left: -169px !important;
 }
 
-/* line 2389, ../sass/style.scss */
-.type-width {
-  width: 25px !important;
-}
-
-/* line 2392, ../sass/style.scss */
-.title-width {
-  width: 350px !important;
-  padding-right: 10px;
-}
-
-/* line 2397, ../sass/style.scss */
-.author-width {
-  width: 120px !important;
-}
-
-/* line 2402, ../sass/style.scss */
-.duration-width,
-.subtitle-width,
-.release-width {
-  width: 65px !important;
-}
-
-/* line 2407, ../sass/style.scss */
-.watch-width {
-  width: 110px !important;
-}
-
 /**start scrollling filter**/
 /**end scrollling filter**/
 /* line 2435, ../sass/style.scss */
