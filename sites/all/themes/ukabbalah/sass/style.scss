@@ -1773,7 +1773,7 @@ h3 {
     border-top: none;
     border-bottom: 1px solid #CCCCCC;
 }
-.view-content tbody tr {
+.view-content tbody tr,.view-content thead tr {
     display: inline-block;
     width: 940px;
 }

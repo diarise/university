@@ -2189,7 +2189,7 @@ h3 a {
 }
 
 /* line 1776, ../sass/style.scss */
-.view-content tbody tr {
+.view-content tbody tr, .view-content thead tr {
   display: inline-block;
   width: 940px;
 }
