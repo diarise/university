@@ -1777,7 +1777,8 @@ h3 {
     display: inline-block;
     width: 940px;
 }
-#lessonCollectionSection table thead tr th:nth-child(1){
+#lessonCollectionSection table thead tr th:nth-child(1),
+#lessonCollectionSection table tbody tr td:nth-child(1){
   width: 34px;
 }
 #lessonCollectionSection table thead tr th:nth-child(2) {
