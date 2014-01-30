@@ -1758,8 +1758,14 @@ h3 {
     text-align: left;
     font-weight: normal;
 }
-tbody{
-    border-top: none!important;
+.view-content tbody {
+    float: left;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 940px;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
 }
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
