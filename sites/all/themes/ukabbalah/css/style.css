@@ -2221,8 +2221,8 @@ h3 a {
 }
 
 /* line 1799, ../sass/style.scss */
-#lessonCollectionSection table thead tr th:last,
-#lessonCollectionSection table tbody tr td:last {
+#lessonCollectionSection table thead tr th:last-child,
+#lessonCollectionSection table tbody tr td:last-child {
   width: 110px;
 }
 
