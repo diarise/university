@@ -1834,7 +1834,7 @@ h3 a {
   margin: auto;
   clear: both;
   width: 620px;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 /* line 1503, ../sass/style.scss */
@@ -1870,7 +1870,7 @@ h3 a {
   line-height: 25px;
   color: #433a3a;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /* line 1530, ../sass/style.scss */
@@ -2645,11 +2645,10 @@ div.jp-audio {
 /* line 2112, ../sass/style.scss */
 #classHighlights ul {
   padding-left: 15px;
-  margin-top: -8px;
-  margin-bottom: 29px;
+  margin-top: 10px;
 }
 
-/* line 2117, ../sass/style.scss */
+/* line 2116, ../sass/style.scss */
 #classHighlights li {
   list-style: disc outside none;
   color: #433a3a;
@@ -2659,7 +2658,7 @@ div.jp-audio {
   margin-bottom: 3px;
 }
 
-/* line 2126, ../sass/style.scss */
+/* line 2125, ../sass/style.scss */
 .resourceTitle > a {
   color: #127795;
   font-weight: normal;
@@ -2670,7 +2669,7 @@ div.jp-audio {
   vertical-align: super;
 }
 
-/* line 2136, ../sass/style.scss */
+/* line 2135, ../sass/style.scss */
 .resourceFile {
   /*background: url("../images/icon_pdf.png") no-repeat scroll 0 0 transparent;*/
   background-position: 0 0;
@@ -2680,7 +2679,7 @@ div.jp-audio {
   width: 24px;
 }
 
-/* line 2144, ../sass/style.scss */
+/* line 2143, ../sass/style.scss */
 #classesDescription > p {
   color: #433a3a;
   font-size: 16px;
@@ -2691,12 +2690,12 @@ div.jp-audio {
   text-align: left;
 }
 
-/* line 2154, ../sass/style.scss */
+/* line 2153, ../sass/style.scss */
 .videocontent .sharethis {
   border-top: none;
 }
 
-/* line 2157, ../sass/style.scss */
+/* line 2156, ../sass/style.scss */
 #lessonCollectionSection .Audio {
   background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
   height: 13px;
@@ -2704,7 +2703,7 @@ div.jp-audio {
 }
 
 /**grid display***/
-/* line 2164, ../sass/style.scss */
+/* line 2163, ../sass/style.scss */
 #mainContentWrapper, #courseByParentWrapper {
   clear: both;
   margin: auto;
@@ -2713,7 +2712,7 @@ div.jp-audio {
   padding: 0 10px 40px;
 }
 
-/* line 2171, ../sass/style.scss */
+/* line 2170, ../sass/style.scss */
 .topicwrapper {
   float: left;
   cursor: pointer;
@@ -2722,12 +2721,12 @@ div.jp-audio {
   height: 170px;
 }
 
-/* line 2179, ../sass/style.scss */
+/* line 2178, ../sass/style.scss */
 .topicItemTitle {
   margin: 0 10px;
 }
 
-/* line 2182, ../sass/style.scss */
+/* line 2181, ../sass/style.scss */
 .topicItemTitle a {
   color: #433a3a !important;
   font-size: 15px;
@@ -2739,14 +2738,14 @@ div.jp-audio {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 2192, ../sass/style.scss */
+/* line 2191, ../sass/style.scss */
 .topicTermnDate {
   font-size: 12px;
   margin: 0 10px;
   padding-bottom: 10px;
 }
 
-/* line 2197, ../sass/style.scss */
+/* line 2196, ../sass/style.scss */
 .topicItemText {
   color: #433a3a !important;
   display: block;
@@ -2756,13 +2755,13 @@ div.jp-audio {
   text-align: left;
 }
 
-/* line 2205, ../sass/style.scss */
+/* line 2204, ../sass/style.scss */
 .topicItemText span a {
   text-transform: capitalize;
   color: #127795;
 }
 
-/* line 2210, ../sass/style.scss */
+/* line 2209, ../sass/style.scss */
 #mainContentWrapper h1#page-title,
 #courseByParentWrapper h1#page-title {
   margin-top: 47px;
@@ -2770,7 +2769,7 @@ div.jp-audio {
   float: none;
 }
 
-/* line 2216, ../sass/style.scss */
+/* line 2215, ../sass/style.scss */
 .topicItemImage a {
   height: auto !important;
   text-decoration: none !important;
@@ -2778,7 +2777,7 @@ div.jp-audio {
   width: 300px;
 }
 
-/* line 2222, ../sass/style.scss */
+/* line 2221, ../sass/style.scss */
 .topicItemImage img {
   float: left;
   height: 170px;
@@ -2786,7 +2785,7 @@ div.jp-audio {
   z-index: -10;
 }
 
-/* line 2228, ../sass/style.scss */
+/* line 2227, ../sass/style.scss */
 .topicTextWrapper {
   background: url("../images/sliding_white_bg_3.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
   float: left;
@@ -2795,12 +2794,12 @@ div.jp-audio {
   width: 300px;
 }
 
-/* line 2235, ../sass/style.scss */
+/* line 2234, ../sass/style.scss */
 .sticky-header {
   display: none !important;
 }
 
-/* line 2238, ../sass/style.scss */
+/* line 2237, ../sass/style.scss */
 #list img, #grid img {
   float: left;
   height: 16px;
@@ -2809,18 +2808,18 @@ div.jp-audio {
 }
 
 /**home page**/
-/* line 2247, ../sass/style.scss */
+/* line 2246, ../sass/style.scss */
 #carousal1Wrapper, #carousal2Wrapper, #carousal3Wrapper, #carousal4Wrapper {
   float: left;
   width: 100%;
 }
 
-/* line 2257, ../sass/style.scss */
+/* line 2256, ../sass/style.scss */
 #carousal4Wrapper {
   margin-bottom: 40px;
 }
 
-/* line 2264, ../sass/style.scss */
+/* line 2263, ../sass/style.scss */
 #block-ukabbalah-fp-carousals-carousal1 > h2,
 #block-ukabbalah-fp-carousals-carousal2 > h2,
 #block-ukabbalah-fp-carousals-carousal3 > h2,
@@ -2830,13 +2829,13 @@ div.jp-audio {
   color: #999;
 }
 
-/* line 2269, ../sass/style.scss */
+/* line 2268, ../sass/style.scss */
 .carrouselFix {
   margin-left: 10px;
   margin-bottom: 0;
 }
 
-/* line 2273, ../sass/style.scss */
+/* line 2272, ../sass/style.scss */
 .vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg {
   height: 13px;
   width: 16px;
@@ -2846,71 +2845,71 @@ div.jp-audio {
   background-position: 0 -1421px;
 }
 
-/* line 2287, ../sass/style.scss */
+/* line 2286, ../sass/style.scss */
 .Premium {
   background-position: 0 -1442px;
   width: 11px;
   float: right;
 }
 
-/* line 2293, ../sass/style.scss */
+/* line 2292, ../sass/style.scss */
 .audioImg, .Audios, .theDescCont .Audio {
   background-position: 0 -1348px;
 }
 
-/* line 2303, ../sass/style.scss */
+/* line 2302, ../sass/style.scss */
 .bothAdVdImg {
   background-position: 0 -309px;
   width: 35px;
 }
 
-/* line 2308, ../sass/style.scss */
+/* line 2307, ../sass/style.scss */
 .theTitle, .titleWrapper {
   float: left;
   margin-left: 10px;
   margin-top: 10px;
 }
 
-/* line 2313, ../sass/style.scss */
+/* line 2312, ../sass/style.scss */
 .teachersPath, .readMore {
   color: #127795;
   margin-left: 5px;
 }
 
-/* line 2317, ../sass/style.scss */
+/* line 2316, ../sass/style.scss */
 .rightArrowStyleHome {
   position: relative;
 }
 
 /***/
-/* line 2322, ../sass/style.scss */
+/* line 2321, ../sass/style.scss */
 #teachingsSectionHeaderBar .lessonsCourse {
   display: block;
 }
 
-/* line 2325, ../sass/style.scss */
+/* line 2324, ../sass/style.scss */
 #authorDDWrapper, #topicDDWrapper {
   float: left;
 }
 
-/* line 2328, ../sass/style.scss */
+/* line 2327, ../sass/style.scss */
 #teachings_teachersDD, #teachings_topicDD {
   cursor: pointer;
   height: 29px;
 }
 
-/* line 2333, ../sass/style.scss */
+/* line 2332, ../sass/style.scss */
 .preVideoImg {
   width: 940px;
   margin: 20px auto auto;
 }
 
-/* line 2337, ../sass/style.scss */
+/* line 2336, ../sass/style.scss */
 .preVideoImg img {
   float: left;
 }
 
-/* line 2340, ../sass/style.scss */
+/* line 2339, ../sass/style.scss */
 .preVideoImg .videotitles {
   float: right;
   width: 290px;
@@ -2919,7 +2918,7 @@ div.jp-audio {
   margin-top: 0;
 }
 
-/* line 2352, ../sass/style.scss */
+/* line 2351, ../sass/style.scss */
 .preVideoImg #titleMultimedia,
 .preVideoImg #courseNameMultimedia,
 .preVideoImg #pipe,
@@ -2931,64 +2930,64 @@ div.jp-audio {
   color: white;
 }
 
-/* line 2355, ../sass/style.scss */
+/* line 2354, ../sass/style.scss */
 .preVideoImg #wrapperInfoMultimedia, .preVideoImg #wrapperAuthorDate {
   width: 290px;
 }
 
-/* line 2358, ../sass/style.scss */
+/* line 2357, ../sass/style.scss */
 .preVideoImg #authorNameMultimedia, .preVideoImg #dateMultimedia {
   text-align: left;
 }
 
-/* line 2361, ../sass/style.scss */
+/* line 2360, ../sass/style.scss */
 .preVideoImg .pipe {
   display: none;
 }
 
-/* line 2364, ../sass/style.scss */
+/* line 2363, ../sass/style.scss */
 .preVideoImg #wrapperPrice {
   width: 275px;
   margin-left: 30px;
 }
 
-/* line 2368, ../sass/style.scss */
+/* line 2367, ../sass/style.scss */
 .preVideoImg .sharethis {
   float: right;
   width: 290px;
   margin-top: 16px;
 }
 
-/* line 2373, ../sass/style.scss */
+/* line 2372, ../sass/style.scss */
 .transcript-content {
   width: 605px;
 }
 
-/* line 2376, ../sass/style.scss */
+/* line 2375, ../sass/style.scss */
 .audioSection .preVideoImg img {
   width: 620px;
   height: 349px;
 }
 
-/* line 2380, ../sass/style.scss */
+/* line 2379, ../sass/style.scss */
 .bookmark {
   float: right;
   width: 117px;
   color: #433a3a;
   font-size: 15px;
 }
-/* line 2385, ../sass/style.scss */
+/* line 2384, ../sass/style.scss */
 .bookmark a {
   color: #433a3a;
 }
 
-/* line 2390, ../sass/style.scss */
+/* line 2389, ../sass/style.scss */
 .flag-message {
   left: -169px !important;
 }
 
 /**start scrollling filter**/
-/* line 2420, ../sass/style.scss */
+/* line 2419, ../sass/style.scss */
 .scrollingTitle {
   background: #fff;
   position: fixed !important;
@@ -3002,7 +3001,7 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2432, ../sass/style.scss */
+/* line 2431, ../sass/style.scss */
 .scrollingFilter, .scrollingTermDesc, .scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
@@ -3015,12 +3014,12 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2443, ../sass/style.scss */
+/* line 2442, ../sass/style.scss */
 .scrollingFilter {
   padding-bottom: 10px !important;
 }
 
-/* line 2446, ../sass/style.scss */
+/* line 2445, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
