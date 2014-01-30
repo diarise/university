@@ -1795,6 +1795,10 @@ h3 {
 #lessonCollectionSection table tbody tr td:nth-child(5) {
     width: 72px;
 }
+#lessonCollectionSection table thead tr th:last,
+#lessonCollectionSection table tbody tr td:last{
+  width: 110px;
+}
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
     padding: 5px 0;
@@ -2409,29 +2413,6 @@ div.jp-audio{
 // }
 
 /**start scrollling filter**/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**end scrollling filter**/
-
 .scrollingTitle{
   background: #fff;
     position: fixed !important;
@@ -2458,64 +2439,10 @@ div.jp-audio{
 .scrollingFilter{
   padding-bottom:10px!important;
 }
-// .scrollingTermDesc{
-//     top: 75px;
-//     height: 36px;
-// }
-// .scrollingView-filters{
-//   top: 106px;
-//   border-bottom: none !important;
-// }
-// #page-title.scrollingTitle{
-//   top: 46px;
-// }
 .teachingsBarInnerWrapper{
     max-width: 1580px;
     min-width: 940px;
     margin: auto;
     // padding:0!important;
 }
-
-
-
-
-
-
-
-// .type-width {
-//     width: 25px !important;
-// }
-// .title-width{
-//   width: 350px!important;
-//   padding-right: 10px;
-// }
-// .tablescroll_head tr th:nth-child(2){
-//   width: 390px!important;
-// }
-// .author-width,
-// .tablescroll_head tr th:nth-child(3){
-//   width: 120px!important;
-// }
-// .duration-width,
-// .subtitle-width,
-// .release-width,
-// .tablescroll_head tr th:nth-child(4),
-// .tablescroll_head tr th:nth-child(5) {
-//     width: 65px !important;
-// }
-// .watch-width,
-// .tablescroll_head tr th:nth-child(6){
-//     width: 110px !important;
-// }
-// .tablescroll_head tr th:nth-child(1){
-//     width: 35px !important;
-// }
-
-
-
-// #lessonCollectionSection table thead tr th:nth-child(2){
-//   width: 530px!important;
-// }
-// #lessonCollectionSection table td:nth-child(2){
-//   width: 500px!important;
-// }
+/**end scrollling filter**/
