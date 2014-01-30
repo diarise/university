@@ -1773,6 +1773,10 @@ h3 {
     border-top: none;
     border-bottom: 1px solid #CCCCCC;
 }
+.view-content tbody tr {
+    display: inline-block;
+    width: 940px;
+}
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
     padding: 5px 0;
