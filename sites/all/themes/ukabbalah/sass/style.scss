@@ -1901,7 +1901,9 @@ span.lessonsCourse {
     width: 320px;
 }
 #lessonCollectionSection form select{
-    width: 180px;
+    cursor: pointer;  
+    height: 30px;
+    padding-right:40px;
 }
 #lessonCollectionSection form option{
     width: 152px;
