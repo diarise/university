@@ -2259,15 +2259,6 @@ div.jp-audio{
     @include icon-sprite("media");
     width: 35px;
 }
-// .articleImg{
-//     @extend .Premium;
-//     @include icon-sprite("article");
-//     margin-top: 11px;
-// }
-// .artImg {
-//     @extend .articleImg;
-//     margin-top: 1px;
-// }
 .theTitle,.titleWrapper {
     float: left;
     margin-left: 10px;
@@ -2287,13 +2278,10 @@ div.jp-audio{
 }
 #authorDDWrapper, #topicDDWrapper {
     float: left;
-    // width: 313px;
 }
-/*#topicDDtext, #teachersDDtext, #teachersDD,#topicDD {
-    float: left;
-}*/
 #teachings_teachersDD, #teachings_topicDD {
-    width: 182px;
+    cursor: pointer;
+    height: 29px;
 }
 
 .preVideoImg {

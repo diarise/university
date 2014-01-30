@@ -2811,55 +2811,53 @@ div.jp-audio {
   width: 35px;
 }
 
-/* line 2271, ../sass/style.scss */
+/* line 2262, ../sass/style.scss */
 .theTitle, .titleWrapper {
   float: left;
   margin-left: 10px;
   margin-top: 10px;
 }
 
-/* line 2276, ../sass/style.scss */
+/* line 2267, ../sass/style.scss */
 .teachersPath, .readMore {
   color: #127795;
   margin-left: 5px;
 }
 
-/* line 2280, ../sass/style.scss */
+/* line 2271, ../sass/style.scss */
 .rightArrowStyleHome {
   position: relative;
 }
 
 /***/
-/* line 2285, ../sass/style.scss */
+/* line 2276, ../sass/style.scss */
 #teachingsSectionHeaderBar .lessonsCourse {
   display: block;
 }
 
-/* line 2288, ../sass/style.scss */
+/* line 2279, ../sass/style.scss */
 #authorDDWrapper, #topicDDWrapper {
   float: left;
 }
 
-/*#topicDDtext, #teachersDDtext, #teachersDD,#topicDD {
-    float: left;
-}*/
-/* line 2295, ../sass/style.scss */
+/* line 2282, ../sass/style.scss */
 #teachings_teachersDD, #teachings_topicDD {
-  width: 182px;
+  cursor: pointer;
+  height: 29px;
 }
 
-/* line 2299, ../sass/style.scss */
+/* line 2287, ../sass/style.scss */
 .preVideoImg {
   width: 940px;
   margin: 20px auto auto;
 }
 
-/* line 2303, ../sass/style.scss */
+/* line 2291, ../sass/style.scss */
 .preVideoImg img {
   float: left;
 }
 
-/* line 2306, ../sass/style.scss */
+/* line 2294, ../sass/style.scss */
 .preVideoImg .videotitles {
   float: right;
   width: 290px;
@@ -2868,7 +2866,7 @@ div.jp-audio {
   margin-top: 0;
 }
 
-/* line 2318, ../sass/style.scss */
+/* line 2306, ../sass/style.scss */
 .preVideoImg #titleMultimedia,
 .preVideoImg #courseNameMultimedia,
 .preVideoImg #pipe,
@@ -2880,93 +2878,93 @@ div.jp-audio {
   color: white;
 }
 
-/* line 2321, ../sass/style.scss */
+/* line 2309, ../sass/style.scss */
 .preVideoImg #wrapperInfoMultimedia, .preVideoImg #wrapperAuthorDate {
   width: 290px;
 }
 
-/* line 2324, ../sass/style.scss */
+/* line 2312, ../sass/style.scss */
 .preVideoImg #authorNameMultimedia, .preVideoImg #dateMultimedia {
   text-align: left;
 }
 
-/* line 2327, ../sass/style.scss */
+/* line 2315, ../sass/style.scss */
 .preVideoImg .pipe {
   display: none;
 }
 
-/* line 2330, ../sass/style.scss */
+/* line 2318, ../sass/style.scss */
 .preVideoImg #wrapperPrice {
   width: 275px;
   margin-left: 30px;
 }
 
-/* line 2334, ../sass/style.scss */
+/* line 2322, ../sass/style.scss */
 .preVideoImg .sharethis {
   float: right;
   width: 290px;
   margin-top: 16px;
 }
 
-/* line 2339, ../sass/style.scss */
+/* line 2327, ../sass/style.scss */
 .transcript-content {
   width: 605px;
 }
 
-/* line 2342, ../sass/style.scss */
+/* line 2330, ../sass/style.scss */
 .audioSection .preVideoImg img {
   width: 620px;
   height: 349px;
 }
 
-/* line 2346, ../sass/style.scss */
+/* line 2334, ../sass/style.scss */
 .bookmark {
   float: right;
   width: 117px;
   color: #433a3a;
   font-size: 15px;
 }
-/* line 2351, ../sass/style.scss */
+/* line 2339, ../sass/style.scss */
 .bookmark a {
   color: #433a3a;
 }
 
-/* line 2356, ../sass/style.scss */
+/* line 2344, ../sass/style.scss */
 .flag-message {
   left: -169px !important;
 }
 
-/* line 2363, ../sass/style.scss */
+/* line 2351, ../sass/style.scss */
 .type-width {
   width: 25px !important;
 }
 
-/* line 2366, ../sass/style.scss */
+/* line 2354, ../sass/style.scss */
 .title-width {
   width: 350px !important;
   padding-right: 10px;
 }
 
-/* line 2371, ../sass/style.scss */
+/* line 2359, ../sass/style.scss */
 .author-width {
   width: 120px !important;
 }
 
-/* line 2376, ../sass/style.scss */
+/* line 2364, ../sass/style.scss */
 .duration-width,
 .subtitle-width,
 .release-width {
   width: 65px !important;
 }
 
-/* line 2381, ../sass/style.scss */
+/* line 2369, ../sass/style.scss */
 .watch-width {
   width: 110px !important;
 }
 
 /**start scrollling filter**/
 /**end scrollling filter**/
-/* line 2409, ../sass/style.scss */
+/* line 2397, ../sass/style.scss */
 .scrollingTitle {
   background: #fff;
   position: fixed !important;
@@ -2980,7 +2978,7 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2421, ../sass/style.scss */
+/* line 2409, ../sass/style.scss */
 .scrollingFilter, .scrollingTermDesc, .scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
@@ -2993,19 +2991,19 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2443, ../sass/style.scss */
+/* line 2431, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
   margin: auto;
 }
 
-/* line 2487, ../sass/style.scss */
+/* line 2475, ../sass/style.scss */
 #lessonCollectionSection table thead tr th:nth-child(2) {
   width: 530px !important;
 }
 
-/* line 2490, ../sass/style.scss */
+/* line 2478, ../sass/style.scss */
 #lessonCollectionSection table td:nth-child(2) {
   width: 500px !important;
 }
