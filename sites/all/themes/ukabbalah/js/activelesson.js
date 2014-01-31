@@ -12,7 +12,6 @@ Drupal.behaviors.myBehavior = {
 	    console.log(context.URL);
 	     if (href == context.URL){
 	    className = $('.Video_link span').attr('class');
-	    $('.Video_link span').text('NOW PLAYING');
 	    return;
     	 }
 	});
