@@ -12,9 +12,9 @@ Drupal.behaviors.myBehavior = {
 	    var href = $(this).find('.Video_link').attr('href');
 	    console.log(context.URL);
 	    
-	  if (href = context.URL){
+	  if (href == context.URL){
 	 	 className = $('.Video_link span').attr('class');
-	 	 return;
+	 	console.log(className);
     	}
     
 	});
