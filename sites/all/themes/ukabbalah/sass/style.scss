@@ -1682,7 +1682,8 @@ h3 {
 .view-content tbody {
     max-height: 300px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
+    float: left;
     width: 940px;
     border-top: none;
     border-bottom: 1px solid #CCCCCC;
