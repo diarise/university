@@ -7,8 +7,8 @@ Drupal.behaviors.myBehavior = {
     //code starts
     var href = $('.Video_link').attr('href');
     console.log(href);
-    console.log(Drupal.settings);
-     if (href == Drupal.settings.nodepath){
+    console.log(Drupal.settings.nodeinfo);
+     if (href == Drupal.settings.nodeinfo.nodepath){
      	$('.Video_link span').text('NOW PLAYING');
      }
     //code ends
