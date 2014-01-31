@@ -12,11 +12,11 @@ Drupal.behaviors.myBehavior = {
 	    var href = $(this).find('.Video_link').attr('href');
 	  if (href == context.URL){
 	 	 className = $(this).find('.Video_link span').attr('class');
+	 	 $(this).find('.Video_link span').text('NOW PLAYING');
     	}
     
 	});
-	console.log(className);
-		$('.'.className).text('NOW PLAYING');
+		//$("'.'.className").text('NOW PLAYING');
     //code ends
   }
 };
