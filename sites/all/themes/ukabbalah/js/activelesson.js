@@ -14,7 +14,7 @@ Drupal.behaviors.myBehavior = {
 	  	var current = $('.watch-width').find('a.Video_link').children().attr('class');
 	  	 console.log(current);
 	  	 console.log(href);
-	 	 className = $('.Video_link span').attr('class');
+	 	 className = $(this).find('.Video_link span').attr('class');
 	 	console.log(className);
     	}
     
