@@ -56,7 +56,6 @@ a:hover {
   text-decoration: none;
 }
 em {
-    // font-family: $fontFace;
     font-style: italic;
 }
 strong {
@@ -239,7 +238,6 @@ ul li {
     float: left;
 }
 .slidesInfoWrapper {
-  //@extend .slidesImage;
   float: left;
   width: 980px;
 }
@@ -352,8 +350,6 @@ ul li {
    @include icon-sprite("banner_arrow_left");
    height: 36px;
 }
-
-
 .darkyellow{
    background-color:#dca119;
 }
@@ -485,7 +481,6 @@ background-color:#653a24;
     line-height: 20px;
 }
 #fpSocialMediaBlock3 p {
-    // font-family: $fontFace;
     font-style: italic;
     line-height: 20px !important;
     margin-top: 0;
@@ -579,7 +574,6 @@ background-color:#653a24;
   margin-bottom: 23px;
   margin-top: -1px;
 }
-
 #copywrite{
     clear: both;
     color:$colorWhite;
@@ -587,17 +581,14 @@ background-color:#653a24;
         color:#ff665f;
     }
 }
-
 #footerFlagFindWrapper {
     color: #71DFFF;
-    // font-family: "ProxiRegular";
     font-size: 14px;
     font-weight: bold;
     line-height: 22px;
     text-align: left;
     text-transform: uppercase;
 }
-
 .footerFlagWrapper {
       margin-right: 12px;
       float: left;
@@ -619,7 +610,6 @@ background-color:#653a24;
   color: $colorWhite!important;
   -webkit-font-smoothing: antialiased; 
 }
-
 #copywrite #block-block-2 a{
   color: $colorWhite;
   & :hover{color: #ff665f;}
@@ -632,7 +622,6 @@ background-color:#653a24;
     margin-bottom: 34px;
     display: none;
 }
-
 #socialMediaWrapper img {
   margin-right: 10px;
 }
@@ -745,22 +734,18 @@ ul.masonry{
     max-width: 1580px;
     min-width: 940px;
     padding: 20px 0 16px;
-    // padding-bottom:16px;
-    // background-color:#f5f5f5;
     height:20px;
     margin-top: 24px;
 }
 #teachingsSectionTitle {
     color: #433A3A;
     float: left;
-    // font-family: ProxiRegular;
     font-size: 30px;
     font-weight: normal;
     line-height: 30px;
     text-decoration: none;
     text-transform: uppercase;
 }
-
  #teachingsSectionHeaderBar {
     height: 65px;
     margin: 10px auto -6px;
@@ -792,22 +777,17 @@ ul.masonry{
     font-size: 16px;
     font-weight: normal;
     height: 17px;
-    // margin-left: 10px;
     text-transform: uppercase;
 }
 #teachingResultSection {
     clear: both;
     margin-top: 40px;
 }
-// #teachingResultSection .carousel .rowStyle {
-//     margin-bottom: 36px;
-// }
 .parent_topic {
     margin: 0 auto;
 }
 #teachingResultSection .parent_topic a {
     color: #999999;
-    // font-family: ProxiRegular;
     font-size: 28px;
     line-height: 28px;
     margin-left: 10px;
@@ -829,7 +809,6 @@ ul.masonry{
 }
 .descriptionEvents {
     color: #8B8888;
-    // font-family: ProxiRegular;
     font-size: 16px;
     line-height: 28px;
     margin-top: 3px!important;
@@ -868,9 +847,6 @@ ul.masonry{
     margin-left: 10px;
     text-transform: uppercase;
 }
-// #teachingResultSection .descCont{
-//     padding-top: 0!important;
-// }
 .authors_name {
     color: #999999;
     cursor: pointer;
@@ -979,23 +955,8 @@ ul.masonry{
   height: 30px;
   padding-right:40px;
 }
-// #views-exposed-form-taxonomy-term-page .views-exposed-widgets.clearfix{
-//     margin-top: -88px;
-//     padding-bottom: 10px;
-//     margin-right: 10px;
-// }
-
-
 #views-exposed-form-taxonomy-term-page .views-exposed-widgets.clearfix,
 #views-exposed-form-beginners-course-collection-page .views-exposed-widgets.clearfix {
-    // border-bottom:1px solid #ccc;
-    // display: inline-block;
-    // margin-left: 10px!important;
-        // padding-bottom:20px;
-        // position:absolute;
-        // top: 193px;
-    // width: 100%;
-    // max-width: 1580px;
     margin-bottom: 50px;
     float: left;
 }
@@ -1004,13 +965,7 @@ ul.masonry{
 #views-exposed-form-beginners-course-collection-page .views-exposed-widgets.clearfix > div{
   float: left!important;
 }
-// #views-exposed-form-taxonomy-term-page .views-exposed-widgets.clearfix #edit-field-portion-tid-wrapper{
-//   margin-left: 10px;
-// }
 .termDesc {
-    // margin: 119px auto 50px;
-    // width: 700px;
-    // margin:119px auto -70px;
     color: $colorBrown;
 }
 .view-filters #views-exposed-form-taxonomy-term-page{
@@ -1035,12 +990,8 @@ ul.masonry{
     display: none!important;
 }
 .Audio_link:after {
-    // float: left;
     content:"listen now";
-    // color: #127795;
     padding-left: 20px;
-    // position:relative;
-    // top: -15px;
 }
 /*======= end carousel========*/
 
@@ -1063,7 +1014,6 @@ h2 {
     font-size:30px; 
     line-height: 32px;
     color: $colorBrown;
-    // font-family: $fontFace;
     text-transform: uppercase;
     font-weight: normal;
 }
@@ -1161,13 +1111,6 @@ h3 {
 #block-menu-menu-about-menu .content ul.menu li ul {
     margin-left: 15px;
 }
-// #fplocationclasses, #fplocationevents {
-//     clear: both;
-//     float: left;
-//     height: 220px;
-//     padding: 70px 0 0;
-//     width: 100%;
-// }
 #fplocationevents ul, #fplocationclasses ul {
     margin-top: 20px;
 }
@@ -1203,27 +1146,23 @@ h3 {
     margin-bottom: 12px;
 }
 .small-text, .smalltext {
-    // font-family: $fontFace;
     font-size: 12px;
     line-height: 17px;
     color: $colorParagraph;
 }
 .small-text-2, .smalltext2 {
-    // font-family: $fontFace;
     font-size: 12px;
     line-height: 17px;
     color: $colorParagraph;
     margin: 0 40px;
 }
 .small-title {
-    // font-family: $fontFace;
     font-size: 16px;
     line-height: 24px;
     color: $colorBrown;
     margin: 0 0 10px;
 }
 .regular-text, .regulartext {
-    // font-family: $fontFace;
     font-weight: normal;
     font-size: 16px;
     line-height: 24px;
@@ -1231,14 +1170,12 @@ h3 {
     text-align: left;
 }
 .regular-text-indent {
-    // font-family: $fontFace;
     font-size: 16px;
     line-height: 24px;
     color: $colorBrown;
     margin: 10px 40px 10px 40px;
 }
 .big-text, .bigtext {
-    // font-family: $fontFace;
     font-weight:normal;
     font-size:20px;
     line-height: 28px;
@@ -1276,7 +1213,6 @@ h3 {
     padding-left:40px;
 }
 .internatitle {
-    // font-family: $fontFace;
     font-weight:normal; 
     font-size:24px;
     line-height: 24px;
@@ -1286,7 +1222,6 @@ h3 {
     margin: 48px 0 12px;
 }
 .title {
-    // font-family: $fontFace;
     font-weight:normal; 
     font-size:30px;
     line-height: 24px;
@@ -1382,7 +1317,6 @@ h3 {
 }
 #markViewedWrapper span{
     color: $colorWhite;
-    // font-family: $fontFace;
     font-size: 14px;
     font-weight: normal;
 }
@@ -1424,7 +1358,6 @@ h3 {
 }
 #downloadAudio a{
     color: $colorWhite;
-    // font-family: $fontFace;
     font-size: 14px;
     font-weight: normal;
     line-height: 26px;
@@ -1433,7 +1366,6 @@ h3 {
     color: $colorBlue;
 }
 #titleMultimedia{
-    // font-family: $fontFace;
     font-weight:normal; 
     font-size:25px;
     line-height: 29px;
@@ -1442,7 +1374,6 @@ h3 {
     display: block;
 }
 #courseNameMultimedia{
-    // font-family: $fontFace;
     font-weight:normal; 
     font-size:19px;
     line-height: 26px;
@@ -1463,11 +1394,6 @@ h3 {
 }
 #authorNameMultimedia,#dateMultimedia{
     @extend #primaryTopicMultimedia;
-    // font-family: $fontFaceLight ;
-    // font-weight:normal; 
-    // font-size:15px;
-    // line-height: 26px;
-    // color:$colorBrown;
     text-align:right;
     display: block;
 }
@@ -1516,7 +1442,6 @@ h3 {
     margin-top: 20px
 }
 #classesDescription{
-    // font-family: $fontFace;
     font-weight:normal; 
     font-size:16px;
     line-height: 25px;
@@ -1525,7 +1450,6 @@ h3 {
     margin-bottom: 20px;
 }
 .titleDescription{
-    // font-family: $fontFace;
     font-weight:normal; 
     font-size:18px;
     color:$colorRed;
@@ -1559,7 +1483,6 @@ h3 {
     content: "-";
     padding-left:20px;
 }
-
 #classHighlights > p {
     display: none;
 }
@@ -1616,12 +1539,10 @@ h3 {
     font-size:15px; 
     line-height: 32px;
     color: $colorWhite;
-    // font-family: $fontFace;
     font-weight: normal;
 }
 #contentAuthorImages > span a{
     color: #4dcff5; ;
-    // font-family: $fontFace;
     font-weight: normal;
     font-size:14px;
 }
@@ -1650,7 +1571,6 @@ h3 {
 .buttonMember a{
     text-align: center;
     color: $colorWhite;
-    // font-family: $fontFace;
     font-weight: bold;
     font-size: 14px;
     line-height: 26px;
@@ -1665,13 +1585,11 @@ h3 {
     border-bottom: 1px solid #7f7979;
     margin-left: 16px;
     color: $colorWhite;
-    // font-family: $fontFace;
     font-size: 14px;
 }
 #wrapperInfoCour > span {
     display: block;
     color: $colorWhite;
-    // font-family: $fontFace;
     font-weight: normal;
     & a{
       color: $colorWhite;
@@ -1706,7 +1624,6 @@ h3 {
 }
 #lessonCollectionSection h2{
     font-size: 21px;
-    // font-family: $fontFace;
     color: $colorRed;
     text-transform: uppercase;
     text-align: left;
@@ -1717,8 +1634,7 @@ h3 {
 #block-views-lesson-collection-block-2 .view-filters,
 #block-views-lesson-collection-block-3 .view-filters {
     float: right;
-    margin-top: -88px;
-    //  
+    margin-top: -88px; 
 }
 #edit-field-portion-tid-wrapper label,
 #edit-field-portion-tid-wrapper .views-widget,
@@ -1760,13 +1676,10 @@ h3 {
     font-weight: normal;
 }
 .view-content thead {
-    // border-bottom: 1px solid #CCCCCC;
-    // border-top: 1px solid #CCCCCC;
     float: left;
     width: 940px;
 }
 .view-content tbody {
-    // float: left;
     max-height: 300px;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -1806,7 +1719,6 @@ h3 {
     width: 940px!important;
     overflow-x: hidden!important;
 }
-
 #lessonCollectionSection table thead tr{
     border-top: 1px solid $colorGray;
     border-bottom: 1px solid $colorGray;
@@ -1840,7 +1752,6 @@ h3 {
 #lessonCollectionSection table thead tr,
 #lessonCollectionSection table thead tr a{
     font-size: 12px;
-    // font-family: $fontFace;
     color: $colorRed; 
     text-align: left;
     font-weight: normal!important;
@@ -1861,7 +1772,6 @@ h3 {
 #edit-field-author-tid-wrapper label,
 #edit-title-wrapper label{
     color: $colorTitle;
-    // font-family: $fontFace;
     font-size: 14px;
     font-weight: normal;
     line-height: 22px;
@@ -1880,7 +1790,6 @@ span.lessonsCourse {
     color: $colorBrown;
     cursor: pointer;
     display: inline-block;
-    // font-family: $fontFace;
     font-size: 14px;
     height: 30px;
     line-height: 28px;
@@ -1888,7 +1797,6 @@ span.lessonsCourse {
     padding-right: 30px;
     text-align: left;
     text-indent: 10px;
-    // width: 180px;
     z-index: 1;
 }
 .transcription .lessonsCourse,#views-exposed-form-free-lessons-page .lessonsCourse{
@@ -1903,7 +1811,6 @@ span.lessonsCourse {
     color: $colorBlue; 
     cursor: pointer;
     display: inline-block;
-    // font-family: $fontFace;
     font-size: 14px;
     height: 26px;
     line-height: 27px;
@@ -1926,7 +1833,6 @@ span.lessonsCourse {
 }
 #transcriptWrapper label{
     float: left;
-    // font-family: $fontFace;
     font-size: 16px;
     font-weight: normal;
     color: $colorBrown;
@@ -1944,19 +1850,14 @@ span.lessonsCourse {
     height: 30px;
     padding-right:40px;
 }
-// #lessonCollectionSection form option{
-//     width: 152px;
-// }
 #preReqsTitle{
     color: $colorWhite;
-    // font-family: $fontFace;
     font-weight: normal;
     font-size: 12px;
     line-height: 20px;
 }
 #preReqs a{
     color:#4dcff5;
-    // font-family: $fontFace;
     font-weight: normal;
     font-size: 12px;
     line-height: 20px;
@@ -2001,7 +1902,6 @@ span.lessonsCourse {
 #language{
     float: left;
     color:$colorParagraph;
-    // font-family: $fontFace;
     font-weight: normal;
     font-size: 15px;
     line-height: 24px;
@@ -2084,7 +1984,6 @@ div.jp-audio{
 }
 .videocontent #eSocial{
     margin: auto;
-    /*width: 940px;*/
 }
 #classResources {
     background: none repeat scroll 0 0 #ECECEC;
@@ -2103,8 +2002,7 @@ div.jp-audio{
    margin-bottom: 0;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-size: 13px;
-    
+    font-size: 13px;  
 }
 #classHighlights ul{
     padding-left: 15px;
@@ -2113,7 +2011,6 @@ div.jp-audio{
 #classHighlights li {
     list-style: disc outside none;
     color:$colorBrown; 
-    // font-family: $fontFace;
     font-weight: normal;
     font-size: 16px;
     line-height: 25px;
@@ -2121,7 +2018,6 @@ div.jp-audio{
 }
 .resourceTitle > a{
     color:#127795;  
-    // font-family: $fontFace;
     font-weight: normal;
     font-size: 13px;
     line-height: 18px;
@@ -2130,7 +2026,6 @@ div.jp-audio{
     vertical-align: super;
 }
 .resourceFile {
-    /*background: url("../images/icon_pdf.png") no-repeat scroll 0 0 transparent;*/
     @include icon-sprite("icon_pdf");
     margin-right: 14px;
     display: inline-block;
@@ -2139,7 +2034,6 @@ div.jp-audio{
 }
 #classesDescription > p {
     color: $colorBrown;
-    // font-family: $fontFace;
     font-size: 16px;
     font-weight: normal;
     line-height: 25px;
@@ -2166,7 +2060,6 @@ div.jp-audio{
 }
 .topicwrapper {
     float: left;
-    // margin: 0 10px 40px;
     cursor: pointer;
     overflow: hidden;
     width: 300px;
@@ -2208,7 +2101,6 @@ div.jp-audio{
     width: 940px;
     float: none;
 }
-
 .topicItemImage a {
     height: auto !important;
     text-decoration: none !important;
@@ -2325,7 +2217,6 @@ div.jp-audio{
     cursor: pointer;
     height: 29px;
 }
-
 .preVideoImg {
     width: 940px;
     margin: 20px auto auto;
@@ -2380,37 +2271,11 @@ div.jp-audio{
     font-size: 15px;
     & a {
   color: $colorBrown;
-
   }
 }
 .flag-message{
   left: -169px!important;
 }
-// .audioSection .bookmark{
-//   float: none;
-// }
-//resize table
-// .type-width {
-//     width: 25px !important;
-// }
-// .title-width{
-//   width: 350px!important;
-//   padding-right: 10px;
-// }
-
-// .author-width{
-//   width: 120px!important;
-// }
-// .duration-width,
-// .subtitle-width,
-// .release-width{
-//     width: 65px !important;
-// }
-
-
-// .watch-width{
-//     width: 110px !important;
-// }
 
 /**start scrollling filter**/
 .scrollingTitle{
@@ -2443,6 +2308,5 @@ div.jp-audio{
     max-width: 1580px;
     min-width: 940px;
     margin: auto;
-    // padding:0!important;
 }
 /**end scrollling filter**/
