@@ -10,8 +10,8 @@ Drupal.behaviors.myBehavior = {
 	$('.views-table tbody tr').each(function() {
 	    var href = $(this).find('.Video_link').attr('href');
 	  if (href == context.URL){
-	 	 className = $(this).find('.Video_link span').attr('class');
 	 	 $(this).find('.Video_link span').text('NOW PLAYING');
+	 	 $(this).find('.Video_link span').addClass( "nowplaying" );
     	}
     
 	});
