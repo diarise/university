@@ -11,16 +11,12 @@ Drupal.behaviors.myBehavior = {
 	    //alert($(this).find('.Video_link').val()); // `this` is TR DOM element
 	    var href = $(this).find('.Video_link').attr('href');
 	  if (href == context.URL){
-	  	var current = $('.watch-width').find('a.Video_link').children().attr('class');
-	  	 console.log(current);
-	  	 console.log(href);
 	 	 className = $(this).find('.Video_link span').attr('class');
-	 	console.log(className);
     	}
     
 	});
 	console.log(className);
-		$('className').text('NOW PLAYING');
+		$('.'.className).text('NOW PLAYING');
     //code ends
   }
 };
