@@ -10,9 +10,11 @@ Drupal.behaviors.myBehavior = {
 	$('.views-table tbody tr').each(function() {
 	    //alert($(this).find('.Video_link').val()); // `this` is TR DOM element
 	    var href = $(this).find('.Video_link').attr('href');
-	    console.log(context.URL);
+	  
 	    
 	  if (href == context.URL){
+	  	  console.log(context.URL);
+	  	   console.log(href);
 	 	 className = $('.Video_link span').attr('class');
 	 	console.log(className);
     	}
