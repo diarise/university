@@ -6,6 +6,7 @@ Drupal.behaviors.myBehavior = {
   attach: function (context, settings) {
     //code starts
     var className;
+
 	$('.views-table tbody tr').each(function() {
 	    //alert($(this).find('.Video_link').val()); // `this` is TR DOM element
 	    var href = $(this).find('.Video_link').attr('href');
@@ -18,7 +19,7 @@ Drupal.behaviors.myBehavior = {
     
 	});
 	console.log(className);
-		$(className).text('NOW PLAYING');
+		$('className').text('NOW PLAYING');
     //code ends
   }
 };
