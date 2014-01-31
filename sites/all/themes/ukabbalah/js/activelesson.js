@@ -5,7 +5,7 @@
 Drupal.behaviors.myBehavior = {
   attach: function (context, settings) {
     //code starts
-    var href = $(Video_link).attr('href');
+    var href = $('.Video_link').attr('href');
     console.log(href);
     console.log(Drupal.settings.nodepath);
      if (href == Drupal.settings.nodepath){
