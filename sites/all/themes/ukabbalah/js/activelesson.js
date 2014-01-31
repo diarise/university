@@ -10,10 +10,13 @@ Drupal.behaviors.myBehavior = {
 	    //alert($(this).find('.Video_link').val()); // `this` is TR DOM element
 	    var href = $(this).find('.Video_link').attr('href');
 	    console.log(context.URL);
-	     if (href == context.URL){
-	    className = $('.Video_link span').attr('class');
-	    return;
-    	 }
+	    while(href == context.URL){
+	    	className = $('.Video_link span').attr('class');
+	    }
+	    // if (href == context.URL){
+	  //  className = $('.Video_link span').attr('class');
+	  //  return;
+    //	 }
 	});
 	console.log(className);
 		$(className).text('NOW PLAYING');
