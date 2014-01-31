@@ -454,26 +454,16 @@ function ukabbalah_preprocess_page(&$vars) {
   }
 }
 
-/*function spukabbalah_preprocess_html(&$variables) {
-  // If on an individual node page, add the node type to body classes.
-  if ($node = menu_get_object()) 
-  {
-		$variables['meta_description'] = 'Kabbalah is an ancient wisdom that provides practical tools for creating joy';
-		$variables['meta_image'] = 'http://cdn1.kabbalah.com/university/class-images/esp-clase-de-conciencia-640x360.jpg'; 
-		
-		
-		if( isset($node->body) || $node->body['und'][0]['value']!="" )	
-		{ 
-			$variables['meta_description'] = check_plain($node->body['und'][0]['value']);
-		} 
-		
-		if( isset($node->field_image_cdn_link)  || $node->field_image_cdn_link['und'][0]['value'] !="" )
-		{ 
-			$variables['meta_image'] = check_plain($node->field_image_cdn_link['und'][0]['value']); 
-		}
-		
+function ukabbalah_preprocess_node(&$variables) {
+  if ($variables['view_mode'] == 'full') {
+    $node =& $variables['node'];
+	$path = drupal_get_path_alias($_GET['q']);
+    if ($node->type == 'lessons') {
+      $path = drupal_get_path('theme', 'ukabbalah');
+      drupal_add_js($path . '/js/activelesson.js', array('nodeinfo'=>array('nodepath'=>$path)),'setting');
+    }
   }
-}*/
+}
 
 
 
