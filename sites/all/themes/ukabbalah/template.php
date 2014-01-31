@@ -458,7 +458,7 @@ function ukabbalah_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full') {
     $node =& $variables['node'];
 	$path = drupal_get_path_alias($_GET['q']);
-    if ($node->type == 'lessons') {
+    if ($node->type == 'lesson') {
       $path = drupal_get_path('theme', 'ukabbalah');
       drupal_add_js($path . '/js/activelesson.js', array('nodeinfo'=>array('nodepath'=>$path)),'setting');
     }
