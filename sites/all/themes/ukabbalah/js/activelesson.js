@@ -11,6 +11,14 @@ Drupal.behaviors.myBehavior = {
      if (href == context.URL){
      	$('.Video_link span').text('NOW PLAYING');
      }
+     
+     table.find('td.watch-width').each(function(){
+     	var href = $('.Video_link').attr('href');
+     	 if (href == context.URL){
+     	$('.Video_link span').text('NOW PLAYING');
+     }
+        
+    } );
     //code ends
   }
 };
