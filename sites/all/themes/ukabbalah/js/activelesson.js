@@ -8,10 +8,16 @@ Drupal.behaviors.myBehavior = {
     var className;
 
 	$('.views-table tbody tr').each(function() {
-	    var href = $(this).find('.Video_link').attr('href');
-	  if (href == context.URL){
+	    var videohref = $(this).find('.Video_link').attr('href');
+	    var audiohref = $(this).find('.Audio_link').attr('href');
+	  if (videohref == context.URL){
 	 	 $(this).find('.Video_link span').text('NOW PLAYING');
 	 	 $(this).find('.Video_link span').addClass( "nowplaying" );
+    	}
+    	
+    	 if (audiohref == context.URL){
+	 	 $(this).find('.Audio_link span').text('NOW PLAYING');
+	 	 $(this).find('.Audio_link span').addClass( "nowplaying" );
     	}
     
 	});
