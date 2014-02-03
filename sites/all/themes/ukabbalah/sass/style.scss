@@ -1476,8 +1476,7 @@ h3 {
     overflow: auto; //hidden
     transition: height 0.3s ease-in-out 0s;
 }
- #classHighlights input:checked ~ ul, #classesDescription input:checked ~ p {
-    max-height: 140px; 
+ #classHighlights input:checked ~ ul, #classesDescription input:checked ~ p { 
     height: auto;
     transition: height 0.5s ease-in-out 0s;
 }
