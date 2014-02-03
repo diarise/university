@@ -2320,3 +2320,16 @@ div.jp-audio{
     margin: auto;
 }
 /**end scrollling filter**/
+
+
+
+#lessonCollectionSection tr:hover{
+	font-weight: normal;
+	background: #e1edf1;
+		.Video{
+				background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px;
+			}
+		.views-field-twistage-subtitles span, .subtitle-width span{
+     background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
+      }
+}

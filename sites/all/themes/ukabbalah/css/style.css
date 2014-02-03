@@ -3035,3 +3035,16 @@ div.jp-audio {
 }
 
 /**end scrollling filter**/
+/* line 2326, ../sass/style.scss */
+#lessonCollectionSection tr:hover {
+  font-weight: normal;
+  background: #e1edf1;
+}
+/* line 2329, ../sass/style.scss */
+#lessonCollectionSection tr:hover .Video {
+  background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px;
+}
+/* line 2332, ../sass/style.scss */
+#lessonCollectionSection tr:hover .views-field-twistage-subtitles span, #lessonCollectionSection tr:hover .subtitle-width span {
+  background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
+}
