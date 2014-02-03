@@ -1251,6 +1251,11 @@ ul.masonry {
   width: 180px;
 }
 
+/* line 983, ../sass/style.scss */
+.Video_link {
+  padding-left: 20px;
+}
+
 /* line 986, ../sass/style.scss */
 .Video_link span {
   display: inline !important;
@@ -1270,6 +1275,7 @@ ul.masonry {
 /* line 996, ../sass/style.scss */
 .nowplaying {
   float: left;
+  margin-left: 20px;
   width: 100px;
   font-size: 13px;
   font-style: italic;
