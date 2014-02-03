@@ -1,3 +1,4 @@
+<script type="text/javascript" src="https://kabbalah.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_USlqrrzf-1988229788/6251/82/1.4.5/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=74d29eca"></script>
 <!-- HEADER -->
 <div id="topHeaderWrapper">
 	<div class="topHeader">
