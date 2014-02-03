@@ -1271,7 +1271,6 @@ ul.masonry {
 /* line 997, ../sass/style.scss */
 .nowplaying {
   float: left;
-  margin-left: 20px;
   width: 100px;
   font-size: 13px;
   font-style: italic;
