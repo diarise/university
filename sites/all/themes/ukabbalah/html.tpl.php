@@ -24,9 +24,9 @@
   <!-- Start Open Web Analytics Tracker -->
   <script type="text/javascript">
   //<![CDATA[
-  var owa_baseUrl = 'http://localhost/owa/';
+  var owa_baseUrl = 'http://analytics.kabbalahsupport.net/';
   var owa_cmds = owa_cmds || [];
-  owa_cmds.push(['setSiteId', 'ca828ab86bab4c4c67ed5bc67db80bad']);
+  owa_cmds.push(['setSiteId', '9b627066f69101d9cd30af0e878f9b78']);
   owa_cmds.push(['trackPageView']);
   owa_cmds.push(['trackClicks']);
   owa_cmds.push(['trackDomStream']);
