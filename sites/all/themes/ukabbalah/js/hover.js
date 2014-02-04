@@ -9,6 +9,9 @@
           titleHeight = $(this).find(".theJsonTitle").outerHeight();
           dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
       
+		  console.log( "titleHeight : " + titleHeight);
+		  console.log( "dateHeight : " + dateHeight);	
+	  
           $(this).find(".theDescCont").css ({
               "margin-top": -(titleHeight + dateHeight + 13),
           }); 
