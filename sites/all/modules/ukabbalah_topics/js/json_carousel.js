@@ -82,10 +82,10 @@ var Slide = function(elem, options){
                                             + headObjCont.term_desc 
                                         + "</div>" 
                                         + "<div class = 'slideWrapper'>"                                      
-                                        + "<ul class = 'ulStyle'>";
+                                        + "<ul class = 'masonry ulStyle'>";
 
                         $.each(listCont, function(index, value){      // add all images of each row
-                            rowContent += "<li class = 'eachCont'>"
+                            rowContent += "<li class = 'masonry-brick eachCont'>"
                                             + "<span class = 'imagesCont'>"
                                                 + "<img src = " + value.image_link + " class = 'theImage'>"
                                                 + "<a href =" + value.path + ">" 
