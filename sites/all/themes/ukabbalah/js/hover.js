@@ -7,10 +7,10 @@
 
         $.each($(".masonry li"), function(){
           
-		  $(window).load(function(){ 
+		  setTimeout ( function () {
 			titleHeight = $(this).find(".theJsonTitle").outerHeight();
 			dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
-		  });
+		  }, 1);
       
 		  console.log( "titleHeight : " + titleHeight);
 		  console.log( "dateHeight : " + dateHeight);	
