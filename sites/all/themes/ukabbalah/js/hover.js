@@ -16,7 +16,7 @@
 		  console.log( "dateHeight : " + dateHeight);	
 	  
           $(this).find(".theDescCont").css ({
-              "margin-top": -(titleHeight + dateHeight + 13),
+              "margin-top": -(titleHeight + dateHeight + 11),
 			  "padding" : 0,
           }); 
 
@@ -36,7 +36,7 @@
             dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
 
             $(this).find(".theDescCont").stop().animate({
-             "margin-top": -(titleHeight + dateHeight + 13),
+             "margin-top": -(titleHeight + dateHeight + 11),
             },220);
           })
         });
