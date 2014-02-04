@@ -8,7 +8,7 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/ie.css
 stylesheets[all][] = css/tooltipster.css
 
-;scripts[] = js/hover.js
+scripts[] = js/hover.js
 scripts[] = js/persistheader.js
 scripts[] = js/custum_select_drop_down.js
 ;scripts[] = js/table-hover.js
