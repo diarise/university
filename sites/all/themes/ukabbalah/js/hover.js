@@ -6,8 +6,11 @@
         var dateHeight = 0;
 
         $.each($(".masonry li"), function(){
-          titleHeight = $(this).find(".theJsonTitle").outerHeight(true);
-          dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight(true);
+          
+		  $(window).load(function(){ 
+			titleHeight = $(this).find(".theJsonTitle").outerHeight();
+			dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+		  });
       
 		  console.log( "titleHeight : " + titleHeight);
 		  console.log( "dateHeight : " + dateHeight);	
