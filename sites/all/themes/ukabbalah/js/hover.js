@@ -10,7 +10,7 @@
           dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
       
           $(this).find(".theDescCont").css ({
-              "margin-top": -(titleHeight + dateHeight + 13),
+              "margin-top": "-"+(titleHeight + dateHeight + 13)+"px",
           }); 
 
           $(this).hover(
