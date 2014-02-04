@@ -33,6 +33,42 @@
             },220);
           })
         });
+		
+		
+		
+		$.each($(".eachCont li"), function(){
+          titleHeight = $(this).find(".theJsonTitle").outerHeight();
+          dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+      
+          $(this).find(".theDescCont").css ({
+              "margin-top": -(titleHeight + dateHeight + 13),
+          }); 
+
+          $(this).hover(
+
+          function(){
+
+            $(this).find(".theDescCont").stop().animate({
+             marginTop: "-180px",
+            },220);
+
+           },
+
+           function(){
+
+            titleHeight = $(this).find(".theJsonTitle").outerHeight();
+            dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+
+            $(this).find(".theDescCont").stop().animate({
+             "margin-top": -(titleHeight + dateHeight + 13),
+            },220);
+          })
+        });
+		
+		
+		
+		
+		
 });
 
 })(jQuery);
