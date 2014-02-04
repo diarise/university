@@ -46,7 +46,7 @@
 	$(window).resize(function(){
 	clearTimeout(resizeTimer);
   	resizeTimer = setTimeout(function() {
-		  $("#mainContentWrapper h1").css({
+		  $("#mainContentWrapper h1, #courseByParentWrapper h1").css({
 	          "width" : $(".masonry").width() - 20
 	  });
 
