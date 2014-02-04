@@ -1,7 +1,8 @@
 (function($){
 
- $(document).ready(function(){
-
+ //$(document).ready(function(){
+	$(window).load(function() {
+ 
         var titleHeight = 0;
         var dateHeight = 0;
 
@@ -40,6 +41,6 @@
           })
         });
 		
+//});
 });
-
 })(jQuery);
