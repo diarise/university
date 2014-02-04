@@ -6,14 +6,15 @@
         var dateHeight = 0;
 
         $.each($(".masonry li"), function(){
-          titleHeight = $(this).find(".theJsonTitle").outerHeight();
-          dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+          titleHeight = $(this).find(".theJsonTitle").outerHeight(true);
+          dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight(true);
       
 		  console.log( "titleHeight : " + titleHeight);
 		  console.log( "dateHeight : " + dateHeight);	
 	  
           $(this).find(".theDescCont").css ({
               "margin-top": -(titleHeight + dateHeight + 13),
+			  "padding" : 0,
           }); 
 
           $(this).hover(
