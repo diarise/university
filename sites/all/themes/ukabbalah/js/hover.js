@@ -36,7 +36,7 @@
 		
 		
 		
-		$.each($(".ulStyle li"), function(){
+		$.each($(".eachCont"), function(){
           titleHeight = $(this).find(".theJsonTitle").outerHeight();
           dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
       
