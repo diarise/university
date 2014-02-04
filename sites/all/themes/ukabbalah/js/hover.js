@@ -7,10 +7,9 @@
 
         $.each($(".masonry li"), function(){
           
-		  setTimeout ( function () {
-			titleHeight = $(this).find(".theJsonTitle").outerHeight();
-			dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
-		  }, 1);
+		  titleHeight = $(this).find(".theJsonTitle").outerHeight();
+		  dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+		  
       
 		  console.log( "titleHeight : " + titleHeight);
 		  console.log( "dateHeight : " + dateHeight);	
