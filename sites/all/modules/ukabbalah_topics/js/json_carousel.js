@@ -259,7 +259,7 @@ var Slide = function(elem, options){
                         $(".leftArrowStyleHome").css({
                                 "float": "left",
                                 "position": "relative",
-                                "margin-top": 17, //124
+                                // "margin-top": 17, //124
                                 // "left": 0,
                                 "top": 196,
                                 "cursor": "pointer",
