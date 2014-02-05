@@ -259,8 +259,8 @@ var Slide = function(elem, options){
                         $(".leftArrowStyleHome").css({
                                 "float": "left",
                                 "position": "absolute",
-                                "margin-top": 124,
-                                "left": 0,
+                                "margin-top": 17, //124
+                                // "left": 0,
                                 "cursor": "pointer",
                                 "z-index": 120,
                                 "visibility": visOpt 
@@ -268,8 +268,8 @@ var Slide = function(elem, options){
 
                          $(".rightArrowStyleHome").css({
                                 "float": "right",
-                                "position": "relative",
-                                "margin-top": -160,
+                                // "position": "relative",
+                                "margin-top": -120, //160
                                 "cursor": "pointer",
                                 "z-index": 120,
                                 "visibility": "visible"
