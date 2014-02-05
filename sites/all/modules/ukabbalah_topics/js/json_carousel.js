@@ -258,22 +258,23 @@ var Slide = function(elem, options){
 
                         $(".leftArrowStyleHome").css({
                                 "float": "left",
-                                // "position": "relative",
-                                "margin-top": 132, //124
-                                // "left": 0,
-                                // "top": 196,
+                                "position": "absolute",
+                                "margin-top": 120,
+                                "left": 0,
                                 "cursor": "pointer",
-                                "z-index": 120,
+                                // "opacity": 0.5,
+                                "z-index": 10,
                                 "visibility": visOpt 
                             });
 
                          $(".rightArrowStyleHome").css({
                                 "float": "right",
-
-                                // "position": "relative",
-                                "margin-top": -151, //160
+                                "position": "relative",
+                                "margin-top": -160,
+                                "right": 0,
                                 "cursor": "pointer",
-                                "z-index": 120,
+                                // "opacity": 0.5,
+                                "z-index": 10,
                                 "visibility": "visible"
                             });
 
