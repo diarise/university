@@ -254,14 +254,15 @@ var Slide = function(elem, options){
                                 "margin-bottom": 20,
                                 "margin-left": "auto",
                                 "margin-right": "auto",
+                                "float": "left",
                             });
 
                         $(".leftArrowStyleHome").css({
                                 "float": "left",
-                                "position": "relative",
-                                // "margin-top": 17, //124
+                                // "position": "relative",
+                                "margin-top": 132, //124
                                 // "left": 0,
-                                "top": 196,
+                                // "top": 196,
                                 "cursor": "pointer",
                                 "z-index": 120,
                                 "visibility": visOpt 
@@ -269,6 +270,7 @@ var Slide = function(elem, options){
 
                          $(".rightArrowStyleHome").css({
                                 "float": "right",
+
                                 // "position": "relative",
                                 "margin-top": -151, //160
                                 "cursor": "pointer",
