@@ -733,7 +733,7 @@ ul.masonry{
     margin: auto;
     // max-width: 1580px;
     // min-width: 940px;
-    padding: 20px 0 16px;
+    padding: 20px 0 16px 17px;
     height:20px;
     margin-top: 24px;
 }
@@ -752,6 +752,7 @@ ul.masonry{
     // max-width: 1580px;
     // min-width: 940px;
     padding-bottom: 1px;
+    padding-left:17px;
 }
 #teachingsBarInnerWrapper{
   padding-bottom:3px!important;
@@ -2301,13 +2302,14 @@ div.jp-audio{
 .scrollingTitle{
   background: #fff;
     position: fixed !important;
-    position: relative;
+    // position: relative;
     z-index: 140;
     top: 0;
     margin: 0!important;
-    width: 100%;
-    min-width: 100%!important;
-    max-width: 100%!important;
+    padding-left: 0!important;
+    // width: 100%;
+    // min-width: 100%!important;
+    // max-width: 100%!important;
     z-index: 1400 !important;
 }
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
@@ -2323,6 +2325,7 @@ div.jp-audio{
 }
 .scrollingFilter{
   padding-bottom:10px!important;
+  padding-left:0!important;
 }
 .teachingsBarInnerWrapper{
     max-width: 1580px;
