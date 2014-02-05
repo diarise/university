@@ -254,7 +254,6 @@ var Slide = function(elem, options){
                                 "margin-bottom": 20,
                                 "margin-left": "auto",
                                 "margin-right": "auto",
-                                "float": "left",
                             });
 
                         $(".leftArrowStyleHome").css({
