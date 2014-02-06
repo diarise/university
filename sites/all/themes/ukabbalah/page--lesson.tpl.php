@@ -47,8 +47,16 @@
     <?php print render($page['content']); ?>
 	</div><!-- end of pageregion -->
 	
-	<div id="lessonCollectionSection">
-		<?php print render($page['pagelessoncollection']); ?>
+	<!-- <div id="lessonCollectionSection">
+		<?php //print render($page['pagelessoncollection']); ?>
+	</div> -->
+
+	<div class="lessonCollectionSection">
+		<?php print render($page['courselessoncollection']); ?>
+	</div>
+
+	<div class="lessonCollectionSection">
+		<?php print render($page['eventlessoncollection']); ?>
 	</div>
   
 <div id="SocialMediaWrapper">
