@@ -50,15 +50,18 @@
 	<!-- <div id="lessonCollectionSection">
 		<?php //print render($page['pagelessoncollection']); ?>
 	</div> -->
-
+<?php
+$course_list_title = $node->field_course_list['und'][0]['node']->title;
+if($course_list_title){
+?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['courselessoncollection']); ?>
 	</div>
-
+<?php }else{?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['eventlessoncollection']); ?>
 	</div>
-  
+  <?php } ?>
 <div id="SocialMediaWrapper">
 		<div id="SocialMedia">
 			<div id="fpSocialMediaBlock1"><span class="icon-twitter"></span><?php  print render($page['ktweet']);?></div>
@@ -81,11 +84,6 @@
 		</div><!--end of footerwrapper-->
 	</div><!--end of footer-->
 
-
-
-<?php 
-print_r($vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 ));
-?>
 
 
 
