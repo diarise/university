@@ -1813,6 +1813,9 @@ h3 {
 // }
 .lessonCollectionSection form select option{
 	width:150px;
+	& :hover{
+		width: 100%;
+	}
 }
 
 // .lessonCollectionSection form select:after{
