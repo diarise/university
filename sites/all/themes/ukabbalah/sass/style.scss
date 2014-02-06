@@ -1785,7 +1785,7 @@ h3 {
 .lessonCollectionSection table td.active{
     background: none;
 }
-.lessonCollectionSection .view-lesson-collection span{
+.select .view-lesson-collection span{
     display: block;
 }
 #edit-field-portion-tid-wrapper label,
@@ -1813,7 +1813,11 @@ h3 {
 // }
 .lessonCollectionSection form select option{
 	width:150px;
+	& :hover{
+		width: 100%;
+	}
 }
+
 // .lessonCollectionSection form select:after{
 // 	width:100%;
 // }
