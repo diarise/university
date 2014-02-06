@@ -1558,8 +1558,9 @@ h3 {
 }
 #wrapperInfoCour {
     float: left;
-    min-height: 208px;
+    min-height: 206px;
     width: 100%;
+    padding-top:2px;
 }
 #wrapperPrice {
     background: none repeat scroll 0 0 #544C4C;
@@ -1680,7 +1681,7 @@ h3 {
     width: 940px!important;
     font-size: 15px;
     line-height: 30px;
-    font-family: $fontFaceLight ;
+    // font-family: $fontFaceLight ;
     color: $colorBrown;
     text-align: left;
     font-weight: normal;
@@ -1713,6 +1714,10 @@ h3 {
 .lessonCollectionSection table thead tr th:nth-child(3),
 .lessonCollectionSection table tbody tr td:nth-child(3) {
     width: 65px;
+}
+.lessonCollectionSection table tbody tr td:nth-child(3),
+.lessonCollectionSection table tbody tr td.release-width{
+	font-size:13px;
 }
 .lessonCollectionSection table thead tr th:nth-child(4),
 .lessonCollectionSection table thead tr th:nth-child(5),
