@@ -1805,6 +1805,12 @@ h3 {
     width: 100%;
     background: #f2f1f1;
 }
+span.lessonsCourse:before{
+	width:150px;
+}
+span.lessonsCourse:after{
+	width:100%;
+}
 span.lessonsCourse {
     background: url("../images/dd_arrow.png") no-repeat scroll right 10px #fff!important;
     border: 1px solid $colorGray;
@@ -1820,6 +1826,7 @@ span.lessonsCourse {
     text-indent: 10px;
     z-index: 1;
 }
+
 .transcription .lessonsCourse,#views-exposed-form-free-lessons-page .lessonsCourse{
     display: block!important;
 }
