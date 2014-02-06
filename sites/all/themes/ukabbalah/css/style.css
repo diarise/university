@@ -2358,7 +2358,7 @@ h3 a {
 }
 /* line 1816, ../sass/style.scss */
 .lessonCollectionSection form select option :hover {
-  width: 100%;
+  width: auto;
 }
 
 /* line 1824, ../sass/style.scss */
