@@ -2240,7 +2240,7 @@ h3 a {
 .lessonCollectionSection table thead tr th:nth-child(5),
 .lessonCollectionSection table tbody tr td:nth-child(4),
 .lessonCollectionSection table tbody tr td:nth-child(5) {
-  width: 80px;
+  width: 74px;
 }
 
 /* line 1733, ../sass/style.scss */
