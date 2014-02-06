@@ -76,4 +76,8 @@
 		</div><!--end of footerwrapper-->
 	</div><!--end of footer-->
 	
+	<?php
+	print_r($node);
+	
+	?>
 	
