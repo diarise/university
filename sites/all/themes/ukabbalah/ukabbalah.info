@@ -44,7 +44,7 @@ regions[comments] = Comments
 
 
 regions[courselessoncollection] = Course Lesson Collection
-regions[eventlessoncollection] = Event Lesson Collection
+regions[lessoneventcollection] = Event Lesson Collection
 regions[pagelessoncollection] = Lesson Collection
 
 

@@ -1724,6 +1724,12 @@ h3 {
 .lessonCollectionSection table tbody tr td:last-child{
   width: 110px;
 }
+.lessonCollectionSection table tbody tr td.title-width{
+	width:450px!important;
+}
+.author-width{
+	width:100px!important;
+}
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
     padding: 5px 0;
