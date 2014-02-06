@@ -264,22 +264,22 @@ var Slide = function(elem, options){
                         if ($(window).width() >= 1580) {
                             num = imageNum;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;  
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580 && $(window).width() >= 1580 - (imageSizeWidth + marginLeft + marginRight)) {
                             num = imageNum - 1;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight) && $(window).width() >= 1580- (imageSizeWidth + marginLeft + marginRight)*2) {
                             num = imageNum - 2; 
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight)*2 && $(window).width() >= 980) {
                             num = 3;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                     };
                     windowLoad();
@@ -290,27 +290,27 @@ var Slide = function(elem, options){
                         if ($(window).width() >= 1580) { 
                             num = imageNum;    
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num; 
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580 && $(window).width() >= 1580 - (imageSizeWidth + marginLeft + marginRight)) {
                             num = imageNum - 1;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight) && $(window).width() >= 1580- (imageSizeWidth + marginLeft + marginRight)*2) {
                              num = imageNum - 2;  
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight)*2 && $(window).width() >= 980) {
                             num = 3;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else {
                             num = 3;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents").css("margin", "0 auto");
+                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("margin", "0 auto");
                         }
                         reziseRightArrow(); 
                     });
