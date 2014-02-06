@@ -1716,7 +1716,8 @@ h3 {
     width: 65px;
 }
 .lessonCollectionSection table tbody tr td:nth-child(3),
-.lessonCollectionSection table tbody tr td.release-width{
+.lessonCollectionSection table tbody tr td.release-width,
+.lessonCollectionSection table tbody tr td.duration-width{
 	font-size:13px;
 }
 .lessonCollectionSection table thead tr th:nth-child(4),
