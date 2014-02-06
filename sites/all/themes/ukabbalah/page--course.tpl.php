@@ -46,14 +46,20 @@
 		<?php print render($page['content']); ?>	
 	</div><!-- end of pageregion -->
 	
+	<?php
+	if ($node->field_type_of_course[und][0][tid]==562){
+	?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['courselessoncollection']); ?>
 	</div>
+	<?php
+	}else{
+	?>
 
 	<div class="lessonCollectionSection">
 		<?php print render($page['eventlessoncollection']); ?>
 	</div>
-  
+  <?php }?>
 	<div id="SocialMediaWrapper">
 		<div id="SocialMedia">
 			<div id="fpSocialMediaBlock1"><span class="icon-twitter"></span><?php  print render($page['ktweet']);?></div>
@@ -76,8 +82,5 @@
 		</div><!--end of footerwrapper-->
 	</div><!--end of footer-->
 	
-	<?php
-	//print_r($node);
-	print $node->field_type_of_course[und][0][tid];
-	?>
+	
 	
