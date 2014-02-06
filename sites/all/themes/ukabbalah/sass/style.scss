@@ -1813,7 +1813,7 @@ h3 {
 // }
 .lessonCollectionSection form select option{
 	width:150px;
-	& :hover{
+	& :after{
 		width: auto;
 	}
 }

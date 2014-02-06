@@ -2357,7 +2357,7 @@ h3 a {
   width: 150px;
 }
 /* line 1816, ../sass/style.scss */
-.lessonCollectionSection form select option :hover {
+.lessonCollectionSection form select option :after {
   width: auto;
 }
 
