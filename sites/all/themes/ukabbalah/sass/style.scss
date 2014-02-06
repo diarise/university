@@ -1811,6 +1811,12 @@ span.lessonsCourse:before{
 span.lessonsCourse:after{
 	width:100%;
 }
+#lessonCollectionSection form select:before{
+	width:150px;
+}
+#lessonCollectionSection form select:after{
+	width:100%;
+}
 span.lessonsCourse {
     background: url("../images/dd_arrow.png") no-repeat scroll right 10px #fff!important;
     border: 1px solid $colorGray;
