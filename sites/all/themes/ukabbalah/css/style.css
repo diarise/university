@@ -2352,24 +2352,9 @@ h3 a {
   background: #f2f1f1;
 }
 
-/* line 1808, ../sass/style.scss */
-span.lessonsCourse:before {
-  width: 150px;
-}
-
-/* line 1811, ../sass/style.scss */
-span.lessonsCourse:after {
-  width: 100%;
-}
-
 /* line 1814, ../sass/style.scss */
-#lessonCollectionSection form select:before {
+#lessonCollectionSection form select option {
   width: 150px;
-}
-
-/* line 1817, ../sass/style.scss */
-#lessonCollectionSection form select:after {
-  width: 100%;
 }
 
 /* line 1820, ../sass/style.scss */
