@@ -50,12 +50,14 @@
 	if ($node->field_type_of_course[und][0][tid]==562){
 	?>
 	<div class="lessonCollectionSection">
+		this is course
 		<?php print render($page['courselessoncollection']); ?>
 	</div>
 	<?php
 	}else{
 	?>
 	<div class="lessonCollectionSection">
+		this is event
 		<?php print render($page['lessoneventcollection']); ?>
 	</div>
   <?php }?>
