@@ -1509,7 +1509,7 @@ h3 {
 }
 /**/
 
-#lessonCollectionSection {
+.lessonCollectionSection {
     clear: both;
     margin: auto;
     width: 940px;
@@ -1632,7 +1632,7 @@ h3 {
 #infoCourse{
     line-height: 25px;
 }
-#lessonCollectionSection h2{
+.lessonCollectionSection h2{
     font-size: 21px;
     color: $colorRed;
     text-transform: uppercase;
@@ -1676,7 +1676,7 @@ h3 {
     display: inline;
     margin-right: 10px;
 }
-#lessonCollectionSection table {
+.lessonCollectionSection table {
     width: 940px!important;
     font-size: 15px;
     line-height: 30px;
@@ -1702,26 +1702,26 @@ h3 {
     display: inline-block;
     width: 940px;
 }
-#lessonCollectionSection table thead tr th:nth-child(1),
-#lessonCollectionSection table tbody tr td:nth-child(1){
+.lessonCollectionSection table thead tr th:nth-child(1),
+.lessonCollectionSection table tbody tr td:nth-child(1){
   width: 34px;
 }
-#lessonCollectionSection table tbody tr td:nth-child(2),
-#lessonCollectionSection table thead tr th:nth-child(2){
+.lessonCollectionSection table tbody tr td:nth-child(2),
+.lessonCollectionSection table thead tr th:nth-child(2){
   width: 509px;
 }
-#lessonCollectionSection table thead tr th:nth-child(3),
-#lessonCollectionSection table tbody tr td:nth-child(3) {
+.lessonCollectionSection table thead tr th:nth-child(3),
+.lessonCollectionSection table tbody tr td:nth-child(3) {
     width: 65px;
 }
-#lessonCollectionSection table thead tr th:nth-child(4),
-#lessonCollectionSection table thead tr th:nth-child(5),
-#lessonCollectionSection table tbody tr td:nth-child(4),
-#lessonCollectionSection table tbody tr td:nth-child(5) {
+.lessonCollectionSection table thead tr th:nth-child(4),
+.lessonCollectionSection table thead tr th:nth-child(5),
+.lessonCollectionSection table tbody tr td:nth-child(4),
+.lessonCollectionSection table tbody tr td:nth-child(5) {
     width: 80px;
 }
-#lessonCollectionSection table thead tr th:last-child,
-#lessonCollectionSection table tbody tr td:last-child{
+.lessonCollectionSection table thead tr th:last-child,
+.lessonCollectionSection table tbody tr td:last-child{
   width: 110px;
 }
 .tablescroll_wrapper {
@@ -1730,11 +1730,11 @@ h3 {
     width: 940px!important;
     overflow-x: hidden!important;
 }
-#lessonCollectionSection table thead tr{
+.lessonCollectionSection table thead tr{
     border-top: 1px solid $colorGray;
     border-bottom: 1px solid $colorGray;
 }
-#lessonCollectionSection table thead tr th{
+.lessonCollectionSection table thead tr th{
     padding-right:0px; 
 }
 .Video{
@@ -1747,7 +1747,7 @@ h3 {
     background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png) no-repeat 8px 9px;
     color: transparent;
 }
-#lessonCollectionSection tr:hover{
+.lessonCollectionSection tr:hover{
 	font-weight: normal;
 	background: #e1edf1;
 		.Video{
@@ -1757,35 +1757,35 @@ h3 {
      background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
       }
 }
-#lessonCollectionSection table thead tr th.views-field-twistage-subtitles{
+.lessonCollectionSection table thead tr th.views-field-twistage-subtitles{
     background: none!important;
     color: $colorRed!important;
 }
-#lessonCollectionSection table thead tr th{
+.lessonCollectionSection table thead tr th{
     border-bottom: none;
 }
-#lessonCollectionSection table thead tr th img{
+.lessonCollectionSection table thead tr th img{
     margin-left: 5px;
 }
-#lessonCollectionSection table thead tr th.views-align-left{
+.lessonCollectionSection table thead tr th.views-align-left{
     font-weight: normal!important;
 }
-#lessonCollectionSection table thead tr,
-#lessonCollectionSection table thead tr a{
+.lessonCollectionSection table thead tr,
+.lessonCollectionSection table thead tr a{
     font-size: 12px;
     color: $colorRed; 
     text-align: left;
     font-weight: normal!important;
     background: none!important
 }
-#lessonCollectionSection table td a{
+.lessonCollectionSection table td a{
     color: #127795;
     font-size: 14px;
 }
-#lessonCollectionSection table td.active{
+.lessonCollectionSection table td.active{
     background: none;
 }
-#lessonCollectionSection .view-lesson-collection span{
+.lessonCollectionSection .view-lesson-collection span{
     display: block;
 }
 #edit-field-portion-tid-wrapper label,
@@ -1811,10 +1811,10 @@ h3 {
 // span.lessonsCourse:after{
 // 	width:100%;
 // }
-#lessonCollectionSection form select option{
+.lessonCollectionSection form select option{
 	width:150px;
 }
-// #lessonCollectionSection form select:after{
+// .lessonCollectionSection form select:after{
 // 	width:100%;
 // }
 span.lessonsCourse {
@@ -1879,7 +1879,7 @@ span.lessonsCourse {
 .trans-lang-select.form-select {
     width: 320px;
 }
-#lessonCollectionSection form select{
+.lessonCollectionSection form select{
     cursor: pointer;  
     height: 30px;
     padding-right:40px;
@@ -2078,7 +2078,7 @@ div.jp-audio{
 .videocontent .sharethis{
     border-top: none;
 }
-#lessonCollectionSection .Audio {
+.lessonCollectionSection .Audio {
     background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
     height: 13px;
     width: 25px;

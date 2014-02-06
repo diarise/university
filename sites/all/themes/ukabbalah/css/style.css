@@ -1944,7 +1944,7 @@ h3 a {
 
 /**/
 /* line 1512, ../sass/style.scss */
-#lessonCollectionSection {
+.lessonCollectionSection {
   clear: both;
   margin: auto;
   width: 940px;
@@ -2110,7 +2110,7 @@ h3 a {
 }
 
 /* line 1635, ../sass/style.scss */
-#lessonCollectionSection h2 {
+.lessonCollectionSection h2 {
   font-size: 21px;
   color: #9c1f19;
   text-transform: uppercase;
@@ -2172,7 +2172,7 @@ h3 a {
 }
 
 /* line 1679, ../sass/style.scss */
-#lessonCollectionSection table {
+.lessonCollectionSection table {
   width: 940px !important;
   font-size: 15px;
   line-height: 30px;
@@ -2206,34 +2206,34 @@ h3 a {
 }
 
 /* line 1706, ../sass/style.scss */
-#lessonCollectionSection table thead tr th:nth-child(1),
-#lessonCollectionSection table tbody tr td:nth-child(1) {
+.lessonCollectionSection table thead tr th:nth-child(1),
+.lessonCollectionSection table tbody tr td:nth-child(1) {
   width: 34px;
 }
 
 /* line 1710, ../sass/style.scss */
-#lessonCollectionSection table tbody tr td:nth-child(2),
-#lessonCollectionSection table thead tr th:nth-child(2) {
+.lessonCollectionSection table tbody tr td:nth-child(2),
+.lessonCollectionSection table thead tr th:nth-child(2) {
   width: 509px;
 }
 
 /* line 1714, ../sass/style.scss */
-#lessonCollectionSection table thead tr th:nth-child(3),
-#lessonCollectionSection table tbody tr td:nth-child(3) {
+.lessonCollectionSection table thead tr th:nth-child(3),
+.lessonCollectionSection table tbody tr td:nth-child(3) {
   width: 65px;
 }
 
 /* line 1720, ../sass/style.scss */
-#lessonCollectionSection table thead tr th:nth-child(4),
-#lessonCollectionSection table thead tr th:nth-child(5),
-#lessonCollectionSection table tbody tr td:nth-child(4),
-#lessonCollectionSection table tbody tr td:nth-child(5) {
+.lessonCollectionSection table thead tr th:nth-child(4),
+.lessonCollectionSection table thead tr th:nth-child(5),
+.lessonCollectionSection table tbody tr td:nth-child(4),
+.lessonCollectionSection table tbody tr td:nth-child(5) {
   width: 80px;
 }
 
 /* line 1724, ../sass/style.scss */
-#lessonCollectionSection table thead tr th:last-child,
-#lessonCollectionSection table tbody tr td:last-child {
+.lessonCollectionSection table thead tr th:last-child,
+.lessonCollectionSection table tbody tr td:last-child {
   width: 110px;
 }
 
@@ -2246,13 +2246,13 @@ h3 a {
 }
 
 /* line 1733, ../sass/style.scss */
-#lessonCollectionSection table thead tr {
+.lessonCollectionSection table thead tr {
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
 }
 
 /* line 1737, ../sass/style.scss */
-#lessonCollectionSection table thead tr th {
+.lessonCollectionSection table thead tr th {
   padding-right: 0px;
 }
 
@@ -2271,43 +2271,43 @@ h3 a {
 }
 
 /* line 1750, ../sass/style.scss */
-#lessonCollectionSection tr:hover {
+.lessonCollectionSection tr:hover {
   font-weight: normal;
   background: #e1edf1;
 }
 /* line 1753, ../sass/style.scss */
-#lessonCollectionSection tr:hover .Video {
+.lessonCollectionSection tr:hover .Video {
   background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px;
 }
 /* line 1756, ../sass/style.scss */
-#lessonCollectionSection tr:hover .views-field-twistage-subtitles span, #lessonCollectionSection tr:hover .subtitle-width span {
+.lessonCollectionSection tr:hover .views-field-twistage-subtitles span, .lessonCollectionSection tr:hover .subtitle-width span {
   background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
 }
 
 /* line 1760, ../sass/style.scss */
-#lessonCollectionSection table thead tr th.views-field-twistage-subtitles {
+.lessonCollectionSection table thead tr th.views-field-twistage-subtitles {
   background: none !important;
   color: #9c1f19 !important;
 }
 
 /* line 1764, ../sass/style.scss */
-#lessonCollectionSection table thead tr th {
+.lessonCollectionSection table thead tr th {
   border-bottom: none;
 }
 
 /* line 1767, ../sass/style.scss */
-#lessonCollectionSection table thead tr th img {
+.lessonCollectionSection table thead tr th img {
   margin-left: 5px;
 }
 
 /* line 1770, ../sass/style.scss */
-#lessonCollectionSection table thead tr th.views-align-left {
+.lessonCollectionSection table thead tr th.views-align-left {
   font-weight: normal !important;
 }
 
 /* line 1774, ../sass/style.scss */
-#lessonCollectionSection table thead tr,
-#lessonCollectionSection table thead tr a {
+.lessonCollectionSection table thead tr,
+.lessonCollectionSection table thead tr a {
   font-size: 12px;
   color: #9c1f19;
   text-align: left;
@@ -2316,18 +2316,18 @@ h3 a {
 }
 
 /* line 1781, ../sass/style.scss */
-#lessonCollectionSection table td a {
+.lessonCollectionSection table td a {
   color: #127795;
   font-size: 14px;
 }
 
 /* line 1785, ../sass/style.scss */
-#lessonCollectionSection table td.active {
+.lessonCollectionSection table td.active {
   background: none;
 }
 
 /* line 1788, ../sass/style.scss */
-#lessonCollectionSection .view-lesson-collection span {
+.lessonCollectionSection .view-lesson-collection span {
   display: block;
 }
 
@@ -2353,7 +2353,7 @@ h3 a {
 }
 
 /* line 1814, ../sass/style.scss */
-#lessonCollectionSection form select option {
+.lessonCollectionSection form select option {
   width: 150px;
 }
 
@@ -2437,7 +2437,7 @@ span.lessonsCourse {
 }
 
 /* line 1882, ../sass/style.scss */
-#lessonCollectionSection form select {
+.lessonCollectionSection form select {
   cursor: pointer;
   height: 30px;
   padding-right: 40px;
@@ -2719,7 +2719,7 @@ div.jp-audio {
 }
 
 /* line 2081, ../sass/style.scss */
-#lessonCollectionSection .Audio {
+.lessonCollectionSection .Audio {
   background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
   height: 13px;
   width: 25px;
