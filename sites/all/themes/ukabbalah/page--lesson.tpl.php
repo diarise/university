@@ -52,12 +52,15 @@
 	</div> -->
 <?php
 $course_list_title = $node->field_course_list['und'][0]['node']->title;
+$event_list_title = $node->field_event_list['und'][0]['node']->title;
+
 if($course_list_title){
 ?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['courselessoncollection']); ?>
 	</div>
-<?php }else{?>
+<?php }
+if($event_list_title){?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['eventlessoncollection']); ?>
 	</div>

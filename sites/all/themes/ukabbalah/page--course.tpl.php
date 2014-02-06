@@ -55,7 +55,6 @@
 	<?php
 	}else{
 	?>
-
 	<div class="lessonCollectionSection">
 		<?php print render($page['eventlessoncollection']); ?>
 	</div>
