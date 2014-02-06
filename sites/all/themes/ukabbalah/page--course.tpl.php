@@ -77,7 +77,7 @@
 	</div><!--end of footer-->
 	
 	<?php
-	print_r($node);
-	
+	//print_r($node);
+	print $node->field_type_of_course[und][0][tid];
 	?>
 	
