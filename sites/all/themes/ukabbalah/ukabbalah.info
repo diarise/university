@@ -43,7 +43,8 @@ regions[eventsidebar] = Event Side Bar
 regions[comments] = Comments
 
 
-regions[lessoncollection] = Course Lesson Collection
+regions[courselessoncollection] = Course Lesson Collection
+regions[eventlessoncollection] = Event Lesson Collection
 regions[pagelessoncollection] = Lesson Collection
 
 
