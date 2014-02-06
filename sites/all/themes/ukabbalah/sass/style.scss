@@ -1726,7 +1726,8 @@ h3 {
 .lessonCollectionSection .cols-7 th:nth-child(2){
 		width: 453px!important;
 }
-.lessonCollectionSection .cols-7 th:nth-child(3){
+.lessonCollectionSection .cols-7 th:nth-child(3),
+.author-width{
 		width: 100px!important;
 }
 .lessonCollectionSection table thead tr th:nth-child(4),
@@ -1742,9 +1743,9 @@ h3 {
 .lessonCollectionSection table tbody tr td.title-width{
 	width:450px!important;
 }
-.author-width{
-	width:100px!important;
-}
+// .author-width{
+// 	width:100px!important;
+// }
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
     padding: 5px 0;
