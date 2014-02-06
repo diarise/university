@@ -84,7 +84,7 @@
 
 
 <?php 
-print $vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+print_r($vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 ));
 ?>
 
 
