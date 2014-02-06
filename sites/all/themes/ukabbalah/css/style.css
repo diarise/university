@@ -2236,7 +2236,7 @@ h3 a {
 }
 
 /* line 1726, ../sass/style.scss */
-.lessonCollectionSection table .cols-7 thead tr th:nth-child(2) {
+.lessonCollectionSection .cols-7 th:nth-child(2) {
   width: 453px !important;
 }
 
