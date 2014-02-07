@@ -13,6 +13,7 @@ Drupal.behaviors.myBehavior = {
 	  if (videohref == context.URL){
 	 	 $(this).find('.Video_link span').text('NOW PLAYING');
 	 	 $(this).find('.Video_link span').addClass( "nowplaying" );
+	 	 $(this).find('.views-table tbody tr td').addClass( "viewedLessons" ); // add class to lesson viewed
     	}
     	
     	 if (audiohref == context.URL){
