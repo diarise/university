@@ -2311,7 +2311,7 @@ h3 a {
 
 /* line 1785, ../sass/style.scss */
 .lessonCollectionSection tr:hover {
-  font-weight: normal;
+  font-weight: bold;
   background: #e1edf1;
 }
 /* line 1788, ../sass/style.scss */
