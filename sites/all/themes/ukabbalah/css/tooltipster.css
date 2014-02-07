@@ -261,22 +261,22 @@ html {
 	transform: scale(1.1, 1.1);
 }
 .tooltipster-content span:nth-child(2){
-	color: #433A3A;
+	color: #999;
     font-family: ProxiRegular;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 30px;
+    /*font-weight: bold;*/
     line-height: 17px;
     margin-bottom: 22px;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     display: block;
    /* margin-top: 30px;*/
 }
 .tooltipster-content span:nth-child(3){
 	color: #433A3A;
     font-family: ProxiRegular;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 15px;
+    line-height: 22px;
     /*margin-bottom: 10px;*/
     text-align: left;
     text-decoration: none;
@@ -292,8 +292,8 @@ html {
 }
 .close-tip {
     position: absolute;
-    right: 6px;
-    top: 6px;
+    right: 10px;
+    top: 10px;
 }
 a.close-tip{
 	color: #433A3A;
