@@ -266,18 +266,18 @@ html {
     font-size: 16px;
     font-weight: bold;
     line-height: 17px;
-    margin-bottom: 10px;
+    margin-bottom: 22px;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
-    margin-top: 30px;
+   /* margin-top: 30px;*/
 }
 .tooltipster-content span:nth-child(3){
 	color: #433A3A;
     font-family: ProxiRegular;
     font-size: 14px;
     line-height: 21px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     text-align: left;
     text-decoration: none;
 }
