@@ -26,7 +26,7 @@
 						<span class = "theCourseAuthor">
 						<?php
 							$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
-							foreach ( $authors as $author ) {	echo "  <a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. "<span class='divider'> - </span></a>"; }	
+							foreach ( $authors as $author ) {	echo "  <a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. "</a><span class='divider'> - </span>"; }	
 						?>	
 						</span>
 					</span>
