@@ -1621,6 +1621,10 @@ h3 {
 }
 .theCourseAuthor a{
 	color: #4DCFF5 !important;
+	text-transform: uppercase;
+}
+.divider:last{
+	display:none;
 }
 #authorNameMultimedia a{
   color: $colorWhite;
