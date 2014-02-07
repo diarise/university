@@ -2087,7 +2087,7 @@ h3 a {
 }
 
 /* line 1626, ../sass/style.scss */
-.divider:last {
+.divider:last-child {
   display: none;
 }
 
