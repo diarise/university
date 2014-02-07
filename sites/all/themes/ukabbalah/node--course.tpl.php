@@ -22,13 +22,15 @@
 						print $primary_topic; // Primary Topic 
 					?>
 					</span>
-					<span class = "theCourseAuthorTitle">Teacher:</span>
-					<span class = "theCourseAuthor">
+					<span class = "theCourseAuthorTitle">Teacher:
+						<span class = "theCourseAuthor">
 						<?php
 							$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 							foreach ( $authors as $author ) {	echo $author->name."  <a href='javascript:void(0)' class = '".$author->name."'>read bio</a><br>"; }	
 						?>	
+						</span>
 					</span>
+					
 				</div>
 		
 				<div id="wrapperPrice">
