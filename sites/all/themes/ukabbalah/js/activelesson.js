@@ -17,7 +17,7 @@ Drupal.behaviors.myBehavior = {
     	
     	 if (audiohref == context.URL){
 	 	 $(this).find('.Audio_link span').text('NOW PLAYING');
-	 	 $(this).find('.Audio_link span').addClass( "nowplaying" );
+	 	 $(this).find('.Audio_link').addClass( "nowplaying" );
     	}
     
 	});
