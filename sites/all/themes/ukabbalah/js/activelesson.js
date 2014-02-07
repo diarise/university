@@ -13,12 +13,13 @@ Drupal.behaviors.myBehavior = {
 	  if (videohref == context.URL){
 	 	 $(this).find('.Video_link span').text('NOW PLAYING');
 	 	 $(this).find('.Video_link span').addClass( "nowplaying" );
-	 	 $(this).find('td').addClass( "viewed" );
+	 	 $(this).find('td').addClass( "activeLesson" );
     	}
     	
     	 if (audiohref == context.URL){
 	 	 $(this).find('.Audio_link span').text('NOW PLAYING');
 	 	 $(this).find('.Audio_link').addClass( "nowplaying" );
+	 	 $(this).find('td').addClass( "activeLesson" );
     	}
     
 	});
