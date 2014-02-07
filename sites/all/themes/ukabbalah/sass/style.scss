@@ -1694,6 +1694,9 @@ h3 {
     // font-family: $fontFaceLight ;
     color: $colorBrown;
     text-align: left;
+    font-weight: bold;
+}
+.activeLesson {
     font-weight: normal;
 }
 .view-content thead {
