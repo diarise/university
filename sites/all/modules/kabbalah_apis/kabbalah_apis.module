@@ -382,7 +382,7 @@
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			if( $node->body['und'][0]['value'] ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			
 			$recommended_date = $node->field_recommended_date['und'][0]['value'];
 			$recommended_date_month = date('m',strtotime($recommended_date));
