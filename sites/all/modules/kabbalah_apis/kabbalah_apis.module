@@ -442,11 +442,7 @@
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$teaser="";
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
-			
-			// $recommended_date = $node->field_recommended_date['und'][0]['value'];
-			// $recommended_date_month = date('m',strtotime($recommended_date));
-			// $recommended_date_year = date('Y',strtotime($recommended_date));
-			
+		
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
 			$result_array[] = array(  'node_type' => $node->type,
