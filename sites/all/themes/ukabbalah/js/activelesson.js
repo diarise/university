@@ -20,6 +20,7 @@ Drupal.behaviors.myBehavior = {
 	 	 $(this).find('.Audio_link span').text('NOW PLAYING');
 	 	 $(this).find('.Audio_link').addClass( "nowplaying" );
 	 	 $(this).find('td').addClass( "activeLesson" );
+    	 console.log( $(this).find('td') ); 	
     	}
     
 	});
