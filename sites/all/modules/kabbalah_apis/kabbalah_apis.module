@@ -207,7 +207,8 @@
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			$teaser="";
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			
 			if( sizeof($node->field_this_course_contains) > 0 )
 			{
@@ -253,7 +254,8 @@
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			$teaser="";
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			if( sizeof($node->field_this_course_contains) > 0 )
 			{
 				if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
@@ -296,7 +298,8 @@
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			$teaser="";
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
 			$result_array[] = array(  'node_type' => $node->type,
@@ -333,7 +336,8 @@
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			$teaser="";
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			
 			if( sizeof($node->field_this_course_contains) > 0 )
 			{
@@ -436,7 +440,8 @@
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			$teaser="";
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			
 			$recommended_date = $node->field_recommended_date['und'][0]['value'];
 			$recommended_date_month = date('m',strtotime($recommended_date));
