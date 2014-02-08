@@ -398,7 +398,7 @@
 										  'path' => $path , 
 										  'teaser' => $teaser,		
 										  'membership' => $membership->name,
-										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' ,
+										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
 										  'created' => date('F jS, Y',$node->changed),
 										  'media_type' => $media_type->name
 										);
@@ -446,7 +446,7 @@
 										  'path' => $path , 
 										  'teaser' => $teaser,		
 										  'membership' => $membership->name,
-										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' ,
+										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
 										  'created' => date('F jS, Y',$node->changed),
 										  'media_type' => $media_type->name
 										);							
@@ -855,8 +855,8 @@
 										"topic"=> $primary_topic->name ,
 										"keywords" => implode( "," , $secondary_topics ),
 										"body" => $body , 
-										"image" => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' , 
-										"video_id" => $node->field_lesson_video[und][0][twistage_existing_videos],
+										"image" => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' , 
+										"video_id" => $node->field_lesson_video['und'][0]['twistage_existing_videos'],
 										"path" => $path,
 										"highlights" => $highlights,
 										"resources" => $resources
