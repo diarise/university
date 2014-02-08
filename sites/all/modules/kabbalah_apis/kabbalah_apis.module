@@ -305,7 +305,7 @@
 									  'path' => $path , 
 									  'teaser' => $teaser,		
 									  'membership' => $membership->name,
-									  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video[und][0][twistage_existing_videos].'/screenshots/300w.jpg' ,
+									  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
 									  'created' => date('F jS, Y',$node->changed),
 									  'media_type' => $media_type->name
 									);
