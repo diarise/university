@@ -1031,7 +1031,7 @@ ul.masonry {
   text-align: left;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (min-width: 980px) {
   /* line 824, ../sass/style.scss */
   .descriptionEvents {
     font-size: 15px;
