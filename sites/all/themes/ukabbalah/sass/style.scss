@@ -820,9 +820,9 @@ ul.masonry{
     padding-left: 18px;
     text-align: left;
 }
-@media (max-width: 980px) {
+@media only screen and (max-width: 980px) {
 	.descriptionEvents{
-		font-size: 17px;
+		font-size: 15px;
 	}
 }
 .descriptionEvents a, .descriptionEvents a:hover {
