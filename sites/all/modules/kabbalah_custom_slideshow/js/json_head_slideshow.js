@@ -136,8 +136,8 @@
 						$("#div2").scrollLeft((currentImgNo + 1) * contWidth)
 					} else {
 					var frontWidth = $("#front").innerWidth();
-					resWidth = (frontWidth - contWidth) / 2;
-					$("#frontLeft").css("width", resWidth);
+					resWidth = Math.ceil((frontWidth - contWidth) / 2);
+					(frontWidth % 2 == 0) ? (resWidthNew = resWidth) : (resWidthNew = resWidth - 1);					
 					$("#frontRight").css("width", resWidth);
 					$("#div2").scrollLeft((currentImgNo + 1) * contWidth - resWidth);
 					}
