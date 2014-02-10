@@ -3475,7 +3475,7 @@ a.close-tip {
 /* line 302, ../sass/_tooltipster.scss */
 .tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
   left: 33% !important;
-  top: 33% !important;
+  top: 27% !important;
 }
 
 @media (max-width: 1000px) {
