@@ -8,8 +8,13 @@
 		var currentImgNo = 1;
 		var resWidth = 0;
 		var gotoNo = 1;
+		var scrollMode = "hidden";
+		var visOpt = "visible";
+		if("ontouchstart" in document.documentElement){
+			scrollMode = "scroll";
+			visOpt = "hidden";
+		};
 		$("#slideshow").html("<div id='loading' style ='text-align: center; padding-top: 100px'><img src = '/sites/all/modules/kabbalah_custom_slideshow/img/clocker.gif'></img></div>");
-
 
 		$.ajax({
 			type: "GET",
@@ -41,12 +46,16 @@
 				var list = $("#div2 ul");
 				var items = list.find("> li");
 				var imagesNum = items.length;
-				items.filter(":first").before(items.slice(-2).clone().addClass("clone"));
-				items.filter(":last").after(items.slice(0, 2).clone().addClass("clone"));
-				items = list.find("> li");
+				var cloneImgs = 0;
+				if(!("ontouchstart" in document.documentElement)){
+					cloneImgs = 4;				
+					items.filter(":first").before(items.slice(-2).clone().addClass("clone"));
+					items.filter(":last").after(items.slice(0, 2).clone().addClass("clone"));
+					items = list.find("> li");
+				};
 				$("#frontMiddle").append('<ul class ="imgNav">');
 				for (var i = 1; i <= imagesNum; i++) {
-					$("#frontMiddle ul").append("<li rel =" + i + ">" + i + "</li>")
+					$("#frontMiddle ul").append("<li rel =" + i + ">" + "</li>")
 				};
 				$(".imgNav li:first").addClass("activeNav");
 				var pNavs = $("#frontMiddle ul li");
@@ -54,11 +63,12 @@
 					$("#div2").css({
 						"width" : "100%",
 						"postion" : "absolute",
-						"overflow" : "hidden",
+						"overflow" : scrollMode,
+						"-webkit-overflow-scrolling": "touch",
 					});
 					$("#div2 ul").css({
 						"padding" : 0,
-						"width" : contWidth * (imagesNum + 4),
+						"width" : contWidth * (imagesNum + cloneImgs),
 						"position" : "relative",
 						"overflow" : "hidden",
 					});
@@ -101,16 +111,15 @@
 					$("#goLeft").css({
 						"margin-top" : 156,
 						"margin-left" : 15,
-						"width" : 22,
 						"position" : "absolute",
 						"left" : 0,
 						"z-index" : 120,
 						"cursor" : "pointer",
+						"visibility" : visOpt						
 					});
 					$("#goRight").css({
 						"margin-top" : 156,
 						"margin-right" : 15,
-						"width" : 22,
 						"position" : "absolute",
 						"right" : 0,
 						"z-index" : 120,
@@ -120,6 +129,7 @@
 						"position" : "relative",
 						"top" : 318,
 						"z-index" : 130,
+						"visibility" : visOpt						
 					});
 					$(".imgNav li").css({
 						"width" : 12,
@@ -135,14 +145,18 @@
 						$("#frontRight").css("width", 0);
 						$("#div2").scrollLeft((currentImgNo + 1) * contWidth)
 					} else {
-					var frontWidth = $("#front").innerWidth();
-					resWidth = Math.ceil((frontWidth - contWidth) / 2);
-					(frontWidth % 2 == 0) ? (resWidthNew = resWidth) : (resWidthNew = resWidth - 1);					
-					$("#frontRight").css("width", resWidth);
-					$("#div2").scrollLeft((currentImgNo + 1) * contWidth - resWidth);
+						var frontWidth = $("#front").innerWidth();
+						var resWidthNew = 0;						 
+						resWidth = Math.ceil((frontWidth - contWidth) / 2);
+						(frontWidth % 2 == 0) ? (resWidthNew = resWidth) : (resWidthNew = resWidth - 1);
+						$("#frontLeft").css("width", resWidth);
+						$("#frontRight").css("width", resWidthNew);
+						$("#div2").scrollLeft((currentImgNo + 1) * contWidth - resWidth);
 					}
 				};
-				styleFront();
+				if(!("ontouchstart" in document.documentElement)){
+					styleFront();
+				};
 				imgNav = function() {
 					$.each(pNavs, function() {
 						$(this).click(function() {
@@ -209,10 +223,12 @@
 				$("#div2").scrollLeft((currentImgNo + 1) * contWidth)
 			} else {
 				var frontWidth = $("#front").innerWidth();
-				resWidth = (frontWidth - contWidth) / 2;
+				var resWidthNew = 0;						 
+				resWidth = Math.ceil((frontWidth - contWidth) / 2);
+				(frontWidth % 2 == 0) ? (resWidthNew = resWidth) : (resWidthNew = resWidth - 1);
 				$("#frontLeft").css("width", resWidth);
-				$("#frontRight").css("width", resWidth);
-				$("#div2").scrollLeft((currentImgNo + 1) * contWidth - resWidth)
+				$("#frontRight").css("width", resWidthNew);
+				$("#div2").scrollLeft((currentImgNo + 1) * contWidth - resWidth);
 			}
 		});
 		startAutoSlide = function() {
@@ -236,8 +252,17 @@
 	$(document).ready(function() {
 		headSlideShow({
 			contentWidth : 980,
-			theJsonLink : "/k_api/slds"
+			theJsonLink : "/?q=getSlideshowDataJson"
 		});
-		startAutoSlide()
+		if("ontouchstart" in document.documentElement){
+			var slideDiv = document.getElementById("slideshow");
+			slideDiv.ontouchstart = function() {
+				$("#goRight").css({
+					"visibility" : "hidden",
+				});
+			};
+		} else{
+			startAutoSlide();
+		};
 	}); 
 })(jQuery)
