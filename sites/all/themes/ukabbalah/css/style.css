@@ -3081,7 +3081,7 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 1000px) {
   /* line 2384, ../sass/style.scss */
   .scrollingTitle {
     padding-left: 9 !important;
