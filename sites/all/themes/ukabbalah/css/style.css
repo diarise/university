@@ -3074,14 +3074,20 @@ div.jp-audio {
   z-index: 140;
   top: 0;
   margin: 0 !important;
-  padding-left: 9 !important;
+  padding-left: 0 !important;
   width: 100%;
   min-width: 100% !important;
   max-width: 100% !important;
   z-index: 1400 !important;
 }
 
-/* line 2383, ../sass/style.scss */
+@media only screen and (max-width: 1000px) {
+  /* line 2384, ../sass/style.scss */
+  .scrollingTitle {
+    padding-left: 9 !important;
+  }
+}
+/* line 2388, ../sass/style.scss */
 .scrollingFilter, .scrollingTermDesc, .scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
@@ -3094,13 +3100,13 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2394, ../sass/style.scss */
+/* line 2399, ../sass/style.scss */
 .scrollingFilter {
   padding-bottom: 10px !important;
   padding-left: 0 !important;
 }
 
-/* line 2398, ../sass/style.scss */
+/* line 2403, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
