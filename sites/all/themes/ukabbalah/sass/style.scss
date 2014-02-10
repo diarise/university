@@ -820,6 +820,11 @@ ul.masonry{
     padding-left: 18px;
     text-align: left;
 }
+@media (max-width: 980px) {
+	.descriptionEvents{
+		font-size: 17px;
+	}
+}
 .descriptionEvents a, .descriptionEvents a:hover {
     color: #127795;
     font-size: 14px;
