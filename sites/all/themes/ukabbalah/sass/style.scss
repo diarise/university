@@ -2387,7 +2387,7 @@ div.jp-audio{
     // max-width: 100%!important;
     z-index: 1400 !important;
 }
-@media only screen and (min-width: 980px){
+@media only screen and (max-width: 1000px){
 	.scrollingTitle{
 		padding-left: 20!important;
 	}
