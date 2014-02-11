@@ -3121,12 +3121,6 @@ div.jp-audio {
 }
 
 /**end scrollling filter**/
-/* line 2414, ../sass/style.scss */
-.theCourseAuthor ~ .tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
-  left: 33% !important;
-  top: 33% !important;
-}
-
 /* line 1, ../sass/_tooltipster.scss */
 html {
   -webkit-font-smoothing: antialiased;
@@ -3496,17 +3490,23 @@ a.close-tip {
 }
 
 /* line 302, ../sass/_tooltipster.scss */
+.theCourseAuthor ~ .tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
+  left: 33% !important;
+  top: 33% !important;
+}
+
+/* line 306, ../sass/_tooltipster.scss */
 .tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
   left: 162px !important;
 }
 
 @media (max-width: 1000px) {
-  /* line 306, ../sass/_tooltipster.scss */
+  /* line 310, ../sass/_tooltipster.scss */
   .tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
     left: 20px !important;
   }
 }
-/* line 310, ../sass/_tooltipster.scss */
+/* line 314, ../sass/_tooltipster.scss */
 .close-tip img {
   height: 10px;
   margin-left: 0;
