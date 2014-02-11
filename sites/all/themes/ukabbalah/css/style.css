@@ -2777,7 +2777,7 @@ div.jp-audio {
 
 /* line 2136, ../sass/style.scss */
 .lessonCollectionSection .Audio {
-  background: url("../images/icons/audio_icon_light_grey.png") no-repeat 8px 0;
+  background: url("../images/icon/audio_icon_light_grey.png") no-repeat 8px 0;
   height: 13px;
   width: 25px;
 }
