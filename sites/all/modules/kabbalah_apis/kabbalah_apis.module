@@ -888,7 +888,7 @@
 		return preg_replace_callback('/(?<!\\\\)\\\\u([0-9a-f]{4})/i',
 		function ($m) {
 		$d = pack("H*", $m[1]);
-		$r = mb_convert_encoding($d, "UTF8", "UTF-16BE");
+		$r = mb_convert_encoding($d, "UTF8", "UTF-16BE","UTF-8//IGNORE");
 		return $r!=="?" && $r!=="" ? $r : $m[0];
 		}, json_encode($data)
 		);
