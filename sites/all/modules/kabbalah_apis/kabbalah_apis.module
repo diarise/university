@@ -699,12 +699,12 @@
 		$teaser = preg_replace("/&#?[a-z0-9]+;/i","",$teaser); // removeds $nbsp
 		$teaser = stripslashes($teaser);
 		$teaser = strip_tags($teaser);
+	
+		// if( mb_check_encoding($teaser, 'UTF-8') == false ) $teaser = utf8_encode($teaser);
+		// return mb_check_encoding($teaser, 'UTF-8');
+	
+		return $teaser;
 		
-		if( mb_check_encoding($teaser, 'UTF-8') == false ) $teaser = utf8_encode($teaser);
-	
-		return mb_check_encoding($teaser, 'UTF-8');
-	
-	
 		if( $limit != 0 )$teaser = substr( $teaser , 0 , $limit );
 		if( $teaser != false ) return $teaser;
 		else return "";
