@@ -2388,11 +2388,19 @@ div.jp-audio{
     z-index: 1400 !important;
 }
 @media only screen and (max-width: 1040px){
-	.scrollingTitle,
+	.scrollingTitle{
+		padding-left: 20px!important;
+	}
+}
+
+@media only screen and (max-width: 960px){
 	.scrollingFilter{
 		padding-left: 20px!important;
 	}
 }
+
+
+
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
