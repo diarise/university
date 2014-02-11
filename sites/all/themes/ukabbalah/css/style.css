@@ -1,6 +1,6 @@
 @charset "IBM437";
 /* line 394, icon/*.png */
-.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .buttonMember, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg {
+.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .buttonMember, .resourceFile, .lessonCollectionSection .Audio, .vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg {
   background: url('../images/icon-s48ff81feaf.png') no-repeat;
 }
 
@@ -2777,7 +2777,7 @@ div.jp-audio {
 
 /* line 2136, ../sass/style.scss */
 .lessonCollectionSection .Audio {
-  background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon_light_grey.png") no-repeat 8px 0;
+  background-position: 0 -1348px;
   height: 13px;
   width: 25px;
 }

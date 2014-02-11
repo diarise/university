@@ -2134,8 +2134,8 @@ div.jp-audio{
     border-top: none;
 }
 .lessonCollectionSection .Audio {
-    background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon_light_grey.png") no-repeat 8px 0;
-    //@include icon-sprite("audio_icon_light_grey") ;
+    //background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon_light_grey.png") no-repeat 8px 0;
+    @include icon-sprite("audio_icon_light_grey") ;
     height: 13px;
     width: 25px;
 }
