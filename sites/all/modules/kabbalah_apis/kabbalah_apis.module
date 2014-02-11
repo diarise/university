@@ -701,7 +701,7 @@
 		$teaser = strip_tags($teaser);
 
 		if( $limit != 0 )$teaser = substr( $teaser , 0 , $limit );
-		if( $teaser != false && $teaser != null ) return $teaser;
+		if( $teaser != false ) return $teaser;
 		else return "";
 	
 	}
