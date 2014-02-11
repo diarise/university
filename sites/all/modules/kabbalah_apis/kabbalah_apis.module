@@ -201,7 +201,7 @@
 		$result_array = array();
 		foreach ($result as $record) 
 		{
-			$node = node_load($nid = $record->nid , $record->revision_id );
+			$node = node_load($nid = $record->nid  );
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
@@ -248,7 +248,7 @@
 		$result_array = array();
 		foreach ($result as $record) 
 		{
-			$node = node_load($nid = $record->nid , $record->revision_id );
+			$node = node_load($nid = $record->nid );
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
@@ -292,7 +292,7 @@
 		foreach ($result as $record) 
 		{
 			
-			$node = node_load($nid = $record->nid , $record->revision_id );
+			$node = node_load($nid = $record->nid  );
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
@@ -330,7 +330,7 @@
 		$result_array = array();
 		foreach ($result as $record) 
 		{	
-			$node = node_load($nid = $record->nid , $record->revision_id );
+			$node = node_load($nid = $record->nid );
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
@@ -380,7 +380,7 @@
 		foreach ($result as $record) 
 		{
 			
-			$node = node_load($nid = $record->nid , $record->revision_id );
+			$node = node_load($nid = $record->nid );
 						
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
@@ -764,7 +764,7 @@
 		$result_arr = array();
 		foreach ($result as $record) 
 		{
-			$node = node_load($nid = $record->nid , $record->revision_id );
+			$node = node_load($nid = $record->nid );
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
@@ -834,7 +834,7 @@
 			$result_arr = array();
 			foreach ($result as $record) {
 			
-				$node = node_load($nid = $record->nid , $record->revision_id );
+				$node = node_load($nid = $record->nid  );
 				$title = $node->title;
 				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 				$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
