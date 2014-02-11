@@ -56,7 +56,7 @@
 	}else{
 	?>
 	<div class="lessonCollectionSection">
-		<?php print render($page['lessoneventcollection']); ?>
+		<?php print render($page['lessonsineventcoursepage']); ?>
 	</div>
   <?php }?>
 	<div id="SocialMediaWrapper">
