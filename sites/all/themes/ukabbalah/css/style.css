@@ -3084,9 +3084,7 @@ div.jp-audio {
   top: 0;
   margin: 0 !important;
   padding-left: 0 !important;
-  width: 100%;
-  min-width: 100% !important;
-  max-width: 100% !important;
+  width: 100% !important;
   z-index: 1400 !important;
 }
 
@@ -3102,9 +3100,7 @@ div.jp-audio {
   position: fixed !important;
   z-index: 140;
   top: 46px;
-  width: 100%;
-  min-width: 100% !important;
-  max-width: 100% !important;
+  width: 100% !important;
   margin: auto;
   z-index: 1400 !important;
 }
