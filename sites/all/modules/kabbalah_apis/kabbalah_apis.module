@@ -508,13 +508,15 @@
 				$node = node_load($record->nid , NULL, TRUE);
 				$image_link = $record->field_image_cdn_link_value;
 				
-				if( sizeof($node->field_lesson_group) > 0 ) {
+				if( $node->type = "course" ) {
+				
+					if( sizeof($node->field_lesson_group) > 0 )	{
 					
-					$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-					$membership = $membership->name;
+						$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+						$membership = $membership->name;
+					}
 				}
 
-				
 				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
 				
