@@ -3094,10 +3094,10 @@ div.jp-audio {
     padding-left: 20px !important;
   }
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 1000px) {
   /* line 2397, ../sass/style.scss */
-  .scrollingFilter div #teachingsBarInnerWrapper {
-    padding-left: 20px !important;
+  .scrollingFilter {
+    padding-left: 0px !important;
   }
 }
 /* line 2404, ../sass/style.scss */
