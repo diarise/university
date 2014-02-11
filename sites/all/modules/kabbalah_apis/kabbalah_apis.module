@@ -443,7 +443,14 @@
 			$teaser="";
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 		
-			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
+			if( sizeof($node->field_type_of_lesson) > 0 ) 
+			{
+				$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
+				$media_type = $media_type->name;
+			} else {
+
+				$media_type = 'bothAdVdImg';
+			}
 			
 			$result_array[] = array(  'node_type' => $node->type,
 										  'title' => $title , 
@@ -453,7 +460,7 @@
 										  'membership' => $membership->name,
 										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
 										  'created' => date('F jS, Y',$node->changed),
-										  'media_type' => $media_type->name
+										  'media_type' => $media_type
 										);							
 										
 		}
