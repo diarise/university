@@ -3489,10 +3489,9 @@ a.close-tip {
   font-size: 16px;
 }
 
-/* line 302, ../sass/_tooltipster.scss */
-#wrapperVideoSection ~ .tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
-  left: 33% !important;
-  top: 33% !important;
+/* line 306, ../sass/_tooltipster.scss */
+.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
+  left: 162px !important;
 }
 
 @media (max-width: 1000px) {
