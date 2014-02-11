@@ -2387,11 +2387,20 @@ div.jp-audio{
     // max-width: 100%!important;
     z-index: 1400 !important;
 }
-@media only screen and (max-width: 980px){
+@media only screen and (max-width: 1000px){
 	.scrollingTitle{
-		padding-left: 9!important;
+		padding-left: 20px!important;
 	}
 }
+
+@media only screen and (min-width: 1000px){
+	.scrollingFilter{
+		padding-left: 20px!important;
+	}
+}
+
+
+
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
@@ -2411,6 +2420,10 @@ div.jp-audio{
     max-width: 1580px;
     min-width: 940px;
     margin: auto;
+}
+.scrollingTitle .teachingsBarInnerWrapper,
+.scrollingFilter .teachingsBarInnerWrapper{
+	width:auto!important;
 }
 /**end scrollling filter**/
 
