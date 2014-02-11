@@ -2412,6 +2412,10 @@ div.jp-audio{
     min-width: 940px;
     margin: auto;
 }
+.scrollingTitle .teachingsBarInnerWrapper,
+.scrollingFilter .teachingsBarInnerWrapper{
+	width:auto!important;
+}
 /**end scrollling filter**/
 
 @import "tooltipster"; // We import the fonts on separate file. The file is called "_tooltipster.scss". 

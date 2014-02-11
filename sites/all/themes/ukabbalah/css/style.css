@@ -3118,6 +3118,12 @@ div.jp-audio {
   margin: auto;
 }
 
+/* line 2416, ../sass/style.scss */
+.scrollingTitle .teachingsBarInnerWrapper,
+.scrollingFilter .teachingsBarInnerWrapper {
+  width: auto !important;
+}
+
 /**end scrollling filter**/
 /* line 1, ../sass/_tooltipster.scss */
 html {
