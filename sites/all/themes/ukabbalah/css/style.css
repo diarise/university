@@ -3094,7 +3094,7 @@ div.jp-audio {
     padding-left: 20px !important;
   }
 }
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1040px) {
   /* line 2397, ../sass/style.scss */
   .scrollingFilter {
     padding-left: 20px !important;
