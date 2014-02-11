@@ -2393,8 +2393,8 @@ div.jp-audio{
 	}
 }
 
-@media only screen and (min-width: 980px){
-	.scrollingFilter{
+@media only screen and (max-width: 1000px){
+	.scrollingFilter #teachingsBarInnerWrapper{
 		padding-left: 20px!important;
 	}
 }
