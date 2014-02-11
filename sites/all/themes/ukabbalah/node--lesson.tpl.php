@@ -16,9 +16,10 @@
 	foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
 	
 	$title = $node->title;
-	$course_list_title = $node->field_course_list['und'][0]['node']->title;
-	$event_list_title = $node->field_event_list['und'][0]['node']->title;
-
+	
+	if( sizeof( $node->field_course_list) > 0  ) $course_list_title = $node->field_course_list['und'][0]['node']->title;
+	if( sizeof( $node->field_event_list) > 0  ) $event_list_title = $node->field_event_list['und'][0]['node']->title;
+	
 	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
 
 	// Video or Audio Display
