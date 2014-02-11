@@ -434,7 +434,7 @@
 		foreach ($result as $record) 
 		{
 			
-			$node = node_load($nid = $record->nid , $record->revision_id );
+			$node = node_load( $nid = $record->nid , $vid = $record->vid );
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
