@@ -820,7 +820,7 @@ ul.masonry{
     padding-left: 18px;
     text-align: left;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1040px) {
 	.descriptionEvents{
 		font-size: 15px;
 	}
@@ -2136,8 +2136,8 @@ div.jp-audio{
     border-top: none;
 }
 .lessonCollectionSection .Audio {
-    //background: url("../images/icon/audio_icon_light_grey.png") no-repeat 8px 0;
-   	@include icon-sprite("audio_icon_light_grey") ;
+    background: url("../images/icon/audio_icon_light_grey.png") no-repeat 8px 0;
+   	//@include icon-sprite("audio_icon_light_grey") ;
     height: 13px;
     width: 25px;
 }
