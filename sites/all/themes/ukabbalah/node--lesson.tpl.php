@@ -151,13 +151,18 @@
 	<div class="videoContent">
 		
 		<!-- Class Description -->
-		<?php if( $node->body['und'][0]['value'] != "" ) { ?>
-		<div id="classesDescription">
-			<input type="checkbox" id="ac-0">
-			<label  class="titleDescription" for="ac-0">class description</label>
-			<?php  	print $node->body['und'][0]['value']; ?>
-		</div>
-		<?php } ?>
+		<?php 
+		
+		if( sizeof( $node->body) > 0  ) {
+		if( $node->body['und'][0]['value'] != "" ) { ?>
+			<div id="classesDescription">
+				<input type="checkbox" id="ac-0">
+				<label  class="titleDescription" for="ac-0">class description</label>
+				<?php  	print $node->body['und'][0]['value']; ?>
+			</div>
+		<?php } 
+		}
+		?>
 		
 		<!-- Class Highlights -->
 		<?php if( $node->field_lesson_highlights['und'][0]['value'] != "" ) { ?>
