@@ -593,7 +593,11 @@
 				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
 				foreach( $vocab_terms4 as $t )	{	$primary_topic = $t->name; }
 
-				$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);		
+				if( sizeof($node->field_lesson_group) > 0 )	{
+					
+					$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+					$membership = $membership->name;
+				}
 				
 				if( sizeof($node->field_this_course_contains) > 0 )
 				{
@@ -614,7 +618,7 @@
 												 'author' => $author_name , 
 												 'date_created' => date( 'F jS, Y',$record->changed ),
 												 'primary_topic' => $primary_topic ,
-												 'membership' => $membership->name,
+												 'membership' => $membership,
 												 'media_type' => $media_type												 
 										  ); 
 			}
