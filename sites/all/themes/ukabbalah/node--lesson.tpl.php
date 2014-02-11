@@ -165,12 +165,14 @@
 		?>
 		
 		<!-- Class Highlights -->
+		<?php if( sizeof( $node->field_lesson_highlights) > 0  ) { ?>
 		<?php if( $node->field_lesson_highlights['und'][0]['value'] != "" ) { ?>
 		<div id="classHighlights">
 			<input type="checkbox" id="ac-1">
 			<label class="titleDescription" for="ac-1">Highlights</label>
 			<?php print $node->field_lesson_highlights['und'][0]['value']; ?>
 		</div>
+		<?php } ?>
 		<?php } ?>
 		
 		<!-- Class Rsources -->
