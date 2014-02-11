@@ -16,9 +16,10 @@
 	foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
 	
 	$title = $node->title;
-	$course_list_title = $node->field_course_list['und'][0]['node']->title;
-	$event_list_title = $node->field_event_list['und'][0]['node']->title;
-
+	
+	if( sizeof( $node->field_course_list) > 0  ) $course_list_title = $node->field_course_list['und'][0]['node']->title;
+	if( sizeof( $node->field_event_list) > 0  ) $event_list_title = $node->field_event_list['und'][0]['node']->title;
+	
 	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
 
 	// Video or Audio Display
@@ -150,21 +151,28 @@
 	<div class="videoContent">
 		
 		<!-- Class Description -->
-		<?php if( $node->body['und'][0]['value'] != "" ) { ?>
-		<div id="classesDescription">
-			<input type="checkbox" id="ac-0">
-			<label  class="titleDescription" for="ac-0">class description</label>
-			<?php  	print $node->body['und'][0]['value']; ?>
-		</div>
-		<?php } ?>
+		<?php 
+		
+		if( sizeof( $node->body) > 0  ) {
+		if( $node->body['und'][0]['value'] != "" ) { ?>
+			<div id="classesDescription">
+				<input type="checkbox" id="ac-0">
+				<label  class="titleDescription" for="ac-0">class description</label>
+				<?php  	print $node->body['und'][0]['value']; ?>
+			</div>
+		<?php } 
+		}
+		?>
 		
 		<!-- Class Highlights -->
+		<?php if( sizeof( $node->field_lesson_highlights) > 0  ) { ?>
 		<?php if( $node->field_lesson_highlights['und'][0]['value'] != "" ) { ?>
 		<div id="classHighlights">
 			<input type="checkbox" id="ac-1">
 			<label class="titleDescription" for="ac-1">Highlights</label>
 			<?php print $node->field_lesson_highlights['und'][0]['value']; ?>
 		</div>
+		<?php } ?>
 		<?php } ?>
 		
 		<!-- Class Rsources -->

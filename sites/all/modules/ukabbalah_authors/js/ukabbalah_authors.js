@@ -78,9 +78,9 @@ var Slide = function(elem, options){
                                                             + value.date_created
 															+ "<span class= '" + value.membership +"'></span>"
                                                         + "</span>"												
-                                                        + "<span class='theTeaser'>"
-                                                            + "<p>" +value.teaser + "</p>"
-                                                            + "<span class = 'readMore'>"
+                                                        + "<span class='theTeaser'>";
+                            if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";
+                            rowContent += "<span class = 'readMore'>"
                                                                 + "read more"
                                                             + "</span>"
                                                         + "</span>"

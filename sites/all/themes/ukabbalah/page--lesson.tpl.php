@@ -51,16 +51,19 @@
 		<?php //print render($page['pagelessoncollection']); ?>
 	</div> -->
 <?php
-$course_list_title = $node->field_course_list['und'][0]['node']->title;
-$event_list_title = $node->field_event_list['und'][0]['node']->title;
+ $course_list_title ="";
+ $event_list_title = "";
+ 
+ if( sizeof( $node->field_course_list) > 0  ) $course_list_title = $node->field_course_list['und'][0]['node']->title;
+ if( sizeof( $node->field_event_list) > 0  ) $event_list_title = $node->field_event_list['und'][0]['node']->title;
 
-if($course_list_title){
+if($course_list_title != ""){
 ?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['courselessoncollection']); ?>
 	</div>
 <?php }
-if($event_list_title){?>
+if($event_list_title !=""){?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['lessoneventcollection']); ?>
 	</div>
