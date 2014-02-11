@@ -44,8 +44,8 @@ regions[comments] = Comments
 
 
 regions[courselessoncollection] = Course Lesson Collection
-regions[lessoneventcollection] = Event Lesson Collection
-regions[pagelessoncollection] = Lesson Collection
+regions[lessonsineventcoursepage] = Lessons in Event Course Page
+regions[lessoncollectionlessonpage] = Lesson Collection Lesson Page
 
 
 regions[ktweet] = K tweet
