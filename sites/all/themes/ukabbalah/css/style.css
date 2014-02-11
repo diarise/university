@@ -3088,10 +3088,10 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (min-width: 980px) {
   /* line 2391, ../sass/style.scss */
   .scrollingTitle {
-    padding-left: 9 !important;
+    padding-left: 20 !important;
   }
 }
 /* line 2395, ../sass/style.scss */
