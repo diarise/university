@@ -5,7 +5,7 @@
 		
 		$items = array();
 			
-		$items['on-demand-events'] = array(               // Made this a PAGE
+		$items['event-lectures'] = array(               // Made this a PAGE
 			'page callback'      => 'getOnlineDemandTopicsHtmlStructure',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
@@ -23,7 +23,7 @@
 		$resultHTML = "";
 		$resultHTML.="<div id='teachingsControlSection'>";
 		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
-		$resultHTML.="<span id='teachingsSectionTitle'>".t('ON DEMAND EVENTS')."</span>";	
+		$resultHTML.="<span id='teachingsSectionTitle'>".t('EVENT LECTURES')."</span>";	
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
