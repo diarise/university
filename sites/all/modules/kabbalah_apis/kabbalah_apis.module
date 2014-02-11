@@ -508,7 +508,7 @@
 				$node = node_load($record->nid , NULL, TRUE);
 				$image_link = $record->field_image_cdn_link_value;
 				
-				if( $node->type = "course" ) {
+				if( $node->type == "course" ) {
 				
 					if( sizeof($node->field_lesson_group) > 0 )	{
 					
@@ -523,7 +523,7 @@
 				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
 				foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
 				
-				if( $node->type = "course" ) {
+				if( $node->type == "course" ) {
 				
 					if( sizeof($node->field_this_course_contains) > 0 )  {
 					
