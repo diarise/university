@@ -549,7 +549,7 @@
 			}
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" => $p_topic_description , "term_articles" => $vname_articles );	
 		}	
-		echo json_encode( $result_array );
+		echo json_encode_unicode( $result_array );
 	}
 		
 	function getTeachersJson() {
