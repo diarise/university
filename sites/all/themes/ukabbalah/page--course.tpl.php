@@ -47,7 +47,7 @@
 	</div><!-- end of pageregion -->
 	
 	<?php
-	if ($node->field_type_of_course[und][0][tid]==562){
+	if ( sizeof( $node->field_type_of_course) > 0 && $node->field_type_of_course['und'][0]['tid']==562){
 	?>
 	<div class="lessonCollectionSection">
 		<?php print render($page['courselessoncollection']); ?>
