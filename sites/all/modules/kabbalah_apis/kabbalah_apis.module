@@ -676,7 +676,7 @@
 				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
 				
-				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 16 );
 				foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
 				
 				if( $node->type == "course" ) {
