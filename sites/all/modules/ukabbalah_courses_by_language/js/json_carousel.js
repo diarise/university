@@ -498,7 +498,7 @@ $(document).ready(function(){
     SlideShow (
         $("#teachingResultSection"),
         {
-            json_URL: "/k_api/crs",
+            json_URL: "/k_api/lngs",
             imageWidth: 300,
             imageHeight: 170,
             marginToLeft: 10,
