@@ -2321,12 +2321,12 @@ h3 a {
 }
 
 /* line 1797, ../sass/style.scss */
-.activeLesson span .Video {
+.activeLesson .Video {
   background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px !important;
 }
 
 /* line 1800, ../sass/style.scss */
-.activeLesson span .Audio {
+.activeLesson .Audio {
   background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0 !important;
 }
 
