@@ -658,7 +658,7 @@
 					"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
 					"WHERE n.status =1 ".
 					"AND td.vid = 16 ".
-					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 563) ".
+					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 562) ".
 					"AND td.name = '".$vname."' ".
 					"ORDER BY n.changed DESC";
 			
