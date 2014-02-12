@@ -492,7 +492,7 @@
 		{			
 			$result = runPageQuery( 14 , $vname , 562 ); // Basic Course : 562
 			$vname_articles = array();
-			$vname_articles	= processPageQueryResults( $result , $id ) ; 
+			$vname_articles	= processPageQueryResults( $result , 14 ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );	
 		}	
 		echo json_encode( $result_array );
@@ -567,7 +567,7 @@
 					
 			$result = runPageQuery( 10 , $vname , 563 ); // On Demand Event : 563
 			$vname_articles = array();
-			$vname_articles	= processPageQueryResults( $result , $id ) ; 
+			$vname_articles	= processPageQueryResults( $result , 10 ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );
 		}	
 		echo json_encode( $result_array );
@@ -578,11 +578,12 @@
 	
 		$vnames = getTermNames3();
 		$result_array = array();
+		
 		foreach( $vnames as $id => $vname)	{
 					
 			$result = runPageQuery( 16 , $vname , 562 ); // Basic Course : 562
 			$vname_articles = array();
-			$vname_articles	= processPageQueryResults( $result , $id ) ; 
+			$vname_articles	= processPageQueryResults( $result , 16 ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );
 		}	
 		echo json_encode( $result_array );
