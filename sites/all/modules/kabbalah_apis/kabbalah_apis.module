@@ -508,8 +508,8 @@
 					// "AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 562) ".
 					// "ORDER BY n.changed DESC";
 			
-			// $result = "";
-			$result = db_query( $sql );
+			// // $result = "";
+			// $result = db_query( $sql );
 			$vname_articles = array();
 			
 			foreach( $result as $record ) {
