@@ -2331,7 +2331,7 @@ h3 a {
 }
 
 /* line 1803, ../sass/style.scss */
-.views-field-twistage-subtitles.activeLesson span, .subtitle-width.activeLesson span {
+.views-field-twistage-subtitles.activeLesson span, td .subtitle-width.activeLesson span {
   background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px !important;
   color: transparent;
 }
