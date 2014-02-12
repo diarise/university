@@ -492,7 +492,7 @@
 		{			
 			$result = runPageQuery( 14 , $vname , 562 ); // Basic Course : 562
 			$vname_articles = array();
-			$vname_articles	= processPageQueryResults( $result ) ; 
+			$vname_articles	= processPageQueryResults( $result , $id ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );	
 		}	
 		echo json_encode( $result_array );
@@ -567,7 +567,7 @@
 					
 			$result = runPageQuery( 10 , $vname , 563 ); // On Demand Event : 563
 			$vname_articles = array();
-			$vname_articles	= processPageQueryResults( $result ) ; 
+			$vname_articles	= processPageQueryResults( $result , $id ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );
 		}	
 		echo json_encode( $result_array );
@@ -582,7 +582,7 @@
 					
 			$result = runPageQuery( 16 , $vname , 562 ); // Basic Course : 562
 			$vname_articles = array();
-			$vname_articles	= processPageQueryResults( $result ) ; 
+			$vname_articles	= processPageQueryResults( $result , $id ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );
 		}	
 		echo json_encode( $result_array );
@@ -610,7 +610,7 @@
 		
 	}
 
-	function processPageQueryResults( $result) {
+	function processPageQueryResults( $result , $vid ) {
 	
 		$vname_articles = array();
 		foreach( $result as $record )	{
@@ -629,7 +629,7 @@
 				}
 			}
 
-			$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+			$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, $vid );
 			foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
 			
 			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
