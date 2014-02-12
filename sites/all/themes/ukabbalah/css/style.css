@@ -1,6 +1,6 @@
 @charset "IBM437";
 /* line 394, icon/*.png */
-.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .buttonMember, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg {
+.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .buttonMember, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
   background: url('../images/icon-s48ff81feaf.png') no-repeat;
 }
 
@@ -2941,7 +2941,7 @@ div.jp-audio {
 }
 
 /* line 2267, ../sass/style.scss */
-.vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg {
+.vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
   height: 13px;
   width: 16px;
   float: left;
@@ -2963,58 +2963,58 @@ div.jp-audio {
 }
 
 /* line 2297, ../sass/style.scss */
-.bothAdVdImg {
+.bothAdVdImg, .Both {
   background-position: 0 -309px;
   width: 35px;
 }
 
-/* line 2302, ../sass/style.scss */
+/* line 2305, ../sass/style.scss */
 .theTitle, .titleWrapper {
   float: left;
   margin-left: 10px;
   margin-top: 10px;
 }
 
-/* line 2307, ../sass/style.scss */
+/* line 2310, ../sass/style.scss */
 .teachersPath, .readMore {
   color: #127795;
   margin-left: 5px;
 }
 
-/* line 2311, ../sass/style.scss */
+/* line 2314, ../sass/style.scss */
 .rightArrowStyleHome {
   position: relative;
 }
 
 /***/
-/* line 2316, ../sass/style.scss */
+/* line 2319, ../sass/style.scss */
 #teachingsSectionHeaderBar .lessonsCourse {
   display: block;
 }
 
-/* line 2319, ../sass/style.scss */
+/* line 2322, ../sass/style.scss */
 #authorDDWrapper, #topicDDWrapper {
   float: left;
 }
 
-/* line 2322, ../sass/style.scss */
+/* line 2325, ../sass/style.scss */
 #teachings_teachersDD, #teachings_topicDD {
   cursor: pointer;
   height: 29px;
 }
 
-/* line 2326, ../sass/style.scss */
+/* line 2329, ../sass/style.scss */
 .preVideoImg {
   width: 940px;
   margin: 20px auto auto;
 }
 
-/* line 2330, ../sass/style.scss */
+/* line 2333, ../sass/style.scss */
 .preVideoImg img {
   float: left;
 }
 
-/* line 2333, ../sass/style.scss */
+/* line 2336, ../sass/style.scss */
 .preVideoImg .videotitles {
   float: right;
   width: 290px;
@@ -3023,7 +3023,7 @@ div.jp-audio {
   margin-top: 0;
 }
 
-/* line 2345, ../sass/style.scss */
+/* line 2348, ../sass/style.scss */
 .preVideoImg #titleMultimedia,
 .preVideoImg #courseNameMultimedia,
 .preVideoImg #pipe,
@@ -3035,64 +3035,64 @@ div.jp-audio {
   color: white;
 }
 
-/* line 2348, ../sass/style.scss */
+/* line 2351, ../sass/style.scss */
 .preVideoImg #wrapperInfoMultimedia, .preVideoImg #wrapperAuthorDate {
   width: 290px;
 }
 
-/* line 2351, ../sass/style.scss */
+/* line 2354, ../sass/style.scss */
 .preVideoImg #authorNameMultimedia, .preVideoImg #dateMultimedia {
   text-align: left;
 }
 
-/* line 2354, ../sass/style.scss */
+/* line 2357, ../sass/style.scss */
 .preVideoImg .pipe {
   display: none;
 }
 
-/* line 2357, ../sass/style.scss */
+/* line 2360, ../sass/style.scss */
 .preVideoImg #wrapperPrice {
   width: 275px;
   margin-left: 30px;
 }
 
-/* line 2361, ../sass/style.scss */
+/* line 2364, ../sass/style.scss */
 .preVideoImg .sharethis {
   float: right;
   width: 290px;
   margin-top: 16px;
 }
 
-/* line 2366, ../sass/style.scss */
+/* line 2369, ../sass/style.scss */
 .transcript-content {
   width: 605px;
 }
 
-/* line 2369, ../sass/style.scss */
+/* line 2372, ../sass/style.scss */
 .audioSection .preVideoImg img {
   width: 620px;
   height: 349px;
 }
 
-/* line 2373, ../sass/style.scss */
+/* line 2376, ../sass/style.scss */
 .bookmark {
   float: right;
   width: 117px;
   color: #433a3a;
   font-size: 15px;
 }
-/* line 2378, ../sass/style.scss */
+/* line 2381, ../sass/style.scss */
 .bookmark a {
   color: #433a3a;
 }
 
-/* line 2382, ../sass/style.scss */
+/* line 2385, ../sass/style.scss */
 .flag-message {
   left: -169px !important;
 }
 
 /**start scrollling filter**/
-/* line 2387, ../sass/style.scss */
+/* line 2390, ../sass/style.scss */
 .scrollingTitle {
   background: #fff;
   position: fixed !important;
@@ -3105,18 +3105,18 @@ div.jp-audio {
 }
 
 @media only screen and (max-width: 1000px) {
-  /* line 2401, ../sass/style.scss */
+  /* line 2404, ../sass/style.scss */
   .scrollingTitle {
     padding-left: 20px !important;
   }
 }
 @media only screen and (min-width: 1000px) {
-  /* line 2407, ../sass/style.scss */
+  /* line 2410, ../sass/style.scss */
   .scrollingFilter {
     padding-left: 0px !important;
   }
 }
-/* line 2414, ../sass/style.scss */
+/* line 2417, ../sass/style.scss */
 .scrollingFilter, .scrollingTermDesc, .scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
@@ -3127,19 +3127,19 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2425, ../sass/style.scss */
+/* line 2428, ../sass/style.scss */
 .scrollingFilter {
   padding-bottom: 10px !important;
 }
 
-/* line 2429, ../sass/style.scss */
+/* line 2432, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
   margin: auto;
 }
 
-/* line 2435, ../sass/style.scss */
+/* line 2438, ../sass/style.scss */
 .scrollingTitle .teachingsBarInnerWrapper,
 .scrollingFilter .teachingsBarInnerWrapper {
   width: auto !important;
