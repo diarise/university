@@ -47,11 +47,11 @@ var Slide = function(elem, options){
                         rowContent += "<div id = " + headObj[0]+ headObj[1] + headObj[2] + " class = 'rowStyle'" + ">"
                                         + "<img class='leftArrowStyleHome' src='/sites/all/modules/ukabbalah_courses_by_language/images/arrow-left.png'/>"
                                         + "<div class = 'parent_topic'>" 
-                                            + "<a href = " + '/events'+ '/' + newHeadObj + ">"
+                                            + "<a href = " + '/course-language'+ '/' + newHeadObj + ">"
                                             + headObj
                                             + "</a>"
                                             + "<span class = 'viewAll'>"
-                                            + "<a href = " + '/events'+ '/' + newHeadObj + ">"
+                                            + "<a href = " + '/course-language'+ '/' + newHeadObj + ">"
                                             + "see all"
                                             + "</a>"
                                             + "</span>"
