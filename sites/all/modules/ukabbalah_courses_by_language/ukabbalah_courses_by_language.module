@@ -71,13 +71,3 @@
 		
 	}
 	
-	// Get an associative array tid=>tname for Course Language
-	function getTermNames3()	{
-	
-		$topics =  taxonomy_get_tree( 16 ); // vid = 16 for Course Language
-		$vnames = array();
-		foreach( $topics as $t ) {
-			$vnames[$t->tid] = $t->name;
-		}
-		return $vnames;
-	}

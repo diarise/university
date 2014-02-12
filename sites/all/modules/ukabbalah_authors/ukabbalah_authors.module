@@ -66,14 +66,3 @@
 		return $resultHTML;
 		
 	}
-	
-
-	function getTermNames1()	{
-	
-		$topics =  taxonomy_get_tree( 7 ); 
-		$vnames = array();
-		foreach( $topics as $t ) {
-			$vnames[$t->tid] = $t->name;
-		}
-		return $vnames;
-	}

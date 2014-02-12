@@ -71,13 +71,3 @@
 		
 	}
 	
-	// Get an associative array tid=>tname for primary topics
-	// function getTermNames()	{
-	
-		// $topics =  taxonomy_get_tree( 14 ); // vid = 14 for Primary Topics
-		// $vnames = array();
-		// foreach( $topics as $t ) {
-			// $vnames[$t->tid] = $t->name;
-		// }
-		// return $vnames;
-	// }
