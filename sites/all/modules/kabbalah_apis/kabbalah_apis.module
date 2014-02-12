@@ -493,11 +493,7 @@
 			$result = runPageQuery( 14 , $vname , 562 ); // Basic Course : 562
 			$vname_articles = array();
 			$vname_articles	= processPageQueryResults( $result ) ; 
-			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
-			foreach( $vocab_terms as $t )	{	
-				$p_topic_description = $t->description; 
-			}
-			$result_array[$vname] = array( "term_name" => $vname , "term_desc" => $p_topic_description , "term_articles" => $vname_articles );	
+			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );	
 		}	
 		echo json_encode( $result_array );
 	}
@@ -729,6 +725,9 @@
 				}
 			}
 
+			$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+			foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
+			
 			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 			foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
 			
@@ -755,9 +754,14 @@
 										'media_type' => $media_type
 									  );							  
 		}
-		return $vname_articles;
+		return array( "articles" => $vname_articles , "term_description" => $p_topic_description );
 	}
 	
+	function getVocabularyTermDescription( $vid ) {
+	
+		$result = db_query( "select * from " );
+	
+	}
 // End of Page Data Apis
 
 	
