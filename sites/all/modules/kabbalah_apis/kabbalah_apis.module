@@ -488,59 +488,10 @@
 		$counter = 1;
 		$beginners_courses = getBeginnersCoursesForCoursesPage();
 		$result_array['Beginners Courses'] = array( "term_name" => 'Beginner\'s Courses' , "term_desc" => 'If you are new to the teachings of The Kabbalah Centre, start here' , "term_articles" => $beginners_courses );
-		
 		foreach( $vnames as $id => $vname)	{
-					
-			$result = runPageQuery( 14 , $vname , 562 ); // Basic Course : 562
-			$vname_articles = array();
-			foreach( $result as $record ) {
 			
-				$title = $record->title;
-				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-				$teaser  = get_clean_body( $record->body_value , 100 );
-				$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
-				$node = node_load($record->nid , NULL, TRUE);
-				$image_link = $record->field_image_cdn_link_value;
-				
-				if( $node->type == "course" ) {
-				
-					if( sizeof($node->field_lesson_group) > 0 )	{
-					
-						$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-						$membership = $membership->name;
-					}
-				}
-
-				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
-				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
-				
-				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
-				foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
-				
-				if( $node->type == "course" ) {
-				
-					if( sizeof($node->field_this_course_contains) > 0 )  {
-					
-						if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
-						else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
-						else $media_type = 'bothAdVdImg';
-					} else {
-
-						$media_type = 'bothAdVdImg';
-					}
-				}
-
-				$vname_articles[] = array(  'title' => $title , 
-											'image_link' => $image_link ,
-											'path' => $path , 
-											'teaser' => $teaser , 
-											'author' => $author_name , 
-											'date_created' => date( 'F jS, Y',$record->changed ) ,
-											'membership' => $membership,
-											'media_type' => $media_type
-										  );
-										  
-			}
+			$result = runPageQuery( 14 , $vname , 562 ); // Basic Course : 562
+			$vname_articles = processPageQueryResults( $result );
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" => $p_topic_description , "term_articles" => $vname_articles );	
 		}	
 		echo json_encode( $result_array );
@@ -754,6 +705,64 @@
 		
 	}
 
+	function processPageQueryResults( $result ) {
+		
+		$vname_articles = array();
+		
+		foreach( $result as $record ) {
+			
+				$title = $record->title;
+				$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+				$teaser  = get_clean_body( $record->body_value , 100 );
+				$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
+				$node = node_load($record->nid , NULL, TRUE);
+				$image_link = $record->field_image_cdn_link_value;
+				
+				if( $node->type == "course" ) {
+				
+					if( sizeof($node->field_lesson_group) > 0 )	{
+					
+						$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+						$membership = $membership->name;
+					}
+				}
+
+				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
+				
+				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+				foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
+				
+				if( $node->type == "course" ) {
+				
+					if( sizeof($node->field_this_course_contains) > 0 )  {
+					
+						if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+						else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+						else $media_type = 'bothAdVdImg';
+					} else {
+
+						$media_type = 'bothAdVdImg';
+					}
+				}
+
+				$vname_articles[] = array(  'title' => $title , 
+											'image_link' => $image_link ,
+											'path' => $path , 
+											'teaser' => $teaser , 
+											'author' => $author_name , 
+											'date_created' => date( 'F jS, Y',$record->changed ) ,
+											'membership' => $membership,
+											'media_type' => $media_type
+										  );
+										  
+			}
+			
+			return $vname_articles;
+		
+		
+	}
+	
 // End of Page Data Apis
 
 	
