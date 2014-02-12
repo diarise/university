@@ -477,12 +477,11 @@
 	
 	}
 
-
 // Page Data Apis ( Courses , Teachers , Online Demand Events , Other Languages)
 	
 	function getCoursesJson() {
 	
-		$vnames = getTermNames();
+		$vnames = getTermNames( 14 );
 		$result_array = array();
 		$resultHTML = "";
 		$counter = 1;
@@ -500,11 +499,8 @@
 		
 	function getTeachersJson() {
 	
-		$vnames = getTermNames1();
+		$vnames = getTermNames( 7 );
 		$result_array = array();
-		$resultHTML = "";
-		$counter = 1;
-		
 		foreach( $vnames as $id => $vname)	{
 					
 			$result = runPageQuery( 7 , $vname , 562 ); // Basic Course : 562
@@ -561,7 +557,7 @@
 	
 	function getOnlineTopicsJson() {
 	
-		$vnames = getTermNames2();
+		$vnames = getTermNames( 10 );
 		$result_array = array();
 		foreach( $vnames as $id => $vname)	{
 					
@@ -576,9 +572,8 @@
 
 	function getCoursesByLanguageJson() {
 	
-		$vnames = getTermNames3();
+		$vnames = getTermNames( 16 );
 		$result_array = array();
-		
 		foreach( $vnames as $id => $vname)	{
 					
 			$result = runPageQuery( 16 , $vname , 562 ); // Basic Course : 562
@@ -662,9 +657,17 @@
 		return array( "articles" => $vname_articles , "term_description" => $p_topic_description );
 	}
 	
+	function getTermNames( $vid )	{
+	
+		$topics =  taxonomy_get_tree( $vid ); 
+		$vnames = array();
+		foreach( $topics as $t ) {
+			$vnames[$t->tid] = $t->name;
+		}
+		return $vnames;
+	}
 	
 // End of Page Data Apis
-
 	
 	function get_clean_body( $body , $limit = 100 ) { // $limit = 0 means no limit
 	
