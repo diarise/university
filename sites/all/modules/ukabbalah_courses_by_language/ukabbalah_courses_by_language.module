@@ -24,8 +24,8 @@
 		$resultHTML.="<div id='teachingsControlSection'>";
 		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('OTHER LANGUAGES')."</span>";
-		$resultHTML.="<span id ='list'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_courses_by_language/images/list.ico'></a></span>";
-		$resultHTML.="<span id ='grid'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_courses_by_language/images/grid.ico'></a></span>";	
+		//$resultHTML.="<span id ='list'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_courses_by_language/images/list.ico'></a></span>";
+		//$resultHTML.="<span id ='grid'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_courses_by_language/images/grid.ico'></a></span>";	
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
