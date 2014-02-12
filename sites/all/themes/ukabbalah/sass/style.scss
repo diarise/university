@@ -1800,13 +1800,15 @@ h3 {
 .activeLesson .Audio{
 	background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
 }
-.activeLesson .views-field-twistage-subtitles span, .subtitle-width span{
+.activeLesson .views-field-twistage-subtitles span, .activeLesson .subtitle-width span{
      background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
+      color: transparent
       }
-.views-field-twistage-subtitles span, .subtitle-width span{
-     background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
-      color:transparent;
-      }
+.views-field-twistage-subtitles span,
+.subtitle-width span{
+    background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png) no-repeat 8px 9px;
+    color: transparent;
+}
 .lessonCollectionSection tr:hover{
 	font-weight: bold;
 	background: #e1edf1;
