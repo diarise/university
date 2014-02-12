@@ -45,18 +45,7 @@
 		$resultHTML.="<span id ='grid'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_topics/images/grid.ico'></a></span>";	
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
-		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
-		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
-		$resultHTML.="<div id='authorDDWrapper'>";
-		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
-		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
-		$resultHTML.="</div>";
-		$resultHTML.="<div id='topicDDWrapper'>";
-		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
-		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
-		$resultHTML.="</div>";
-		$resultHTML.="</div>";
-		$resultHTML.="</div>";
+		$resultHTML.= headerBarSectionHTML();
 		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
 		$resultHTML.="<div id='teachingResultSection'></div>";
 		return $resultHTML;	
@@ -72,18 +61,7 @@
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('TEACHERS')."</span>";	
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
-		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
-		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
-		$resultHTML.="<div id='authorDDWrapper'>";
-		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
-		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
-		$resultHTML.="</div>";
-		$resultHTML.="<div id='topicDDWrapper'>";
-		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
-		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
-		$resultHTML.="</div>";
-		$resultHTML.="</div>";
-		$resultHTML.="</div>";
+		$resultHTML.= headerBarSectionHTML();
 		$resultHTML.="<div id='teachingResultSection'></div>";
 		return $resultHTML;	
 	}
@@ -98,18 +76,7 @@
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('EVENT LECTURES')."</span>";	
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
-		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
-		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
-		$resultHTML.="<div id='authorDDWrapper'>";
-		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
-		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
-		$resultHTML.="</div>";
-		$resultHTML.="<div id='topicDDWrapper'>";
-		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
-		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
-		$resultHTML.="</div>";
-		$resultHTML.="</div>";
-		$resultHTML.="</div>";
+		$resultHTML.= headerBarSectionHTML();
 		$resultHTML.="<div id='teachingResultSection'></div>";
 		return $resultHTML;	
 	}
@@ -124,6 +91,16 @@
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('OTHER LANGUAGES')."</span>";
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
+		$resultHTML.= headerBarSectionHTML();
+		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
+		$resultHTML.="<div id='teachingResultSection'></div>";
+		return $resultHTML;	
+	}
+	
+	// Header Bar Section HTML
+	function headerBarSectionHTML() {
+	
+		$resultHTML = "";
 		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
 		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
 		$resultHTML.="<div id='authorDDWrapper'>";
@@ -136,12 +113,10 @@
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
-		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
-		$resultHTML.="<div id='teachingResultSection'></div>";
-		return $resultHTML;	
+		return $resultHTML;
 	}
-		
-	// Returns the Primary Topics Dropdown HTML
+	
+	// Primary Topics Dropdown HTML
 	function getTopicDropDown() {
 		$topics =  taxonomy_get_tree( 14 ); // vid = 14 for Primary Topics
 		$resultHTML = "<select id='teachings_topicDD'>";
@@ -153,7 +128,7 @@
 		return $resultHTML;
 	}
 		
-	// Returns the Authors Dropdown HTML	
+	// Teachers Dropdown HTML	
 	function getTeachersDropDown() {
 		
 		$teachers =  taxonomy_get_tree( 7 ); // vid = 7 for Authors
