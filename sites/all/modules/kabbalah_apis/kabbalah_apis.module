@@ -556,25 +556,6 @@
 		foreach( $vnames as $id => $vname)	{
 					
 			$result = runPageQuery( 7 , $vname , 562 ); // Basic Course : 562
-			
-			// $sql =  "SELECT n.nid,n.type,n.title,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed,ti.tid,td.name ".
-					// "FROM {node n} ".
-					// "LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
-					// "LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
-					// "LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
-					// "LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
-					// "LEFT JOIN {field_data_field_type_of_course toc} ON ( nr.nid = toc.entity_id AND nr.vid = toc.revision_id ) ".
-					// "LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
-					// "LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
-					// "WHERE n.status =1 ".
-					// "AND td.vid = 7 ".
-					// "AND td.name = '".$vname."' ".
-					// "AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 562) ".
-					// "ORDER BY n.changed DESC";
-		
-			// $result = "";
-			// $result = db_query( $sql );
-			
 			foreach( $result as $record ) {
 			
 				$title = $record->title;
@@ -635,23 +616,25 @@
 		
 		foreach( $vnames as $id => $vname)	{
 					
-			$sql =  "SELECT n.nid,n.type,n.title,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed,ti.tid,td.name,toc.field_type_of_course_tid ".
-					"FROM {node n} ".
-					"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
-					"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
-					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
-					"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
-					"LEFT JOIN {field_data_field_type_of_course toc} ON ( nr.nid = toc.entity_id ) ".
-					"LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
-					"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
-					"WHERE n.status =1 ".
-					"AND td.vid = 10 ".
-					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 563) ".
-					"AND td.name = '".$vname."' ".
-					"ORDER BY n.changed DESC";
+			$result = runPageQuery( 10 , $vname , 563 ); // Basic Course : 562
 			
-			$result = "";
-			$result = db_query( $sql );
+			// $sql =  "SELECT n.nid,n.type,n.title,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed,ti.tid,td.name,toc.field_type_of_course_tid ".
+					// "FROM {node n} ".
+					// "LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
+					// "LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+					// "LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+					// "LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
+					// "LEFT JOIN {field_data_field_type_of_course toc} ON ( nr.nid = toc.entity_id ) ".
+					// "LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
+					// "LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
+					// "WHERE n.status =1 ".
+					// "AND td.vid = 10 ".
+					// "AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = 563) ".
+					// "AND td.name = '".$vname."' ".
+					// "ORDER BY n.changed DESC";
+			
+			// $result = "";
+			// $result = db_query( $sql );
 			$vname_articles = array();
 			foreach( $result as $record ) {
 			
