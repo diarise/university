@@ -1,0 +1,170 @@
+<?php
+
+	function kabbalah_custom_collection_pages_menu() {
+		
+		$items = array();
+			
+		$items['courses'] = array(               // Made this a PAGE
+			'page callback'      => 'getCoursesHtmlStructure',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['teachers'] = array(               // Made this a PAGE
+			'page callback'      => 'getTeachersHtmlStructure',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['event-lectures'] = array(               // Made this a PAGE
+			'page callback'      => 'getOnlineDemandTopicsHtmlStructure',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['other-languages'] = array(               // Made this a PAGE
+			'page callback'      => 'getOtherLanguagesHtmlStructure',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+			
+		return $items;
+		
+	}
+
+	// Courses Page HTML
+	function getCoursesHtmlStructure() {
+
+		drupal_add_js(drupal_get_path('module', 'kabbalah_custom_collection_pages') .'/js/custom_courses_collection.js');
+		$resultHTML = "";
+		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
+		$resultHTML.="<span id='teachingsSectionTitle'>".t('COURSES')."</span>";
+		$resultHTML.="<span id ='list'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_topics/images/list.ico'></a></span>";
+		$resultHTML.="<span id ='grid'><a href = 'javascript:void(0)'><img src = 'sites/all/modules/ukabbalah_topics/images/grid.ico'></a></span>";	
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
+		$resultHTML.="<div id='authorDDWrapper'>";
+		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
+		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='topicDDWrapper'>";
+		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
+		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
+		$resultHTML.="<div id='teachingResultSection'></div>";
+		return $resultHTML;	
+	}
+	
+	//Teachers Page HTML
+	function getTeachersHtmlStructure() {
+	
+		drupal_add_js(drupal_get_path('module', 'kabbalah_custom_collection_pages') .'/js/custom_teachers_collection.js');
+		$resultHTML = "";
+		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
+		$resultHTML.="<span id='teachingsSectionTitle'>".t('TEACHERS')."</span>";	
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
+		$resultHTML.="<div id='authorDDWrapper'>";
+		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
+		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='topicDDWrapper'>";
+		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
+		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingResultSection'></div>";
+		return $resultHTML;	
+	}
+	
+	// Event Lectures Page HTML 
+	function getOnlineDemandTopicsHtmlStructure() {
+
+		drupal_add_js(drupal_get_path('module', 'kabbalah_custom_collection_pages') .'/js/custom_event_lectures_collection.js');
+		$resultHTML = "";
+		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
+		$resultHTML.="<span id='teachingsSectionTitle'>".t('EVENT LECTURES')."</span>";	
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
+		$resultHTML.="<div id='authorDDWrapper'>";
+		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
+		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='topicDDWrapper'>";
+		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
+		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingResultSection'></div>";
+		return $resultHTML;	
+	}
+	
+	// Other Languages Page HTML
+	function getOtherLanguagesHtmlStructure() {
+
+		drupal_add_js(drupal_get_path('module', 'kabbalah_custom_collection_pages') .'/js/custom_other_languages_collection.js');
+		$resultHTML = "";
+		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
+		$resultHTML.="<span id='teachingsSectionTitle'>".t('OTHER LANGUAGES')."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
+		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
+		$resultHTML.="<div id='authorDDWrapper'>";
+		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
+		$resultHTML.="<span id='teachersDD'>".getTeachersDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='topicDDWrapper'>";
+		$resultHTML.="<span id='topicDDtext'>".t('Topic')."</span>";
+		$resultHTML.="<span id='topicDD'>".getTopicDropDown()."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
+		$resultHTML.="<div id='teachingResultSection'></div>";
+		return $resultHTML;	
+	}
+		
+	// Returns the Primary Topics Dropdown HTML
+	function getTopicDropDown() {
+		$topics =  taxonomy_get_tree( 14 ); // vid = 14 for Primary Topics
+		$resultHTML = "<select id='teachings_topicDD'>";
+		$resultHTML .="<option value='all'>All</option>";
+		foreach( $topics as $t ) {
+			$resultHTML .="<option value='cat".$t->tid."'>".$t->name."</option>";
+		}
+		$resultHTML .= "</select>";
+		return $resultHTML;
+	}
+		
+	// Returns the Authors Dropdown HTML	
+	function getTeachersDropDown() {
+		
+		$teachers =  taxonomy_get_tree( 7 ); // vid = 7 for Authors
+		$resultHTML = "<select id='teachings_teachersDD'>";
+		$resultHTML .="<option value='all'>All</option>";
+		foreach( $teachers as $t ) {
+			$resultHTML .="<option value='cat".$t->tid."'>".$t->name."</option>";
+		}
+		$resultHTML .= "</select>";
+		return $resultHTML;
+		
+	}
+	
+	

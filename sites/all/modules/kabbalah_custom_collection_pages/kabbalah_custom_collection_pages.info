@@ -1,0 +1,6 @@
+name = Kabbalah Custom Collection Pages
+description = " Get the HTML structure specific to the collection page"
+core = 7.x
+version = "7.22"
+core = "7.x"
+package = Kabbalah Custom Modules
