@@ -1794,6 +1794,16 @@ h3 {
     width: 32px;
     height: 32px;
 }
+.activeLesson .Video{
+	background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px!important;
+}
+.activeLesson .Audio{
+	background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0!important;
+}
+ .views-field-twistage-subtitles.activeLesson span, .subtitle-width.activeLesson span{
+     background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px!important;
+      color: transparent;
+      }
 .views-field-twistage-subtitles span,
 .subtitle-width span{
     background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png) no-repeat 8px 9px;
@@ -2395,7 +2405,7 @@ div.jp-audio{
 
 @media only screen and (min-width: 1000px){
 	.scrollingFilter{
-		padding-left: 20px!important;
+		padding-left: 0px!important;
 	}
 }
 
@@ -2414,7 +2424,7 @@ div.jp-audio{
 }
 .scrollingFilter{
   padding-bottom:10px!important;
-  padding-left:0!important;
+  //padding-left:0!important;
 }
 .teachingsBarInnerWrapper{
     max-width: 1580px;
