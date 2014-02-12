@@ -11,6 +11,7 @@ var Slide = function(elem, options){
         var rowContent = "";      // add slide content to each data array from json 
         var getContWidth = 0;     // resizeable sliding width, this one will change with window changes 
         var getImageWidth = 0;      // for each image width in the slide
+        var arrowNum = 1;           // give both arrows an order in each slide.
         var imageSizeWidth = options.imageWidth;        // give the image width
         var imageSizeHeight = options.imageHeight;      // give the image height
         var getTotalWidth = 0;      // total widht of each slide of all images
@@ -21,8 +22,6 @@ var Slide = function(elem, options){
         var topicHeight = 0;
         var scrollMode = "hidden";
         var visOpt = "visible";
-        var displayModeFlag = true;
-        var currentListView = []; 
         if("ontouchstart" in document.documentElement){
             scrollMode = "scroll";
             visOpt = "hidden";
@@ -42,193 +41,60 @@ var Slide = function(elem, options){
                     var setSlideContent = $("#"+ elem[0].id + " " + ".imageslide .carousel");
                   
                     $.each(globalData,function(headObj, headObjCont){
-                       
-						//var newHeadObj = headObj.replace(/\s+/g, "-");      // remove the "whit space" and "$" in Json         
-						var newHeadObj = headObj.replace(/\W/g, " ").replace(/\s+/g, "-");      // remove the "whit space" and "$" in Json
-						
-						var setCont = $("#" + headObj[0]+ headObj[1] + headObj[2]);
-                        var listCont = headObjCont.term_articles;
-                        var termName = headObjCont.term_name;
-                        var titleSpan = "";
-                        
-                        if(termName === "Beginner's Courses") {
-                            titleSpan = "<div class = 'parent_topic'>" 
-                                            + "<a href = /" + newHeadObj + ">"
+                        var newHeadObj = headObj.replace(/\s+/g, "-");      // remove the "whit space" and "$" in Json         
+                        var setCont = $("#" + headObj[0]+ headObj[1] + headObj[2]);
+                        rowContent += "<div id = " + headObj[0]+ headObj[1] + headObj[2] + " class = 'rowStyle'" + ">"          
+                                        + "<img class='leftArrowStyle' src='/sites/all/modules/ukabbalah_authors/images/arrow-left.png'/>"
+                                        + "<div class = 'parent_topic'>" 
+                                            + "<span class = 'authors_name'>"
                                             + headObj
-                                            + "</a>"
+                                            + "</span>"
                                             + "<span class = 'viewAll'>"
-                                            + "<a href = /" + newHeadObj + ">"
+                                            + "<a href = " + '/authors'+ '/' + newHeadObj + ">"
                                             + "see all"
                                             + "</a>"
                                             + "</span>"
-                                        + "</div>"
-                        } else {
-                            titleSpan = "<div class = 'parent_topic'>" 
-                                            + "<a href = " + '/primary-topics'+ '/' + newHeadObj + ">"
-                                            + headObj
-                                            + "</a>"
-                                            + "<span class = 'viewAll'>"
-                                            + "<a href = " + '/primary-topics'+ '/' + newHeadObj + ">"
-                                            + "see all"
-                                            + "</a>"
-                                            + "</span>"
-                                        + "</div>"                            
-                        }
-
-                        rowContent += "<div id = " + headObj[0]+ headObj[1] + headObj[2] + " class = 'rowStyle'" + ">"
-                                        + "<img class='leftArrowStyleHome' src='/sites/all/modules/ukabbalah_topics/images/arrow-left.png'/>"
-                                        + titleSpan
-                                        + "<div class= 'descriptionEvents'>"
-                                            + headObjCont.term_desc 
                                         + "</div>" 
                                         + "<div class = 'slideWrapper'>"                                      
                                         + "<ul class = 'ulStyle'>";
 
-                        $.each(listCont, function(index, value){      // add all images of each row
-                            rowContent += "<li class = 'eachCont'>"
+                        $.each(headObjCont, function(index, value){      // add all images of each row
+                            rowContent += "<li class = " + '"' + "eachCont" + " " + value.media_type + '"' + ">"
                                             + "<span class = 'imagesCont'>"
-                                                + "<img src = " + value.image_link + " class = 'theImage'>"
-                                                + "<a href =" + value.path + ">" 
-                                                    + "<span class ='theDescCont'>"
-                                                        + "<span class='theTitle'>"
-                                                            + "<span class= '" + value.media_type +"'></span>"                                                      
+                                                + "<img src = " + value.image_link + " class = 'imageStyle'>"
+                                                + "<a href =" + value.path + ">"     
+                                                    + "<span class ='descCont'>"
+                                                        + "<span class='titleWrapper'>"
+                                                            + "<span class= '" + value.media_type +"'></span>"
+
                                                             + "<span class = 'theJsonTitle'>"
                                                                 + value.title
                                                             + "</span>" 
                                                         + "</span>"
 
                                                         + "<span class='teachingsTopicAndDate'>"
-                                                            + value.author
+                                                            + value.primary_topic
                                                             + " | "
                                                             + value.date_created
 															+ "<span class= '" + value.membership +"'></span>"
-                                                        + "</span>"														
+                                                        + "</span>"												
                                                         + "<span class='theTeaser'>";
-                            
-							if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";
-                                                            
-							rowContent += "<span class = 'readMore'>"
-                                                                + "read more" 
+                            if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";
+                            rowContent += "<span class = 'readMore'>"
+                                                                + "read more"
                                                             + "</span>"
                                                         + "</span>"
                                                     + "</span>"
-                                                +"</a>"
-                                            + "</span>"  
+                                                + "</a>"  
+                                            + "</span>" 
                                         + "</li>";
 
                         });
-                        rowContent += "</ul>" + "</div>"+ "<img class='rightArrowStyleHome' src='/sites/all/modules/ukabbalah_topics/images/arrow-right.png'/>"  + "</div>" ;
+                        rowContent += "</ul>" + "</div>"+ "<img class='rightArrowStyle' src='/sites/all/modules/ukabbalah_authors/images/arrow-right.png'/>"  + "</div>" ;
+
                     });
                     setSlideContent.html(rowContent);
 
-                    $.each($(".eachCont"), function(){
-                        titleHeight = $(this).find(".theTitle").outerHeight();
-                        topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
-                    
-                        $(this).find(".theDescCont").css ({
-                            "margin-top": -(titleHeight + topicHeight + 14),
-                        });                                
-
-                        $(this).find(".imagesCont").hover(         //hove effect of the each image                                                
-                            function () {
-                                titleHeight = $(this).find(".theTitle").outerHeight();
-                                topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
-
-                                $(this).find(".theDescCont").stop().animate({ 
-                                    marginTop: -180,
-                                   // paddingTop:20,
-                                }, 350);
-
-                            },
-
-                            function () {
-                                titleHeight = $(this).find(".theTitle").outerHeight();
-                                topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
-                                
-                                $(this).find(".theDescCont").stop().animate({ 
-                                    marginTop: -(titleHeight + topicHeight + 14),
-                                  //  paddingTop:0,
-                                }, 350);    
-                            }
-                        );
-
-                    });
-                }
-                startPoint();
-            },  // end of success function           
-            complete: function(){  
-                $("#list").bind("click", function(){
-                    if(displayModeFlag){
-                        return false;
-                    } else {
-                        $.each($(".slideWrapper"), function(i){
-                            var ulWidth = getImageWidth*($(this).children("ul").children("li").length);
-                            $(this).children("ul").children("li").show();
-                            $(this).children("ul").css({
-                                "width": ulWidth,
-                                "left": currentListView[i]
-                            })
-                        });
-
-                        $(".eachCont").css({
-                            "float":"left"
-                        });
-
-                        $(".slideWrapper").css({
-                            "overflow": scrollMode,
-                            "-webkit-overflow-scrolling": "touch",
-                        });
-
-                        $(".leftArrowStyleHome").css({
-                                "visibility": visOpt 
-                        });
-
-                         $(".rightArrowStyleHome").css({
-                                "visibility": "visible" 
-                        });
-                        displayModeFlag = true;
-                        currentListView = [];                        
-                    } 
-                   
-                });
-                $("#grid").bind("click", function(){
-                    if(displayModeFlag){
-                        $.each($(".slideWrapper"), function(){
-                            var theItems = $(this).children("ul").children("li");
-                            var itemNums = theItems.length;
-                            var leftDistance = $(this).children("ul").css("left");
-                            currentListView.push(leftDistance);
-                            console.log(currentListView);
-                            if(itemNums > 10){
-                                theItems.eq(9).nextAll().hide();
-                            }
-                        });
-
-                        $(".eachCont").css({
-                            "float":"none"
-                        });
-                        $(".ulStyle").css({
-                            "width":"100%",
-                            "left": 0
-                        });
-                        $(".slideWrapper").css({
-                            "overflow": "none",
-                            "-webkit-overflow-scrolling": "touch",
-                        });
-                        $(".leftArrowStyleHome").css({
-                                "visibility": "hidden" 
-                        });
-                         $(".rightArrowStyleHome").css({
-                                "visibility": "hidden" 
-                        });
-                        displayModeFlag = false;
-                    } else {
-                        return false;
-                    }
-
-                });
-
-                var displayAsList = function(){
                     addStyle = function(){      // style the slide show.
                         $(".imageStyle").css({
                                 "width": imageSizeWidth,
@@ -240,9 +106,9 @@ var Slide = function(elem, options){
                                 "height": imageSizeHeight,
                                 "display": "inline-block",
                                 "float": "left",
+                                "margin-left": marginLeft,
                                 "margin-right": marginRight,
-                                "margin-left":marginLeft,
-                                "margin-bottom": 16,                                
+                                "margin-bottom":16,
                                 "overflow": "hidden"
                             });
 
@@ -258,60 +124,87 @@ var Slide = function(elem, options){
                                 "margin-right": "auto",
                             });
 
-                        $(".leftArrowStyleHome").css({
+                        $(".leftArrowStyle").css({
                                 "float": "left",
                                 "position": "absolute",
-                                "margin-top": 131,
+                                "margin-top": 106,
                                 "left": 0,
                                 "cursor": "pointer",
-                                // "opacity": 0.5,
+                                "opacity": 0.5,
                                 "z-index": 10,
                                 "visibility": visOpt 
                             });
 
-                         $(".rightArrowStyleHome").css({
+                         $(".rightArrowStyle").css({
                                 "float": "right",
                                 "position": "relative",
-                                "margin-top": -151,
+                                "margin-top": -140,
                                 "right": 0,
                                 "cursor": "pointer",
-                                // "opacity": 0.5,
-                                "z-index": 10,
-                                "visibility": "visible"
+                                "opacity": 0.5,
+                                "z-index": 10
                             });
 
-                         $(".theDescCont").css ({
+                         $(".descCont").css ({
                                 "width": imageSizeWidth,
                                 "height": 180,
                             });
-                         $(".descriptionEvents").css({
-                            "margin": "0 auto"
-                         });
                     };
                     addStyle();
 
-                    windowLoad = function(){        // give the default width of slideshow once window is loaded
+                    $.each($(".eachCont"), function(){
+                        titleHeight = $(this).find(".theJsonTitle").outerHeight();
+                        topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+                    
+                        $(this).find(".descCont").css ({
+                            "margin-top": -(titleHeight + topicHeight + 19),
+                        });                                
+
+                        $(this).find(".imagesCont").hover(         //hove effect of the each image                                                
+                            function () {
+                                titleHeight = $(this).find(".theJsonTitle").outerHeight();
+                                topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+
+                                $(this).find(".descCont").stop().animate({ 
+                                    marginTop: -180
+                                }, 350);
+
+                            },
+
+                            function () {
+                                titleHeight = $(this).find(".theJsonTitle").outerHeight();
+                                topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
+                                
+                                $(this).find(".descCont").stop().animate({ 
+                                    marginTop: -(titleHeight + topicHeight + 19)
+                                }, 350);    
+                            }
+                        );
+
+                    });
+
+                   windowLoad = function(){        // give the default width of slideshow once window is loaded
                        var num = 0;
 
                         if ($(window).width() >= 1580) {
                             num = imageNum;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;  
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580 && $(window).width() >= 1580 - (imageSizeWidth + marginLeft + marginRight)) {
                             num = imageNum - 1;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight) && $(window).width() >= 1580- (imageSizeWidth + marginLeft + marginRight)*2) {
                             num = imageNum - 2; 
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight)*2 && $(window).width() >= 980) {
                             num = 3;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                     };
                     windowLoad();
@@ -322,143 +215,145 @@ var Slide = function(elem, options){
                         if ($(window).width() >= 1580) { 
                             num = imageNum;    
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num; 
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580 && $(window).width() >= 1580 - (imageSizeWidth + marginLeft + marginRight)) {
                             num = imageNum - 1;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight) && $(window).width() >= 1580- (imageSizeWidth + marginLeft + marginRight)*2) {
                              num = imageNum - 2;  
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight)*2 && $(window).width() >= 980) {
                             num = 3;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
                         }
                         else {
                             num = 3;
                             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
-                            $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("margin", "0 auto");
+                            $(".slideWrapper, .parent_topic, #teachingsControlSection, #teachingsSectionHeaderBar").css("margin", "0 auto");
                         }
                         reziseRightArrow(); 
                     });
 
-                    slideStart = function(btnPara){        //function of two arrows and slideshow
-                        getLeftArrows = $(".leftArrowStyleHome");
-                        getRightArrows = $(".rightArrowStyleHome");
-                        getImageWidth = imageSizeWidth + marginLeft + marginRight;
-                        var getLeftWidth = [];
-                        var getRightWidth = [];
+                }; // end of startPoint function
+                startPoint();
 
-                        reziseRightArrow = function(){          // the right arrow will hide or show depending on if there still has images
+                slideStart = function(btnPara){        //function of two arrows and slideshow
+                    getLeftArrows = $(".leftArrowStyle");
+                    getRightArrows = $(".rightArrowStyle");
+                    getImageWidth = imageSizeWidth + marginLeft + marginRight;
+                    var getLeftWidth = [];
+                    var getRightWidth = [];
+
+                    reziseRightArrow = function(){          // the right arrow will hide or show depending on if there still has images
                                                             // including validation functionality of filter button "video" and "articles" 
-                            $.each(getRightArrows, function(i){
+                        $.each(getRightArrows, function(i){
+                            $(this).parent().show();
+                            var getTotalWidth = getImageWidth * ($(this).prev().find("ul").find("li:visible").length);
+
+                            if (getTotalWidth !== 0){       // if the content of this filter is empty, then hide whole category
                                 $(this).parent().show();
-                                var getTotalWidth = getImageWidth * ($(this).prev().find("ul").children("li:visible").length);
-
-                                if (getTotalWidth !== 0){       // if the content of this filter is empty, then hide whole category
-                                    $(this).parent().show();
-                                }
-                                else {
-                                    $(this).parent().hide();
-                                }
-
-                                if(getTotalWidth - getContWidth -getLeftWidth[i] > 0) {     //show or hide the right arrow when resize the window
-                                    $(this).show();
-                                }                                
-                                else {
-                                    $(this).hide();
-                                }                               
-                            });
-                        };  
-
-                        $.each(getRightArrows, function(i){     //right arrow
-
-                            var getTotalWidth = getImageWidth * ($(this).prev().find("ul").children("li:visible").length);
-                            $(this).prev().find("ul").css("width", +getTotalWidth+ "px"); 
-                            getLeftWidth[i] = 0;
-
-                            if (getTotalWidth <= getContWidth){
-                                getRightWidth[i] = 0;
                             }
                             else {
-                                getRightWidth[i] = getTotalWidth - getContWidth;
+                                $(this).parent().hide();
                             }
 
-                            if(getLeftWidth[i] + getContWidth >= getTotalWidth) {
+                            if(getTotalWidth - getContWidth -getLeftWidth[i] > 0) {     //show or hide the right arrow when resize the window
+                                $(this).show();
+                            }                                
+                            else {
                                 $(this).hide();
-                            }
-                            if (getLeftWidth[i] <= 0) {
-                                $(".leftArrowStyleHome").css("display", "none");
-                            }
-
-                            $(this).click(function() {
-                                
-                                windowLoad();
-                                
-                                if (getTotalWidth-getContWidth - getLeftWidth[i] >= getImageWidth) {
-                                    $(this).parent().find(".leftArrowStyleHome").fadeIn(1500);
-                                    getLeftWidth[i] += getContWidth;
-                                    getRightWidth[i] -= getContWidth;
-                                    $(this).unbind();
-                                    $(this).prev().find("ul").animate({
-                                        left: "-=" + getContWidth + "px",                                 
-                                    }, 500, 
-                                    (function(callee) {
-
-                                        return function() {
-                                            $(this).parent().next().click(callee);
-                                        };
-                                    })(arguments.callee));
-                                    if (getTotalWidth - getContWidth - getLeftWidth[i] < getImageWidth ) {
-                                        $(this).fadeOut(350);
-                                    }
-                                }                              
-                            });
-
+                            }                               
                         });
-                                 
-                        $.each(getLeftArrows, function(i){      //left arrow
-                           
-                            reziseRightArrow();
-                            $(this).click(function() {
-                                windowLoad();
+                    };  
 
-                                if (getLeftWidth[i] < getContWidth) {
-                                        getContWidth = getLeftWidth[i];
-                                    }
+                    $.each(getRightArrows, function(i){     //right arrow
 
-                                if (getLeftWidth[i] >= getImageWidth) {                                  
-                                    getLeftWidth[i] -= getContWidth;
-                                    getRightWidth[i] += getContWidth;
-                                    $(this).unbind();
-                                    $(this).parent().find("ul").animate({
-                                        left: "+=" + getContWidth + "px",   
-                                    }, 500,  
-                                    (function(callee) {
-                                        return function() {
-                                            $(this).parent().parent().find(".leftArrowStyleHome").click(callee);
-                                        };
-                                    })(arguments.callee));
+                        var getTotalWidth = getImageWidth * ($(this).prev().find("ul").find("li:visible").length);
+                        $(this).prev().find("ul").css("width", +getTotalWidth+ "px"); 
+                        getLeftWidth[i] = 0;
 
-                                    if (getLeftWidth[i] <= getImageWidth) {
-                                        $(this).fadeOut(350);
-                                    }
-                                    if(getRightWidth[i] > 0){
-                                        $(this).parent().find(".rightArrowStyleHome").fadeIn(350);
-                                    }
+                        if (getTotalWidth <= getContWidth){
+                            getRightWidth[i] = 0;
+                        }
+                        else {
+                            getRightWidth[i] = getTotalWidth - getContWidth;
+                        }
+
+                        if(getLeftWidth[i] + getContWidth >= getTotalWidth) {
+                            $(this).hide();
+                        }
+                        if (getLeftWidth[i] <= 0) {
+                            $(".leftArrowStyle").css("display", "none");
+                        }
+
+                        $(this).click(function() {
+                            
+                            windowLoad();
+                            
+                            if (getTotalWidth-getContWidth - getLeftWidth[i] >= getImageWidth) {
+                                $(this).parent().find(".leftArrowStyle").fadeIn(1500);
+                                getLeftWidth[i] += getContWidth;
+                                getRightWidth[i] -= getContWidth;
+                                $(this).unbind();
+                                $(this).prev().find("ul").animate({
+                                    left: "-=" + getContWidth + "px",                                 
+                                }, 500, 
+                                (function(callee) {
+
+                                    return function() {
+                                        $(this).parent().next().click(callee);
+                                    };
+                                })(arguments.callee));
+                                if (getTotalWidth - getContWidth - getLeftWidth[i] < getImageWidth ) {
+                                    $(this).fadeOut(350);
                                 }
-                            });     
-                        });       
-                    };// end of arrow click function
-                    slideStart();
-                }
-                displayAsList();  
-            }
+                            }                              
+                        });
+
+                    });
+                             
+                    $.each(getLeftArrows, function(i){      //left arrow
+                       
+                        reziseRightArrow();
+                        $(this).click(function() {
+                            windowLoad();
+
+                            if (getLeftWidth[i] < getContWidth) {
+                                    getContWidth = getLeftWidth[i];
+                                }
+
+                            if (getLeftWidth[i] >= getImageWidth) {                                  
+                                getLeftWidth[i] -= getContWidth;
+                                getRightWidth[i] += getContWidth;
+                                $(this).unbind();
+                                $(this).next().next().find("ul").animate({
+                                    left: "+=" + getContWidth + "px",   
+                                }, 500,  
+                                (function(callee) {
+                                    return function() {
+                                        $(this).parent().prev().prev().click(callee);
+                                    };
+                                })(arguments.callee));
+
+                                if (getLeftWidth[i] <= getImageWidth) {
+                                    $(this).fadeOut(350);
+                                }
+                                if(getRightWidth[i] > 0){
+                                    $(this).parent().find(".rightArrowStyle").fadeIn(350);
+                                }
+                            }
+                        });     
+                    });       
+                };// end of arrow click function
+                slideStart();
+                           
+            }  // end of success function           
         }); // end of ajax
 
         /* Adding Click events for Filter */             
@@ -489,6 +384,26 @@ var Slide = function(elem, options){
                                     
             });                                
         /* End of Click events */  
+
+        $(".familyWrapper").hover(      // hove effect for family pics, only used for page with family pics
+            function () {
+                $(this).find(".familyTextWrapper").stop().animate({
+                    marginTop: "-220px",
+                }, 220);
+
+                $(this).find(".views-row-1 .familyTextWrapper, .views-row-2 .familyTextWrapper").stop().animate({
+                    marginTop: "-350px",
+                }, 220);
+
+            },
+
+            function () {
+                $(this).find(".familyTextWrapper").stop().animate({
+                    marginTop: -imageSizeHeight/6, 
+                }, 220);
+
+            }
+        ); // end of hover
     }; //end of render function
 }; // end of Slide function
 
@@ -511,7 +426,7 @@ $(document).ready(function(){
             var div = document.getElementsByClassName("rowStyle");
             $.each(div, function(i){
                 div[i].ontouchstart = function(){
-                    $(this).find(".rightArrowStyleHome").css({
+                    $(this).find(".rightArrowStyle").css({
                         "visibility": "hidden",
                     });
                 };
@@ -525,25 +440,25 @@ $(document).ready(function(){
         var cat_id = cat.replace('cat', '');
         //var url = "http://livingwisdom.kabbalah.com";
         var topic_name = $("#teachings_topicDD option:selected").text().replace(/\W/g, " ").replace(/\s+/g, "-");
-		//var topic_name = $("#teachings_topicDD option:selected").text().replace(/\s+/g, "-");
-		//var newHeadObj = headObj.replace(/\W/g, " ").replace(/\s+/g, "-");      // remove the "whit space" and "$" in Json
-		
-		//$(this).target = "_self";
+        //$(this).target = "_self";
         //window.open(url+'/taxonomy/term/'+cat_id,'_self',false);
-		window.open('/primary-topics/'+topic_name,'_self',false);
+        window.open('/primary-topics/'+topic_name,'_self',false);
             
     });
 
-	$('#teachings_teachersDD').change(function() {     // dropdown 
+    $('#teachings_teachersDD').change(function() {     // dropdown 
                                 
         var cat = $("#teachings_teachersDD").val();
         var cat_id = cat.replace('cat', '');
-		var author_name = $("#teachings_teachersDD option:selected").text().replace(' ','-');
-	   //$(this).target = "_self";
+        var url = "http://livingwisdom.kabbalah.com";
+        var author_name = $("#teachings_teachersDD option:selected").text().replace(' ','-');
+       //$(this).target = "_self";
         window.open('/authors/'+author_name,'_self',false);
             
-    });	
-	
+    }); 
+    
+    
+    
 })
 
 })(jQuery)
