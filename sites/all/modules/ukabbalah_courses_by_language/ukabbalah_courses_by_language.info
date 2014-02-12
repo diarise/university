@@ -1,6 +1,0 @@
-name = UKabbalah Courses By Language Page 
-description = " Get the Courses from Ukabbalah, and display the courses grouped by language"
-core = 7.x
-version = "7.22"
-core = "7.x"
-package = Kabbalah Custom Modules
