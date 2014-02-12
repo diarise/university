@@ -2331,7 +2331,7 @@ h3 a {
 }
 
 /* line 1803, ../sass/style.scss */
-.views-field-twistage-subtitles.activeLesson span, td .subtitle-width.activeLesson span {
+.views-field-twistage-subtitles.activeLesson span, .subtitle-width.activeLesson span {
   color: transparent;
   background: red !important;
 }
