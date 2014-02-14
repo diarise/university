@@ -247,9 +247,11 @@
 				FROM {node n}
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 				LEFT JOIN {field_revision_field_beginner_course_ bc} ON ( bc.entity_id = nr.nid AND bc.revision_id = nr.vid )
+				LEFT JOIN {field_data_field_course_language cl} ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id )
 				WHERE n.status =1
 				AND n.type = 'course'
 				AND bc.field_beginner_course__value = 1
+				AND cl.field_course_language_tid IS NULL
 				ORDER BY n.changed DESC limit 10";
 				
 		$result = db_query( $sql );
