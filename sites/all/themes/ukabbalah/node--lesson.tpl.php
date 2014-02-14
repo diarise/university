@@ -136,7 +136,7 @@
 				</span>
 				<span id="dateMultimedia">
 				<?php
-					print date('F jS, Y',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
+					if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 				?>
 				</span>
 			</div>
