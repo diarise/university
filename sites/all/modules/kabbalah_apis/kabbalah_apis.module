@@ -593,12 +593,13 @@
 					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
 					"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
 					"LEFT JOIN {field_data_field_type_of_course toc} ON ( nr.nid = toc.entity_id AND nr.vid = toc.revision_id ) ".
+					"LEFT JOIN {field_data_field_course_language cl} ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id ) ".
 					"LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
 					"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
 					"WHERE n.status =1 ".
 					"AND td.vid = ".$vid." ".
 					"AND td.name = '".$vname."' ".
-					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND toc.field_type_of_course_tid = ".$type_of_course_tid.") ".
+					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND cl.field_course_language_tid IS NULL AND toc.field_type_of_course_tid = ".$type_of_course_tid.") ".
 					"ORDER BY n.changed DESC";
 		
 		$result = db_query( $sql );
