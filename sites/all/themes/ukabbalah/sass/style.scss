@@ -2336,17 +2336,21 @@ div.jp-audio{
 }
 .bookmark {
     float: right;
-    width: 117px;
+    width: 140px;
     color: $colorBrown;
     font-size: 15px;
+    text-align: right;
     & a {
   color: $colorBrown;
   }
 }
 .flag-message{
   left: -169px!important;
+  text-align: right;
 }
-
+.flag-wrapper{
+  width: 140px;
+}
 /**start scrollling filter**/
 .scrollingTitle{
   background: #fff;
