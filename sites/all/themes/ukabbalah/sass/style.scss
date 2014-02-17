@@ -39,7 +39,6 @@ body {
     font-family: $fontFace;
     -webkit-font-smoothing: antialiased;
 }
-
 p {
     font-weight: normal;
     color: $colorParagraph;
@@ -91,7 +90,6 @@ ul li {
 .topHeader #topImageCont {
     padding-left: 0 !important;
 }
-
 #block-nice-menus-2 {
     text-align: center;
     margin: 0 auto;
@@ -101,7 +99,6 @@ ul li {
     padding: 0;
     list-style: none;
   }
-
   li {  border: medium none;
         height: 40px;
         background: none;
@@ -117,7 +114,6 @@ ul li {
             color: $colorRed;
         }
         }
-    
     }
 }
 
@@ -174,12 +170,10 @@ ul li {
         margin-right: 0 !important;
         }
     }  
-
 }
 #nice-menu-1 .active{
             color: $colorRed!important;
     }
-
 #mainOuterContentLogoMenuWrapper {
     background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom transparent;
     height: 40px;
@@ -255,7 +249,6 @@ ul li {
 /*-----------Start slides info desc-----*/
 
 .slidesTitle{
-    // font-family: $fontFace;
     font-size: 30px;
     font-weight: bold;
     line-height: 32px;
@@ -316,7 +309,6 @@ ul li {
 }
 
 /***---*/
-
 .imgNav li {
   width: 12px;
   height: 12px;
@@ -329,7 +321,6 @@ ul li {
 #frontMiddle .imgNav{
   padding-left: 9px!important
 }
-
 
 /***---*/
 
@@ -731,15 +722,10 @@ ul.masonry{
 #teachingsControlSection{
     clear: both;
     margin: auto;
-    // max-width: 1580px;
-    // min-width: 940px;
     padding: 20px 0 16px 17px;
     height:20px;
     margin-top: 24px;
 }
-// #teachingsControlSection .scrollingTitle{
-// 	padding-bottom:36px!important;
-// }
 #teachingsSectionTitle {
     color: #433A3A;
     float: left;
@@ -752,8 +738,6 @@ ul.masonry{
  #teachingsSectionHeaderBar {
     height: 65px;
     margin: 10px auto -6px;
-    // max-width: 1580px;
-    // min-width: 940px;
     padding-bottom: 1px;
     padding-left:17px;
 }
@@ -1017,10 +1001,6 @@ ul.masonry{
     font-weight: bold;
     color:#9C1F19
 }
-//
-// .Audio_link .nowplaying {
-//     display: block !important;
-// }
 
 /*======= end carousel========*/
 
@@ -1476,7 +1456,6 @@ h3 {
     line-height: 25px;
     color:$colorBrown; 
     text-align: left;
-    // margin-bottom: 20px;
 }
 .titleDescription{
     font-weight:normal; 
@@ -1708,7 +1687,6 @@ h3 {
     width: 940px!important;
     font-size: 15px;
     line-height: 30px;
-    // font-family: $fontFaceLight ;
     color: $colorBrown;
     text-align: left;
     font-weight: bold;
@@ -1773,9 +1751,6 @@ h3 {
 .lessonCollectionSection table tbody tr td.title-width{
 	width:450px!important;
 }
-// .author-width{
-// 	width:100px!important;
-// }
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
     padding: 5px 0;
@@ -1867,22 +1842,12 @@ h3 {
     width: 100%;
     background: #f2f1f1;
 }
-// span.lessonsCourse:before{
-// 	width:150px;
-// }
-// span.lessonsCourse:after{
-// 	width:100%;
-// }
 .lessonCollectionSection form select option,
 #teachingsSectionHeaderBar select option,
 #views-exposed-form-taxonomy-term-page select option,
 #mainContentWrapper select option{
 	width:150px;
 }
-
-// .lessonCollectionSection form select:after{
-// 	width:100%;
-// }
 span.lessonsCourse {
     background: url("../images/dd_arrow.png") no-repeat scroll right 10px #fff!important;
     border: 1px solid $colorGray;
@@ -1898,7 +1863,6 @@ span.lessonsCourse {
     text-indent: 10px;
     z-index: 1;
 }
-
 .transcription .lessonsCourse,#views-exposed-form-free-lessons-page .lessonsCourse{
     display: block!important;
 }
@@ -2100,7 +2064,6 @@ div.jp-audio{
   @extend #classResources;
   color: $colorRed;
    margin-bottom: 0;
-   // margin-top: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
     font-size: 13px;  
@@ -2138,7 +2101,6 @@ div.jp-audio{
     font-size: 16px;
     font-weight: normal;
     line-height: 25px;
-    // margin-bottom: -8px;
     margin-top: -10px;
     text-align: left;
 }
@@ -2147,7 +2109,6 @@ div.jp-audio{
 }
 .lessonCollectionSection .Audio {
     background: url("../images/icon/audio_icon_light_grey.png") no-repeat 8px 0;
-   	//@include icon-sprite("audio_icon_light_grey") ;
     height: 13px;
     width: 25px;
 }
@@ -2390,14 +2351,11 @@ div.jp-audio{
 .scrollingTitle{
   background: #fff;
     position: fixed !important;
-    // position: relative;
     z-index: 140;
     top: 0;
     margin: 0!important;
     padding-left: 0!important;
     width: 100%!important;
-    // min-width: 100%!important;
-    // max-width: 100%!important;
     z-index: 1400 !important;
 }
 @media only screen and (max-width: 1000px){
@@ -2405,29 +2363,22 @@ div.jp-audio{
 		padding-left: 20px!important;
 	}
 }
-
 @media only screen and (min-width: 1000px){
 	.scrollingFilter{
 		padding-left: 0px!important;
 	}
 }
-
-
-
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
     z-index: 140;
     top: 46px;
     width: 100%!important;
-    // min-width: 100%!important;
-    // max-width: 100%!important;
     margin: auto;
     z-index: 1400 !important;
 }
 .scrollingFilter{
   padding-bottom:10px!important;
-  //padding-left:0!important;
 }
 .teachingsBarInnerWrapper{
     max-width: 1580px;
