@@ -682,13 +682,14 @@ span.jsonTitle {
     padding-bottom: 10px;
     color: $colorBrown;
     display: inline-block;
-}
-.teachingsTopicAndDate{
-  width: 286px;
+    width: 286px;
 }
 .theDate {
     @extend .teachingsTopicAndDate;
     width: auto;
+}
+.teachingsTopicAndDate.freeLesson{
+  width: auto;
 }
 /*** adding icon for free lesson ***/
 
