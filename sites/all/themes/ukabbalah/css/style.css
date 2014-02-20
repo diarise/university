@@ -1976,7 +1976,7 @@ h3 a {
 }
 
 /* line 1523, ../sass/style.scss */
-.accordion p:first-child {
+.accordion p:first-child, .accordion ul {
   margin-top: 0;
 }
 
