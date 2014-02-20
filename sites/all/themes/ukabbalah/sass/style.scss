@@ -1520,7 +1520,7 @@ h3 {
 .accordion {
     float: left;
 }
-.accordion p:first-child,.accordion ul{
+.accordion p:first-child{
   margin-top: 0;
 }
 
@@ -2099,7 +2099,7 @@ div.jp-audio{
 }
 #classHighlights ul{
     padding-left: 15px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 #classHighlights li {
     list-style: disc outside none;

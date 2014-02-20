@@ -1976,7 +1976,7 @@ h3 a {
 }
 
 /* line 1523, ../sass/style.scss */
-.accordion p:first-child, .accordion ul {
+.accordion p:first-child {
   margin-top: 0;
 }
 
@@ -2784,7 +2784,7 @@ div.jp-audio {
 /* line 2100, ../sass/style.scss */
 #classHighlights ul {
   padding-left: 15px;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 /* line 2104, ../sass/style.scss */
