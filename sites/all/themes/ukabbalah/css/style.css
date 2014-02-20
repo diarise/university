@@ -1941,14 +1941,14 @@ h3 a {
 }
 
 /* line 1500, ../sass/style.scss */
-#ac-1 ~ ul, #ac-0 ~ p {
+#ac-1 ~ .accordion, #ac-0 ~ .accordion {
   height: 0;
   overflow: auto;
   transition: height 0.3s ease-in-out 0s;
 }
 
 /* line 1505, ../sass/style.scss */
-#classHighlights input:checked ~ ul, #classesDescription input:checked ~ p {
+#classHighlights input:checked ~ .accordion, #classesDescription input:checked ~ .accordion {
   height: auto;
   transition: height 0.5s ease-in-out 0s;
 }

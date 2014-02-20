@@ -1497,12 +1497,12 @@ h3 {
 #classHighlights input ~ .titleDescription, #classesDescription input ~ .titleDescription{
     cursor: pointer;
 }
-#ac-1 ~ ul, #ac-0 ~ p  {
+#ac-1 ~ .accordion, #ac-0 ~ .accordion  {
     height: 0;
     overflow: auto; //hidden
     transition: height 0.3s ease-in-out 0s;
 }
- #classHighlights input:checked ~ ul, #classesDescription input:checked ~ p { 
+ #classHighlights input:checked ~ .accordion, #classesDescription input:checked ~ .accordion { 
     height: auto;
     transition: height 0.5s ease-in-out 0s;
 }
