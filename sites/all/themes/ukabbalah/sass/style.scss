@@ -1517,7 +1517,12 @@ h3 {
 #classHighlights > p {
     display: none;
 }
-
+.accordion {
+    float: left;
+}
+.accordion p:first-child{
+  margin-top: 0;
+}
 
 /**/
 #audio-control{
