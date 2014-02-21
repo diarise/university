@@ -158,7 +158,7 @@
 			<div id="classesDescription">
 				<input type="checkbox" id="ac-0">
 				<label  class="titleDescription" for="ac-0">class description</label>
-				<?php  	print $node->body['und'][0]['value']; ?>
+				<span class="accordion"><?php  	print $node->body['und'][0]['value']; ?></span>
 			</div>
 		<?php } 
 		}
@@ -170,7 +170,7 @@
 		<div id="classHighlights">
 			<input type="checkbox" id="ac-1">
 			<label class="titleDescription" for="ac-1">Highlights</label>
-			<?php print $node->field_lesson_highlights['und'][0]['value']; ?>
+			<span class="accordion"><?php print $node->field_lesson_highlights['und'][0]['value']; ?></span>
 		</div>
 		<?php } ?>
 		<?php } ?>

@@ -682,13 +682,37 @@ span.jsonTitle {
     padding-bottom: 10px;
     color: $colorBrown;
     display: inline-block;
-}
-.teachingsTopicAndDate{
-  width: 286px;
+    width: 286px;
 }
 .theDate {
     @extend .teachingsTopicAndDate;
     width: auto;
+}
+.teachingsTopicAndDate.freeLesson{
+  width: auto;
+}
+/*** adding icon for free lesson ***/
+
+.Free:before{
+    color: #FFFFFF;
+    content: "FREE";
+    font-size: 11px;
+    font-weight: bold;
+} 
+.Free{
+    background: #808080;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+    float: right;
+    height: 18px;
+    line-height: 14px;
+    margin-right: 7px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #5E5D5D;
+    width: 39px;
+}
+.teachingsTopicAndDate .Free{
+  line-height: 17px;
 }
 .teaser {
     color: $colorBrown;
@@ -1473,12 +1497,12 @@ h3 {
 #classHighlights input ~ .titleDescription, #classesDescription input ~ .titleDescription{
     cursor: pointer;
 }
-#ac-1 ~ ul, #ac-0 ~ p  {
+#ac-1 ~ .accordion, #ac-0 ~ .accordion  {
     height: 0;
     overflow: auto; //hidden
     transition: height 0.3s ease-in-out 0s;
 }
- #classHighlights input:checked ~ ul, #classesDescription input:checked ~ p { 
+ #classHighlights input:checked ~ .accordion, #classesDescription input:checked ~ .accordion { 
     height: auto;
     transition: height 0.5s ease-in-out 0s;
 }
@@ -1493,7 +1517,12 @@ h3 {
 #classHighlights > p {
     display: none;
 }
-
+.accordion {
+    float: left;
+}
+.accordion p:first-child{
+  margin-top: 0;
+}
 
 /**/
 #audio-control{
@@ -1517,7 +1546,7 @@ h3 {
 #block-views-lesson-collection-block-3,
 #block-views-lesson-collection-block-4{
     float:left;
-    margin: 44px 0 85px;
+    margin: 24px 0 85px;
     width: 940px;
 }
 
@@ -2063,14 +2092,14 @@ div.jp-audio{
 .keywords{
   @extend #classResources;
   color: $colorRed;
-   margin-bottom: 0;
+   margin-bottom: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
     font-size: 13px;  
 }
 #classHighlights ul{
     padding-left: 15px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 #classHighlights li {
     list-style: disc outside none;
