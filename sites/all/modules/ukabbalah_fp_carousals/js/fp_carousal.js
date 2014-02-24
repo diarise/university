@@ -32,7 +32,7 @@
                 $.each(data, function(i){      // add all images of each row
 
                     rowContent += "<li>"
-                                    + "<div class = 'contWrapper'>"   
+                                    + "<span class='imagesCont'>"   
                                         + "<img src = " + data[i].image + " class = 'theImage'>"
                                         + "<a href =" + data[i].path + ">"                       
                                         	+ "<span class ='theDescCont'>"
@@ -44,12 +44,13 @@
                                                     + "</span>" 
                                                 + "</span>"
 
-                                                + "<span class='theDate'>"
+                                                + "<span class='teachingsTopicAndDate'>"
                                                     + data[i].author
                                                     + " | "
                                                     + data[i].created
+                                                    + "<span class='"+data[i].membership +"'></span>"
                                                 + "</span>"
-												+ "<span class='"+data[i].membership +"'></span>"
+												
                                                 + "<span class='theTeaser'>"
                                                     + data[i].teaser;
 													
@@ -61,7 +62,7 @@
 						rowContent += "</span>"
                                             + "</span>"
                                         + "</a>"
-                                    + "</div>" 
+                                    + "</span>" 
                                + "</li>";    
                 });
                 
@@ -158,10 +159,11 @@
 			$("#recentlyAddedCourses").show();
 			$.each($(".ulStyle li"), function(){
 		        var titleHeight = $(this).find(".theJsonTitle").outerHeight();
-		        var dateHeight = $(this).find(".theDate").outerHeight();
+		        var dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
 		      
 		        $(this).find(".theDescCont").css ({
 		            "margin-top": -(titleHeight + dateHeight + 13),
+		            "height" : 180,
 		        });		        
 	        	
 		        $(this).hover(
@@ -174,7 +176,7 @@
 		            function(){
 
 			            titleHeight = $(this).find(".theJsonTitle").outerHeight();
-			            dateHeight = $(this).find(".theDate").outerHeight();
+			            dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
 
 			            $(this).find(".theDescCont").stop().animate({
 			             	marginTop: -(titleHeight + dateHeight + 13),

@@ -17,7 +17,7 @@
 	  
           $(this).find(".theDescCont").css ({
               "margin-top": -(titleHeight + dateHeight + 11),
-			  // "padding" : 0,
+			         "height" : 180,
           }); 
 
           $(this).hover(

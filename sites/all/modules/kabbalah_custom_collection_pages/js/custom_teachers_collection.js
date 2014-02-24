@@ -146,7 +146,7 @@ var Slide = function(elem, options){
                                 "z-index": 10
                             });
 
-                         $(".descCont").css ({
+                         $(".theDescCont").css ({
                                 "width": imageSizeWidth,
                                 "height": 180,
                             });
