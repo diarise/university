@@ -100,16 +100,16 @@ var Slide = function(elem, options){
                     setSlideContent.html(rowContent);
 
                     $.each($(".eachCont"), function(){
-                        titleHeight = $(this).find(".theTitle").outerHeight();
+                        titleHeight = $(this).find(".theJsonTitle").outerHeight();
                         topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                     
                         $(this).find(".theDescCont").css ({
-                            "margin-top": -(titleHeight + topicHeight + 14),
+                            "margin-top": -(titleHeight + topicHeight + 10),
                         });                                
 
                         $(this).find(".imagesCont").hover(         //hove effect of the each image                                                
                             function () {
-                                titleHeight = $(this).find(".theTitle").outerHeight();
+                                titleHeight = $(this).find(".theJsonTitle").outerHeight();
                                 topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
 
                                 $(this).find(".theDescCont").stop().animate({ 
@@ -119,11 +119,11 @@ var Slide = function(elem, options){
                             },
 
                             function () {
-                                titleHeight = $(this).find(".theTitle").outerHeight();
+                                titleHeight = $(this).find(".theJsonTitle").outerHeight();
                                 topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                                 
                                 $(this).find(".theDescCont").stop().animate({ 
-                                    marginTop: -(titleHeight + topicHeight + 14)
+                                    marginTop: -(titleHeight + topicHeight + 10)
                                 }, 350);    
                             }
                         );
