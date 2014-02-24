@@ -81,8 +81,7 @@ var Slide = function(elem, options){
 														
 								if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";						
                                                             
-								rowContent  += "<p>" +value.teaser + "</p>"
-                                             + "<span class = 'readMore'>"
+								rowContent  += "<span class = 'readMore'>"
                                                   + "leer m&#225;s" 
                                                   + "</span>"
                                               + "</span>"
