@@ -2260,6 +2260,12 @@ div.jp-audio{
 .Both{
 	@extend .bothAdVdImg;
 }
+
+.teachingsTopicAndDate .Premium, 
+.teachingsTopicAndDate .Basic {
+    margin-right: 0;
+    margin-top: 0;
+}
 .theTitle{
     float: left;
     margin-left: 10px;
