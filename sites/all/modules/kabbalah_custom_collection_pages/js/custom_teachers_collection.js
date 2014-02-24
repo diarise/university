@@ -158,8 +158,8 @@ var Slide = function(elem, options){
                         titleHeight = $(this).find(".theJsonTitle").outerHeight();
                         topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                     
-                        $(this).find(".descCont").css ({
-                            "margin-top": -(titleHeight + topicHeight + 19),
+                        $(this).find(".theDescCont").css ({
+                            "margin-top": -(titleHeight + topicHeight + 10),
                         });                                
 
                         $(this).find(".imagesCont").hover(         //hove effect of the each image                                                
@@ -167,7 +167,7 @@ var Slide = function(elem, options){
                                 titleHeight = $(this).find(".theJsonTitle").outerHeight();
                                 topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
 
-                                $(this).find(".descCont").stop().animate({ 
+                                $(this).find(".theDescCont").stop().animate({ 
                                     marginTop: -180
                                 }, 350);
 
@@ -177,8 +177,8 @@ var Slide = function(elem, options){
                                 titleHeight = $(this).find(".theJsonTitle").outerHeight();
                                 topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                                 
-                                $(this).find(".descCont").stop().animate({ 
-                                    marginTop: -(titleHeight + topicHeight + 19)
+                                $(this).find(".theDescCont").stop().animate({ 
+                                    marginTop: -(titleHeight + topicHeight + 10)
                                 }, 350);    
                             }
                         );
@@ -358,54 +358,7 @@ var Slide = function(elem, options){
             }  // end of success function           
         }); // end of ajax
 
-        /* Adding Click events for Filter */             
-            $("#allBtn").click(function() {
-                $("#articlesBtn, #videoBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".video").css("display", "inline-block");
-                $(".article").css("display", "inline-block");
-                reziseRightArrow();                         
-            });
 
-            $("#articlesBtn").click(function() {
-                $("#allBtn, #videoBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".video").css("display", "none");
-                $(".article").css("display", "inline-block");
-                reziseRightArrow(); 
-             
-            });
-            
-            
-            $("#videoBtn").click(function() {
-                $("#articlesBtn, #allBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".article").css("display", "none");
-                $(".video").css("display", "inline-block");
-               reziseRightArrow(); 
-                                    
-            });                                
-        /* End of Click events */  
-
-        $(".familyWrapper").hover(      // hove effect for family pics, only used for page with family pics
-            function () {
-                $(this).find(".familyTextWrapper").stop().animate({
-                    marginTop: "-220px",
-                }, 220);
-
-                $(this).find(".views-row-1 .familyTextWrapper, .views-row-2 .familyTextWrapper").stop().animate({
-                    marginTop: "-350px",
-                }, 220);
-
-            },
-
-            function () {
-                $(this).find(".familyTextWrapper").stop().animate({
-                    marginTop: -imageSizeHeight/6, 
-                }, 220);
-
-            }
-        ); // end of hover
     }; //end of render function
 }; // end of Slide function
 
