@@ -1636,7 +1636,6 @@ h3 {
 .lessonCollectionSection h2{
     font-size: 21px;
     color: $colorRed;
-    text-transform: uppercase;
     text-align: left;
     margin-bottom: 16px; 
 }
@@ -1943,10 +1942,6 @@ span.lessonsCourse {
     margin: auto;
     width: 940px;
 }
-.videocontent #eSocial {
-    margin: auto;
-    width: 640px!important;
-}
 .sharethis{
     border-top: 1px solid #7c7575;
     padding-top: 10px;
@@ -2033,9 +2028,6 @@ span.lessonsCourse {
 }
 /***/
 div.jp-audio{
-    margin: auto;
-}
-.videocontent #eSocial{
     margin: auto;
 }
 #classResources {
