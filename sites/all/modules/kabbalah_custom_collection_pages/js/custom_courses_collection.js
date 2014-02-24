@@ -103,12 +103,12 @@ var Slide = function(elem, options){
                                                             + value.date_created
 															+ "<span class= '" + value.membership +"'></span>"
                                                         + "</span>"														
-                                                        + "<span class='theTeaser'>";
-                            
-							if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";
+                                                       + "<span class='theTeaser'>";
+														
+								if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";						
                                                             
-							rowContent += "<span class = 'readMore'>"
-                                                                + "read more" 
+								rowContent  += "<span class = 'readMore'>"
+                                                                + "leer m&#225;s" 
                                                             + "</span>"
                                                         + "</span>"
                                                     + "</span>"
@@ -126,7 +126,7 @@ var Slide = function(elem, options){
                         topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                     
                         $(this).find(".theDescCont").css ({
-                            "margin-top": -(titleHeight + topicHeight + 14),
+                            "margin-top": -(titleHeight + topicHeight + 3),
                         });                                
 
                         $(this).find(".imagesCont").hover(         //hove effect of the each image                                                
@@ -146,7 +146,7 @@ var Slide = function(elem, options){
                                 topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                                 
                                 $(this).find(".theDescCont").stop().animate({ 
-                                    marginTop: -(titleHeight + topicHeight + 14),
+                                    marginTop: -(titleHeight + topicHeight + 3),
                                   //  paddingTop:0,
                                 }, 350);    
                             }
@@ -461,34 +461,6 @@ var Slide = function(elem, options){
             }
         }); // end of ajax
 
-        /* Adding Click events for Filter */             
-            $("#allBtn").click(function() {
-                $("#articlesBtn, #videoBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".video").css("display", "inline-block");
-                $(".article").css("display", "inline-block");
-                reziseRightArrow();                         
-            });
-
-            $("#articlesBtn").click(function() {
-                $("#allBtn, #videoBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".video").css("display", "none");
-                $(".article").css("display", "inline-block");
-                reziseRightArrow(); 
-             
-            });
-            
-            
-            $("#videoBtn").click(function() {
-                $("#articlesBtn, #allBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".article").css("display", "none");
-                $(".video").css("display", "inline-block");
-               reziseRightArrow(); 
-                                    
-            });                                
-        /* End of Click events */  
     }; //end of render function
 }; // end of Slide function
 
