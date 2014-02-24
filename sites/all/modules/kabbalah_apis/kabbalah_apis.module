@@ -601,8 +601,12 @@
 					"WHERE n.status =1 ".
 					"AND td.vid = ".$vid." ".
 					"AND td.name = '".$vname."' ".
-					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL AND cl.field_course_language_tid IS NULL AND toc.field_type_of_course_tid = ".$type_of_course_tid.") ".
-					"ORDER BY n.changed DESC";
+					"AND ( n.type in ('course','parent_course' ) AND pc.field_parent_course_nid IS NULL ";
+					
+		if( $vid != 16 ) $sql .= "AND cl.field_course_language_tid IS NULL ";		
+		
+		$sql .=	"AND toc.field_type_of_course_tid = ".$type_of_course_tid.") ".
+				"ORDER BY n.changed DESC";
 		
 		$result = db_query( $sql );
 		return $result;
