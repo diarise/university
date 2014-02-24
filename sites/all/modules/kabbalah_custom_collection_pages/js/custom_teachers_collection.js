@@ -59,34 +59,36 @@ var Slide = function(elem, options){
                                         + "<ul class = 'ulStyle'>";
 
                         $.each(headObjCont, function(index, value){      // add all images of each row
-                            rowContent += "<li class = " + '"' + "eachCont" + " " + value.media_type + '"' + ">"
+                            rowContent += "<li class = 'eachCont'>"
                                             + "<span class = 'imagesCont'>"
-                                                + "<img src = " + value.image_link + " class = 'imageStyle'>"
-                                                + "<a href =" + value.path + ">"     
-                                                    + "<span class ='descCont'>"
-                                                        + "<span class='titleWrapper'>"
-                                                            + "<span class= '" + value.media_type +"'></span>"
-
+                                                + "<img src = " + value.image_link + " class = 'theImage'>"
+                                                + "<a href =" + value.path + ">" 
+                                                    + "<span class ='theDescCont'>"
+                                                        + "<span class='theTitle'>"
+                                                            + "<span class= '" + value.media_type +"'></span>"                                                      
                                                             + "<span class = 'theJsonTitle'>"
                                                                 + value.title
                                                             + "</span>" 
                                                         + "</span>"
 
                                                         + "<span class='teachingsTopicAndDate'>"
-                                                            + value.primary_topic
+                                                            + value.author
                                                             + " | "
                                                             + value.date_created
 															+ "<span class= '" + value.membership +"'></span>"
-                                                        + "</span>"												
+                                                        + "</span>"														
                                                         + "<span class='theTeaser'>";
-                            if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";
-                            rowContent += "<span class = 'readMore'>"
-                                                                + "read more"
-                                                            + "</span>"
-                                                        + "</span>"
-                                                    + "</span>"
-                                                + "</a>"  
-                                            + "</span>" 
+														
+								if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";						
+                                                            
+								rowContent  += "<p>" +value.teaser + "</p>"
+                                             + "<span class = 'readMore'>"
+                                                  + "leer m&#225;s" 
+                                                  + "</span>"
+                                              + "</span>"
+                                            + "</span>"
+                                                +"</a>"
+                                            + "</span>"  
                                         + "</li>";
 
                         });
