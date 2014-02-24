@@ -1620,10 +1620,12 @@ h3 {
     line-height: 26px;
     text-transform: capitalize;
 }
-#topicCourse,#infoCourse{
+#topicCourse{
     font-size: 15px;
     line-height: 26px;
     font-family: $fontFaceLight ;
+    display: inline!important;
+    text-transform: uppercase;
 }
 #infoCourse{
     line-height: 25px;
@@ -1969,12 +1971,6 @@ span.lessonsCourse {
 }
 #optionVideo .sharethis{
     padding-top: 0px;
-}
-#topicCourseTitle,#topicCourse{
-    display: inline!important;
-}
-#topicCourse{
-    text-transform: uppercase;
 }
 .courseDescriptionWrapper{
     margin: 23px auto;
