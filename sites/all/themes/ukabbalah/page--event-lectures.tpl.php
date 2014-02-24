@@ -40,9 +40,6 @@
 	</div>
    
    <div id="pageregion">
-		<div id="pageaboutus">
-			   <?php print render($page['pageaboutus']); ?>
-		</div><!--end of pageabout us-->
 		<div id="maincontentTopics">
 		<?php print $messages; ?>
 		<?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>

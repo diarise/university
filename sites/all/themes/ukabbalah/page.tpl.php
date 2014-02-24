@@ -40,9 +40,6 @@
 	</div>
    
    <div id="pageregion">
-    <div id="pageaboutus">
-   		   <?php print render($page['pageaboutus']); ?>
-   	</div><!--end of pageabout us-->
    	<div id="mainContentWrapper">
     <?php print $messages; ?>
     

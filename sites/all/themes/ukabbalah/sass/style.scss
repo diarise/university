@@ -38,6 +38,7 @@ body {
     padding: 0;
     font-family: $fontFace;
     -webkit-font-smoothing: antialiased;
+  
 }
 p {
     font-weight: normal;
@@ -259,7 +260,7 @@ ul li {
   margin-top: 34px;
   margin-left: 40px;
   display: block;
-  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */    
+ /* This needs to be set or some font faced fonts look bold on Mac. */    
 }
 .slidesSubTitle{
     font-family: $fontFaceLight;
@@ -272,7 +273,7 @@ ul li {
     margin-top: 9px;
   margin-left: 40px;
   display: block;
-  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+ /* This needs to be set or some font faced fonts look bold on Mac. */
 }
 .slidesBody{
     font-family: $fontFaceLight;
@@ -284,7 +285,7 @@ ul li {
     margin-top: 8px;
   margin-left: 40px;
   display: block;
-  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+ /* This needs to be set or some font faced fonts look bold on Mac. */
 }
 .slidesBody p{
   font-family: $fontFaceLight;
@@ -302,7 +303,7 @@ ul li {
   width: 280px;
   text-decoration: none;
   margin-left: 20px;
-  -webkit-font-smoothing: antialiased; /* This needs to be set or some font faced fonts look bold on Mac. */
+ /* This needs to be set or some font faced fonts look bold on Mac. */
 }
 .slidesReadMore a:hover {
     color:$colorWhite;
@@ -523,7 +524,7 @@ background-color:#653a24;
   padding-top: 32px;
   font-size: 14px;
   float: left;
-  -webkit-font-smoothing: antialiased; 
+ 
   & h2{
         color: $colorBlue;
     font-size: 15px;
@@ -599,7 +600,7 @@ background-color:#653a24;
   font-size: 14px;
   line-height: 22px;
   color: $colorWhite!important;
-  -webkit-font-smoothing: antialiased; 
+ 
 }
 #copywrite #block-block-2 a{
   color: $colorWhite;
@@ -867,7 +868,7 @@ ul.masonry{
 .authors_name {
     color: #999999;
     cursor: pointer;
-    font-family: ProxiRegular;
+    //font-family: ProxiRegular;
     font-size: 28px;
     line-height: 28px;
     margin-left: 10px;
@@ -2172,7 +2173,7 @@ div.jp-audio{
     text-align: left;
     text-transform: uppercase;
     width: inherit;
-    -webkit-font-smoothing: antialiased;
+  
 }
 .topicTermnDate {
     font-size: 12px;
