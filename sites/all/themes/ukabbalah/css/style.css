@@ -1290,7 +1290,7 @@ h1#page-title {
   font-size: 30px;
   font-weight: normal;
   line-height: 24px;
-  margin-right: 20px;
+  margin-right: 47px;
   text-transform: uppercase;
   width: 700px;
 }
@@ -2847,14 +2847,6 @@ div.jp-audio {
 .topicItemText span a {
   text-transform: capitalize;
   color: #127795;
-}
-
-/* line 2156, ../sass/style.scss */
-#mainContentWrapper h1#page-title,
-#courseByParentWrapper h1#page-title {
-  margin-top: 47px;
-  width: 940px;
-  float: none;
 }
 
 /* line 2161, ../sass/style.scss */
