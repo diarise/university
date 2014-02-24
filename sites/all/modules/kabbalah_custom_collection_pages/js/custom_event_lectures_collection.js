@@ -250,7 +250,7 @@ var Slide = function(elem, options){
                                 "visibility": "visible"
                             });
 
-                         $(".descCont").css ({
+                         $(".theDescCont").css ({
                                 "width": imageSizeWidth,
                                 "height": 180,
                             });
