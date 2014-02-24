@@ -770,25 +770,18 @@ ul.masonry{
   padding-bottom:3px!important;
 }
 #teachersDDtext {
-    margin-left: 0 !important;
+    margin-left: 0;
 }
 #topicDDtext{
-    color: #999999;
-    font-size: 16px;
-    font-weight: normal;
     margin-left: 10px;
-}
-#teachersDDtext{
-    @extend #topicDDtext
 }
 #topicDDtext, #teachersDDtext, #teachersDD, #topicDD {
     display: block;
     margin-bottom: 10px;
+    color: #999999;
+    font-size: 16px;
 }
 #teachersDD {
-    color: #5F8F9D;
-    font-size: 16px;
-    font-weight: normal;
     height: 17px;
     text-transform: uppercase;
 }
