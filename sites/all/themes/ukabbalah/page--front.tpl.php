@@ -62,16 +62,6 @@
 		<?php  print render($page['fpfreelessons']);?>
 	</div> <!--end of carousal4-->
 	
-	
-	<div id="kfpinfo">
-		<?php  print render($page['locationinfo']);?>
-	</div><!--end of kfpinfo-->
-	<div id="fplocationevents">
-		<?php  print render($page['fpevents']);?>
-	</div><!--end of fplivingwisdom-->
-	<div id="fplocationclasses">
-		<?php  print render($page['fpclasses']);?>
-	</div><!--end of fplearn-->
 <div id="SocialMediaWrapper">
 		<div id="SocialMedia">
 			<div id="fpSocialMediaBlock1"><span class="icon-twitter"></span><?php  print render($page['ktweet']);?></div>
