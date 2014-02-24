@@ -767,7 +767,6 @@ ul.masonry{
     font-size: 28px;
     line-height: 28px;
     margin-left: 10px;
-    text-decoration: none;
     text-transform: capitalize;
 }
 .viewAll {
@@ -779,8 +778,6 @@ ul.masonry{
 #teachingResultSection .parent_topic .viewAll a {
     color: #127795;
     font-size: 14px;
-    line-height: 28px;
-    margin-left: 10px;
     text-transform: lowercase;
 }
 .descriptionEvents {
@@ -1218,14 +1215,14 @@ h3 {
     text-transform:uppercase;
     margin: 48px 0 12px;
 }
-.title {
-    font-weight:normal; 
-    font-size:30px;
-    line-height: 24px;
-    color:$colorParagraph;
-    text-align:left;
-    text-transform:uppercase;
-}
+// .title {
+//     font-weight:normal; 
+//     font-size:30px;
+//     line-height: 24px;
+//     color:$colorParagraph;
+//     text-align:left;
+//     text-transform:uppercase;
+// }
 /****************END Text editor styles****************/
 
 /****************Multimedia pages**********************/
