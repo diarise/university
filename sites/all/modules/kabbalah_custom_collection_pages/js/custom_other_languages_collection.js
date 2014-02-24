@@ -63,13 +63,13 @@ var Slide = function(elem, options){
                                         + "<ul class = 'ulStyle'>";
 
                         $.each(listCont, function(index, value){      // add all images of each row
-                            rowContent += "<li class = " + '"' + "eachCont" + " " + value.node_type + '"' + ">"
+                           rowContent += "<li class = 'eachCont'>"
                                             + "<span class = 'imagesCont'>"
                                                 + "<img src = " + value.image_link + " class = 'theImage'>"
                                                 + "<a href =" + value.path + ">" 
                                                     + "<span class ='theDescCont'>"
                                                         + "<span class='theTitle'>"
-                                                            + "<span class= '" + value.media_type +"'></span>"                                                        
+                                                            + "<span class= '" + value.media_type +"'></span>"                                                      
                                                             + "<span class = 'theJsonTitle'>"
                                                                 + value.title
                                                             + "</span>" 
@@ -82,14 +82,16 @@ var Slide = function(elem, options){
 															+ "<span class= '" + value.membership +"'></span>"
                                                         + "</span>"														
                                                         + "<span class='theTeaser'>";
-                            if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";
-                            rowContent += "<span class = 'readMore'>"
-                                                                + "read more"
-                                                            + "</span>"
-                                                        + "</span>"
-                                                    + "</span>"
-                                                + "</a>"  
-                                            + "</span>" 
+														
+								if( value.teaser !== null) rowContent += "<p>" +value.teaser + "</p>";						
+                                                            
+								rowContent  += "<span class = 'readMore'>"
+                                                  + "read more" 
+                                                  + "</span>"
+                                              + "</span>"
+                                            + "</span>"
+                                                +"</a>"
+                                            + "</span>"  
                                         + "</li>";
 
                         });
@@ -98,16 +100,16 @@ var Slide = function(elem, options){
                     setSlideContent.html(rowContent);
 
                     $.each($(".eachCont"), function(){
-                        titleHeight = $(this).find(".theTitle").outerHeight();
+                        titleHeight = $(this).find(".theJsonTitle").outerHeight();
                         topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                     
                         $(this).find(".theDescCont").css ({
-                            "margin-top": -(titleHeight + topicHeight + 14),
+                            "margin-top": -(titleHeight + topicHeight + 10),
                         });                                
 
                         $(this).find(".imagesCont").hover(         //hove effect of the each image                                                
                             function () {
-                                titleHeight = $(this).find(".theTitle").outerHeight();
+                                titleHeight = $(this).find(".theJsonTitle").outerHeight();
                                 topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
 
                                 $(this).find(".theDescCont").stop().animate({ 
@@ -117,11 +119,11 @@ var Slide = function(elem, options){
                             },
 
                             function () {
-                                titleHeight = $(this).find(".theTitle").outerHeight();
+                                titleHeight = $(this).find(".theJsonTitle").outerHeight();
                                 topicHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
                                 
                                 $(this).find(".theDescCont").stop().animate({ 
-                                    marginTop: -(titleHeight + topicHeight + 14)
+                                    marginTop: -(titleHeight + topicHeight + 10)
                                 }, 350);    
                             }
                         );
@@ -429,34 +431,6 @@ var Slide = function(elem, options){
             }
         }); // end of ajax
 
-        /* Adding Click events for Filter */             
-            $("#allBtn").click(function() {
-                $("#articlesBtn, #videoBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".video").css("display", "inline-block");
-                $(".article").css("display", "inline-block");
-                reziseRightArrow();                         
-            });
-
-            $("#articlesBtn").click(function() {
-                $("#allBtn, #videoBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".video").css("display", "none");
-                $(".article").css("display", "inline-block");
-                reziseRightArrow(); 
-             
-            });
-            
-            
-            $("#videoBtn").click(function() {
-                $("#articlesBtn, #allBtn").css("color", "#999999");
-                $(this).css("color", "#D50524");
-                $(".article").css("display", "none");
-                $(".video").css("display", "inline-block");
-               reziseRightArrow(); 
-                                    
-            });                                
-        /* End of Click events */  
     }; //end of render function
 }; // end of Slide function
 
