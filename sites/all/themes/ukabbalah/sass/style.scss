@@ -779,8 +779,6 @@ ul.masonry{
     color: #8B8888;
     font-size: 16px;
     line-height: 28px;
-    // margin-top: 3px!important;
-    // margin-bottom: 2px!important;
     padding-left: 18px;
     text-align: left;
 }
@@ -796,10 +794,6 @@ ul.masonry{
 #teachingResultSection .carousel .ulStyle {
     padding: 0;
 }
-// #teachingResultSection .imagesCont a {
-//     height: auto !important;
-//     text-decoration: none !important;
-// }
 .jsonTitle a {
     color: #433A3A;
     font-size: 15px;
@@ -1559,7 +1553,6 @@ h3 {
     font-size: 14px;
     line-height: 26px;
     text-transform: uppercase;
-    // text-decoration: none;
     display: block;
 }
 .priceLogin a {
@@ -1787,7 +1780,6 @@ h3 {
 .lessonCollectionSection table thead tr a{
     font-size: 12px;
     color: $colorRed; 
-    // text-align: left;
     font-weight: normal!important;
     background: none!important
 }
@@ -2335,7 +2327,6 @@ div.jp-audio{
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
-    z-index: 140;
     top: 46px;
     width: 100%!important;
     margin: auto;
