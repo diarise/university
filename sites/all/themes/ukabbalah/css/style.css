@@ -1006,8 +1006,6 @@ ul.masonry {
   color: #8B8888;
   font-size: 16px;
   line-height: 28px;
-  margin-top: 3px !important;
-  margin-bottom: 2px !important;
   padding-left: 18px;
   text-align: left;
 }
@@ -1027,12 +1025,6 @@ ul.masonry {
 /* line 796, ../sass/style.scss */
 #teachingResultSection .carousel .ulStyle {
   padding: 0;
-}
-
-/* line 799, ../sass/style.scss */
-#teachingResultSection .imagesCont a {
-  height: auto !important;
-  text-decoration: none !important;
 }
 
 /* line 803, ../sass/style.scss */
@@ -2034,7 +2026,6 @@ h3 a {
   font-size: 14px;
   line-height: 26px;
   text-transform: uppercase;
-  text-decoration: none;
   display: block;
 }
 
@@ -2362,7 +2353,6 @@ h3 a {
 .lessonCollectionSection table thead tr a {
   font-size: 12px;
   color: #9c1f19;
-  text-align: left;
   font-weight: normal !important;
   background: none !important;
 }
