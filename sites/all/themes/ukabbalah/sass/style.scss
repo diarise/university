@@ -37,8 +37,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: $fontFace;
-    -webkit-font-smoothing: antialiased;
-  
+    -webkit-font-smoothing: antialiased; 
 }
 p {
     font-weight: normal;
@@ -259,8 +258,7 @@ ul li {
     width: 280px;
   margin-top: 34px;
   margin-left: 40px;
-  display: block;
- /* This needs to be set or some font faced fonts look bold on Mac. */    
+  display: block;    
 }
 .slidesSubTitle{
     font-family: $fontFaceLight;
@@ -273,7 +271,6 @@ ul li {
     margin-top: 9px;
   margin-left: 40px;
   display: block;
- /* This needs to be set or some font faced fonts look bold on Mac. */
 }
 .slidesBody{
     font-family: $fontFaceLight;
@@ -285,7 +282,6 @@ ul li {
     margin-top: 8px;
   margin-left: 40px;
   display: block;
- /* This needs to be set or some font faced fonts look bold on Mac. */
 }
 .slidesBody p{
   font-family: $fontFaceLight;
@@ -303,7 +299,6 @@ ul li {
   width: 280px;
   text-decoration: none;
   margin-left: 20px;
- /* This needs to be set or some font faced fonts look bold on Mac. */
 }
 .slidesReadMore a:hover {
     color:$colorWhite;
@@ -575,7 +570,6 @@ background-color:#653a24;
 }
 #footerFlagFindWrapper {
     color: #71DFFF;
-    font-size: 14px;
     font-weight: bold;
     line-height: 22px;
     text-align: left;
@@ -767,7 +761,6 @@ ul.masonry{
     font-size: 28px;
     line-height: 28px;
     margin-left: 10px;
-    text-decoration: none;
     text-transform: capitalize;
 }
 .viewAll {
@@ -779,16 +772,12 @@ ul.masonry{
 #teachingResultSection .parent_topic .viewAll a {
     color: #127795;
     font-size: 14px;
-    line-height: 28px;
-    margin-left: 10px;
     text-transform: lowercase;
 }
 .descriptionEvents {
     color: #8B8888;
     font-size: 16px;
     line-height: 28px;
-    margin-top: 3px!important;
-    margin-bottom: 2px!important;
     padding-left: 18px;
     text-align: left;
 }
@@ -803,10 +792,6 @@ ul.masonry{
 }
 #teachingResultSection .carousel .ulStyle {
     padding: 0;
-}
-#teachingResultSection .imagesCont a {
-    height: auto !important;
-    text-decoration: none !important;
 }
 .jsonTitle a {
     color: #433A3A;
@@ -831,7 +816,6 @@ ul.masonry{
 .authors_name {
     color: #999999;
     cursor: pointer;
-    //font-family: ProxiRegular;
     font-size: 28px;
     line-height: 28px;
     margin-left: 10px;
@@ -999,13 +983,11 @@ ul.masonry{
 }
 h1#page-title {
     color: $colorTitle;
-    float: left;
     font-size: 30px;
     font-weight: normal;
     line-height: 24px;
-    margin-right: 20px;
+    margin-top: 47px;
     text-transform: uppercase;
-    width: 700px;
 }
 h2 {
     font-size:30px; 
@@ -1218,14 +1200,7 @@ h3 {
     text-transform:uppercase;
     margin: 48px 0 12px;
 }
-.title {
-    font-weight:normal; 
-    font-size:30px;
-    line-height: 24px;
-    color:$colorParagraph;
-    text-align:left;
-    text-transform:uppercase;
-}
+
 /****************END Text editor styles****************/
 
 /****************Multimedia pages**********************/
@@ -1299,7 +1274,6 @@ h3 {
     position: absolute;
     top: 0;
 }
-
 #optionVideo #eSocial{
     float: right;
     border: none;
@@ -1463,7 +1437,7 @@ h3 {
 }
 #ac-1 ~ .accordion, #ac-0 ~ .accordion  {
     height: 0;
-    overflow: auto; //hidden
+    overflow: auto;
     transition: height 0.3s ease-in-out 0s;
 }
  #classHighlights input:checked ~ .accordion, #classesDescription input:checked ~ .accordion { 
@@ -1483,6 +1457,7 @@ h3 {
 }
 .accordion {
     float: left;
+    width: 100%;
 }
 .accordion p:first-child{
   margin-top: 0;
@@ -1577,7 +1552,6 @@ h3 {
     font-size: 14px;
     line-height: 26px;
     text-transform: uppercase;
-    text-decoration: none;
     display: block;
 }
 .priceLogin a {
@@ -1607,9 +1581,6 @@ h3 {
 .divider:last-child{
 	display:none;
 }
-#authorNameMultimedia a{
-  color: $colorWhite;
-}
 #authorNameMultimedia a:hover{
   text-decoration: underline;
 }
@@ -1623,10 +1594,15 @@ h3 {
     line-height: 26px;
     text-transform: capitalize;
 }
-#topicCourse,#infoCourse{
+#topicCourseTitle {
+    display: inline !important;
+}
+#topicCourse{
     font-size: 15px;
     line-height: 26px;
     font-family: $fontFaceLight ;
+    display: inline!important;
+    text-transform: uppercase;
 }
 #infoCourse{
     line-height: 25px;
@@ -1634,7 +1610,6 @@ h3 {
 .lessonCollectionSection h2{
     font-size: 21px;
     color: $colorRed;
-    text-transform: uppercase;
     text-align: left;
     margin-bottom: 16px; 
 }
@@ -1804,7 +1779,6 @@ h3 {
 .lessonCollectionSection table thead tr a{
     font-size: 12px;
     color: $colorRed; 
-    text-align: left;
     font-weight: normal!important;
     background: none!important
 }
@@ -1941,10 +1915,6 @@ span.lessonsCourse {
     margin: auto;
     width: 940px;
 }
-.videocontent #eSocial {
-    margin: auto;
-    width: 640px!important;
-}
 .sharethis{
     border-top: 1px solid #7c7575;
     padding-top: 10px;
@@ -1972,12 +1942,6 @@ span.lessonsCourse {
 }
 #optionVideo .sharethis{
     padding-top: 0px;
-}
-#topicCourseTitle,#topicCourse{
-    display: inline!important;
-}
-#topicCourse{
-    text-transform: uppercase;
 }
 .courseDescriptionWrapper{
     margin: 23px auto;
@@ -2037,9 +2001,6 @@ span.lessonsCourse {
 }
 /***/
 div.jp-audio{
-    margin: auto;
-}
-.videocontent #eSocial{
     margin: auto;
 }
 #classResources {
@@ -2135,8 +2096,7 @@ div.jp-audio{
     padding-bottom: 7px;
     text-align: left;
     text-transform: uppercase;
-    width: inherit;
-  
+    width: inherit; 
 }
 .topicTermnDate {
     font-size: 12px;
@@ -2154,12 +2114,6 @@ div.jp-audio{
 .topicItemText span a {
     text-transform: capitalize;
     color: #127795;
-}
-#mainContentWrapper h1#page-title, 
-#courseByParentWrapper h1#page-title {
-    margin-top: 47px;
-    width: 940px;
-    float: none;
 }
 .topicItemImage a {
     height: auto !important;
@@ -2256,7 +2210,6 @@ div.jp-audio{
 .Both{
 	@extend .bothAdVdImg;
 }
-
 .teachingsTopicAndDate .Premium, 
 .teachingsTopicAndDate .Basic {
     margin-right: 0;
@@ -2303,6 +2256,7 @@ div.jp-audio{
 .preVideoImg #pipe,
 .preVideoImg #primaryTopicMultimedia,
 .preVideoImg #authorNameMultimedia,
+.preVideoImg #authorNameMultimedia a,
 .preVideoImg #dateMultimedia{
     color: $colorWhite;
 }
@@ -2372,7 +2326,6 @@ div.jp-audio{
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
-    z-index: 140;
     top: 46px;
     width: 100%!important;
     margin: auto;
