@@ -1,11 +1,20 @@
 <?php
 // $Id: page.tpl.php,v 1.4.2.6 2011/02/18 05:26:30 andregriffin Exp $
+	global $user;
+	$username = $user->name;
 ?>
 <script type="text/javascript" src="https://kabbalah.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_USlqrrzf-1988229788/6251/82/1.4.5/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=74d29eca"></script>
 	<!-- HEADER -->
 		<div id="topHeaderWrapper">
 			<div class="topHeader">
 				<div id="topImageCont"><a href="http://kabbalah.com"><img src="http://ukabbalah.com.vhost.zerolag.com/sites/all/themes/spukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
+					<div id="headerSearchLinksWrapper">
+						<div id="headerLinks">	
+							<?php print render($page['universalMenu']);?>
+							<!--end of universalMenu-->
+							<div class="donate"><a href="/donate" target="_blank">donate</a></div>
+						</div>
+					</div>		
 			</div> <!-- End of topHeader -->
 		</div> <!-- End of topHeader Wrapper -->
 		<!-- END OF HEADER -->
@@ -20,19 +29,13 @@
 						<?php print render($page['menu']);?>
 					</div>
 					<div class="donateFloat"><a target="_blank" href="http://kabbalah.com/donate">Donate</a></div>
-					<!--<div id="headerSearch"><?php //print render($page['search']); ?></div>-->
-					<div id="headerSearchLinksWrapper">
-						<div id="headerLinks">	
-							<?php if ( user_is_logged_in() ) {?>
-								<a href="">Welcome user</a> / <a href=""> Your Dashboard</a>
-							<?php } else {?>
-								<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
-							<?php }?>
-							<!--universalMenu-->
-							<?php print render($page['universalMenu']);?>
-							<!--end of universalMenu-->
-							<div class="donate"><a href="/donate" target="_blank">donate</a></div>
-						</div>
+					<div id="headerSearch">
+					<?php if ( user_is_logged_in() ) {?>
+						<a href="http://profile.kabbalah.com/saml_login">Welcome <?php print $username; ?></a> / <a href="http://profile.kabbalah.com/saml_login"> Your Dashboard</a>
+					<?php } else {?>
+						<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
+					<?php }?>
+					<?php //print render($page['search']); ?>
 					</div>
 				</div>	
 			</div><!--end of topHeader-->
