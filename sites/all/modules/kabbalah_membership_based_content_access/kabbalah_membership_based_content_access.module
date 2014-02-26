@@ -38,8 +38,8 @@
 		else 
 		if( $user->uid == 1  || ($user_role == "editor") ) {	return true;} // For Admin user return true
 		
-		//return false;
-		return " article_membership : ".$article_membership." :: user_role : ".$user_role;	
+		return false;
+		//return " article_membership : ".$article_membership." :: user_role : ".$user_role;	
 	
 	}
 

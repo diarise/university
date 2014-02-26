@@ -1,8 +1,5 @@
 <?php 
 	
-	global $user;
-	print_r( $user );
-	
 	print get_membership_based_content_body( $node->nid )."<br>"; 
 	
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
@@ -35,7 +32,7 @@
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
 <div id="wrapperVideoSection"><!--start video wrapper section-->
 	<?php } 
-	if (user_is_logged_in() ) {?>	
+	if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) {?>	
 
 	<div class="videocontent"><!--start of video content when user log in-->
 		<?php
