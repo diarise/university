@@ -1,5 +1,8 @@
 <?php 
 	
+	global $user;
+	print_r( $user );
+	
 	print get_membership_based_content_body( $node->nid )."<br>"; 
 	
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
