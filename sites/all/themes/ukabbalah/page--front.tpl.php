@@ -6,19 +6,6 @@
 		<div id="topHeaderWrapper">
 			<div class="topHeader">
 				<div id="topImageCont"><a href="http://kabbalah.com"><img src="http://ukabbalah.com.vhost.zerolag.com/sites/all/themes/spukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
-					<div id="headerSearchLinksWrapper">
-					<div id="headerLinks">	
-						<?php if ( user_is_logged_in() ) {?>
-							<a href="">Welcome user</a> / <a href=""> Your Dashboard</a>
-						<?php } else {?>
-							<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
-						<?php }?>
-						<!--universalMenu-->
-						<?php print render($page['universalMenu']);?>
-						<!--end of universalMenu-->
-						<div class="donate"><a href="/donate" target="_blank">donate</a></div>
-					</div>
-				</div>		
 			</div> <!-- End of topHeader -->
 		</div> <!-- End of topHeader Wrapper -->
 		<!-- END OF HEADER -->
@@ -33,7 +20,20 @@
 						<?php print render($page['menu']);?>
 					</div>
 					<div class="donateFloat"><a target="_blank" href="http://kabbalah.com/donate">Donate</a></div>
-					<div id="headerSearch"><?php print render($page['search']); ?></div>
+					<!--<div id="headerSearch"><?php //print render($page['search']); ?></div>-->
+					<div id="headerSearchLinksWrapper">
+						<div id="headerLinks">	
+							<?php if ( user_is_logged_in() ) {?>
+								<a href="">Welcome user</a> / <a href=""> Your Dashboard</a>
+							<?php } else {?>
+								<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
+							<?php }?>
+							<!--universalMenu-->
+							<?php print render($page['universalMenu']);?>
+							<!--end of universalMenu-->
+							<div class="donate"><a href="/donate" target="_blank">donate</a></div>
+						</div>
+					</div>
 				</div>	
 			</div><!--end of topHeader-->
 		</div> <!-- End of mainContentLogoMenuWrapper -->
