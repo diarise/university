@@ -30,13 +30,13 @@
 		foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
 		
 		//Comparing the user role and node membership 
-		if( $user_role == "basic" && $article_membership == "basic") {	return true;}
+		if( $user_role == "basic" && ( $article_membership == "Basic" || $article_membership == "Free")) {	return true;}
 		else 
-		if( $user_role == "premium" && ($article_membership == "basic" || $article_membership == "premium") )  {	return true;}
+		if( $user_role == "premium" && ($article_membership == "Basic" || $article_membership == "Premium" || $article_membership == "Free" ) )  {	return true;}
 		else 
-		if( $user_role == "premium plus" && ($article_membership == "basic" || $article_membership == "premium" || $article_membership == "premium plus") ) {	return true;}
+		if( $user_role == "premium_plus" && ($article_membership == "Basic" || $article_membership == "Premium" || $article_membership == "Premium Plus" || $article_membership == "Free" ) ) {	return true;}
 		else 
-		if( $user->uid == 1  || ($user_role == "editor") || ($article_membership == "free")) {	return true;} // For Admin user return true
+		if( $user->uid == 1  || ($user_role == "editor") ) {	return true;} // For Admin user return true
 		
 		return false;
 		//return " article_membership : ".$article_membership." :: user_role : ".$user_role;	
