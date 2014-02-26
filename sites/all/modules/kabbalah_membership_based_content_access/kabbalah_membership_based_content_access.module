@@ -61,7 +61,7 @@
 		// $teaser_html .= "</div>";
 		// $teaser_html .= "</div>";
 		
-		return " article_membership : "$article_membership." :: user_role : ".$user_role;	
+		return " article_membership : ".$article_membership." :: user_role : ".$user_role;	
 	
 	}
 
