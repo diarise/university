@@ -1,7 +1,7 @@
 <?php 
 	
-	global $user;
-	print_r( $user );
+	//global $user;
+	//print_r( $user );
 	
 	print get_membership_based_content_body( $node->nid )."<br>"; 
 	
