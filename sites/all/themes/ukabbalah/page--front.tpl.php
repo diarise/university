@@ -8,14 +8,11 @@
 				<div id="topImageCont"><a href="http://kabbalah.com"><img src="http://ukabbalah.com.vhost.zerolag.com/sites/all/themes/spukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
 					<div id="headerSearchLinksWrapper">
 					<div id="headerLinks">	
-						<?php //if ($user->uid == 0) {?>
-						<!--<a href="/saml_login">Log In</a>  <a href="/cart">Cart</a>-->  
-						<!--<a href="/user/login">Help</a>-->  
-
-						<!--<a href="/cart">Language</a>-->
-						<!--<?php //} else {?>
-							<a href="/logout">Log Out</a>  <a href="/cart">Cart</a>  <a href="/user/login">Help</a>  <a href="/cart">Language</a>
-						<?php //}?>-->
+						<?php if ( user_is_logged_in() ) {?>
+							<a href="">Welcome user</a> / <a href=""> Your Dashboard</a>
+						<?php } else {?>
+							<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
+						<?php }?>
 						<!--universalMenu-->
 						<?php print render($page['universalMenu']);?>
 						<!--end of universalMenu-->

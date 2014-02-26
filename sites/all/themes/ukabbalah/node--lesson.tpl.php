@@ -1,7 +1,5 @@
 <?php 
-	
-	print get_membership_based_content_body( $node->nid )."<br>"; 
-	
+
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
 	
