@@ -1,0 +1,69 @@
+<?php
+	
+	/* Function returns content body based on the User Role and the Node Membership Type
+     * Input : $node_id
+	 * Output: Content Body or Content Body Teaser	
+     */
+	
+	function get_membership_based_content_body( $node_id ) 
+	{
+		
+		global $user;
+		$node_data = node_load($node_id);
+		$user_role = "";
+		$article_membership ="";
+		
+		// // Getting the logged in user role 
+		// if (array_key_exists('3', $user->roles) ) {	$user_role = $user->roles['3'];	}
+		// else 
+		// if (array_key_exists('4', $user->roles) ) {	$user_role = $user->roles['4'];	}
+		// else 
+		// if (array_key_exists('5', $user->roles) ) {	$user_role = $user->roles['5']; }
+		// else
+		// if (array_key_exists('7', $user->roles) ) {	$user_role = $user->roles['7']; }
+		
+		
+		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node_data, 12 );
+		foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
+		
+		
+		// // Getting the content type membership from node taxonomy
+		// foreach ($node_data->taxonomy as $term) 
+		// {
+		  // if ( $term->vid == 1 ) // Taxonomy vid for Membership is 1
+		  // {
+			// $article_membership = $term->name;
+		  // }
+		// }
+		
+		// Comparing the user role and node membership 
+		// if( $user_role == "basic" && $article_membership == "basic") {	return $node_data->body;}
+		// else 
+		// if( $user_role == "premium" && ($article_membership == "basic" || $article_membership == "premium") )  {	return $node_data->body;}
+		// else 
+		// if( $user_role == "premium plus" && ($article_membership == "basic" || $article_membership == "premium" || $article_membership == "premium plus") ) {	return $node_data->body;}
+		// else 
+		// if( $user->uid == 1  || ($user_role == "editor") || ($article_membership == "free")) {	return $node_data->body;} // For Admin user return true
+		
+		// $teaser_html  =  "<div id='nodeTeaserWrapper'>";
+		// $teaser_html .= "<div id='nodeTeaser'>".node_teaser($node_data->body, $format = NULL, $size = 200)."</div>";
+		// $teaser_html .= "<div id='nodeBottomBlockWrapper'>";
+		// $teaser_html .= "<div id='nodeBlock1'>";
+		// $teaser_html .= "<div id='nodeBlock1Title'>LOG IN TO READ MORE</div>";
+		// $teaser_html .= "<div id='nodeBlock1Desc'>Members can access the full version of this article by logging in.</div>";
+		// $teaser_html .= "<div id='nodeBlock1Btn'><a href='/saml_login'><img src='/sites/all/themes/livingwisdom/images/button-login-129x35.png' alt='image' /></a></div>";
+		// $teaser_html .= "</div>";
+		// $teaser_html .= "<div id='nodeBlock2'>";
+		// $teaser_html .= "<div id='nodeBlock2Title'>NOT YET A MEMBER?</div>";
+		// $teaser_html .= "<div id='nodeBlock2Desc'>If you are not a member, subscribe now and get access to our content,videos, articles and more.</div>";
+		// $teaser_html .= "<div id='nodeBlock2Btn'><a href=''><img src='/sites/all/themes/livingwisdom/images/button-see-plans-129x35.png' alt='image' /></a></div>";
+		// $teaser_html .= "</div>";
+		// $teaser_html .= "</div>";
+		// $teaser_html .= "</div>";
+		
+		return $article_membership;	
+	
+	}
+
+
+?>

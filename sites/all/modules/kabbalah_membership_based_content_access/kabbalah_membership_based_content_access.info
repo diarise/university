@@ -1,0 +1,7 @@
+name = Kabbalah Membership Based Content Access
+description = "This module verifies the role of the user and the membership type of a content and give respective access."
+core = 7.x
+version = "7.22"
+core = "7.x"
+package = Kabbalah Custom Modules
+
