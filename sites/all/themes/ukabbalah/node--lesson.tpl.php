@@ -97,8 +97,12 @@
 			</div>
 		</div><!--end of preview video description-->
 		<div id="wrapperPrice"><!--start of log in-->
-			<span class="buttonMember"><a href="#">become a member</a></span>
-			<span class="priceLogin"><a href="#">log-in</a></span>
+			<?php if( user_is_logged_in() ) {?>
+				<span class="buttonMember"><a href="#">upgrade your membership</a></span>
+			<?php } else { ?>
+				<span class="buttonMember"><a href="#">become a member</a></span>
+				<span class="priceLogin"><a href="#">log-in</a></span>
+			<?php } ?>
 		</div><!--end of log in-->
 		<div class="sharethis"><!--start of social media icone-->
 <span class="bookmark">
