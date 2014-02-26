@@ -2,14 +2,10 @@
 	
 	/* Function returns content body based on the User Role and the Node Membership Type
      * Input : $node_id
-	 * Output: Content Body or Content Body Teaser	
+	 * Output: Boolean true or false	
      */
-	 
-	// [roles] => Array
-        // (
-            // [2] => authenticated user
-            // [3] => administrator
-        // ) 
+
+	// [roles] => Array( [2] => authenticated user , [3] => administrator )	
 	
 	function get_membership_based_content_body( $node_id ) 
 	{
@@ -46,6 +42,5 @@
 		//return " article_membership : ".$article_membership." :: user_role : ".$user_role;	
 	
 	}
-
 
 ?>
