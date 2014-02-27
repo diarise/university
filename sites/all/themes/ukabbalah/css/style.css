@@ -1,6 +1,6 @@
 @charset "IBM437";
 /* line 394, icon/*.png */
-.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .buttonMember, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
+.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .buttonMember, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .Basic, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
   background: url('../images/icon-s48ff81feaf.png') no-repeat;
 }
 
@@ -2880,7 +2880,7 @@ div.jp-audio {
 }
 
 /* line 2175, ../sass/style.scss */
-.vidImg, .Videos, .theDescCont .Video, .Premium, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
+.vidImg, .Videos, .theDescCont .Video, .Premium, .Basic, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
   height: 13px;
   width: 16px;
   float: left;
@@ -2890,75 +2890,75 @@ div.jp-audio {
 }
 
 /* line 2189, ../sass/style.scss */
-.Premium {
+.Premium, .Basic {
   background-position: 0 -1455px;
   width: 11px;
   float: right;
 }
 
-/* line 2195, ../sass/style.scss */
+/* line 2198, ../sass/style.scss */
 .audioImg, .Audios, .theDescCont .Audio {
   background-position: 0 -1361px;
 }
 
-/* line 2205, ../sass/style.scss */
+/* line 2208, ../sass/style.scss */
 .bothAdVdImg, .Both {
   background-position: 0 -309px;
   width: 35px;
 }
 
-/* line 2214, ../sass/style.scss */
-.teachingsTopicAndDate .Premium,
+/* line 2217, ../sass/style.scss */
+.teachingsTopicAndDate .Premium, .teachingsTopicAndDate .Basic,
 .teachingsTopicAndDate .Basic {
   margin-right: 0;
   margin-top: 0;
 }
 
-/* line 2218, ../sass/style.scss */
+/* line 2221, ../sass/style.scss */
 .theTitle {
   float: left;
   margin-left: 10px;
 }
 
-/* line 2222, ../sass/style.scss */
+/* line 2225, ../sass/style.scss */
 .teachersPath, .readMore {
   color: #127795;
 }
 
-/* line 2225, ../sass/style.scss */
+/* line 2228, ../sass/style.scss */
 .rightArrowStyleHome {
   position: relative;
 }
 
 /***/
-/* line 2230, ../sass/style.scss */
+/* line 2233, ../sass/style.scss */
 #teachingsSectionHeaderBar .lessonsCourse {
   display: block;
 }
 
-/* line 2233, ../sass/style.scss */
+/* line 2236, ../sass/style.scss */
 #authorDDWrapper, #topicDDWrapper {
   float: left;
 }
 
-/* line 2236, ../sass/style.scss */
+/* line 2239, ../sass/style.scss */
 #teachings_teachersDD, #teachings_topicDD {
   cursor: pointer;
   height: 29px;
 }
 
-/* line 2240, ../sass/style.scss */
+/* line 2243, ../sass/style.scss */
 .preVideoImg {
   width: 940px;
   margin: 20px auto auto;
 }
 
-/* line 2244, ../sass/style.scss */
+/* line 2247, ../sass/style.scss */
 .preVideoImg img {
   float: left;
 }
 
-/* line 2247, ../sass/style.scss */
+/* line 2250, ../sass/style.scss */
 .preVideoImg .videotitles {
   float: right;
   width: 290px;
@@ -2967,7 +2967,7 @@ div.jp-audio {
   margin-top: 0;
 }
 
-/* line 2260, ../sass/style.scss */
+/* line 2263, ../sass/style.scss */
 .preVideoImg #titleMultimedia,
 .preVideoImg #courseNameMultimedia,
 .preVideoImg #pipe,
@@ -2980,46 +2980,46 @@ div.jp-audio {
   color: white;
 }
 
-/* line 2263, ../sass/style.scss */
+/* line 2266, ../sass/style.scss */
 .preVideoImg #wrapperInfoMultimedia, .preVideoImg #wrapperAuthorDate {
   width: 290px;
 }
 
-/* line 2266, ../sass/style.scss */
+/* line 2269, ../sass/style.scss */
 .preVideoImg #authorNameMultimedia, .preVideoImg #dateMultimedia {
   text-align: left;
 }
 
-/* line 2269, ../sass/style.scss */
+/* line 2272, ../sass/style.scss */
 .preVideoImg .pipe {
   display: none;
 }
 
-/* line 2272, ../sass/style.scss */
+/* line 2275, ../sass/style.scss */
 .preVideoImg #wrapperPrice {
   width: 275px;
   margin-left: 30px;
 }
 
-/* line 2276, ../sass/style.scss */
+/* line 2279, ../sass/style.scss */
 .preVideoImg .sharethis {
   float: right;
   width: 290px;
   margin-top: 16px;
 }
 
-/* line 2281, ../sass/style.scss */
+/* line 2284, ../sass/style.scss */
 .transcript-content {
   width: 605px;
 }
 
-/* line 2284, ../sass/style.scss */
+/* line 2287, ../sass/style.scss */
 .audioSection .preVideoImg img {
   width: 620px;
   height: 349px;
 }
 
-/* line 2288, ../sass/style.scss */
+/* line 2291, ../sass/style.scss */
 .bookmark {
   float: right;
   width: 140px;
@@ -3027,24 +3027,24 @@ div.jp-audio {
   font-size: 15px;
   text-align: right;
 }
-/* line 2294, ../sass/style.scss */
+/* line 2297, ../sass/style.scss */
 .bookmark a {
   color: #433a3a;
 }
 
-/* line 2298, ../sass/style.scss */
+/* line 2301, ../sass/style.scss */
 .flag-message {
   left: -169px !important;
   text-align: right;
 }
 
-/* line 2302, ../sass/style.scss */
+/* line 2305, ../sass/style.scss */
 .flag-wrapper {
   width: 140px;
 }
 
 /**start scrollling filter**/
-/* line 2306, ../sass/style.scss */
+/* line 2309, ../sass/style.scss */
 .scrollingTitle {
   background: #fff;
   position: fixed !important;
@@ -3057,18 +3057,18 @@ div.jp-audio {
 }
 
 @media only screen and (max-width: 1000px) {
-  /* line 2317, ../sass/style.scss */
+  /* line 2320, ../sass/style.scss */
   .scrollingTitle {
     padding-left: 20px !important;
   }
 }
 @media only screen and (min-width: 1000px) {
-  /* line 2322, ../sass/style.scss */
+  /* line 2325, ../sass/style.scss */
   .scrollingFilter {
     padding-left: 0px !important;
   }
 }
-/* line 2326, ../sass/style.scss */
+/* line 2329, ../sass/style.scss */
 .scrollingFilter, .scrollingTermDesc, .scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
@@ -3078,19 +3078,19 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2334, ../sass/style.scss */
+/* line 2337, ../sass/style.scss */
 .scrollingFilter {
   padding-bottom: 10px !important;
 }
 
-/* line 2337, ../sass/style.scss */
+/* line 2340, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   max-width: 1580px;
   min-width: 940px;
   margin: auto;
 }
 
-/* line 2343, ../sass/style.scss */
+/* line 2346, ../sass/style.scss */
 .scrollingTitle .teachingsBarInnerWrapper,
 .scrollingFilter .teachingsBarInnerWrapper {
   width: auto !important;

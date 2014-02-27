@@ -2192,6 +2192,9 @@ div.jp-audio{
     width: 11px;
     float: right;
 }
+.Basic{
+  @extend .Premium ;
+}
 .audioImg{
     @extend .vidImg;
     @include icon-sprite("icon_audio");
