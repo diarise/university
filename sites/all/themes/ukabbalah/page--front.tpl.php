@@ -31,7 +31,7 @@
 					<div class="donateFloat"><a target="_blank" href="http://kabbalah.com/donate">Donate</a></div>
 					<div id="headerSearch">
 					<?php if ( user_is_logged_in() ) {?>
-						<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a href="http://profile.kabbalah.com/saml_login"> Your Dashboard</a>
+						<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a href="/user/logout"> Log out</a>
 					<?php } else {?>
 						<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
 					<?php }?>
