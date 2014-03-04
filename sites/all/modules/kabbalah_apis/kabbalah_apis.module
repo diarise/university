@@ -637,7 +637,7 @@
 												'path' => $path , 
 												'teaser' => $teaser , 
 												'author' => $author_name , 
-												'date_created' => date( 'F jS, Y',$record->changed )
+												'date_created' => date( 'F jS, Y',$record->changed ),
 												'membership' => $membership,
 												//'media_type' => $media_type
 											  );							  	
