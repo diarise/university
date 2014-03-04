@@ -618,10 +618,10 @@
 	
 					$title = $record->title;
 					$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-					// $teaser  = get_clean_body( $record->body_value , 100 );
-					// $path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
-					// $node = node_load($record->nid , NULL, TRUE);
-					// $image_link = $record->field_image_cdn_link_value;
+					$teaser  = get_clean_body( $record->body_value , 100 );
+					$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
+					$node = node_load($record->nid , NULL, TRUE);
+					$image_link = $record->field_image_cdn_link_value;
 					
 					// // if( $node->type == "course" ) {
 					
@@ -651,9 +651,9 @@
 					// // }
 
 					$vname_articles[] = array(  'title' => $title , 
-												//'image_link' => $image_link ,
-												//'path' => $path , 
-												//'teaser' => $teaser , 
+												'image_link' => $image_link ,
+												'path' => $path , 
+												'teaser' => $teaser , 
 												//'author' => $author_name , 
 												//'date_created' => date( 'F jS, Y',$record->changed )
 												//'membership' => $membership,
