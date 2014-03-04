@@ -28,6 +28,12 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		$items['live-events'] = array(               // Made this a PAGE
+			'page callback'      => 'getLiveEventsHtmlStructure',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
 			
 		return $items;
 		
@@ -97,6 +103,23 @@
 		return $resultHTML;	
 	}
 	
+	// Live Events Page HTML
+	function getLiveEventsHtmlStructure() {
+
+		drupal_add_js(drupal_get_path('module', 'kabbalah_custom_collection_pages') .'/js/custom_live_events_collection.js');
+		$resultHTML = "";
+		$resultHTML.="<div id='teachingsControlSection'>";
+		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
+		$resultHTML.="<span id='teachingsSectionTitle'>".t('LIVE EVENTS')."</span>";
+		$resultHTML.="</div>";
+		$resultHTML.="</div>";
+		$resultHTML.= headerBarSectionHTML();
+		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
+		$resultHTML.="<div id='teachingResultSection'></div>";
+		return $resultHTML;	
+	}
+	
+
 	// Header Bar Section HTML
 	function headerBarSectionHTML() {
 	
