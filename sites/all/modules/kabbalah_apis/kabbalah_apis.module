@@ -661,8 +661,8 @@
 											  );							  
 			}
 		}	
-		//echo json_encode( "articles" => $vname_articles , "term_description" => $p_topic_description );
-		echo json_encode( $vname_articles );
+		echo json_encode( "articles" => $vname_articles , "term_description" => $p_topic_description );
+		
 	}
 	
 	
