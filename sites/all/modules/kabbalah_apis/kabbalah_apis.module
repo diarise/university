@@ -594,10 +594,11 @@
 	
 	function getCoursesByLiveEventsJson() {
 	
-		echo "test";
+		$vnames = getTermNames( 17 );
+		$result_array = array();
 		
-		// $vnames = getTermNames( 17 );
-		// $result_array = array();
+		print_r( $vnames );
+		
 		// foreach( $vnames as $id => $vname)	{
 					
 			// $sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,b.body_value,n.changed,ti.tid,td.name ".
