@@ -98,7 +98,6 @@
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.= headerBarSectionHTML();
-		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
 		$resultHTML.="<div id='teachingResultSection'></div>";
 		return $resultHTML;	
 	}
@@ -114,7 +113,6 @@
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.= headerBarSectionHTML();
-		$resultHTML.="<div id='beginnersCoursesOnCollection'></div>";
 		$resultHTML.="<div id='teachingResultSection'></div>";
 		return $resultHTML;	
 	}
