@@ -623,6 +623,9 @@
 					$node = node_load($record->nid , NULL, TRUE);
 					$image_link = $record->field_image_cdn_link_value;
 					
+					$vocab_terms5 = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+					foreach( $vocab_terms5 as $t )	{	$membership = $t->name; }
+					
 					$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, $vid );
 					foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
 					
@@ -635,7 +638,7 @@
 												'teaser' => $teaser , 
 												'author' => $author_name , 
 												'date_created' => date( 'F jS, Y',$record->changed )
-												//'membership' => $membership,
+												'membership' => $membership,
 												//'media_type' => $media_type
 											  );							  	
 			}
