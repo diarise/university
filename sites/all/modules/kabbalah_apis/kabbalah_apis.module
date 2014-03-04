@@ -613,6 +613,7 @@
 			
 			$result = db_query( $sql );	
 		
+			$vname_articles = array();
 			foreach( $result as $record )	{
 	
 					$title = $record->title;

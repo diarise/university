@@ -69,7 +69,7 @@ var Slide = function(elem, options){
                                                 + "<a href =" + value.path + ">" 
                                                     + "<span class ='theDescCont'>"
                                                         + "<span class='theTitle'>"
-                                                            + "<span class= '" + value.media_type +"'></span>"                                                      
+                                                           // + "<span class= '" + value.media_type +"'></span>"                                                      
                                                             + "<span class = 'theJsonTitle'>"
                                                                 + value.title
                                                             + "</span>" 
@@ -79,7 +79,7 @@ var Slide = function(elem, options){
                                                             + value.author
                                                             + " | "
                                                             + value.date_created
-															+ "<span class= '" + value.membership +"'></span>"
+															//+ "<span class= '" + value.membership +"'></span>"
                                                         + "</span>"														
                                                         + "<span class='theTeaser'>";
 														
