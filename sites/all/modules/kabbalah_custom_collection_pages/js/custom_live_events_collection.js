@@ -56,9 +56,9 @@ var Slide = function(elem, options){
                                             + "</a>"
                                             + "</span>"
                                         + "</div>"
-                                        + "<div class= 'descriptionEvents'>"
-                                            + headObjCont.term_desc 
-                                        + "</div>" 
+                                        //+ "<div class= 'descriptionEvents'>"
+                                        //    + headObjCont.term_desc 
+                                        //+ "</div>" 
                                         + "<div class = 'slideWrapper'>"                                      
                                         + "<ul class = 'ulStyle'>";
 
