@@ -623,6 +623,16 @@
 					$node = node_load($record->nid , NULL, TRUE);
 					$image_link = $record->field_image_cdn_link_value;
 					
+					$oDate = new DateTime($record->field_event_date_value);
+					//$oDate->modify("-25200 second");
+					$sDate = $oDate->format('F jS, Y');
+					
+					$oDate2 = new DateTime($record->field_event_date_value2);
+					//$oDate2->modify("-25200 second");
+					$sDate2 = $oDate2->format('F jS, Y');
+					
+					
+					
 					$vocab_terms5 = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 					foreach( $vocab_terms5 as $t )	{	$membership = $t->name; }
 					
@@ -637,7 +647,7 @@
 												'path' => $path , 
 												'teaser' => $teaser , 
 												'author' => $author_name , 
-												'date_created' => date( 'F jS, Y',$record->changed ),
+												'date_created' => $sDate ,
 												'membership' => $membership,
 												//'media_type' => $media_type
 											  );							  	
