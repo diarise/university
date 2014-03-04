@@ -596,26 +596,24 @@
 	
 		$vnames = getTermNames( 17 );
 		$result_array = array();
-		
-		print_r( $vnames );
-		
-		// foreach( $vnames as $id => $vname)	{
+		foreach( $vnames as $id => $vname)	{
 					
-			// $sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,b.body_value,n.changed,ti.tid,td.name ".
-					// "FROM {node n} ".
-					// "LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
-					// "LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
-					// "LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
-					// "LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
-					// "LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
-					// "WHERE n.status =1 ".
-					// "AND td.vid = 17 ".
-					// "AND td.name = '".$vname."' ".
-					// "AND n.type in ('live_events') ".
-					// "ORDER BY n.changed DESC";
+			$sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,b.body_value,n.changed,ti.tid,td.name ".
+					"FROM {node n} ".
+					"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
+					"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+					"LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
+					"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
+					"WHERE n.status =1 ".
+					"AND td.vid = 17 ".
+					"AND td.name = '".$vname."' ".
+					"AND n.type in ('live_events') ".
+					"ORDER BY n.changed DESC";
 			
-			// $result = db_query( $sql );			
-		
+			$result = db_query( $sql );	
+
+			echo "test".$id."<br>";	
 			// foreach( $result as $record )	{
 	
 					// $title = $record->title;
@@ -663,7 +661,7 @@
 											  // );							  
 				// }
 		
-		// }	
+		}	
 		// echo json_encode( "articles" => $vname_articles , "term_description" => $p_topic_description );
 		//echo json_encode( $result_array );
 	}
