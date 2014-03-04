@@ -611,9 +611,9 @@
 					"AND n.type in ('live_events') ".
 					"ORDER BY n.changed DESC";
 			
-			$result = db_query( $sql );	
+			//$result = db_query( $sql );	
 
-			echo "test".$id."<br>";	
+			echo  $sql."<br>";	
 			// foreach( $result as $record )	{
 	
 					// $title = $record->title;
