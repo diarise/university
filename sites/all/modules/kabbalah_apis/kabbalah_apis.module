@@ -631,11 +631,11 @@
 						// // }
 					// // }
 
-					// $vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, $vid );
-					// foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
+					$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, $vid );
+					foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
 					
-					// $vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
-					// foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
+					$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+					foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
 					
 					// // if( $node->type == "course" ) {
 					
@@ -654,8 +654,8 @@
 												'image_link' => $image_link ,
 												'path' => $path , 
 												'teaser' => $teaser , 
-												//'author' => $author_name , 
-												//'date_created' => date( 'F jS, Y',$record->changed )
+												'author' => $author_name , 
+												'date_created' => date( 'F jS, Y',$record->changed )
 												//'membership' => $membership,
 												//'media_type' => $media_type
 											  );							  
