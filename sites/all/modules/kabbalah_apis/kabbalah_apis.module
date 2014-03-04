@@ -612,12 +612,12 @@
 					"ORDER BY n.changed DESC";
 			
 			$result = db_query( $sql );	
-			echo  $sql."<br>";	
+			//echo  $sql."<br>";	
 			
-			// foreach( $result as $record )	{
+			foreach( $result as $record )	{
 	
-					// $title = $record->title;
-					// $title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+					$title = $record->title;
+					$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 					// $teaser  = get_clean_body( $record->body_value , 100 );
 					// $path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
 					// $node = node_load($record->nid , NULL, TRUE);
@@ -631,8 +631,8 @@
 						// // }
 					// // }
 
-					// $vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, $vid );
-					// foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
+					$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, $vid );
+					foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
 					
 					// $vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 					// foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
@@ -650,19 +650,18 @@
 						// // }
 					// // }
 
-					// $vname_articles[] = array(  'title' => $title , 
-												// 'image_link' => $image_link ,
-												// 'path' => $path , 
-												// 'teaser' => $teaser , 
-												// 'author' => $author_name , 
-												// 'date_created' => date( 'F jS, Y',$record->changed )
-												// //'membership' => $membership,
-												// //'media_type' => $media_type
-											  // );							  
-				// }
-		
+					$vname_articles[] = array(  'title' => $title , 
+												//'image_link' => $image_link ,
+												//'path' => $path , 
+												//'teaser' => $teaser , 
+												//'author' => $author_name , 
+												//'date_created' => date( 'F jS, Y',$record->changed )
+												//'membership' => $membership,
+												//'media_type' => $media_type
+											  );							  
+			}
 		}	
-		// echo json_encode( "articles" => $vname_articles , "term_description" => $p_topic_description );
+		echo json_encode( "articles" => $vname_articles , "term_description" => $p_topic_description );
 		//echo json_encode( $result_array );
 	}
 	
