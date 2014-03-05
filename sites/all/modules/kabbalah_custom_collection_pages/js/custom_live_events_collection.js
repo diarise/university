@@ -461,26 +461,14 @@ $(document).ready(function(){
         }
     };
 
-    $('#teachings_topicDD').change(function() {     // dropdown 
-                                
-        var cat = $("#teachings_topicDD").val();
-        var cat_id = cat.replace('cat', '');
-        //var url = "http://livingwisdom.kabbalah.com";
-        //var topic_name = $("#teachings_topicDD option:selected").text().replace(/\W/g, " ").replace(/\s+/g, "-");
-        var topic_name = $("#teachings_topicDD option:selected").text().replace(/\s+/g, "-");
-        //$(this).target = "_self";
-        //window.open(url+'/taxonomy/term/'+cat_id,'_self',false);
-        window.open('/primary-topics/'+topic_name,'_self',false);
-            
-    });
-
+   
     $('#teachings_teachersDD').change(function() {     // dropdown 
                                 
         var cat = $("#teachings_teachersDD").val();
         var cat_id = cat.replace('cat', '');
         var author_name = $("#teachings_teachersDD option:selected").text().replace(' ','-');
        //$(this).target = "_self";
-        window.open('/authors/'+author_name,'_self',false);
+        window.open('/locations/'+author_name,'_self',false);
             
     }); 
     
