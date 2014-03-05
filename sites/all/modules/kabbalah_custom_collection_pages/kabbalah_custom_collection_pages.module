@@ -173,7 +173,7 @@
 	// Locations Dropdown HTML	
 	function getLocationssDropDown() {
 		
-		$locations =  taxonomy_get_tree( 12 ); // vid = 7 for Authors
+		$locations =  taxonomy_get_tree( 17 ); // vid = 17 for Locations
 		$resultHTML = "<select id='teachings_teachersDD'>";
 		$resultHTML .="<option value='all'>All</option>";
 		foreach( $locations as $t ) {
