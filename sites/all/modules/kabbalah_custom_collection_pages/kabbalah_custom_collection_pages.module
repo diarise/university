@@ -115,7 +115,7 @@
 		$resultHTML.="<div id='teachingsSectionHeaderBar'>";
 		$resultHTML.="<div id='teachingsBarInnerWrapper'>";
 		$resultHTML.="<div id='authorDDWrapper'>";
-		$resultHTML.="<span id='teachersDDtext'>".t('Teacher')."</span>";
+		$resultHTML.="<span id='teachersDDtext'>".t('Locations')."</span>";
 		$resultHTML.="<span id='teachersDD'>".getLocationssDropDown()."</span>";
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
