@@ -162,6 +162,10 @@ ul li {
         color: $colorBrown;
         font-size: 15px;
         text-transform: uppercase;
+        @media screen and (max-width: 980px) {
+           font-size: 13px;
+           padding: 0 3px;
+  }
     }
     &.first{
         margin-left: 0 !important;
@@ -2334,14 +2338,14 @@ div.jp-audio{
 		padding-left: 0px!important;
 	}
 }
-@media screen and (min-width: 980px){
-  #outerMenu ul li{
-    margin: 0 3px;
-  }
-  #outerMenu ul li a{
-    font-size: 13px;
-  }
-}
+// @media screen and (min-width: 980px){
+//   #outerMenu ul li{
+//     margin: 0 3px;
+//   }
+//   #outerMenu ul li a{
+//     font-size: 13px;
+//   }
+// }
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
