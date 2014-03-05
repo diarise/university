@@ -2334,6 +2334,14 @@ div.jp-audio{
 		padding-left: 0px!important;
 	}
 }
+@media only screen and (min-width: 1000px){
+  #outerMenu ul li{
+    margin: 0 3px;
+  }
+  #outerMenu ul li a{
+    font-size: 13px;
+  }
+}
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
