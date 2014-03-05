@@ -169,7 +169,7 @@ ul li {
 .donateFloat {
   display: none;
   font-size: 12px !important;
-  margin: 4px 20px 0;
+  margin: 4px 20px 0 10px;
 }
 
 /* line 139, ../sass/style.scss */
