@@ -170,8 +170,8 @@
 		
 	}
 	
-	// Teachers Dropdown HTML	
-	function getTeachersDropDown() {
+	// Locations Dropdown HTML	
+	function getLocationssDropDown() {
 		
 		$locations =  taxonomy_get_tree( 12 ); // vid = 7 for Authors
 		$resultHTML = "<select id='teachings_teachersDD'>";
