@@ -13,10 +13,7 @@
 					</span>
 					<span class="theCourseAuthorTitle">Teacher:
 						<span class = "theCourseAuthor">
-						<?php
-							$authors = vocabulary_machine_name($node, 7 );
-							foreach ( $authors as $author ) {	echo "  <a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. "</a><span class='divider'> - </span>"; }	
-						?>	
+							
 						</span>
 					</span>
 					
