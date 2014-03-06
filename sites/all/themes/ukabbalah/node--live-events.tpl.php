@@ -39,11 +39,9 @@
 					
 					?>
 					
-					<span class="eventDate"> Start Date:</span>
-					<span class="dateMultimedia"><?php print $sDate;?> ( 24 hr clock ) </span>
+					<span> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
+					<span> End Date: <span class="dateMultimedia"><?php print $sDate2;?> ( 24 hr clock ) </span></span>
 					
-					<span class="eventDate"> End Date:</span>
-					<span class="dateMultimedia"><?php print $sDate2;?> ( 24 hr clock ) </span>
 					
 				</div>
 		
