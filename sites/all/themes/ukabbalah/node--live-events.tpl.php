@@ -21,7 +21,7 @@
 					
 						$oDate = new DateTime($node->field_event_date['und'][0]['value']);
 						//$oDate->modify("-25200 second");
-						$sDate = $oDate->format('F jS, Y H:i meridian'); // Event Start Date
+						$sDate = $oDate->format('F jS, Y H:i A'); // Event Start Date
 						
 						$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 						//$oDate2->modify("-25200 second");
