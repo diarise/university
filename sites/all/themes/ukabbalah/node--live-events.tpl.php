@@ -40,7 +40,7 @@
 					?>
 					
 					<span> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
-					<span> End Date: <span class="dateMultimedia"><?php print $sDate2;?> ( 24 hr clock ) </span></span>
+					<span> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
 					
 					
 				</div>
