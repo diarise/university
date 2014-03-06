@@ -6,9 +6,14 @@
 		<div id="contentAuthorInfo">
 				<div id="wrapperInfoCour">
 					<span id="titleCourse"><?php print $node->title; ?> </span>
-										<span id="topicCourseTitle"> Topic:</span>
+					<?php //if( sizeof( $node->field_subtitle ) > 0  ) { ?>
+					<span id="topicCourseTitle"> Topic:</span>
 					<span id="topicCourse"> 
-					<a href="/primary-topics/kabbalistic-concepts">topic text</a>					</span>
+					<?php	
+						foreach ($node->field_primary_topic as $term) 	{ $primary_topic = l( t($term[0]['taxonomy_term']->name) , 'taxonomy/term/' . $term[0]['taxonomy_term']->tid); }
+						print $primary_topic; // Primary Topic 
+					?>
+					</span>
 					<span class="theCourseAuthorTitle">Teacher:
 						<span class="theCourseAuthor">
 						  <a class="Eitan Yardeni" href="javascript:void(0)">teacher text</a>	
