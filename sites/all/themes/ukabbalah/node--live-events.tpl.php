@@ -8,7 +8,7 @@
 					<span id="titleCourse"><?php print $node->title; ?> </span>
 					
 					
-					<span class="theCourseAuthorTitle">Teacher:
+					<span class="eventsLocation">Teacher:
 						<span class = "theCourseAuthor">
 							<?php
 							$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
@@ -17,7 +17,7 @@
 						</span>
 					</span>
 
-					<span class="theCourseAuthorTitle">Location:
+					<span class="eventsLocation">Location:
 						<span class = "theCourseAuthor">
 							<?php
 							$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
@@ -39,8 +39,8 @@
 					
 					?>
 					
-					<span> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
-					<span> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
+					<span class="eventsDate"> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
+					<span class="eventsDate"> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
 					
 					
 				</div>
