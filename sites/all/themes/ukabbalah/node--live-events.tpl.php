@@ -8,8 +8,11 @@
 		<div class="videotitles">
 			<div id="wrapperInfoMultimedia">
 				<span id="titleMultimedia"><?php print $title; // Title ?></span>
-				<span id="courseNameMultimedia"><?php  //print $course_title;	?></span>
-				<span class="pipe">|</span>
+				<span id="courseNameMultimedia"><?php
+							$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+							foreach ( $authors as $author ) {	echo "  <a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. "</a><span class='divider'> - </span>"; }	
+						?></span>
+				<!-- <span class="pipe">|</span> -->
 				<span id="primaryTopicMultimedia">
 				<?php	
 					echo $primary_topic;
