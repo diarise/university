@@ -7,10 +7,7 @@
 				<div id="wrapperInfoCour">
 					<span id="titleCourse"><?php print $node->title; ?> </span>
 					
-					<!-- <span id="topicCourseTitle"> Topic:</span>
-					<span id="topicCourse"> 
 					
-					</span> -->
 					<span class="theCourseAuthorTitle">Teacher:
 						<span class = "theCourseAuthor">
 							<?php
@@ -19,6 +16,23 @@
 						?>
 						</span>
 					</span>
+					
+					<?php
+					
+						$oDate = new DateTime($node->field_event_date['und'][0]['value']);
+						//$oDate->modify("-25200 second");
+						$sDate = $oDate->format('F jS, Y'); // Event Start Date
+						
+						$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
+						//$oDate2->modify("-25200 second");
+						$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
+					
+					
+					?>
+					
+					<span id="topicCourseTitle"> Start Date:</span>
+					<span id="topicCourse"><?php print $sDate;?></span>
+					
 					
 				</div>
 		
