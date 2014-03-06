@@ -21,20 +21,20 @@
 					
 						$oDate = new DateTime($node->field_event_date['und'][0]['value']);
 						//$oDate->modify("-25200 second");
-						$sDate = $oDate->format('F jS, Y H:i A'); // Event Start Date
+						$sDate = $oDate->format('F jS, Y H:i'); // Event Start Date Y H:i A
 						
 						$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 						//$oDate2->modify("-25200 second");
-						$sDate2 = $oDate2->format('F jS, Y H:i A'); // Event End Date
+						$sDate2 = $oDate2->format('F jS, Y H:i'); // Event End Date
 					
 					
 					?>
 					
 					<span id="topicCourseTitle"> Start Date:</span>
-					<span id="topicCourse"><?php print $sDate;?></span>
+					<span id="topicCourse"><?php print $sDate;?> ( 24 hr clock ) </span>
 					
 					<span id="topicCourseTitle"> End Date:</span>
-					<span id="topicCourse"><?php print $sDate2;?></span>
+					<span id="topicCourse"><?php print $sDate2;?> ( 24 hr clock ) </span>
 					
 					
 				</div>
