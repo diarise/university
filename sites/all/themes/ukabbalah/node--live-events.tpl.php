@@ -16,6 +16,15 @@
 						?>
 						</span>
 					</span>
+
+					<span class="theCourseAuthorTitle">Location:
+						<span class = "theCourseAuthor">
+							<?php
+							$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
+							foreach ( $locations as $location ) {	echo $location->name; }	
+						?>
+						</span>
+					</span>
 					
 					<?php
 					
@@ -30,29 +39,17 @@
 					
 					?>
 					
-					<span id="topicCourseTitle"> Start Date:</span>
-					<span id="topicCourse"><?php print $sDate;?> ( 24 hr clock ) </span>
+					<span class="eventDate"> Start Date:</span>
+					<span class="dateMultimedia"><?php print $sDate;?> ( 24 hr clock ) </span>
 					
-					<span id="topicCourseTitle"> End Date:</span>
-					<span id="topicCourse"><?php print $sDate2;?> ( 24 hr clock ) </span>
-					
-					
-					<span class="theCourseAuthorTitle">Location:
-						<span class = "theCourseAuthor">
-							<?php
-							$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
-							foreach ( $locations as $location ) {	echo $location->name; }	
-						?>
-						</span>
-					</span>
-					
-					
+					<span class="eventDate"> End Date:</span>
+					<span class="dateMultimedia"><?php print $sDate2;?> ( 24 hr clock ) </span>
 					
 				</div>
 		
 				<div id="wrapperPrice">
-						<span class="buttonMember"><a href="#">become a member</a></span>
-						<span class="priceLogin"><a href="#">log-in</a></span>
+					<span class="buttonMember"><a href="#">become a member</a></span>
+					<span class="priceLogin"><a href="#">log-in</a></span>
 				</div>
 			
 		</div>
