@@ -37,6 +37,17 @@
 					<span id="topicCourse"><?php print $sDate2;?> ( 24 hr clock ) </span>
 					
 					
+					<span class="theCourseAuthorTitle">Location:
+						<span class = "theCourseAuthor">
+							<?php
+							$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
+							foreach ( $locations as $location ) {	echo $location->name; }	
+						?>
+						</span>
+					</span>
+					
+					
+					
 				</div>
 		
 				<div id="wrapperPrice">
