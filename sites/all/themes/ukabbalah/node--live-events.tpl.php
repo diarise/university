@@ -8,7 +8,7 @@
 		<div class="videotitles">
 			<div id="wrapperInfoMultimedia">
 				<span id="titleMultimedia"><?php print $title; // Title ?></span>
-				<span id="courseNameMultimedia"><?php  print $course_title;	?></span>
+				<span id="courseNameMultimedia"><?php  //print $course_title;	?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
 				<?php	
@@ -19,11 +19,11 @@
 			</div>
 			<div id="wrapperAuthorDate">
 				<span id="authorNameMultimedia">
-				<?php echo implode( ", " , $authors_name ); // Author name ?>
+				<?php //echo implode( ", " , $authors_name ); // Author name ?>
 				</span>
 				<span id="dateMultimedia">
 				<?php
-					if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
+					//if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 				?>
 				</span>
 			</div>
