@@ -1,5 +1,16 @@
 <!-- test log in  -->
 
+<?php				
+	$oDate = new DateTime($node->field_event_date['und'][0]['value']);
+	//$oDate->modify("-25200 second");
+	$sDate = $oDate->format('F jS, Y H:i'); // Event Start Date Y H:i A
+						
+	$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
+	//$oDate2->modify("-25200 second");
+	$sDate2 = $oDate2->format('F jS, Y H:i'); // Event End Date
+?>
+
+
 <?php if( user_is_logged_in() ) {?>
 
 
@@ -22,12 +33,14 @@
 			</div>
 			<div id="wrapperAuthorDate">
 				<span id="authorNameMultimedia">
-				<?php //echo implode( ", " , $authors_name ); // Author name ?>
+				<?php
+					$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
+					foreach ( $locations as $location ) {	echo $location->name; }	
+				?>
 				</span>
 				<span id="dateMultimedia">
-				<?php
-					//if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
-				?>
+				<span class="eventsDate"> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
+				<span class="eventsDate"> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
 				</span>
 			</div>
 			<span class="bookmark">
@@ -121,19 +134,6 @@
 						?>
 						</span>
 					</span>
-					
-					<?php
-					
-						$oDate = new DateTime($node->field_event_date['und'][0]['value']);
-						//$oDate->modify("-25200 second");
-						$sDate = $oDate->format('F jS, Y H:i'); // Event Start Date Y H:i A
-						
-						$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
-						//$oDate2->modify("-25200 second");
-						$sDate2 = $oDate2->format('F jS, Y H:i'); // Event End Date
-					
-					
-					?>
 					
 					<span class="eventsDate"> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
 					<span class="eventsDate"> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
