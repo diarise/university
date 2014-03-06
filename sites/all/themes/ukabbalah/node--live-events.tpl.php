@@ -76,3 +76,55 @@
 <?php } ?>
 
 
+
+
+<!-- test log in  -->
+
+
+
+<div class="videoContent">
+		
+		<!-- Class Description -->
+		<?php 
+		
+		if( sizeof( $node->body) > 0  ) {
+		if( $node->body['und'][0]['value'] != "" ) { ?>
+			<div id="classesDescription">
+				<input type="checkbox" id="ac-0">
+				<label  class="titleDescription" for="ac-0">class description</label>
+				<span class="accordion"><?php  	print $node->body['und'][0]['value']; ?></span>
+			</div>
+		<?php } 
+		}
+		?>
+		
+		<!-- Class Highlights -->
+		<?php if( sizeof( $node->field_lesson_highlights) > 0  ) { ?>
+		<?php if( $node->field_lesson_highlights['und'][0]['value'] != "" ) { ?>
+		<div id="classHighlights">
+			<input type="checkbox" id="ac-1">
+			<label class="titleDescription" for="ac-1">Highlights</label>
+			<span class="accordion"><?php print $node->field_lesson_highlights['und'][0]['value']; ?></span>
+		</div>
+		<?php } ?>
+		<?php } ?>
+		
+		<!-- Class Rsources -->
+		<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
+		<div class="titleDescription">Resources</div>
+		<div id="classResources">
+			<?php
+				// This is a way to display multiple entries for field collections 
+				$wrapper = entity_metadata_wrapper('node', $node);
+				 foreach ($wrapper->field_lesson_resources as $i)
+				 {
+					print "<a href='".$i->field_file_link->value()."' target='_blank' ><span class='resourceFile'></span></a>";
+					print "<span class='resourceTitle'><a href='".$i->field_file_link->value()."' target='_blank' >".$i->field_file_description->value()."</a></span>";
+				 }
+			?>
+		</div>	
+		<?php } ?>
+		<?php if($secondary_parent_topics) { ?>
+		<div class='keywords'><?php echo implode( ", " , $secondary_parent_topics ); ?></div>		
+		<?php } ?>
+	</div><!--end of videocontent-->
