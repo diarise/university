@@ -25,13 +25,16 @@
 						
 						$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 						//$oDate2->modify("-25200 second");
-						$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
+						$sDate2 = $oDate2->format('F jS, Y H:i A'); // Event End Date
 					
 					
 					?>
 					
 					<span id="topicCourseTitle"> Start Date:</span>
 					<span id="topicCourse"><?php print $sDate;?></span>
+					
+					<span id="topicCourseTitle"> End Date:</span>
+					<span id="topicCourse"><?php print $sDate2;?></span>
 					
 					
 				</div>
