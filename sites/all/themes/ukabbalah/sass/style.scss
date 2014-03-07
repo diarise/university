@@ -1500,10 +1500,13 @@ h3 {
 /**/
 
 .lessonCollectionSection,
-.liveEventCollectionSection, {
+.liveEventCollectionSection{
     clear: both;
     margin: auto;
     width: 940px;
+}
+.lessonCollectionSection{
+  padding:24px 0 85px;
 }
 // .lessonCollectionSection,
 // .liveEventCollectionSection,
