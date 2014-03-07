@@ -17,12 +17,9 @@
 <div id="wrapperVideoSection">
 	<div class="videocontent"><!--start of video content when user log in-->
 		
-			
-		<?php if( $field_type_of_lesson == 'Video' ) {?>
-		<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_image_cdn_link[und][0][twistage_existing_videos];?>/screenshots/620w.jpg"  > <!--image for video preview-->
-		<?php } else{ ?>
-			<img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>"  /> <!--image for video preview-->
-			<?php } ?>
+			<div id="video-control"> 
+				<!-- add video field -->
+			</div>
 
 			<div id="eSocial"> <!--start of social media icone-->
 				<div class="sharethis">
