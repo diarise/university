@@ -69,8 +69,9 @@ $(document).ready(function(){
 			trigger: "custom",
 			content: "loading...",
 			//position: "right",
-			offsetY: -400,
+			//offsetY: -400,
 			//offsetX: 350,
+			top:-200,
 			left:0,
 			right:0,
 			functionBefore: function(origin, continueTooltip) {				
