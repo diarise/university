@@ -1499,22 +1499,23 @@ h3 {
 }
 /**/
 
-.lessonCollectionSection {
+.lessonCollectionSection,
+.liveEventCollectionSection, {
     clear: both;
     margin: auto;
     width: 940px;
 }
-.lessonCollectionSection,
-.liveEventCollectionSection,
-#block-views-lesson-collection-block, 
-#block-views-lesson-collection-block-1,
-#block-views-lesson-collection-block-2,
-#block-views-lesson-collection-block-3,
-#block-views-lesson-collection-block-4{
-    float:left;
-    margin: 24px 0 85px;
-    width: 940px;
-}
+// .lessonCollectionSection,
+// .liveEventCollectionSection,
+// #block-views-lesson-collection-block, 
+// #block-views-lesson-collection-block-1,
+// #block-views-lesson-collection-block-2,
+// #block-views-lesson-collection-block-3,
+// #block-views-lesson-collection-block-4{
+//     float:left;
+//     margin: 24px 0 85px;
+//     width: 940px;
+// }
 
 /** course page**/
 .wrapperCours{
