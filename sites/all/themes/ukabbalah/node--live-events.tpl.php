@@ -16,19 +16,14 @@
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
 	<div class="videocontent"><!--start of video content when user log in-->
-		<?php
+		
 			
-			if( $field_type_of_lesson == 'Audio' ) {
-		?>
-			<div id="audio-control"> 
-				<?php print render($content['field_audio_link']); ?>
-			</div>
 		<?php 
-				} else if( $field_type_of_lesson == 'Video' ) { 
+				 if( $field_type_of_lesson == 'Video' ) { 
 		?>
 		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
-				<?php print render($content['field_lesson_video']);  } ?>
+				<?php print render($content['field_streamer_link']);  } ?>
 			</div>
 			<div id="eSocial"> <!--start of social media icone-->
 				<div class="sharethis">
