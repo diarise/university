@@ -19,7 +19,10 @@
 		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
 				<!-- add video field  and remove img tag-->
-				<img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>">
+				<video controls="controls">
+    			<source src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>" />
+	            </video>
+				<!--<img src="<?php //print $node->field_image_cdn_link['und'][0]['value']; ?>">-->
 			</div>
 
 			<div id="eSocial"> <!--start of social media icone-->
