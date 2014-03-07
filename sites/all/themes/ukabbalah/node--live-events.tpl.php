@@ -49,7 +49,7 @@
 				<span id="titleMultimedia"><?php print $title; // Title ?></span>
 				<span id="courseNameMultimedia"><?php
 							$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
-							foreach ( $authors as $author ) {	echo "  <a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. "</a><span class='divider'> - </span>"; }	
+							foreach ( $authors as $author ) {	echo "  <span>" .$author->name. "</span><span class='divider'> - </span>"; }	
 						?></span>
 				
 			</div>
