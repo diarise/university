@@ -19,8 +19,8 @@
 		allAuthors.tooltipster({
 			trigger: "custom",
 			content: "loading...",
-			position: "left",
-			offsetY: -200,
+			position: "right",
+			offsetY: -400,
 			offsetX: -480,
 			functionBefore: function(origin, continueTooltip) {				
 				continueTooltip();
