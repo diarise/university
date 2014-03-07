@@ -87,7 +87,7 @@
 		if( $node->body['und'][0]['value'] != "" ) { ?>
 			<div id="classesDescription">
 				<input type="checkbox" id="ac-0">
-				<label  class="titleDescription" for="ac-0">events description</label>
+				<label  class="titleDescription" for="ac-0">event description</label>
 				<span class="accordion"><?php  	print $node->body['und'][0]['value']; ?></span>
 			</div>
 		<?php } 
