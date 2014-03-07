@@ -18,11 +18,26 @@
 	<div class="videocontent"><!--start of video content when user log in-->
 		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
-				<!-- add video field  and remove video tag-->
-				<video controls="controls"  style="width: 645px; height: 380px; background: none repeat scroll 0% 0% rgb(255, 255, 255);">
-    			
-	            </video>
-				
+			
+			<?php
+				// Video Player Code
+				$streamer_url = check_plain($node->field_streamer_link['und'][0]['value']); 
+				$height= 392;
+				$width=640;
+				$html="<script src='http://jwpsrv.com/library/N_wSnHeyEeKNTyIACp8kUw.js'></script>";
+				$html .= '<div id="liveEventsPlayer"><span id="player2">'.$ima.'</span></div>';
+				$html .= '<script type="text/javascript">
+							  jwplayer("player2").setup({
+									file:"'.$streamer_url.'",
+									title: "'.$node->title.'",
+									height: "'.$height.'",
+									width: '.$width.',   
+									fallback: "false",
+									ga: "{}"
+							});</script>';
+				print $html;		
+				// End of Video Player Code
+			?>
 			</div>
 
 			<div id="eSocial"> <!--start of social media icone-->
