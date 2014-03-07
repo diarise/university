@@ -20,7 +20,7 @@
 			<div id="video-control"> 
 			
 			<?php
-				
+				// Video Player Code
 				$streamer_url = check_plain($node->field_streamer_link['und'][0]['value']); 
 				$height= 392;
 				$width=640;
@@ -36,7 +36,7 @@
 									ga: "{}"
 							});</script>';
 				print $html;		
-			
+				// End of Video Player Code
 			?>
 			</div>
 
