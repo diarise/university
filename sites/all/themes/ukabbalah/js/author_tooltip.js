@@ -21,7 +21,7 @@
 			content: "loading...",
 			position: "right",
 			offsetY: -400,
-			offsetX: 180,
+			offsetX: 100,
 			functionBefore: function(origin, continueTooltip) {				
 				continueTooltip();
 
