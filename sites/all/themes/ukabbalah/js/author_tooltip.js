@@ -68,8 +68,8 @@ $(document).ready(function(){
 		theCourseAuthor.tooltipster({
 			trigger: "custom",
 			content: "loading...",
-			//position: "right",
-			//offsetY: -400,
+			position: "right",
+			offsetY: -400,
 			//offsetX: 350,
 			top:-200,
 			left:0,
