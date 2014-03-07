@@ -1839,8 +1839,10 @@ h3 {
     color: #127795;
     font-size: 14px;
 }
-.liveEventCollectionSection table td{
-  width: 450px;
+.liveEventCollectionSection table td,
+.liveEventCollectionSection table th:first{
+  width: 430px;
+  padding-left:20px;
 }
 .lessonCollectionSection table td.active{
     background: none;
