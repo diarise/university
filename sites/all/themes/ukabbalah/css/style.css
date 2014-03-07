@@ -3205,7 +3205,7 @@ html {
   font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 16px;
-  padding: 35px 30px 34px;
+  padding: 8px 10px;
   overflow: hidden;
 }
 
@@ -3549,7 +3549,7 @@ a.close-tip {
   font-size: 16px;
 }
 
-/* line 314, ../sass/_tooltipster.scss */
+/* line 302, ../sass/_tooltipster.scss */
 .close-tip img {
   height: 10px;
   margin-left: 0;
