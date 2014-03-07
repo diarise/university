@@ -19,8 +19,8 @@
 		allAuthors.tooltipster({
 			trigger: "custom",
 			content: "loading...",
-			position: "right",
-			offsetY: -400,
+			position: "left",
+			offsetY: -200,
 			offsetX: 350,
 			functionBefore: function(origin, continueTooltip) {				
 				continueTooltip();
@@ -69,11 +69,8 @@ $(document).ready(function(){
 			trigger: "custom",
 			content: "loading...",
 			position: "right",
-			offsetY: -400,
-			offsetX: 350,
-			top:-200,
-			// left:0,
-			// right:0,
+			offsetY: -255,
+			offsetX: -550,			
 			functionBefore: function(origin, continueTooltip) {				
 				continueTooltip();
 
