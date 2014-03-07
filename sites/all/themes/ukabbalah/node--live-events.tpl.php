@@ -19,7 +19,7 @@
 		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
 				<!-- add video field  and remove video tag-->
-				<video controls="controls"  style="width: 645px; height: 380px;">
+				<video controls="controls"  style="width: 645px; height: 380px; background: none repeat scroll 0% 0% rgb(255, 255, 255);">
     			
 	            </video>
 				
