@@ -70,10 +70,10 @@ $(document).ready(function(){
 			content: "loading...",
 			position: "right",
 			offsetY: -400,
-			//offsetX: 350,
+			offsetX: 350,
 			top:-200,
-			left:0,
-			right:0,
+			// left:0,
+			// right:0,
 			functionBefore: function(origin, continueTooltip) {				
 				continueTooltip();
 
