@@ -13,8 +13,40 @@
 
 <?php if( user_is_logged_in() ) {?>
 
+<!-- video wrapper -->
+<div id="wrapperVideoSection">
+	<div class="videocontent"><!--start of video content when user log in-->
+		<?php
+			
+			if( $field_type_of_lesson == 'Audio' ) {
+		?>
+			<div id="audio-control"> 
+				<?php print render($content['field_audio_link']); ?>
+			</div>
+		<?php 
+				} else if( $field_type_of_lesson == 'Video' ) { 
+		?>
+		<div id="videoSocialIconeWrapper">
+			<div id="video-control"> 
+				<?php print render($content['field_lesson_video']);  } ?>
+			</div>
+			<div id="eSocial"> <!--start of social media icone-->
+				<div class="sharethis">
+					<span class='st_facebook_large' displayText='Facebook'></span>
+					<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
+					<span class='st_googleplus_large' displayText='Google +'></span>
+					<span class='st_pinterest_large' displayText='Pinterest'></span>
+					<span class='st_email_large' displayText='Email'></span>
+					<span class='st_sharethis_large' displayText='ShareThis'></span>
+				</div>
+			</div> <!--start of social media icone-->
+		</div>	
+	</div><!--end of of video content when user log in-->
+</div>
 
-<!--  -->
+
+
+<!-- video content info -->
 	<div id="videoTitlesWrapper"> <!--strat for video description when user log in-->
 		<div class="videotitles">
 			<div id="wrapperInfoMultimedia">
