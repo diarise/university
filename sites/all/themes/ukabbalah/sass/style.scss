@@ -1727,56 +1727,39 @@ h3 {
   width: 34px;
 }
 .lessonCollectionSection table tbody tr td:nth-child(2),
-.lessonCollectionSection table thead tr th:nth-child(2),
-.liveEventCollectionSection table tbody tr td:nth-child(2),
-.liveEventCollectionSection table thead tr th:nth-child(2){
+.lessonCollectionSection table thead tr th:nth-child(2){
   width: 509px;
 }
 .lessonCollectionSection table thead tr th:nth-child(3),
-.lessonCollectionSection table tbody tr td:nth-child(3),
-.liveEventCollectionSection table thead tr th:nth-child(3),
-.liveEventCollectionSection table tbody tr td:nth-child(3){
+.lessonCollectionSection table tbody tr td:nth-child(3){
     width: 65px;
 }
 .lessonCollectionSection table tbody tr td:nth-child(3),
 .lessonCollectionSection table tbody tr td.release-width,
-.lessonCollectionSection table tbody tr td.duration-width,
-.liveEventCollectionSection table tbody tr td:nth-child(3),
-.liveEventCollectionSection table tbody tr td.release-width,
-.liveEventCollectionSection table tbody tr td.duration-width{
+.lessonCollectionSection table tbody tr td.duration-width{
 	font-size:13px;
 }
-.lessonCollectionSection table tbody tr td.author-width,
-.liveEventCollectionSection table tbody tr td.author-width{
+.lessonCollectionSection table tbody tr td.author-width{
 	font-size:15px;
 }
-.lessonCollectionSection .cols-7 th:nth-child(2),
-.liveEventCollectionSection .cols-7 th:nth-child(2){
+.lessonCollectionSection .cols-7 th:nth-child(2){
 		width: 453px!important;
 }
 .lessonCollectionSection .cols-7 th:nth-child(3),
-.author-width,
-.liveEventCollectionSection .cols-7 th:nth-child(3){
+.author-width{
 		width: 100px!important;
 }
 .lessonCollectionSection table thead tr th:nth-child(4),
 .lessonCollectionSection table thead tr th:nth-child(5),
 .lessonCollectionSection table tbody tr td:nth-child(4),
-.lessonCollectionSection table tbody tr td:nth-child(5),
-.liveEventCollectionSection table thead tr th:nth-child(4),
-.liveEventCollectionSection table thead tr th:nth-child(5),
-.liveEventCollectionSection table tbody tr td:nth-child(4),
-.liveEventCollectionSection table tbody tr td:nth-child(5){
+.lessonCollectionSection table tbody tr td:nth-child(5){
     width: 74px;
 }
 .lessonCollectionSection table thead tr th:last-child,
-.lessonCollectionSection table tbody tr td:last-child,
-.liveEventCollectionSection table tbody tr th:last-child,
-.liveEventCollectionSection table tbody tr td:last-child{
+.lessonCollectionSection table tbody tr td:last-child{
   width: 110px;
 }
-.lessonCollectionSection table tbody tr td.title-width,
-.liveEventCollectionSection table tbody tr td.title-width{
+.lessonCollectionSection table tbody tr td.title-width{
 	width:450px!important;
 }
 .tablescroll_wrapper {
@@ -1824,8 +1807,7 @@ h3 {
      background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
       }
 }
-.lessonCollectionSection table thead tr th.views-field-twistage-subtitles,
-.liveEventCollectionSection table thead tr th.views-field-twistage-subtitles{
+.lessonCollectionSection table thead tr th.views-field-twistage-subtitles{
     background: none!important;
     color: $colorRed!important;
 }
@@ -1833,12 +1815,10 @@ h3 {
 .liveEventCollectionSection table thead tr th{
     border-bottom: none;
 }
-.lessonCollectionSection table thead tr th img,
-.liveEventCollectionSection table thead tr th img{
+.lessonCollectionSection table thead tr th img{
     margin-left: 5px;
 }
-.lessonCollectionSection table thead tr th.views-align-left,
-.liveEventCollectionSection table thead tr th.views-align-left{
+.lessonCollectionSection table thead tr th.views-align-left{
     font-weight: normal!important;
 }
 .lessonCollectionSection table thead tr,
@@ -1855,12 +1835,10 @@ h3 {
     color: #127795;
     font-size: 14px;
 }
-.lessonCollectionSection table td.active,
-.liveEventCollectionSection table td.active{
+.lessonCollectionSection table td.active{
     background: none;
 }
-.lessonCollectionSection .view-lesson-collection span,
-.liveEventCollectionSection .view-lesson-collection span{
+.lessonCollectionSection .view-lesson-collection span{
     display: block;
 }
 #edit-field-portion-tid-wrapper label,
