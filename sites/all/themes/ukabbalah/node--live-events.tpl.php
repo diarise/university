@@ -16,7 +16,7 @@
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
 	<div class="videocontent"><!--start of video content when user log in-->
-		
+		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
 				<!-- add video field  and remove img tag-->
 				<img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>">
@@ -32,9 +32,10 @@
 					<span class='st_sharethis_large' displayText='ShareThis'></span>
 				</div>
 			</div> <!--start of social media icone-->
-		</div>	
-	</div><!--end of of video content when user log in-->
-</div>
+		</div>
+	</div>	
+</div><!--end of of video content when user log in-->
+
 
 
 
