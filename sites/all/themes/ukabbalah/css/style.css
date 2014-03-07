@@ -3192,6 +3192,7 @@ html {
   background: none repeat scroll 0 0 #F5F5F5;
   border-radius: 3px 3px 3px 3px;
   box-shadow: 1px 1px 2px 1px #CCCCCC;
+  width: 620px !important;
 }
 
 /* Use this next selector to style things like font-size and line-height: */
