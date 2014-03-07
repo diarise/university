@@ -18,13 +18,12 @@
 	<div class="videocontent"><!--start of video content when user log in-->
 		
 			
-		<?php 
-				 if( $field_type_of_lesson == 'Video' ) { 
-		?>
-		<div id="videoSocialIconeWrapper">
-			<div id="video-control"> 
-				<?php print render($content['field_streamer_link']);  } ?>
-			</div>
+		<?php if( $field_type_of_lesson == 'Video' ) {?>
+		<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video[und][0][twistage_existing_videos];?>/screenshots/620w.jpg"  > <!--image for video preview-->
+		<?php } else{ ?>
+			<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>"  /> <!--image for video preview-->
+			<?php } ?>
+			
 			<div id="eSocial"> <!--start of social media icone-->
 				<div class="sharethis">
 					<span class='st_facebook_large' displayText='Facebook'></span>
