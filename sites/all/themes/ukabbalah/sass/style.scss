@@ -1366,7 +1366,9 @@ h3 {
 }
 #wrapperInfoMultimedia a{
     color:$colorBrown;
-    text-decoration: underline;
+    & :hover{
+      text-decoration: underline;
+    }
 }
 #primaryTopicMultimedia, .pipe{
     font-family: $fontFaceLight ;
