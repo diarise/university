@@ -68,7 +68,7 @@ $(document).ready(function(){
 		theCourseAuthor.tooltipster({
 			trigger: "custom",
 			content: "loading...",
-			position: "right",
+			position: "center",
 			offsetY: -400,
 			offsetX: 350,
 			functionBefore: function(origin, continueTooltip) {				
