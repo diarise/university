@@ -18,11 +18,11 @@
 	<div class="videocontent"><!--start of video content when user log in-->
 		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
-				<!-- add video field  and remove img tag-->
-				<video controls="controls">
-    			<source src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>" />
+				<!-- add video field  and remove video tag-->
+				<video controls="controls"  style="width: 645px; height: 380px;">
+    			
 	            </video>
-				<!--<img src="<?php //print $node->field_image_cdn_link['und'][0]['value']; ?>">-->
+				
 			</div>
 
 			<div id="eSocial"> <!--start of social media icone-->
