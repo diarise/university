@@ -20,6 +20,8 @@
 			trigger: "custom",
 			content: "loading...",
 			position: "right",
+			offsetY: -200,
+			offsetX: 350,
 			functionBefore: function(origin, continueTooltip) {				
 				continueTooltip();
 
