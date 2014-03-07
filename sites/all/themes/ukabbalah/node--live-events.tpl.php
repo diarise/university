@@ -18,7 +18,8 @@
 	<div class="videocontent"><!--start of video content when user log in-->
 		
 			<div id="video-control"> 
-				<!-- add video field -->
+				<!-- add video field  and remove img tag-->
+				<img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>">
 			</div>
 
 			<div id="eSocial"> <!--start of social media icone-->
@@ -46,13 +47,7 @@
 							$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 							foreach ( $authors as $author ) {	echo "  <a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. "</a><span class='divider'> - </span>"; }	
 						?></span>
-				<!-- <span class="pipe">|</span> -->
-				<span id="primaryTopicMultimedia">
-				<?php	
-					echo $primary_topic;
-					//echo implode( ", " , $secondary_parent_topics ); 
-				?>
-				</span>
+				
 			</div>
 			<div id="wrapperAuthorDate">
 				<span id="authorNameMultimedia">
@@ -67,7 +62,7 @@
 				</span>
 			</div>
 			<span class="bookmark">
-				<?php print flag_create_link('bookmarks', $node->nid); ?>
+				<?php //print flag_create_link('bookmarks', $node->nid); ?>
 			</span>
 		</div>
 	</div><!--end of video description when user log in-->
