@@ -18,13 +18,13 @@
 	<div class="videocontent"><!--start of video content when user log in-->
 		<?php
 			
-			//if( $field_type_of_lesson == 'Audio' ) {
+			if( $field_type_of_lesson == 'Audio' ) {
 		?>
 			<div id="audio-control"> 
-				<?//php //print render($content['field_audio_link']); ?>
+				<?php print render($content['field_audio_link']); ?>
 			</div>
 		<?php 
-				//} else if( $field_type_of_lesson == 'Video' ) { 
+				} else if( $field_type_of_lesson == 'Video' ) { 
 		?>
 		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
