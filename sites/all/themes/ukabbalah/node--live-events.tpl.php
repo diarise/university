@@ -19,7 +19,7 @@
 		
 			
 		<?php 
-				 if( $field_type_of_lesson == 'Video' ) { 
+				 //if( $field_type_of_lesson == 'Video' ) { 
 		?>
 		<div id="videoSocialIconeWrapper">
 			<div id="video-control"> 
