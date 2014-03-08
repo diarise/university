@@ -7,10 +7,10 @@ html {
 	background: none repeat scroll 0 0 #F5F5F5;
     border-radius: 3px 3px 3px 3px;
     box-shadow: 1px 1px 2px 1px #CCCCCC;
-    float: left;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    padding: 20px;
+    // float: left;
+    // margin-bottom: 20px;
+    // margin-right: 20px;
+    // padding: 20px;
     width: 620px!important; 
 }
 
@@ -298,18 +298,6 @@ html {
 a.close-tip{
 	color: #433A3A;
 	font-size: 16px;
-}
-// #wrapperVideoSection ~ .tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
-//     left: 33% !important;
-//     top: 33% !important;
-// }
-.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
-    left: 162px !important;
-}
-@media (max-width: 1000px){
-	.tooltipster-base.tooltipster-default.tooltipster-fade.tooltipster-fade-show {
-    left: 20px !important;
-}
 }
 .close-tip img {
     height: 10px;
