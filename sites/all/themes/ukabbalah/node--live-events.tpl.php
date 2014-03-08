@@ -5,7 +5,7 @@
 	//$oDate->modify("-25200 second");
 	//$sDate = $oDate->format('F jS, Y H:i'); // Event Start Date Y H:i A
 	
-	$sDate = DATE("Y H:i A", $oDate);
+	$sDate = DATE("Y H:i A", strtotime($oDate->getTimestamp));
 		
 	$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 	//$oDate2->modify("-25200 second");
