@@ -610,7 +610,7 @@
 					"AND td.vid = 17 ".
 					"AND td.name = '".$vname."' ".
 					"AND n.type in ('live_events') ".
-					"ORDER BY n.changed DESC";
+					"ORDER BY d.field_event_date_value ASC";
 			
 			$result = db_query( $sql );	
 		

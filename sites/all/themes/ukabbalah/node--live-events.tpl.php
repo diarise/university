@@ -3,11 +3,11 @@
 <?php				
 	$oDate = new DateTime($node->field_event_date['und'][0]['value']);
 	//$oDate->modify("-25200 second");
-	$sDate = $oDate->format('F jS, Y H:i'); // Event Start Date Y H:i A
-						
+	$sDate = $oDate->format('F jS, Y g:i A'); // Event Start Date Y H:i A
+		
 	$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 	//$oDate2->modify("-25200 second");
-	$sDate2 = $oDate2->format('F jS, Y H:i'); // Event End Date
+	$sDate2 = $oDate2->format('F jS, Y g:i A'); // Event End Date
 ?>
 
 
@@ -71,12 +71,16 @@
 				<span id="authorNameMultimedia">
 				<?php
 					$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
-					foreach ( $locations as $location ) {	echo $location->name; }	
+					$location_name = "";
+					foreach ( $locations as $location ) {	
+						$location_name = $location->name;
+						echo $location->name; 
+					}	
 				?>
 				</span>
 				<span id="dateMultimedia">
-				<span class="eventsDate"> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
-				<span class="eventsDate"> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
+				<span class="eventsDate"> Start Date: <span><?php print $sDate." (".$location_name. " clock)";?></span></span>
+				<span class="eventsDate"> End Date: <span><?php print $sDate2." (".$location_name." clock)";?></span></span>
 				</span>
 			</div>
 			<span class="bookmark">
