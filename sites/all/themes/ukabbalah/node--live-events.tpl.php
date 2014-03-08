@@ -79,8 +79,8 @@
 				?>
 				</span>
 				<span id="dateMultimedia">
-				<span class="eventsDate"> Start Date: <span><?php print $sDate." (".$location_name. " clock)";?></span></span>
-				<span class="eventsDate"> End Date: <span><?php print $sDate2." (".$location_name." clock)";?></span></span>
+				<span class="eventsDate"> Start Date: <span><?php print $sDate." (".$location_name. " time)";?></span></span>
+				<span class="eventsDate"> End Date: <span><?php print $sDate2." (".$location_name." time)";?></span></span>
 				</span>
 			</div>
 			<span class="bookmark">
@@ -175,8 +175,8 @@
 						</span>
 					</span>
 					
-					<span class="eventsDate"> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
-					<span class="eventsDate"> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
+					<span class="eventsDate"> Start Date: <span><?php print $sDate." (".$location_name. " time)";?></span></span>
+					<span class="eventsDate"> End Date: <span><?php print $sDate2." (".$location_name." time)";?></span></span>
 					
 					
 				</div>
