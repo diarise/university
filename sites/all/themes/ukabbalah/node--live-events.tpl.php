@@ -3,11 +3,11 @@
 <?php				
 	$oDate = new DateTime($node->field_event_date['und'][0]['value']);
 	//$oDate->modify("-25200 second");
-	$sDate = $oDate->format('F jS, Y g:i'); // Event Start Date Y H:i A
+	$sDate = $oDate->format('F jS, Y g:i A'); // Event Start Date Y H:i A
 		
 	$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 	//$oDate2->modify("-25200 second");
-	$sDate2 = $oDate2->format('F jS, Y g:i'); // Event End Date
+	$sDate2 = $oDate2->format('F jS, Y g:i A'); // Event End Date
 ?>
 
 
@@ -75,8 +75,8 @@
 				?>
 				</span>
 				<span id="dateMultimedia">
-				<span class="eventsDate"> Start Date: <span><?php print $sDate;?> ( 24 hr clock ) </span></span>
-				<span class="eventsDate"> End Date: <span><?php print $sDate2;?> ( 24 hr clock ) </span></span>
+				<span class="eventsDate"> Start Date: <span><?php print $sDate;?></span></span>
+				<span class="eventsDate"> End Date: <span><?php print $sDate2;?></span></span>
 				</span>
 			</div>
 			<span class="bookmark">
