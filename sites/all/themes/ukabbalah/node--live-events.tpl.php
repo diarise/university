@@ -71,12 +71,16 @@
 				<span id="authorNameMultimedia">
 				<?php
 					$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
-					foreach ( $locations as $location ) {	echo $location->name; }	
+					$location_name = "";
+					foreach ( $locations as $location ) {	
+						$location_name = $location->name;
+						echo $location->name; 
+					}	
 				?>
 				</span>
 				<span id="dateMultimedia">
-				<span class="eventsDate"> Start Date: <span><?php print $sDate;?></span></span>
-				<span class="eventsDate"> End Date: <span><?php print $sDate2;?></span></span>
+				<span class="eventsDate"> Start Date: <span><?php print $sDate." (".$location_name. " clock)";?></span></span>
+				<span class="eventsDate"> End Date: <span><?php print $sDate2." (".$location_name." clock)";?></span></span>
 				</span>
 			</div>
 			<span class="bookmark">
