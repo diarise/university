@@ -3,8 +3,10 @@
 <?php				
 	$oDate = new DateTime($node->field_event_date['und'][0]['value']);
 	//$oDate->modify("-25200 second");
-	$sDate = $oDate->format('F jS, Y H:i'); // Event Start Date Y H:i A
-						
+	//$sDate = $oDate->format('F jS, Y H:i'); // Event Start Date Y H:i A
+	
+	$sDate = DATE("Y H:i A", STRTOTIME($oDate));
+		
 	$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 	//$oDate2->modify("-25200 second");
 	$sDate2 = $oDate2->format('F jS, Y H:i'); // Event End Date
