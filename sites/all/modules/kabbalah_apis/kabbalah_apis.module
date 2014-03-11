@@ -469,6 +469,7 @@
 	function getLiveEventsJson() {
 	
 		$result_array = array();				
+		
 		$sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,b.body_value,n.changed,ti.tid,td.name,d.field_event_date_value,d.field_event_date_value2 ".
 				"FROM {node n} ".
 				"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
@@ -479,7 +480,10 @@
 				"AND n.type in ('live_events') ".
 				"ORDER BY d.field_event_date_value ASC";
 		
+		echo $sql."<br>";
+		
 		$result = db_query( $sql );	
+		
 		foreach( $result as $record )	
 		{
 				$title = $record->title;
@@ -490,18 +494,14 @@
 				$image_link = $record->field_image_cdn_link_value;
 				
 				$oDate = new DateTime($record->field_event_date_value);
-				//$oDate->modify("-25200 second");
 				$sDate = $oDate->format('F jS, Y'); // Event Start Date
 				
 				$oDate2 = new DateTime($record->field_event_date_value2);
-				//$oDate2->modify("-25200 second");
 				$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
 				
 				$vocab_terms5 = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 				foreach( $vocab_terms5 as $t )	{	$membership = $t->name; }
-				
-				// $vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, $vid );
-				// foreach( $vocab_terms4 as $t )	{	$p_topic_description = $t->description; }
+			
 				
 				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
@@ -512,8 +512,7 @@
 											'teaser' => $teaser , 
 											'author' => $author_name , 
 											'date_created' => $sDate ,
-											'membership' => $membership,
-											//'media_type' => $media_type
+											'membership' => $membership
 										  );							  	
 		}
 	
