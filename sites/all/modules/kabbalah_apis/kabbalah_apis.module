@@ -22,12 +22,15 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		
+		// Profile Dashboard API's
 		$items['k_api/recently_added_lsns_by_mbshp/%'] = array(              
 			'page callback'      => 'getRecentlyAddedLessonsByMembershipJson',
 			'page arguments' => array(2),
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
+		// End of Profile Dashboard API's
 		
 		
 		$items['k_api/recently_added_crs'] = array(              
@@ -339,7 +342,10 @@
 		echo json_encode( $result_array );				
 
 	}
+
+
 	
+	// Profile Dashboard API's
 	function getRecentlyAddedLessonsByMembershipJson( $membership ) {
 	
 		$sql = "SELECT *
@@ -368,26 +374,24 @@
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
-			// if( $membership_term->name == $membership )
-			// {
-				$result_array[] = array(  'node_type' => $node->type,
-										  'title' => $title , 
-										  'author' => $author->name ,
-										  'path' => $path , 
-										  'teaser' => $teaser,		
-										  'membership' => $membership_term->name,
-										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
-										  'created' => date('F jS, Y',$node->changed),
-										  'media_type' => $media_type->name
-										);
-			//}						
+			$result_array[] = array(  'node_type' => $node->type,
+									  'title' => $title , 
+									  'author' => $author->name ,
+									  'path' => $path , 
+									  'teaser' => $teaser,		
+									  'membership' => $membership_term->name,
+									  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
+									  'created' => date('F jS, Y',$node->changed),
+									  'media_type' => $media_type->name
+									);
+								
 		}
 		echo json_encode( $result_array );
-		//echo $membership;	
-
+		
 	}
-	
-	
+	// End of Profile Dashboard API's
+
+
 	
 	function getRecentlyAddedCoursesJson() {
 	
