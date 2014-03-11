@@ -469,7 +469,7 @@
 	
 		$result_array = array();				
 		
-		$sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,b.body_value,n.changed,ti.tid,td.name,d.field_event_date_value,d.field_event_date_value2 ".
+		$sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,b.body_value,n.changed,d.field_event_date_value,d.field_event_date_value2 ".
 				"FROM {node n} ".
 				"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid ) ".
 				"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
