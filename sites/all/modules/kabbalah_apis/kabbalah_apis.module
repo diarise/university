@@ -359,19 +359,19 @@
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$membership_term = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$teaser="";
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
-			if( $membership->name == $membership )
+			if( $membership_term->name == $membership )
 			{
 				$result_array[] = array(  'node_type' => $node->type,
 										  'title' => $title , 
 										  'author' => $author->name ,
 										  'path' => $path , 
 										  'teaser' => $teaser,		
-										  'membership' => $membership->name,
+										  'membership' => $membership_term->name,
 										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
 										  'created' => date('F jS, Y',$node->changed),
 										  'media_type' => $media_type->name
