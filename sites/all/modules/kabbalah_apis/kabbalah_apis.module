@@ -362,10 +362,15 @@
 				LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid )
 				LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid)
 				WHERE n.status =1
-				AND td.vid = 12
-				AND td.name = '".$membership."'
-				AND n.type = 'lesson'
-				ORDER BY n.changed DESC LIMIT 10";
+				AND td.vid = 12";
+		
+		if( $membership == "Free" )       	$sql .=	" AND td.name IN('Free')";
+		if( $membership == "Basic" )        $sql .= " AND td.name IN('Free','Basic')";
+		if( $membership == "Premium" ) 		$sql .=	" AND td.name IN('Free','Basic','Premium')";
+		if( $membership == "Premium Plus" ) $sql .=	" AND td.name IN('Free','Basic','Premium','Premium Plus')";
+		
+		$sql .=	" AND n.type = 'lesson'
+				 ORDER BY n.changed DESC LIMIT 10";
 				
 		$result = db_query( $sql );
 		$result_array = array();
