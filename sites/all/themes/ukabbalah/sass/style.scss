@@ -2439,7 +2439,7 @@ div.jp-audio{
 #classAgenda th {
     background: none repeat scroll 0 0 #F5F5F5;
     border: medium none;
-    color: #433A3A !important;
+    color: $colorBrown;
     font-size: 14px;
     font-weight: bold;
     height: 30px;
@@ -2447,17 +2447,20 @@ div.jp-audio{
     text-align: left;
     text-transform: uppercase;
 }
-#classAgenda tr{
+#classAgenda th:nth-child(1), 
+#classAgenda td:nth-child(1){
     padding-left: 13px;
 }
 #classAgenda table {
-    border-collapse: collapse;
     width: 96.5%;
+    margin-bottom: 20px;
 }
-
+#classAgenda tbody{
+  border:none
+}
 #classAgenda table td {
-    color: #433A3A;
-    font-family: ProxiLight;
+    color: $colorBrown;
+    font-family: $fontFaceLight;
     font-size: 17px;
     height: 28px;
     line-height: 30px;
