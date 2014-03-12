@@ -123,6 +123,23 @@
 		<?php } ?>
 		<?php } ?>
 		
+		
+		<!-- Class Agenda -->
+		<?php if( sizeof( $node->field_agenda) > 0  ) { ?>
+		<div class="titleDescription">Agenda</div>
+		<div id="classAgenda">
+			<?php
+				// This is a way to display multiple entries for field collections 
+				$wrapper1 = entity_metadata_wrapper('node', $node);
+				 foreach ($wrapper1->field_agenda as $i)
+				 {
+					print $i->field_date_time->value()." ".$i->field_agenda_item->value()."<br>";
+				 }
+			?>
+		</div>	
+		<?php } ?>
+		<!-- End of Class Agenda -->
+			
 		<!-- Class Rsources -->
 		<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
 		<div class="titleDescription">Resources</div>
