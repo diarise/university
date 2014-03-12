@@ -2447,7 +2447,8 @@ div.jp-audio{
     text-align: left;
     text-transform: uppercase;
 }
-#classAgenda th:first-child, #classAgenda td:first-child{
+#classAgenda th:nth-child(1), 
+#classAgenda td:nth-child(1){
     padding-left: 13px;
 }
 #classAgenda table {
