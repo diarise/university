@@ -78,11 +78,11 @@
 	
 	function kabbalah_carousal3_show() {
 	
-		$jsonurl1 = '/k_api/recommended_lsns/1/0';
+		//$jsonurl1 = '/k_api/recommended_lsns/1/0';
 		$jsonurl2 = '/k_api/recommended_lsns/0/1';
 		
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_fp_carousals') .'/js/fp_carousal.js');	// adding the js file for the module	
-		drupal_add_js(array('fp_vars3' => array('divid' => 'recommendedCourses','jsonurl'=>$jsonurl1)), 'setting');
+		//drupal_add_js(array('fp_vars3' => array('divid' => 'recommendedCourses','jsonurl'=>$jsonurl1)), 'setting');
 		drupal_add_js(array('fp_vars6' => array('divid' => 'recommendedCoursesWeekly','jsonurl'=>$jsonurl2)), 'setting');
 		
 		$today_date_month = date('n',time());
@@ -98,7 +98,7 @@
 		
 		$heb_date = $heb_date_info->hm.' '.$heb_date_info->hy;
 		
-		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>This week: ".date('M j',strtotime('monday this week'))." - ".date('M j',strtotime('sunday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span></div><div id='recommendedCoursesWeekly'></div><div id='recommendedCourses'></div>";
+		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>This week: ".date('M j',strtotime('monday this week'))." - ".date('M j',strtotime('sunday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span></div><div id='recommendedCoursesWeekly'></div>";
 	
 	}
 	

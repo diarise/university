@@ -197,9 +197,9 @@
 			jsonLink: Drupal.settings.fp_vars2.jsonurl
 		});
                         
-		$("#" + Drupal.settings.fp_vars3.divid).UkabCarousel({
-			jsonLink: Drupal.settings.fp_vars3.jsonurl
-		});
+		// $("#" + Drupal.settings.fp_vars3.divid).UkabCarousel({
+			// jsonLink: Drupal.settings.fp_vars3.jsonurl
+		// });
 		
 		$("#" + Drupal.settings.fp_vars4.divid).UkabCarousel({
 			jsonLink: Drupal.settings.fp_vars4.jsonurl
