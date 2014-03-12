@@ -82,7 +82,7 @@
 		<div class="videotitles"><!--start of preview video description-->
 			<div id="wrapperInfoMultimedia">
 				<span id="titleMultimedia"><?php print $title; // Title ?></span>
-				<span id="courseNameMultimedia"><?php  print $course_title;	?> | <?php print $list_subtitle; ?></span>
+				<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
 				<?php	
@@ -133,7 +133,7 @@
 		<div class="videotitles">
 			<div id="wrapperInfoMultimedia">
 				<span id="titleMultimedia"><?php print $title; // Title ?></span>
-				<span id="courseNameMultimedia"><?php  print $course_title;	?> | <?php print $list_subtitle; ?></span>
+				<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
 				<?php	
