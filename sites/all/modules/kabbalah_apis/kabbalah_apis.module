@@ -581,7 +581,7 @@
 
 		if( $week == 1 )
 		{
-			$first_day_of_week     = date('Y-m-d',strtotime('sunday this week'));
+			$first_day_of_week     = date('Y-m-d',strtotime('sunday last week'));
 			$last_day_of_week      = date('Y-m-d',strtotime('saturday this week'));
 			
 			$sql = "SELECT *
