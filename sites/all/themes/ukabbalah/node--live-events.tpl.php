@@ -135,7 +135,7 @@
 				 {
 					$start_date = "";
 					foreach ( $i->field_date_time->value() as $k => $v ) {
-						$start_date = $v;
+						$start_date = date( 'F jS, Y g:i A' , strtotime($v) );
 						break;
 					}
 					print $start_date." ".$i->field_agenda_item->value()."<br>";
