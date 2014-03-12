@@ -2439,7 +2439,7 @@ div.jp-audio{
 #classAgenda th {
     background: none repeat scroll 0 0 #F5F5F5;
     border: medium none;
-    color: #433A3A !important;
+    color: $colorBrown !important;
     font-size: 14px;
     font-weight: bold;
     height: 30px;
@@ -2460,8 +2460,8 @@ div.jp-audio{
   border:none
 }
 #classAgenda table td {
-    color: #433A3A;
-    font-family: ProxiLight;
+    color: $colorBrown;
+    font-family: $fontFaceLight;
     font-size: 17px;
     height: 28px;
     line-height: 30px;
