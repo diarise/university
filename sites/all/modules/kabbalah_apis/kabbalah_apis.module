@@ -568,17 +568,31 @@
 		
 	function getRecommendedLessonsJson( $month = 0 , $week = 0 ) {
 	
-		$sql = "SELECT *
-				FROM {node n}
-				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )";
-				
-		if( $month == 1 ) $sql .= " LEFT JOIN {field_data_field_recommened_for_month rm} ON ( rm.entity_id = nr.nid AND rm.revision_id = nr.vid )";
-				
-		$sql .=	" WHERE n.status =1 AND n.type = 'lesson'";
-				
-		if( $month == 1 ) $sql .=" AND rm.field_recommened_for_month_value = 0";
-		
-		$sql .=" ORDER BY n.changed DESC";
+		if( $month == 1 )
+		{
+			$sql = "SELECT *
+					FROM {node n}
+					LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+					LEFT JOIN {field_data_field_recommened_for_month rm} ON ( rm.entity_id = nr.nid AND rm.revision_id = nr.vid )
+					WHERE n.status =1 AND n.type = 'lesson'
+					AND rm.field_recommened_for_month_value = 0
+					ORDER BY n.changed DESC";
+		}	
+
+		if( $week == 1 )
+		{
+			$first_day_of_week     = date('Y-m-d',strtotime('monday this week'));
+			$last_day_of_week      = date('Y-m-d',strtotime('sunday this week'));
+			
+			$sql = "SELECT *
+					FROM {node n}
+					LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+					JOIN {field_revision_field_recommended_date rd} ON ( rd.entity_id = nr.nid AND rd.revision_id = nr.vid )
+					WHERE n.status =1 
+					AND n.type = 'lesson'
+					AND field_recommended_date_value BETWEEN '".$first_day_of_week."' AND '".$last_day_of_week."'
+					ORDER BY n.changed DESC";
+		}		
 				
 		$result = db_query( $sql );
 		$result_array = array();
@@ -621,13 +635,10 @@
 
 			if( $week == 1)
 			{
+				// $recommended_date_dmy  = date('d-M-Y',strtotime($recommended_date));
 				
-				$first_day_of_week     = date('d-M-Y',strtotime('monday this week'));
-				$last_day_of_week      = date('d-M-Y',strtotime('sunday this week'));
-				$recommended_date_dmy  = date('d-M-Y',strtotime($recommended_date));
-				
-				if( $recommended_date_dmy > $first_day_of_week && $recommended_date_dmy < $last_day_of_week )
-				{
+				// if( $recommended_date_dmy > $first_day_of_week && $recommended_date_dmy < $last_day_of_week )
+				// {
 					$result_array[] = array(  'node_type' => $node->type,
 											  'title' => $title , 
 											  'author' => $author->name ,
@@ -638,7 +649,7 @@
 											  'created' => date('F jS, Y',$node->changed),
 											  'media_type' => $media_type->name
 											);
-				}
+				//}
 			}
 	
 		}
