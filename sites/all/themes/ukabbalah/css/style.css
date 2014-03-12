@@ -3560,21 +3560,11 @@ a.close-tip {
 }
 
 /**agenda**/
-/* line 2440, ../sass/style.scss */
-#classAgenda table {
-  border-collapse: collapse;
-  width: 96.5%;
-  margin-bottom: 20px;
-}
-/* line 2444, ../sass/style.scss */
-#classAgenda table tbody {
-  border: none;
-}
-/* line 2446, ../sass/style.scss */
-#classAgenda table tbody th {
+/* line 2439, ../sass/style.scss */
+#classAgenda th {
   background: none repeat scroll 0 0 #F5F5F5;
   border: medium none;
-  color: #433a3a !important;
+  color: #433A3A !important;
   font-size: 14px;
   font-weight: bold;
   height: 30px;
@@ -3582,20 +3572,31 @@ a.close-tip {
   text-align: left;
   text-transform: uppercase;
 }
-/* line 2456, ../sass/style.scss */
-#classAgenda table tbody th:nth-child(1) {
+
+/* line 2451, ../sass/style.scss */
+#classAgenda th:nth-child(1),
+#classAgenda td:nth-child(1) {
   padding-left: 13px;
 }
+
+/* line 2454, ../sass/style.scss */
+#classAgenda table {
+  border-collapse: collapse;
+  width: 96.5%;
+  margin-bottom: 20px;
+}
+
 /* line 2459, ../sass/style.scss */
-#classAgenda table tbody th td {
-  color: #433a3a;
-  font-family: "ProxiLight";
+#classAgenda tbody {
+  border: none;
+}
+
+/* line 2462, ../sass/style.scss */
+#classAgenda table td {
+  color: #433A3A;
+  font-family: ProxiLight;
   font-size: 17px;
   height: 28px;
-  text-align: left;
   line-height: 30px;
-}
-/* line 2466, ../sass/style.scss */
-#classAgenda table tbody th td:nth-child(1) {
-  padding-left: 13px;
+  text-align: left;
 }
