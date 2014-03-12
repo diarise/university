@@ -128,6 +128,12 @@
 		<?php if( sizeof( $node->field_agenda) > 0  ) { ?>
 		<div class="titleDescription">Agenda</div>
 		<div id="classAgenda">
+			<table>
+			<tbody>
+			<tr>
+				<th class="eventsDataHeader">EVENT DATE</th>
+				<th class="eventsDataHeader">AGENDA ITEM</th>
+			</tr>
 			<?php
 				// This is a way to display multiple entries for field collections 
 				$wrapper1 = entity_metadata_wrapper('node', $node);
@@ -138,10 +144,12 @@
 						$start_date = date( 'F jS, Y g:i A' , strtotime($v) );
 						break;
 					}
-					print $start_date." ".$i->field_agenda_item->value()."<br>";
-					//print_r( $i->field_date_time->value());
+					echo "<tr><td class='eventsData'>".$start_date."</td><td class='eventsData'>".$i->field_agenda_item->value()."</td></tr>";
+		
 				 }
 			?>
+			<tbody>
+			</table>
 		</div>	
 		<?php } ?>
 		<!-- End of Class Agenda -->
