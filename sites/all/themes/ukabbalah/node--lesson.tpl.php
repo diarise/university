@@ -1,7 +1,5 @@
 <?php 
 
-	print_r( $node->field_course_list );
-
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
 	
@@ -19,8 +17,16 @@
 	
 	$title = $node->title;
 	
-	if( sizeof( $node->field_course_list) > 0  ) $course_list_title = $node->field_course_list['und'][0]['node']->title;
-	if( sizeof( $node->field_event_list) > 0  ) $event_list_title = $node->field_event_list['und'][0]['node']->title;
+	if( sizeof( $node->field_course_list) > 0  )
+	{
+		$course_list_title = $node->field_course_list['und'][0]['node']->title;
+		$list_subtitle = $node->field_course_list['und'][0]['node']->field_subtitle['und'][0]['value'];
+	}	
+	if( sizeof( $node->field_event_list) > 0  ) 
+	{
+		$event_list_title = $node->field_event_list['und'][0]['node']->title;
+		$list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
+	}	
 	
 	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
 
@@ -76,7 +82,7 @@
 		<div class="videotitles"><!--start of preview video description-->
 			<div id="wrapperInfoMultimedia">
 				<span id="titleMultimedia"><?php print $title; // Title ?></span>
-				<span id="courseNameMultimedia"><?php  print $course_title;	?></span>
+				<span id="courseNameMultimedia"><?php  print $course_title;	?> | <?php print $list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
 				<?php	
@@ -127,7 +133,7 @@
 		<div class="videotitles">
 			<div id="wrapperInfoMultimedia">
 				<span id="titleMultimedia"><?php print $title; // Title ?></span>
-				<span id="courseNameMultimedia"><?php  print $course_title;	?></span>
+				<span id="courseNameMultimedia"><?php  print $course_title;	?> | <?php print $list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
 				<?php	
