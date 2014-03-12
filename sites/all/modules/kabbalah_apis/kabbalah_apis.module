@@ -581,8 +581,8 @@
 
 		if( $week == 1 )
 		{
-			$first_day_of_week     = date('Y-m-d',strtotime('monday this week'));
-			$last_day_of_week      = date('Y-m-d',strtotime('sunday this week'));
+			$first_day_of_week     = date('Y-m-d',strtotime('sunday this week'));
+			$last_day_of_week      = date('Y-m-d',strtotime('saturday this week'));
 			
 			$sql = "SELECT *
 					FROM {node n}
@@ -635,10 +635,6 @@
 
 			if( $week == 1)
 			{
-				// $recommended_date_dmy  = date('d-M-Y',strtotime($recommended_date));
-				
-				// if( $recommended_date_dmy > $first_day_of_week && $recommended_date_dmy < $last_day_of_week )
-				// {
 					$result_array[] = array(  'node_type' => $node->type,
 											  'title' => $title , 
 											  'author' => $author->name ,
@@ -649,7 +645,6 @@
 											  'created' => date('F jS, Y',$node->changed),
 											  'media_type' => $media_type->name
 											);
-				//}
 			}
 	
 		}
