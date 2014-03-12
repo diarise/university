@@ -56,8 +56,9 @@
 		);
 		
 		
-		$items['k_api/recommended_lsns'] = array(               // Made this a PAGE
+		$items['k_api/recommended_lsns/%/%'] = array(               // Made this a PAGE
 			'page callback'      => 'getRecommendedLessonsJson',
+			'page arguments' => array(2,3),
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
@@ -565,7 +566,7 @@
 		echo json_encode( $result_array );				
 	}
 		
-	function getRecommendedLessonsJson() {
+	function getRecommendedLessonsJson( $month = 0 , $week = 0 ) {
 	
 		$sql = "SELECT *
 				FROM {node n}
@@ -598,19 +599,22 @@
 			
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
-			if( $recommended_date_month == date('m',time()) && $recommended_date_year == date('Y',time()) )
+			if( $month == 1)
 			{
-				$result_array[] = array(  'node_type' => $node->type,
-										  'title' => $title , 
-										  'author' => $author->name ,
-										  'path' => $path , 
-										  'teaser' => $teaser,		
-										  'membership' => $membership->name,
-										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
-										  'created' => date('F jS, Y',$node->changed),
-										  'media_type' => $media_type->name
-										);
-			}							
+				if( $recommended_date_month == date('m',time()) && $recommended_date_year == date('Y',time()) )
+				{
+					$result_array[] = array(  'node_type' => $node->type,
+											  'title' => $title , 
+											  'author' => $author->name ,
+											  'path' => $path , 
+											  'teaser' => $teaser,		
+											  'membership' => $membership->name,
+											  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
+											  'created' => date('F jS, Y',$node->changed),
+											  'media_type' => $media_type->name
+											);
+				}
+			}	
 		}
 		echo json_encode( $result_array );				
 	
