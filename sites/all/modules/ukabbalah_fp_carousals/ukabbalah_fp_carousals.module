@@ -42,7 +42,7 @@
       break;
 	  
 	 case 'carousal3':
-    	 $block['subject'] = t('Recommended');
+    	 $block['subject'] = t('Recommended for this week');
           $block['content'] = kabbalah_carousal3_show();
       break;
 	  
