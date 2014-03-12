@@ -2439,7 +2439,7 @@ div.jp-audio{
 #classAgenda th {
     background: none repeat scroll 0 0 #F5F5F5;
     border: medium none;
-    color: $colorBrown !important;
+    color: $colorBrown;
     font-size: 14px;
     font-weight: bold;
     height: 30px;
@@ -2452,7 +2452,6 @@ div.jp-audio{
     padding-left: 13px;
 }
 #classAgenda table {
-    border-collapse: collapse;
     width: 96.5%;
     margin-bottom: 20px;
 }
