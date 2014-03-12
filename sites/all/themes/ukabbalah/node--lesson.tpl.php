@@ -1,5 +1,7 @@
 <?php 
 
+	print_r( $node->field_course_list );
+
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
 	
