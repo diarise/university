@@ -98,7 +98,7 @@
 		
 		$heb_date = $heb_date_info->hm.' '.$heb_date_info->hy;
 		
-		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>This week: ".date('M j',strtotime('monday this week'))." - ".date('M j',strtotime('sunday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span></div><div id='recommendedCourses'></div><div id='recommendedCoursesWeekly'></div>";
+		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>This week: ".date('M j',strtotime('monday this week'))." - ".date('M j',strtotime('sunday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span></div><div id='recommendedCoursesWeekly'></div><div id='recommendedCourses'></div>";
 	
 	}
 	
