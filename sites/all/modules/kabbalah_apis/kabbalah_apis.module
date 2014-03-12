@@ -570,12 +570,15 @@
 	
 		$sql = "SELECT *
 				FROM {node n}
-				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
-				LEFT JOIN {field_data_field_recommened_for_month rm} ON ( rm.entity_id = nr.nid AND rm.revision_id = nr.vid )
-				WHERE n.status =1
-				AND n.type = 'lesson'
-				AND rm.field_recommened_for_month_value = 0
-				ORDER BY n.changed DESC";
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )";
+				
+		if( $month == 1 ) $sql .= " LEFT JOIN {field_data_field_recommened_for_month rm} ON ( rm.entity_id = nr.nid AND rm.revision_id = nr.vid )";
+				
+		$sql .=	" WHERE n.status =1 AND n.type = 'lesson'";
+				
+		if( $month == 1 ) $sql .=" AND rm.field_recommened_for_month_value = 0";
+		
+		$sql .=" ORDER BY n.changed DESC";
 				
 		$result = db_query( $sql );
 		$result_array = array();
@@ -618,7 +621,12 @@
 
 			if( $week == 1)
 			{
-				if( $recommended_date_month == date('m',time()) && $recommended_date_year == date('Y',time()) )
+				
+				$first_day_of_week     = date('d-M-Y',strtotime('monday this week'));
+				$last_day_of_week      = date('d-M-Y',strtotime('sunday this week'));
+				$recommended_date_dmy  = date('d-M-Y',strtotime($recommended_date));
+				
+				if( $recommended_date_dmy > $first_day_of_week && $recommended_date_dmy < $last_day_of_week )
 				{
 					$result_array[] = array(  'node_type' => $node->type,
 											  'title' => $title , 
