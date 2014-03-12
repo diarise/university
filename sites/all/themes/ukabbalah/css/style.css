@@ -3558,3 +3558,38 @@ a.close-tip {
   margin-top: 0;
   width: 10px;
 }
+
+/**agenda**/
+/* line 2439, ../sass/style.scss */
+#classAgenda th {
+  background: none repeat scroll 0 0 #F5F5F5;
+  border: medium none;
+  color: #433A3A !important;
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  line-height: 20px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* line 2450, ../sass/style.scss */
+#classAgenda tr {
+  padding-left: 13px;
+}
+
+/* line 2453, ../sass/style.scss */
+#classAgenda table {
+  border-collapse: collapse;
+  width: 96.5%;
+}
+
+/* line 2458, ../sass/style.scss */
+#classAgenda table td {
+  color: #433A3A;
+  font-family: ProxiLight;
+  font-size: 17px;
+  height: 28px;
+  line-height: 30px;
+  text-align: left;
+}
