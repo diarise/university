@@ -2447,14 +2447,16 @@ div.jp-audio{
     text-align: left;
     text-transform: uppercase;
 }
-#classAgenda tr{
+#classAgenda th:first-child, #classAgenda td:first-child{
     padding-left: 13px;
 }
 #classAgenda table {
     border-collapse: collapse;
     width: 96.5%;
 }
-
+#classAgenda tbody{
+  border:none
+}
 #classAgenda table td {
     color: #433A3A;
     font-family: ProxiLight;

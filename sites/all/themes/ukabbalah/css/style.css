@@ -3574,7 +3574,7 @@ a.close-tip {
 }
 
 /* line 2450, ../sass/style.scss */
-#classAgenda tr {
+#classAgenda th:first-child, #classAgenda td:first-child {
   padding-left: 13px;
 }
 
@@ -3584,7 +3584,12 @@ a.close-tip {
   width: 96.5%;
 }
 
-/* line 2458, ../sass/style.scss */
+/* line 2457, ../sass/style.scss */
+#classAgenda tbody {
+  border: none;
+}
+
+/* line 2460, ../sass/style.scss */
 #classAgenda table td {
   color: #433A3A;
   font-family: ProxiLight;
