@@ -208,6 +208,10 @@
 		$("#" + Drupal.settings.fp_vars5.divid).UkabCarousel({
 			jsonLink: Drupal.settings.fp_vars5.jsonurl
 		});
+		
+		$("#" + Drupal.settings.fp_vars6.divid).UkabCarousel({
+			jsonLink: Drupal.settings.fp_vars6.jsonurl
+		});
 
 	    var filter = function() {
 			$("#recentlyAddedCourses").hide();	       				

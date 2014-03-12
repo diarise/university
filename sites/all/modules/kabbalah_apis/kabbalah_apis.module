@@ -614,7 +614,25 @@
 											  'media_type' => $media_type->name
 											);
 				}
-			}	
+			}
+
+			if( $week == 1)
+			{
+				if( $recommended_date_month == date('m',time()) && $recommended_date_year == date('Y',time()) )
+				{
+					$result_array[] = array(  'node_type' => $node->type,
+											  'title' => $title , 
+											  'author' => $author->name ,
+											  'path' => $path , 
+											  'teaser' => $teaser,		
+											  'membership' => $membership->name,
+											  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
+											  'created' => date('F jS, Y',$node->changed),
+											  'media_type' => $media_type->name
+											);
+				}
+			}
+	
 		}
 		echo json_encode( $result_array );				
 	
