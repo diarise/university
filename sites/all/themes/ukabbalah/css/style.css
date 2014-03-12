@@ -3592,8 +3592,8 @@ a.close-tip {
   font-family: "ProxiLight";
   font-size: 17px;
   height: 28px;
-  line-height: 30px;
   text-align: left;
+  line-height: 30px;
 }
 /* line 2466, ../sass/style.scss */
 #classAgenda table tbody th td:nth-child(1) {
