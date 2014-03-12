@@ -133,7 +133,7 @@
 				$wrapper1 = entity_metadata_wrapper('node', $node);
 				 foreach ($wrapper1->field_agenda as $i)
 				 {
-					print $i->field_date_time->value()." ".$i->field_agenda_item->value()."<br>";
+					print $i->field_date_time['value']." ".$i->field_agenda_item->value()."<br>";
 					print_r( $i->field_date_time->value());
 				 }
 			?>
