@@ -345,6 +345,11 @@
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
+			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
+			if( $recorded_date == "" ) $recorded_date = $node->changed;
+			
+			
+			
 			$result_array[] = array(  'node_type' => $node->type,
 									  'title' => $title , 
 									  'author' => $author->name ,
@@ -352,7 +357,7 @@
 									  'teaser' => $teaser,		
 									  'membership' => $membership->name,
 									  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
-									  'created' => date('F jS, Y',$node->changed),
+									  'created' => date('F jS, Y',$recorded_date),
 									  'media_type' => $media_type->name
 									);
 		}
@@ -696,6 +701,9 @@
 				$media_type = 'bothAdVdImg';
 			}
 			
+			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
+			if( $recorded_date == "" ) $recorded_date = $node->changed;
+			
 			$result_array[] = array(  'node_type' => $node->type,
 										  'title' => $title , 
 										  'author' => $author->name ,
@@ -703,7 +711,7 @@
 										  'teaser' => $teaser,		
 										  'membership' => $membership->name,
 										  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
-										  'created' => date('F jS, Y',$node->changed),
+										  'created' => date('F jS, Y',$recorded_date),
 										  'media_type' => $media_type
 										);							
 										
