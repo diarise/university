@@ -3583,7 +3583,7 @@ a.close-tip {
   text-transform: uppercase;
 }
 /* line 2456, ../sass/style.scss */
-#classAgenda table tbody th :nth-child(1) {
+#classAgenda table tbody th:nth-child(1) {
   padding-left: 13px;
 }
 /* line 2459, ../sass/style.scss */
@@ -3596,6 +3596,6 @@ a.close-tip {
   text-align: left;
 }
 /* line 2466, ../sass/style.scss */
-#classAgenda table tbody th td :nth-child(1) {
+#classAgenda table tbody th td:nth-child(1) {
   padding-left: 13px;
 }

@@ -2453,7 +2453,7 @@ div.jp-audio{
         line-height: 20px;
         text-align: left;
         text-transform: uppercase;
-        & :nth-child(1){
+        &:nth-child(1){
           padding-left: 13px;
           }
         td {
@@ -2463,7 +2463,7 @@ div.jp-audio{
           height: 28px;
           line-height: 30px;
           text-align: left;
-          & :nth-child(1){
+          &:nth-child(1){
           padding-left: 13px;
             }
           }
