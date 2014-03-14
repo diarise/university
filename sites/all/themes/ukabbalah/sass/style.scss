@@ -2466,3 +2466,82 @@ div.jp-audio{
     line-height: 30px;
     text-align: left;
 }
+
+/**search page**/
+
+#edit-field-author-tid-wrapper,
+#edit-field-portion-tid-wrapper,
+#edit-field-secondary-topic-tid-wrapper,
+#edit-title-wrapper{
+  float: left!important;
+}
+#views-exposed-form-search-page span.lessonsCourse{
+  display: block;
+}
+#edit-field-author-tid-wrapper{
+  margin-right: 10px;
+}
+#views-exposed-form-search-page label{
+  display: inline;
+}
+#views-exposed-form-search-page #edit-title-wrapper{
+  margin-left: 0;
+  label{
+    color: #999999;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  input{
+    margin-top: 0;
+  }
+}
+.quicktabs-tabs.quicktabs-style-nostyle > li {
+    display: inline;
+    color: #433A3A;
+    text-transform: uppercase; 
+    margin-bottom: -1px; 
+}
+.quicktabs-tabs.quicktabs-style-nostyle > li.active {
+    background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 41px;
+    a{
+      color: #9C1F19;
+    }
+}
+
+ul.quicktabs-tabs.quicktabs-style-nostyle {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 20px;
+}
+
+.quicktabs-tabpage .quicktabs-views-group {
+    float: left;
+    height: 170px;
+    margin: 0 10px 20px;
+    overflow: hidden;
+    width: 300px;
+}
+.quicktabs-tabpage .quicktabs-views-group .theDescCont{
+  margin-top: -60px;
+} 
+.views-exposed-widget.views-submit-button{
+  float: left!important;
+  margin-left: 10px;
+}
+#views-exposed-form-search-page input.form-submit {
+    background: none repeat scroll 0 0 #328A9A;
+    border: medium none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin: 22px auto auto;
+    padding: 7px 19px;
+    text-align: center;
+    width: 80px;
+}
