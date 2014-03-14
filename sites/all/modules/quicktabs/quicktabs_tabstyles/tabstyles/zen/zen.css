@@ -4,7 +4,7 @@
  * http://drupal.org/project/zen
  */
 
-.quicktabs_main.quicktabs-style-zen{
+/*.quicktabs_main.quicktabs-style-zen{
   clear:both;
 }
 ul.quicktabs-tabs.quicktabs-style-zen{
@@ -51,3 +51,4 @@ ul.quicktabs-tabs.quicktabs-style-zen li.active a:hover{
 ul.quicktabs-tabs.quicktabs-style-zen li.active{
   background:transparent url(images/tab-left-ie6.png) no-repeat left 0;
 }
+*/
