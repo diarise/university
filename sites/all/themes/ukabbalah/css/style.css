@@ -3643,7 +3643,7 @@ a.close-tip {
 }
 
 /* line 2501, ../sass/style.scss */
-.quicktabs-tabs.quicktabs-style-nostyle > li {
+.quicktabs-tabs.quicktabs-style-zen > li {
   display: inline;
   color: #433A3A;
   text-transform: uppercase;
@@ -3651,18 +3651,18 @@ a.close-tip {
 }
 
 /* line 2507, ../sass/style.scss */
-.quicktabs-tabs.quicktabs-style-nostyle > li.active {
+.quicktabs-tabs.quicktabs-style-zen > li.active {
   background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
   display: inline-block;
   height: 41px;
 }
 /* line 2511, ../sass/style.scss */
-.quicktabs-tabs.quicktabs-style-nostyle > li.active a {
+.quicktabs-tabs.quicktabs-style-zen > li.active a {
   color: #9C1F19;
 }
 
 /* line 2516, ../sass/style.scss */
-ul.quicktabs-tabs.quicktabs-style-nostyle {
+ul.quicktabs-tabs.quicktabs-style-zen {
   border-bottom: 1px solid #CCC;
   margin-bottom: 20px;
 }

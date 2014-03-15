@@ -2498,13 +2498,13 @@ div.jp-audio{
     margin-top: 0;
   }
 }
-.quicktabs-tabs.quicktabs-style-nostyle > li {
+.quicktabs-tabs.quicktabs-style-zen > li {
     display: inline;
     color: #433A3A;
     text-transform: uppercase; 
     margin-bottom: -1px; 
 }
-.quicktabs-tabs.quicktabs-style-nostyle > li.active {
+.quicktabs-tabs.quicktabs-style-zen > li.active {
     background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
     display: inline-block;
     height: 41px;
@@ -2513,7 +2513,7 @@ div.jp-audio{
     }
 }
 
-ul.quicktabs-tabs.quicktabs-style-nostyle {
+ul.quicktabs-tabs.quicktabs-style-zen {
     border-bottom: 1px solid #CCC;
     margin-bottom: 20px;
 }
