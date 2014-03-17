@@ -2525,9 +2525,9 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     overflow: hidden;
     width: 300px;
 }
-.quicktabs-tabpage .quicktabs-views-group .theDescCont{
-  margin-top: -60px;
-} 
+// .quicktabs-tabpage .quicktabs-views-group .theDescCont{
+//   margin-top: -60px;
+// } 
 .views-exposed-widget.views-submit-button{
   float: left!important;
   margin-left: 10px;
@@ -2544,4 +2544,18 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     padding: 7px 19px;
     text-align: center;
     width: 80px;
+}
+/***custom ccarousel for search page***/
+.quicktabs-views-group .imagesCont{
+  position: relative;
+}
+.quicktabs-views-group .imagesCont img{
+  float: none;
+}
+.quicktabs-views-group .theDescCont{
+  position:absolute;
+  bottom:0px;
+}
+.quicktabs-views-group .theTeaser{
+  display: none;
 }

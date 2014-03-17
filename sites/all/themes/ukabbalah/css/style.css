@@ -3676,11 +3676,6 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   width: 300px;
 }
 
-/* line 2528, ../sass/style.scss */
-.quicktabs-tabpage .quicktabs-views-group .theDescCont {
-  margin-top: -60px;
-}
-
 /* line 2531, ../sass/style.scss */
 .views-exposed-widget.views-submit-button {
   float: left !important;
@@ -3700,4 +3695,26 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   padding: 7px 19px;
   text-align: center;
   width: 80px;
+}
+
+/***custom ccarousel for search page***/
+/* line 2549, ../sass/style.scss */
+.quicktabs-views-group .imagesCont {
+  position: relative;
+}
+
+/* line 2552, ../sass/style.scss */
+.quicktabs-views-group .imagesCont img {
+  float: none;
+}
+
+/* line 2555, ../sass/style.scss */
+.quicktabs-views-group .theDescCont {
+  position: absolute;
+  bottom: 0px;
+}
+
+/* line 2559, ../sass/style.scss */
+.quicktabs-views-group .theTeaser {
+  display: none;
 }
