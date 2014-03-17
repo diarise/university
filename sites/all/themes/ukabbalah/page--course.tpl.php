@@ -17,6 +17,7 @@
 					<?php print render($page['universalMenu']);?>
 					<!--end of universalMenu-->
 					<div class="donate"><a href="/donate" target="_blank">donate</a></div>
+					<div class="searchLogo"><a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png"></a></div>
 				</div>
 			</div>		
 		</div> <!-- End of topHeader -->
