@@ -3676,13 +3676,13 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   width: 300px;
 }
 
-/* line 2531, ../sass/style.scss */
+/* line 2528, ../sass/style.scss */
 .views-exposed-widget.views-submit-button {
   float: left !important;
   margin-left: 10px;
 }
 
-/* line 2535, ../sass/style.scss */
+/* line 2532, ../sass/style.scss */
 #views-exposed-form-search-page input.form-submit {
   background: none repeat scroll 0 0 #328A9A;
   border: medium none;
@@ -3698,23 +3698,29 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 
 /***custom ccarousel for search page***/
-/* line 2549, ../sass/style.scss */
+/* line 2546, ../sass/style.scss */
 .quicktabs-views-group .imagesCont {
   position: relative;
 }
 
-/* line 2552, ../sass/style.scss */
+/* line 2549, ../sass/style.scss */
 .quicktabs-views-group .imagesCont img {
   float: none;
 }
 
-/* line 2555, ../sass/style.scss */
+/* line 2552, ../sass/style.scss */
 .quicktabs-views-group .theDescCont {
   position: absolute;
   bottom: 0px;
 }
 
-/* line 2559, ../sass/style.scss */
+/* line 2556, ../sass/style.scss */
 .quicktabs-views-group .theTeaser {
   display: none;
+}
+
+/* line 2559, ../sass/style.scss */
+.quicktabs_main {
+  float: left;
+  margin-bottom: 50px;
 }

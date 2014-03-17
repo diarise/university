@@ -2525,9 +2525,6 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     overflow: hidden;
     width: 300px;
 }
-// .quicktabs-tabpage .quicktabs-views-group .theDescCont{
-//   margin-top: -60px;
-// } 
 .views-exposed-widget.views-submit-button{
   float: left!important;
   margin-left: 10px;
@@ -2558,4 +2555,8 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 .quicktabs-views-group .theTeaser{
   display: none;
+}
+.quicktabs_main {
+    float: left;
+    margin-bottom: 50px;
 }
