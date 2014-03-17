@@ -12,6 +12,7 @@
 						<div id="headerLinks">	
 							<?php print render($page['universalMenu']);?>
 							<!--end of universalMenu-->
+							<div class="searchLogo"><a href="/search"><img src="images/search_logo.png"></a></div>
 							<div class="donate"><a href="/donate" target="_blank">donate</a></div>
 						</div>
 					</div>		
