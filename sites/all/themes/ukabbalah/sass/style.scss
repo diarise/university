@@ -2313,7 +2313,7 @@ div.jp-audio{
 #authorDDWrapper, #topicDDWrapper {
     float: left;
 }
-#teachings_teachersDD, #teachings_topicDD {
+#teachings_teachersDD, #teachings_topicDD,#views-exposed-form-search-page select {
     cursor: pointer;
     height: 29px;
 }
@@ -2562,4 +2562,10 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 .quicktabs_main {
     float: left;
     margin-bottom: 50px;
+}
+#views-exposed-form-search-page .views-widget {
+    margin-top: 2px;
+}
+#views-exposed-form-search-page #edit-title-wrapper .views-widget {
+    margin-top: 0px;
 }

@@ -3037,7 +3037,7 @@ div.jp-audio {
 }
 
 /* line 2316, ../sass/style.scss */
-#teachings_teachersDD, #teachings_topicDD {
+#teachings_teachersDD, #teachings_topicDD, #views-exposed-form-search-page select {
   cursor: pointer;
   height: 29px;
 }
@@ -3729,4 +3729,14 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 .quicktabs_main {
   float: left;
   margin-bottom: 50px;
+}
+
+/* line 2566, ../sass/style.scss */
+#views-exposed-form-search-page .views-widget {
+  margin-top: 2px;
+}
+
+/* line 2569, ../sass/style.scss */
+#views-exposed-form-search-page #edit-title-wrapper .views-widget {
+  margin-top: 0px;
 }
