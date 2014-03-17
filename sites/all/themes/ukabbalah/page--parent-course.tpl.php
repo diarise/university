@@ -2,7 +2,7 @@
 <!-- HEADER -->
 <div id="topHeaderWrapper">
 	<div class="topHeader">
-		<div id="topImageCont"><a href="http://kabbalah.com"><img src="http://ukabbalah.com.vhost.zerolag.com/sites/all/themes/spukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
+		<div id="topImageCont"><a href="http://kabbalah.com"><img src="/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
 			<div id="headerSearchLinksWrapper">
 			<div id="headerLinks">	
 				<?php //if ($user->uid == 0) {?>
