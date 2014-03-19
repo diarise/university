@@ -1679,7 +1679,8 @@ h3 {
 #edit-field-secondary-topic-tid-wrapper label,
 #edit-field-secondary-topic-tid-wrapper .views-widget,
 #edit-field-author-tid-wrapper label,
-#edit-title-wrapper label{
+#edit-title-wrapper label,
+#edit-type-wrapper label{
     margin-right: 10px;
     margin-top: 10px;
 }
@@ -1869,7 +1870,8 @@ h3 {
 #edit-field-portion-tid-wrapper label,
 #edit-field-secondary-topic-tid-wrapper label,
 #edit-field-author-tid-wrapper label,
-#edit-title-wrapper label{
+#edit-title-wrapper label,
+#edit-type-wrapper label{
     color: $colorTitle;
     font-size: 14px;
     font-weight: normal;
