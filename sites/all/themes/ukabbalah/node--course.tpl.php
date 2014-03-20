@@ -58,7 +58,7 @@
 <?php if( $node->body['und'][0]['value'] != "" ) { ?>
 	<div id="courseDescription">
 		 	<div id="eSocial">
-		 		<div id="language">Language: EN | Selected classes have subtitles*</div>
+		 		<div id="language"><?php if($node->field_subtitles_present['und'][0]['value']) { ?>Language: EN | Selected classes have subtitles*<?php } ?></div>
 				<div class="sharethis">
 					<span class='st_facebook_large' displayText='Facebook'></span>
 					<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
