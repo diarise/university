@@ -7,12 +7,14 @@
 	<!-- HEADER -->
 		<div id="topHeaderWrapper">
 			<div class="topHeader">
-				<div id="topImageCont"><a href="http://kabbalah.com"><img src="http://ukabbalah.com.vhost.zerolag.com/sites/all/themes/spukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
+				<div id="topImageCont"><a href="http://kabbalah.com"><img src="/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
 					<div id="headerSearchLinksWrapper">
 						<div id="headerLinks">	
 							<?php print render($page['universalMenu']);?>
 							<!--end of universalMenu-->
+
 							<div class="donate"><a href="/donate" target="_blank">donate</a></div>
+							<div class="searchLogo"><a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png"></a></div>
 						</div>
 					</div>		
 			</div> <!-- End of topHeader -->

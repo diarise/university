@@ -36,6 +36,8 @@ $colorFooterHover : #ff665f;
 body {
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    min-width: 980px;
     font-family: $fontFace;
     -webkit-font-smoothing: antialiased;
 }
@@ -144,7 +146,10 @@ ul li {
     font-size: 12px !important;
     color: $colorBrown;
 }
-
+.searchLogo {
+    float: right;
+    margin-right: 20px;
+}
 /*================== LOCAL MENU ============================= */
 
 #outerMenu{
@@ -162,7 +167,7 @@ ul li {
         color: $colorBrown;
         font-size: 15px;
         text-transform: uppercase;
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 1100px) {
            font-size: 13px;
            padding: 0 3px;
   }
@@ -1676,7 +1681,9 @@ h3 {
 #edit-field-secondary-topic-tid-wrapper label,
 #edit-field-secondary-topic-tid-wrapper .views-widget,
 #edit-field-author-tid-wrapper label,
-#edit-title-wrapper label{
+#edit-title-wrapper label,
+#edit-type-wrapper label,
+#edit-type-wrapper .views-widget{
     margin-right: 10px;
     margin-top: 10px;
 }
@@ -1866,7 +1873,8 @@ h3 {
 #edit-field-portion-tid-wrapper label,
 #edit-field-secondary-topic-tid-wrapper label,
 #edit-field-author-tid-wrapper label,
-#edit-title-wrapper label{
+#edit-title-wrapper label,
+#edit-type-wrapper label{
     color: $colorTitle;
     font-size: 14px;
     font-weight: normal;
@@ -2310,7 +2318,7 @@ div.jp-audio{
 #authorDDWrapper, #topicDDWrapper {
     float: left;
 }
-#teachings_teachersDD, #teachings_topicDD {
+#teachings_teachersDD, #teachings_topicDD,#views-exposed-form-search-page select {
     cursor: pointer;
     height: 29px;
 }
@@ -2465,4 +2473,104 @@ div.jp-audio{
     height: 28px;
     line-height: 30px;
     text-align: left;
+}
+
+/**search page**/
+
+#edit-field-author-tid-wrapper,
+#edit-field-portion-tid-wrapper,
+#edit-field-secondary-topic-tid-wrapper,
+#edit-title-wrapper{
+  float: left!important;
+}
+#views-exposed-form-search-page span.lessonsCourse{
+  display: block;
+}
+#edit-field-author-tid-wrapper{
+  margin-right: 10px;
+}
+#views-exposed-form-search-page label{
+  display: inline;
+}
+#views-exposed-form-search-page #edit-title-wrapper{
+  margin-left: 0;
+  label{
+    color: #999999;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  input{
+    margin-top: 0;
+  }
+}
+.quicktabs-tabs.quicktabs-style-zen > li {
+    display: inline;
+    color: #433A3A;
+    text-transform: uppercase; 
+    margin-bottom: -1px; 
+}
+.quicktabs-tabs.quicktabs-style-zen > li.active {
+    background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 41px;
+    a{
+      color: #9C1F19;
+    }
+}
+
+ul.quicktabs-tabs.quicktabs-style-zen {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 20px;
+}
+
+.quicktabs-tabpage .quicktabs-views-group {
+    float: left;
+    height: 170px;
+    margin: 0 10px 20px;
+    overflow: hidden;
+    width: 300px;
+}
+.views-exposed-widget.views-submit-button{
+  float: left!important;
+  margin-left: 10px;
+}
+#views-exposed-form-search-page input.form-submit {
+    background: none repeat scroll 0 0 #328A9A;
+    border: medium none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin: 22px auto auto;
+    padding: 7px 19px;
+    text-align: center;
+    width: 80px;
+}
+/***custom ccarousel for search page***/
+.quicktabs-views-group .imagesCont{
+  position: relative;
+}
+.quicktabs-views-group .imagesCont img{
+  float: none;
+}
+.quicktabs-views-group .theDescCont{
+  position:absolute;
+  bottom:0px;
+}
+.quicktabs-views-group .theTeaser{
+  display: none;
+}
+.quicktabs_main {
+    float: left;
+    margin-bottom: 50px;
+}
+#views-exposed-form-search-page .views-widget {
+    margin-top: 2px;
+}
+#views-exposed-form-search-page #edit-title-wrapper .views-widget {
+    margin-top: 0px;
 }
