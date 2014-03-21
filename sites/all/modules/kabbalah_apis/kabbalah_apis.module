@@ -507,6 +507,9 @@
 				
 				$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
+				
+				$vocab_terms4 = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
+				foreach( $vocab_terms4 as $t )	{	$location_name = $t->name; }
 
 				$result_array[] = array(  'title' => $title , 
 											'image_link' => $image_link ,
@@ -514,7 +517,8 @@
 											'teaser' => $teaser , 
 											'author' => $author_name , 
 											'date_created' => $sDate ,
-											'membership' => $membership
+											'membership' => $membership,
+											'location' => $location_name
 										  );							  	
 		}
 	
