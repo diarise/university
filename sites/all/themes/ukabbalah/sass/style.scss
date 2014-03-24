@@ -659,6 +659,9 @@ background-color:#653a24;
     float: left;
     padding-top: 5px;
 }
+.imagesCont a:hover .theDescCont{
+   background-position: 0 21%;
+}
 .theJsonTitle {
     padding-bottom: 0px; 
     display: block;
