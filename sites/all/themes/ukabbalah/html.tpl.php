@@ -12,8 +12,6 @@
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a"});</script>	
-  <script type="text/javascript" src="https://kabbalah.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_USlqrrzf-1988229788/6251/82/1.4.5/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=74d29eca"></script>
-
  <!-- <meta property="og:title" content="<?php //print $head_title;?>" />
   <meta property="og:description" content="<?php //print $meta_description;?>" />
   <meta property="og:image" content="<?php //print $meta_image; ?>" />-->
@@ -40,6 +38,24 @@
   //]]>
   </script>
   <!-- End Open Web Analytics Code -->
+
+<script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+<style type="text/css" media="screen, projection">
+  @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+</style>
+<script type="text/javascript">
+  if (typeof(Zenbox) !== "undefined") {
+    Zenbox.init({
+      dropboxID:   "20134444",
+      url:         "https://kabbalah.zendesk.com",
+      tabTooltip:  "Feedback",
+      tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_feedback.png",
+      tabColor:    "black",
+      tabPosition: "Left"
+    });
+  }
+</script>
+
 </head>
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="https://kabbalah.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e/en_USlqrrzf-1988229788/6251/82/1.4.5/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=74d29eca"></script>
+
 <!-- HEADER -->
 <div id="topHeaderWrapper">
 	<div class="topHeader">
@@ -38,7 +38,7 @@
 					<?php if ( user_is_logged_in() ) {?>
 						<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a href="/user/logout"> Log Out</a>
 					<?php } else {?>
-						<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
+						<a href="http://profile.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
 					<?php }?>
 					<?php //print render($page['search']); ?>
 				</div>
