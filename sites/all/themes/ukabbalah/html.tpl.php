@@ -47,17 +47,17 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+ <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
 <style type="text/css" media="screen, projection">
   @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
 </style>
 <script type="text/javascript">
   if (typeof(Zenbox) !== "undefined") {
     Zenbox.init({
-      dropboxID:   "20134444",
+      dropboxID:   "20134484",
       url:         "https://kabbalah.zendesk.com",
-      tabTooltip:  "Feedback",
-      tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_feedback.png",
+      tabTooltip:  "Support",
+      tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_support.png",
       tabColor:    "black",
       tabPosition: "Left"
     });
