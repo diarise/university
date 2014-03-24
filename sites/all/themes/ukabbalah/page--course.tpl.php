@@ -1,4 +1,8 @@
-
+<?php
+// $Id: page.tpl.php,v 1.4.2.6 2011/02/18 05:26:30 andregriffin Exp $
+	global $user;
+	$username = $user->name;
+?>
 	<!-- HEADER -->
 	<div id="topHeaderWrapper">
 		<div class="topHeader">
