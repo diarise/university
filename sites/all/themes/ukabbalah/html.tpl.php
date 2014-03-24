@@ -39,7 +39,15 @@
   </script>
   <!-- End Open Web Analytics Code -->
 
-<script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+
+
+</head>
+
+<body class="<?php print $classes; ?>" <?php print $attributes;?>>
+  <?php print $page_top; ?>
+  <?php print $page; ?>
+  <?php print $page_bottom; ?>
+  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
 <style type="text/css" media="screen, projection">
   @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
 </style>
@@ -55,13 +63,6 @@
     });
   }
 </script>
-
-</head>
-
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
 </body>
 
 </html>
