@@ -104,9 +104,9 @@
 		</div><!--end of preview video description-->
 		<div id="wrapperPrice"><!--start of log in-->
 			
-	         <?php if (get_membership_based_content_body( $node->nid )===false) {?>		
+	        <?php if (user_is_logged_in() && get_membership_based_content_body( $node->nid )===false) {?>		
 			<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
-			<?php }  elseif( !user_is_logged_in()) { ?>
+			<?php } elseif( !user_is_logged_in()) { ?>
 				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
 				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
 			<?php } ?>
