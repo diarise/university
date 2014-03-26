@@ -1586,10 +1586,16 @@ h3 {
     margin-top: 8px;
 }
 .buttonMember{
-    @include icon-sprite("become_member_button");
-    width: 169px;
+    // @include icon-sprite("become_member_button");
+    width: auto;
     height: 29px;
-    display: inline-block;   
+    display: inline-block; 
+    background: #34a2c3;
+    border-radius: 4px;
+    display: inline-block;
+    height: 29px;
+    margin-top: -5px;
+    padding: 5px 10px;
 }
 .buttonMember a{
     text-align: center;
