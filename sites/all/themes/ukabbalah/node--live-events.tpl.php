@@ -212,14 +212,16 @@
 					
 				</div>
 		
+			<?php if (user_is_logged_in() && get_membership_based_content_body( $node->nid )===false) {?>		
 				<div id="wrapperPrice">
-			  <?php if (user_is_logged_in() && get_membership_based_content_body( $node->nid )===false) {?>		
-			<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
-			<?php } elseif( !user_is_logged_in()) { ?>
-				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
-				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
-			<?php } ?>
+					<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 				</div>
+			<?php } elseif( !user_is_logged_in()) { ?>
+				<div id="wrapperPrice">
+					<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
+					<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
+				</div>
+			<?php } ?>
 			
 		</div>
 	</div>
