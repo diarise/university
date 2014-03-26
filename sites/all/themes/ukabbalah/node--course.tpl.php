@@ -36,7 +36,7 @@
 				<div id="wrapperPrice">
 		   <?php if (get_membership_based_content_body( $node->nid )===false) {?>		
 			<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
-			<?php } else { ?>
+			<?php } elseif( !user_is_logged_in()) { ?>
 				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
 				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
 			<?php } ?>
