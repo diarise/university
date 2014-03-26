@@ -104,7 +104,7 @@
 		</div><!--end of preview video description-->
 		<div id="wrapperPrice"><!--start of log in-->
 			
-	         <?php if (get_membership_based_content_body( $node->nid )=='false') {?>		
+	         <?php if (get_membership_based_content_body( $node->nid )===false) {?>		
 			<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 			<?php } else { ?>
 				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
