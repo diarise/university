@@ -1,6 +1,6 @@
 @charset "IBM437";
 /* line 394, icon/*.png */
-.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .buttonMember, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .Basic, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
+.icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .Basic, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
   background: url('../images/icon-s48ff81feaf.png') no-repeat;
 }
 
@@ -2071,8 +2071,7 @@ h3 a {
 
 /* line 1588, ../sass/style.scss */
 .buttonMember {
-  background-position: 0 -605px;
-  width: 169px;
+  width: auto;
   height: 29px;
   display: inline-block;
 }

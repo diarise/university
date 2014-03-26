@@ -1586,8 +1586,8 @@ h3 {
     margin-top: 8px;
 }
 .buttonMember{
-    @include icon-sprite("become_member_button");
-    width: 169px;
+    // @include icon-sprite("become_member_button");
+    width: auto;
     height: 29px;
     display: inline-block;   
 }
