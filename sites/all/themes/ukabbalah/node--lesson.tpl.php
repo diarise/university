@@ -115,9 +115,6 @@
 		<?php } ?>
 			
 		<div class="sharethis"><!--start of social media icone-->
-<span class="bookmark">
-<?php print flag_create_link('bookmarks', $node->nid); ?>
-</span>
 			<span class='st_facebook_large' displayText='Facebook'></span>
 			<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
 			<span class='st_googleplus_large' displayText='Google +'></span>
