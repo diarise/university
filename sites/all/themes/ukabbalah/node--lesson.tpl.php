@@ -103,12 +103,15 @@
 			</div>
 		</div><!--end of preview video description-->
 		<div id="wrapperPrice"><!--start of log in-->
-			<?php if( user_is_logged_in() ) {?>
-				<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
+			
+	         <?php if (get_membership_based_content_body( $node->nid )==FALSE) {?>		
+			<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 			<?php } else { ?>
 				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
 				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
 			<?php } ?>
+			
+			
 		</div><!--end of log in-->
 		<div class="sharethis"><!--start of social media icone-->
 <span class="bookmark">
