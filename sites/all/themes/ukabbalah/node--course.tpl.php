@@ -34,8 +34,12 @@
 				</div>
 		
 				<div id="wrapperPrice">
-						<span class="buttonMember"><a href="#">become a member</a></span>
-						<span class="priceLogin"><a href="#">log-in</a></span>
+							<?php if( user_is_logged_in() ) {?>
+				<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
+			<?php } else { ?>
+				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
+				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
+			<?php } ?>
 				</div>
 			
 			
