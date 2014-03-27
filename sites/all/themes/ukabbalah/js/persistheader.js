@@ -11,7 +11,12 @@
         // $('.termDesc').toggleClass('scrollingTermDesc', $(window).scrollTop() > $('#pageregion').offset().top);
         // $('.view-filters').toggleClass('scrollingView-filters', $(window).scrollTop() > $('#pageregion').offset().top);
     });
-
+	
+	$("#teachingsBarInnerWrapper, #teachingsControlSectionInnerWrapper").css({
+                "width": $(".parent_topic").width() - 20
+    });
+	
+	
     var resizeTimer;
     $(window).resize(function () {
         clearTimeout(resizeTimer);
