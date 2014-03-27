@@ -3164,17 +3164,11 @@ div.jp-audio {
 
 @media only screen and (max-width: 1000px) {
   /* line 2413, ../sass/style.scss */
-  .scrollingTitle {
-    padding-left: 20px !important;
-  }
-}
-@media only screen and (min-width: 1000px) {
-  /* line 2418, ../sass/style.scss */
-  .scrollingFilter {
+  .scrollingTitle, .scrollingFilter {
     padding-left: 0px !important;
   }
 }
-/* line 2430, ../sass/style.scss */
+/* line 2419, ../sass/style.scss */
 .scrollingFilter, .scrollingTermDesc, .scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
   position: fixed !important;
@@ -3184,22 +3178,16 @@ div.jp-audio {
   z-index: 1400 !important;
 }
 
-/* line 2438, ../sass/style.scss */
-.scrollingFilter {
-  padding-bottom: 10px !important;
-}
-
-/* line 2441, ../sass/style.scss */
+/* line 2427, ../sass/style.scss */
 .teachingsBarInnerWrapper {
-  max-width: 1580px;
-  min-width: 940px;
   margin: auto;
 }
 
-/* line 2447, ../sass/style.scss */
-.scrollingTitle .teachingsBarInnerWrapper,
-.scrollingFilter .teachingsBarInnerWrapper {
-  width: auto !important;
+/* line 2436, ../sass/style.scss */
+.scrollingFilter {
+  padding-top: 10px;
+  padding-bottom: 10px !important;
+  padding-left: 0px !important;
 }
 
 /**end scrollling filter**/
@@ -3577,7 +3565,7 @@ a.close-tip {
 }
 
 /**agenda**/
-/* line 2458, ../sass/style.scss */
+/* line 2448, ../sass/style.scss */
 #classAgenda th {
   background: none repeat scroll 0 0 #F5F5F5;
   border: medium none;
@@ -3590,24 +3578,24 @@ a.close-tip {
   text-transform: uppercase;
 }
 
-/* line 2470, ../sass/style.scss */
+/* line 2460, ../sass/style.scss */
 #classAgenda th:nth-child(1),
 #classAgenda td:nth-child(1) {
   padding-left: 13px;
 }
 
-/* line 2473, ../sass/style.scss */
+/* line 2463, ../sass/style.scss */
 #classAgenda table {
   width: 96.5%;
   margin-bottom: 20px;
 }
 
-/* line 2477, ../sass/style.scss */
+/* line 2467, ../sass/style.scss */
 #classAgenda tbody {
   border: none;
 }
 
-/* line 2480, ../sass/style.scss */
+/* line 2470, ../sass/style.scss */
 #classAgenda table td {
   color: #433a3a;
   font-family: "ProxiLight";
@@ -3618,7 +3606,7 @@ a.close-tip {
 }
 
 /**search page**/
-/* line 2494, ../sass/style.scss */
+/* line 2484, ../sass/style.scss */
 #edit-field-author-tid-wrapper,
 #edit-field-portion-tid-wrapper,
 #edit-field-secondary-topic-tid-wrapper,
@@ -3626,26 +3614,26 @@ a.close-tip {
   float: left !important;
 }
 
-/* line 2497, ../sass/style.scss */
+/* line 2487, ../sass/style.scss */
 #views-exposed-form-search-page span.lessonsCourse {
   display: block;
 }
 
-/* line 2500, ../sass/style.scss */
+/* line 2490, ../sass/style.scss */
 #edit-field-author-tid-wrapper {
   margin-right: 10px;
 }
 
-/* line 2503, ../sass/style.scss */
+/* line 2493, ../sass/style.scss */
 #views-exposed-form-search-page label {
   display: inline;
 }
 
-/* line 2506, ../sass/style.scss */
+/* line 2496, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper {
   margin-left: 0;
 }
-/* line 2508, ../sass/style.scss */
+/* line 2498, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper label {
   color: #999999;
   font-size: 14px;
@@ -3654,12 +3642,12 @@ a.close-tip {
   text-align: left;
   text-transform: capitalize;
 }
-/* line 2516, ../sass/style.scss */
+/* line 2506, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper input {
   margin-top: 0;
 }
 
-/* line 2520, ../sass/style.scss */
+/* line 2510, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li {
   display: inline;
   color: #433A3A;
@@ -3667,24 +3655,24 @@ a.close-tip {
   margin-bottom: -1px;
 }
 
-/* line 2526, ../sass/style.scss */
+/* line 2516, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li.active {
   background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
   display: inline-block;
   height: 41px;
 }
-/* line 2530, ../sass/style.scss */
+/* line 2520, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li.active a {
   color: #9C1F19;
 }
 
-/* line 2535, ../sass/style.scss */
+/* line 2525, ../sass/style.scss */
 ul.quicktabs-tabs.quicktabs-style-zen {
   border-bottom: 1px solid #CCC;
   margin-bottom: 20px;
 }
 
-/* line 2540, ../sass/style.scss */
+/* line 2530, ../sass/style.scss */
 .quicktabs-tabpage .quicktabs-views-group {
   float: left;
   height: 170px;
@@ -3693,13 +3681,13 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   width: 300px;
 }
 
-/* line 2547, ../sass/style.scss */
+/* line 2537, ../sass/style.scss */
 .views-exposed-widget.views-submit-button {
   float: left !important;
   margin-left: 10px;
 }
 
-/* line 2551, ../sass/style.scss */
+/* line 2541, ../sass/style.scss */
 #views-exposed-form-search-page input.form-submit {
   background: none repeat scroll 0 0 #328A9A;
   border: medium none;
@@ -3715,39 +3703,39 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 
 /***custom ccarousel for search page***/
-/* line 2565, ../sass/style.scss */
+/* line 2555, ../sass/style.scss */
 .quicktabs-views-group .imagesCont {
   position: relative;
 }
 
-/* line 2568, ../sass/style.scss */
+/* line 2558, ../sass/style.scss */
 .quicktabs-views-group .imagesCont img {
   float: none;
 }
 
-/* line 2571, ../sass/style.scss */
+/* line 2561, ../sass/style.scss */
 .quicktabs-views-group .theDescCont {
   position: absolute;
   bottom: 0px;
 }
 
-/* line 2575, ../sass/style.scss */
+/* line 2565, ../sass/style.scss */
 .quicktabs-views-group .theTeaser {
   display: none;
 }
 
-/* line 2578, ../sass/style.scss */
+/* line 2568, ../sass/style.scss */
 .quicktabs_main {
   float: left;
   margin-bottom: 50px;
 }
 
-/* line 2582, ../sass/style.scss */
+/* line 2572, ../sass/style.scss */
 #views-exposed-form-search-page .views-widget {
   margin-top: 2px;
 }
 
-/* line 2585, ../sass/style.scss */
+/* line 2575, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper .views-widget {
   margin-top: 0px;
 }

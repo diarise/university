@@ -2410,23 +2410,12 @@ div.jp-audio{
     z-index: 1400 !important;
 }
 @media only screen and (max-width: 1000px){
-	.scrollingTitle{
-		padding-left: 20px!important;
-	}
-}
-@media only screen and (min-width: 1000px){
-	.scrollingFilter{
+	.scrollingTitle,.scrollingFilter{
 		padding-left: 0px!important;
 	}
 }
-// @media screen and (min-width: 980px){
-//   #outerMenu ul li{
-//     margin: 0 3px;
-//   }
-//   #outerMenu ul li a{
-//     font-size: 13px;
-//   }
-// }
+
+
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
   background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
@@ -2435,19 +2424,20 @@ div.jp-audio{
     margin: auto;
     z-index: 1400 !important;
 }
-.scrollingFilter{
-  padding-bottom:10px!important;
-}
 .teachingsBarInnerWrapper{
-    max-width: 1580px;
-    min-width: 940px;
+    // max-width: 1580px;
+    // min-width: 940px;
     margin: auto;
 }
 .scrollingTitle .teachingsBarInnerWrapper,
 .scrollingFilter .teachingsBarInnerWrapper{
-	width:auto!important;
+	// width:auto!important;
 }
-
+.scrollingFilter{
+  padding-top:10px;
+  padding-bottom:10px!important;
+  padding-left:0px!important;
+}
 
 /**end scrollling filter**/
 

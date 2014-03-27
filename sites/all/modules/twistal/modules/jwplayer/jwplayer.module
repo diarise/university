@@ -35,6 +35,11 @@
 		$player_id='jwplayer'.(count($players)+1);
 		$players[]=$player_id;
 		if(!is_string($video)) $jwplayer['video']=$video;
+		
+		  $ga_array = array();
+		  $ga_array['idstring'] = 'title';
+		  $ga_array['trackingobject'] = 'pageTracker';
+		  $ga_array = json_encode( $ga_array);
 		$jwplayer['player_id']=$player_id;
 		$jwplayer['settings']=array(
 			'height' => 380 ,//$height,
@@ -42,6 +47,7 @@
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
 			'skin'=> $skin,
+			'ga'=> $ga_array,
 			);
 		drupal_alter('jwplayer_settings',$jwplayer);
 		$html='<div id="playerbase"><span id="'.$player_id.'">No video</span></div>

@@ -30,6 +30,8 @@
 		foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
 		
 		//Comparing the user role and node membership 
+		if( $user_role == "free" && $article_membership == "Free") {	return true;}
+		else
 		if( $user_role == "basic" && ( $article_membership == "Basic" || $article_membership == "Free")) {	return true;}
 		else 
 		if( $user_role == "premium" && ($article_membership == "Basic" || $article_membership == "Premium" || $article_membership == "Free" ) )  {	return true;}
