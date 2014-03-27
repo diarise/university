@@ -3191,15 +3191,7 @@ div.jp-audio {
 
 /* line 2441, ../sass/style.scss */
 .teachingsBarInnerWrapper {
-  max-width: 1580px;
-  min-width: 940px;
   margin: auto;
-}
-
-/* line 2447, ../sass/style.scss */
-.scrollingTitle .teachingsBarInnerWrapper,
-.scrollingFilter .teachingsBarInnerWrapper {
-  width: auto !important;
 }
 
 /**end scrollling filter**/
