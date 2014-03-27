@@ -1,5 +1,14 @@
 (function ($) {
-    $(window).scroll(function () {
+    
+	$(window).load(function() {
+		
+		$("#teachingsBarInnerWrapper, #teachingsControlSectionInnerWrapper").css({
+					"width": $(".parent_topic").width() - 20
+		});
+	
+	});
+	
+	$(window).scroll(function () {
         $('#mainOuterContentLogoMenuWrapper').toggleClass('scrolling', $(window).scrollTop() > $('#outerMenu').offset().top);
         $('.donateFloat').toggleClass('donateFloatFix', $(window).scrollTop() > $('#outerMenu').offset().top);
         $('#headerDonateButtonFloat').toggleClass('headerDonateButtonFloatAppear', $(window).scrollTop() > $('#outerMenu').offset().top);
@@ -12,9 +21,7 @@
         // $('.view-filters').toggleClass('scrollingView-filters', $(window).scrollTop() > $('#pageregion').offset().top);
     });
 	
-	$("#teachingsBarInnerWrapper, #teachingsControlSectionInnerWrapper").css({
-                "width": $(".parent_topic").width() - 20
-    });
+	
 	
 	
     var resizeTimer;
