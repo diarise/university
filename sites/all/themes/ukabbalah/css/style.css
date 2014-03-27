@@ -3185,18 +3185,14 @@ div.jp-audio {
 }
 
 /* line 2438, ../sass/style.scss */
-.scrollingFilter {
-  padding-bottom: 10px !important;
-}
-
-/* line 2441, ../sass/style.scss */
 .teachingsBarInnerWrapper {
   margin: auto;
 }
 
-/* line 2450, ../sass/style.scss */
-#teachingsSectionHeaderBar .scrollingFilter {
+/* line 2447, ../sass/style.scss */
+.scrollingFilter {
   padding-top: 10px;
+  padding-bottom: 10px !important;
 }
 
 /**end scrollling filter**/
@@ -3574,7 +3570,7 @@ a.close-tip {
 }
 
 /**agenda**/
-/* line 2460, ../sass/style.scss */
+/* line 2458, ../sass/style.scss */
 #classAgenda th {
   background: none repeat scroll 0 0 #F5F5F5;
   border: medium none;
@@ -3587,24 +3583,24 @@ a.close-tip {
   text-transform: uppercase;
 }
 
-/* line 2472, ../sass/style.scss */
+/* line 2470, ../sass/style.scss */
 #classAgenda th:nth-child(1),
 #classAgenda td:nth-child(1) {
   padding-left: 13px;
 }
 
-/* line 2475, ../sass/style.scss */
+/* line 2473, ../sass/style.scss */
 #classAgenda table {
   width: 96.5%;
   margin-bottom: 20px;
 }
 
-/* line 2479, ../sass/style.scss */
+/* line 2477, ../sass/style.scss */
 #classAgenda tbody {
   border: none;
 }
 
-/* line 2482, ../sass/style.scss */
+/* line 2480, ../sass/style.scss */
 #classAgenda table td {
   color: #433a3a;
   font-family: "ProxiLight";
@@ -3615,7 +3611,7 @@ a.close-tip {
 }
 
 /**search page**/
-/* line 2496, ../sass/style.scss */
+/* line 2494, ../sass/style.scss */
 #edit-field-author-tid-wrapper,
 #edit-field-portion-tid-wrapper,
 #edit-field-secondary-topic-tid-wrapper,
@@ -3623,26 +3619,26 @@ a.close-tip {
   float: left !important;
 }
 
-/* line 2499, ../sass/style.scss */
+/* line 2497, ../sass/style.scss */
 #views-exposed-form-search-page span.lessonsCourse {
   display: block;
 }
 
-/* line 2502, ../sass/style.scss */
+/* line 2500, ../sass/style.scss */
 #edit-field-author-tid-wrapper {
   margin-right: 10px;
 }
 
-/* line 2505, ../sass/style.scss */
+/* line 2503, ../sass/style.scss */
 #views-exposed-form-search-page label {
   display: inline;
 }
 
-/* line 2508, ../sass/style.scss */
+/* line 2506, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper {
   margin-left: 0;
 }
-/* line 2510, ../sass/style.scss */
+/* line 2508, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper label {
   color: #999999;
   font-size: 14px;
@@ -3651,12 +3647,12 @@ a.close-tip {
   text-align: left;
   text-transform: capitalize;
 }
-/* line 2518, ../sass/style.scss */
+/* line 2516, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper input {
   margin-top: 0;
 }
 
-/* line 2522, ../sass/style.scss */
+/* line 2520, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li {
   display: inline;
   color: #433A3A;
@@ -3664,24 +3660,24 @@ a.close-tip {
   margin-bottom: -1px;
 }
 
-/* line 2528, ../sass/style.scss */
+/* line 2526, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li.active {
   background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
   display: inline-block;
   height: 41px;
 }
-/* line 2532, ../sass/style.scss */
+/* line 2530, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li.active a {
   color: #9C1F19;
 }
 
-/* line 2537, ../sass/style.scss */
+/* line 2535, ../sass/style.scss */
 ul.quicktabs-tabs.quicktabs-style-zen {
   border-bottom: 1px solid #CCC;
   margin-bottom: 20px;
 }
 
-/* line 2542, ../sass/style.scss */
+/* line 2540, ../sass/style.scss */
 .quicktabs-tabpage .quicktabs-views-group {
   float: left;
   height: 170px;
@@ -3690,13 +3686,13 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   width: 300px;
 }
 
-/* line 2549, ../sass/style.scss */
+/* line 2547, ../sass/style.scss */
 .views-exposed-widget.views-submit-button {
   float: left !important;
   margin-left: 10px;
 }
 
-/* line 2553, ../sass/style.scss */
+/* line 2551, ../sass/style.scss */
 #views-exposed-form-search-page input.form-submit {
   background: none repeat scroll 0 0 #328A9A;
   border: medium none;
@@ -3712,39 +3708,39 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 
 /***custom ccarousel for search page***/
-/* line 2567, ../sass/style.scss */
+/* line 2565, ../sass/style.scss */
 .quicktabs-views-group .imagesCont {
   position: relative;
 }
 
-/* line 2570, ../sass/style.scss */
+/* line 2568, ../sass/style.scss */
 .quicktabs-views-group .imagesCont img {
   float: none;
 }
 
-/* line 2573, ../sass/style.scss */
+/* line 2571, ../sass/style.scss */
 .quicktabs-views-group .theDescCont {
   position: absolute;
   bottom: 0px;
 }
 
-/* line 2577, ../sass/style.scss */
+/* line 2575, ../sass/style.scss */
 .quicktabs-views-group .theTeaser {
   display: none;
 }
 
-/* line 2580, ../sass/style.scss */
+/* line 2578, ../sass/style.scss */
 .quicktabs_main {
   float: left;
   margin-bottom: 50px;
 }
 
-/* line 2584, ../sass/style.scss */
+/* line 2582, ../sass/style.scss */
 #views-exposed-form-search-page .views-widget {
   margin-top: 2px;
 }
 
-/* line 2587, ../sass/style.scss */
+/* line 2585, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper .views-widget {
   margin-top: 0px;
 }

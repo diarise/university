@@ -2435,9 +2435,6 @@ div.jp-audio{
     margin: auto;
     z-index: 1400 !important;
 }
-.scrollingFilter{
-  padding-bottom:10px!important;
-}
 .teachingsBarInnerWrapper{
     // max-width: 1580px;
     // min-width: 940px;
@@ -2447,8 +2444,9 @@ div.jp-audio{
 .scrollingFilter .teachingsBarInnerWrapper{
 	// width:auto!important;
 }
-#teachingsSectionHeaderBar .scrollingFilter{
+.scrollingFilter{
   padding-top:10px;
+  padding-bottom:10px!important;
 }
 
 /**end scrollling filter**/
