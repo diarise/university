@@ -32,7 +32,7 @@
 		<div id="mainOuterContentLogoMenuWrapper">
 			<div class="topHeader">
 				<div id="mainContentMenuPersist">
-					<div id="newMainContentLogoTitle"><a href="/">KABBALAH UNIVERSITY :</a></div>
+					<div id="newMainContentLogoTitle"><a href="/">KABBALAH UNIVERSITY:</a></div>
 					<div id="mainContentMenu" class="highlightAuthors">
 						<?php print render($page['menu']);?>
 					</div>
