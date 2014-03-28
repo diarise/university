@@ -3739,3 +3739,15 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 #views-exposed-form-search-page #edit-title-wrapper .views-widget {
   margin-top: 0px;
 }
+
+/**style for karen page**/
+/* line 2580, ../sass/style.scss */
+.field-item.even img {
+  float: left;
+}
+
+/* line 2583, ../sass/style.scss */
+.fontBold {
+  font-family: "ProxiRegular";
+  font-weight: bold;
+}
