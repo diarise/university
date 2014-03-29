@@ -10,8 +10,21 @@
 	$sDate2 = $oDate2->format('F jS, Y g:i A'); // Event End Date
 ?>
 
+<?php
 
-<?php if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) {?>	
+	function checkLock() {
+	
+		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
+		if ( get_membership_based_content_body( $node->nid ) ) return true;
+		return false;
+	}
+
+
+?>
+
+
+
+<?php if ( checkLock() ) {?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
