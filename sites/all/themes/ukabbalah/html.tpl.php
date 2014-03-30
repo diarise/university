@@ -59,7 +59,7 @@
       tabTooltip:  "Support",
       tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_support.png",
       tabColor:    "black",
-      tabPosition: "Left"
+      tabPosition: "Bottom"
     });
   }
 </script>
