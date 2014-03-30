@@ -54,12 +54,12 @@
 <script type="text/javascript">
   if (typeof(Zenbox) !== "undefined") {
     Zenbox.init({
-      dropboxID:   "20134484",
+      dropboxID:   "20138384",
       url:         "https://kabbalah.zendesk.com",
       tabTooltip:  "Support",
-      tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_support.png",
+      tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_support_right.png",
       tabColor:    "black",
-      tabPosition: "right"
+      tabPosition: "Right"
     });
   }
 </script>
