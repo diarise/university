@@ -3757,8 +3757,13 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   text-align: center;
 }
 
+/* line 2590, ../sass/style.scss */
+.page-node-5831 #page-title {
+  text-align: center;
+}
+
 /********added style for the support tap*************/
-/* line 2591, ../sass/style.scss */
+/* line 2594, ../sass/style.scss */
 .ZenboxTabRight {
   bottom: 10%;
   right: 94px !important;
@@ -3771,7 +3776,7 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   -webkit-box-shadow: 2px 2px 2px 2px #525252;
 }
 
-/* line 2602, ../sass/style.scss */
+/* line 2605, ../sass/style.scss */
 #zenbox_tab img {
   background: none repeat scroll 0 0 #000000;
   border-right: 2px solid #FFFFFF;
