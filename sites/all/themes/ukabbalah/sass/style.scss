@@ -2587,4 +2587,23 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 .page-node-5825 #page-title {
     text-align: center;
 }
-/**/
+/********added style for the support tap*************/
+.ZenboxTabRight{
+    bottom: 10%;
+    right: 94px !important;
+    top: 98% !important;
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-box-shadow: 2px 2px 2px 2px #525252; 
+}
+#zenbox_tab img{
+    background: none repeat scroll 0 0 #000000;
+    border-right: 2px solid #FFFFFF;
+    left: 1px;
+    position: relative;
+    top: -1px !important;
+    box-shadow: 1px 0 2px 2px #525252;
+}
