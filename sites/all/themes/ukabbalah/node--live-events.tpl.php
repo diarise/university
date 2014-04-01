@@ -13,18 +13,15 @@
 <?php
 
 	function checkLock() {
-		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
-		print_r($vocab_terms);
+		print_r(get_membership_based_content_body( $node->nid ));
 		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
-		elseif(sizeof($vocab_terms)==0 && !user_is_logged_in()){
-	     	return true;}else{
-		return false;}
+		else return false;
 	}
 	
 	
 		
 	    
-print(checkLock());
+//print(checkLock());
 ?>
 
 
