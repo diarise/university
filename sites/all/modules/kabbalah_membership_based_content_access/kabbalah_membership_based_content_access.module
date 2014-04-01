@@ -38,7 +38,7 @@
 		else 
 		if( $user_role == "premium_plus" && ($article_membership == "Basic" || $article_membership == "Premium" || $article_membership == "Premium Plus" || $article_membership == "Free" ) ) {	return true;}
 		else 
-		if( $user->uid == 1  || ($user_role == "editor") || $article_membership == "" ) {	return true;} // For Admin user return true
+		if( $user->uid == 1  || ($user_role == "editor") || $article_membership == "" ) {	return false;} // For Admin user return true
 		
 		return false;
 		//return " article_membership : ".$article_membership." :: user_role : ".$user_role;	
