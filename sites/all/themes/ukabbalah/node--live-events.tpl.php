@@ -15,9 +15,9 @@
 	function checkLock() {
 		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 		print_r($vocab_terms);
-		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return "membership";
+		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
 		elseif(sizeof($vocab_terms)==0 && !user_is_logged_in()){
-	     	return false;}else{
+	     	return true;}else{
 		return false;}
 	}
 	
