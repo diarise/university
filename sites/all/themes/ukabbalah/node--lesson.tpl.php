@@ -19,8 +19,6 @@
 	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $membership_terms as $t )	{	$membership = $t->name; }
 	
-	print_r($membership);
-	
 	$title = $node->title;
 	
 	if( sizeof( $node->field_course_list) > 0  )
@@ -44,7 +42,7 @@
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
 <div id="wrapperVideoSection"><!--start video wrapper section-->
 	<?php } 
-	if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) {?>	
+	if ((user_is_logged_in() && get_membership_based_content_body( $node->nid )) || ($membership=="") ) {?>	
 
 	<div class="videocontent"><!--start of video content when user log in-->
 		<?php
