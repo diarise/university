@@ -1,16 +1,3 @@
-<?php
-
-	function checkLock() {
-	
-		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
-		if ( get_membership_based_content_body( $node->nid ) ) return true;
-		return false;
-	}
-
-
-?>
-
-
 
 <?php 
 
@@ -52,7 +39,7 @@
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
 <div id="wrapperVideoSection"><!--start video wrapper section-->
 	<?php } 
-	if ( checkLock() ) {?>	
+	if ( user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) {?>	
 
 	<div class="videocontent"><!--start of video content when user log in-->
 		<?php
