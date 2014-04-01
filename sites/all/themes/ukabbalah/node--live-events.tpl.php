@@ -14,11 +14,10 @@
 
 	function checkLock() {
 		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
-		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
-		else if(sizeof($vocab_terms)==0 && !user_is_logged_in()){
-	     	return true;
-	     }
-		return false;
+		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return "membership";
+		elseif(sizeof($vocab_terms)==0 && !user_is_logged_in()){
+	     	return "nomembership";}else{
+		return false;}
 	}
 	
 	
