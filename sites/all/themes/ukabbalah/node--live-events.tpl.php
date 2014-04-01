@@ -18,7 +18,7 @@
 		elseif( get_membership_based_content_body( $node->nid )) return true;
 		return false;
 	}
-print_r(checkLock());
+print(checkLock());
 ?>
 
 
