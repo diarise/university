@@ -1,4 +1,3 @@
-
 <?php 
 
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
