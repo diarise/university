@@ -18,6 +18,10 @@
 		elseif( get_membership_based_content_body( $node->nid )) return true;
 		return false;
 	}
+	
+	
+		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+		foreach( $vocab_terms as $t )	{	print ($article_membership = $t->name); }
 print(checkLock());
 ?>
 
