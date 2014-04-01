@@ -15,10 +15,9 @@
 	function checkLock() {
 	
 		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
-		//elseif(!(user_is_logged_in()) && get_membership_based_content_body( $node->nid )) return true;
+		elseif( get_membership_based_content_body( $node->nid )) return true;
 		return false;
 	}
-
 
 ?>
 
