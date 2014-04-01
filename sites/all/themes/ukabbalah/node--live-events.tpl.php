@@ -13,20 +13,19 @@
 <?php
 
 	function checkLock() {
-		print_r(get_membership_based_content_body( $node->nid ));
 		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
 		else return false;
 	}
 	
 	
-		
+	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+	foreach( $membership_terms as $t )	{	$membership = $t->name; }	
 	    
-//print(checkLock());
 ?>
 
 
 
-<?php if ( checkLock() ) {?>	
+<?php if ( checkLock() || ($membership=="")) {?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
