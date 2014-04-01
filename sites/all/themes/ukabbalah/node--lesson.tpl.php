@@ -15,6 +15,12 @@
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
 	foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
 	
+	
+	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+	foreach( $membership_terms as $t )	{	$membership = $t->name; }
+	
+	print_r($membership);
+	
 	$title = $node->title;
 	
 	if( sizeof( $node->field_course_list) > 0  )
