@@ -1,4 +1,4 @@
-@charset "IBM437";
+@charset "UTF-8";
 /* line 394, icon/*.png */
 .icon-sprite, .imgNav li, .imgNav li.activeNav, #goRight, #goLeft, .icon-twitter, .icon-testimonial, .resourceFile, .vidImg, .Videos, .theDescCont .Video, .Premium, .Basic, .audioImg, .Audios, .theDescCont .Audio, .bothAdVdImg, .Both {
   background: url('../images/icon-s48ff81feaf.png') no-repeat;
