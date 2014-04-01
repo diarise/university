@@ -29,7 +29,6 @@
 		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node_data, 12 );
 		foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
 		
-		if(sizeof($vocab_terms)>0){
 		//Comparing the user role and node membership 
 		if( $user_role == "free" && $article_membership == "Free") {	return true;}
 		else
@@ -41,9 +40,7 @@
 		else 
 		if( $user->uid == 1  || ($user_role == "editor") || $article_membership == "" ) {	return true;} // For Admin user return true
 		return false;
-		}else{
-			return true;
-		}
+
 		//return " article_membership : ".$article_membership." :: user_role : ".$user_role;	
 	
 	}

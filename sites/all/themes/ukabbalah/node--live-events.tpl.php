@@ -13,17 +13,17 @@
 <?php
 
 	function checkLock() {
-	
+		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
-		elseif( get_membership_based_content_body( $node->nid )) return true;
+		else if(sizeof($vocab_terms)==0 && !user_is_logged_in()){
+	     	return true;
+	     }
 		return false;
 	}
 	
 	
-		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
-		foreach( $vocab_terms as $t )	{
-			print($t->name);
-				print ($article_membership = $t->name); }
+		
+	    
 print(checkLock());
 ?>
 
