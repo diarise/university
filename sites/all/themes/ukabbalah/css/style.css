@@ -8,7 +8,7 @@
   font-family: 'ProxiLight';
   src: url("ProximaNova-Light.eot");
   src: url("ProximaNova-Light?#iefix");
-  src: local("Γÿ║"), url("ProximaNova-Light.svg") format("svg"), url("ProximaNova-Light.woff") format("woff"), url("ProximaNova-Light.ttf") format("truetype");
+  src: local("☺"), url("ProximaNova-Light.svg") format("svg"), url("ProximaNova-Light.woff") format("woff"), url("ProximaNova-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @font-face {
   font-family: 'ProxiRegular';
   src: url("ProximaNova-Reg-webfont.eot");
-  src: local("Γÿ║"), url("ProximaNova-Reg-webfont.svg") format("svg"), url("ProximaNova-Reg-webfont.woff") format("woff"), url("ProximaNova-Reg-webfont.ttf") format("truetype");
+  src: local("☺"), url("ProximaNova-Reg-webfont.svg") format("svg"), url("ProximaNova-Reg-webfont.woff") format("woff"), url("ProximaNova-Reg-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -24,7 +24,7 @@
 @font-face {
   font-family: 'ProxiRegular';
   src: url("ProximaNova-RegItalic-webfont.eot");
-  src: local("Γÿ║"), url("ProximaNova-RegItalic-webfont.svg") format("svg"), url("ProximaNova-RegItalic-webfont.woff") format("woff"), url("ProximaNova-RegItalic-webfont.ttf") format("truetype");
+  src: local("☺"), url("ProximaNova-RegItalic-webfont.svg") format("svg"), url("ProximaNova-RegItalic-webfont.woff") format("woff"), url("ProximaNova-RegItalic-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
@@ -32,7 +32,7 @@
 @font-face {
   font-family: 'ProxiRegular';
   src: url(".ProximaNova-Bold-webfont.eot");
-  src: local("Γÿ║"), url("ProximaNova-Bold-webfont.svg") format("svg"), url("ProximaNova-Bold-webfont.woff") format("woff"), url("ProximaNova-Bold-webfont.ttf") format("truetype");
+  src: local("☺"), url("ProximaNova-Bold-webfont.svg") format("svg"), url("ProximaNova-Bold-webfont.woff") format("woff"), url("ProximaNova-Bold-webfont.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
