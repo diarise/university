@@ -1,3 +1,17 @@
+<?php
+
+	function checkLock() {
+	
+		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
+		if ( get_membership_based_content_body( $node->nid ) ) return true;
+		return false;
+	}
+
+
+?>
+
+
+
 <?php 
 
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
@@ -38,7 +52,7 @@
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
 <div id="wrapperVideoSection"><!--start video wrapper section-->
 	<?php } 
-	if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) {?>	
+	if ( checkLock() ) {?>	
 
 	<div class="videocontent"><!--start of video content when user log in-->
 		<?php
@@ -107,7 +121,8 @@
 			<div id="wrapperPrice">
 				<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 			</div>
-		<?php } elseif( !user_is_logged_in()) { ?>
+		<?php //} elseif( !user_is_logged_in()) { ?>
+		<?php } elseif( checkLock() ) { ?>
 			<div id="wrapperPrice">
 				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
 				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
