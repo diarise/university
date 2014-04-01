@@ -121,8 +121,8 @@
 			<div id="wrapperPrice">
 				<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 			</div>
-		<?php //} elseif( !user_is_logged_in()) { ?>
-		<?php } elseif( checkLock() ) { ?>
+		<?php } elseif( !user_is_logged_in()) { ?>
+		<?php } //elseif( checkLock() ) { ?>
 			<div id="wrapperPrice">
 				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
 				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
