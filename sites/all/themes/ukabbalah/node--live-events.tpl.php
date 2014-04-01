@@ -21,7 +21,9 @@
 	
 	
 		$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
-		foreach( $vocab_terms as $t )	{	print ($article_membership = $t->name); }
+		foreach( $vocab_terms as $t )	{
+			print($t->name);
+				print ($article_membership = $t->name); }
 print(checkLock());
 ?>
 
