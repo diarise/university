@@ -472,3 +472,26 @@ function _taxonomy_node_get_terms_by_vocabulary($node, $vid, $key = 'tid') {
   return $result->fetchAll();
 }
 
+function ukabbalah_preprocess_html(&$variables) {
+  // If on an individual node page, add the node type to body classes.
+  if ($node = menu_get_object()) 
+  {
+    $variables['head_title'] = $node->title; // find your cck field here
+    $variables['head_desc'] = $node->body['und'][0]['value'];
+    
+	foreach ($node->field_type_of_lesson as $term) 	{ 	$field_type_of_lesson = $term[0]['taxonomy_term']->name; }
+	
+	if( $field_type_of_lesson == 'Video' ) 
+	{
+		$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video[und][0][twistage_existing_videos]."/screenshots/620w.jpg";
+	} else{
+		
+		$course_nid= node_load($node->field_course_list['und'][0]['node']->nid);
+		$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];
+	}
+	
+	$variables['head_image'] = $image_link;
+  
+  
+  }
+}

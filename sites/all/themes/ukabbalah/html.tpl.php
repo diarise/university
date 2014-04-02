@@ -12,9 +12,9 @@
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a"});</script>	
- <!-- <meta property="og:title" content="<?php //print $head_title;?>" />
-  <meta property="og:description" content="<?php //print $meta_description;?>" />
-  <meta property="og:image" content="<?php //print $meta_image; ?>" />-->
+  <meta property="og:title" content="<?php print $head_title;?>" />
+  <meta property="og:description" content="<?php print $head_desc;?>" />
+  <meta property="og:image" content="<?php print $head_image; ?>" />
 	
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
