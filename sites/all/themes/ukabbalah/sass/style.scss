@@ -2456,10 +2456,12 @@ div.jp-audio{
     line-height: 20px;
     text-align: left;
     text-transform: uppercase;
+    padding-left: 70px;
 }
 #classAgenda th:nth-child(1), 
 #classAgenda td:nth-child(1){
     padding-left: 13px;
+    width: 30%;
 }
 #classAgenda table {
     width: 96.5%;
@@ -2475,6 +2477,7 @@ div.jp-audio{
     height: 28px;
     line-height: 30px;
     text-align: left;
+    padding-left:70px;
 }
 
 /**search page**/
