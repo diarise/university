@@ -13,17 +13,19 @@
 <?php
 
 	function checkLock() {
-	
-		if (user_is_logged_in() || get_membership_based_content_body( $node->nid ) ) return true;
-		return false;
+		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
+		else return false;
 	}
-
-
+	
+	
+	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+	foreach( $membership_terms as $t )	{	$membership = $t->name; }	
+	    
 ?>
 
 
 
-<?php if ( checkLock() ) {?>	
+<?php if ( checkLock() || ($membership=="")) {?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">

@@ -5,8 +5,7 @@ package = Core
 core = 7.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
-stylesheets[all][] = css/ie.css
-stylesheets[all][] = css/tooltipster.css
+
 
 scripts[] = js/hover.js
 scripts[] = js/persistheader.js
