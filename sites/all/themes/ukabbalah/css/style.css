@@ -3606,10 +3606,11 @@ a.close-tip {
   line-height: 30px;
   text-align: left;
   padding-left: 70px;
+  vertical-align: top;
 }
 
 /**search page**/
-/* line 2488, ../sass/style.scss */
+/* line 2489, ../sass/style.scss */
 #edit-field-author-tid-wrapper,
 #edit-field-portion-tid-wrapper,
 #edit-field-secondary-topic-tid-wrapper,
@@ -3617,26 +3618,26 @@ a.close-tip {
   float: left !important;
 }
 
-/* line 2491, ../sass/style.scss */
+/* line 2492, ../sass/style.scss */
 #views-exposed-form-search-page span.lessonsCourse {
   display: block;
 }
 
-/* line 2494, ../sass/style.scss */
+/* line 2495, ../sass/style.scss */
 #edit-field-author-tid-wrapper {
   margin-right: 10px;
 }
 
-/* line 2497, ../sass/style.scss */
+/* line 2498, ../sass/style.scss */
 #views-exposed-form-search-page label {
   display: inline;
 }
 
-/* line 2500, ../sass/style.scss */
+/* line 2501, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper {
   margin-left: 0;
 }
-/* line 2502, ../sass/style.scss */
+/* line 2503, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper label {
   color: #999999;
   font-size: 14px;
@@ -3645,12 +3646,12 @@ a.close-tip {
   text-align: left;
   text-transform: capitalize;
 }
-/* line 2510, ../sass/style.scss */
+/* line 2511, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper input {
   margin-top: 0;
 }
 
-/* line 2514, ../sass/style.scss */
+/* line 2515, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li {
   display: inline;
   color: #433A3A;
@@ -3658,24 +3659,24 @@ a.close-tip {
   margin-bottom: -1px;
 }
 
-/* line 2520, ../sass/style.scss */
+/* line 2521, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li.active {
   background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
   display: inline-block;
   height: 41px;
 }
-/* line 2524, ../sass/style.scss */
+/* line 2525, ../sass/style.scss */
 .quicktabs-tabs.quicktabs-style-zen > li.active a {
   color: #9C1F19;
 }
 
-/* line 2529, ../sass/style.scss */
+/* line 2530, ../sass/style.scss */
 ul.quicktabs-tabs.quicktabs-style-zen {
   border-bottom: 1px solid #CCC;
   margin-bottom: 20px;
 }
 
-/* line 2534, ../sass/style.scss */
+/* line 2535, ../sass/style.scss */
 .quicktabs-tabpage .quicktabs-views-group {
   float: left;
   height: 170px;
@@ -3684,13 +3685,13 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   width: 300px;
 }
 
-/* line 2541, ../sass/style.scss */
+/* line 2542, ../sass/style.scss */
 .views-exposed-widget.views-submit-button {
   float: left !important;
   margin-left: 10px;
 }
 
-/* line 2545, ../sass/style.scss */
+/* line 2546, ../sass/style.scss */
 #views-exposed-form-search-page input.form-submit {
   background: none repeat scroll 0 0 #328A9A;
   border: medium none;
@@ -3706,67 +3707,67 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 
 /***custom ccarousel for search page***/
-/* line 2559, ../sass/style.scss */
+/* line 2560, ../sass/style.scss */
 .quicktabs-views-group .imagesCont {
   position: relative;
 }
 
-/* line 2562, ../sass/style.scss */
+/* line 2563, ../sass/style.scss */
 .quicktabs-views-group .imagesCont img {
   float: none;
 }
 
-/* line 2565, ../sass/style.scss */
+/* line 2566, ../sass/style.scss */
 .quicktabs-views-group .theDescCont {
   position: absolute;
   bottom: 0px;
 }
 
-/* line 2569, ../sass/style.scss */
+/* line 2570, ../sass/style.scss */
 .quicktabs-views-group .theTeaser {
   display: none;
 }
 
-/* line 2572, ../sass/style.scss */
+/* line 2573, ../sass/style.scss */
 .quicktabs_main {
   float: left;
   margin-bottom: 50px;
 }
 
-/* line 2576, ../sass/style.scss */
+/* line 2577, ../sass/style.scss */
 #views-exposed-form-search-page .views-widget {
   margin-top: 2px;
 }
 
-/* line 2579, ../sass/style.scss */
+/* line 2580, ../sass/style.scss */
 #views-exposed-form-search-page #edit-title-wrapper .views-widget {
   margin-top: 0px;
 }
 
 /**style for karen page**/
-/* line 2584, ../sass/style.scss */
+/* line 2585, ../sass/style.scss */
 .field-item.even img {
   float: left;
 }
 
-/* line 2587, ../sass/style.scss */
+/* line 2588, ../sass/style.scss */
 .fontBold {
   font-family: "ProxiRegular";
   font-weight: bold;
 }
 
-/* line 2591, ../sass/style.scss */
+/* line 2592, ../sass/style.scss */
 .page-node-5825 #page-title {
   text-align: center;
 }
 
-/* line 2594, ../sass/style.scss */
+/* line 2595, ../sass/style.scss */
 .page-node-5831 #page-title {
   text-align: center;
 }
 
 /********added style for the support tap*************/
-/* line 2598, ../sass/style.scss */
+/* line 2599, ../sass/style.scss */
 .ZenboxTabRight {
   bottom: 10%;
   right: 94px !important;
@@ -3778,7 +3779,7 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   transform: rotate(-90deg);
 }
 
-/* line 2609, ../sass/style.scss */
+/* line 2610, ../sass/style.scss */
 #zenbox_tab img {
   background: none repeat scroll 0 0 #000000;
   border-right: 2px solid #FFFFFF;
@@ -3788,7 +3789,7 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   box-shadow: 1px 0 2px 2px #bebebe;
 }
 
-/* line 2617, ../sass/style.scss */
+/* line 2618, ../sass/style.scss */
 .page-node-5824 .sharethis {
   border-top: none;
   padding-top: 22px;
