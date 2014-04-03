@@ -614,7 +614,7 @@
 			
 			
 			$result_array[] = array(  'course_id' => $node->nid,
-									  'type' => $type_of_course,	
+									  'course_type' => $type_of_course,	
 									  'title' => $title ,
 									  'subtitle' => $subtitle,									  									  
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
@@ -657,8 +657,8 @@
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
-			$teaser="";
-			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 0 );
+			$description="";
+			if( sizeof($node->body) > 0 ) $description  = get_clean_body( $node->body['und'][0]['value'] , 0 );
 			
 			
 			
@@ -724,17 +724,16 @@
 			
 			 $result_array[] = array(  'title' => $title , 
 									   'subtitle' => $subtitle,
-									   //'type' => $type_of_course,
-									   'media_type' => $media_type->name,
+									   'lesson_type' => $media_type->name,
 									   'image' => $image_link,
-									   'teaser' => $teaser,		
+									   'description' => $description,		
 									   'authors' => $comma_separated_author_names ,
 									   'additional_authors' => $comma_separated_add_author_names ,								  
 									   'primary_topic' => $primary_topic,
 									   'secondary_topics' => $secondary_topics,
 									   'membership' => $membership->name,
 									   'recorded_date' => $recorded_date,
-									   'path' => $path ,
+									   'web_path' => $path ,
 									   'highlights' => $highlights,
 									   'resources' => $resources,
 									   'created' => $node->created,
