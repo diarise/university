@@ -560,6 +560,11 @@
 		foreach ($result as $record) 
 		{	
 			$node = node_load($nid = $record->nid );
+			
+			print_r( $node );
+			exit;
+			
+			
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
@@ -586,7 +591,8 @@
 									  'teaser' => $teaser,		
 									  'membership' => $membership->name,
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,
-									  'created' => date('F jS, Y',$node->changed),
+									  'created' => $node->created,
+									  'modified' => $node->changed,
 									  'media_type' => $media_type
 									);
 		}
