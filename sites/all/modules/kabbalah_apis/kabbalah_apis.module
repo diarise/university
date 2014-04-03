@@ -572,7 +572,6 @@
 		{	
 			$node = node_load($nid = $record->nid );
 			
-			
 			if( sizeof($node->field_author) > 0 )
 			{
 				foreach( $node->field_author['und'] as $author )	
@@ -593,14 +592,11 @@
 				$comma_separated_add_author_names = implode( ", " , $add_author_names );
 			}
 		   
-			
-		
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$teaser="";
-			
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 0 );
 			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
 			
@@ -612,9 +608,10 @@
 			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
 			$secondary_topics = implode( ", " , $secondary_topics );
 			
-			$result_array[] = array(  'title' => $title ,
-									  'subtitle' => $subtitle,									  
-									  'type' => $node->type,
+			$result_array[] = array(  'course_id' => $node->nid,
+									  'type' => $node->type,	
+									  'title' => $title ,
+									  'subtitle' => $subtitle,									  									  
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 									  'description' => $teaser,
 									  'authors' => $comma_separated_author_names ,
