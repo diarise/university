@@ -580,14 +580,14 @@
 			{
 				foreach( $node->field_author['und'] as $author )	
 				{	
-					print_r( $author );
-					print $author['tid'];
-					// $author = taxonomy_term_load( $author->tid );
-					// $author_names[] = $author->name; 
+					//print_r( $author );
+					//print $author['tid'];
+					$author = taxonomy_term_load( $author['tid'] );
+					$author_names[] = $author->name; 
 				}
-				// $author_names = implode( ", " , $author_names );
+				$author_names = implode( ", " , $author_names );
 			}
-		
+		    print_r( $author_names );
 			exit;	
 			
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
