@@ -566,7 +566,7 @@
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 				WHERE n.status =1
 				AND n.type = 'course'
-				ORDER BY n.changed DESC LIMIT 6";
+				ORDER BY n.changed DESC";
 				
 		$result = db_query( $sql );
 		$result_array = array();
