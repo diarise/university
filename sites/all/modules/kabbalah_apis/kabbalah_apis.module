@@ -58,7 +58,7 @@
 		
 		// App API's
 		
-		$items['k_app_api/all_crs'] = array(              
+		$items['k_app_api/all_courses'] = array(              
 			'page callback'      => 'getRecentlyAddedCoursesJsonForApp',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
