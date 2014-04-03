@@ -584,8 +584,8 @@
 				}
 				$author_names = implode( ", " , $author_names );
 			}
-		    print $author_names;
-			exit;	
+		    print $author_names."<br>";
+			//exit;	
 			
 			//$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			
