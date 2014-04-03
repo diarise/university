@@ -574,7 +574,7 @@
 		{	
 			$node = node_load($nid = $record->nid );
 			
-			$author_names = array;
+			//$author_names = array;
 			if( sizeof($node->field_author) > 0 )
 			{
 				foreach( $node->field_author['und'] as $author )	
@@ -587,7 +587,7 @@
 		    print $author_names;
 			exit;	
 			
-			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			//$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			
 		
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
