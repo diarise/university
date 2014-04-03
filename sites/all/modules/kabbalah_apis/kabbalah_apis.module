@@ -56,6 +56,23 @@
 		);
 		
 		
+		// App API's
+		
+		$items['k_app_api/all_crs'] = array(              
+			'page callback'      => 'getRecentlyAddedCoursesJsonForApp',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['k_app_api/all_lsns'] = array(              
+			'page callback'      => 'getRecentlyAddedLessonsJsonForApp',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		// End of App API's
+		
+		
 		$items['k_api/recommended_lsns/%/%'] = array(               // Made this a PAGE
 			'page callback'      => 'getRecommendedLessonsJson',
 			'page arguments' => array(2,3),
@@ -348,7 +365,15 @@
 			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
 			if( $recorded_date == "" ) $recorded_date = $node->changed;
 			
-			
+			if( $media_type->name == 'Video' ) 
+			{
+				$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
+			} 
+			else
+			{
+				$course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
+				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
+			}
 			
 			$result_array[] = array(  'node_type' => $node->type,
 									  'title' => $title , 
@@ -356,7 +381,7 @@
 									  'path' => $path , 
 									  'teaser' => $teaser,		
 									  'membership' => $membership->name,
-									  'image' => 'http://twistassets.kabbalah.com/videos/'.$node->field_lesson_video['und'][0]['twistage_existing_videos'].'/screenshots/300w.jpg' ,
+									  'image' => $image_link,
 									  'created' => date('F jS, Y',$recorded_date),
 									  'media_type' => $media_type->name
 									);
@@ -364,6 +389,8 @@
 		echo json_encode( $result_array );				
 
 	}
+	
+
 	
 	// Profile Dashboard API's
 	function getRecentlyAddedLessonsByMembershipJson( $membership ) {
@@ -524,9 +551,159 @@
 	
 		echo json_encode( $result_array );
 	}
-
 	
 	// End of Profile Dashboard API's
+
+	
+	
+	
+	// App Apis
+
+	function getRecentlyAddedCoursesJsonForApp() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				WHERE n.status =1
+				AND n.type = 'course'
+				ORDER BY n.changed DESC LIMIT 6";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{	
+			$node = node_load($nid = $record->nid );
+			//print_r( $node );
+			
+			// $author_names = array;
+			if( sizeof($node->field_author) > 0 )
+			{
+				
+				print_r( $node->field_author );
+				
+				// foreach( $node->field_author['und'] as $author )	
+				// {	
+					// $author = taxonomy_term_load( $author->tid );
+					// $author_names[] = $author->name; 
+				// }
+				// $author_names = implode( ", " , $author_names );
+			}
+		
+			exit;	
+			
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			
+		
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser="";
+			
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
+			
+			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+			foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
+			
+			$secondary_topics = array();
+			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
+			$secondary_topics = implode( ", " , $secondary_topics );
+			
+			$result_array[] = array(  'title' => $title ,
+									  'subtitle' => $subtitle,									  
+									  'type' => $node->type,
+									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
+									  'description' => $teaser,
+									  'author' => $author ,									  
+									  'primary_topic' => $primary_topic,
+									  'secondary_topics' => $secondary_topics,					
+									  'membership' => $membership->name,
+									  'web_path' => $path ,					  
+									  'created' => $node->created,
+									  'modified' => $node->changed									 
+									);
+		}
+		echo json_encode( $result_array );				
+	}
+	
+	function getRecentlyAddedLessonsJsonForApp() {
+	
+		$sql = "SELECT *
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				WHERE n.status =1
+				AND n.type = 'lesson'
+				ORDER BY n.changed DESC LIMIT 6";
+				
+		$result = db_query( $sql );
+		$result_array = array();
+		foreach ($result as $record) 
+		{
+			
+			$node = node_load($nid = $record->nid  );
+			//print_r( $node );
+			//exit;
+			
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
+			$teaser="";
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			
+			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+			foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
+			
+			$secondary_topics = array();
+			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
+			$secondary_topics = implode( ", " , $secondary_topics );
+			
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
+			
+
+			if( $media_type->name == 'Video' ) 
+			{
+				$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
+			} 
+			else
+			{
+				$course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
+				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
+			}
+			
+			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
+			if( $recorded_date == "" ) $recorded_date = $node->changed;
+			
+			 $result_array[] = array(  'title' => $title , 
+									   'subtitle' => $subtitle,
+									   'node_type' => $node->type,
+									   'media_type' => $media_type->name,
+									   'image' => $image_link,
+									   'teaser' => $teaser,		
+									   'author' => $author->name ,									  
+									   'primary_topic' => $primary_topic,
+									   'secondary_topics' => $secondary_topics,
+									   'membership' => $membership->name,
+									   'recorded_date' => $recorded_date,
+									   'path' => $path ,					  
+									   'created' => $node->created,
+									   'modified' => $node->changed									   
+									  // 'created' => date('F jS, Y',$recorded_date),									 
+									);
+		}
+		echo json_encode( $result_array );				
+
+	}
+	
+	
+	// End of App Apis
+		
 	
 	function getRecentlyAddedCoursesJson() {
 	
