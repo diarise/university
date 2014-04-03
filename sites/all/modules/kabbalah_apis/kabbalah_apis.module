@@ -609,8 +609,12 @@
 			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
 			$secondary_topics = implode( ", " , $secondary_topics );
 			
+			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 11 );
+			foreach( $vocab_terms3 as $t )	{	$type_of_course = $t->name; }
+			
+			
 			$result_array[] = array(  'course_id' => $node->nid,
-									  'type' => $node->type,	
+									  'type' => $type_of_course,	
 									  'title' => $title ,
 									  'subtitle' => $subtitle,									  									  
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
@@ -632,6 +636,17 @@
 	
 		print $course_id;
 		exit;
+		
+		$sql = "SELECT n.nid , n.title as lesson_title, cl.field_course_list_nid , el.field_event_list_nid , n2.title
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_data_field_event_list el} ON ( nr.nid = el.entity_id AND nr.vid = el.revision_id )
+				LEFT JOIN {field_data_field_course_list cl} ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id )
+				LEFT JOIN {node n2} ON ( cl.field_course_list_nid = n2.nid OR el.field_event_list_nid = n2.nid )
+				WHERE n.status =1
+				AND n.type = 'lesson'
+				AND n2.nid = '".$course_id."'
+				ORDER BY n.changed DESC";
 		
 		
 		$sql = "SELECT *
