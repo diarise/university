@@ -698,7 +698,7 @@
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
 			$highlights = get_clean_body( $node->field_lesson_highlights['und'][0]['value'] , 0 );
-			$resources = array();
+			
 			if( sizeof( $node->field_lesson_resources) > 0  ) {
 				$wrapper = entity_metadata_wrapper('node', $node);
 				foreach ($wrapper->field_lesson_resources as $i)
