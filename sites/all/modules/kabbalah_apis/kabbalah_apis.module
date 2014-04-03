@@ -665,7 +665,7 @@
 			if( sizeof($node->field_author) > 0 )
 			{
 				$comma_separated_author_names = "";
-				//$author_names = array;
+				$author_names = array();
 				foreach( $node->field_author['und'] as $author )	
 				{	
 					$author = taxonomy_term_load( $author['tid'] );
