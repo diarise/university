@@ -660,7 +660,30 @@
 			$teaser="";
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 0 );
 			
-			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			
+			
+			if( sizeof($node->field_author) > 0 )
+			{
+				foreach( $node->field_author['und'] as $author )	
+				{	
+					$author = taxonomy_term_load( $author['tid'] );
+					$author_names[] = $author->name; 
+				}
+				$comma_separated_author_names = implode( ", " , $author_names );
+			}
+			
+			if( sizeof($node->field_additiona_authors) > 0 )
+			{
+				foreach( $node->field_additiona_authors['und'] as $add_author )	
+				{	
+					$add_author = taxonomy_term_load( $add_author['tid'] );
+					$add_author_names[] = $add_author->name; 
+				}
+				$comma_separated_add_author_names = implode( ", " , $add_author_names );
+			}
+			
+			
+			
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			
 			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
@@ -674,13 +697,24 @@
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
-
-			if( $media_type->name == 'Video' ) 
-			{
+			$highlights = get_clean_body( $node->field_lesson_highlights['und'][0]['value'] , 0 );
+			$resources = array();
+			if( sizeof( $node->field_lesson_resources) > 0  ) {
+				$wrapper = entity_metadata_wrapper('node', $node);
+				foreach ($wrapper->field_lesson_resources as $i)
+				{
+					$resources[] = array( 
+											"resource_link" => $i->field_file_link->value() , 
+											"resource_description" => $i->field_file_description->value() 
+									);
+				}
+			}
+			
+			if( $media_type->name == 'Video' ) 	{
+				
 				$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
-			} 
-			else
-			{
+			} else	{
+			
 				$course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
@@ -690,19 +724,21 @@
 			
 			 $result_array[] = array(  'title' => $title , 
 									   'subtitle' => $subtitle,
-									   'type' => $node->type,
+									   //'type' => $type_of_course,
 									   'media_type' => $media_type->name,
 									   'image' => $image_link,
 									   'teaser' => $teaser,		
-									   'author' => $author->name ,									  
+									   'authors' => $comma_separated_author_names ,
+									   'additional_authors' => $comma_separated_add_author_names ,								  
 									   'primary_topic' => $primary_topic,
 									   'secondary_topics' => $secondary_topics,
 									   'membership' => $membership->name,
 									   'recorded_date' => $recorded_date,
-									   'path' => $path ,					  
+									   'path' => $path ,
+									   'highlights' => $highlights,
+									   'resources' => $resources,
 									   'created' => $node->created,
 									   'modified' => $node->changed									   
-									  // 'created' => date('F jS, Y',$recorded_date),									 
 									);
 		}
 		echo json_encode( $result_array );				
