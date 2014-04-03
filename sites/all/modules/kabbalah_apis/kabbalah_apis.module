@@ -555,8 +555,6 @@
 	// End of Profile Dashboard API's
 
 	
-	
-	
 	// App Apis
 
 	function getRecentlyAddedCoursesJsonForApp() {
@@ -603,7 +601,18 @@
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$teaser="";
 			
-			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			if( sizeof($node->body) > 0 ) 
+			{
+				$body = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $node->body['und'][0]['value']);
+				$body = preg_replace('#<object(.*?)>(.*?)</object>#is', '', $body);
+				$teaser = preg_replace('#<img(.*?)>#is', '', $body);
+				$teaser = preg_replace("/&#?[a-z0-9]+;/i","",$teaser); // removeds $nbsp
+				$teaser = stripslashes($teaser);
+				//$teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			
+			}
+			
+		
 			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
 			
 			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
