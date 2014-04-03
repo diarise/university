@@ -574,26 +574,26 @@
 		{	
 			$node = node_load($nid = $record->nid );
 			//print_r( $node );
-			//exit;
-			
 			
 			// $author_names = array;
-			// if( sizeof($node->field_author) > 0 )
-			// {
+			if( sizeof($node->field_author) > 0 )
+			{
+				
+				print_r( $node->field_author );
+				
 				// foreach( $node->field_author['und'] as $author )	
 				// {	
 					// $author = taxonomy_term_load( $author->tid );
 					// $author_names[] = $author->name; 
 				// }
 				// $author_names = implode( ", " , $author_names );
-			// }
-			
+			}
+		
+			exit;	
 			
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			
-			
-			
-			
+		
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
