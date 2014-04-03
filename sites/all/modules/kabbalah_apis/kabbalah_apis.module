@@ -582,7 +582,7 @@
 					$author = taxonomy_term_load( $author['tid'] );
 					$author_names[] = $author->name; 
 				}
-				$author_names = implode( ", " , $author_names );
+				$comma_separated_author_names = implode( ", " , $author_names );
 			}
 		    //print $author_names."<br><br>";
 			//exit;	
@@ -612,7 +612,7 @@
 									  'type' => $node->type,
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 									  'description' => $teaser,
-									  'author' => $author_names ,									  
+									  'author' => $comma_separated_author_names ,									  
 									  'primary_topic' => $primary_topic,
 									  'secondary_topics' => $secondary_topics,					
 									  'membership' => $membership->name,
