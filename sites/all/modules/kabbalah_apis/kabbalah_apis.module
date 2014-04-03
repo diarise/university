@@ -634,9 +634,6 @@
 	
 	function getLessonsByCourseIdJsonForApp( $course_id ) {
 	
-		print $course_id;
-		exit;
-		
 		$sql = "SELECT n.nid , n.title as lesson_title, cl.field_course_list_nid , el.field_event_list_nid , n2.title
 				FROM {node n}
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
@@ -647,23 +644,15 @@
 				AND n.type = 'lesson'
 				AND n2.nid = '".$course_id."'
 				ORDER BY n.changed DESC";
-		
-		
-		$sql = "SELECT *
-				FROM {node n}
-				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
-				WHERE n.status =1
-				AND n.type = 'lesson'
-				ORDER BY n.changed DESC LIMIT 6";
-				
+					
 		$result = db_query( $sql );
 		$result_array = array();
 		foreach ($result as $record) 
 		{
 			
 			$node = node_load($nid = $record->nid  );
-			//print_r( $node );
-			//exit;
+			print_r( $node );
+			exit;
 			
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
