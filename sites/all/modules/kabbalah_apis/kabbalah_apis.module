@@ -651,14 +651,14 @@
 		{
 			
 			$node = node_load($nid = $record->nid  );
-			print_r( $node );
-			exit;
+			//print_r( $node );
+			//exit;
 			
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
 			$teaser="";
-			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 0 );
 			
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
@@ -690,7 +690,7 @@
 			
 			 $result_array[] = array(  'title' => $title , 
 									   'subtitle' => $subtitle,
-									   'node_type' => $node->type,
+									   'type' => $node->type,
 									   'media_type' => $media_type->name,
 									   'image' => $image_link,
 									   'teaser' => $teaser,		
