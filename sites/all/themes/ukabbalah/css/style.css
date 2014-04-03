@@ -227,7 +227,7 @@ ul li {
   /* line 174, ../sass/style.scss */
   #outerMenu ul li a {
     font-size: 12px;
-    padding: 0 2px;
+    padding: 0;
   }
 }
 /* line 184, ../sass/style.scss */
