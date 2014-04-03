@@ -59,13 +59,14 @@
 		// App API's
 		
 		$items['k_app_api/all_courses'] = array(              
-			'page callback'      => 'getRecentlyAddedCoursesJsonForApp',
+			'page callback'      => 'getCoursesJsonForApp',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
-		$items['k_app_api/all_lsns'] = array(              
-			'page callback'      => 'getRecentlyAddedLessonsJsonForApp',
+		$items['k_app_api/lsns_by_crs_id/%'] = array(              
+			'page callback'      => 'getLessonsByCourseIdJsonForApp',
+			'page arguments' => array(2),
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
@@ -557,7 +558,7 @@
 	
 	// App Apis
 
-	function getRecentlyAddedCoursesJsonForApp() {
+	function getCoursesJsonForApp() {
 	
 		$sql = "SELECT *
 				FROM {node n}
@@ -627,8 +628,12 @@
 		echo json_encode( $result_array );				
 	}
 	
-	function getRecentlyAddedLessonsJsonForApp() {
+	function getLessonsByCourseIdJsonForApp( $course_id ) {
 	
+		print $course_id;
+		exit;
+		
+		
 		$sql = "SELECT *
 				FROM {node n}
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
@@ -699,7 +704,6 @@
 		echo json_encode( $result_array );				
 
 	}
-	
 	
 	// End of App Apis
 		
