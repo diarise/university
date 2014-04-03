@@ -58,14 +58,15 @@
 		
 		// App API's
 		
-		$items['k_app_api/all_crs'] = array(              
-			'page callback'      => 'getRecentlyAddedCoursesJsonForApp',
+		$items['k_app_api/all_courses'] = array(              
+			'page callback'      => 'getCoursesJsonForApp',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
-		$items['k_app_api/all_lsns'] = array(              
-			'page callback'      => 'getRecentlyAddedLessonsJsonForApp',
+		$items['k_app_api/lsns_by_crs_id/%'] = array(              
+			'page callback'      => 'getLessonsByCourseIdJsonForApp',
+			'page arguments' => array(2),
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
@@ -555,52 +556,49 @@
 	// End of Profile Dashboard API's
 
 	
-	
-	
 	// App Apis
 
-	function getRecentlyAddedCoursesJsonForApp() {
+	function getCoursesJsonForApp() {
 	
 		$sql = "SELECT *
 				FROM {node n}
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 				WHERE n.status =1
 				AND n.type = 'course'
-				ORDER BY n.changed DESC LIMIT 6";
+				ORDER BY n.changed DESC";
 				
 		$result = db_query( $sql );
 		$result_array = array();
 		foreach ($result as $record) 
 		{	
 			$node = node_load($nid = $record->nid );
-			//print_r( $node );
 			
-			// $author_names = array;
 			if( sizeof($node->field_author) > 0 )
 			{
-				
-				print_r( $node->field_author );
-				
-				// foreach( $node->field_author['und'] as $author )	
-				// {	
-					// $author = taxonomy_term_load( $author->tid );
-					// $author_names[] = $author->name; 
-				// }
-				// $author_names = implode( ", " , $author_names );
+				foreach( $node->field_author['und'] as $author )	
+				{	
+					$author = taxonomy_term_load( $author['tid'] );
+					$author_names[] = $author->name; 
+				}
+				$comma_separated_author_names = implode( ", " , $author_names );
 			}
-		
-			exit;	
 			
-			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
-			
-		
+			if( sizeof($node->field_additiona_authors) > 0 )
+			{
+				foreach( $node->field_additiona_authors['und'] as $add_author )	
+				{	
+					$add_author = taxonomy_term_load( $add_author['tid'] );
+					$add_author_names[] = $add_author->name; 
+				}
+				$comma_separated_add_author_names = implode( ", " , $add_author_names );
+			}
+		   
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$teaser="";
-			
-			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 100 );
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 0 );
 			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
 			
 			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
@@ -611,12 +609,18 @@
 			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
 			$secondary_topics = implode( ", " , $secondary_topics );
 			
-			$result_array[] = array(  'title' => $title ,
-									  'subtitle' => $subtitle,									  
-									  'type' => $node->type,
+			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 11 );
+			foreach( $vocab_terms3 as $t )	{	$type_of_course = $t->name; }
+			
+			
+			$result_array[] = array(  'course_id' => $node->nid,
+									  'type' => $type_of_course,	
+									  'title' => $title ,
+									  'subtitle' => $subtitle,									  									  
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 									  'description' => $teaser,
-									  'author' => $author ,									  
+									  'authors' => $comma_separated_author_names ,
+									  'additional_authors' => $comma_separated_add_author_names ,	
 									  'primary_topic' => $primary_topic,
 									  'secondary_topics' => $secondary_topics,					
 									  'membership' => $membership->name,
@@ -628,8 +632,23 @@
 		echo json_encode( $result_array );				
 	}
 	
-	function getRecentlyAddedLessonsJsonForApp() {
+	function getLessonsByCourseIdJsonForApp( $course_id ) {
 	
+		print $course_id;
+		exit;
+		
+		$sql = "SELECT n.nid , n.title as lesson_title, cl.field_course_list_nid , el.field_event_list_nid , n2.title
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_data_field_event_list el} ON ( nr.nid = el.entity_id AND nr.vid = el.revision_id )
+				LEFT JOIN {field_data_field_course_list cl} ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id )
+				LEFT JOIN {node n2} ON ( cl.field_course_list_nid = n2.nid OR el.field_event_list_nid = n2.nid )
+				WHERE n.status =1
+				AND n.type = 'lesson'
+				AND n2.nid = '".$course_id."'
+				ORDER BY n.changed DESC";
+		
+		
 		$sql = "SELECT *
 				FROM {node n}
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
@@ -700,7 +719,6 @@
 		echo json_encode( $result_array );				
 
 	}
-	
 	
 	// End of App Apis
 		
