@@ -584,10 +584,12 @@
 				}
 				$author_names = implode( ", " , $author_names );
 			}
-		   
+		    print $author_names;
+			exit;	
 			
-			//$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			
+		
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
