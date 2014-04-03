@@ -581,18 +581,18 @@
 			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
 			$secondary_topics = implode( ", " , $secondary_topics );
 			
-			$result_array[] = array(  'title' => $title , 
+			$result_array[] = array(  'title' => $title ,
+									  'subtitle' => $subtitle,									  
 									  'node_type' => $node->type,
-									  'created' => $node->created,
-									  'modified' => $node->changed,
+									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 									  'teaser' => $teaser,
-									  'author' => $author->name ,
-									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,
-									  'subtitle' => $subtitle,
+									  'author' => $author->name ,									  
 									  'primary_topic' => $primary_topic,
 									  'secondary_topics' => $secondary_topics,					
-									  'path' => $path ,									  	
-									  'membership' => $membership->name							
+									  'membership' => $membership->name,
+									  'path' => $path ,					  
+									  'created' => $node->created,
+									  'modified' => $node->changed									 
 									);
 		}
 		echo json_encode( $result_array );				
