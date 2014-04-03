@@ -356,7 +356,7 @@
 			} 
 			else
 			{
-			    $course_nid= node_load($node->field_course_list['und'][0]['node']->nid);
+			    $course_nid= node_load( $nid = $node->field_course_list['und'][0]['node']->nid );
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
 			
