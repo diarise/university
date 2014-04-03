@@ -577,19 +577,19 @@
 			//exit;
 			
 			
-			$author_names = array;
-			if( sizeof($node->field_author) > 0 )
-			{
-				foreach( $node->field_author['und'] as $author )	
-				{	
-					$author = taxonomy_term_load( $author->tid );
-					$author_names[] = $author->name; 
-				}
-				$author_names = implode( ", " , $author_names );
-			}
+			// $author_names = array;
+			// if( sizeof($node->field_author) > 0 )
+			// {
+				// foreach( $node->field_author['und'] as $author )	
+				// {	
+					// $author = taxonomy_term_load( $author->tid );
+					// $author_names[] = $author->name; 
+				// }
+				// $author_names = implode( ", " , $author_names );
+			// }
 			
 			
-			//$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
 			
 			
 			
@@ -616,7 +616,7 @@
 									  'type' => $node->type,
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 									  'description' => $teaser,
-									  'author' => $author_names ,									  
+									  'author' => $author ,									  
 									  'primary_topic' => $primary_topic,
 									  'secondary_topics' => $secondary_topics,					
 									  'membership' => $membership->name,
