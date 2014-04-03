@@ -581,6 +581,7 @@
 				foreach( $node->field_author['und'] as $author )	
 				{	
 					print_r( $author );
+					print $author['tid'];
 					// $author = taxonomy_term_load( $author->tid );
 					// $author_names[] = $author->name; 
 				}
