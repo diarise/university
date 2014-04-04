@@ -37,7 +37,7 @@
 					<div id="mainContentMenu" class="highlightAuthors">
 						<?php print render($page['menu']);?>
 					</div>
-					<div class="donateFloat"><a target="_blank" href="https://kabbalah.com/donate>Donate</a></div>
+					<div class="donateFloat"><a target="_blank" href="https://kabbalah.com/donate">Donate</a></div>
 					<div id="headerSearch">
 					<?php if ( user_is_logged_in() ) {?>
 						<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a href="/user/logout"> Log Out</a>
