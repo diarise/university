@@ -24,7 +24,7 @@
 
 
 
-<?php if ((get_membership_based_content_body( $node->nid )) || ($membership=="") ){?>	
+<?php if (user_is_logged_in()){?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
