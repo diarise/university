@@ -24,7 +24,7 @@
 
 
 
-<?php if ((user_is_logged_in() && get_membership_based_content_body( $node->nid )) || ($membership=="") ){?>	
+<?php if ((get_membership_based_content_body( $node->nid )) || ($membership=="") ){?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
@@ -65,7 +65,6 @@
 			</div> <!--start of social media icone-->
 		</div>	
 </div><!--end of of video content when user log in-->
-
 
 
 
