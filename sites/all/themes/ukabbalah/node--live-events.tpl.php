@@ -13,8 +13,7 @@
 <?php
 
 	function checkLock() {
-		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
-		else return false;
+		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) { return true; }else{ return false; };
 	}
 	
 	
@@ -25,7 +24,7 @@
 
 
 
-<?php if ( checkLock() || ($membership=="")) {?>	
+<?php if ( checkLock() || ($membership=="") ) {?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
