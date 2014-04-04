@@ -13,10 +13,9 @@
 <?php
 
 	function checkLock() {
-		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) return true;
-		else return false;
+		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) { return true; }else{ return false; };
 	}
-	
+	print_r(checkLock());
 	
 	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $membership_terms as $t )	{	$membership = $t->name; }	
@@ -25,7 +24,7 @@
 
 
 
-<?php if ( checkLock() || ($membership=="")) {?>	
+<?php if ((get_membership_based_content_body( $node->nid )) || ($membership=="") ){?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
@@ -66,7 +65,6 @@
 			</div> <!--start of social media icone-->
 		</div>	
 </div><!--end of of video content when user log in-->
-
 
 
 
