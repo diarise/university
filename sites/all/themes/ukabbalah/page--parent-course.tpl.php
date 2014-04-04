@@ -40,9 +40,9 @@
 				<div class="donateFloat"><a target="_blank" href="https://kabbalah.com/donate">Donate</a></div>
 				<div id="headerSearch">
 					<?php if ( user_is_logged_in() ) {?>
-						<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a href="/user/logout"> Log Out</a>
+						<a target="_blank" href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a target="_blank" href="/user/logout"> Log Out</a>
 					<?php } else {?>
-						<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
+						<a target="_blank" href="http://university.kabbalah.com/saml_login">Log In</a> / <a target="_blank" href="http://profile.kabbalah.com">Signup</a>
 					<?php }?>
 					<?php //print render($page['search']); ?>
 				</div>
