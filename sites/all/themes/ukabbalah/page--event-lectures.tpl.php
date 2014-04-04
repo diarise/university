@@ -20,7 +20,7 @@
 						<!--universalMenu-->
 						<?php print render($page['universalMenu']);?>
 						<!--end of universalMenu-->
-						<div class="donate"><a href="/donate" target="_blank">donate</a></div>
+						<div class="donate"><a href="https://kabbalah.com/donate" target="_blank">donate</a></div>
 						<div class="searchLogo"><a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png"></a></div>
 					</div>
 				</div>		
@@ -37,7 +37,7 @@
 					<div id="mainContentMenu" class="highlightDemand">
 						<?php print render($page['menu']);?>
 					</div>
-					<div class="donateFloat"><a target="_blank" href="http://kabbalah.com/donate">Donate</a></div>
+					<div class="donateFloat"><a target="_blank" href="https://kabbalah.com/donate">Donate</a></div>
 					<div id="headerSearch">
 					<?php if ( user_is_logged_in() ) {?>
 						<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a href="/user/logout"> Log Out</a>
