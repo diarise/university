@@ -237,6 +237,7 @@
 
 		var touchStart = function () {
 			$("#recentlyAddedLessons").ontouchstart = function(){
+				alert("touched");
 				$(this).find(".rightArrowStyleHome").css({
 					"visibility": "hidden"
 				});
