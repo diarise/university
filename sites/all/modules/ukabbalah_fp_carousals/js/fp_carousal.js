@@ -5,6 +5,12 @@
 		var contsDisplayNum = 3;
 		var rowContent = "";	
 		var imageWidth = 320;
+		var scrollMode = "hidden";
+		var visOpt = "visible";
+		if("ontouchstart" in document.documentElement){
+			scrollMode = "scroll";
+			visOpt = "hidden";
+		};
 	
 		divId.html("<div id='loading' style ='text-align: center; padding-top: 100px'><img src = '/sites/all/modules/kabbalah_custom_slideshow/img/clocker.gif'></img></div>");
 
@@ -83,7 +89,8 @@
 
 			divId.find(".slideWrapper").css({
 				"margin": "0 auto",
-				"overflow": "hidden",
+				"overflow": scrollMode,
+				"-webkit-overflow-scrolling": "touch",
 				"width": 960
 			});
 			divId.find("ul").css({
@@ -109,7 +116,8 @@
 				"margin-top": 71,
 				"position": "absolute",
 				"z-index": 120,
-				"cursor": "pointer"
+				"cursor": "pointer",
+				"visible": visOpt
 			})
 		};
 
