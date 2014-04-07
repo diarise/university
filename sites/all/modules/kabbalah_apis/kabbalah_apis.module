@@ -812,7 +812,7 @@
 					LEFT JOIN {field_data_field_recommened_for_month rm} ON ( rm.entity_id = nr.nid AND rm.revision_id = nr.vid )
 					WHERE n.status =1 AND n.type = 'lesson'
 					AND rm.field_recommened_for_month_value = 0
-					ORDER BY n.changed DESC";
+					ORDER BY n.created DESC";
 		}	
 
 		if( $week == 1 )
@@ -827,7 +827,7 @@
 					WHERE n.status =1 
 					AND n.type = 'lesson'
 					AND field_recommended_date_value BETWEEN '".$first_day_of_week."' AND '".$last_day_of_week."'
-					ORDER BY n.changed DESC";
+					ORDER BY n.created DESC";
 		}		
 				
 		$result = db_query( $sql );
