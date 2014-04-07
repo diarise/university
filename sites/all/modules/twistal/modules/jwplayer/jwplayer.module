@@ -40,6 +40,10 @@
 		  $ga_array['idstring'] = 'title';
 		  $ga_array['trackingobject'] = 'pageTracker';
 		  $ga_array = json_encode( $ga_array);
+		  $mode = array();
+		  $mode[]=array('type'=>'html5');
+		  $mode[]=array('type'=>'flash','src'=> '/'.drupal_get_path('module','jwplayer').'/includes/jwplayer.flash.swf');
+		  $mode=json_encode($mode);
 		$jwplayer['player_id']=$player_id;
 		$jwplayer['settings']=array(
 			'height' => 380 ,//$height,
@@ -47,6 +51,7 @@
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
 			'skin'=> $skin,
+			'modes'=>$mode,
 			'ga'=> $ga_array,
 			);
 		drupal_alter('jwplayer_settings',$jwplayer);
