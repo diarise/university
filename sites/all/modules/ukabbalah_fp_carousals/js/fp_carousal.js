@@ -117,7 +117,7 @@
 				"position": "absolute",
 				"z-index": 120,
 				"cursor": "pointer",
-				"visible": visOpt
+				"visibility": visOpt
 			})
 		};
 
@@ -236,7 +236,40 @@
 				$("#recentlyAddedCourses").show();
 			})
 		}
-		filter();		
+		filter();
+
+		var touchStart = function () {
+			$("#" + Drupal.settings.fp_vars1.divid).ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").css({
+					"visibility": "hidden"
+				});
+			}
+			
+	 		$("#" + Drupal.settings.fp_vars2.divid).ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").css({
+					"visibility": "hidden"
+				});
+			}
+			
+			$("#" + Drupal.settings.fp_vars4.divid).ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").css({
+					"visibility": "hidden"
+				});
+			}
+			
+			$("#" + Drupal.settings.fp_vars5.divid).ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").css({
+					"visibility": "hidden"
+				});
+			}
+			
+			$("#" + Drupal.settings.fp_vars6.divid).ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").css({
+					"visibility": "hidden"
+				});
+			}
+		}
+		touchStart();		
 	})
 
 })(jQuery)
