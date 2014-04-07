@@ -44,6 +44,7 @@
 		  $mode[]=array('type'=>'html5');
 		  $mode[]=array('type'=>'flash','src'=> '/'.drupal_get_path('module','jwplayer').'/includes/jwplayer.flash.swf');
 		  $mode=json_encode($mode);
+		  
 		$jwplayer['player_id']=$player_id;
 		$jwplayer['settings']=array(
 			'height' => 380 ,//$height,
