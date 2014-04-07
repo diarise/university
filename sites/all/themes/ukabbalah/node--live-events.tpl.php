@@ -86,7 +86,7 @@
 					$location_name = "";
 					foreach ( $locations as $location ) {	
 						$location_name = $location->name;
-						echo $location->name; 
+
 					}	
 				?>
 				</span>
@@ -213,7 +213,7 @@
 						<span class = "theCourseAuthor">
 							<?php
 							$locations = _taxonomy_node_get_terms_by_vocabulary($node, 17 );
-							foreach ( $locations as $location ) {	echo $location->name; }	
+							foreach ( $locations as $location ) {	$location_name=$location->name; echo $location->name; }	
 						?>
 						</span>
 					</span>
