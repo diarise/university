@@ -6,10 +6,8 @@
 		var rowContent = "";	
 		var imageWidth = 320;
 		var scrollMode = "hidden";
-		var visOpt = "visible";
 		if("ontouchstart" in document.documentElement){
 			scrollMode = "scroll";
-			visOpt = "hidden";
 		};
 	
 		divId.html("<div id='loading' style ='text-align: center; padding-top: 100px'><img src = '/sites/all/modules/kabbalah_custom_slideshow/img/clocker.gif'></img></div>");
@@ -116,8 +114,7 @@
 				"margin-top": 71,
 				"position": "absolute",
 				"z-index": 120,
-				"cursor": "pointer",
-				"visibility": visOpt
+				"cursor": "pointer"
 			})
 		};
 
@@ -239,31 +236,32 @@
 		filter();
 
 		var touchStart = function () {
-			$("#" + Drupal.settings.fp_vars1.divid).ontouchstart = function(){
+			$("#recentlyAddedLessons").ontouchstart = function(){
+				alert("touched");
 				$(this).find(".rightArrowStyleHome").css({
 					"visibility": "hidden"
 				});
 			}
 			
-	 		$("#" + Drupal.settings.fp_vars2.divid).ontouchstart = function(){
+	 		$("#recentlyAddedCourses").ontouchstart = function(){
 				$(this).find(".rightArrowStyleHome").css({
 					"visibility": "hidden"
 				});
 			}
 			
-			$("#" + Drupal.settings.fp_vars4.divid).ontouchstart = function(){
+			$("#beginnerCourse").ontouchstart = function(){
 				$(this).find(".rightArrowStyleHome").css({
 					"visibility": "hidden"
 				});
 			}
 			
-			$("#" + Drupal.settings.fp_vars5.divid).ontouchstart = function(){
+			$("#recommendedCoursesWeekly").ontouchstart = function(){
 				$(this).find(".rightArrowStyleHome").css({
 					"visibility": "hidden"
 				});
 			}
 			
-			$("#" + Drupal.settings.fp_vars6.divid).ontouchstart = function(){
+			$("#freeLessons").ontouchstart = function(){
 				$(this).find(".rightArrowStyleHome").css({
 					"visibility": "hidden"
 				});
