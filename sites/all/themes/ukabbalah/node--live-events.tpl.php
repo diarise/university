@@ -216,7 +216,7 @@
 					
 				</div>
 		
-			<?php if (!kabbalah_content_access_get_article_membership($article_membership)) {?>		
+			<?php if (!kabbalah_content_access_get_article_membership($article_membership) && user_is_logged_in() ) {?>		
 				<div id="wrapperPrice">
 					<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 				</div>
