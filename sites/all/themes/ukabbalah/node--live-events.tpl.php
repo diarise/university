@@ -8,23 +8,51 @@
 	$oDate2 = new DateTime($node->field_event_date['und'][0]['value2']);
 	//$oDate2->modify("-25200 second");
 	$sDate2 = $oDate2->format('F jS, Y g:i A'); // Event End Date
-?>
-
-<?php
-
-	function checkLock() {
-		if (user_is_logged_in() && get_membership_based_content_body( $node->nid ) ) { return true; }else{ return false; };
-	}
-	print_r(checkLock());
 	
-	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
-	foreach( $membership_terms as $t )	{	$membership = $t->name; }	
+	
+// Membership for the respective node
+	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+	foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
+
+	//Get the article membership
+	function get_article_membership($article_membership){
+	 switch ($article_membership) {
+		 case 'Free':
+			 $article_membership_value = 0;
+			 return access_rule($article_membership_value);
+			 break;
+		 case 'Basic':
+			  $article_membership_value = 1;
+			  return access_rule($article_membership_value);
+			 break;
+		 case 'Premium':
+			  $article_membership_value = 2;
+			  return access_rule($article_membership_value);
+			 break;
+		 case 'Premium Plus':
+			  $article_membership_value = 3;
+			  return access_rule($article_membership_value);
+			 break;
+		 
+		 default:
+			 return true;
+			 break;
+	 }
+	}
+	
+
+   function access_rule($article_membership_value){
+   		 if(kabbalah_content_access_rule() >= $article_membership_value){
+			 	return true;
+		}
+   }
+	
 	    
 ?>
 
 
 
-<?php if (user_is_logged_in()){?>	
+<?php if (get_article_membership($article_membership)){?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
@@ -224,7 +252,7 @@
 					
 				</div>
 		
-			<?php if (user_is_logged_in() && get_membership_based_content_body( $node->nid )===false) {?>		
+			<?php if (!get_article_membership($article_membership)) {?>		
 				<div id="wrapperPrice">
 					<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 				</div>
