@@ -42,7 +42,7 @@
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
 <div id="wrapperVideoSection"><!--start video wrapper section-->
 	<?php } 
-	if ((user_is_logged_in() && get_membership_based_content_body( $node->nid )) || ($membership=="") ) {?>	
+	if (kabbalah_content_access_get_article_membership($membership) ) {?>	
 
 	<div class="videocontent"><!--start of video content when user log in-->
 		<?php
@@ -107,7 +107,7 @@
 			</div>
 		</div><!--end of preview video description-->
 			
-		<?php if (user_is_logged_in() && get_membership_based_content_body( $node->nid )===false) {?>		
+		<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership) ) {?>		
 			<div id="wrapperPrice">
 				<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 			</div>
