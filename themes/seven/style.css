@@ -475,6 +475,12 @@ table th {
   border-color: #bebfb9;
   padding: 3px 10px;
 }
+/**
+ * Force browsers to calculate the width of a 'select all' TH element.
+ */
+table th.select-all {
+  width: 1px;
+}
 table th.active {
   background: #bdbeb9;
 }
@@ -986,9 +992,4 @@ div.add-or-remove-shortcuts {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
-
 }
-#edit-field-secondary-topic-und{
-height:500px;
-}
-#edit-field-portion-und{ height: 400px;}
