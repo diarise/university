@@ -13,46 +13,10 @@
 // Membership for the respective node
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
-
-	//Get the article membership
-	function get_article_membership($article_membership){
-	 switch ($article_membership) {
-		 case 'Free':
-			 $article_membership_value = 0;
-			 return access_rule($article_membership_value);
-			 break;
-		 case 'Basic':
-			  $article_membership_value = 1;
-			  return access_rule($article_membership_value);
-			 break;
-		 case 'Premium':
-			  $article_membership_value = 2;
-			  return access_rule($article_membership_value);
-			 break;
-		 case 'Premium Plus':
-			  $article_membership_value = 3;
-			  return access_rule($article_membership_value);
-			 break;
-		 
-		 default:
-			 return true;
-			 break;
-	 }
-	}
-	
-
-   function access_rule($article_membership_value){
-   		 if(kabbalah_content_access_rule() >= $article_membership_value){
-			 	return true;
-		}
-   }
-	
-	    
+    
 ?>
 
-
-
-<?php if (get_article_membership($article_membership)){?>	
+<?php if (kabbalah_content_access_get_article_membership($article_membership)){?>	
 
 <!-- video wrapper -->
 <div id="wrapperVideoSection">
@@ -252,7 +216,7 @@
 					
 				</div>
 		
-			<?php if (!get_article_membership($article_membership)) {?>		
+			<?php if (!kabbalah_content_access_get_article_membership($article_membership)) {?>		
 				<div id="wrapperPrice">
 					<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 				</div>

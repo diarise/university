@@ -1,5 +1,44 @@
 <?php
     
+	//Get the article membership
+	function kabbalah_content_access_get_article_membership($article_membership)
+	{ 
+		 switch ($article_membership) 
+		 {
+			 case 'Free':
+				$article_membership_value = 0;
+				$access = access_rule($article_membership_value);
+				break;
+			 case 'Basic':
+				$article_membership_value = 1;
+				$access = access_rule($article_membership_value);
+				break;
+			 case 'Premium':
+				$article_membership_value = 2;
+				$access = access_rule($article_membership_value);
+				break;
+			 case 'Premium Plus':
+				$article_membership_value = 3;
+				$access = access_rule($article_membership_value);
+				break;
+			 
+			 default:
+				$access = true;
+				break;
+		 }
+		 
+		 return $access;
+	}
+	
+
+   function access_rule($article_membership_value)
+   {
+   		 if(kabbalah_content_access_rule() >= $article_membership_value){
+			 	return true;
+		}
+   }
+	
+	
 	function kabbalah_content_access_rule() 
 	{
 		
