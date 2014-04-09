@@ -56,12 +56,34 @@
 			'ga'=> $ga_array,
 			);
 		drupal_alter('jwplayer_settings',$jwplayer);
-		$html='<div id="playerbase"><span id="'.$player_id.'">No video</span></div>
-			<script type="text/javascript">
-				jwplayer("'.$player_id.'").setup('.json_encode($jwplayer['settings']).');
-			</script>';
-		if(isset($jwplayer['prefix'])) $html=implode('',$jwplayer['prefix']).$html;
-		if(isset($jwplayer['suffix'])) $html.=implode('',$jwplayer['suffix']);
+		
+		if( _is_imobile() && $jwplayer['video']->dotsub_settings['autostart_subtitles'] == 0 )
+		{	
+			$video_url_for_html5 = $jwplayer['settings']['playlist'][0]['sources'][0]['file'];
+			$video_image_for_html5 = $jwplayer['settings']['playlist'][0]['image'];
+						
+			$html = "<video src='".$video_url_for_html5."' controls preload='auto' poster='".$video_image_for_html5."' height='380' width='645'>
+						Your browser does not support the <code>video</code> element.
+					</video>";
+		}
+		else 
+		{
+			$html='<div id="playerbase"><span id="'.$player_id.'">No video</span></div>
+				<script type="text/javascript">
+					jwplayer("'.$player_id.'").setup('.json_encode($jwplayer['settings']).');
+				</script>';
+				
+			if(isset($jwplayer['prefix'])) $html=implode('',$jwplayer['prefix']).$html;
+			if(isset($jwplayer['suffix'])) $html.=implode('',$jwplayer['suffix']);		
+		}
+		
+		
+		// $html='<div id="playerbase"><span id="'.$player_id.'">No video</span></div>
+			// <script type="text/javascript">
+				// jwplayer("'.$player_id.'").setup('.json_encode($jwplayer['settings']).');
+			// </script>';
+		// if(isset($jwplayer['prefix'])) $html=implode('',$jwplayer['prefix']).$html;
+		// if(isset($jwplayer['suffix'])) $html.=implode('',$jwplayer['suffix']);
 		return $html;
 	}
 	function jwplayer_theme($existing, $type, $theme, $path) {
