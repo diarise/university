@@ -236,7 +236,8 @@
 		filter();
 
 		var touchStart = function () {
-			$("#recentlyAddedLessons").ontouchstart = function(){
+			var div1 = document.getElementById("recentlyAddedLessons");
+			div1.ontouchstart = function(){
 				alert("touched");
 				$(this).find(".rightArrowStyleHome").css({
 					"visibility": "hidden"
