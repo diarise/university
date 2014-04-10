@@ -1,0 +1,89 @@
+<?php
+    
+	//Get the article membership
+	function kabbalah_content_access_get_article_membership($article_membership)
+	{ 
+		 switch ($article_membership) 
+		 {
+			 case 'Free':
+				$article_membership_value = 0;
+				$access = access_rule($article_membership_value);
+				break;
+			 case 'Basic':
+				$article_membership_value = 1;
+				$access = access_rule($article_membership_value);
+				break;
+			 case 'Premium':
+				$article_membership_value = 2;
+				$access = access_rule($article_membership_value);
+				break;
+			 case 'Premium Plus':
+				$article_membership_value = 3;
+				$access = access_rule($article_membership_value);
+				break;
+			 
+			 default:
+				$access = true;
+				break;
+		 }
+		 
+		 return $access;
+	}
+	
+
+   function access_rule($article_membership_value)
+   {
+   		 if(kabbalah_content_access_rule() >= $article_membership_value){
+			 	return true;
+		}
+   }
+	
+	
+	function kabbalah_content_access_rule() 
+	{
+		
+		// Getting the logged in user role 
+		
+		switch (getuser_role()) {
+			case 'free':
+				return 0;
+				break;
+			case 'basic':
+			    return 1;
+				break;
+			case 'premium':
+				return 2;
+				break;
+			case 'premium_plus':
+				return 3;
+				break;
+			case 'not_logged_in':
+				return -1;
+				break;	
+			default:
+			    return 10;
+			
+		}
+		
+	}
+	
+	function getuser_role(){
+		
+		if( user_is_logged_in() )
+		{
+			global $user;
+			$user_role = "";
+			if (array_key_exists('5', $user->roles) ) {	return $user_role = $user->roles['5'];	}
+			else 
+			if (array_key_exists('6', $user->roles) ) {	return $user_role = $user->roles['6'];	}
+			else 
+			if (array_key_exists('8', $user->roles) ) {	return $user_role = $user->roles['8']; }
+			else
+			if (array_key_exists('9', $user->roles) ) {	return $user_role = $user->roles['9']; }
+		}
+		else 
+		{
+			return "not_logged_in";
+		}
+	
+	}

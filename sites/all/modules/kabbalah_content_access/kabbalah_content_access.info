@@ -1,0 +1,4 @@
+name = Kabbalah Content Access
+description = "Custom module to grant access to various lessons based on memembership."
+core = 7.x
+package = Kabbalah Custom Modules

@@ -1,5 +1,6 @@
 <?php
-	//print_r( $node->field_subtitle );
+	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
+	foreach( $membership_terms as $t )	{	$membership = $t->name; }
 ?>
 
 <div id="wrapperVideoSection">
@@ -33,7 +34,7 @@
 					
 				</div>
 		
-			<?php if (user_is_logged_in() && get_membership_based_content_body( $node->nid )===false) {?>		
+			<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership)) {?>		
 				<div id="wrapperPrice">
 					<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 				</div>
