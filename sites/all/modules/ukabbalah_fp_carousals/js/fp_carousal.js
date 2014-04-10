@@ -243,31 +243,31 @@
 			var div5 = document.getElementById("freeLessons");
 
 			div1.ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
 	 		div2.ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
 			div3.ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
 			div4.ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
 			div5.ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
