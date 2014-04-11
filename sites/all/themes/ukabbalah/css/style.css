@@ -3833,8 +3833,53 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   width: 940px;
 }
 
+/*--- add style for mobile menu-----*/
+/* line 2661, ../sass/style.scss */
+#kabbalahlogo {
+  float: left;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* line 2666, ../sass/style.scss */
+#ukabblahlogowrapper {
+  float: left;
+  width: 100%;
+}
+
+/* line 2670, ../sass/style.scss */
+#ukabbalahlogo {
+  float: left;
+  margin-left: 51px;
+  width: 200px;
+}
+
+/* line 2675, ../sass/style.scss */
+#usersessionsession {
+  float: right;
+  margin-right: 20px;
+}
+
+/* line 2680, ../sass/style.scss */
+#mainlogo .donate, #mainlogo .donateFloat {
+  margin-right: 20px;
+}
+
+/* line 2684, ../sass/style.scss */
+#mainlogo .searchLogo,
+#mainlogo .donate,
+#mainlogo .donateFloat {
+  margin-top: 10px;
+}
+
+/* line 2687, ../sass/style.scss */
+#sidr-wrapper-0 {
+  float: left;
+  margin-left: 14px;
+}
+
 /*** added menu logo style**/
-/* line 2657, ../sass/style.scss */
+/* line 2694, ../sass/style.scss */
 .icon-bar {
   background-color: #433A3A;
   border-radius: 2px;
@@ -3844,12 +3889,12 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   box-sizing: border-box;
 }
 
-/* line 2665, ../sass/style.scss */
+/* line 2702, ../sass/style.scss */
 .icon-bar + .icon-bar {
   margin-top: 5px;
 }
 
-/* line 2668, ../sass/style.scss */
+/* line 2705, ../sass/style.scss */
 .navbar-toggle {
   background: none;
   border: none;
@@ -3859,25 +3904,25 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   padding: 7px 4px;
 }
 
-/* line 2677, ../sass/style.scss */
+/* line 2714, ../sass/style.scss */
 .navbar-toggle:focus,
 .navbar-toggle:hover {
   background: none;
 }
 
-/* line 2680, ../sass/style.scss */
+/* line 2717, ../sass/style.scss */
 #naviConWrapper {
   float: left;
   margin-right: 10px;
 }
 
-/* line 2684, ../sass/style.scss */
+/* line 2721, ../sass/style.scss */
 #navLogoWrapper {
   float: left;
   margin-right: 10px;
 }
 
-/* line 2688, ../sass/style.scss */
+/* line 2725, ../sass/style.scss */
 #navLogoWrapper h1 {
   font-size: 20px;
   margin: 0;
