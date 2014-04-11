@@ -171,6 +171,10 @@ ul li {
     border-top: 0 none;
     border: none;
     background: none;
+    @media screen and (max-width: 1200px) {
+           margin: 0 4px;
+  }
+
      & a{
         padding: 0 5px;
         color: $colorBrown;
