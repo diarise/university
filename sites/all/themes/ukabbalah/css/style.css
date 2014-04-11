@@ -1864,7 +1864,7 @@ h3 a {
 
 /* line 1428, ../sass/style.scss */
 #video-control {
-  margin: 31px auto 30px;
+  margin: 31px auto 0px;
   width: 620px;
   float: left;
 }
@@ -3803,4 +3803,23 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 .page-node-5824 .sharethis {
   border-top: none;
   padding-top: 22px;
+}
+
+/**audio download link**/
+/* line 2632, ../sass/style.scss */
+#audioDownloadLink {
+  clear: both;
+  margin: auto;
+  width: 884px;
+}
+
+/* line 2637, ../sass/style.scss */
+#audioDownloadLink > a {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* line 2641, ../sass/style.scss */
+#audioDownloadLink > a span {
+  color: #71DFFF;
 }

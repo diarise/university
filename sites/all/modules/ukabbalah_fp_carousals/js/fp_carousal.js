@@ -236,33 +236,38 @@
 		filter();
 
 		var touchStart = function () {
-			$("#recentlyAddedLessons").ontouchstart = function(){
-				alert("touched");
-				$(this).find(".rightArrowStyleHome").css({
+			var div1 = document.getElementById("recentlyAddedLessons");
+			var div2 = document.getElementById("recentlyAddedCourses");
+			var div3 = document.getElementById("beginnerCourse");
+			var div4 = document.getElementById("recommendedCoursesWeekly");
+			var div5 = document.getElementById("freeLessons");
+
+			div1.ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
-	 		$("#recentlyAddedCourses").ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+	 		div2.ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
-			$("#beginnerCourse").ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+			div3.ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
-			$("#recommendedCoursesWeekly").ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+			div4.ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
 			
-			$("#freeLessons").ontouchstart = function(){
-				$(this).find(".rightArrowStyleHome").css({
+			div5.ontouchstart = function(){
+				$(this).find(".rightArrowStyleHome").unbind().css({
 					"visibility": "hidden"
 				});
 			}
