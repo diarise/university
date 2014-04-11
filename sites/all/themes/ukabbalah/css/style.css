@@ -3810,6 +3810,7 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 #audioDownloadLink {
   clear: both;
   margin: auto;
+  padding-bottom: 20px;
   width: 884px;
 }
 
