@@ -80,6 +80,11 @@ if($event_list_title !=""){?>
 		<?php print render($page['lessoneventcollection']); ?>
 	</div>
   <?php } ?>
+  
+
+<div class='commentsSection'><?php print render($page['comments']); ?></div>  
+  
+  
 <div id="SocialMediaWrapper">
 		<div id="SocialMedia">
 			<div id="fpSocialMediaBlock1"><span class="icon-twitter"></span><?php  print render($page['ktweet']);?></div>

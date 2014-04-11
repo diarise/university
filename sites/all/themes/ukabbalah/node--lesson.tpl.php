@@ -70,7 +70,13 @@
 				</div>
 			</div> <!--start of social media icone-->
 		</div>
-		<div id="audioDownloadLink"><a href='http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/formats/Small_640x360_300kbps_64kbps_h264/file.mp3' target='_blank'><span>AUDIO</span> DOWNLOAD</a></div>		
+		
+		<?php 	if( $field_type_of_lesson == 'Video' ) { ?>
+		<div id="audioDownloadLink"><a href='http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/formats/Small_640x360_300kbps_64kbps_h264/file.mp3' target='_blank'>Download <span>AUDIO</span></a></div>		
+		<?php } ?>
+	
+	
+	
 	</div><!--end of of video content when user log in-->
 	<?php  } else {
 		
