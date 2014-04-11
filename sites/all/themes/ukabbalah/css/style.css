@@ -1634,7 +1634,7 @@ h3 a {
 /* line 1263, ../sass/style.scss */
 #videoSocialIconeWrapper {
   margin: auto;
-  width: 707px;
+  width: 887px;
 }
 
 /* line 1271, ../sass/style.scss */
@@ -1649,8 +1649,8 @@ h3 a {
 /* line 1274, ../sass/style.scss */
 #videoSocialIconeWrapper #eSocial {
   width: auto !important;
-  margin-left: 45px !important;
-  margin-top: 237px !important;
+  margin-left: 14px !important;
+  margin-top: 292px !important;
   float: left;
 }
 
@@ -1865,7 +1865,7 @@ h3 a {
 /* line 1428, ../sass/style.scss */
 #video-control {
   margin: 31px auto 0px;
-  width: 620px;
+  width: 800px;
   float: left;
 }
 
