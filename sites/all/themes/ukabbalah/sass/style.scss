@@ -2651,3 +2651,80 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   margin: auto;
   width: 940px;
 }
+
+
+
+/*--- add style for mobile menu-----*/
+
+
+
+#kabbalahlogo {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+#ukabblahlogowrapper {
+    float: left;
+    width: 100%;
+}
+#ukabbalahlogo {
+    float: left;
+    margin-left: 51px;
+    width: 200px;
+}
+#usersessionsession {
+    float: right;
+    margin-right: 20px;
+}
+
+#mainlogo .donate{
+  margin-right: 20px;
+}
+#mainlogo .searchLogo,
+#mainlogo .donate{
+  margin-top: 10px;
+}
+#sidr-wrapper-0{
+  float: left;
+    margin-left: 14px;
+}
+
+/*** added menu logo style**/
+
+  .icon-bar {
+   background-color: #433A3A;
+    border-radius: 2px;
+    display: block;
+    height: 5px;
+    width: 40px;
+    box-sizing: border-box;
+}
+.icon-bar + .icon-bar {
+    margin-top: 5px;
+}
+.navbar-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 8px;
+    padding: 7px 4px;
+}
+.navbar-toggle:focus,
+.navbar-toggle:hover{
+  background:none;
+}
+#naviConWrapper{
+    float: left;
+    margin-right: 10px;
+}
+#navLogoWrapper {
+  float: left;
+    margin-right: 10px;
+}
+#navLogoWrapper h1{
+  font-size: 20px;
+    margin: 0;
+    padding: 0;
+    color: #9C1F19;
+}
