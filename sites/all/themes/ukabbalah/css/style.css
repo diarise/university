@@ -3811,7 +3811,6 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   clear: both;
   margin: auto;
   width: 884px;
-  padding-bottom: 20px;
 }
 
 /* line 2637, ../sass/style.scss */
@@ -3823,4 +3822,12 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 /* line 2641, ../sass/style.scss */
 #audioDownloadLink > a span {
   color: #71DFFF;
+}
+
+/*** comment section**/
+/* line 2647, ../sass/style.scss */
+.commentsSection {
+  clear: both;
+  margin: auto;
+  width: 940px;
 }

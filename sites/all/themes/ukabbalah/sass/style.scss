@@ -1262,7 +1262,7 @@ h3 {
 }
 #videoSocialIconeWrapper {
     margin: auto;
-    width: 707px;
+    width: 887px;
 }
 #videoSocialIconeWrapper .st_facebook_large,
 #videoSocialIconeWrapper .st_twitter_large,
@@ -1273,8 +1273,8 @@ h3 {
 }
 #videoSocialIconeWrapper #eSocial{
     width: auto!important;
-    margin-left: 45px!important;
-    margin-top: 237px!important;
+    margin-left: 14px!important;
+    margin-top: 292px!important;
     float: left;
 }
 .st_email_large {
@@ -1427,7 +1427,7 @@ h3 {
 }
 #video-control {
     margin: 31px auto 0px;
-    width: 620px;
+    width: 800px;
     float: left;
 }
 .videocontent {
@@ -2640,4 +2640,12 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 #audioDownloadLink > a span{
   color: #71DFFF;
+}
+
+/*** comment section**/
+
+.commentsSection {
+  clear: both;
+  margin: auto;
+  width: 940px;
 }
