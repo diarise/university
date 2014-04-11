@@ -47,8 +47,8 @@
 		  
 		$jwplayer['player_id']=$player_id;
 		$jwplayer['settings']=array(
-			'height' => 380 ,//$height,
-			'width' => 645, //$width,
+			'height' => 435 ,//$height,
+			'width' => 800, //$width,
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
 			'skin'=> $skin,
@@ -62,7 +62,7 @@
 			$video_url_for_html5 = $jwplayer['settings']['playlist'][0]['sources'][0]['file'];
 			$video_image_for_html5 = $jwplayer['settings']['playlist'][0]['image'];
 						
-			$html = "<video src='".$video_url_for_html5."' controls preload='auto' poster='".$video_image_for_html5."' height='380' width='645'>
+			$html = "<video src='".$video_url_for_html5."' controls preload='auto' poster='".$video_image_for_html5."' height='435' width='800'>
 						Your browser does not support the <code>video</code> element.
 					</video>";
 		}
