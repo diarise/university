@@ -1634,7 +1634,7 @@ h3 a {
 /* line 1263, ../sass/style.scss */
 #videoSocialIconeWrapper {
   margin: auto;
-  width: 887px;
+  width: 707px;
 }
 
 /* line 1271, ../sass/style.scss */
@@ -1649,8 +1649,8 @@ h3 a {
 /* line 1274, ../sass/style.scss */
 #videoSocialIconeWrapper #eSocial {
   width: auto !important;
-  margin-left: 14px !important;
-  margin-top: 292px !important;
+  margin-left: 45px !important;
+  margin-top: 237px !important;
   float: left;
 }
 
@@ -1865,7 +1865,7 @@ h3 a {
 /* line 1428, ../sass/style.scss */
 #video-control {
   margin: 31px auto 0px;
-  width: 800px;
+  width: 620px;
   float: left;
 }
 
@@ -3811,7 +3811,6 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   clear: both;
   margin: auto;
   width: 884px;
-  padding-bottom: 20px;
 }
 
 /* line 2637, ../sass/style.scss */
@@ -3823,4 +3822,12 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 /* line 2641, ../sass/style.scss */
 #audioDownloadLink > a span {
   color: #71DFFF;
+}
+
+/*** comment section**/
+/* line 2647, ../sass/style.scss */
+.commentsSection {
+  clear: both;
+  margin: auto;
+  width: 940px;
 }
