@@ -45,6 +45,79 @@
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php print $page_top; ?>
+ 
+<?php
+	global $user;
+	$username = $user->name;
+?>
+<!-- Header and Main Menu -->
+	
+	<div id="mainlogo">
+		<div id="kabbalahlogo">
+			<a href='http://kabbalah.com'><img src='/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png' alt='Kabbalah Center logo' /></a>
+		</div><!--end of kabbalahlogo-->
+		<div class="donate"><a href="/donate" target="_blank">Donate</a></div><!--end of donate-->
+		<div class="searchLogo">
+			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png"></a>
+		</div><!--end of searchlogo-->
+	</div><!--end of main logo-->
+	<div id="ukabblahlogowrapper">
+		<div id="mobilemenu">
+		<?php print render($menu);?>
+		</div><!--end of mobile menu-->
+		<div id="usersessionsession">
+			<?php if ( user_is_logged_in() ) {?>
+				<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> / <a href="/user/logout"> Log Out</a>
+			<?php } else {?>
+				<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
+			<?php }?>
+		</div>
+	</div><!--end of ukabbalah logo-->
+	
+	
+	<!-- HEADER -->
+	<div id="topHeaderWrapper">
+		<div class="topHeader">
+			<div id="topImageCont"><a href="http://kabbalah.com"><img src="/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
+				<div id="headerSearchLinksWrapper">
+				<div id="headerLinks">	
+					<!--universalMenu-->
+					<?php print render($universalMenu);?>
+					<!--end of universalMenu-->
+					<div class="donate"><a href="https://kabbalah.com/donate" target="_blank">donate</a></div>
+					<div class="searchLogo"><a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png"></a></div>
+				</div>
+			</div>		
+		</div> <!-- End of topHeader -->
+	</div> <!-- End of topHeader Wrapper -->
+	<!-- END OF HEADER -->
+		
+		
+	<div id="outerMenu">
+		<div id="mainOuterContentLogoMenuWrapper">
+			<div class="topHeader">
+				<div id="mainContentMenuPersist">
+					<div id="newMainContentLogoTitle"><a href="/">KABBALAH UNIVERSITY:</a></div>
+					<div id="mainContentMenu" class="highlightAuthors">
+						<?php print render($menu);?>
+					</div>
+					<div class="donateFloat"><a target="_blank" href="https://kabbalah.com/donate">Donate</a></div>
+					<div id="headerSearch">
+					<?php if ( user_is_logged_in() ) {?>
+						<a target="_blank" href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a target="_blank" href="/user/logout"> Log Out</a>
+					<?php } else {?>
+						<a target="_blank" href="http://university.kabbalah.com/saml_login">Log In</a> / <a target="_blank" href="http://profile.kabbalah.com">Signup</a>
+					<?php }?>
+					<?php //print render($page['search']); ?>
+					</div>
+				</div>	
+			</div><!--end of topHeader-->
+		</div> <!-- End of mainContentLogoMenuWrapper -->
+	</div>
+
+<!-- End of Header and Main Menu -->  
+  
+  
   <?php print $page; ?>
   <?php print $page_bottom; ?>
  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
@@ -73,6 +146,55 @@
   ga('send', 'pageview');
 
 </script>
+
+<!-- Start For Menu -->
+<script type="text/javascript">
+	/*for website first loads*/
+	var mobileDiv1 = document.getElementById("mainlogo");
+	var mobileDiv2 = document.getElementById("ukabblahlogowrapper");
+	var desktopDiv1 = document.getElementById("topHeaderWrapper");
+	var desktopDiv2 = document.getElementById("outerMenu");
+
+	var isMobile = false;
+	var windowSize = window.outerWidth;
+
+	isMobile = (windowSize >980)? false: true;
+
+	if(isMobile){ 
+		mobileDiv1.style.display = "block";
+		mobileDiv2.style.display = "block";
+		desktopDiv1.style.display = "none";
+		desktopDiv2.style.display = "none";
+	}else {
+		mobileDiv1.style.display = "none";
+		mobileDiv2.style.display = "none";
+		desktopDiv1.style.display = "block";
+		desktopDiv2.style.display = "block";
+	}
+
+	/*end first loads*/
+	/*for website resize*/
+	window.onresize = function(){
+		windowSize = window.outerWidth;
+		isMobile = (windowSize >980)? false: true;
+
+		if(isMobile){ 
+			mobileDiv1.style.display = "block";
+			mobileDiv2.style.display = "block";
+			desktopDiv1.style.display = "none";
+			desktopDiv2.style.display = "none";
+		}else {
+			mobileDiv1.style.display = "none";
+			mobileDiv2.style.display = "none";
+			desktopDiv1.style.display = "block";
+			desktopDiv2.style.display = "block";
+		}
+	}
+</script>
+<!-- End for Menu -->
+
+
+
 </body>
 
 </html>

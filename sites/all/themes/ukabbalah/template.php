@@ -473,6 +473,10 @@ function _taxonomy_node_get_terms_by_vocabulary($node, $vid, $key = 'tid') {
 }
 
 function ukabbalah_preprocess_html(&$variables) {
+  
+  $variables['menu'] = block_get_blocks_by_region('menu');
+  $variables['universalMenu'] = block_get_blocks_by_region('universalMenu');
+  
   // If on an individual node page, add the node type to body classes.
   if ($node = menu_get_object()  ) 
   {
