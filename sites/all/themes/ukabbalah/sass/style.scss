@@ -1433,13 +1433,14 @@ h3 {
 .videocontent {
     margin: auto;
     clear: both;
+    width: 846px;
 }
-.videoContent {
-    margin: auto;
-    clear: both;
-    width: 620px;
-    padding-top: 30px;
-}
+// .videoContent {
+//     margin: auto;
+//     clear: both;
+//     width: 620px;
+//     padding-top: 30px;
+// }
 #videoTitlesWrapper {
     background: none repeat scroll 0 0 #F5F5F5;
     width: 100%;
@@ -2633,6 +2634,7 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     clear: both;
     margin: auto;
     width: 884px;
+    padding-bottom: 20px;
 }
 #audioDownloadLink > a {
     color: #fff;
