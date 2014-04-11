@@ -223,7 +223,7 @@ ul li {
   font-size: 15px;
   text-transform: uppercase;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1220px) {
   /* line 174, ../sass/style.scss */
   #outerMenu ul li a {
     font-size: 12px;
