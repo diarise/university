@@ -158,7 +158,7 @@
 	var isMobile = false;
 	var windowSize = window.outerWidth;
 
-	isMobile = (windowSize >1020)? false: true;
+	isMobile = (windowSize >1100)? false: true;
 
 	if(isMobile){ 
 		mobileDiv1.style.display = "block";
@@ -176,7 +176,7 @@
 	/*for website resize*/
 	window.onresize = function(){
 		windowSize = window.outerWidth;
-		isMobile = (windowSize >1020)? false: true;
+		isMobile = (windowSize >1100)? false: true;
 
 		if(isMobile){ 
 			mobileDiv1.style.display = "block";
