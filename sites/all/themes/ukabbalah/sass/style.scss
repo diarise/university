@@ -1426,7 +1426,7 @@ h3 {
     margin: 0 20px;
 }
 #video-control {
-    margin: 31px auto 30px;
+    margin: 31px auto 0px;
     width: 620px;
     float: left;
 }
@@ -2627,4 +2627,17 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 .page-node-5824 .sharethis {
     border-top: none;
     padding-top:22px;
+}
+/**audio download link**/
+#audioDownloadLink {
+    clear: both;
+    margin: auto;
+    width: 884px;
+}
+#audioDownloadLink > a {
+    color: #fff;
+    font-size: 14px;
+}
+#audioDownloadLink > a span{
+  color: #71DFFF;
 }
