@@ -346,7 +346,7 @@
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 				WHERE n.status =1
 				AND n.type = 'lesson'
-				ORDER BY n.changed DESC LIMIT 6";
+				ORDER BY n.created DESC LIMIT 6";
 				
 		$result = db_query( $sql );
 		$result_array = array();
@@ -364,7 +364,7 @@
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
 			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
-			if( $recorded_date == "" ) $recorded_date = $node->changed;
+			if( $recorded_date == "" ) $recorded_date = $node->created;
 			
 			if( $media_type->name == 'Video' ) 
 			{
@@ -762,7 +762,7 @@
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 				WHERE n.status =1
 				AND n.type = 'course'
-				ORDER BY n.changed DESC LIMIT 6";
+				ORDER BY n.created DESC LIMIT 6";
 				
 		$result = db_query( $sql );
 		$result_array = array();
@@ -795,7 +795,7 @@
 									  'teaser' => $teaser,		
 									  'membership' => $membership->name,
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,
-									  'created' => date('F jS, Y',$node->changed),
+									  'created' => date('F jS, Y',$node->created),
 									  'media_type' => $media_type
 									);
 		}
