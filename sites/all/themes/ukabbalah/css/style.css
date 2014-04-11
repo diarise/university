@@ -1875,6 +1875,14 @@ h3 a {
   clear: both;
 }
 
+/* line 1438, ../sass/style.scss */
+.videoContent {
+  margin: auto;
+  clear: both;
+  width: 620px;
+  padding-top: 30px;
+}
+
 /* line 1444, ../sass/style.scss */
 #videoTitlesWrapper {
   background: none repeat scroll 0 0 #F5F5F5;
