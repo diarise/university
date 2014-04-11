@@ -3832,3 +3832,55 @@ ul.quicktabs-tabs.quicktabs-style-zen {
   margin: auto;
   width: 940px;
 }
+
+/*** added menu logo style**/
+/* line 2657, ../sass/style.scss */
+.icon-bar {
+  background-color: #433A3A;
+  border-radius: 2px;
+  display: block;
+  height: 5px;
+  width: 40px;
+  box-sizing: border-box;
+}
+
+/* line 2665, ../sass/style.scss */
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+/* line 2668, ../sass/style.scss */
+.navbar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 8px;
+  padding: 7px 4px;
+}
+
+/* line 2677, ../sass/style.scss */
+.navbar-toggle:focus,
+.navbar-toggle:hover {
+  background: none;
+}
+
+/* line 2680, ../sass/style.scss */
+#naviConWrapper {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 2684, ../sass/style.scss */
+#navLogoWrapper {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 2688, ../sass/style.scss */
+#navLogoWrapper h1 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  color: #9C1F19;
+}
