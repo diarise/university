@@ -167,23 +167,23 @@ ul li {
     ul li {
         display: inline-block;
     float: none;
-    margin: 0 5px;
+    margin: 0 4px;
     border-top: 0 none;
     border: none;
     background: none;
-    @media screen and (max-width: 1200px) {
-           margin: 0 4px;
-  }
+    @media screen and (max-width: 1340px) {
+           margin: 0 2px;
+      }
 
      & a{
         padding: 0 5px;
         color: $colorBrown;
         font-size: 15px;
         text-transform: uppercase;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 1340px) {
            font-size: 12px;
            padding: 0;
-  }
+          }
     }
     &.first{
         margin-left: 0 !important;
@@ -1764,6 +1764,9 @@ h3 {
 .liveEventCollectionSection thead tr {
     display: inline-block;
     width: 940px;
+}
+.view-content tbody tr{
+  cursor: pointer;
 }
 .lessonCollectionSection table thead tr th:nth-child(1),
 .lessonCollectionSection table tbody tr td:nth-child(1){
