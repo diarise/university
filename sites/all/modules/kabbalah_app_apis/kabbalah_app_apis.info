@@ -1,0 +1,6 @@
+name = university.kabbalah.com APP API's
+description = " List of APP API's used on university.kabbalah.com "
+core = 7.x
+version = "7.22"
+core = "7.x"
+package = Kabbalah Custom Modules
