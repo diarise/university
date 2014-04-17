@@ -3,12 +3,14 @@
 	function kabbalah_app_apis_menu() {
 			
 		// App API's
+		// 1. Gets all the course information 
 		$items['k_app_api/all_courses'] = array(              
 			'page callback'      => 'getCoursesJsonForApp',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
+		// 2. Gets all the lesson information related to the course. Course id is passed as an argument to this hook.
 		$items['k_app_api/lsns_by_crs_id/%'] = array(              
 			'page callback'      => 'getLessonsByCourseIdJsonForApp',
 			'page arguments' => array(2),
@@ -19,10 +21,7 @@
 		// End of App API's
 		
 		return $items;
-	  }
-	  
-
-	
+	  }	
 	
 	// App Apis
 
