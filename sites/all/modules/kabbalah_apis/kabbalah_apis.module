@@ -58,18 +58,18 @@
 		
 		// App API's
 		
-		$items['k_app_api/all_courses'] = array(              
-			'page callback'      => 'getCoursesJsonForApp',
-			'access callback' => TRUE,
-			'type'             => MENU_CALLBACK,
-		);
+		// $items['k_app_api/all_courses'] = array(              
+			// 'page callback'      => 'getCoursesJsonForApp',
+			// 'access callback' => TRUE,
+			// 'type'             => MENU_CALLBACK,
+		// );
 		
-		$items['k_app_api/lsns_by_crs_id/%'] = array(              
-			'page callback'      => 'getLessonsByCourseIdJsonForApp',
-			'page arguments' => array(2),
-			'access callback' => TRUE,
-			'type'             => MENU_CALLBACK,
-		);
+		// $items['k_app_api/lsns_by_crs_id/%'] = array(              
+			// 'page callback'      => 'getLessonsByCourseIdJsonForApp',
+			// 'page arguments' => array(2),
+			// 'access callback' => TRUE,
+			// 'type'             => MENU_CALLBACK,
+		// );
 		
 		// End of App API's
 		
@@ -558,199 +558,199 @@
 	
 	// App Apis
 
-	function getCoursesJsonForApp() {
+	// function getCoursesJsonForApp() {
 	
-		$sql = "SELECT *
-				FROM {node n}
-				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
-				WHERE n.status =1
-				AND n.type = 'course'
-				ORDER BY n.changed DESC";
+		// $sql = "SELECT *
+				// FROM {node n}
+				// LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				// WHERE n.status =1
+				// AND n.type = 'course'
+				// ORDER BY n.changed DESC";
 				
-		$result = db_query( $sql );
-		$result_array = array();
-		foreach ($result as $record) 
-		{	
-			$node = node_load($nid = $record->nid );
+		// $result = db_query( $sql );
+		// $result_array = array();
+		// foreach ($result as $record) 
+		// {	
+			// $node = node_load($nid = $record->nid );
 			
-			if( sizeof($node->field_author) > 0 )
-			{
-				$comma_separated_author_names = "";
-				$author_names = array();
-				foreach( $node->field_author['und'] as $author )	
-				{	
-					$author = taxonomy_term_load( $author['tid'] );
-					$author_names[] = $author->name; 
-				}
-				$comma_separated_author_names = implode( ", " , $author_names );
-			}
+			// if( sizeof($node->field_author) > 0 )
+			// {
+				// $comma_separated_author_names = "";
+				// $author_names = array();
+				// foreach( $node->field_author['und'] as $author )	
+				// {	
+					// $author = taxonomy_term_load( $author['tid'] );
+					// $author_names[] = $author->name; 
+				// }
+				// $comma_separated_author_names = implode( ", " , $author_names );
+			// }
 			
-			if( sizeof($node->field_additiona_authors) > 0 )
-			{
-				$comma_separated_add_author_names = "";
-				$add_author_names = array();
-				foreach( $node->field_additiona_authors['und'] as $add_author )	
-				{	
-					$add_author = taxonomy_term_load( $add_author['tid'] );
-					$add_author_names[] = $add_author->name; 
-				}
-				$comma_separated_add_author_names = implode( ", " , $add_author_names );
-			}
+			// if( sizeof($node->field_additiona_authors) > 0 )
+			// {
+				// $comma_separated_add_author_names = "";
+				// $add_author_names = array();
+				// foreach( $node->field_additiona_authors['und'] as $add_author )	
+				// {	
+					// $add_author = taxonomy_term_load( $add_author['tid'] );
+					// $add_author_names[] = $add_author->name; 
+				// }
+				// $comma_separated_add_author_names = implode( ", " , $add_author_names );
+			// }
 		   
-			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
-			$title = $node->title;
-			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$teaser="";
-			if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 0 );
-			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
+			// $path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			// $title = $node->title;
+			// $title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			// $membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			// $teaser="";
+			// if( sizeof($node->body) > 0 ) $teaser  = get_clean_body( $node->body['und'][0]['value'] , 0 );
+			// if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
 			
-			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
-			foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
+			// $vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+			// foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
 			
-			$secondary_topics = array();
-			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
-			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
-			$secondary_topics = implode( ", " , $secondary_topics );
+			// $secondary_topics = array();
+			// $vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			// foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
+			// $secondary_topics = implode( ", " , $secondary_topics );
 			
-			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 11 );
-			foreach( $vocab_terms3 as $t )	{	$type_of_course = $t->name; }
+			// $vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 11 );
+			// foreach( $vocab_terms3 as $t )	{	$type_of_course = $t->name; }
 			
 			
-			$result_array[] = array(  'course_id' => $node->nid,
-									  'course_type' => $type_of_course,	
-									  'title' => $title ,
-									  'subtitle' => $subtitle,									  									  
-									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
-									  'description' => $teaser,
-									  'authors' => $comma_separated_author_names ,
-									  'additional_authors' => $comma_separated_add_author_names ,	
-									  'primary_topic' => $primary_topic,
-									  'secondary_topics' => $secondary_topics,					
-									  'membership' => $membership->name,
-									  'web_path' => $path ,					  
-									  'created' => $node->created,
-									  'modified' => $node->changed									 
-									);
-		}
-		echo json_encode( $result_array );				
-	}
+			// $result_array[] = array(  'course_id' => $node->nid,
+									  // 'course_type' => $type_of_course,	
+									  // 'title' => $title ,
+									  // 'subtitle' => $subtitle,									  									  
+									  // 'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
+									  // 'description' => $teaser,
+									  // 'authors' => $comma_separated_author_names ,
+									  // 'additional_authors' => $comma_separated_add_author_names ,	
+									  // 'primary_topic' => $primary_topic,
+									  // 'secondary_topics' => $secondary_topics,					
+									  // 'membership' => $membership->name,
+									  // 'web_path' => $path ,					  
+									  // 'created' => $node->created,
+									  // 'modified' => $node->changed									 
+									// );
+		// }
+		// echo json_encode( $result_array );				
+	// }
 	
-	function getLessonsByCourseIdJsonForApp( $course_id ) {
+	// function getLessonsByCourseIdJsonForApp( $course_id ) {
 	
-		$sql = "SELECT n.nid , n.title as lesson_title, cl.field_course_list_nid , el.field_event_list_nid , n2.title
-				FROM {node n}
-				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
-				LEFT JOIN {field_data_field_event_list el} ON ( nr.nid = el.entity_id AND nr.vid = el.revision_id )
-				LEFT JOIN {field_data_field_course_list cl} ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id )
-				LEFT JOIN {node n2} ON ( cl.field_course_list_nid = n2.nid OR el.field_event_list_nid = n2.nid )
-				WHERE n.status =1
-				AND n.type = 'lesson'
-				AND n2.nid = '".$course_id."'
-				ORDER BY n.changed DESC";
+		// $sql = "SELECT n.nid , n.title as lesson_title, cl.field_course_list_nid , el.field_event_list_nid , n2.title
+				// FROM {node n}
+				// LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				// LEFT JOIN {field_data_field_event_list el} ON ( nr.nid = el.entity_id AND nr.vid = el.revision_id )
+				// LEFT JOIN {field_data_field_course_list cl} ON ( nr.nid = cl.entity_id AND nr.vid = cl.revision_id )
+				// LEFT JOIN {node n2} ON ( cl.field_course_list_nid = n2.nid OR el.field_event_list_nid = n2.nid )
+				// WHERE n.status =1
+				// AND n.type = 'lesson'
+				// AND n2.nid = '".$course_id."'
+				// ORDER BY n.changed DESC";
 					
-		$result = db_query( $sql );
-		$result_array = array();
-		foreach ($result as $record) 
-		{
+		// $result = db_query( $sql );
+		// $result_array = array();
+		// foreach ($result as $record) 
+		// {
 			
-			$node = node_load($nid = $record->nid  );
-			//print_r( $node );
-			//exit;
+			// $node = node_load($nid = $record->nid  );
+			// //print_r( $node );
+			// //exit;
 			
-			$title = $node->title;
-			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
-			$description="";
-			if( sizeof($node->body) > 0 ) $description  = get_clean_body( $node->body['und'][0]['value'] , 0 );
-			
-			
-			
-			if( sizeof($node->field_author) > 0 )
-			{
-				$comma_separated_author_names = "";
-				$author_names = array();
-				foreach( $node->field_author['und'] as $author )	
-				{	
-					$author = taxonomy_term_load( $author['tid'] );
-					$author_names[] = $author->name; 
-				}
-				$comma_separated_author_names = implode( ", " , $author_names );
-			}
-			
-			if( sizeof($node->field_additiona_authors) > 0 )
-			{
-				$comma_separated_add_author_names = "";
-				$add_author_names = array();
-				foreach( $node->field_additiona_authors['und'] as $add_author )	
-				{	
-					$add_author = taxonomy_term_load( $add_author['tid'] );
-					$add_author_names[] = $add_author->name; 
-				}
-				$comma_separated_add_author_names = implode( ", " , $add_author_names );
-			}
+			// $title = $node->title;
+			// $title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			// if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
+			// $description="";
+			// if( sizeof($node->body) > 0 ) $description  = get_clean_body( $node->body['und'][0]['value'] , 0 );
 			
 			
 			
-			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			// if( sizeof($node->field_author) > 0 )
+			// {
+				// $comma_separated_author_names = "";
+				// $author_names = array();
+				// foreach( $node->field_author['und'] as $author )	
+				// {	
+					// $author = taxonomy_term_load( $author['tid'] );
+					// $author_names[] = $author->name; 
+				// }
+				// $comma_separated_author_names = implode( ", " , $author_names );
+			// }
 			
-			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
-			foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
+			// if( sizeof($node->field_additiona_authors) > 0 )
+			// {
+				// $comma_separated_add_author_names = "";
+				// $add_author_names = array();
+				// foreach( $node->field_additiona_authors['und'] as $add_author )	
+				// {	
+					// $add_author = taxonomy_term_load( $add_author['tid'] );
+					// $add_author_names[] = $add_author->name; 
+				// }
+				// $comma_separated_add_author_names = implode( ", " , $add_author_names );
+			// }
 			
-			$secondary_topics = array();
-			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
-			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
-			$secondary_topics = implode( ", " , $secondary_topics );
 			
-			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
-			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
 			
-			$highlights = get_clean_body( $node->field_lesson_highlights['und'][0]['value'] , 0 );
+			// $path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			
-			if( sizeof( $node->field_lesson_resources) > 0  ) {
-				$wrapper = entity_metadata_wrapper('node', $node);
-				foreach ($wrapper->field_lesson_resources as $i)
-				{
-					$resources[] = array( 
-											"resource_link" => $i->field_file_link->value() , 
-											"resource_description" => $i->field_file_description->value() 
-									);
-				}
-			}
+			// $vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+			// foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
 			
-			if( $media_type->name == 'Video' ) 	{
+			// $secondary_topics = array();
+			// $vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			// foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
+			// $secondary_topics = implode( ", " , $secondary_topics );
+			
+			// $membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			// $media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
+			
+			// $highlights = get_clean_body( $node->field_lesson_highlights['und'][0]['value'] , 0 );
+			
+			// if( sizeof( $node->field_lesson_resources) > 0  ) {
+				// $wrapper = entity_metadata_wrapper('node', $node);
+				// foreach ($wrapper->field_lesson_resources as $i)
+				// {
+					// $resources[] = array( 
+											// "resource_link" => $i->field_file_link->value() , 
+											// "resource_description" => $i->field_file_description->value() 
+									// );
+				// }
+			// }
+			
+			// if( $media_type->name == 'Video' ) 	{
 				
-				$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
-			} else	{
+				// $image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
+			// } else	{
 			
-				$course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
-				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
-			}
+				// $course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
+				// $image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
+			// }
 			
-			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
-			if( $recorded_date == "" ) $recorded_date = $node->changed;
+			// $recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
+			// if( $recorded_date == "" ) $recorded_date = $node->changed;
 			
-			 $result_array[] = array(  'title' => $title , 
-									   'subtitle' => $subtitle,
-									   'lesson_type' => $media_type->name,
-									   'image' => $image_link,
-									   'description' => $description,		
-									   'authors' => $comma_separated_author_names ,
-									   'additional_authors' => $comma_separated_add_author_names ,								  
-									   'primary_topic' => $primary_topic,
-									   'secondary_topics' => $secondary_topics,
-									   'membership' => $membership->name,
-									   'recorded_date' => $recorded_date,
-									   'web_path' => $path ,
-									   'highlights' => $highlights,
-									   'resources' => $resources,
-									   'created' => $node->created,
-									   'modified' => $node->changed									   
-									);
-		}
-		echo json_encode( $result_array );				
+			 // $result_array[] = array(  'title' => $title , 
+									   // 'subtitle' => $subtitle,
+									   // 'lesson_type' => $media_type->name,
+									   // 'image' => $image_link,
+									   // 'description' => $description,		
+									   // 'authors' => $comma_separated_author_names ,
+									   // 'additional_authors' => $comma_separated_add_author_names ,								  
+									   // 'primary_topic' => $primary_topic,
+									   // 'secondary_topics' => $secondary_topics,
+									   // 'membership' => $membership->name,
+									   // 'recorded_date' => $recorded_date,
+									   // 'web_path' => $path ,
+									   // 'highlights' => $highlights,
+									   // 'resources' => $resources,
+									   // 'created' => $node->created,
+									   // 'modified' => $node->changed									   
+									// );
+		// }
+		// echo json_encode( $result_array );				
 
-	}
+	// }
 	
 	// End of App Apis
 		
