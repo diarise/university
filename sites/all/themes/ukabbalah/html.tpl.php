@@ -93,14 +93,14 @@
 	<!-- END OF HEADER -->
 		
 		
-	<nav id="outerMenu">
+	<div id="outerMenu">
 		<div id="mainOuterContentLogoMenuWrapper">
 			<div class="topHeader">
 				<div id="mainContentMenuPersist">
 					<div id="newMainContentLogoTitle"><a href="/">KABBALAH UNIVERSITY:</a></div>
-					<menu id="mainContentMenu" class="highlightAuthors">
+					<div id="mainContentMenu" class="highlightAuthors">
 						<?php print render($menu);?>
-					</menu>
+					</div>
 					<div class="donateFloat"><a target="_blank" href="https://kabbalah.com/donate">Donate</a></div>
 					<div id="headerSearch">
 					<?php if ( user_is_logged_in() ) {?>
@@ -113,7 +113,7 @@
 				</div>	
 			</div><!--end of topHeader-->
 		</div> <!-- End of mainContentLogoMenuWrapper -->
-	</nav>
+	</div>
 
 <!-- End of Header and Main Menu -->  
   
