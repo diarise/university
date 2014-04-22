@@ -1,4 +1,4 @@
- <div id="pageregion">
+ <main id="pageregion">
 	<div id="maincontentTopics">
 	<?php print $messages; ?>
 	<?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
@@ -8,8 +8,7 @@
 	<?php print render($page['liveEventCollectionSection']); ?>
 	</div>
 	</div><!--end of maincontent-->
-</div><!-- end of pageregion -->
- 
+</main><!-- end of pageregion -->
 
 <div class='commentsSection'><?php print render($page['comments']); ?></div> 
  
@@ -34,11 +33,3 @@
 		</div><!--end of copywrite-->
 	</div><!--end of footerwrapper-->
 </div><!--end of footer-->
-
-
-
-
-
-
-
-
