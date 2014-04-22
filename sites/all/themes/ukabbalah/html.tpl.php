@@ -121,6 +121,24 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
 
+	<!-- Social Media Section -->
+  	<section id="SocialMediaWrapper">
+		<div id="SocialMedia">
+			<div id="fpSocialMediaBlock1">
+				<span class="icon-twitter"></span>
+				<?php  print render($ktweet);?>
+			</div>
+			<div id="fpSocialMediaBlock2">
+				<?php  print render($kfacebook);?>
+			</div>
+		    <div id="fpSocialMediaBlock3">
+		    	<span class="icon-testimonial"></span>
+		    	<?php  print render($ktestimonials);?>
+		    </div>	      	
+		</div>
+	</section>
+	<!-- End of Social Media Section -->
+
 	<!-- FOOTER -->
 	<footer>
 		<nav>

@@ -477,6 +477,10 @@ function ukabbalah_preprocess_html(&$variables) {
   $variables['menu'] = block_get_blocks_by_region('menu');
   $variables['universalMenu'] = block_get_blocks_by_region('universalMenu');
 
+  $variables['ktweet'] = block_get_blocks_by_region('ktweet');
+  $variables['kfacebook'] = block_get_blocks_by_region('kfacebook');
+  $variables['ktestimonials'] = block_get_blocks_by_region('ktestimonials');
+
   $variables['footer1'] = block_get_blocks_by_region('footer1');
   $variables['footer2'] = block_get_blocks_by_region('footer2');
   $variables['footer3'] = block_get_blocks_by_region('footer3');

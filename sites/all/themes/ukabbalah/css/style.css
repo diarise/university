@@ -633,7 +633,7 @@ ul li {
 }
 
 /* line 484, ../sass/style.scss */
-.region.region-ktweet, .region.region-ktestimonials {
+.region.region-ktweet, #fpSocialMediaBlock3 .icon-testimonial + .block.block-views {
   float: left;
   width: 212px;
 }
@@ -671,7 +671,7 @@ ul li {
 }
 
 /* line 513, ../sass/style.scss */
-#block-block-4 p {
+#fpSocialMediaBlock2 p {
   background: white;
   margin: 0;
   height: 299px;
@@ -695,7 +695,7 @@ ul li {
 }
 
 /* line 529, ../sass/style.scss */
-#views_slideshow_cycle_teaser_section_front_page_testimonials-block {
+#views_slideshow_cycle_teaser_section_front_page_testimonials-block_2 {
   margin: 0 0 0 10px;
 }
 

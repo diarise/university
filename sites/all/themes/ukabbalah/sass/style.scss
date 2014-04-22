@@ -485,7 +485,7 @@ background-color:#653a24;
     float: left;
     width: 212px;
 }
-.region.region-ktestimonials{
+#fpSocialMediaBlock3 .icon-testimonial + .block.block-views{
     @extend .region.region-ktweet;
 }
 .twitLink a{
@@ -510,7 +510,7 @@ background-color:#653a24;
 #block-block-8 .content p{
      margin-top: 0;
 }
-#block-block-4 p {
+#fpSocialMediaBlock2 p{
     background: $colorWhite;
     margin: 0;
     height: 299px;
@@ -526,7 +526,7 @@ background-color:#653a24;
     position: absolute; 
     right: 0; 
 }
-#views_slideshow_cycle_teaser_section_front_page_testimonials-block{
+#views_slideshow_cycle_teaser_section_front_page_testimonials-block_2{
     margin: 0 0 0 10px;
 }
 /* ================= END SOCIAL MEDIA =========================== */
