@@ -120,6 +120,22 @@
   
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+
+	<!-- FOOTER -->
+	<footer>
+		<nav>
+			<menu><?php  print render($footer1);?></menu>
+			<menu><?php  print render($footer2);?></menu>
+			<menu><?php  print render($footer3);?></menu>
+			<menu><?php  print render($footer4);?></menu>
+		</nav><!--end of footerlinks-->
+		<div>
+			<?php print render($copywrite);?>
+		</div><!--end of copywrite-->
+		<!--end of footerwrapper-->
+	</footer>
+	<!-- END OF FOOTER -->
+
  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
 <style type="text/css" media="screen, projection">
   @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);

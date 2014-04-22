@@ -535,21 +535,17 @@ background-color:#653a24;
    ================= FOOTER =====================================
    ============================================================== */
 
- #footer {
+ footer {
     float: left;
     width: 100%;
     background-color: $colorBrown;
-    padding-bottom: 22px;
  }
- #footerwrapper{
-    margin:0 auto;
-    width:940px;
-}
-#footerlinks{
+footer > nav{
   clear: both;
   padding-top: 32px;
   font-size: 14px;
-  float: left;
+  margin:0 auto;
+  width:940px;
  
   & h2{
         color: $colorBlue;
@@ -574,27 +570,20 @@ background-color:#653a24;
   color: $colorFooterHover;
 }
 }
-#footer1{
+footer > nav > menu{
   width: 220px;
-  margin-bottom: 25px;
-  margin-right: 20px;
   float: left;
+  margin: 0 20px 20px 0;
+  padding-left: 0;
 }
-#footer2{
-    @extend #footer1;
-}
-#footer3{
-    @extend #footer1;
-}
-#footer4 {
-    @extend #footer1;
-  margin-right: 0px;
-  margin-bottom: 23px;
-  margin-top: -1px;
-}
-#copywrite{
+footer > nav > menu:last-child{
+  margin: -1px 0 20px 0;
+}  
+footer > nav + div{
     clear: both;
     color:$colorWhite;
+    margin: auto;
+    width: 940px;
     & a:hover{
         color:#ff665f;
     }
@@ -615,19 +604,18 @@ background-color:#653a24;
       color: $colorWhite;
       }
 }
-#copywrite #block-block-1 {
+footer > nav + div #block-block-1 {
   width: 940px;
   height: 20px;
   margin: auto;
   margin-bottom: 25px;
 }
-#copywrite #block-block-2 p{
+footer > nav + div #block-block-2 p{
   font-size: 14px;
   line-height: 22px;
-  color: $colorWhite!important;
- 
+  color: $colorWhite!important; 
 }
-#copywrite #block-block-2 a{
+footer > nav + div #block-block-2 a{
   color: $colorWhite;
   & :hover{color: #ff665f;}
 }

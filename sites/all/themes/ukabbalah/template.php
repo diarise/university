@@ -476,6 +476,12 @@ function ukabbalah_preprocess_html(&$variables) {
   
   $variables['menu'] = block_get_blocks_by_region('menu');
   $variables['universalMenu'] = block_get_blocks_by_region('universalMenu');
+
+  $variables['footer1'] = block_get_blocks_by_region('footer1');
+  $variables['footer2'] = block_get_blocks_by_region('footer2');
+  $variables['footer3'] = block_get_blocks_by_region('footer3');
+  $variables['footer4'] = block_get_blocks_by_region('footer4');
+  $variables['copywrite'] = block_get_blocks_by_region('copywrite');
   
   // If on an individual node page, add the node type to body classes.
   if ($node = menu_get_object()  ) 
