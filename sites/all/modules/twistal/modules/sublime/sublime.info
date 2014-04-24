@@ -1,0 +1,5 @@
+name = Sublime Video Player
+description = Integration for Sublime Video Player
+package = Twistal
+core = 7.x
+version = 7.x-1.0

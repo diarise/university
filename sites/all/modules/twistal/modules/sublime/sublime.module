@@ -1,0 +1,36 @@
+<?php
+
+	function theme_sublime_video( $args ) {
+	
+		$inline_script .='<script type="text/javascript" src="//cdn.sublimevideo.net/js/4mtqu8ma.js"></script>';
+		$element = array( '#type' => 'markup',  '#markup' => $inline_script );
+		drupal_add_html_head($element, 'sublime_video_script');
+		
+		$video=$args['video'];
+		if(!is_string($video)) $sublime['video']=$video;
+		$width = isset($args['width'])?$args['width']:512;
+		$height = isset($args['height'])?$args['height']:288;
+		
+		$player_id = $video->vid;
+		$sublime['player_id']=$player_id;
+		$sublime['settings']=array(
+			'height' => 435 ,//$height,
+			'width' => 800, //$width,
+		);
+		drupal_alter('sublime_settings',$sublime);
+		$html = '<video id="'.$video->vid.'" class="sublime" poster="'.$sublime['video_image'].'" width="'.$sublime['settings']['width'].'" height="'.$sublime['settings']['height'].'" data-fullmode-enable="true" data-fullmode-priority="screen"data-sharing-enable="true" data-sharing-icon="default" data-sharing-buttons=" twitter facebook pinterest google+" data-sharing-image="poster" data-uid="'.$video->vid.'"  >';
+		$html .= $sublime['video_src_html'];
+		$html .= $sublime['video_captions_html'];
+		$html .= '</video>';
+
+		if(isset($sublime['suffix'])) $html.=implode('',$sublime['suffix']);
+		return $html;
+	}
+	
+	function sublime_theme($existing, $type, $theme, $path) {
+		return array(
+			'sublime_video' => array(
+				'arguments' => array('videos' => NULL, 'width' => 150, 'height' => NULL,'file'=>NULL, 'autoplay' => NULL),
+			),
+		);
+	}
