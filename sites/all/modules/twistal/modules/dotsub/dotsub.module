@@ -26,6 +26,73 @@ function dotsub_transcript($vid,$lang){
 	$dotsub=new DotsubApi($vid);
 	exit($dotsub->fetchTranscript($lang));
 }
+
+function dotsub_sublime_settings_alter(&$sublime) {
+
+	global $user;
+	$dotsub=new DotsubApi($sublime['video']->vid, $sublime['video']->dotsub_settings);
+	$captions=$dotsub->loadDotsubCaptions();
+	$video_caption_html = "";
+	
+	if($captions) {
+	
+		$caption_language = array();
+		$caption_language['Russian'] = 'ru';
+		$caption_language['Italian'] = 'it';
+		$caption_language['German'] = 'de';
+		$caption_language['French (France)'] = 'fr';
+		$caption_language['Polish'] = 'pl';
+		$caption_language['Hebrew'] = 'he';
+		$caption_language['English'] = 'en';
+		$caption_language['Spanish'] = 'es';
+		$caption_language['Hungarian'] = 'hu';
+		
+		foreach( $captions as $caption )
+		{	
+			if (array_key_exists($caption['label'], $caption_language)) 
+			{
+				$video_caption_html .= '<track src="'.$caption['file'].'" srclang="'.$caption_language[$caption['label']].'" />';
+			} 
+			elseif( $caption['label'] == 'Portuguese (Brazil)')
+			{
+				$video_caption_html .= '<track src="'.$caption['file'].'" label="(Brazil)Portuguese" />';
+			}
+			elseif( $caption['label'] == 'Portuguese (Portugal)')
+			{
+				$video_caption_html .= '<track src="'.$caption['file'].'" label="(Portugal)Portuguese" />';
+			}else {
+				$video_caption_html .= '<track src="'.$caption['file'].'" label="'.$caption['label'].'" />';
+			}
+			
+		}
+		$sublime['video_captions_html'] = $video_caption_html;
+	
+		if($dotsub->settings['transcript'])
+		{
+			$langs=$dotsub->getLanguages(); 
+			$select=array(
+				'lang_select'=>array(
+					'#type' => 'select',
+					'#options' => array_merge(array('none' => 'Load Transcript'), $langs),
+					'#attributes' => array(
+						'class' => array('trans-lang-select')
+					),
+					'#default_value' => $sublime['video']->dotsub_settings['default_language']
+				)
+			);
+			$languageSelect=drupal_render($select);
+			$sublime['suffix'][]='<div class="transcription">'.$languageSelect.'<div class="transcript-content"></div></div>';
+			drupal_add_js(drupal_get_path('module', 'dotsub').'/includes/sublime_transcript.js');
+			drupal_add_css(drupal_get_path('module', 'dotsub').'/includes/transcript.css');
+			$settings['dotsub']['trans_id'] = $sublime['video']->vid;
+		}	
+		$settings['dotsub']['player_id']= $sublime['player_id'];
+		drupal_add_js($settings,'setting');
+	}	
+}
+
+
+
 function dotsub_jwplayer_settings_alter(&$jwplayer){
 	global $user;
 	$dotsub=new DotsubApi($jwplayer['video']->vid, $jwplayer['video']->dotsub_settings);

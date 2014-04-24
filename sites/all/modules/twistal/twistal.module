@@ -333,8 +333,10 @@ function twistal_field_formatter_view($entity_type, $entity, $field, $instance, 
 	
 	if (arg(0) == 'node' && is_numeric(arg(1))) $nodeid = arg(1);
     $relatedVideos="/twistage/getnode/".$nodeid.".xml";
-	return array(array('#markup'=>theme('jwplayer_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
+	//return array(array('#markup'=>theme('jwplayer_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
+	return array(array('#markup'=>theme('sublime_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
 }
+
 function twistage_hooks(){
 	if($_POST['vid']) import_twistal_video($_POST['vid']);
 }
@@ -349,6 +351,47 @@ function import_twistal_video($vid){
 		return $twistvid;
 	}
 }
+
+function twistal_sublime_settings_alter(&$sublime)	{
+
+	$video=$sublime['video'];
+	$width=$sublime['settings']['width'];
+	$profile = new twistage_profile($video->pid);
+	if(count($video->assets)<5) $video=import_twistal_video($video->vid);
+	if (isset($preroll->vid) && $preroll->vid) {
+		$preroll->hide_controller = TRUE;
+		array_unshift($videos, $preroll);
+	}
+	$video_id=$video->vid;
+	$sublime['video_image'] = "http://twistassets.kabbalah.com/videos/$video_id/screenshots/$width"."w.jpg";
+	
+	// Create the source html for Sublime Video
+	$assets=array();
+	foreach($video->assets as $asset){
+		switch(strtolower(substr($asset->video_format_name,0,5))){
+			case 'mediu':
+				$assets['medium']=$asset;
+				break;
+			case 'small':
+				$assets['small']=$asset;
+				break;
+			case 'large':
+				$assets['large']=$asset;
+				break;
+			case 'ipad_':
+				$assets['mobile']=$asset;
+				break;
+		}
+	}
+	$sublime_src_html = "";		
+	if(isset($assets['mobile']) && isset($assets['medium'])) $sublime_src_html .= '<source src="'.str_replace('file.mp4','play.mp4',$assets[myDevice()->isMobile()?'mobile':'medium']->download_url).'" />';
+	if(isset($assets['small'])) $sublime_src_html .= '<source src="'.str_replace('file.mp4','play.mp4',$assets['small']->download_url).'" />';
+	if(isset($assets['large']) && !myDevice()->isMobile() ) $sublime_src_html .= '<source src="'.str_replace('file.mp4','play.mp4',$assets['large']->download_url).'" data-quality="hd" />';
+	$sublime['video_src_html'] = $sublime_src_html;	
+	// End of creating the source html for sublime video
+		
+}
+
 function twistal_jwplayer_settings_alter(&$jwplayer){
 	$video=$jwplayer['video'];
 	$width=$jwplayer['settings']['width'];
