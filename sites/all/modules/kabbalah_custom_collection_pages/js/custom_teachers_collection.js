@@ -72,7 +72,7 @@ var Slide = function(elem, options){
                                                         + "</span>"
 
                                                         + "<span class='teachingsTopicAndDate'>"
-                                                            + value.author
+                                                            + value.primary_topic
                                                             + " | "
                                                             + value.date_created
 															+ "<span class= '" + value.membership +"'></span>"
