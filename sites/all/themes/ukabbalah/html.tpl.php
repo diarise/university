@@ -58,7 +58,7 @@
 		</div><!--end of kabbalahlogo-->
 		<div class="donate"><a href="/donate" target="_blank">Donate</a></div><!--end of donate-->
 		<div class="searchLogo">
-			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png"></a>
+			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png" alt="search"></a>
 		</div><!--end of searchlogo-->
 	</div><!--end of main logo-->
 	<div id="ukabblahlogowrapper">
@@ -85,7 +85,7 @@
 					<?php print render($universalMenu);?>
 					<!--end of universalMenu-->
 					<div class="donate"><a href="https://kabbalah.com/donate" target="_blank">donate</a></div>
-					<div class="searchLogo"><a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png"></a></div>
+					<div class="searchLogo"><a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png" alt="search"></a></div>
 				</div>
 			</div>		
 		</div> <!-- End of topHeader -->
@@ -142,10 +142,10 @@
 	<!-- FOOTER -->
 	<footer>
 		<nav>
-			<menu><?php  print render($footer1);?></menu>
-			<menu><?php  print render($footer2);?></menu>
-			<menu><?php  print render($footer3);?></menu>
-			<menu><?php  print render($footer4);?></menu>
+			<section><?php  print render($footer1);?></section>
+			<section><?php  print render($footer2);?></section>
+			<section><?php  print render($footer3);?></section>
+			<section><?php  print render($footer4);?></section>
 		</nav><!--end of footerlinks-->
 		<div>
 			<?php print render($copywrite);?>
@@ -155,7 +155,7 @@
 	<!-- END OF FOOTER -->
 
  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
-<style type="text/css" media="screen, projection">
+<style>
   @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
 </style>
 <script type="text/javascript">
