@@ -373,6 +373,7 @@
 			else
 			{
 				$course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
+				if(!$course_nid) $course_nid = node_load( $nid = $node->field_event_list['und'][0]['nid'] );
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
 			
@@ -750,6 +751,7 @@
 			else
 			{
 				$course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
+				if(!$course_nid) $course_nid = node_load( $nid = $node->field_event_list['und'][0]['nid'] );
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
 			
