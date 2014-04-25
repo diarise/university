@@ -1156,8 +1156,8 @@
 					
 		if( $vid != 16 ) $sql .= "AND cl.field_course_language_tid IS NULL ";		
 		
-		$sql .=	"AND toc.field_type_of_course_tid = ".$type_of_course_tid.") ".
-				"ORDER BY n.changed DESC";
+		if( $vid != 7 ) $sql .=	"AND toc.field_type_of_course_tid = ".$type_of_course_tid.") ";
+		$sql .=	"ORDER BY n.changed DESC";
 		
 		$result = db_query( $sql );
 		return $result;
