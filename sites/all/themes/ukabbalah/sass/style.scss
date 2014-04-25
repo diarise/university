@@ -572,13 +572,13 @@ footer > nav{
   color: $colorFooterHover;
 }
 }
-footer > nav > menu{
+footer > nav > section{
   width: 220px;
   float: left;
   margin: 0 20px 20px 0;
   padding-left: 0;
 }
-footer > nav > menu:last-child{
+footer > nav > section:last-child{
   margin: -1px 0 20px 0;
 }  
 footer > nav + div{
