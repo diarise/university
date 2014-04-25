@@ -155,7 +155,7 @@
 	<!-- END OF FOOTER -->
 
  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
-<style type="text/css" media="all">
+<style type="text/css">
   @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
 </style>
 <script type="text/javascript">
