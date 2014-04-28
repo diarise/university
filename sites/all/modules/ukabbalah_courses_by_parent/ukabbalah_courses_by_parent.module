@@ -107,9 +107,9 @@
                 $resultHTML .= "<span class= '".$membership->name."'></span>";
 				$resultHTML .= "</span>";
 				$resultHTML .= "<span class='theTeaser'>";
-                $resultHTML .= "<p>".$teaser."</p>";
+                $resultHTML .= "<span>".$teaser." ... </span>";
                 $resultHTML .= "<span class = 'readMore'>";
-                $resultHTML .= "read more"; 
+                $resultHTML .= " read more"; 
                 $resultHTML .="</span>";
                 $resultHTML .="</span>";
                 $resultHTML .="</span>";
