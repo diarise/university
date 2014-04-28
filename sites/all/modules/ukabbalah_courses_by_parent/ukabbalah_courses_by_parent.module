@@ -76,7 +76,7 @@
 				
 				$resultHTML .= "<li class='masonry-brick'>";
 				$resultHTML .= "<span class = 'imagesCont'>";
-                $resultHTML .= "<img src = '".$record->field_image_cdn_link_value."' class = 'theImage'>";
+                $resultHTML .= "<img src = '".$record->field_image_cdn_link_value."' class = 'theImage' alt=''>";
                 $resultHTML .= "<a href =".$path.">"; 
                 $resultHTML .= "<span class ='theDescCont'>";
                 $resultHTML .= "<span class='theTitle'>";
