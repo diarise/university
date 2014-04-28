@@ -85,9 +85,9 @@
 		
 		<div class="preVideoImg"><!--start preview video for user log out-->
 			<?php if( $field_type_of_lesson == 'Video' ) {?>
-		<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/screenshots/620w.jpg"  > <!--image for video preview-->
+		<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/screenshots/620w.jpg" alt="" > <!--image for video preview-->
 		<?php } else{ ?>
-			<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>"  /> <!--image for video preview-->
+			<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>" alt="" /> <!--image for video preview-->
 			<?php } ?>
 		
 		<div class="videotitles"><!--start of preview video description-->
