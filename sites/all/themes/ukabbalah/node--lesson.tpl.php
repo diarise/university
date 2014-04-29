@@ -36,11 +36,12 @@
 
 	// Video or Audio Display
 	foreach ($node->field_type_of_lesson as $term) 	{ 	$field_type_of_lesson = $term[0]['taxonomy_term']->name; }
-	
+	?>
+	<div id="wrapperVideoSection"><!--start video wrapper section-->
+	<?php
 	if( $field_type_of_lesson == 'Audio' ) { ?>
-	<div id="wrapperVideoSection" class="audioSection">
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
-<div id="wrapperVideoSection"><!--start video wrapper section-->
+
 	<?php } 
 	if (kabbalah_content_access_get_article_membership($membership) ) {?>	
 
