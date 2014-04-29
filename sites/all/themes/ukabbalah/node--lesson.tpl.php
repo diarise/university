@@ -60,7 +60,12 @@
 			<div id="video-control"> 
 				<?php print render($content['field_lesson_video']);  } ?>
 			</div>
-			<div id="eSocial"> <!--start of social media icone-->
+			
+				<?php if( $field_type_of_lesson == 'Audio' ) { ?>
+				<div id="eSocial" class="audiosocialmedia"> 
+				<?php }else {?>
+				<div id="eSocial"> <!--start of social media icone-->
+				<?php }?>
 				<div class="sharethis">
 					<span class='st_facebook_large' displayText='Facebook'></span>
 					<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
