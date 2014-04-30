@@ -30,13 +30,13 @@ function kabbalah_api_menu() {
 		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
 	);
 
-	// $items['k_api/rest/v__1/recommended_lsns/%/%'] = array(
-		// 'page callback'    => 'getRecommendedLessosnsData',
-		// 'page arguments' => array(4,5),
-		// 'access callback'  => TRUE,
-		// 'file'             => 'recommendedlessons.inc',
-		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
-	// );
+	$items['k_api/rest/v__1/recommended_lsns/%/%'] = array(
+		'page callback'    => 'getRecommendedLessosnsData',
+		'page arguments' => array(4,5),
+		'access callback'  => TRUE,
+		'file'             => 'recommendedlessons.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
 
 	$items['k_api/rest/v__1/free_lsns'] = array(
 		'page callback'    => 'getFreeLessonsData',
