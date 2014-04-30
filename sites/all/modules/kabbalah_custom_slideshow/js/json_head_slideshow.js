@@ -252,7 +252,7 @@
 	$(document).ready(function() {
 		headSlideShow({
 			contentWidth : 980,
-			theJsonLink : "/?q=getSlideshowDataJson"
+			theJsonLink : "/k_api/rest/v__1/slds"
 		});
 		if("ontouchstart" in document.documentElement){
 			var slideDiv = document.getElementById("slideshow");

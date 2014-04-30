@@ -1,0 +1,87 @@
+<?php	
+	
+function kabbalah_api_menu() {
+
+	$items['k_api/rest/v__1/slds'] = array(
+		'page callback'    => 'getSlideshowData',
+		'access callback'  => TRUE,
+		'file'             => 'slideshow.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
+
+	// $items['k_api/rest/v__1/bgnr_crs'] = array(
+		// 'page callback'    => 'getBeginnersCoursesData',
+		// 'access callback'  => TRUE,
+		// 'file'             => 'beginnerscourses.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	// $items['k_api/rest/v__1/recently_added_lsns'] = array(
+		// 'page callback'    => 'getRecentlyAddedLessonsData',
+		// 'access callback'  => TRUE,
+		// 'file'             => 'recentlyaddedlessons.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	// $items['k_api/rest/v__1/recently_added_crs'] = array(
+		// 'page callback'    => 'getRecentlyAddedCoursesData',
+		// 'access callback'  => TRUE,
+		// 'file'             => 'recentlyaddedcourses.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	// $items['k_api/rest/v__1/recommended_lsns/%/%'] = array(
+		// 'page callback'    => 'getRecommendedLessosnsData',
+		// 'page arguments' => array(4,5),
+		// 'access callback'  => TRUE,
+		// 'file'             => 'recommendedlessons.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	// $items['k_api/rest/v__1/free_lsns'] = array(
+		// 'page callback'    => 'getFreeLessonsData',
+		// 'access callback'  => TRUE,
+		// 'file'             => 'freelessons.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	// $items['k_api/rest/v__1/crs'] = array(
+		// 'page callback'    => 'getCoursesData',
+		// 'access callback'  => TRUE,
+		// 'file'             => 'courses.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	// $items['k_api/rest/v__1/tchrs'] = array(
+		// 'page callback'    => 'getTeachersData',
+		// 'access callback'  => TRUE,
+		// 'file'             => 'teachers.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	// $items['k_api/rest/v__1/onl_dmd_evts'] = array(
+		// 'page callback'    => 'getOndemandEventsData',
+		// 'access callback'  => TRUE,
+		// 'file'             => 'ondemandevents.inc',
+		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	// );
+
+	return $items;
+} 
+
+
+	function getCleanBody( $body , $limit = 100 ) { // $limit = 0 means no limit
+	
+		$body = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $body);
+		$body = preg_replace('#<object(.*?)>(.*?)</object>#is', '', $body);
+		$teaser = preg_replace('#<img(.*?)>#is', '', $body);
+		$teaser = preg_replace("/&#?[a-z0-9]+;/i","",$teaser); // removeds $nbsp
+		$teaser = stripslashes($teaser);
+		$teaser = strip_tags($teaser);
+
+		if( $limit != 0 )$teaser = substr( $teaser , 0 , $limit );
+		if( $teaser != false ) return $teaser;
+		else return "";
+	
+	}	
+
