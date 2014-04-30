@@ -470,7 +470,7 @@ $(document).ready(function(){
     SlideShow (
         $("#teachingResultSection"),
         {
-            json_URL: "/k_api/crs",
+            json_URL: "/k_api/rest/v__1/crs",
             imageWidth: 300,
             imageHeight: 170,
             marginToLeft: 10,
