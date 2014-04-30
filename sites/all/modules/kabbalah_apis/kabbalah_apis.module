@@ -105,19 +105,21 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		// new hook created
 		$items['k_api/onl_dmd_evts'] = array(               // Made this a PAGE
 			'page callback'      => 'getOnlineTopicsJson',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
-		
+		// new hook created
 		$items['k_api/lngs'] = array(               // Made this a PAGE
 			'page callback'      => 'getCoursesByLanguageJson',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
+		// new hook created
 		$items['k_api/live_evnts'] = array(               // Made this a PAGE
 			'page callback'      => 'getCoursesByLiveEventsJson',
 			'access callback' => TRUE,

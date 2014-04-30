@@ -84,7 +84,7 @@ function kabbalah_api_menu() {
 	return $items;
 } 
 	
-	function runPageQueryForApi( $vid , $vname , $type_of_course_tid ) {
+function runPageQueryForApi( $vid , $vname , $type_of_course_tid ) {
 	
 		$sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed,ti.tid,td.name ".
 					"FROM {node n} ".
@@ -113,7 +113,7 @@ function kabbalah_api_menu() {
 		
 	}
 		
-	function processPageQueryResultsForApi( $result , $vid ) {
+function processPageQueryResultsForApi( $result , $vid ) {
 	
 		$vname_articles = array();
 		foreach( $result as $record )	{
@@ -163,8 +163,8 @@ function kabbalah_api_menu() {
 		}
 		return array( "articles" => $vname_articles , "term_description" => $p_topic_description );
 	}
-	
-	function getTermNamesForApi( $vid )	{
+
+function getTermNamesForApi( $vid )	{
 	
 		$topics =  taxonomy_get_tree( $vid ); 
 		$vnames = array();
@@ -174,7 +174,7 @@ function kabbalah_api_menu() {
 		return $vnames;
 	}
 	
-	function getCleanBody( $body , $limit = 100 ) { // $limit = 0 means no limit
+function getCleanBody( $body , $limit = 100 ) { // $limit = 0 means no limit
 	
 		$body = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $body);
 		$body = preg_replace('#<object(.*?)>(.*?)</object>#is', '', $body);
