@@ -4,18 +4,21 @@
 	
 	function kabbalah_apis_menu() {
 		
+		// new hook created
 		$items['k_api/slds'] = array(
 			'page callback'      => 'getSlideshowApiData',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
+		// new hook created
 		$items['k_api/bgnr_crs'] = array(               // Made this a PAGE
 			'page callback'      => 'getBeginnersCourses',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
+		// new hook created
 		$items['k_api/recently_added_lsns'] = array(              
 			'page callback'      => 'getRecentlyAddedLessonsJson',
 			'access callback' => TRUE,
