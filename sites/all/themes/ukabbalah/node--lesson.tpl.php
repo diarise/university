@@ -36,11 +36,12 @@
 
 	// Video or Audio Display
 	foreach ($node->field_type_of_lesson as $term) 	{ 	$field_type_of_lesson = $term[0]['taxonomy_term']->name; }
-	
+	?>
+	<div id="wrapperVideoSection"><!--start video wrapper section-->
+	<?php
 	if( $field_type_of_lesson == 'Audio' ) { ?>
-	<div id="wrapperVideoSection" class="audioSection">
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
-<div id="wrapperVideoSection"><!--start video wrapper section-->
+
 	<?php } 
 	if (kabbalah_content_access_get_article_membership($membership) ) {?>	
 
@@ -59,7 +60,12 @@
 			<div id="video-control"> 
 				<?php print render($content['field_lesson_video']);  } ?>
 			</div>
-			<div id="eSocial"> <!--start of social media icone-->
+			
+				<?php if( $field_type_of_lesson == 'Audio' ) { ?>
+				<div id="eSocial" class="audiosocialmedia"> 
+				<?php }else {?>
+				<div id="eSocial"> <!--start of social media icone-->
+				<?php }?>
 				<div class="sharethis">
 					<span class='st_facebook_large' displayText='Facebook'></span>
 					<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
@@ -85,14 +91,14 @@
 		
 		<div class="preVideoImg"><!--start preview video for user log out-->
 			<?php if( $field_type_of_lesson == 'Video' ) {?>
-		<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/screenshots/620w.jpg"  > <!--image for video preview-->
+		<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/screenshots/620w.jpg" alt="" > <!--image for video preview-->
 		<?php } else{ ?>
-			<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>"  /> <!--image for video preview-->
+			<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>" alt="" /> <!--image for video preview-->
 			<?php } ?>
 		
 		<div class="videotitles"><!--start of preview video description-->
 			<div id="wrapperInfoMultimedia">
-				<span id="titleMultimedia"><?php print $title; // Title ?></span>
+				<div id="titleMultimedia"><?php print $title; // Title ?></div>
 				<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
@@ -103,14 +109,14 @@
 				</span>
 			</div>
 			<div id="wrapperAuthorDate">
-				<span id="authorNameMultimedia">
+				<div id="authorNameMultimedia">
 				<?php	echo implode( ", " , $authors_name ); // Author name 	?>
-				</span>
-				<span id="dateMultimedia">
+				</div>
+				<div id="dateMultimedia">
 				<?php
 					if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 				?>
-				</span>
+				</div>
 			</div>
 		</div><!--end of preview video description-->
 			
@@ -144,7 +150,7 @@
 	<div id="videoTitlesWrapper"> <!--strat for video description when user log in-->
 		<div class="videotitles">
 			<div id="wrapperInfoMultimedia">
-				<span id="titleMultimedia"><?php print $title; // Title ?></span>
+				<div id="titleMultimedia"><?php print $title; // Title ?></div>
 				<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
@@ -155,18 +161,18 @@
 				</span>
 			</div>
 			<div id="wrapperAuthorDate">
-				<span id="authorNameMultimedia">
+				<div id="authorNameMultimedia">
 				<?php echo implode( ", " , $authors_name ); // Author name ?>
-				</span>
-				<span id="dateMultimedia">
+				</div>
+				<div id="dateMultimedia">
 				<?php
 					if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 				?>
-				</span>
+				</div>
 			</div>
-			<span class="bookmark">
+			<div class="bookmark">
 				<?php print flag_create_link('bookmarks', $node->nid); ?>
-			</span>
+			</div>
 		</div>
 	</div><!--end of video description when user log in-->
 
@@ -182,7 +188,7 @@
 			<div id="classesDescription">
 				<input type="checkbox" id="ac-0">
 				<label  class="titleDescription" for="ac-0">class description</label>
-				<span class="accordion"><?php  	print $node->body['und'][0]['value']; ?></span>
+				<div class="accordion"><?php  	print $node->body['und'][0]['value']; ?></div>
 			</div>
 		<?php } 
 		}
@@ -194,7 +200,7 @@
 		<div id="classHighlights">
 			<input type="checkbox" id="ac-1">
 			<label class="titleDescription" for="ac-1">Highlights</label>
-			<span class="accordion"><?php print $node->field_lesson_highlights['und'][0]['value']; ?></span>
+			<div class="accordion"><?php print $node->field_lesson_highlights['und'][0]['value']; ?></div>
 		</div>
 		<?php } ?>
 		<?php } ?>

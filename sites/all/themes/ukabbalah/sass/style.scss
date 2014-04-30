@@ -499,6 +499,7 @@ background-color:#653a24;
     font-size: 16px;
     font-style: italic;
     line-height: 20px;
+    margin-left: 58px;
 }
 #fpSocialMediaBlock3 p {
     font-style: italic;
@@ -1240,12 +1241,11 @@ h3 {
 .logged-in.node-type-lesson #wrapperVideoSection{
   padding-bottom:0px;
 }
-.audioSection #eSocial .sharethis{
+.audiosocialmedia .sharethis{
     border: none;
     float: right;
 }
-.audioSection #eSocial{
-    float: none!important;
+.audiosocialmedia{
     width: 670px!important;
     margin-top: -21px!important;
 }
@@ -1620,6 +1620,17 @@ h3 {
     font-size: 14px;
 }
 #wrapperInfoCour > span {
+    display: block;
+    color: $colorWhite;
+    font-weight: normal;
+    & a{
+      color: $colorWhite;
+    }
+    & a:hover{
+      text-decoration: underline;
+    }
+}
+#wrapperInfoCour > div {
     display: block;
     color: $colorWhite;
     font-weight: normal;

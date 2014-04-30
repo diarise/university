@@ -6,11 +6,11 @@
 <div id="wrapperVideoSection">
 	<div class="wrapperCours">
 		<div id="contentAuthorImages">
-			<img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>"  />
+			<img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>" alt="" />
 		</div>
 		<div id="contentAuthorInfo">
 				<div id="wrapperInfoCour">
-					<span id="titleCourse"><?php print $node->title; ?></span>
+					<div id="titleCourse"><?php print $node->title; ?></div>
 					<?php if( sizeof( $node->field_subtitle ) > 0  ) { ?>
 					<span id="supTitleCourse">
 						<?php  print $node->field_subtitle['und'][0]['value']; ?>
