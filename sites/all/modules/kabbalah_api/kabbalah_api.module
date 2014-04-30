@@ -91,6 +91,14 @@ function kabbalah_api_menu() {
 		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
 	);
 	
+	$items['k_api/rest/v__1/recently_added_crs_by_mbshp/%'] = array(              
+		'page callback'      => 'getRecentlyAddedCoursesByMembershipData',
+		'page arguments' => array(4),
+		'access callback' => TRUE,
+		'file'             => 'dashboard_recently_added_courses_by_membership.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
+	
 
 	return $items;
 } 
