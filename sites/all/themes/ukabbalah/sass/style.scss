@@ -1630,6 +1630,17 @@ h3 {
       text-decoration: underline;
     }
 }
+#wrapperInfoCour > div {
+    display: block;
+    color: $colorWhite;
+    font-weight: normal;
+    & a{
+      color: $colorWhite;
+    }
+    & a:hover{
+      text-decoration: underline;
+    }
+}
 .theCourseAuthor a{
 	color: #4DCFF5 !important;
 	text-transform: uppercase;
