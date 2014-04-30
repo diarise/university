@@ -99,6 +99,15 @@ function kabbalah_api_menu() {
 		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
 	);
 	
+	$items['k_api/rest/v__1/dshbrd_live_evnts'] = array(              
+		'page callback'      => 'getLiveEventsData',
+		'access callback' => TRUE,
+		'file'             => 'dashboard_live_events.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
+		
+	// End of Profile Dashboard API's
+	
 
 	return $items;
 } 
