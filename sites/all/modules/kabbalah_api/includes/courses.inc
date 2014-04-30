@@ -49,7 +49,7 @@
 
 	function getCoursesData() {
 	
-		$vnames = getTermNames( 14 );
+		$vnames = getTermNamesForApi( 14 );
 		$result_array = array();
 		$resultHTML = "";
 		$counter = 1;
