@@ -72,6 +72,21 @@ function kabbalah_api_menu() {
 		'file'             => 'liveevents.inc',
 		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
 	);
+	
+	$items['k_api/rest/v__1/lngs'] = array(               // Made this a PAGE
+		'page callback'      => 'getCoursesByLiveEventsData',
+		'access callback'  => TRUE,
+		'file'             => 'liveevents.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
+	
+	
+	$items['k_api/lngs'] = array(               // Made this a PAGE
+		'page callback'      => 'getCoursesByLanguageData',
+		'access callback' => TRUE,
+		'file'             => 'languages.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
 
 	return $items;
 } 
