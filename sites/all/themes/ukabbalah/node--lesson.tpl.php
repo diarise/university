@@ -98,7 +98,7 @@
 		
 		<div class="videotitles"><!--start of preview video description-->
 			<div id="wrapperInfoMultimedia">
-				<span id="titleMultimedia"><?php print $title; // Title ?></span>
+				<div id="titleMultimedia"><?php print $title; // Title ?></div>
 				<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
@@ -109,14 +109,14 @@
 				</span>
 			</div>
 			<div id="wrapperAuthorDate">
-				<span id="authorNameMultimedia">
+				<div id="authorNameMultimedia">
 				<?php	echo implode( ", " , $authors_name ); // Author name 	?>
-				</span>
-				<span id="dateMultimedia">
+				</div>
+				<div id="dateMultimedia">
 				<?php
 					if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 				?>
-				</span>
+				</div>
 			</div>
 		</div><!--end of preview video description-->
 			
@@ -150,7 +150,7 @@
 	<div id="videoTitlesWrapper"> <!--strat for video description when user log in-->
 		<div class="videotitles">
 			<div id="wrapperInfoMultimedia">
-				<span id="titleMultimedia"><?php print $title; // Title ?></span>
+				<div id="titleMultimedia"><?php print $title; // Title ?></div>
 				<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
 				<span class="pipe">|</span>
 				<span id="primaryTopicMultimedia">
@@ -161,18 +161,18 @@
 				</span>
 			</div>
 			<div id="wrapperAuthorDate">
-				<span id="authorNameMultimedia">
+				<div id="authorNameMultimedia">
 				<?php echo implode( ", " , $authors_name ); // Author name ?>
-				</span>
-				<span id="dateMultimedia">
+				</div>
+				<div id="dateMultimedia">
 				<?php
 					if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 				?>
-				</span>
+				</div>
 			</div>
-			<span class="bookmark">
+			<div class="bookmark">
 				<?php print flag_create_link('bookmarks', $node->nid); ?>
-			</span>
+			</div>
 		</div>
 	</div><!--end of video description when user log in-->
 
