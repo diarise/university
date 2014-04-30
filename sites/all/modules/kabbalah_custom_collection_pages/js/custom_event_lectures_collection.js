@@ -440,7 +440,7 @@ $(document).ready(function(){
     SlideShow (
         $("#teachingResultSection"),
         {
-            json_URL: "/k_api/onl_dmd_evts",
+            json_URL: "/k_api/rest/v__1/onl_dmd_evts",
             imageWidth: 300,
             imageHeight: 170,
             marginToLeft: 10,
