@@ -66,7 +66,7 @@
 	function kabbalah_carousal2_show() {
 	
 		$jsonurl1 = '/k_api/rest/v__1/recently_added_lsns';
-		$jsonurl2 = '/k_api/recently_added_crs';
+		$jsonurl2 = '/k_api/rest/v__1/recently_added_crs';
 		
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_fp_carousals') .'/js/fp_carousal.js');	// adding the js file for the module	
 		drupal_add_js(array('fp_vars2' => array('divid' => 'recentlyAddedLessons','jsonurl'=>$jsonurl1)), 'setting');
