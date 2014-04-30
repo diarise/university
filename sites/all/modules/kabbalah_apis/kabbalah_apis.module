@@ -27,7 +27,7 @@
 		
 		
 		// Profile Dashboard API's
-		
+		// new hook created
 		$items['k_api/recently_added_lsns_by_mbshp/%'] = array(              
 			'page callback'      => 'getRecentlyAddedLessonsByMembershipJson',
 			'page arguments' => array(2),
@@ -35,14 +35,14 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
-		
+		// new hook created
 		$items['k_api/recently_added_crs_by_mbshp/%'] = array(              
 			'page callback'      => 'getRecentlyAddedCoursesByMembershipJson',
 			'page arguments' => array(2),
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
-		
+		// new hook created
 		$items['k_api/dshbrd_live_evnts'] = array(              
 			'page callback'      => 'getLiveEventsJson',
 			'access callback' => TRUE,
@@ -76,7 +76,7 @@
 		
 		// End of App API's
 		
-		
+		// new hook created
 		$items['k_api/recommended_lsns/%/%'] = array(               // Made this a PAGE
 			'page callback'      => 'getRecommendedLessonsJson',
 			'page arguments' => array(2,3),
