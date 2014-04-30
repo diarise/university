@@ -80,6 +80,17 @@ function kabbalah_api_menu() {
 		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
 	);
 	
+	
+	// Profile Dashboard API's
+	
+	$items['k_api/rest/v__1/recently_added_lsns_by_mbshp/%'] = array(               // Made this a PAGE
+		'page arguments' => array(4),
+		'page callback'      => 'getRecentlyAddedLessonsByMembershipData',
+		'access callback'  => TRUE,
+		'file'             => 'dashboard_recently_added_lessons_by_membership.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
+	
 
 	return $items;
 } 
