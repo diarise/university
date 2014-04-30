@@ -57,9 +57,9 @@
 		$result_array['Beginners Courses'] = array( "term_name" => 'Beginner\'s Courses' , "term_desc" => 'If you are new to the teachings of The Kabbalah Centre, start here' , "term_articles" => $beginners_courses );
 		foreach( $vnames as $id => $vname)	
 		{			
-			$result = runPageQuery( 14 , $vname , 562 ); // Basic Course : 562
+			$result = runPageQueryForApi( 14 , $vname , 562 ); // Basic Course : 562
 			$vname_articles = array();
-			$vname_articles	= processPageQueryResults( $result , 14 ) ; 
+			$vname_articles	= processPageQueryResultsForApi( $result , 14 ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );	
 		}	
 		echo json_encode( $result_array );
