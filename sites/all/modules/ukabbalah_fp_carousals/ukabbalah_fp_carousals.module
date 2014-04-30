@@ -56,7 +56,7 @@
 			
 	function kabbalah_carousal1_show() {
 	
-		$jsonurl = '/k_api/bgnr_crs';
+		$jsonurl = '/k_api/rest/v__1/bgnr_crs';
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_fp_carousals') .'/js/fp_carousal.js');	// adding the js file for the module	
 		drupal_add_js(array('fp_vars1' => array('divid' => 'beginnerCourse','jsonurl'=>$jsonurl)), 'setting');
 		return "<div class='allCoursesWrapper'><span class='allCourses'><a href='/beginners-courses'>view all</a></span><span class='startHere'>If you are new to the teachings of The Kabbalah Centre, start here</span></div><div id='beginnerCourse'></div>";
