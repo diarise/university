@@ -23,12 +23,12 @@ function kabbalah_api_menu() {
 		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
 	);
 
-	// $items['k_api/rest/v__1/recently_added_crs'] = array(
-		// 'page callback'    => 'getRecentlyAddedCoursesData',
-		// 'access callback'  => TRUE,
-		// 'file'             => 'recentlyaddedcourses.inc',
-		// 'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
-	// );
+	$items['k_api/rest/v__1/recently_added_crs'] = array(
+		'page callback'    => 'getRecentlyAddedCoursesData',
+		'access callback'  => TRUE,
+		'file'             => 'recentlyaddedcourses.inc',
+		'file path' => drupal_get_path('module', 'kabbalah_api') . '/includes',
+	);
 
 	// $items['k_api/rest/v__1/recommended_lsns/%/%'] = array(
 		// 'page callback'    => 'getRecommendedLessosnsData',
