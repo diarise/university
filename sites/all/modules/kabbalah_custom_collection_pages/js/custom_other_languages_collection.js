@@ -440,7 +440,7 @@ $(document).ready(function(){
     SlideShow (
         $("#teachingResultSection"),
         {
-            json_URL: "/k_api/lngs",
+            json_URL: "/k_api/rest/v__1/lngs",
             imageWidth: 300,
             imageHeight: 170,
             marginToLeft: 10,
