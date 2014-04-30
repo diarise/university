@@ -367,7 +367,7 @@ $(document).ready(function(){
     SlideShow (
         $("#teachingResultSection"),
         {
-            json_URL: "/k_api/tchrs",
+            json_URL: "/k_api/rest/v__1/tchrs",
             imageWidth: 300,
             imageHeight: 170,
             marginToLeft: 10,
