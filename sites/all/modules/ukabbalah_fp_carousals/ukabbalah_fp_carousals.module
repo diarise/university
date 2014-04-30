@@ -104,7 +104,7 @@
 	
 	function kabbalah_carousal4_show() {
 	
-		$jsonurl = '/k_api/free_lsns';
+		$jsonurl = '/k_api/rest/v__1/free_lsns';
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_fp_carousals') .'/js/fp_carousal.js');	// adding the js file for the module	
 		drupal_add_js(array('fp_vars5' => array('divid' => 'freeLessons','jsonurl'=>$jsonurl)), 'setting');
 		return "<div class='allCoursesWrapper'><span class='allCourses'><a href='/free-lessons'>view all</a></span></div><div id='freeLessons'></div>";
