@@ -51,7 +51,7 @@
 		
 		// End of Profile Dashboard API's
 		
-		
+		// new hook created
 		$items['k_api/recently_added_crs'] = array(              
 			'page callback'      => 'getRecentlyAddedCoursesJson',
 			'access callback' => TRUE,
@@ -84,20 +84,21 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
-		
+		// new hook created
 		$items['k_api/free_lsns'] = array(               // Made this a PAGE
 			'page callback'      => 'getFreeLessonsJson',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
-		
+		// new hook created
 		$items['k_api/crs'] = array(               // Made this a PAGE
 			'page callback'      => 'getCoursesJson',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
 		);
 		
+		// new hook created
 		$items['k_api/tchrs'] = array(               // Made this a PAGE
 			'page callback'      => 'getTeachersJson',
 			'access callback' => TRUE,
