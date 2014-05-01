@@ -15,7 +15,6 @@
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
 	foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
 	
-	
 	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $membership_terms as $t )	{	$membership = $t->name; }
 	
@@ -38,112 +37,109 @@
 	foreach ($node->field_type_of_lesson as $term) 	{ 	$field_type_of_lesson = $term[0]['taxonomy_term']->name; }
 	?>
 	<div id="wrapperVideoSection"><!--start video wrapper section-->
-	<?php
-	if( $field_type_of_lesson == 'Audio' ) { ?>
-<?  } else if( $field_type_of_lesson == 'Video' ) { ?>
 
-	<?php } 
-	if (kabbalah_content_access_get_article_membership($membership) || !isset($membership) ) {?>	
+<?php  if (kabbalah_content_access_get_article_membership($membership) ) { ?>	
 
 	<div class="videocontent"><!--start of video content when user log in-->
-		<?php
-			
-			if( $field_type_of_lesson == 'Audio' ) {
-		?>
-			<div id="audio-control"> 
-				<?php print render($content['field_audio_link']); ?>
-			</div>
-		<?php 
-				} else if( $field_type_of_lesson == 'Video' ) { 
-		?>
-		<div id="videoSocialIconeWrapper">
-			<div id="video-control"> 
-				<?php print render($content['field_lesson_video']);  } ?>
-			</div>
-			
-				<?php if( $field_type_of_lesson == 'Audio' ) { ?>
-				<div id="eSocial" class="audiosocialmedia"> 
-				<?php }else {?>
-				<div id="eSocial"> <!--start of social media icone-->
-				<?php }?>
-				<div class="sharethis">
-					<span class='st_facebook_large' displayText='Facebook'></span>
-					<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
-					<span class='st_googleplus_large' displayText='Google +'></span>
-					<span class='st_pinterest_large' displayText='Pinterest'></span>
-					<span class='st_email_large' displayText='Email'></span>
-					<span class='st_sharethis_large' displayText='ShareThis'></span>
+			<?php
+				
+				if( $field_type_of_lesson == 'Audio' ) {
+			?>
+				<div id="audio-control"> 
+					<?php print render($content['field_audio_link']); ?>
 				</div>
-			</div> <!--start of social media icone-->
-		</div>
-		
-		<?php 	if( $field_type_of_lesson == 'Video' ) { ?>
-		<div id="audioDownloadLink"><a href='http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/formats/Small_640x360_300kbps_64kbps_h264/file.mp3' target='_blank'>Download <span>AUDIO</span></a></div>		
-		<?php } ?>
-	
-	
-	
-	</div><!--end of of video content when user log in-->
-	<?php  } else {
-		
-		$course_nid= node_load($node->field_course_list['und'][0]['node']->nid);
-		?>
-		
-		<div class="preVideoImg"><!--start preview video for user log out-->
-			<?php if( $field_type_of_lesson == 'Video' ) {?>
-		<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/screenshots/620w.jpg" alt="" > <!--image for video preview-->
-		<?php } else{ ?>
-			<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>" alt="" /> <!--image for video preview-->
+			<?php 
+					} else if( $field_type_of_lesson == 'Video' ) { 
+			?>
+			<div id="videoSocialIconeWrapper">
+				<div id="video-control"> 
+					<?php print render($content['field_lesson_video']);  } ?>
+				</div>
+				
+					<?php if( $field_type_of_lesson == 'Audio' ) { ?>
+					<div id="eSocial" class="audiosocialmedia"> 
+					<?php }else {?>
+					<div id="eSocial"> <!--start of social media icone-->
+					<?php }?>
+					<div class="sharethis">
+						<span class='st_facebook_large' displayText='Facebook'></span>
+						<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
+						<span class='st_googleplus_large' displayText='Google +'></span>
+						<span class='st_pinterest_large' displayText='Pinterest'></span>
+						<span class='st_email_large' displayText='Email'></span>
+						<span class='st_sharethis_large' displayText='ShareThis'></span>
+					</div>
+				</div> <!--start of social media icone-->
+			</div>
+			
+			<?php 	if( $field_type_of_lesson == 'Video' ) { ?>
+			<div id="audioDownloadLink"><a href='http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/formats/Small_640x360_300kbps_64kbps_h264/file.mp3' target='_blank'>Download <span>AUDIO</span></a></div>		
 			<?php } ?>
 		
-		<div class="videotitles"><!--start of preview video description-->
-			<div id="wrapperInfoMultimedia">
-				<div id="titleMultimedia"><?php print $title; // Title ?></div>
-				<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
-				<span class="pipe">|</span>
-				<span id="primaryTopicMultimedia">
-				<?php	
-					echo $primary_topic;
-					//echo implode( ", " , $secondary_parent_topics ); 
-				?>
-				</span>
-			</div>
-			<div id="wrapperAuthorDate">
-				<div id="authorNameMultimedia">
-				<?php	echo implode( ", " , $authors_name ); // Author name 	?>
-				</div>
-				<div id="dateMultimedia">
-				<?php
-					if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
-				?>
-				</div>
-			</div>
-		</div><!--end of preview video description-->
-			
-		<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership) ) {?>		
-			<div id="wrapperPrice">
-				<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
-			</div>
-		<?php } elseif( !user_is_logged_in()) { ?>
-			<div id="wrapperPrice">
-				<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
-				<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
-			</div>
-		<?php } ?>
-			
-		<div class="sharethis"><!--start of social media icone-->
-			<span class='st_facebook_large' displayText='Facebook'></span>
-			<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
-			<span class='st_googleplus_large' displayText='Google +'></span>
-			<span class='st_pinterest_large' displayText='Pinterest'></span>
-			<span class='st_email_large' displayText='Email'></span>
-			<span class='st_sharethis_large' displayText='ShareThis'></span>
-		</div><!--start of social media icone-->
-	</div><!--end preview video for user log out-->
 		
-	<?php }	?>
-	
-</div><!--end of video wrapper section-->
+		
+		</div><!--end of of video content when user log in-->
+<?php  } 
+	   else 
+	   {	
+			$course_nid= node_load($node->field_course_list['und'][0]['node']->nid);
+?>
+			
+		<div class="preVideoImg"><!--start preview video for user log out-->
+			<?php if( $field_type_of_lesson == 'Video' ) { ?>
+				<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/screenshots/620w.jpg" alt="" > <!--image for video preview-->
+			<?php } else { ?>
+				<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>" alt="" /> <!--image for video preview-->
+			<?php } ?>
+		
+			<div class="videotitles"><!--start of preview video description-->
+				<div id="wrapperInfoMultimedia">
+					<div id="titleMultimedia"><?php print $title; // Title ?></div>
+					<span id="courseNameMultimedia"><?php  print $course_title;	?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?></span>
+					<span class="pipe">|</span>
+					<span id="primaryTopicMultimedia">
+					<?php	
+						echo $primary_topic;
+						//echo implode( ", " , $secondary_parent_topics ); 
+					?>
+					</span>
+				</div>
+				<div id="wrapperAuthorDate">
+					<div id="authorNameMultimedia">
+					<?php	echo implode( ", " , $authors_name ); // Author name 	?>
+					</div>
+					<div id="dateMultimedia">
+					<?php
+						if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
+					?>
+					</div>
+				</div>
+			</div><!--end of preview video description-->
+				
+			<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership) ) {?>		
+				<div id="wrapperPrice">
+					<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
+				</div>
+			<?php } elseif( !user_is_logged_in()) { ?>
+				<div id="wrapperPrice">
+					<span class="buttonMember"><a href="http://profile.kabbalah.com">become a member</a></span>
+					<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">log-in</a></span>
+				</div>
+			<?php } ?>
+				
+			<div class="sharethis"><!--start of social media icone-->
+				<span class='st_facebook_large' displayText='Facebook'></span>
+				<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
+				<span class='st_googleplus_large' displayText='Google +'></span>
+				<span class='st_pinterest_large' displayText='Pinterest'></span>
+				<span class='st_email_large' displayText='Email'></span>
+				<span class='st_sharethis_large' displayText='ShareThis'></span>
+			</div><!--start of social media icone-->
+	</div><!--end preview video for user log out-->
+			
+		<?php }	?>
+		
+	</div><!--end of video wrapper section-->
 
 <?php  if (user_is_logged_in()) {?>
 
