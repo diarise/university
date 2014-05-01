@@ -1,8 +1,12 @@
 <?php 
 
+	//Get all the authors for this node
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
-	
+	// end of all authors 
+
+
+	// Get all the secondary topics for this node
 	$secondary_parent_topics = array();
 	foreach ($node->field_secondary_topic['und'] as $term) 	
 	{ 
@@ -11,13 +15,20 @@
 			$secondary_parent_topics[] = l( t($term['taxonomy_term']->name) , 'taxonomy/term/' . $term['taxonomy_term']->tid);
 		}
 	}
-	
+	// end of secondary topics
+
+
+	// get it primary topic
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
 	foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
-	
+	// end of primary topic
+
+	// get it membership
 	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $membership_terms as $t )	{	$membership = $t->name; }
-	
+	// end of membership
+
+	// get cours title
 	$title = $node->title;
 	
 	if( sizeof( $node->field_course_list) > 0  )
@@ -32,6 +43,8 @@
 	}	
 	
 	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
+	// end of cours title
+	
 
 	// Video or Audio Display
 	foreach ($node->field_type_of_lesson as $term) 	{ 	$field_type_of_lesson = $term[0]['taxonomy_term']->name; }
