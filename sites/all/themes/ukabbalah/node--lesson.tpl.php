@@ -19,8 +19,6 @@
 	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $membership_terms as $t )	{	$membership = $t->name; }
 	
-	print( $membership );
-	
 	$title = $node->title;
 	
 	if( sizeof( $node->field_course_list) > 0  )
@@ -45,7 +43,7 @@
 <?  } else if( $field_type_of_lesson == 'Video' ) { ?>
 
 	<?php } 
-	if (kabbalah_content_access_get_article_membership($membership) ) {?>	
+	if (kabbalah_content_access_get_article_membership($membership) || !isset($membership) ) {?>	
 
 	<div class="videocontent"><!--start of video content when user log in-->
 		<?php
