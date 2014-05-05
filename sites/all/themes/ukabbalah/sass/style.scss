@@ -1586,6 +1586,13 @@ h3 {
     padding: 15px 0 14px 15px;
     width: 425px;
 }
+/***upgrade membership**/
+.buttonMemberDesc {
+    color: #FFFFFF;
+    display: block;
+    margin-bottom: 20px;
+}
+/*****/
 #wrapperButton {
     float: left;
     margin-top: 8px;
@@ -2736,11 +2743,4 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin: 0;
     padding: 0;
     color: #9C1F19;
-}
-/***upgrade membership**/
-
-.buttonMemberDesc {
-    color: #FFFFFF;
-    display: block;
-    margin-bottom: 20px;
 }
