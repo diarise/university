@@ -1574,17 +1574,25 @@ h3 {
 }
 #wrapperInfoCour {
     float: left;
-    min-height: 206px;
+    // min-height: 206px;
+    min-height: 163px;
     width: 100%;
     padding-top:2px;
 }
 #wrapperPrice {
     background: none repeat scroll 0 0 #544C4C;
     float: left;
-    height: 29px;
+    // height: 29px;
     padding: 15px 0 14px 15px;
     width: 425px;
 }
+/***upgrade membership**/
+.buttonMemberDesc {
+    color: #FFFFFF;
+    display: block;
+    margin-bottom: 20px;
+}
+/*****/
 #wrapperButton {
     float: left;
     margin-top: 8px;
@@ -2361,7 +2369,7 @@ div.jp-audio{
 .preVideoImg .videotitles{
     float: right;
     width: 290px;
-    height: 242px;
+    height: 199px;
     clear: none;
     margin-top: 0;
 }
