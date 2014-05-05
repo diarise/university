@@ -1574,14 +1574,15 @@ h3 {
 }
 #wrapperInfoCour {
     float: left;
-    min-height: 206px;
+    // min-height: 206px;
+    min-height: 163px;
     width: 100%;
     padding-top:2px;
 }
 #wrapperPrice {
     background: none repeat scroll 0 0 #544C4C;
     float: left;
-    height: 29px;
+    // height: 29px;
     padding: 15px 0 14px 15px;
     width: 425px;
 }
@@ -2735,4 +2736,11 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin: 0;
     padding: 0;
     color: #9C1F19;
+}
+/***upgrade membership**/
+
+.buttonMemberDesc {
+    color: #FFFFFF;
+    display: block;
+    margin-bottom: 20px;
 }
