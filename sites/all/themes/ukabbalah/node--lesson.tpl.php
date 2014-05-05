@@ -15,6 +15,7 @@
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
 	foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
 	
+	
 	$membership_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $membership_terms as $t )	{	$membership = $t->name; }
 	
@@ -118,6 +119,7 @@
 				
 			<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership) ) {?>		
 				<div id="wrapperPrice">
+					<span class="buttonMemberDesc">This is a <?php print $membership; ?> lesson</span>
 					<span class="buttonMember"><a href="http://profile.kabbalah.com/user/dashboard">upgrade your membership</a></span>
 				</div>
 			<?php } elseif( !user_is_logged_in()) { ?>
