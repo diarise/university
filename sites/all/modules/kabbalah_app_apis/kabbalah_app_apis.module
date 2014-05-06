@@ -315,7 +315,7 @@
 				$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
 				
 				
-				$vname_articles[] = array(  //'event_id' => $node->nid,
+				$vname_articles[] = array( 'event_id' => $node->nid,
 										  //'course_type' => $type_of_course,	
 										  'title' => $title ,
 										  'subtitle' => $subtitle,									  									  
