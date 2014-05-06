@@ -11,7 +11,7 @@
 				AND n.type = 'lesson'
 				AND td.vid = 12
 				AND td.name = 'Free'
-				ORDER BY n.changed DESC LIMIT 6";
+				ORDER BY n.created DESC LIMIT 6";
 				
 		$result = db_query( $sql );
 		$result_array = array();
