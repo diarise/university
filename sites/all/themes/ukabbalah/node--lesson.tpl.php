@@ -124,7 +124,7 @@
 		<?php if ( kabbalah_content_access_get_article_membership($membership) ) { ?>
 			
 				<div class="videocontent">
-					<div id="audio-control"><?php print render($content['field_audio_link']); ?></div>
+					<div id="video-control"><?php print render($content['field_lesson_video']); ?></div>
 					<div id="eSocial" class="audiosocialmedia">
 					<div class="sharethis">
 						<span class='st_facebook_large' displayText='Facebook'></span>
