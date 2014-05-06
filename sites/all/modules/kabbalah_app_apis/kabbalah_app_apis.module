@@ -18,6 +18,17 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		
+		// 3. Gets all the course live events information grouped location 
+		$items['k_app_api/live_evnts'] = array(              
+			'page callback'      => 'getCoursesByLiveEventsDataForApp',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		
+		
 		// End of App API's
 		
 		return $items;
@@ -218,6 +229,14 @@
 		echo json_encode( $result_array );				
 
 	}
+	
+	
+	function getCoursesByLiveEventsDataForApp() {
+	
+		return "test";
+	
+	}
+	
 	
 	// End of App Apis
 	
