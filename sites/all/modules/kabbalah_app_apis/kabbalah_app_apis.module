@@ -281,18 +281,23 @@
 				
 				$events_agenda = array();
 				$wrapper1 = entity_metadata_wrapper('node', $node);
-				 foreach ($wrapper1->field_agenda as $i)
-				 {
+				foreach ($wrapper1->field_agenda as $i)
+				{
 					$start_date = "";
 					foreach ( $i->field_date_time->value() as $k => $v ) {
 						$start_date = date( 'F jS, Y g:i A' , strtotime($v) );
 						break;
 					}
-					//echo "<tr><td class='eventsData'>".$start_date."</td><td class='eventsData'>".$i->field_agenda_item->value()."</td></tr>";
 					$events_agenda[] = array( "agenda_date" => $start_date , "agenda_item" => $i->field_agenda_item->value() );
+				}
+				
+				$event_resources = array();
+				$wrapper = entity_metadata_wrapper('node', $node);
+				 foreach ($wrapper->field_lesson_resources as $i)
+				 {
+					$event_resources[] = array( "resource_link" => $i->field_file_link->value() , "resource_description" => $i->field_file_description->value() );
 				 }
 				
-			
 				$location_events[] = array( 'event_id' => $node->nid,
 										   'title' => $title ,
 										   'subtitle' => $subtitle,									  									  
@@ -305,7 +310,8 @@
 										   'modified' => $node->changed,
 										   'event_start_date' => $sDate,
 										   'event_end_date' => $sDate2,
-										   'events_agenda' => $events_agenda
+										   'events_agenda' => $events_agenda,
+										   'event_resources' => $event_resources
 										);
 			}
 			$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
