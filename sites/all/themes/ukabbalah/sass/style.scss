@@ -807,9 +807,9 @@ ul.masonry{
     text-align: left;
 }
 @media only screen and (max-width: 1300px) {
-	.descriptionEvents{
-		font-size: 15px;
-	}
+  .descriptionEvents{
+    font-size: 15px;
+  }
 }
 .descriptionEvents a, .descriptionEvents a:hover {
     color: #127795;
@@ -1246,8 +1246,8 @@ h3 {
     float: right;
 }
 .audiosocialmedia{
-    width: 670px!important;
-    margin-top: -21px!important;
+    margin: auto;
+    width: 670px !important;
 }
 #videoSection{
     margin: auto;
@@ -1256,7 +1256,7 @@ h3 {
 }
 #videoSocialIconeWrapper {
     margin: auto;
-    width: 887px;
+    width: 940px;
 }
 #videoSocialIconeWrapper .st_facebook_large,
 #videoSocialIconeWrapper .st_twitter_large,
@@ -1421,7 +1421,7 @@ h3 {
 }
 #video-control {
     margin: 31px auto 0px;
-    width: 800px;
+    width: 940px;
     float: left;
 }
 .videocontent {
@@ -1506,7 +1506,7 @@ h3 {
 
 /**/
 #audio-control{
-    margin: 31px auto 30px;
+    margin: 31px auto 0px;
 }
 
 /*fix broken slideshow*/
@@ -1650,11 +1650,11 @@ h3 {
     }
 }
 .theCourseAuthor a{
-	color: #4DCFF5 !important;
-	text-transform: uppercase;
+  color: #4DCFF5 !important;
+  text-transform: uppercase;
 }
 .divider:last-child{
-	display:none;
+  display:none;
 }
 #authorNameMultimedia a:hover{
   text-decoration: underline;
@@ -1792,17 +1792,17 @@ h3 {
 .lessonCollectionSection table tbody tr td:nth-child(3),
 .lessonCollectionSection table tbody tr td.release-width,
 .lessonCollectionSection table tbody tr td.duration-width{
-	font-size:13px;
+  font-size:13px;
 }
 .lessonCollectionSection table tbody tr td.author-width{
-	font-size:15px;
+  font-size:15px;
 }
 .lessonCollectionSection .cols-7 th:nth-child(2){
-		width: 453px!important;
+    width: 453px!important;
 }
 .lessonCollectionSection .cols-7 th:nth-child(3),
 .author-width{
-		width: 100px!important;
+    width: 100px!important;
 }
 .lessonCollectionSection table thead tr th:nth-child(4),
 .lessonCollectionSection table thead tr th:nth-child(5),
@@ -1815,7 +1815,7 @@ h3 {
   width: 110px;
 }
 .lessonCollectionSection table tbody tr td.title-width{
-	width:450px!important;
+  width:450px!important;
 }
 .tablescroll_wrapper {
     border-bottom: 1px solid $colorGray;
@@ -1838,10 +1838,10 @@ h3 {
     height: 32px;
 }
 .activeLesson .Video{
-	background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px!important;
+  background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px!important;
 }
 .activeLesson .Audio{
-	background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0!important;
+  background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0!important;
 }
  .views-field-twistage-subtitles.activeLesson span, .subtitle-width.activeLesson span{
      background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px!important;
@@ -1853,12 +1853,12 @@ h3 {
     color: transparent;
 }
 .lessonCollectionSection tr:hover,{
-	font-weight: bold;
-	background: #e1edf1;
-		.Video{
-				background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px;
-			}
-		.views-field-twistage-subtitles span, .subtitle-width span{
+  font-weight: bold;
+  background: #e1edf1;
+    .Video{
+        background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px;
+      }
+    .views-field-twistage-subtitles span, .subtitle-width span{
      background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
       }
 }
@@ -1927,7 +1927,7 @@ h3 {
 #teachingsSectionHeaderBar select option,
 #views-exposed-form-taxonomy-term-page select option,
 #mainContentWrapper select option{
-	width:150px;
+  width:150px;
 }
 span.lessonsCourse {
     background: url("../images/dd_arrow.png") no-repeat scroll right 10px #fff!important;
@@ -2025,9 +2025,9 @@ span.lessonsCourse {
     margin-bottom: 17px!important;
     width: 440px!important;
 }
-#wrapperVideoSection #eSocial {
-    margin: auto;
-    width: 940px;
+#mediaFeatureWrapper #eSocial {
+    float: left;
+    width: 50%;
 }
 .sharethis{
     border-top: 1px solid #7c7575;
@@ -2176,8 +2176,14 @@ div.jp-audio{
     margin-top: -10px;
     text-align: left;
 }
-.videocontent .sharethis{
-    border-top: none;
+#mediaFeatureWrapper .sharethis{
+    border-top: medium none;
+    float: right;
+    margin-right: -16px;
+}
+.audiosocialmedia .sharethis{
+    border-top: medium none;
+    float: right;
 }
 .lessonCollectionSection .Audio {
     background: url("../images/icon/audio_icon_light_grey.png") no-repeat 8px 0;
@@ -2185,7 +2191,7 @@ div.jp-audio{
     width: 25px;
 }
 .lessonCollectionSection tr:hover .Audio{
-		background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
+    background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
     height: 13px;
     width: 25px;
 } 
@@ -2329,7 +2335,7 @@ div.jp-audio{
     width: 35px;
 }
 .Both{
-	@extend .bothAdVdImg;
+  @extend .bothAdVdImg;
 }
 .teachingsTopicAndDate .Premium{
     margin-right: 0;
@@ -2437,9 +2443,9 @@ div.jp-audio{
     padding-bottom:20px!important;
 }
 @media only screen and (max-width: 1000px){
-	.scrollingTitle,.scrollingFilter{
-		padding-left: 0px!important;
-	}
+  .scrollingTitle,.scrollingFilter{
+    padding-left: 0px!important;
+  }
 }
 
 
@@ -2458,7 +2464,7 @@ div.jp-audio{
 }
 .scrollingTitle .teachingsBarInnerWrapper,
 .scrollingFilter .teachingsBarInnerWrapper{
-	// width:auto!important;
+  // width:auto!important;
 }
 .scrollingFilter{
   padding-top:10px;
@@ -2648,9 +2654,9 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 /**audio download link**/
 #audioDownloadLink {
     clear: both;
-    margin: auto;
-    width: 884px;
-    padding-bottom: 20px;
+    float: left;
+    padding: 10px 0 20px;
+    width: 50%;
 }
 #audioDownloadLink > a {
     color: #fff;
@@ -2659,7 +2665,11 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 #audioDownloadLink > a span{
   color: #71DFFF;
 }
-
+#mediaFeatureWrapper {
+    clear: both;
+    margin: auto;
+    width: 940px;
+}
 /*** comment section**/
 
 .commentsSection {

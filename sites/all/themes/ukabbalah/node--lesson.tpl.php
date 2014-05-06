@@ -124,20 +124,17 @@
 		<?php if ( kabbalah_content_access_get_article_membership($membership) ) { ?>
 			
 				<div class="videocontent">
-					<div id="videoSocialIconeWrapper">
-						<div id="video-control"><?php print render($content['field_lesson_video']); ?></div>
-						<div id="eSocial"> <!--start of social media icone-->
-							<div class="sharethis">
-								<span class='st_facebook_large' displayText='Facebook'></span>
-								<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
-								<span class='st_googleplus_large' displayText='Google +'></span>
-								<span class='st_pinterest_large' displayText='Pinterest'></span>
-								<span class='st_email_large' displayText='Email'></span>
-								<span class='st_sharethis_large' displayText='ShareThis'></span>
-							</div>
-						</div> <!--start of social media icone-->
+					<div id="audio-control"><?php print render($content['field_audio_link']); ?></div>
+					<div id="eSocial" class="audiosocialmedia">
+					<div class="sharethis">
+						<span class='st_facebook_large' displayText='Facebook'></span>
+						<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
+						<span class='st_googleplus_large' displayText='Google +'></span>
+						<span class='st_pinterest_large' displayText='Pinterest'></span>
+						<span class='st_email_large' displayText='Email'></span>
+						<span class='st_sharethis_large' displayText='ShareThis'></span>
 					</div>
-					<div id="audioDownloadLink"><a href='http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/formats/Small_640x360_300kbps_64kbps_h264/file.mp3' target='_blank'>Download <span>AUDIO</span></a></div>		
+					</div>
 				</div><!--End of videocontent-->
 				
 			<?php } else { ?>
