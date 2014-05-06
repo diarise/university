@@ -14,8 +14,8 @@
 		$player_id = $video->vid;
 		$sublime['player_id']=$player_id;
 		$sublime['settings']=array(
-			'height' => 528.4888 ,//$height,
-			'width' => 940, //$width,
+			'height' => 435 ,//$height,
+			'width' => 800, //$width,
 		);
 		drupal_alter('sublime_settings',$sublime);
 		$html = '<video id="'.$video->vid.'" class="sublime" poster="'.$sublime['video_image'].'" width="'.$sublime['settings']['width'].'" height="'.$sublime['settings']['height'].'" data-fullmode-enable="true" data-fullmode-priority="screen"data-sharing-enable="true" data-sharing-icon="default" data-sharing-buttons=" twitter facebook pinterest google+" data-sharing-image="poster" data-uid="'.$video->vid.'"  >';
