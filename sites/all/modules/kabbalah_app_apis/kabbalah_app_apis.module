@@ -248,7 +248,7 @@
 			
 			$result = db_query( $sql );	
 		
-			$vname_articles = array();
+			$location_events = array();
 			foreach( $result as $record )	
 			{
 				$node = node_load($nid = $record->nid );
@@ -280,7 +280,7 @@
 				$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
 				
 				
-				$vname_articles[] = array( 'event_id' => $node->nid,
+				$location_events[] = array( 'event_id' => $node->nid,
 										   'title' => $title ,
 										   'subtitle' => $subtitle,									  									  
 										   'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
@@ -294,7 +294,7 @@
 										   'event_end_date' => $sDate2
 										);
 			}
-			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $p_topic_description  , "term_articles" => $vname_articles );	
+			$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
 		}	
 		echo json_encode( $result_array );
 	}
