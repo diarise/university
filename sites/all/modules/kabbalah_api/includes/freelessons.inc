@@ -36,7 +36,7 @@
 			}
 			
 			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
-			if( $recorded_date == "" ) $recorded_date = $node->changed;
+			if( $recorded_date == "" ) $recorded_date = $node->created;
 			
 			if( $media_type1->name == 'Video' ) 
 			{
