@@ -27,8 +27,8 @@
 			<?php
 				// Video Player Code
 				$streamer_url = check_plain($node->field_streamer_link['und'][0]['value']); 
-				$height=435 ;
-				$width=800;
+				$height=511 ;
+				$width=940;
 				$html="<script src='http://jwpsrv.com/library/N_wSnHeyEeKNTyIACp8kUw.js'></script>";
 				$html .= '<div id="liveEventsPlayer"><span id="player2">'.$ima.'</span></div>';
 				$html .= '<script type="text/javascript">
