@@ -1266,10 +1266,14 @@ h3 {
     display: inherit;
 }
 #videoSocialIconeWrapper #eSocial{
-    width: auto!important;
-    margin-left: 14px!important;
-    margin-top: 292px!important;
-    float: left;
+    // width: auto!important;
+    // margin-left: 14px!important;
+    // margin-top: 292px!important;
+    // float: left;
+    margin:auto;  
+    width: 940px;
+    display: inline-block;
+    padding-top:10px;
 }
 .st_email_large {
     margin-left: -2px;
@@ -2038,6 +2042,7 @@ span.lessonsCourse {
 .logged-in.node-type-live-events .sharethis{
   border-top:none;
   padding-top:22px;
+  display: inline;
 }
 #courseDescription #eSocial .sharethis{
     border-top: none!important;
