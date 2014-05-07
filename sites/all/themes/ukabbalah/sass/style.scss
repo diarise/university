@@ -2041,9 +2041,10 @@ span.lessonsCourse {
     padding-top: 10px;
 }
 .logged-in.node-type-live-events .sharethis{
-  border-top:none;
-  padding-top:22px;
-  display: inline;
+    border-top: medium none;
+    display: inline;
+    margin-right: -16px;
+    padding-top: 22px;
 }
 #courseDescription #eSocial .sharethis{
     border-top: none!important;
