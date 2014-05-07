@@ -2364,8 +2364,10 @@ div.jp-audio{
     height: 29px;
 }
 .preVideoImg {
-    width: 940px;
+    display: table;
     margin: 20px auto auto;
+    position: relative;
+    width: 940px;
 }
 .preVideoImg img{
     float: left;
@@ -2398,13 +2400,16 @@ div.jp-audio{
     display: none;
 }
 .preVideoImg #wrapperPrice{
+    bottom: 45px;
+    position: absolute;
+    right: 0;
     width: 275px;
-    margin-left: 30px
 }
 .preVideoImg .sharethis{
-    float: right;
-    width: 290px;  
-    margin-top: 16px; 
+    bottom: -15px;
+    position: absolute;
+    right: 0;
+    width: 290px; 
 }
 .transcript-content{
     width: 605px;
