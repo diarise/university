@@ -195,10 +195,13 @@
 			if( $media_type->name == 'Video' ) 	{
 				
 				$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
+				$video_id = $node->field_lesson_video['und'][0]['twistage_existing_videos'];
+				
 			} else	{
 			
 				$course_nid= node_load( $nid = $node->field_course_list['und'][0]['nid'] );
-				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
+				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];
+				$audio_url = $node->field_audio_link['und'][0]['value'];	
 			}
 			
 			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
@@ -208,6 +211,8 @@
 									   'subtitle' => $subtitle,
 									   'lesson_type' => $media_type->name,
 									   'image' => $image_link,
+									   'video_id' => $video_id,
+									   'audio_url' => $audio_url,
 									   'description' => $description,		
 									   'authors' => $comma_separated_author_names ,
 									   'additional_authors' => $comma_separated_add_author_names ,								  
