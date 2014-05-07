@@ -1551,8 +1551,10 @@ h3 {
 }
 #contentAuthorInfo{
     float: left;
+    height: 267px;
+    margin: 43px 0 0;
+    position: relative;
     width: 440px;
-    margin:43px 0 0 0;
 }
 #contentAuthorImages img{
     width: 460px;
@@ -1581,9 +1583,9 @@ h3 {
 }
 #wrapperPrice {
     background: none repeat scroll 0 0 #544C4C;
-    float: left;
-    // height: 29px;
+    bottom: 0;
     padding: 15px 0 14px 15px;
+    position: absolute;
     width: 425px;
 }
 /***upgrade membership**/
