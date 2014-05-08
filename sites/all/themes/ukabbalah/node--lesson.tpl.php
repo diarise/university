@@ -57,7 +57,7 @@
 				<div class="videocontent">
 					<div id="audio-control"><?php print render($content['field_audio_link']); ?></div>
 						<div id="audioFeatureWrapper">
-							<div id="audioDownloadLink"><a href='http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/formats/Small_640x360_300kbps_64kbps_h264/file.mp3' target='_blank'>Download <span>AUDIO</span></a></div>		
+							<div id="audioDownloadLink"><a href='<?php print $node->field_audio_link['und'][0]['value'];?>' target='_blank'>Download <span>AUDIO</span></a></div>		
 							<div id="eSocial" class="audiosocialmedia">
 								<div class="sharethis">
 									<span class='st_facebook_large' displayText='Facebook'></span>
