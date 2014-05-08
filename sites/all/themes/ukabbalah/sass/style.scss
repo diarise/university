@@ -1244,10 +1244,11 @@ h3 {
 .audiosocialmedia .sharethis{
     border: none;
     float: right;
+    margin-right: -15px;
 }
 .audiosocialmedia{
-    margin: auto;
-    width: 670px !important;
+    float: left;
+    width: 50%;
 }
 #videoSection{
     margin: auto;
@@ -1257,6 +1258,10 @@ h3 {
 #videoSocialIconeWrapper {
     margin: auto;
     width: 940px;
+}
+#audioFeatureWrapper {
+    margin: auto;
+    width: 640px;
 }
 #videoSocialIconeWrapper .st_facebook_large,
 #videoSocialIconeWrapper .st_twitter_large,
