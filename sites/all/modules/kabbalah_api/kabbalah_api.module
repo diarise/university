@@ -134,7 +134,7 @@ function runPageQueryForApi( $vid , $vname , $type_of_course_tid ) {
 		//if( $vid != 7 )  $sql .= "AND toc.field_type_of_course_tid = ".$type_of_course_tid.") ";
 		
 		if( $vid != 7 ) $sql .= "AND toc.field_type_of_course_tid = ".$type_of_course_tid."";
-		$sql .=	") ORDER BY n.changed DESC";
+		$sql .=	") ORDER BY n.changed DESC LIMIT 10";
 		
 		$result = db_query( $sql );
 		return $result;
