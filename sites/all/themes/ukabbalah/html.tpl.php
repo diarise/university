@@ -56,7 +56,7 @@
 		<div id="kabbalahlogo">
 			<a href='http://kabbalah.com'><img src='/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png' alt='Kabbalah Center logo' /></a>
 		</div><!--end of kabbalahlogo-->
-		<div class="donate"><a href="/donate" target="_blank">Donate</a></div><!--end of donate-->
+		<div class="donate"><a href="http://kabbalah.com/donate" target="_blank">Donate</a></div><!--end of donate-->
 		<div class="searchLogo">
 			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png" alt="search"></a>
 		</div><!--end of searchlogo-->
