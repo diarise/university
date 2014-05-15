@@ -2773,3 +2773,59 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     padding: 0;
     color: #9C1F19;
 }
+/**** added style for the search page***/
+.page-search #pageregion {
+    margin: auto;
+    width: 940px;
+}
+.searchimage {
+    clear: both;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 300px;
+}
+.searchimage .theImage {
+    height: 169px;
+    width: 300px;
+}
+.searchtext {
+    float: left;
+    width: 600px;
+}
+.searchtitle{
+    color: $colorBrown;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    text-transform: uppercase;
+}
+.searchmetdata {
+    color: $colorBrown;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.searchbody {
+    color: $colorBrown;
+    font-size: 14px;
+    text-align: left;
+}
+.searchmetdata .Premium {
+    float: left;
+    margin-top: 0;
+}
+.searchbody .seachreadMore{
+  color: $colorRed;
+}
+.searchmetdata .Free {
+    float: left;
+    margin-right: 10px;
+    margin-top: 0;
+}
+.page-search .view-filters {
+    margin-bottom: 20px;
+}
