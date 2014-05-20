@@ -85,7 +85,7 @@
 			$secondary_topics = array();
 			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
 			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
-			$secondary_topics = implode( ", " , $secondary_topics );
+			
 			
 			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 11 );
 			foreach( $vocab_terms3 as $t )	{	$type_of_course = $t->name; }
@@ -98,9 +98,11 @@
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 									  'description' => $teaser,
 									  'authors' => $comma_separated_author_names ,
+									  'authors_array' => $author_names ,
 									  'additional_authors' => $comma_separated_add_author_names ,	
 									  'primary_topic' => $primary_topic,
-									  'secondary_topics' => $secondary_topics,					
+									  'secondary_topics' => implode( ", " , $secondary_topics ),					
+									  'secondary_topics_array' => $secondary_topics,					
 									  'membership' => $membership->name,
 									  'web_path' => $path ,					  
 									  'created' => $node->created,
