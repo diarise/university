@@ -109,7 +109,7 @@
 									  'modified' => $node->changed									 
 									);
 		}
-		header('Content-Type: application/json; charset=utf8', true);
+		header('Content-Type: application/json');
 		echo json_encode( $result_array );				
 	}
 	
@@ -231,7 +231,7 @@
 									   'modified' => $node->changed									   
 									);
 		}
-		header('Content-Type: application/json; charset=utf8', true);
+		header('Content-Type: application/json');
 		echo json_encode( $result_array );				
 
 	}
@@ -326,7 +326,7 @@
 			}
 			$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
 		}	
-		header('Content-Type: application/json; charset=utf8', true);
+		header('Content-Type: application/json');
 		echo json_encode( $result_array );
 	}
 	
