@@ -965,6 +965,7 @@ ul.masonry{
   margin-left: 10px;
 }
 #edit-title {
+  background: none repeat scroll 0 0 #EFEFEF;
     border: 1px solid #CCCCCC;
     height: 28px;
     margin-top: 4px;
@@ -2616,6 +2617,9 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     width: 96px;
 }
 /***custom ccarousel for search page***/
+#views-exposed-form-search-page .views-exposed-widgets.clearfix{
+  width: 940px;
+}
 .quicktabs-views-group .imagesCont{
   position: relative;
 }
