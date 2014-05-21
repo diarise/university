@@ -1929,6 +1929,12 @@ h3 {
     text-align: left;
     text-transform: capitalize;
 }
+#edit-field-author-tid{
+  width: 300px;
+}
+#edit-field-secondary-topic-tid-wrapper{
+  margin-bottom: 20px;
+}
 #courseDescription{
     float: left;
     height: 100%;
@@ -2544,7 +2550,8 @@ div.jp-audio{
   display: block;
 }
 #edit-field-author-tid-wrapper{
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 #views-exposed-form-search-page label{
   display: inline;
@@ -2626,10 +2633,30 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin-bottom: 50px;
 }
 #views-exposed-form-search-page .views-widget {
-    margin-top: 2px;
+    margin-top: 7px;
+}
+#edit-field-portion-tid-wrapper{
+  margin-right: 10px;
+}
+#edit-field-secondary-topic-tid{
+  width: 500px;
 }
 #views-exposed-form-search-page #edit-title-wrapper .views-widget {
     margin-top: 0px;
+}
+#views-exposed-form-search-page #edit-title-wrapper input {
+    margin-top: 0;
+    width: 500px;
+}
+.views-exposed-widget.views-submit-button {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#edit-field-portion-tid{
+  width: 300px;
+}
+#edit-title-wrapper{
+  margin-top:5px; 
 }
 /**style for karen page**/
 
