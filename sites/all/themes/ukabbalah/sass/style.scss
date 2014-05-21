@@ -2854,7 +2854,9 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin-top: 0;
 }
 .page-search .view-filters {
-    margin-bottom: 20px;
+    border-bottom: 0 solid #CCCCCC;
+    height: auto!important;
+    margin-bottom: 50px;
 }
 /***/
 #weeksPortion {
