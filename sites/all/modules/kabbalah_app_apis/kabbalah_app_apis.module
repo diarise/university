@@ -39,7 +39,6 @@
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 				WHERE n.status =1
 				AND n.type = 'course'
-				AND n.nid IN ('3199','3249')
 				ORDER BY n.changed DESC";
 				
 		$result = db_query( $sql );
@@ -81,6 +80,7 @@
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$teaser="";
 			if( sizeof($node->body) > 0 ) $teaser  = get_clean_app_body( $node->body['und'][0]['value'] , 0 );
+			$subtitle = "";
 			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
 			
 			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
@@ -143,16 +143,16 @@
 			
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$subtitle = "";
 			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
 			$description="";
 			if( sizeof($node->body) > 0 ) $description  = get_clean_app_body( $node->body['und'][0]['value'] , 0 );
 			
 			
-			
+			$comma_separated_author_names = "";
+			$author_names = array();
 			if( sizeof($node->field_author) > 0 )
 			{
-				$comma_separated_author_names = "";
-				$author_names = array();
 				foreach( $node->field_author['und'] as $author )	
 				{	
 					$author = taxonomy_term_load( $author['tid'] );
@@ -161,10 +161,10 @@
 				$comma_separated_author_names = implode( ", " , $author_names );
 			}
 			
+			$comma_separated_add_author_names = "";
+			$add_author_names = array();
 			if( sizeof($node->field_additiona_authors) > 0 )
 			{
-				$comma_separated_add_author_names = "";
-				$add_author_names = array();
 				foreach( $node->field_additiona_authors['und'] as $add_author )	
 				{	
 					$add_author = taxonomy_term_load( $add_author['tid'] );
@@ -190,6 +190,7 @@
 			
 			$highlights = get_clean_body( $node->field_lesson_highlights['und'][0]['value'] , 0 );
 			
+			$resources = "";
 			if( sizeof( $node->field_lesson_resources) > 0  ) {
 				$wrapper = entity_metadata_wrapper('node', $node);
 				foreach ($wrapper->field_lesson_resources as $i)
