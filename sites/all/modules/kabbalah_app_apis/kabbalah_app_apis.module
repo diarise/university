@@ -39,7 +39,7 @@
 				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 				WHERE n.status =1
 				AND n.type = 'course'
-				AND n.nid = 3249
+				AND n.nid IN ('3199','3249')
 				ORDER BY n.changed DESC";
 				
 		$result = db_query( $sql );
