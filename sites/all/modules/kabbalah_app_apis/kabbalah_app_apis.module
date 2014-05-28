@@ -65,6 +65,9 @@
 			
 			if( sizeof($node->field_additiona_authors) > 0 )
 			{
+				print_r( $node->field_additiona_authors['und'] );
+				echo "<br>";
+				
 				$comma_separated_add_author_names_.$i = "";
 				$additional_author_names_.$i = array();
 				foreach( $node->field_additiona_authors['und'] as $add_author )	
