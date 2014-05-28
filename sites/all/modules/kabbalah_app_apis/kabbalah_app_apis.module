@@ -104,7 +104,7 @@
 									  'authors' => $comma_separated_author_names ,
 									  'authors_array' => $author_names ,
 									  'additional_authors' => $comma_separated_add_author_names ,	
-									  'additional_authors_array' => $add_author_names ,	
+									  'additional_authors_array' => $additional_author_names ,	
 									  'primary_topic' => $primary_topic,
 									  'secondary_topics' => implode( ", " , $secondary_topics ),					
 									  'secondary_topics_array' => $secondary_topics,					
