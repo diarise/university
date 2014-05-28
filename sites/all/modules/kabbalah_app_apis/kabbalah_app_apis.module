@@ -100,6 +100,7 @@
 									  'authors' => $comma_separated_author_names ,
 									  'authors_array' => $author_names ,
 									  'additional_authors' => $comma_separated_add_author_names ,	
+									  'additional_authors_array' => $add_author_names ,	
 									  'primary_topic' => $primary_topic,
 									  'secondary_topics' => implode( ", " , $secondary_topics ),					
 									  'secondary_topics_array' => $secondary_topics,					
@@ -177,7 +178,7 @@
 			$secondary_topics = array();
 			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
 			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
-			$secondary_topics = implode( ", " , $secondary_topics );
+			$comma_separated_secondary_topics = implode( ", " , $secondary_topics );
 			
 			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 			$media_type = taxonomy_term_load($node->field_type_of_lesson['und'][0]['tid']);
@@ -219,9 +220,12 @@
 									   'audio_url' => $audio_url,
 									   'description' => $description,		
 									   'authors' => $comma_separated_author_names ,
+									   'authors_array' => $author_names ,
 									   'additional_authors' => $comma_separated_add_author_names ,								  
+									   'additional_authors_array' => $add_author_names ,								  
 									   'primary_topic' => $primary_topic,
-									   'secondary_topics' => $secondary_topics,
+									   'secondary_topics' => $comma_separated_secondary_topics,
+									   'secondary_topics_array' => $secondary_topics,
 									   'membership' => $membership->name,
 									   'recorded_date' => $recorded_date,
 									   'web_path' => $path ,
