@@ -16,6 +16,7 @@ scripts[] = js/jquery.masonry.min.js
 scripts[] = js/flag.js
 scripts[] = js/jquery.tooltipster.min.js
 scripts[] = js/author_tooltip.js
+scripts[] = js/welcome_text.js
 
 regions[search] = Search
 regions[universalMenu] = Universal Menu
