@@ -245,7 +245,7 @@
 	  $( this ).hide( 1000, function() {
 	    $( this ).remove();
 	  });
-	});
+	})(jQuery);
 </script>
 <!-- end hidding popup -->
 
