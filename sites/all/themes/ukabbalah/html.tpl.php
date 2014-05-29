@@ -241,11 +241,11 @@
 
 <!-- hide popup when user is not login -->
 <script type="text/javascript">
-	$( "#popupNotLogin" ).click(function() {
-	  $( this ).hide( 1000, function() {
-	    $( this ).remove();
-	  });
-	})(jQuery);
+	// $( "#popupNotLogin" ).click(function() {
+	//   $( this ).hide( 1000, function() {
+	//     $( this ).remove();
+	//   });
+	// })(jQuery);
 </script>
 <!-- end hidding popup -->
 
