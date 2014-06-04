@@ -52,6 +52,17 @@
 ?>
 <!-- Header and Main Menu -->
 	
+<!-- this popup show up only when the user is not log in -->
+
+			<?php if ( user_is_logged_in() ) {?>
+				
+			<?php } else {?>
+				<div id="popupNotLogin">Welcome to the Kabbalah University please <a href="http://university.kabbalah.com/saml_login">login</a> or <a href="http://profile.kabbalah.com">sign up</a> to have access to the videos <span>X</span></div>
+			<?php }?>
+		
+<!-- end popup -->
+
+
 	<div id="mainlogo">
 		<div id="kabbalahlogo">
 			<a href='http://kabbalah.com'><img src='/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png' alt='Kabbalah Center logo' /></a>
@@ -226,8 +237,6 @@
 	}
 </script>
 <!-- End for Menu -->
-
-
 
 </body>
 
