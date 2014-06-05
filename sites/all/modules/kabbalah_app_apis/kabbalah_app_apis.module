@@ -111,7 +111,11 @@
 									  'membership' => $membership->name,
 									  'web_path' => $path ,					  
 									  'created' => $node->created,
-									  'modified' => $node->changed									 
+									  'modified' => $node->changed,
+									  'location address' =>	$node->field_location_address['und'][0]['value'],
+									  'location city' => $node->field_location_city['und'][0]['value'],
+									  'location zip code' => $node->field_location_zipcode['und'][0]['value'],
+									  'location country' =>	$node->field_location_country['und'][0]['value']	
 									);
 		
 		}
