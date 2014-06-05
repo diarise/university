@@ -242,7 +242,11 @@
 									   'highlights' => $highlights,
 									   'resources' => $resources,
 									   'created' => $node->created,
-									   'modified' => $node->changed									   
+									   'modified' => $node->changed,
+									   'location address' =>	$node->field_location_address['und'][0]['value'],
+									   'location city' => $node->field_location_city['und'][0]['value'],
+									   'location zip code' => $node->field_location_zipcode['und'][0]['value'],
+									   'location country' =>	$node->field_location_country['und'][0]['value']									   
 									);
 		}
 		header('Content-Type: application/json');
@@ -338,7 +342,11 @@
 										   'event_start_date' => $sDate,
 										   'event_end_date' => $sDate2,
 										   'events_agenda' => $events_agenda,
-										   'event_resources' => $event_resources
+										   'event_resources' => $event_resources,
+										   'location address' =>	$node->field_location_address['und'][0]['value'],
+										   'location city' => $node->field_location_city['und'][0]['value'],
+										   'location zip code' => $node->field_location_zipcode['und'][0]['value'],
+										   'location country' =>	$node->field_location_country['und'][0]['value']
 										);
 			}
 			$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
