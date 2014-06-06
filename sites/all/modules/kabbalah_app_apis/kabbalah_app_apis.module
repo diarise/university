@@ -143,7 +143,7 @@
 									);
 		
 		}
-		header('Content-Type: application/json');
+		header('Content-type: application/json');
 		echo json_encode( $result_array );				
 	}
 	
@@ -273,7 +273,7 @@
 									   'location country' =>	$node->field_location_country['und'][0]['value']									   
 									);
 		}
-		header('Content-Type: application/json');
+		header('Content-type: application/json');
 		echo json_encode( $result_array );				
 
 	}
@@ -375,7 +375,7 @@
 			}
 			$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
 		}	
-		header('Content-Type: application/json');
+		header('Content-type: application/json');
 		echo json_encode( $result_array );
 	}
 	
