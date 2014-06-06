@@ -95,14 +95,27 @@
 			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 11 );
 			foreach( $vocab_terms3 as $t )	{	$type_of_course = $t->name; }
 			
-			$oDate = new DateTime($record->field_event_date_value);
-			//$sDate = $oDate->format('F jS, Y'); // Event Start Date
-			$sDate = $oDate->getTimestamp(); // Event Start Date
-							
-			$oDate2 = new DateTime($record->field_event_date_value2);
-			//$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
-			$sDate2 = $oDate2->getTimestamp();
+			if( $record->field_event_date_value == NULL )
+			{
+				$sDate = "";
+			} 
+			else
+			{
+				$oDate = new DateTime($record->field_event_date_value);
+				//$sDate = $oDate->format('F jS, Y'); // Event Start Date
+				$sDate = $oDate->getTimestamp(); // Event Start Date
+			}
 			
+			if( $record->field_event_date_value2 == NULL )
+			{
+				$sDate2 = "";
+			} 
+			else
+			{
+				$oDate2 = new DateTime($record->field_event_date_value2);
+				//$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
+				$sDate2 = $oDate2->getTimestamp();
+			}
 			
 			$result_array[] = array(  'course_id' => $node->nid,
 									  'course_type' => $type_of_course,	
