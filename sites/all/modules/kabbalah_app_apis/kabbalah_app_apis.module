@@ -359,6 +359,7 @@
 										   'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 										   'description' => $teaser,
 										   'authors' => $comma_separated_author_names ,
+										   'authors_array' => $author_names ,
 										   'membership' => $membership->name,
 										   'web_path' => $path ,					  
 										   'created' => $node->created,
