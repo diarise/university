@@ -100,7 +100,7 @@
 			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo_new.png" alt="search"></a>
 		</div>
 		<div id="donationWrapper">
-			<span class="languageLink"><a target="_blank" href="#">Español</a></span>
+			<span class="languageLink"><a target="_blank" href="http://universidad.kabbalah.com">Español</a></span>
 			<span class="donate"><a target="_blank" href="https://kabbalah.com/donate">DONATE</a></span>
 		</div>
 	</div>
