@@ -62,71 +62,50 @@
 		
 <!-- end popup -->
 
-
-	<div id="mainlogo">
-		<div id="kabbalahlogo">
-			<a href='http://kabbalah.com'><img src='/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png' alt='Kabbalah Center logo' /></a>
-		</div><!--end of kabbalahlogo-->
-		<div class="donate"><a href="http://kabbalah.com/donate" target="_blank">Donate</a></div><!--end of donate-->
-		<div class="searchLogo">
-			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png" alt="search"></a>
-		</div><!--end of searchlogo-->
-	</div><!--end of main logo-->
-	<div id="ukabblahlogowrapper">
-		<div id="mobilemenu">
-		<?php print render($menu);?>
-		</div><!--end of mobile menu-->
-		<div id="usersessionsession">
-			<?php if ( user_is_logged_in() ) {?>
-				<a href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> / <a href="/user/logout"> Log Out</a>
-			<?php } else {?>
-				<a href="http://university.kabbalah.com/saml_login">Log In</a> / <a href="http://profile.kabbalah.com">Signup</a>
-			<?php }?>
-		</div>
-	</div><!--end of ukabbalah logo-->
-	
-	
-	<!-- HEADER -->
-	<div id="topHeaderWrapper">
-		<div class="topHeader">
-			<div id="topImageCont"><a href="http://kabbalah.com"><img src="/sites/all/themes/ukabbalah/images/kabbalahcenterlogo.png" alt="Kabbalah Center logo" /></a></div>
-				<div id="headerSearchLinksWrapper">
-				<div id="headerLinks">	
-					<!--universalMenu-->
-					<?php print render($universalMenu);?>
-					<!--end of universalMenu-->
-					<div class="donate"><a href="https://kabbalah.com/donate" target="_blank">donate</a></div>
-					<div class="searchLogo"><a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo.png" alt="search"></a></div>
-				</div>
-			</div>		
-		</div> <!-- End of topHeader -->
-	</div> <!-- End of topHeader Wrapper -->
-	<!-- END OF HEADER -->
-		
-		
-	<div id="outerMenu">
-		<div id="mainOuterContentLogoMenuWrapper">
-			<div class="topHeader">
-				<div id="mainContentMenuPersist">
-					<div id="newMainContentLogoTitle"><a href="/">KABBALAH UNIVERSITY:</a></div>
-					<div id="mainContentMenu" class="highlightAuthors">
-						<?php print render($menu);?>
-					</div>
-					<div class="donateFloat"><a target="_blank" href="https://kabbalah.com/donate">Donate</a></div>
-					<div id="headerSearch">
-					<?php if ( user_is_logged_in() ) {?>
-						<a target="_blank" href="http://profile.kabbalah.com/saml_login"><?php print $username; ?></a> <br> <a target="_blank" href="/user/logout"> Log Out</a>
-					<?php } else {?>
-						<a target="_blank" href="http://university.kabbalah.com/saml_login">Log In</a> / <a target="_blank" href="http://profile.kabbalah.com">Signup</a>
-					<?php }?>
-					<?php //print render($page['search']); ?>
-					</div>
-				</div>	
-			</div><!--end of topHeader-->
-		</div> <!-- End of mainContentLogoMenuWrapper -->
+<!-- new header -->
+<div id="newTopHeaderWrapper">
+	<div id="logoKabblah">
+		<a href='http://kabbalah.com'><img src='/sites/all/themes/ukabbalah/images/logo_kabbalah_centre.png' alt='Kabbalah Center logo' /></a>
 	</div>
-
-<!-- End of Header and Main Menu -->  
+	<div id="siteName">
+		KABBALAH UNIVERSITY
+	</div>
+	<div id="headerSearch">
+		<div id="search">
+			<?php //print $search;?>
+		</div>
+		<div id="usersessionsession">
+			<div class="localSite">
+				Learn Transform Connect
+			</div>
+			<div class="usersessionsession">
+				<?php if ( user_is_logged_in() ) {?>
+				<a href="http://profile.kabbalah.com/saml_login" class="activeLink"><?php print $username; ?></a><span class="divider">|</span><a href="/user/logout">Log Out</a>
+			<?php } else {?>
+				<a href="http://university.kabbalah.com/saml_login" class="activeLink">Log In</a><span class="divider">|</span><a href="http://profile.kabbalah.com">Signup</a>
+			<?php }?>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="outerMenu">
+	<div id="menuLocalWrapper">
+		<div id="mobileMenu">
+			<?php print render($mobileMenu);?>
+		</div>
+		<div id="desktopMenu">
+			<?php print render($menu);?>
+		</div>
+		<div id="searchFloating">
+			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo_new.png" alt="search"></a>
+		</div>
+		<div id="donationWrapper">
+			<span class="languageLink"><a target="_blank" href="#">Español</a></span>
+			<span class="donate"><a target="_blank" href="https://kabbalah.com/donate">DONATE</a></span>
+		</div>
+	</div>
+</div>
+<!-- end new header --> 
   
   
   <?php print $page; ?>
