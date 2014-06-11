@@ -19,8 +19,9 @@ scripts[] = js/author_tooltip.js
 scripts[] = js/welcome_text.js
 
 regions[search] = Search
-regions[universalMenu] = Universal Menu
+;regions[universalMenu] = Universal Menu
 regions[menu]          = Local Menu
+regions[mobileMenu] = Mobile Menu
 
 regions[slideshow]= Slideshow
 regions[aboutusleft] = About us Left
