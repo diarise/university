@@ -378,10 +378,21 @@
 			$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
 		}	
 		header('Content-type: application/json');
-		echo json_encode( $result_array );
+		echo json_encode_unicode_for_app( $result_array );
 	}
 	
 	// End of App Apis
+	
+	function json_encode_unicode_for_app($data) {
+		return preg_replace_callback('/(?<!\\\\)\\\\u([0-9a-f]{4})/i',
+		function ($m) {
+		$d = pack("H*", $m[1]);
+		$r = mb_convert_encoding($d, "UTF8", "UTF-16BE");
+		return $r!=="?" && $r!=="" ? $r : $m[0];
+		}, json_encode($data)
+		);
+	}
+	
 	
 	function getTermNamesForApp( $vid )	{
 	
