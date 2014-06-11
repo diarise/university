@@ -378,7 +378,7 @@
 			$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
 		}	
 		header('Content-type: application/json');
-		echo json_encode_unicode_for_app( $result_array );
+		echo json_encode( $result_array );
 	}
 	
 	// End of App Apis
