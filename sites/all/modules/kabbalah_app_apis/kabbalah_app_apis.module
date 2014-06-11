@@ -245,7 +245,8 @@
 			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
 			if( $recorded_date == "" ) $recorded_date = $node->changed;
 			
-			 $result_array[] = array(  'lesson_id' => $node->nid,
+			 $result_array[] = array(  'course_id => '$course_id,
+									   'lesson_id' => $node->nid,
 									   'title' => $title , 
 									   'subtitle' => $subtitle,
 									   'lesson_type' => $media_type->name,
