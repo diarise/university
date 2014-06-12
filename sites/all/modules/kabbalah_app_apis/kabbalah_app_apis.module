@@ -282,7 +282,8 @@
 	function getCoursesByLiveEventsDataForApp() {
 	
 		$vnames = getTermNamesForApp( 17 );
-		$result_array = array();
+		//$result_array = array();
+		$location_events = array();
 		foreach( $vnames as $id => $vname)	
 		{			
 			$sql =  "SELECT n.nid,n.title,il.field_image_cdn_link_value,b.body_value,n.changed,ti.tid,td.name,d.field_event_date_value,d.field_event_date_value2 ".
@@ -301,7 +302,7 @@
 			
 			$result = db_query( $sql );	
 		
-			$location_events = array();
+			//$location_events = array();
 			foreach( $result as $record )	
 			{
 				$node = node_load($nid = $record->nid );
@@ -376,10 +377,10 @@
 										);
 			}
 			//$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
-			$result_array[] = array( "location_events" => $location_events );	
+			//$result_array[] = array( "location_events" => $location_events );	
 		}	
 		header('Content-type: application/json');
-		echo json_encode( $result_array );
+		echo json_encode( $location_events );
 	}
 	
 	// End of App Apis
