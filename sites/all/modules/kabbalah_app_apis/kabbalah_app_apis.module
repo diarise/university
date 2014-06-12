@@ -355,25 +355,25 @@
 					$event_resources[] = array( "resource_link" => $i->field_file_link->value() , "resource_description" => $i->field_file_description->value() );
 				 }
 				
-				$location_events[] = array( 'event_id' => $node->nid,
-										   'title' => $title ,
-										   'subtitle' => $subtitle,									  									  
-										   'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
-										   'description' => $teaser,
-										   'authors' => $comma_separated_author_names ,
-										   'authors_array' => $author_names ,
-										   'membership' => $membership->name,
-										   'web_path' => $path ,					  
-										   'created' => $node->created,
-										   'modified' => $node->changed,
-										   'event_start_date' => $sDate,
-										   'event_end_date' => $sDate2,
-										   'events_agenda' => $events_agenda,
-										   'event_resources' => $event_resources,
-										   'location address' =>	$node->field_location_address['und'][0]['value'],
-										   'location city' => $node->field_location_city['und'][0]['value'],
-										   'location zip code' => $node->field_location_zipcode['und'][0]['value'],
-										   'location country' =>	$node->field_location_country['und'][0]['value']
+				$location_events[] = array( 'authors' => $comma_separated_author_names ,
+										    'authors_array' => $author_names ,
+											'created' => $node->created,
+											'description' => $teaser,
+											'event_end_date' => $sDate2,
+											'event_id' => $node->nid,
+										    'event_resources' => $event_resources,
+											'event_start_date' => $sDate,
+											'events_agenda' => $events_agenda,
+											'image' => $node->field_image_cdn_link['und'][0]['value'] ,	
+											'location address' =>	$node->field_location_address['und'][0]['value'],
+										    'location city' => $node->field_location_city['und'][0]['value'],
+										    'location zip code' => $node->field_location_zipcode['und'][0]['value'],
+										    'location country' =>	$node->field_location_country['und'][0]['value'],
+											'membership' => $membership->name,
+											'modified' => $node->changed,
+											'subtitle' => $subtitle,									  									  
+											'title' => $title ,
+										    'web_path' => $path
 										);
 			}
 			//$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
