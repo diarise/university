@@ -73,7 +73,7 @@
 	<div id="headerSearch">
 		<div id="search">
 			<?php //print $search;?>
-			<span><a href="/search">Search <img src="/sites/all/themes/ukabbalah/images/search_logo_new.png" alt="search"></a></span>
+			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_new.png" alt="search"></a>
 		</div>
 		<div id="usersessionsession">
 			<div class="localSite">
