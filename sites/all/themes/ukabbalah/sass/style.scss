@@ -3101,8 +3101,12 @@ ul.quicktabs-tabs.quicktabs-style-zen {
  #carousal5Wrapper {
     clear: both;
     margin: auto;
+    padding-top: 1px;
     width: 940px;
 } 
+#carousal5Wrapper h2{
+  margin-bottom: 19px;
+}
 .liveEventsLocation {
     float: left;
     margin-right: 20px;
