@@ -74,7 +74,8 @@
 		<div id="search">
 			<?php //print $search;?>
 			<a href="/search">
-			 <img src="/sites/all/themes/ukabbalah/images/search_new.png" alt="search">
+			Click here to search
+			 <img src="/sites/all/themes/ukabbalah/images/search_logo_new-1.png" alt="search">
 			</a>
 		</div>
 		<div id="usersessionsession">
