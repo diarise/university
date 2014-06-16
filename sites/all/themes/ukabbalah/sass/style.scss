@@ -2505,7 +2505,8 @@ div.jp-audio{
 #block-ukabbalah-fp-carousals-carousal1 > h2,
 #block-ukabbalah-fp-carousals-carousal2 > h2,
 #block-ukabbalah-fp-carousals-carousal3 > h2,
-#block-ukabbalah-fp-carousals-carousal4 > h2{
+#block-ukabbalah-fp-carousals-carousal4 > h2,
+#carousal5Wrapper h2{
     margin: 39px auto 3px;
     width: 940px;
     color: #999; 
@@ -3104,7 +3105,6 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 } 
 .liveEventsLocation {
     float: left;
-    margin-bottom: 50px;
     margin-right: 20px;
     width: 220px;
 }
