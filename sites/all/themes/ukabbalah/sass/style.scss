@@ -3092,3 +3092,53 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin-right: 30px;
     margin-top: 10px;
 }
+
+
+/**live events front page****/
+
+
+ #carousal5Wrapper {
+    clear: both;
+    margin: auto;
+    width: 940px;
+} 
+.liveEventsLocation {
+    float: left;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    width: 220px;
+}
+.liveEventsLocation:last-child{
+  margin-right: 0;
+}
+.liveEventsLocationImg img {
+    height: 220px;
+    width: 220px;
+}
+.liveEventsLocationImg {
+    margin-bottom: 19px;
+}
+.streaming {
+    float: right;
+    margin-left: 9px;
+}
+.membership {
+    float: right;
+}
+.liveEventsLocationTitle {
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+}
+.liveEventsLocationTitle a {
+    color: #433A3A;
+    font-size: 19px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.liveEventsLocationDetail > a {
+    color: #127795;
+    font-size: 12px;
+}
+.liveEventsLocationDetail {
+    margin-top: 10px;
+}
