@@ -14,7 +14,13 @@
 	<div id="carousal1Wrapper">
 		<?php  print render($page['fpbeginnerscourses']);?>
 	</div> <!--end of carousal1-->
+
+	<div id="carousal5Wrapper">
+		<?php  print render($page['liveevents'])?>
+	</div> <!--end of carousel5-->
 	
 	<div id="carousal4Wrapper">
 		<?php  print render($page['fpfreelessons']);?>
 	</div> <!--end of carousal4-->
+
+	

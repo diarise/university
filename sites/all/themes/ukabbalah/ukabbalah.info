@@ -34,6 +34,7 @@ regions[fpbeginnerscourses] = Front Page Beginners Courses Carousal
 regions[fprecentlyadded] = Front Page Recently Added Lessons/Courses Carousal
 regions[fprecommendedcourses] = Front Page Recommended Courses Carousal
 regions[fpfreelessons] = Front Page Free Lessons Carousal
+regions[liveevents] = Front Page Live Events 
 
 regions[coursesforparentcourse] = Course By Parent Course Collection
 

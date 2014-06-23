@@ -252,7 +252,9 @@
 	<!-- End of Class Highlights -->	
 	
 	<!-- Class Resources -->
-	<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
+	<?php 
+	if( kabbalah_content_access_get_article_membership($membership) ) {
+	if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
 	<div class="titleDescription">Resources</div>
 	<div id="classResources">
 		<?php
@@ -265,7 +267,7 @@
 			 }
 		?>
 	</div>	
-	<?php } ?>
+	<?php } } ?>
 	<!-- End of Class Resources -->
 	
 	<!-- Class Keywords -->
