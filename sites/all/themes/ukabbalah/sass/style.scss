@@ -3168,6 +3168,9 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 .newWelcom1 {
     font-size: 16px;
     line-height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
    
 }
 #welBtn{
@@ -3179,11 +3182,17 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 #welBtn2 tbody {
     border: medium none;
 }
-
+.newWelcom1.newWelcom3 {
+     margin: 29px auto 0;
+    width: 700px;
+}
 .newWelcom2 {
     font-family: georgia;
     font-size: 18px;
     font-style: italic;
     line-height: 24px;
     margin-bottom: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
 }
