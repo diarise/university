@@ -153,7 +153,8 @@
 									);
 		
 		}
-		header('Content-type: application/json');
+		//header('Content-type: application/json');
+		set_mycustom_api_headers();
 		echo json_encode( $result_array );				
 	}
 	
@@ -284,7 +285,8 @@
 									   'location country' =>	$node->field_location_country['und'][0]['value']									   
 									);
 		}
-		header('Content-type: application/json');
+		//header('Content-type: application/json');
+		set_mycustom_api_headers();
 		echo json_encode( $result_array );				
 
 	}
@@ -389,7 +391,8 @@
 			//$result_array[$vname] = array( "location_name" => $vname , "location_events" => $location_events );	
 			//$result_array[] = array( "location_events" => $location_events );	
 		}	
-		header('Content-type: application/json');
+		//header('Content-type: application/json');
+		set_mycustom_api_headers();
 		echo json_encode( array( "location_events" => $location_events ) );
 	}
 	
@@ -588,13 +591,10 @@
 	
 	}
 	
-
-
-	function set_mycustom_api_headers()
-	{
+	function set_mycustom_api_headers()	{
 	  drupal_add_http_header('Content-Type', 'application/json');
-	  drupal_add_http_header('Access-Control-Allow-Origin', "*");
-	  drupal_add_http_header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	  //drupal_add_http_header('Access-Control-Allow-Origin', "*");
+	  //drupal_add_http_header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	}
 
 	// End of App Apis
