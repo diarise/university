@@ -32,10 +32,77 @@
 		$result_array = array();
 		foreach ($result as $record) 
 		{
-			
-			$node = node_load($nid = $record->nid );
-						
+			$node = node_load($nid = $record->nid );			
 			$author = taxonomy_term_load($node->field_author['und'][0]['tid']);
+			
+			// added by rohan
+			
+				$author_names = array();
+				if( sizeof($node->field_author) > 0 )
+				{
+					foreach( $node->field_author['und'] as $author )	
+					{	
+						$author = taxonomy_term_load( $author['tid'] );
+						$author_names[] = $author->name; 
+					}
+					$comma_separated_author_names = implode( ", " , $author_names );
+				}
+				
+				$comma_separated_add_author_names = "";
+				$additional_author_names = array();
+				if( sizeof($node->field_additiona_authors) > 0 )
+				{
+					foreach( $node->field_additiona_authors['und'] as $add_author )	
+					{	
+						$add_author = taxonomy_term_load( $add_author['tid'] );
+						$additional_author_names[] = $add_author->name; 
+					}
+					$comma_separated_add_author_names = implode( ", " , $additional_author_names );
+				}
+				
+				$comma_separated_add_author_names = "";
+				$additional_author_names = array();
+				if( sizeof($node->field_additiona_authors) > 0 )
+				{
+					foreach( $node->field_additiona_authors['und'] as $add_author )	
+					{	
+						$add_author = taxonomy_term_load( $add_author['tid'] );
+						$additional_author_names[] = $add_author->name; 
+					}
+					$comma_separated_add_author_names = implode( ", " , $additional_author_names );
+				}
+				
+				$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+				foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
+				
+				$secondary_topics = array();
+				$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+				foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
+				
+				if( $record->field_event_date_value == NULL )
+				{
+					$sDate = "";
+				} 
+				else
+				{
+					$oDate = new DateTime($record->field_event_date_value);
+					//$sDate = $oDate->format('F jS, Y'); // Event Start Date
+					$sDate = $oDate->getTimestamp(); // Event Start Date
+				}
+				
+				if( $record->field_event_date_value2 == NULL )
+				{
+					$sDate2 = "";
+				} 
+				else
+				{
+					$oDate2 = new DateTime($record->field_event_date_value2);
+					//$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
+					$sDate2 = $oDate2->getTimestamp();
+				}
+			
+			// added by rohan
+			
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
 			$title = $node->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
@@ -79,7 +146,18 @@
 											  'membership' => $membership->name,
 											  'image' => $image_link,
 											  'created' => date('F jS, Y',$recorded_date),
-											  'media_type' => $media_type->name
+											  'media_type' => $media_type->name,
+											  'authors_array' => $author_names ,
+											  'additional_authors' => $comma_separated_add_author_names ,	
+											  'additional_authors_array' => $additional_author_names ,	
+											  'primary_topic' => $primary_topic,
+											  'secondary_topics' => implode( ", " , $secondary_topics ),					
+											  'secondary_topics_array' => $secondary_topics,					
+											  'web_path' => $path ,					  
+											  'created_ts' => $node->created,
+											  'modified_ts' => $node->changed,
+											  'event_start_date' => $sDate,
+											  'event_end_date' => $sDate2 
 											);
 				}
 			}
@@ -94,7 +172,18 @@
 											  'membership' => $membership->name,
 											  'image' => $image_link,
 											  'created' => date('F jS, Y',$recorded_date),
-											  'media_type' => $media_type->name
+											  'media_type' => $media_type->name ,
+											  'authors_array' => $author_names ,
+											  'additional_authors' => $comma_separated_add_author_names ,	
+											  'additional_authors_array' => $additional_author_names ,	
+											  'primary_topic' => $primary_topic,
+											  'secondary_topics' => implode( ", " , $secondary_topics ),					
+											  'secondary_topics_array' => $secondary_topics,					
+											  'web_path' => $path ,					  
+											  'created_ts' => $node->created,
+											  'modified_ts' => $node->changed,
+											  'event_start_date' => $sDate,
+											  'event_end_date' => $sDate2
 											);
 			}
 	
