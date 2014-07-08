@@ -26,6 +26,14 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		
+		// 4. Gets all the recommended lessons information.
+		$items['k_app_api/recommended_lsns_by_crs_id'] = array(              
+			'page callback'      => 'getRecommendedLessonsJsonForApp',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
 		// End of App API's
 		
 		return $items;
@@ -278,7 +286,29 @@
 		echo json_encode( $result_array );				
 
 	}
-		
+	
+
+	function getRecommendedLessonsJsonForApp()	{
+	
+	
+		echo "test";
+	
+	
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	function getCoursesByLiveEventsDataForApp() {
 	
 		$vnames = getTermNamesForApp( 17 );
