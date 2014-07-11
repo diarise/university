@@ -3,6 +3,9 @@
 	function getCoursesByLanguageData() {
 	
 		$vnames = getTermNamesForApi( 16 );
+		
+		print_r( $vnames );
+		
 		$result_array = array();
 		foreach( $vnames as $id => $vname)	{
 					
