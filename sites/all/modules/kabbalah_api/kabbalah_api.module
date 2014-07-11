@@ -148,7 +148,7 @@ function processPageQueryResultsForApi( $result , $vid ) {
 	
 			$title = $record->title;
 			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
-			$teaser  = getCleanBody( $record->body_value , 100 );
+			if( $vid != 16 ) $teaser  = getCleanBody( $record->body_value , 100 );
 			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));	
 			$node = node_load($record->nid , NULL, TRUE);
 			$image_link = $record->field_image_cdn_link_value;
