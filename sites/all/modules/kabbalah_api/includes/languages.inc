@@ -16,6 +16,6 @@
 		}	
 		
 		//print_r( $result_array );
-		header('Content-type: application/json');
+		header('Content-Type: text/html; charset=utf-8');
 		echo json_encode( $result_array );
 	}
