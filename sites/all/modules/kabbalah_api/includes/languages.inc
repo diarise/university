@@ -4,7 +4,7 @@
 	
 		$vnames = getTermNamesForApi( 16 );
 		
-		print_r( $vnames );
+		
 		
 		$result_array = array();
 		foreach( $vnames as $id => $vname)	{
@@ -14,5 +14,7 @@
 			$vname_articles	= processPageQueryResultsForApi( $result , 16 ) ; 
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );
 		}	
+		
+		print_r( $result_array );
 		echo json_encode( $result_array );
 	}
