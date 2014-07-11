@@ -15,6 +15,7 @@
 			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );
 		}	
 		
-		print_r( $result_array );
+		//print_r( $result_array );
+		header('Content-type: application/json');
 		echo json_encode( $result_array );
 	}
