@@ -1134,29 +1134,34 @@ ul.masonry{
     margin-bottom: 65px;
 }
 #views-exposed-form-taxonomy-term-page span.lessonsCourse,
-#views-exposed-form-beginners-course-collection-page span.lessonsCourse{
+#views-exposed-form-beginners-course-collection-page span.lessonsCourse,
+#views-exposed-form-taxonomy-term-lesson-page span.lessonsCourse{
   display: block;
 }
 #views-exposed-form-taxonomy-term-page select,
-#views-exposed-form-beginners-course-collection-page select{
+#views-exposed-form-beginners-course-collection-page select,
+#views-exposed-form-taxonomy-term-lesson-page select{
   cursor: pointer;
   height: 30px;
   padding-right:40px;
 }
 #views-exposed-form-taxonomy-term-page .views-exposed-widgets.clearfix,
-#views-exposed-form-beginners-course-collection-page .views-exposed-widgets.clearfix {
+#views-exposed-form-beginners-course-collection-page .views-exposed-widgets.clearfix,
+#views-exposed-form-taxonomy-term-lesson-page .views-exposed-widgets.clearfix {
     margin-bottom: 50px;
     float: left;
 }
 
 #views-exposed-form-taxonomy-term-page .views-exposed-widgets.clearfix > div,
-#views-exposed-form-beginners-course-collection-page .views-exposed-widgets.clearfix > div{
+#views-exposed-form-beginners-course-collection-page .views-exposed-widgets.clearfix > div,
+#views-exposed-form-taxonomy-term-lesson-page .views-exposed-widgets.clearfix > div,{
   float: left!important;
 }
 .termDesc {
     color: $colorBrown;
 }
-.view-filters #views-exposed-form-taxonomy-term-page{
+.view-filters #views-exposed-form-taxonomy-term-page,
+.view-filters #views-exposed-form-taxonomy-term-lesson-page{
   height: 0px;
 }
 #edit-title-wrapper{
