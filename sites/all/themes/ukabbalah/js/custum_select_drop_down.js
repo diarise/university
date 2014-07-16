@@ -5,7 +5,7 @@
   
 	function showDD() {	
 		if (!$.browser.opera) {
-			$('#views-exposed-form-search-page select,.lessonCollectionSection form select,.transcription select,#teachings_teachersDD,#teachings_topicDD,#views-exposed-form-taxonomy-term-page select,#views-exposed-form-beginners-course-collection-page select, #views-exposed-form-free-lessons-page select').each(function(){
+			$('#views-exposed-form-search-page select,.lessonCollectionSection form select,.transcription select,#teachings_teachersDD,#teachings_topicDD,#views-exposed-form-taxonomy-term-page select,#views-exposed-form-beginners-course-collection-page select, #views-exposed-form-free-lessons-page select, #views-exposed-form-taxonomy-term-lesson-page select').each(function(){
 				var title = $(this).attr('title');
 				if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
 						
