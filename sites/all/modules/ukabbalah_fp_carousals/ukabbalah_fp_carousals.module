@@ -102,7 +102,7 @@
 		$portions = explode(" ",$heb_date_info->events[0]);
 		
 		//return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span></div><div id='recommendedCoursesWeekly'></div>";
-		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/portions/".$portions[1]."'>This weeks portion : ".$portions[1]."</a></span></div><div id='recommendedCoursesWeekly'></div>";
+		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/lessons/".$portions[1]."'>This weeks lesson : ".$portions[1]."</a></span></div><div id='recommendedCoursesWeekly'></div>";
 	
 	}
 	
