@@ -329,6 +329,9 @@ ul li {
 .donate {
     display: inline-block;
     padding: 7px 33px;
+    @media screen and (max-width: 1340px) {
+        padding: 7px 15px;
+      }
 }
 .donate a{
   color: #fff;
