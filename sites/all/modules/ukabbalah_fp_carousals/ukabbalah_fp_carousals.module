@@ -101,19 +101,44 @@
 		
 		$portions = explode(" ",$heb_date_info->events[0]);
 		
+		/* Test added new */
+		
+		unset( $portions[0]);
+		$portion = implode(" ",$portions);
+		$portion = str_replace("ch","j",$portion);
+		
 		// Get the taxonomy term for the Portions vocabulary
 		
 		$sql =  "SELECT d.name FROM {taxonomy_term_data d} WHERE d.vid=15";
 		$result = db_query( $sql );			
-		$portion_terms = array();
-		foreach( $result as $record )	{ $portion_terms[] = $record->name; }
+		$local_portions = array();
+		foreach( $result as $record )	{ $local_portions[] = $record->name; }
 		
-		if ( in_array($portions[1], $portion_terms) ) 
+		$match_percent = array();
+		foreach( $local_portions as $lp )
 		{
-			return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/lessons/".str_replace("-", " ", $portions[1] )."'>This weeks portion : ".$portions[1]."</a></span></div><div id='recommendedCoursesWeekly'></div>";
-		} else {
-			return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'>This weeks portion : ".$portions[1]."</span></div><div id='recommendedCoursesWeekly'></div>";
+			similar_text($portion, $lp, $percent);
+			$match_percent[$lp] = $percent;
 		}
+		
+		$final_portion = "";
+		$max_percent = max( $match_percent );
+		foreach( $match_percent as $k => $v )
+		{
+			if( $v == $max_percent ) $final_portion = $k;
+		
+		}
+		
+		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/lessons/".str_replace("-", " ", $final_portion )."'>This weeks portion : ".$final_portion."</a></span></div><div id='recommendedCoursesWeekly'></div>";
+		
+		/* End of Test added new */
+		
+		//if ( in_array($portions[1], $portion_terms) ) 
+		//{
+		//	return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/lessons/".str_replace("-", " ", $portions[1] )."'>This weeks portion : ".$portions[1]."</a></span></div><div id='recommendedCoursesWeekly'></div>";
+		//} else {
+		//	return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'>This weeks portion : ".$portions[1]."</span></div><div id='recommendedCoursesWeekly'></div>";
+		//}
 		
 		//return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span></div><div id='recommendedCoursesWeekly'></div>";
 		
