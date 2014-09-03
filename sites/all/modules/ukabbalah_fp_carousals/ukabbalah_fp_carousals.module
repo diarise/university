@@ -105,7 +105,7 @@
 		
 		unset( $portions[0]);
 		$portion = implode(" ",$portions);
-		$portion = str_replace("ch","j",$portion);
+		//$portion = str_replace("ch","j",$portion);
 		
 		// Get the taxonomy term for the Portions vocabulary
 		
