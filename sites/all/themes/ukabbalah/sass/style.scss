@@ -279,7 +279,7 @@ ul li {
     clear: both;
     float: left;
     height: 40px;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     width: 100%;
 }
 #headerSearch {
@@ -559,7 +559,8 @@ ul#nice-menu-1 ul li:hover{
     height: 349px;
     position: relative;
     width: 100%;
-    top: -5px;
+    float: left;
+    // top: -5px;
 }
 #goRight{
    color: transparent;
@@ -1221,6 +1222,10 @@ h1#page-title {
     margin-top: 47px;
     text-transform: uppercase;
 }
+.page-search h1#page-title{
+    display: inline-block;
+    margin-top: 45px;
+}
 h2 {
     font-size:30px; 
     line-height: 32px;
@@ -1727,9 +1732,9 @@ h3 {
 }
 
 /*fix broken slideshow*/
-#slideshow{
-    float: left;
-}
+// #slideshow{
+//     float: left;
+// }
 /**/
 
 .lessonCollectionSection,
@@ -3208,4 +3213,7 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 .page-lessons-matot #mainContentWrapper,
 .page-taxonomy-term-5206 #mainContentWrapper{
   padding-top:1px;
+}
+#nice-menu-1 li ul li a {
+    text-transform: capitalize;
 }
