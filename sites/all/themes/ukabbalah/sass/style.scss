@@ -3226,7 +3226,9 @@ ul.nice-menu li.menuparent ul li {
     padding-top: 45px;
 }
 #nice-menu-1 li ul li .active,
-#nice-menu-1 li.active-trail a ul li{
-    border-bottom: medium none;
-    height: auto;
+#nice-menu-1 li.active-trail a ul li,
+#nice-menu-1 li ul li,
+#nice-menu-1 li ul li a {
+    border-bottom: medium none!important;
+    height: auto!important;
 }
