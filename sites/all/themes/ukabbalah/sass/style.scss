@@ -361,7 +361,7 @@ ul li {
     margin: 0 10px;
     text-transform: uppercase;
 }
-#nice-menu-1 li .active {
+#nice-menu-1 li .active,#nice-menu-1 li.active-trail {
     border-bottom: 6px solid #3ba2c1; //change code color for each sites
     color: #fff!important;
     height: 24px;
