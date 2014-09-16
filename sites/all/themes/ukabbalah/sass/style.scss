@@ -3232,3 +3232,7 @@ ul.nice-menu li.menuparent ul li {
     border-bottom: medium none!important;
     height: auto!important;
 }
+.menu-775.menuparent > a {
+    cursor: default;
+    pointer-events: none;
+}
