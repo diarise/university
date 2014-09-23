@@ -2408,7 +2408,8 @@ div.jp-audio{
     margin-top: -10px;
     text-align: left;
 }
-#mediaFeatureWrapper .sharethis{
+#mediaFeatureWrapper .sharethis,
+.node-type-live-events .sharethis{
     border-top: medium none;
     float: right;
     margin-right: -16px;
