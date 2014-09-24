@@ -55,9 +55,7 @@
 					<span class='st_sharethis_large' displayText='ShareThis'></span>
 				</div>
 			</div> <!--start of social media icone-->
-			<!-- test live stream -->
-			<div class="testLiveStream">"This is a test, the actual event will start at 7pm (PST)"</div>
-			<!-- end test live stream -->
+			
 		</div>	
 </div><!--end of of video content when user log in-->
 
