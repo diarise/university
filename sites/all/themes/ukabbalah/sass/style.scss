@@ -1482,6 +1482,13 @@ h3 {
 #videoSocialIconeWrapper .st_sharethis_large{
     display: inherit;
 }
+.node-type-live-events #videoSocialIconeWrapper .st_facebook_large,
+.node-type-live-events #videoSocialIconeWrapper .st_twitter_large,
+.node-type-live-events #videoSocialIconeWrapper .st_googleplus_large,
+.node-type-live-events #videoSocialIconeWrapper .st_email_large,
+.node-type-live-events #videoSocialIconeWrapper .st_sharethis_large{
+    float: left;
+}
 #videoSocialIconeWrapper #eSocial{
     // width: auto!important;
     // margin-left: 14px!important;
