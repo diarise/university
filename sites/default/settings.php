@@ -431,6 +431,11 @@ ini_set('session.cookie_lifetime', 2000000);
  */
 # $conf['omit_vary_cookie'] = TRUE;
 
+$conf['cache_backends'][] = 'sites/all/modules/memcache/memcache.inc';
+$conf['cache_default_class'] = 'MemCacheDrupal';
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+$conf['memcache_key_prefix'] = 'university';
+
 /**
  * CSS/JS aggregated file gzip compression:
  *
