@@ -1451,7 +1451,7 @@ function _notify_send() {
           $node_body .= t('!type by !author !update!status', array(
             '!type' => node_type_get_name($node),
             //'!author' => (format_username($node) ? format_username($node) : variable_get('anonymous', 'Anonymous')),
-			'!author' => $authors,
+			'!author' => 'admin',
             '!update' => $update,
             '!status' => $status,
           )) . "\n";
