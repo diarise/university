@@ -1444,9 +1444,9 @@ function _notify_send() {
             $status = '';
           }
 		  
-		  $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
-		  foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
-		  $authors = implode( ", " , $authors_name );
+		  //$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+		  //foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
+		  //$authors = implode( ", " , $authors_name );
 		  
           $node_body .= t('!type by !author !update!status', array(
             '!type' => node_type_get_name($node),
