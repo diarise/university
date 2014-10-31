@@ -3249,3 +3249,128 @@ ul.nice-menu li.menuparent ul li {
 //     color: #fff;
 //     padding: 20px;
 // }
+/****************Text editor styles****************/
+.translation-text {
+  font-family: Georgia;
+  font-size: 15px;
+  line-height: 24px;
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: justify;
+}
+.translation-text span {
+  background-color: #efefef;
+}
+.hebrew-text {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 21px;
+  line-height: 30px;
+  text-align: justify;
+  color: #433b3a;
+  margin: 12px 40px 12px 40px;
+  direction: rtl;
+}
+.hebrew-text-2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 21px;
+  line-height: 30px;
+  color: #433b3a;
+  text-align: right;
+  text-align: justify;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  direction: rtl;
+}
+.small-text, .smalltext {
+  font-family: $fontFace;
+  font-size: 12px;
+  line-height: 17px;
+  color: #433b3a;
+}
+.small-text-2, .smalltext2 {
+  font-family: $fontFace;
+  font-size: 12px;
+  line-height: 17px;
+  color: #433b3a;
+  margin: 0 40px;
+}
+.small-title {
+  font-family: $fontFace;
+  font-size: 16px;
+  line-height: 24px;
+  color: #433a3a;
+  margin: 0 0 10px;
+}
+.regular-text, .regulartext {
+  font-family: $fontFace;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #433b3a;
+  text-align: left;
+}
+.regular-text-indent {
+  font-family: $fontFace;
+  font-size: 16px;
+  line-height: 24px;
+  color: #433a3a;
+  margin: 10px 40px 10px 40px;
+}
+.big-text, .bigtext {
+  font-family: $fontFace;
+  font-weight:normal;
+  font-size:20px;
+  line-height: 28px;
+  color:#433b3a;
+  text-align:left;
+}
+.quote-regular, .quoteregular {
+  font-family:Georgia;
+  font-weight:normal;
+  font-size:16px;
+  line-height: 25px;
+  color:#433b3a;
+  text-align:left;
+  padding-right:40px;
+  padding-left:40px;
+}
+.quote-big, .quotebig {
+  font-family:Georgia;
+  font-weight:normal;
+  font-style:italic;
+  font-size:21px;
+  line-height: 30px;
+  color:#8b8b8b;
+  text-align:left;
+}
+.story {
+  font-family:Georgia;
+  font-weight:normal;
+  font-style:italic;
+  font-size:17px;
+  line-height: 26px;
+  color:#433b3a;
+  text-align:left;
+  padding-right:40px;
+  padding-left:40px;
+}
+.internatitle {
+  font-family: $fontFace;
+  font-weight:normal; 
+  font-size:24px;
+  line-height: 24px;
+  color:#433b3a;
+  text-align:left;
+  text-transform:uppercase;
+  margin: 48px 0 12px;
+}
+.title {
+  font-family: $fontFace;
+  font-weight:normal; 
+  font-size:30px;
+  line-height: 24px;
+  color:#433b3a;
+  text-align:left;
+  text-transform:uppercase;
+}
+/****************END Text editor styles****************/
