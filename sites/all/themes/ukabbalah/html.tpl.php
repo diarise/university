@@ -29,7 +29,6 @@
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php print $page_top; ?>
- 
 <?php
 	global $user;
 	$username = $user->name;
