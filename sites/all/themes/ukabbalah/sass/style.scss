@@ -1846,13 +1846,11 @@ h3 {
     text-align: center;
 }
 .priceLogin a {
-    border: 2px solid #208fdc;
-    border-radius: 6px;
-    cursor: pointer;
-    display: inline-block;
-    height: 37px;
-    padding: 0 50px;
-    width: auto;
+    color: #208fdc;
+    display: block;
+    font-size: 16px;
+    margin-top: 9px;
+    text-align: center;
 }
 #wrapperInfoCour > span {
     display: block;
@@ -3710,6 +3708,15 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 }
 .wrapperVideoDetailButton .priceLogin{
     padding: 0 69px;
+}
+.priceLogin {
+    border: 2px solid #208fdc;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    height: 37px;
+    padding: 0 50px;
+    width: auto;
 }
 .wrapperVideoDetailText #titleMultimedia {
     color: #fff !important;
