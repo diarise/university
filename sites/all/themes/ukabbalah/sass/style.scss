@@ -2060,15 +2060,15 @@ h3 {
     padding-right:0px; 
 }
 .Video{
-    background: url(http://cdn1.kabbalah.com/university/icons/icon_video_light_grey.png) no-repeat 8px 6px;
+    background: url(http://cdn1.kabbalah.com/university/icons/icon_video_light_grey.png) no-repeat 6px 1px;
     width: 32px;
     height: 32px;
 }
 .activeLesson .Video{
-  background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px!important;
+  background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 6px 1px!important;
 }
 .activeLesson .Audio{
-  background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0!important;
+  background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 6px 3px!important;
 }
  .views-field-twistage-subtitles.activeLesson span, .subtitle-width.activeLesson span{
      background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px!important;
@@ -2422,8 +2422,8 @@ div.jp-audio{
     float: right;
 }
 .lessonCollectionSection .Audio {
-    background: url("../images/icon/audio_icon_light_grey.png") no-repeat 8px 0;
-    height: 13px;
+    background: url("../images/icon/audio_icon_light_grey.png") no-repeat 6px 3px;
+    height: 16px;
     width: 25px;
 }
 .lessonCollectionSection tr:hover .Audio{
@@ -3577,11 +3577,11 @@ body.node-type-course .messages.error {
 }
 
 .wrapperLesson:hover .Video{
-  background: url("http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png") no-repeat scroll 0px 0px rgba(0, 0, 0, 0); 
+  background: url("http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png") no-repeat scroll 6px 1px rgba(0, 0, 0, 0); 
 }
 .wrapperLesson:hover .Audio{
-   background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 0 4px;
-    height: 18px;
+   background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 6px 3px;
+    height: 16px;
     width: 25px;
 }
 .ccLesson span {
