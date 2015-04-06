@@ -2154,10 +2154,10 @@ h3 {
   margin-bottom: 20px;
 }
 #courseDescription{
-    float: left;
+    // float: left;
     height: 100%;
     width: 100%;
-    background: #f2f1f1;
+    // background: #f2f1f1;
 }
 .lessonCollectionSection form select option,
 #teachingsSectionHeaderBar select option,
@@ -3880,7 +3880,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .view-filters.searchThisCourse #edit-title-wrapper,
 .view-filters.searchThisCourse input#edit-title,
 .lessonCollectionSection .view-filters input {
-    width: 98.65% !important;
+    width: 69% !important;
     font-family: $fontFace;
 }
 #edit-title-wrapper{
