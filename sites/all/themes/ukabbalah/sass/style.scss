@@ -10,6 +10,8 @@
                 // In our case we just called "font", because COMPASS recognize all sass file. 
                 // And we put "_" do not duplicate the file in our css directory.
 
+@import "jquery.mCustomScrollbar"; // we import the custom scroll bar style
+
 // ==================================================================
 //  Usign variable
 //  =================================================================
