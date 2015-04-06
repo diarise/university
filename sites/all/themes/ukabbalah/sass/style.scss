@@ -1829,33 +1829,30 @@ h3 {
 }
 .buttonMember{
     // @include icon-sprite("become_member_button");
+    background: none repeat scroll 0 0 #208fdc;
+    border-radius: 6px;
+    cursor: pointer;
+    float: left;
+    height: 40px;
+    margin-right: 20px;
+    padding: 0 26px;
     width: auto;
-    height: 29px;
-    display: inline-block; 
-    background: #34a2c3;
-    border-radius: 4px;
-    display: inline-block;
-    height: 29px;
-    margin-top: -5px;
-    padding: 5px 10px;
 }
 .buttonMember a{
-    text-align: center;
-    color: $colorWhite;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 26px;
-    text-transform: uppercase;
+    color: #fff;
     display: block;
+    font-size: 16px;
+    margin-top: 9px;
+    text-align: center;
 }
 .priceLogin a {
-    font-weight: normal;
-    display: inline;
-    text-transform: capitalize;
-    border-bottom: 1px solid #7f7979;
-    margin-left: 16px;
-    color: $colorWhite;
-    font-size: 14px;
+    border: 2px solid #208fdc;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    height: 37px;
+    padding: 0 50px;
+    width: auto;
 }
 #wrapperInfoCour > span {
     display: block;
