@@ -1811,11 +1811,10 @@ h3 {
     padding-top:2px;
 }
 #wrapperPrice {
-    background: none repeat scroll 0 0 #544C4C;
-    bottom: 0;
-    padding: 15px 0 14px 15px;
-    position: absolute;
-    width: 425px;
+  border-left: 1px solid #605858;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 0 0 0 30px;
 }
 /***upgrade membership**/
 .buttonMemberDesc {
