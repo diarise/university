@@ -158,7 +158,7 @@
 </script>
 
 <!-- Start For Menu -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	/*for website first loads*/
 	var mobileDiv1 = document.getElementById("mainlogo");
 	var mobileDiv2 = document.getElementById("ukabblahlogowrapper");
@@ -200,7 +200,7 @@
 			desktopDiv2.style.display = "block";
 		}
 	}
-</script>
+</script> -->
 <!-- End for Menu -->
 
 </body>
