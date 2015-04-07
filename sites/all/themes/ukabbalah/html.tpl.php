@@ -71,9 +71,9 @@
 			</div>
 			<div class="usersessionsession">
 				<?php if ( user_is_logged_in() ) {?>
-				<a href="http://profile.kabbalah.com/saml_login" class="activeLink"><?php print $username; ?></a><span class="divider">|</span><a href="/user/logout">Log Out</a>
+				<a href="http://profile.kabbalah.com/saml_login" class="activeLink"><?php print $username; ?></a><span class="pipe">|</span><a href="/user/logout">Log Out</a>
 			<?php } else {?>
-				<a href="http://university.kabbalah.com/saml_login" class="activeLink">Log In</a><span class="divider">|</span><a href="http://profile.kabbalah.com">Signup</a>
+				<a href="http://university.kabbalah.com/saml_login" class="activeLink">Log In</a><span class="pipe">|</span><a href="http://profile.kabbalah.com">Signup</a>
 			<?php }?>
 			</div>
 		</div>
