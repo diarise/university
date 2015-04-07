@@ -320,7 +320,7 @@ ul li {
     color: #fff;
 }
 .divider {
-    margin: 0 22px;
+    color: #83cafb !important;
 }
 #donationWrapper {
     float: right;
@@ -1449,7 +1449,7 @@ h3 {
     height: 100%;
     width:100%;
     float: left;
-    padding-bottom: 25px;
+    padding-bottom: 40px;
 }
 // .logged-in.node-type-live-events #wrapperVideoSection,
 // .logged-in.node-type-lesson #wrapperVideoSection{
@@ -1778,20 +1778,20 @@ h3 {
 #contentAuthorImages{
     float: left;
     width: 460px;
-    margin: 50px 40px 6px 0;
+    margin: 40px 40px 0 0;
 }
-#contentAuthorInfo{
-    float: left;
-    height: 267px;
-    margin: 43px 0 0;
-    position: relative;
-    width: 440px;
-}
+// #contentAuthorInfo{
+//     float: left;
+//     height: 267px;
+//     margin: 43px 0 0;
+//     position: relative;
+//     width: 440px;
+// }
 #contentAuthorImages img{
     width: 460px;
     height: 259px;
     float: left;
-    margin-bottom: 9px;
+    // margin-bottom: 9px;
 }
 #contentAuthorImages > span {
     clear: both;
@@ -1805,13 +1805,13 @@ h3 {
     font-weight: normal;
     font-size:14px;
 }
-#wrapperInfoCour {
-    float: left;
-    // min-height: 206px;
-    min-height: 163px;
-    width: 100%;
-    padding-top:2px;
-}
+// #wrapperInfoCour {
+//     float: left;
+//     // min-height: 206px;
+//     min-height: 163px;
+//     width: 100%;
+//     padding-top:2px;
+// }
 #wrapperPrice {
   border-left: 1px solid #605858;
   display: inline-block;
@@ -1856,7 +1856,7 @@ h3 {
 }
 #wrapperInfoCour > span {
     display: block;
-    color: $colorWhite;
+    color: #bababa;
     font-weight: normal;
     & a{
       color: $colorWhite;
@@ -1877,8 +1877,8 @@ h3 {
     }
 }
 .theCourseAuthor a{
-  color: #4DCFF5 !important;
-  text-transform: uppercase;
+  color: #83cafb !important;
+  // text-transform: uppercase;
 }
 .divider:last-child{
   display:none;
@@ -1887,8 +1887,10 @@ h3 {
   text-decoration: underline;
 }
 #titleCourse{
-    font-size: 24px;
-    line-height: 29px;
+    font-family: georgia;
+    font-size: 34px;
+    line-height: 34px;
+    margin-bottom: 20px;
     text-transform: capitalize;
 }
 #supTitleCourse{
