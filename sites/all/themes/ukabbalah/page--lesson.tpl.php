@@ -41,8 +41,6 @@
 	// get cours title
 	$title = $node->title;
 	
-	//print_r($node->field_course_list['und'][0]['node']);
-	
 	if( sizeof( $node->field_course_list) > 0  )
 	{
 		$course_list_title = $node->field_course_list['und'][0]['node']->title;
@@ -53,7 +51,6 @@
 	{
 		$event_list_title = $node->field_event_list['und'][0]['node']->title;
 		$list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
-		$course_path = url(drupal_get_path_alias('node/' . $node->field_event_list['und'][0]['nid']), array('absolute' => TRUE));
 	}	
 	
 	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
@@ -85,12 +82,7 @@
 				
 	<?php } else { ?>
 
-	<?php 
-	
-		
-		if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['node']->nid); 
-		if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['node']->nid); 
-	?>
+	<?php $course_nid = node_load($node->field_course_list['und'][0]['node']->nid); ?>
 		
 		<div class="preVideoImg">
 					<div class="overImageOpacity"></div>
@@ -230,26 +222,13 @@
 	<div id="wrappperRightBloc">	
 		<div id="tabs">
 		  	<ul>
-			    
-				<?php if( $course_list_title ) {	?>                                  
-					<li><a href="#fragment-1"><span>Course details</span></a></li>
-			    <?php } else { ?>
-					<li><a href="#fragment-1"><span>Event details</span></a></li>
-				<?php } ?> 
-				
-				<?php if( $course_list_title ) {	?>                                  
-					<li><a href="#fragment-2"><span>Lesson details</span></a></li>
-			    <?php } else { ?>
-					<li><a href="#fragment-2"><span>Lecture details</span></a></li>
-				<?php } ?> 
-				
-				
-				
-				<li><a href="#fragment-3"><span>F A Q</span></a></li>
+			    <li><a href="#fragment-1"><span>Course details</span></a></li>
+			    <li><a href="#fragment-2"><span>Lesson details</span></a></li>
+			    <li><a href="#fragment-3"><span>F A Q</span></a></li>
 		  	</ul>
 		  	<div id="fragment-1">
 			  	<div class="wrapperTitle">
-			  	<?php print $course_title; ?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?>
+			  	<?php print $node->title; ?>
 			  	</div>
 		  	
 		  	<span id="topicCourseTitle"> Topic:</span>
@@ -266,22 +245,12 @@
 						$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 						foreach ( $authors as $author ) {
 							$name = str_replace(' ', '_', $author->name);
-							//echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/".$name.".jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 
-							
-							if (preg_match('/David Mats/',$author->name)) 
-							echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/David_Mats.jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 	
-							else
-							echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/".$name.".jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 
-											
-						}	
+							echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/".$name.".jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; }	
 					?>	
 				</div>
 
 				<div class="description">
-		    		<?php 
-							if( sizeof( $node->field_course_list) > 0  ) print $node->field_course_list['und'][0]['node']->body['und'][0]['value']; 
-							if( sizeof( $node->field_event_list) > 0  ) print $node->field_event_list['und'][0]['node']->body['und'][0]['value']; 
-					?>
+		    		<?php print $node->body['und'][0]['value']; // Course Description ?>
 				</div>
 		    
 		    </div>
@@ -297,7 +266,6 @@
 								<span class='st_email_large' displayText='Email'></span>
 								<span class='st_sharethis_large' displayText='ShareThis'></span>
 							</div>
-							<div class="bookmark"><?php print flag_create_link('bookmarks', $node->nid); ?></div>
 						</div>
 					<?php } ?>
 
@@ -305,13 +273,10 @@
 			  	    <?php print $node->title; ?>
 			    </div>
 
-			   
+			    <?php if (user_is_logged_in() ) {?>
 						<div class="lessonDetailsInfo">
 							<label>course: </label> 
-							<?php  
-									//$course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['node']->nid), array('absolute' => TRUE));
-									print "<a href='".$course_path."'>".$course_title."</a>";	
-							?>
+							<?php  print $course_title;	?>
 						</div>
 						<div class="lessonDetailsInfo">
 							<label>teacher: </label>
@@ -328,14 +293,14 @@
 							
 							<label>date: </label>
 								<?php
-									if( sizeof($node->field_recorded_date) > 0 ) print date('F j, Y ',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
+									if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 								?>
 						</div>
-						<!--<div class="lessonDetailsInfo">
+						<div class="lessonDetailsInfo">
 							<label>subtitles: </label>
 							<?php //print $node->field_lesson_video['und'][0]['default_language']; ?>
-						</div>-->
-			    
+						</div>
+			    <?php } ?>
 			    	
 		    <div class="wrapperDescription">
 		
@@ -345,7 +310,7 @@
 				<?php 
 				if( sizeof( $node->body) > 0  ) {
 				if( $node->body['und'][0]['value'] != "" ) { ?>
-					<span class="descriptionLabel"><?php if( $course_list_title ) {	print "class description";	} else { print "event description";	} ?></span>
+					<span class="descriptionLabel">class description</span>
 					<?php  	print $node->body['und'][0]['value']; ?>
 
 				    <?php } 
@@ -366,22 +331,20 @@
 			<!-- End of Class Highlights -->	
 			
 			<!-- Class Resources -->
-			<?php if (user_is_logged_in() ) {?>
-				<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
-				<div class="resourcesLabel">Resources</div>
-				<div class="wrapperResources">
-					<?php
-						// This is a way to display multiple entries for field collections 
-						$wrapper = entity_metadata_wrapper('node', $node);
-						 foreach ($wrapper->field_lesson_resources as $i)
-						 {
-							print "<a href='".$i->field_file_link->value()."' target='_blank' ><span class='resourceFile'></span></a>";
-							print "<span class='resourceTitle'><a href='".$i->field_file_link->value()."' target='_blank' >".$i->field_file_description->value()."</a></span>";
-						 }
-					?>
-				</div>	
-				<?php } ?>
-			<?php } ?>	
+			<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
+			<div class="resourcesLabel">Resources</div>
+			<div class="wrapperResources">
+				<?php
+					// This is a way to display multiple entries for field collections 
+					$wrapper = entity_metadata_wrapper('node', $node);
+					 foreach ($wrapper->field_lesson_resources as $i)
+					 {
+						print "<a href='".$i->field_file_link->value()."' target='_blank' ><span class='resourceFile'></span></a>";
+						print "<span class='resourceTitle'><a href='".$i->field_file_link->value()."' target='_blank' >".$i->field_file_description->value()."</a></span>";
+					 }
+				?>
+			</div>	
+			<?php } ?>
 			<!-- End of Class Resources -->
 			
 			<!-- Class Keywords -->
@@ -397,7 +360,7 @@
 		    </div>
 
 		    <div id="fragment-3">
-		    	<a class="faq" href="http://kabbalah.com/faq" target="_blanc">Click here for FAQ </a>
+		    faq is not not available
 		  	</div>
 		</div>
 
