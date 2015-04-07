@@ -2183,29 +2183,29 @@ span.lessonsCourse {
 #views-exposed-form-free-lessons-page .views-exposed-widget{
   float: left!important;
 }
-.transcription span.lessonsCourse {
-    background: url("http://cdn1.kabbalah.com/university/icons/dropdown_arrow_blue.png") no-repeat scroll 316px 10px!important;
-    border: 0;
-    color: $colorBlue; 
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    height: 26px;
-    line-height: 27px;
-    margin-top: -28px;
-    margin-left: -8px;
-    text-align: left;
-    text-indent: 10px;
-    width: 330px;
-    z-index: 1;
-    text-transform: uppercase;
-}
-.transcription span.lessonsCourse:before{
-    content: "View Live Transcript";
-    color: $colorWhite;
-    margin-right: 10px;
-    text-transform: capitalize;
-}
+// .transcription span.lessonsCourse {
+//     background: url("http://cdn1.kabbalah.com/university/icons/dropdown_arrow_blue.png") no-repeat scroll 316px 10px!important;
+//     border: 0;
+//     color: $colorBlue; 
+//     cursor: pointer;
+//     display: inline-block;
+//     font-size: 14px;
+//     height: 26px;
+//     line-height: 27px;
+//     margin-top: -28px;
+//     margin-left: -8px;
+//     text-align: left;
+//     text-indent: 10px;
+//     width: 330px;
+//     z-index: 1;
+//     text-transform: uppercase;
+// }
+// .transcription span.lessonsCourse:before{
+//     content: "View Live Transcript";
+//     color: $colorWhite;
+//     margin-right: 10px;
+//     text-transform: capitalize;
+// }
 .transcription .form-type-select{
     margin-bottom: 9px!important;
 }
@@ -2220,9 +2220,9 @@ span.lessonsCourse {
 .transcription select{
     float: none!important;
 }
-.trans-lang-select.form-select {
-    width: 320px;
-}
+// .trans-lang-select.form-select {
+//     width: 320px;
+// }
 .lessonCollectionSection form select{
     cursor: pointer;  
     height: 30px;
@@ -3830,7 +3830,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     display: inline-block;
     font-size: 18px;
     line-height: 42px;
-    //margin-top: -20px;
+    margin-top: -20px;
     margin-left: -8px;
     text-align: left;
     text-indent: 10px;
@@ -3957,7 +3957,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     
 }
 .trans-lang-select.form-select {
-    height: 30px; 
+    // height: 30px; 
     width: 220px;
 }
 .resourceFile {
