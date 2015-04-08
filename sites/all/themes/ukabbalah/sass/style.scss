@@ -1960,9 +1960,9 @@ h3 {
 #edit-field-author-tid-wrapper .views-widget{
     margin-top: 10px;
 } 
-.views-exposed-widgets > div{
-    float: right!important;
-}
+// .views-exposed-widgets > div{
+//     float: right!important;
+// }
 #edit-keys-wrapper{
   float: left;
 }
@@ -3912,8 +3912,11 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     font-family: $fontFace;
 }
 #edit-title-wrapper{
-  margin-top:12px;
+  // margin-top:12px;
   margin-left: 0;  
+}
+#edit-keys-wrapper .views-widget{
+  margin-top: 0;
 }
 .lessonCollectionSection input#edit-title{
     background: url("../images/search-bg.png") no-repeat scroll right center #fff !important ;
