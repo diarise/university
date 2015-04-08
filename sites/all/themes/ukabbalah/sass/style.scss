@@ -3055,8 +3055,9 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     width: 300px;
 }
 .searchtext {
-    float: left;
-    width: 600px;
+    // float: left;
+    margin-bottom: 40px;
+    width: 300px;
 }
 .searchtitle{
     color: $colorBrown;
