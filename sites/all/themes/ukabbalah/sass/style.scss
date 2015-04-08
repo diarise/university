@@ -1176,7 +1176,8 @@ ul.masonry{
 #edit-title-wrapper{
   margin-left: 10px;
 }
-#edit-title {
+#edit-title,
+#edit-keys {
   background: none repeat scroll 0 0 #EFEFEF;
     border: 1px solid #CCCCCC;
     height: 28px;
@@ -1950,7 +1951,9 @@ h3 {
 #edit-field-author-tid-wrapper label,
 #edit-title-wrapper label,
 #edit-type-wrapper label,
-#edit-type-wrapper .views-widget{
+#edit-type-wrapper .views-widget,
+#edit-keys-wrapper label,
+#edit-keys-wrapper .views-widget{
     margin-right: 10px;
     margin-top: 10px;
 }
@@ -1959,6 +1962,12 @@ h3 {
 } 
 .views-exposed-widgets > div{
     float: right!important;
+}
+#edit-keys-wrapper{
+  float: left;
+}
+#edit-keys-wrapper label{
+  
 }
 .views-exposed-form .views-exposed-widget{
     padding: 0;
@@ -2144,7 +2153,8 @@ h3 {
 #edit-field-secondary-topic-tid-wrapper label,
 #edit-field-author-tid-wrapper label,
 #edit-title-wrapper label,
-#edit-type-wrapper label{
+#edit-type-wrapper label,
+#edit-keys-wrapper label{
     color: $colorTitle;
     font-size: 14px;
     font-weight: normal;
