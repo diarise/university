@@ -3039,6 +3039,9 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin-right: 10px;
 }
 /**** added style for the search page***/
+body.page-search #block-system-main .views-row {
+    float: left;
+}
 .page-search #pageregion {
     margin: auto;
     width: 940px;
