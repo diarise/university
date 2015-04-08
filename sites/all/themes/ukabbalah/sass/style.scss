@@ -1184,6 +1184,9 @@ ul.masonry{
     margin-top: 4px;
     width: 180px;
 }
+#edit-keys {
+  margin-top: 0;
+}
 .Video_link span{
   display: inline !important;
   padding-left: 20px;
@@ -1231,6 +1234,7 @@ h1#page-title {
 .page-search h1#page-title{
     display: inline-block;
     margin-top: 45px;
+    width: auto!important; 
 }
 h2 {
     font-size:30px; 
@@ -2837,7 +2841,8 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 .views-exposed-widget.views-submit-button{
   float: left!important;
-  margin-left: 10px;
+  // margin-left: 10px;
+  margin-left: 20px;
 }
 #views-exposed-form-search-page input.form-submit {
     background: none repeat scroll 0 0 #328A9A;
@@ -2890,10 +2895,10 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin-top: 0;
     width: 495px;
 }
-.views-exposed-widget.views-submit-button {
-    margin-left: 20px;
-    margin-top: 5px;
-}
+// .views-exposed-widget.views-submit-button {
+//     margin-left: 20px;
+//     // margin-top: 5px;
+// }
 .page-search #edit-field-portion-tid{
   width: 300px;
 }
@@ -3914,6 +3919,9 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 #edit-title-wrapper{
   // margin-top:12px;
   margin-left: 0;  
+}
+#edit-title-wrapper{
+  margin-bottom: 20px;
 }
 #edit-keys-wrapper .views-widget{
   margin-top: 0;
