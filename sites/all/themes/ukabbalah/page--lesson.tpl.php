@@ -277,7 +277,7 @@
 		    </div>
 
 		    <div id="fragment-2">
-			    	<?php if (user_is_logged_in() ) {?>
+			    	
 						<div id="courseDescription">
 							<div class="sharethis">
 								<span class='st_facebook_large' displayText='Facebook'></span>
@@ -287,15 +287,17 @@
 								<span class='st_email_large' displayText='Email'></span>
 								<span class='st_sharethis_large' displayText='ShareThis'></span>
 							</div>
+							<?php if (user_is_logged_in() ) {?>
 							<div class="bookmark"><?php print flag_create_link('bookmarks', $node->nid); ?></div>
+							<?php } ?>
 						</div>
-					<?php } ?>
+					
 
 				<div class="wrapperTitle">
 			  	    <?php print $node->title; ?>
 			    </div>
 
-			    <?php if (user_is_logged_in() ) {?>
+			    <?php //if (user_is_logged_in() ) {?>
 						<div class="lessonDetailsInfo">
 							<label>course: </label> 
 							<?php  
@@ -325,7 +327,7 @@
 							<label>subtitles: </label>
 							<?php //print $node->field_lesson_video['und'][0]['default_language']; ?>
 						</div> -->
-			    <?php } ?>
+			    <?php //} ?>
 			    	
 		    <div class="wrapperDescription">
 		
