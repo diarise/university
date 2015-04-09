@@ -222,13 +222,23 @@
 	<div id="wrappperRightBloc">	
 		<div id="tabs">
 		  	<ul>
-			    <li><a href="#fragment-1"><span>Course details</span></a></li>
-			    <li><a href="#fragment-2"><span>Lesson details</span></a></li>
+			    <?php if( $course_list_title ) {	?>                                  
+					<li><a href="#fragment-1"><span>Course details</span></a></li>
+			    <?php } else { ?>
+					<li><a href="#fragment-1"><span>Event details</span></a></li>
+				<?php } ?> 
+				
+				<?php if( $course_list_title ) {	?>                                  
+					<li><a href="#fragment-2"><span>Lesson details</span></a></li>
+			    <?php } else { ?>
+					<li><a href="#fragment-2"><span>Lecture details</span></a></li>
+				<?php } ?>
 			    <li><a href="#fragment-3"><span>F A Q</span></a></li>
 		  	</ul>
 		  	<div id="fragment-1">
 			  	<div class="wrapperTitle">
-			  	<?php print $node->title; ?>
+			  	<?php //print $node->title; ?>
+			  	<?php print $course_title; ?><?php if( $list_subtitle != "" ) print " | ".$list_subtitle; ?>
 			  	</div>
 		  	
 		  	<span id="topicCourseTitle"> Topic:</span>
@@ -245,12 +255,23 @@
 						$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 						foreach ( $authors as $author ) {
 							$name = str_replace(' ', '_', $author->name);
-							echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/".$name.".jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; }	
+							//echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/".$name.".jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 
+							
+							if (preg_match('/David Mats/',$author->name)) 
+							echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/David_Mats.jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 	
+							else
+							echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/".$name.".jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 
+											
+						}
 					?>	
 				</div>
 
 				<div class="description">
-		    		<?php print $node->body['und'][0]['value']; // Course Description ?>
+		    		<?php //print $node->body['und'][0]['value']; // Course Description ?>
+		    		<?php 
+							if( sizeof( $node->field_course_list) > 0  ) print $node->field_course_list['und'][0]['node']->body['und'][0]['value']; 
+							if( sizeof( $node->field_event_list) > 0  ) print $node->field_event_list['und'][0]['node']->body['und'][0]['value']; 
+					?>
 				</div>
 		    
 		    </div>
@@ -277,7 +298,10 @@
 			    <?php if (user_is_logged_in() ) {?>
 						<div class="lessonDetailsInfo">
 							<label>course: </label> 
-							<?php  print $course_title;	?>
+							<?php  
+									//$course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['node']->nid), array('absolute' => TRUE));
+									print "<a href='".$course_path."'>".$course_title."</a>";	
+							?>
 						</div>
 						<div class="lessonDetailsInfo">
 							<label>teacher: </label>
@@ -297,10 +321,10 @@
 									if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value'])); // Date Node Changed
 								?>
 						</div>
-						<div class="lessonDetailsInfo">
+						<!-- <div class="lessonDetailsInfo">
 							<label>subtitles: </label>
 							<?php //print $node->field_lesson_video['und'][0]['default_language']; ?>
-						</div>
+						</div> -->
 			    <?php } ?>
 			    	
 		    <div class="wrapperDescription">
@@ -311,7 +335,7 @@
 				<?php 
 				if( sizeof( $node->body) > 0  ) {
 				if( $node->body['und'][0]['value'] != "" ) { ?>
-					<span class="descriptionLabel">class description</span>
+					<span class="descriptionLabel"><?php if( $course_list_title ) {	print "class description";	} else { print "event description";	} ?></span>
 					<?php  	print $node->body['und'][0]['value']; ?>
 
 				    <?php } 
@@ -332,20 +356,22 @@
 			<!-- End of Class Highlights -->	
 			
 			<!-- Class Resources -->
-			<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
-			<div class="resourcesLabel">Resources</div>
-			<div class="wrapperResources">
-				<?php
-					// This is a way to display multiple entries for field collections 
-					$wrapper = entity_metadata_wrapper('node', $node);
-					 foreach ($wrapper->field_lesson_resources as $i)
-					 {
-						print "<a href='".$i->field_file_link->value()."' target='_blank' ><span class='resourceFile'></span></a>";
-						print "<span class='resourceTitle'><a href='".$i->field_file_link->value()."' target='_blank' >".$i->field_file_description->value()."</a></span>";
-					 }
-				?>
-			</div>	
-			<?php } ?>
+			<?php if (user_is_logged_in() ) {?>
+				<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
+				<div class="resourcesLabel">Resources</div>
+				<div class="wrapperResources">
+					<?php
+						// This is a way to display multiple entries for field collections 
+						$wrapper = entity_metadata_wrapper('node', $node);
+						 foreach ($wrapper->field_lesson_resources as $i)
+						 {
+							print "<a href='".$i->field_file_link->value()."' target='_blank' ><span class='resourceFile'></span></a>";
+							print "<span class='resourceTitle'><a href='".$i->field_file_link->value()."' target='_blank' >".$i->field_file_description->value()."</a></span>";
+						 }
+					?>
+				</div>	
+				<?php } ?>
+			<?php } ?>	
 			<!-- End of Class Resources -->
 			
 			<!-- Class Keywords -->
@@ -361,7 +387,7 @@
 		    </div>
 
 		    <div id="fragment-3">
-		    faq is not not available
+		    <a class="faq" href="http://kabbalah.com/faq" target="_blanc">Click here for FAQ </a>
 		  	</div>
 		</div>
 
