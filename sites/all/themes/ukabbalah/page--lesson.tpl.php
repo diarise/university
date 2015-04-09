@@ -51,6 +51,13 @@
 	{
 		$event_list_title = $node->field_event_list['und'][0]['node']->title;
 		$list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
+		$course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['nid']), array('absolute' => TRUE));
+	}	
+	if( sizeof( $node->field_event_list) > 0  ) 
+	{
+		$event_list_title = $node->field_event_list['und'][0]['node']->title;
+		$list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
+		$course_path = url(drupal_get_path_alias('node/' . $node->field_event_list['und'][0]['nid']), array('absolute' => TRUE));
 	}	
 	
 	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
@@ -82,7 +89,13 @@
 				
 	<?php } else { ?>
 
-	<?php $course_nid = node_load($node->field_course_list['und'][0]['node']->nid); ?>
+	<?php //$course_nid = node_load($node->field_course_list['und'][0]['node']->nid); ?>
+	<?php 
+	
+		
+		if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['node']->nid); 
+		if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['node']->nid); 
+	?>
 		
 		<div class="preVideoImg">
 					<div class="overImageOpacity"></div>
