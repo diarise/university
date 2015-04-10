@@ -10,7 +10,11 @@
 		if(!is_string($video)) $sublime['video']=$video;
 		$width = isset($args['width'])?$args['width']:512;
 		$height = isset($args['height'])?$args['height']:288;
-		
+		$audio_download = '<div id="wrapperDownloadAudio">
+				<div class="buttonDownloadAudio">
+					<a href="http://twistassets.kabbalah.com/videos/'.$video->vid.'/formats/Small_640x360_300kbps_64kbps_h264/file.mp3" target="_blank"><span>Download audio	</span> <img src="/sites/all/themes/ukabbalah/images/audioDownloadBtn.jpg" alt="download audio"></a>
+				</div>
+			</div>';
 		$player_id = $video->vid;
 		$sublime['player_id']=$player_id;
 		$sublime['settings']=array(
@@ -22,6 +26,7 @@
 		$html .= $sublime['video_src_html'];
 		$html .= $sublime['video_captions_html'];
 		$html .= '</video>';
+		$html .= $audio_download;
 
 		if(isset($sublime['suffix'])) $html.=implode('',$sublime['suffix']);
 		return $html;

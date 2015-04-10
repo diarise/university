@@ -384,9 +384,9 @@ function twistal_sublime_settings_alter(&$sublime)	{
 		}
 	}
 	$sublime_src_html = "";		
-	if(isset($assets['mobile']) && isset($assets['medium'])) $sublime_src_html .= '<source src="'.str_replace('file.mp4','play.mp4',$assets[myDevice()->isMobile()?'mobile':'medium']->download_url).'" />';
-	if(isset($assets['small'])) $sublime_src_html .= '<source src="'.str_replace('file.mp4','play.mp4',$assets['small']->download_url).'" />';
-	if(isset($assets['large']) && !myDevice()->isMobile() ) $sublime_src_html .= '<source src="'.str_replace('file.mp4','play.mp4',$assets['large']->download_url).'" data-quality="hd" />';
+	if(isset($assets['mobile']) && isset($assets['medium'])) $sublime_src_html .= '<source type="video/mp4" src="'.str_replace('file.mp4','play.mp4',$assets[myDevice()->isMobile()?'mobile':'medium']->download_url).'" />';
+	if(isset($assets['small'])) $sublime_src_html .= '<source type="video/mp4" src="'.str_replace('file.mp4','play.mp4',$assets['small']->download_url).'" />';
+	if(isset($assets['large']) && !myDevice()->isMobile() ) $sublime_src_html .= '<source type="video/mp4" src="'.str_replace('file.mp4','play.mp4',$assets['large']->download_url).'" data-quality="hd" />';
 	$sublime['video_src_html'] = $sublime_src_html;	
 	// End of creating the source html for sublime video
 		

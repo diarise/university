@@ -21,11 +21,14 @@ div.jp-video {
 	 * Eg. 1.25em = 1 / 0.8em
 	 */
 
-	color: #b8b4b3;
-    font-size: 14px;
+	font-size:11px;
+
+	font-family:Arial;
+	/*line-height:1.6;*/
+	color: #fff;
 }
 div.jp-audio {
-	width:940px;
+	width:640px;
 }
 div.jp-video-270p {
 	width:480px;
@@ -35,7 +38,7 @@ div.jp-video-360p {
 }
 div.jp-interface {
 	position: relative;
-	background-color:#443a3b;
+	background-color:#7a7272;
 	/* width:418px; */
 	width:100%;
 	/*border:1px solid #009be3;*/
@@ -45,7 +48,7 @@ div.jp-audio div.jp-type-single div.jp-interface {
 	border-bottom:none;
 }
 div.jp-audio div.jp-type-playlist div.jp-interface {
-	height:46px;
+	height:32px;
 }
 div.jp-video div.jp-type-single div.jp-interface {
 	height:60px;
@@ -81,11 +84,8 @@ div.jp-audio div.jp-type-single a.jp-pause {
 }
 div.jp-audio div.jp-type-playlist a.jp-play,
 div.jp-audio div.jp-type-playlist a.jp-pause {
-	border-right: 2px solid #000;
-    height: 46px;
-    left: 30px;
-    padding-right: 35px;
-    top: 0;
+	top:10px;
+	left:10px;
 }
 div.jp-video a.jp-play,
 div.jp-video a.jp-pause {
@@ -108,13 +108,13 @@ div.jp-video-360p div.jp-type-playlist a.jp-pause {
 	left:300px;
 }
 a.jp-play,a.jp-pause {
-	background: url("play.png")no-repeat scroll 0 15px rgba(0, 0, 0, 0);
+	background: url("http://cdn1.kabbalah.com/university/icons/play_blue.png")no-repeat;
 }
 /*a.jp-play:hover {
 	background: url("http://cdn1.kabbalah.com/university/icons/pause_blue.png") no-repeat;
 }*/
 a.jp-pause {
-	background: url("pause.png ")no-repeat scroll 0 15px rgba(0, 0, 0, 0);
+	background: url("http://cdn1.kabbalah.com/university/icons/pause_blue.png ")no-repeat;
 	display: none;
 }
 /*a.jp-pause:hover {
@@ -195,14 +195,11 @@ a.jp-next {
 a.jp-next:hover {
 	background: url("jplayer.blue.monday.jpg") -29px -141px no-repeat;
 }
-
 div.jp-progress {
 	position: absolute;
 	overflow:hidden;
 	background-color: #000;
-	z-index: 999999;
 }
-
 div.jp-audio div.jp-type-single div.jp-progress {
 	top:32px;
 	left:130px;
@@ -210,10 +207,10 @@ div.jp-audio div.jp-type-single div.jp-progress {
 	height:15px;
 }
 div.jp-audio div.jp-type-playlist div.jp-progress {
-	height: 9px;
-    left: 178px;
-    top: 19px;
-    width: 480px;
+	top:15px;
+	left:67px;
+	width:445px;
+	height:6px;
 }
 div.jp-video div.jp-progress {
 	top:0px;
@@ -229,7 +226,7 @@ div.jp-seek-bar {
 	cursor: pointer;
 }
 div.jp-play-bar {
-	background: #fff url("white-image-progess.png") right no-repeat;
+	background: #71dfff url("white-image-progess.png") right no-repeat;
 	width:0px;
 	/* height:15px; 71dfff*/
 	height:100%;
@@ -242,7 +239,7 @@ div.jp-seeking-bg {
 
 a.jp-mute,
 a.jp-unmute {
-	width:64px;
+	width:23px;
 	height:15px;
 }
 div.jp-audio div.jp-type-single a.jp-mute,
@@ -252,9 +249,9 @@ div.jp-audio div.jp-type-single a.jp-unmute {
 }
 div.jp-audio div.jp-type-playlist a.jp-mute,
 div.jp-audio div.jp-type-playlist a.jp-unmute {
-	border-left: 2px solid #000;
-    height: 46px;
-    left: 760px;
+	border-left: 1px solid #908A8A;
+    height: 32px;
+    left: 558px;
     top: 0;
 }
 div.jp-video a.jp-mute,
@@ -278,33 +275,33 @@ div.jp-video-360p div.jp-type-playlist a.jp-unmute {
 	left:443px;
 }
 a.jp-mute {
-	background: url("sound-max.png ")35px 15px no-repeat;
+	background: url("http://cdn1.kabbalah.com/university/icons/sound_icon_blue.png ")6px 10px no-repeat;
 }
 /*a.jp-mute:hover {
 	background: url("http://cdn1.kabbalah.com/university/icons/volume_min_blue.png")4px 10px no-repeat;
 }*/
 a.jp-unmute {
-	background: url("sound-none.png")35px 15px no-repeat;
+	background: url("http://cdn1.kabbalah.com/university/icons/volume_min_blue.png")6px 10px no-repeat;
 	display: none;
 }
 /*a.jp-unmute:hover {
 	background: url("http://cdn1.kabbalah.com/university/icons/sound_icon_blue.png ")4px 10px no-repeat;
 }*/
 div.jp-volume-bar {
-	background: none repeat scroll 0 0 #7f7677;
-    cursor: pointer;
-    height: 5px;
-    overflow: hidden;
-    position: absolute;
-    width: 70px;
+	position: absolute;
+	overflow:hidden;
+	background: #000;
+	width:39px;
+	height:6px;
+	cursor: pointer;
 }
 div.jp-audio div.jp-type-single div.jp-volume-bar {
 	top:37px;
 	left:302px;
 }
 div.jp-audio div.jp-type-playlist div.jp-volume-bar {
-	left: 840px;
-    top: 23px;
+	top:15px;
+	left:589px;
 }
 div.jp-video div.jp-volume-bar {
 	top:32px;
@@ -322,7 +319,7 @@ div.jp-video-360p div.jp-type-playlist div.jp-volume-bar {
 	left:471px;
 }
 div.jp-volume-bar-value {
-	background: #fff url("white-image-progess.png") right no-repeat;
+	background: #71dfff;
 	width:0px;
 	height:6px;
 }
@@ -343,9 +340,9 @@ div.jp-audio div.jp-type-single div.jp-duration {
 }
 div.jp-audio div.jp-type-playlist div.jp-current-time,
 div.jp-audio div.jp-type-playlist div.jp-duration {
-	left: 100px;
-    top: 16px;
-    width: 636px;
+	top:11px;
+	left:32px;
+	width:518px;
 }
 div.jp-video div.jp-current-time,
 div.jp-video div.jp-duration {

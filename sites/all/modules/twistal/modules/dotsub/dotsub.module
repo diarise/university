@@ -81,7 +81,7 @@ function dotsub_sublime_settings_alter(&$sublime) {
 				)
 			);
 			$languageSelect=drupal_render($select);
-			$sublime['suffix'][]='<div class="transcription">'.$languageSelect.'<div class="transcript-content"></div></div>';
+			$sublime['suffix'][]='<div class="transcription">'.$languageSelect.'<div class="textTranscription">Click on the arrow to choose from the available languages</div><div class="transcript-content"></div></div>';
 			drupal_add_js(drupal_get_path('module', 'dotsub').'/includes/sublime_transcript.js');
 			drupal_add_css(drupal_get_path('module', 'dotsub').'/includes/transcript.css');
 			$settings['dotsub']['trans_id'] = $sublime['video']->vid;
