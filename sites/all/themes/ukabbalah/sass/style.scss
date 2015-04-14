@@ -4111,7 +4111,6 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 }
 .page-user-bookmarks th{
   border: none;
-   width: 500px;
 }
 .page-user-bookmarks td .flag-wrapper {
     width: auto;
@@ -4119,5 +4118,8 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .page-user-bookmarks .views-field.views-field-ops{
   color: #433a3a;
     font-size: 17px;
-    font-weight: bold;
+    
+}
+.page-user-bookmarks .wrapperLesson.activeLesson {
+  background: none; 
 }
