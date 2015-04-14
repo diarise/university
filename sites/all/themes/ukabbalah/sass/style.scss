@@ -4106,3 +4106,18 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 #block-views-tweets-block ul li{
   list-style: none; 
 }
+.page-user-bookmarks #page-title.title{
+  width: auto !important;
+}
+.page-user-bookmarks th{
+  border: none;
+   width: 500px;
+}
+.page-user-bookmarks td .flag-wrapper {
+    width: auto;
+}
+.page-user-bookmarks .views-field.views-field-ops{
+  color: #433a3a;
+    font-size: 17px;
+    font-weight: bold;
+}
