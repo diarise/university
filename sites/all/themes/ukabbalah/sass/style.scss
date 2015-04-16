@@ -1933,8 +1933,11 @@ h3 {
 
 .lessonCollectionSection h2,
 .liveEventCollectionSection h2{
-    font-size: 21px;
-    color: $colorRed;
+    font-size: 15px;
+    color: $colorBrown;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     text-align: left;
     margin-bottom: 16px; 
 }
