@@ -3851,7 +3851,10 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     border-bottom: 1px solid #e2e2e2;
     min-height: 45px;
 }
-
+.eng, .por_br, .rus, .por_pt, .ita, .ger, .fre_fr, .heb, .spa {
+   margin-top: 20px;
+   margin-bottom: 20px;  
+}
 .transcript-content.free-scroll{
   margin-bottom: 0!important; 
 }

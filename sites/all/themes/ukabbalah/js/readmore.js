@@ -35,16 +35,17 @@
       $('.searchThisCourse input[name$="title"]').attr('placeholder','search this course');
       //$("#sv_player_0").css( "margin": "0 auto !important");
 
-      $( ".trans-lang-select.form-select" ).click(function() {
-        $( ".transcript-content" ).addClass( "transcript-content-wrapper" );
+
+      // add class when thanscription is select
+      $('.trans-lang-select.form-select').data( $('.trans-lang-select.form-select').val());
+      $('.trans-lang-select.form-select').change(function() {
+          var $this = $(this);
+          var newClass = $this.val();
+          var oldClass = $this.data('oldVal');
+          $this.data('oldVal', newClass);
+          
+          $('.transcript-content').removeClass(oldClass).addClass(newClass);
       });
-
-      // $( ".trans-lang-select.form-select" ).click(function() {
-
-      //   $('.trans-lang-select option[value="none"]').text('Transcript OFF'){
-      //       $( ".transcript-content" ).removeClass( "transcript-content-wrapper" );
-      //   };
-      // });
            
 });
 })(jQuery);
