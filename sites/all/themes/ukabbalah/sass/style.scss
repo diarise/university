@@ -3913,8 +3913,9 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 //     margin-bottom: 20px;
 // }
 .transcript-content.free-scroll {
+    margin-bottom: 80px !important;
     margin-top: 40px !important;
-    margin-bottom: 40px!important;  
+    top: 40px;  
 }
 .view-filters.searchThisCourse,
 .lessonCollectionSection .view-filters,
