@@ -46,6 +46,7 @@
           
       //     $('.transcript-content').addClass(newClass);
       // });
+      $('.transcript-time').parent().addClass('openTranscript');
 
       
            
@@ -100,7 +101,7 @@
       setPanelHeight();
 
       //$('.transcript-time').find('.transcript-content').addClass('openTranscript');
-      $('.transcript-time').parent().addClass('openTranscript');
+      //$('.transcript-time').parent().addClass('openTranscript');
       
 
     });
