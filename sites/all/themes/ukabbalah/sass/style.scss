@@ -4012,22 +4012,22 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 //   background: url("../images/activeLessonBg.jpg") no-repeat right #d7ebf9;
 // }
 .wrapperLesson.activeLesson {
-    //----background: url("../images/selected_arrow_edge.svg") #d7ebf9 right center no-repeat;
-    background: #d7ebf9 ; /* Old browsers */
-    background-image: url("../images/activeLessonBg.jpg"), -moz-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* FF3.6+ */
+    background: url("../images/selected_arrow_edge2.svg") #d7ebf9 right center no-repeat;
+    //background: #d7ebf9 ; /* Old browsers */
+    //background-image: url("../images/activeLessonBg.jpg"), -moz-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* FF3.6+ */
     //-background-image: url("../images/activeLessonBg.jpg"), -webkit-gradient(left, #fff, #fff 22px, #d7ebf9 22px, #d7ebf9); /* Chrome,Safari4+ */
-    background-image: url("../images/activeLessonBg.jpg"), -webkit-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Chrome10+,Safari5.1+ */
-    background-image: url("../images/activeLessonBg.jpg"), -o-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Opera 11.10+ */
-    background-image: url("../images/activeLessonBg.jpg"), -ms-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* IE10+ */
-    background-image: url("../images/activeLessonBg.jpg"), linear-gradient(to left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* W3C */
+    //background-image: url("../images/activeLessonBg.jpg"), -webkit-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Chrome10+,Safari5.1+ */
+    //background-image: url("../images/activeLessonBg.jpg"), -o-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Opera 11.10+ */
+    //background-image: url("../images/activeLessonBg.jpg"), -ms-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* IE10+ */
+    //background-image: url("../images/activeLessonBg.jpg"), linear-gradient(to left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* W3C */
     //-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-origin: padding-box;
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: auto auto;
+    // background-attachment: scroll;
+    // background-clip: border-box;
+    // background-origin: padding-box;
+    // background-position: right center;
+    // background-repeat: no-repeat;
+    // background-size: auto auto;
     width: 437px; 
     border-bottom: none; 
 
