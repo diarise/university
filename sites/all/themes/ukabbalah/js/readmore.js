@@ -37,15 +37,15 @@
 
 
       // add class when thanscription is select
-      $('.trans-lang-select.form-select').data( $('.trans-lang-select.form-select').val());
-      $('.trans-lang-select.form-select').change(function() {
-          var $this = $(this);
-          var newClass = $this.val();
-          var oldClass = $this.data('oldVal');
-          $this.data('oldVal', newClass);
+      // $('.trans-lang-select.form-select').data( $('.trans-lang-select.form-select').val());
+      // $('.trans-lang-select.form-select').change(function() {
+      //     var $this = $(this);
+      //     var newClass = $this.val();
+      //     var oldClass = $this.data('oldVal');
+      //     $this.data('oldVal', newClass);
           
-          $('.transcript-content').addClass(newClass);
-      });
+      //     $('.transcript-content').addClass(newClass);
+      // });
            
 });
 })(jQuery);
