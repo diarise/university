@@ -10,7 +10,7 @@
         var text = $(this);
         if (text.height() > maxheight){
             text.css({ 'overflow': 'hidden','height': maxheight + 'px' });
-            
+
 
             var link = $('<a id="expand" href="#">' + showText + '</a>');
             var linkDiv = $('<div class="expand"></div>');
@@ -128,4 +128,21 @@
             //code ends
         }
     };
+})(jQuery);
+
+
+
+(function($){
+
+  $(window).load(function() {
+
+
+// making div clickable
+    $(".form-item.form-type-select").click(function() {
+        window.location = $(this).find("select").attr("option"); 
+        return false;
+    });
+
+
+});
 })(jQuery);
