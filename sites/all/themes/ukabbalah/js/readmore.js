@@ -99,7 +99,8 @@
 
       setPanelHeight();
 
-      $('.transcript-time').find('.transcript-content').addClass('openTranscript');
+      //$('.transcript-time').find('.transcript-content').addClass('openTranscript');
+      $('.transcript-time').parent().addClass('openTranscript');
       
 
     });
