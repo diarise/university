@@ -10,6 +10,8 @@
         var text = $(this);
         if (text.height() > maxheight){
             text.css({ 'overflow': 'hidden','height': maxheight + 'px' });
+            text.animate({ opacity: 1.00 }, 600);
+            text.fadeIn();
 
             var link = $('<a id="expand" href="#">' + showText + '</a>');
             var linkDiv = $('<div class="expand"></div>');
