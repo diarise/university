@@ -36,9 +36,16 @@
       //$("#sv_player_0").css( "margin": "0 auto !important");
 
       $( ".trans-lang-select.form-select" ).click(function() {
-        $( ".transcript-content" ).toggleClass( "transcript-content-wrapper" );
+        $( ".transcript-content" ).addClass( "transcript-content-wrapper" );
       });
-     
+
+      $( ".trans-lang-select.form-select" ).click(function() {
+
+        $('.trans-lang-select option[value="none"]').text('Transcript OFF'){
+            $( ".transcript-content" ).removeClass( "transcript-content-wrapper" );
+        };
+      });
+           
 });
 })(jQuery);
 
