@@ -47,7 +47,7 @@
       //     $('.transcript-content').addClass(newClass);
       // });
 
-      $('.transcript-time:first').closest('.transcript-content').addClass('openTranscript');
+      $('.transcript-time').closest('.transcript-content').addClass('openTranscript');
            
 });
 })(jQuery);
