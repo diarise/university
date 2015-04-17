@@ -139,7 +139,7 @@
 
 // making div clickable
     $(".form-item.form-type-select").click(function() {
-        window.location = $(this).find("select").attr("option"); 
+        window.location = $(this).find("select"); 
         return false;
     });
 
