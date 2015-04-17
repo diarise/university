@@ -34,6 +34,10 @@
       $( "div.view-lesson-collection .view-filters" ).addClass( "searchThisCourse" );
       $('.searchThisCourse input[name$="title"]').attr('placeholder','search this course');
       //$("#sv_player_0").css( "margin": "0 auto !important");
+
+      $( ".trans-lang-select.form-select" ).click(function() {
+        $( ".transcript-content" ).toggleClass( ".transcript-content-wrapper" );
+      });
      
 });
 })(jQuery);
