@@ -3857,20 +3857,21 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 }
 .transcription span.lessonsCourse {
   
-    background: url("../images/blue_arrow.png") no-repeat scroll 170px 17px!important;
-    border: 0;
-    color: #007ace; 
+    background: url("/sites/all/themes/ukabbalah/images/blue_arrow.png") no-repeat scroll 170px 17px #007ace !important;
+    border: 0 none;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
     font-size: 18px;
+    height: 45px;
     line-height: 42px;
-    margin-top: -20px;
-    margin-left: -8px;
+    margin-left: 0;
+    margin-top: -45px;
     text-align: left;
     text-indent: 10px;
+    text-transform: capitalize;
     width: 230px;
     z-index: 1;
-    text-transform: capitalize;
 }
 #transcriptWrapper label{
     float: left;
@@ -3989,6 +3990,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     color: #818181;
     float: left;
     font-size: 15px;
+    margin-left: 40px;
     margin-top: 13px;
 }
 .form-item.form-type-select {
@@ -3997,8 +3999,8 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     
 }
 .trans-lang-select.form-select {
-    // height: 30px; 
-    width: 220px;
+    height: 45px; 
+    width: 100%;
 }
 .resourceFile {
     background: url("../images/pdfIcon.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
