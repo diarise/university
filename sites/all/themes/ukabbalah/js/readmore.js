@@ -11,7 +11,6 @@
         if (text.height() > maxheight){
             text.css({ 'overflow': 'hidden','height': maxheight + 'px' });
 
-
             var link = $('<a id="expand" href="#">' + showText + '</a>');
             var linkDiv = $('<div class="expand"></div>');
             linkDiv.append(link);
@@ -129,6 +128,3 @@
         }
     };
 })(jQuery);
-
-
-
