@@ -39,12 +39,12 @@
         $( ".transcript-content" ).addClass( "transcript-content-wrapper" );
       });
 
-      $( ".trans-lang-select.form-select" ).click(function() {
+      // $( ".trans-lang-select.form-select" ).click(function() {
 
-        $('.trans-lang-select option[value="none"]').text('Transcript OFF'){
-            $( ".transcript-content" ).removeClass( "transcript-content-wrapper" );
-        };
-      });
+      //   $('.trans-lang-select option[value="none"]').text('Transcript OFF'){
+      //       $( ".transcript-content" ).removeClass( "transcript-content-wrapper" );
+      //   };
+      // });
            
 });
 })(jQuery);
