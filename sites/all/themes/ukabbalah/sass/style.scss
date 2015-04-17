@@ -4014,12 +4014,12 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .wrapperLesson.activeLesson {
 
     background: #d7ebf9 ; /* Old browsers selected_arrow_edge2*/
-    background-image: url("../images/selected_arrow_edge.svg"), -moz-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* FF3.6+ */
+    background-image: url("../images/selected_arrow_edge2.svg"), -moz-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* FF3.6+ */
     //background-image: url("../images/activeLessonBg.jpg"), -webkit-gradient(left, #fff, #fff 22px, #d7ebf9 22px, #d7ebf9); /* Chrome,Safari4+ */
-    background-image: url("../images/selected_arrow_edge.svg"), -webkit-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Chrome10+,Safari5.1+ */
-    background-image: url("../images/selected_arrow_edge.svg"), -o-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Opera 11.10+ */
-    background-image: url("../images/selected_arrow_edge.svg"), -ms-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* IE10+ */
-    background-image: url("../images/selected_arrow_edge.svg"), linear-gradient(to left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* W3C */
+    background-image: url("../images/selected_arrow_edge2.svg"), -webkit-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Chrome10+,Safari5.1+ */
+    background-image: url("../images/selected_arrow_edge2.svg"), -o-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Opera 11.10+ */
+    background-image: url("../images/selected_arrow_edge2.svg"), -ms-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* IE10+ */
+    background-image: url("../images/selected_arrow_edge2.svg"), linear-gradient(to left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* W3C */
     //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 
     background-attachment: scroll;
