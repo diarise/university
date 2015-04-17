@@ -6,7 +6,7 @@ $(document).ready(function(){
 			$('.transcript-content').html('');
 			return;
 		}
-		$('.trans-lang-select option[value="none"]').text('Remove Transcript');
+		$('.trans-lang-select option[value="none"]').text('Transcript OFF');
 		$.ajax({
 			url:'/dotsub/transcript/'+Drupal.settings.dotsub.trans_id+'/'+val,
 			success:function(data){
