@@ -44,7 +44,7 @@
           var oldClass = $this.data('oldVal');
           $this.data('oldVal', newClass);
           
-          $('.transcript-content').removeClass(oldClass).addClass(newClass);
+          $('.transcript-content').addClass(newClass);
       });
            
 });
