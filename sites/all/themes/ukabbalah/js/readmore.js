@@ -132,17 +132,3 @@
 
 
 
-(function($){
-
-  $(window).load(function() {
-
-
-// making div clickable
-    $(".form-item.form-type-select").click(function() {
-        window.location = $(this).find("select"); 
-        return false;
-    });
-
-
-});
-})(jQuery);
