@@ -46,6 +46,8 @@
           
       //     $('.transcript-content').addClass(newClass);
       // });
+
+      $('.transcript-time:first').closest('.transcript-content').addClass('openTranscript');
            
 });
 })(jQuery);
