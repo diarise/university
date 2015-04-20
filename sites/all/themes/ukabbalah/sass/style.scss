@@ -4139,3 +4139,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .page-user-bookmarks .wrapperLesson.activeLesson {
   background: none; 
 }
+body.node-type-live-events #courseDescription #eSocial,
+body.node-type-live-events .courseDescriptionWrapper {
+  clear: both;
+}
