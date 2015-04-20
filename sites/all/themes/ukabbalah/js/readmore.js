@@ -49,18 +49,7 @@
       //$('.transcript-time').parent('.transcript-content').addClass('openTranscript');
 
 
-      $('span').children().each(function() {
-
-      if($(this).hasClass('transcript-time')) {
-
-        // to add class
-        $(this).parent().addClass('parentpppp');
-
-        // to add id
-        //$(this).parent().attr('id', 'someidppp');
-      }
-
-    });
+      
 
       
            
@@ -74,6 +63,19 @@
 
  //$(document).ready(function(){
   $(window).load(function() {
+
+    $('span').children().each(function() {
+
+      if($(this).hasClass('transcript-time')) {
+
+        // to add class
+        $(this).parent().addClass('parentpppp');
+
+        // to add id
+        //$(this).parent().attr('id', 'someidppp');
+      }
+
+    });
 
      //$( "#video-control .sublimevideo-View.sublimevideo-VideoView" ).addClass( "testet" );
       // $( "#video-control .sublimevideo-View.sublimevideo-VideoView" ).css({
