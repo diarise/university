@@ -35,22 +35,6 @@
       $('.searchThisCourse input[name$="title"]').attr('placeholder','search this course');
       //$("#sv_player_0").css( "margin": "0 auto !important");
 
-
-      // add class when thanscription is select
-      // $('.trans-lang-select.form-select').data( $('.trans-lang-select.form-select').val());
-      // $('.trans-lang-select.form-select').change(function() {
-      //     var $this = $(this);
-      //     var newClass = $this.val();
-      //     var oldClass = $this.data('oldVal');
-      //     $this.data('oldVal', newClass);
-          
-      //     $('.transcript-content').addClass(newClass);
-      // });
-      //$('.transcript-time').parent('.transcript-content').addClass('openTranscript');
-
-
-      
-
       
            
 });
@@ -64,37 +48,6 @@
  //$(document).ready(function(){
   $(window).load(function() {
 
-    // $('span').children().each(function() {
-
-    //   if($(this).hasClass('transcript-time')) {
-
-    //     // to add class
-    //     $(this).parent().addClass('parentpppp');
-
-    //     // to add id
-    //     //$(this).parent().attr('id', 'someidppp');
-    //   }
-
-    // });
-
-
-    $( "div.transcript-time span:first-child" )
-  //.css( "text-decoration", "underline" )
-  (function() {
-    $( "div.transcript-time" ).addClass( "testt" );
-  },// function() {
-   // $( this ).removeClass( "sogreen" );
-  );
-
-     //$( "#video-control .sublimevideo-View.sublimevideo-VideoView" ).addClass( "testet" );
-      // $( "#video-control .sublimevideo-View.sublimevideo-VideoView" ).css({
-      //   "margin": "auto", 
-      //   //"background": "#0ff",                
-      // });
-      // $('.sublimevideo-View.sublimevideo-VideoView').attr('style', function(i, style)
-      // {
-      // return style.replace(/margin[^;]+;?/g, '');
-      // }); 
 
 
       function setPanelHeight (){
