@@ -64,18 +64,27 @@
  //$(document).ready(function(){
   $(window).load(function() {
 
-    $('span').children().each(function() {
+    // $('span').children().each(function() {
 
-      if($(this).hasClass('transcript-time')) {
+    //   if($(this).hasClass('transcript-time')) {
 
-        // to add class
-        $(this).parent().addClass('parentpppp');
+    //     // to add class
+    //     $(this).parent().addClass('parentpppp');
 
-        // to add id
-        //$(this).parent().attr('id', 'someidppp');
-      }
+    //     // to add id
+    //     //$(this).parent().attr('id', 'someidppp');
+    //   }
 
-    });
+    // });
+
+
+    $( "div.transcript-time span:first-child" )
+  //.css( "text-decoration", "underline" )
+  (function() {
+    $( "div.transcript-time" ).addClass( "testt" );
+  },// function() {
+   // $( this ).removeClass( "sogreen" );
+  );
 
      //$( "#video-control .sublimevideo-View.sublimevideo-VideoView" ).addClass( "testet" );
       // $( "#video-control .sublimevideo-View.sublimevideo-VideoView" ).css({
