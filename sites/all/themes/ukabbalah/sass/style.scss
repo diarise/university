@@ -1861,7 +1861,7 @@ h3 {
     text-align: center;
 }
 .priceLogin a {
-    color: #208fdc;
+    color: #4ab5ff;
     display: block;
     font-size: 16px;
     margin-top: 9px;
@@ -1917,7 +1917,7 @@ h3 {
 #topicCourse{
     font-size: 15px;
     line-height: 26px;
-    font-family: $fontFaceLight ;
+    font-family: $fontFace ;
     display: inline!important;
     text-transform: uppercase;
 }
@@ -3539,7 +3539,8 @@ body.node-type-course .messages.error {
     padding: 30px !important;
 }
 .wrapperLoginBloc .loginText{
-  color: $colorBrown!important;
+    color: $colorBrown!important;
+    line-height: 24px;
 }
 .loginText {
     color: $colorWhite;
@@ -3749,7 +3750,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     padding: 0 69px;
 }
 .priceLogin {
-    border: 2px solid #208fdc;
+    border: 2px solid #4daced;
     border-radius: 6px;
     cursor: pointer;
     display: inline-block;

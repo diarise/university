@@ -59,7 +59,7 @@
 						</div>
 					<?php } elseif( !user_is_logged_in()) { ?>
 						<div id="wrapperPrice">
-							<div class="loginText">Join Kabbalah University to watch this video
+							<div class="loginText">Join Kabbalah University to watch this video.
 		Members get access to thousands of courses and events</div>
 							<span class="buttonMember"><a href="http://profile.kabbalah.com">Become a member</a></span>
 							<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">Log in</a></span>
@@ -160,7 +160,7 @@
 						</div>
 					<?php } elseif( !user_is_logged_in()) { ?>
 						<div class="wrapperLoginBloc" id="wrapperPrice">
-							<div class="loginText">Join Kabbalah University to watch this video
+							<div class="loginText">Join Kabbalah University to watch this video.
 		Members get access to thousands of courses and events</div>
 							<span class="buttonMember"><a href="http://profile.kabbalah.com">Become a member</a></span>
 							<span class="priceLogin"><a href="http://university.kabbalah.com/saml_login">Log in</a></span>
