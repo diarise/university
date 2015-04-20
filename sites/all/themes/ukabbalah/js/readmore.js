@@ -48,6 +48,20 @@
       // });
       //$('.transcript-time').parent('.transcript-content').addClass('openTranscript');
 
+
+      $('span').children().each(function() {
+
+      if($(this).hasClass('transcript-time')) {
+
+        // to add class
+        $(this).parent().addClass('parentpppp');
+
+        // to add id
+        //$(this).parent().attr('id', 'someidppp');
+      }
+
+    });
+
       
            
 });
