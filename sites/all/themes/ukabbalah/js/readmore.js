@@ -35,8 +35,8 @@
       $('.searchThisCourse input[name$="title"]').attr('placeholder','search this course');
       //$("#sv_player_0").css( "margin": "0 auto !important");
 
-      $( ".openTranscript" ).addClass( "mCustomScrollbar fluid light" );
-      $( ".openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
+      $( ".transcript-content" ).addClass( "mCustomScrollbar fluid light" );
+      $( ".transcript-content" ).attr( 'data-mcs-theme','inset-2-dark' );
 
       
            
