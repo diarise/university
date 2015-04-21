@@ -80,6 +80,14 @@
 
       //$('.transcript-time').find('.transcript-content').addClass('openTranscript');
       //$('.transcript-time').parent().addClass('openTranscript');
+
+
+
+      // making div clickable
+    $(".wrapperLesson").click(function() {
+        window.location = $(this).find("a").attr("href"); 
+        return false;
+    });
       
 
     });
