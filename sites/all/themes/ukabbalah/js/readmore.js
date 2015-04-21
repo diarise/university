@@ -35,8 +35,8 @@
       $('.searchThisCourse input[name$="title"]').attr('placeholder','search this course');
       //$("#sv_player_0").css( "margin": "0 auto !important");
 
-      $( ".transcript-content" ).addClass( "mCustomScrollbar fluid light" );
-      $( ".transcript-content" ).attr( 'data-mcs-theme','inset-2-dark' );
+      $( ".transcript-content.openTranscript" ).addClass( "mCustomScrollbar fluid light" );
+      $( ".transcript-content.openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
 
       
            
@@ -51,6 +51,9 @@
  //$(document).ready(function(){
   $(window).load(function() {
 
+
+$( ".transcript-content.openTranscript" ).addClass( "mCustomScrollbar fluid light" );
+$( ".transcript-content.openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
 
 
       function setPanelHeight (){
