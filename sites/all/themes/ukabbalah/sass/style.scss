@@ -2678,9 +2678,9 @@ div.jp-audio{
     right: 0;
     width: 290px; 
 }
-.transcript-content{
-    width: 605px;
-}
+// .transcript-content{
+//     width: 605px;
+// }
 // .audioSection .preVideoImg img{
 //     width: 620px;
 //     height: 349px;
@@ -3899,8 +3899,12 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     padding-right:40px;
 }
 .transcript-content{
-    margin: 0 auto !important;
-    width: 700px !important;  
+    margin: 0 !important;  
+}
+.transcript-content.openTranscript {
+    margin: 0 auto 40px !important;
+    top: 20px;
+    width: 700px !important;
 }
 .transcript-time {
     color: #433a3a;
