@@ -35,6 +35,9 @@
       $('.searchThisCourse input[name$="title"]').attr('placeholder','search this course');
       //$("#sv_player_0").css( "margin": "0 auto !important");
 
+      $( ".openTranscript" ).addClass( "mCustomScrollbar fluid light" );
+      $( ".openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
+
       
            
 });
@@ -52,8 +55,8 @@
 
       function setPanelHeight (){
 
-        $( ".lessonCollectionSection .view-content, .openTranscript" ).addClass( "mCustomScrollbar fluid light" );
-        $( ".lessonCollectionSection .view-content, .openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
+        $( ".lessonCollectionSection .view-content" ).addClass( "mCustomScrollbar fluid light" );
+        $( ".lessonCollectionSection .view-content" ).attr( 'data-mcs-theme','inset-2-dark' );
 
         var panelHeight = $("#wrappperBloc").find("#wrappperRightBloc").outerHeight();
         
