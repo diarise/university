@@ -88,6 +88,8 @@
         window.location = $(this).find("a").attr("href"); 
         return false;
     });
+
+    $(".transcript-time").parents(".transcript-content").toggleClass('openTranscript');
       
 
     });
