@@ -52,8 +52,8 @@
 
       function setPanelHeight (){
 
-        $( ".lessonCollectionSection .view-content" ).addClass( "mCustomScrollbar fluid light" );
-        $( ".lessonCollectionSection .view-content" ).attr( 'data-mcs-theme','inset-2-dark' );
+        $( ".lessonCollectionSection .view-content, .openTranscript" ).addClass( "mCustomScrollbar fluid light" );
+        $( ".lessonCollectionSection .view-content, .openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
 
         var panelHeight = $("#wrappperBloc").find("#wrappperRightBloc").outerHeight();
         
@@ -78,10 +78,6 @@
 
       setPanelHeight();
 
-      //$('.transcript-time').find('.transcript-content').addClass('openTranscript');
-      //$('.transcript-time').parent().addClass('openTranscript');
-
-
 
       // making div clickable
     $(".wrapperLesson").click(function() {
@@ -89,8 +85,6 @@
         return false;
     });
 
-    //$(".transcript-time").parents(".transcript-content").addClass("openTranscript");
- //$(".transcript-content").addClass("openTranscript");
       $("select.trans-lang-select").change(function () {
           if ($(this).val() !== "none") {
               $(".transcript-content").addClass("openTranscript");
