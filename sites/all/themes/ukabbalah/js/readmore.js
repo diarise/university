@@ -34,15 +34,9 @@
       $( "div.view-lesson-collection .view-filters" ).addClass( "searchThisCourse" );
       $('.searchThisCourse input[name$="title"]').attr('placeholder','search this course');
       //$("#sv_player_0").css( "margin": "0 auto !important");
-
-      $( ".transcript-content.openTranscript" ).addClass( "mCustomScrollbar fluid light" );
-      $( ".transcript-content.openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
-
-      
-           
+                
 });
 })(jQuery);
-
 
 
 
@@ -50,10 +44,6 @@
 
  //$(document).ready(function(){
   $(window).load(function() {
-
-
-$( ".transcript-content.openTranscript" ).addClass( "mCustomScrollbar fluid light" );
-$( ".transcript-content.openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' );
 
 
       function setPanelHeight (){
@@ -103,19 +93,6 @@ $( ".transcript-content.openTranscript" ).attr( 'data-mcs-theme','inset-2-dark' 
     });
 })(jQuery);
 
-
-
-
-// (function($){
-
-// $(document).ready(function() {
-//   $(".lessonCollectionSection .view-content").customScrollbar({
-//   skin: "default-skin", 
-//   hScroll: false,
-//   // updateOnWindowResize: true
-//   });
-// });
-// })(jQuery);
 
 
 /**
