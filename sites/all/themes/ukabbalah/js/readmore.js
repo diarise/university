@@ -91,7 +91,7 @@
 
     //$(".transcript-time").parents(".transcript-content").addClass("openTranscript");
 
-      $(".trans-lang-select").change(function () {
+      $("select.trans-lang-select").change(function () {
           if ($(this).val() !== "none") {
               $(".transcript-content").addClass("openTranscript");
           } else {
