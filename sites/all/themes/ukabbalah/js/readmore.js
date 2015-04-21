@@ -89,7 +89,7 @@
         return false;
     });
 
-    $(".transcript-time").parents(".transcript-content").toggleClass('openTranscript');
+    $(".transcript-time").parents(".transcript-content").addClass("openTranscript");
       
 
     });
