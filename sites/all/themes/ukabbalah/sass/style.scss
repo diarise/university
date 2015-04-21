@@ -3913,19 +3913,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     font-weight: normal;
     line-height: 26px;
 }
-// .transcript-content span:nth-child(1){
-//     display: inline-block;
-//     margin-top: 20px;
-// }
-// .transcript-content span:last-child{
-//     display: inline-block;
-//     margin-bottom: 20px;
-// }
-// .transcript-content.free-scroll {
-//     margin-bottom: 40px !important;
-//     margin-top: 40px !important;
-//     //top: 40px;  
-// }
+
 .view-filters.searchThisCourse,
 .lessonCollectionSection .view-filters,
 #block-views-lesson-collection-block .view-filters,
@@ -3937,11 +3925,10 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .view-filters.searchThisCourse #edit-title-wrapper,
 .view-filters.searchThisCourse input#edit-title,
 .lessonCollectionSection .view-filters input {
-    width: 70% !important;
+    width: 69% !important;
     font-family: $fontFace;
 }
 #edit-title-wrapper{
-  // margin-top:12px;
   margin-left: 0;  
 }
 #edit-title-wrapper{

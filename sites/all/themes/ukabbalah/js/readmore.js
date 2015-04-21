@@ -58,14 +58,14 @@
 
             $("#wrappperBloc").find(".lessonCollectionSection .view-content").css ({
               "max-height": 390,
-              "width": 475  
+              "width": 462  
             });
 
         } else {
 
             $("#wrappperBloc").find(".lessonCollectionSection .view-content").css ({
               "max-height": panelHeight - 102,
-              "width": 475
+              "width": 462
             });
           
         
