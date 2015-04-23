@@ -2213,32 +2213,7 @@ span.lessonsCourse {
 #views-exposed-form-free-lessons-page .views-exposed-widget{
   float: left!important;
 }
-// .transcription span.lessonsCourse {
-//     background: url("http://cdn1.kabbalah.com/university/icons/dropdown_arrow_blue.png") no-repeat scroll 316px 10px!important;
-//     border: 0;
-//     color: $colorBlue; 
-//     cursor: pointer;
-//     display: inline-block;
-//     font-size: 14px;
-//     height: 26px;
-//     line-height: 27px;
-//     margin-top: -28px;
-//     margin-left: -8px;
-//     text-align: left;
-//     text-indent: 10px;
-//     width: 330px;
-//     z-index: 1;
-//     text-transform: uppercase;
-// }
-// .transcription span.lessonsCourse:before{
-//     content: "View Live Transcript";
-//     color: $colorWhite;
-//     margin-right: 10px;
-//     text-transform: capitalize;
-// }
-.transcription .form-type-select{
-    //margin-bottom: 9px!important;
-}
+
 #transcriptWrapper label{
     float: left;
     font-size: 16px;
@@ -2250,9 +2225,7 @@ span.lessonsCourse {
 .transcription select{
     float: none!important;
 }
-// .trans-lang-select.form-select {
-//     width: 320px;
-// }
+
 .lessonCollectionSection form select{
     cursor: pointer;  
     height: 30px;
@@ -3875,6 +3848,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     line-height: 42px;
     margin-left: 0;
     margin-top: -45px;
+    padding-left: 3px;
     text-align: left;
     text-indent: 10px;
     text-transform: capitalize;
@@ -3981,7 +3955,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .buttonDownloadAudio span {
     float: left;
     padding-right: 20px;
-    padding-top: 13px;
+    padding-top: 12px;
 }
 .buttonDownloadAudio img{
     float: left;
@@ -3990,7 +3964,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     color: #818181;
     float: left;
     font-size: 15px;
-    margin-left: 40px;
+    margin-left: 25px;
     margin-top: 15px;
 }
 .form-item.form-type-select {
