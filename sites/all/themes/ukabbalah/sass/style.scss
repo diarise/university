@@ -3624,11 +3624,11 @@ body.node-type-course .messages.error {
     width: 25px;
 }
 .ccLesson span {
-    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png") no-repeat scroll 8px 3px rgba(0, 0, 0, 0);
+    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png") no-repeat scroll 8px 6px rgba(0, 0, 0, 0);
     color: transparent;
 }
 .wrapperLesson:hover .ccLesson span {
-    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png") no-repeat scroll 8px 3px rgba(0, 0, 0, 0);
+    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png") no-repeat scroll 8px 6px rgba(0, 0, 0, 0);
 }
 .wrapperAuthor {
     float: left;
@@ -4041,7 +4041,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     border-top: 1px dashed #9b9b9b;
 }
 .wrapperLesson.activeLesson .ccLesson span {
-    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png") no-repeat scroll 8px 3px rgba(0, 0, 0, 0);
+    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png") no-repeat scroll 8px 6px rgba(0, 0, 0, 0);
 }
 #wrapperDownloadAudio.audioWrapperDownload{
     background: none repeat scroll 0 0 #e2e2e2;
