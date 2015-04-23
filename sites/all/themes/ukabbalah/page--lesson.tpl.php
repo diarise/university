@@ -312,7 +312,7 @@
 
 			    <?php //if (user_is_logged_in() ) {?>
 						<div class="lessonDetailsInfo">
-							<label>course: </label> 
+							<label class="coursLabelBold">course: </label> 
 							<?php  
 									//$course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['node']->nid), array('absolute' => TRUE));
 									print "<a class='coursTitleBold' href='".$course_path."'>".$course_title."</a>";	
