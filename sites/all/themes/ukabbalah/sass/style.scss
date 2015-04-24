@@ -2089,12 +2089,12 @@ h3 {
     padding-right:0px; 
 }
 .Video{
-    background: url(http://cdn1.kabbalah.com/university/icons/icon_video_light_grey.png) no-repeat 6px 1px;
+    background: url(http://cdn1.kabbalah.com/university/icons/icon_video_light_grey.png) no-repeat 6px 0px;
     width: 32px;
     height: 32px;
 }
 .activeLesson .Video{
-  background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 6px 1px!important;
+  background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 6px 0px!important;
 }
 .activeLesson .Audio{
   background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 6px 3px!important;
@@ -3589,7 +3589,7 @@ body.node-type-course .messages.error {
 }
 
 .wrapperLesson:hover .Video{
-  background: url("http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png") no-repeat scroll 6px 1px rgba(0, 0, 0, 0); 
+  background: url("http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png") no-repeat scroll 6px 0px rgba(0, 0, 0, 0); 
 }
 .wrapperLesson:hover .Audio{
    background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 6px 3px;
