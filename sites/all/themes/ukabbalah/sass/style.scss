@@ -1868,7 +1868,7 @@ h3 {
     text-align: center;
 }
 .priceLogin.logColor a {
-    color: #0877ca!important; 
+    color: #4ab5ff !important; 
 }
 #wrapperInfoCour > span {
     display: block;
@@ -1905,14 +1905,18 @@ h3 {
 #titleCourse{
     font-family: georgia;
     font-size: 34px;
-    line-height: 34px;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
     text-transform: capitalize;
 }
 #supTitleCourse{
-    font-size: 19px;
-    line-height: 26px;
+    font-family: georgia;
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 10px;
     text-transform: capitalize;
+}
+.theCourseAuthorTitle {
+    line-height: 22px;
 }
 #topicCourseTitle {
     display: inline !important;
@@ -3521,6 +3525,7 @@ body.node-type-course .messages.error {
 .loginText {
     color: $colorWhite;
     font-size: 16px;
+    line-height: 25px;
     margin-bottom: 20px;
 }
 .ui-tabs .ui-tabs-panel{
