@@ -4125,3 +4125,169 @@ body.node-type-live-events .courseDescriptionWrapper {
 .coursLabelBold{
   font-weight: bold !important;
 }
+
+// user page
+
+.page-user #mainContentWrapperUser {
+    clear: both;
+    margin: auto;
+    width: 900px;
+}
+.page-user .infoMember {
+    border: 5px solid #9c1f19;
+    border-radius: 3px;
+    color: #9c1f19;
+    font-size: 15px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    width: 500px;
+}
+.page-user .infoMember > a {
+    color: #2090dc;
+}
+.page-user #mainContentUser {
+    background: none repeat scroll 0 0 #cccccc;
+    margin: 0 auto 100px;
+    padding: 20px 0;
+    width: 540px;
+}
+.page-user #mainContentUser h1 {
+    color: #433a3a;
+    font-size: 28px;
+    margin-left: 214px;
+    margin-top: 0;
+}
+.page-user #user-login-form .form-item, .page-user #user-pass .form-item {
+    float: none;
+    margin: 0 auto 20px;
+    width: 500px;
+}
+.page-user #user-login-form label, .page-user #user-pass label {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-top: 11px;
+    text-align: right;
+    width: 170px;
+}
+.page-user #user-login-form .form-item label {
+    color: #433a3a;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    text-transform: capitalize;
+    width: 205px;
+}
+.page-user #user-login-form .form-item label span, .page-user #user-pass .form-item label span {
+    font-size: 16px;
+}
+.page-user #user-login-form .form-item label span {
+    color: #208fdc;
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+.page-user #edit-name--2, .page-user #edit-name--3, .page-user #edit-pass, .page-user #edit-pass--2, .page-user #edit-name {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    border-radius: 4px;
+    color: #555555;
+    display: block;
+    float: left;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    width: 220px;
+}
+.page-user #user-login-form .form-item input {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #9e9999;
+    color: #433a3a;
+    font-size: 15px;
+    font-weight: normal;
+    height: 40px;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+.page-user #user-login-form .item-list {
+    float: left;
+    width: 500px;
+}
+.page-user #user-login-form .item-list ul li {
+    list-style-type: none;
+}
+.page-user #user-login-form .item-list ul li a {
+    color: #9c1f19;
+    display: block;
+    font-size: 13px;
+    margin-left: 193px;
+}
+.page-user #user-login-form .form-wrapper {
+    border: medium none;
+}
+
+.page-user #user-login-form .form-submit, .page-user #user-pass .form-submit {
+    background: none repeat scroll 0 0 #328a9a;
+    border: medium none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.42857;
+    margin-left: 215px;
+    padding: 9px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 242px;
+}
+input[type="submit"] {
+    -moz-appearance: none;
+}
+.page-user .inputWrapper:last-child {
+    border-top: 1px solid #433a3a;
+    margin-left: 217px;
+    margin-top: 35px;
+    width: 239px;
+}
+.page-user .dividerOR {
+    background: none repeat scroll 0 0 #cccccc;
+    color: #433a3a;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: -12px auto 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 40px;
+}
+.page-user .newAccount {
+    color: #a33a3a;
+    display: block;
+    font-weight: bold;
+    margin-top: 22px;
+    text-align: center;
+}
+.page-user .inputBtn {
+    background: none repeat scroll 0 0 #328a9a;
+    border: medium none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    padding: 9px 0;
+    text-align: center;
+    width: 242px;
+}
+.page-user .inputBtn a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.42857;
+    text-transform: uppercase;
+}
