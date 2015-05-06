@@ -4165,12 +4165,12 @@ body.node-type-live-events .courseDescriptionWrapper {
 }
 .page-user #user-login-form label, .page-user #user-pass label {
     float: left;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 16px !important;
+    font-weight: bold !important;
     padding-right: 10px;
     padding-top: 11px;
-    text-align: right;
-    width: 170px;
+    text-align: right !important;
+    width: 170px !important;
 }
 .page-user #user-login-form .form-item label {
     color: #433a3a;
@@ -4191,16 +4191,16 @@ body.node-type-live-events .courseDescriptionWrapper {
 }
 
 .page-user #edit-name--2, .page-user #edit-name--3, .page-user #edit-pass, .page-user #edit-pass--2, .page-user #edit-name {
-    background: none repeat scroll 0 0 #fff;
-    border: medium none;
+    background: none repeat scroll 0 0 #fff !important;
+    border: medium none !important;
     border-radius: 4px;
-    color: #555555;
+    color: #555555 !important;
     display: block;
     float: left;
-    height: 30px;
-    margin-bottom: 20px;
-    padding: 6px 12px;
-    width: 220px;
+    height: 30px !important;
+    margin-bottom: 20px !important;
+    padding: 6px 12px !important;
+    width: 220px !important;;
 }
 .page-user #user-login-form .form-item input {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
