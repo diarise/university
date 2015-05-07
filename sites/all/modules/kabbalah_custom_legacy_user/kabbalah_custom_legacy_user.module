@@ -10,8 +10,8 @@
 	  {  
 		if( checkLegacyUsernameAndEmailExists( $account->mail , $account->name ) ) // check if username and email exists in legacy_users table and migration_date is NULL
 		{ 
-		   drupal_goto('http://idp.kabbalah.com/user/'.$account->uid.'/migrate-user');
-		   //$_GET['destination'] = 'http://idp.kabbalah.com/user/'.$account->uid.'/migrate-user';
+		   //drupal_goto('http://idp.kabbalah.com/user/'.$account->uid.'/migrate-user');
+		   $_GET['destination'] = 'http://idp.kabbalah.com/user/'.$account->uid.'/migrate-user';
 		}
 	  }
 	  
