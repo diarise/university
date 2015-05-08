@@ -1,28 +1,32 @@
 <?php
 	
-	db_set_active('idpdb');
-	
 	// Implements hook_user_login().
 	function kabbalah_custom_legacy_user_user_login( &$edit, $account ) {
 	    
 	  //Do not redirect when the user is resetting her password.
 	  if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset') 
-	  {  
+	  { 	   
 		if( checkLegacyUsernameAndEmailExists( $account->mail , $account->name ) ) // check if username and email exists in legacy_users table and migration_date is NULL
-		{ 
-		   //drupal_goto('http://idp.kabbalah.com/user/'.$account->uid.'/migrate-user');
-		   $_GET['destination'] = 'http://idp.kabbalah.com/user/'.$account->uid.'/migrate-user';
-		}
+		{   
+			if (isset($_GET['destination'])) 
+			{
+				unset($_GET['destination']);
+			}
+			drupal_static_reset('drupal_get_destination');
+		    drupal_goto('http://idp.kabbalah.com/user/'.$account->uid.'/migrate-user'); 
+		 } 
 	  }
 	  
 	}
 
 	function checkLegacyUsernameAndEmailExists( $email , $username ) {
 		
+		db_set_active('idpdb');
 		$user_found = "";
-		$sql = "select username,email from legacy_user where (email = '".$email."' OR username = '".$username."') AND migration_date IS NULL";
-	
+		$sql = "select * from legacy_user where (email = '".$email."' OR username = '".$username."') AND migration_date IS NULL";
 		$result = db_query( $sql);
+		db_set_active();
+		
 		foreach ($result as $record) {
 			
 			$user_found = $record;
@@ -42,6 +46,3 @@
 		} 
 			
 	}
-	
-	
-	db_set_active();
