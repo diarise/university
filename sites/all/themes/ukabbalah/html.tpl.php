@@ -1,4 +1,19 @@
 <?php
+	if(user_is_logged_in() )
+	{  
+		global $user;
+		if( checkLegacyUsernameAndEmailExists( $user->mail , $user->name ) ) // check if username and email exists in legacy_users table and migration_date is NULL
+		{   
+			if (isset($_GET['destination'])) 
+			{
+				unset($_GET['destination']);
+			}
+			drupal_static_reset('drupal_get_destination');
+			drupal_goto('http://idp.kabbalah.com/user/'.$user->uid.'/migrate-user'); 
+		 } 
+	}
+?>
+<?php
 // $Id: html.tpl.php,v 1.1.2.2 2011/02/06 22:47:17 andregriffin Exp $
 ?><!DOCTYPE html>
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
