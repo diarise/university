@@ -25,6 +25,10 @@
 			<div id="video-control"> 
 			
 			<?php
+			     
+			      if ($node->field_live_stream_provider['und'][0]['value'] == 'edgecast')
+					{ 
+			 
 				// Video Player Code
 				$streamer_url = check_plain($node->field_streamer_link['und'][0]['value']); 
 				$height=511 ;
@@ -42,6 +46,11 @@
 							});</script>';
 				print $html;		
 				// End of Video Player Code
+					}else{
+						
+						print $node->field_kaltura_player_embed_code['und'][0]['value'];
+						
+					}
 			?>
 			</div>
 
