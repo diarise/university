@@ -13,7 +13,8 @@
 // Membership for the respective node
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
-    
+    global $user;
+
 ?>
 
 <?php if (kabbalah_content_access_get_article_membership($article_membership)){?>	
@@ -228,7 +229,7 @@
 		
 			<?php if (!kabbalah_content_access_get_article_membership($article_membership) && user_is_logged_in() ) {?>		
 				<div id="wrapperPrice">
-					<span class="buttonMember"><a href="http://idp.kabbalah.com/user">upgrade your membership</a></span>
+					<span class="buttonMember"><a href="http://idp.kabbalah.com/<?php print $user->uid; ?>/user">upgrade your membership</a></span>
 				</div>
 			<?php } elseif( !user_is_logged_in()) { ?>
 				<div id="wrapperPrice">
