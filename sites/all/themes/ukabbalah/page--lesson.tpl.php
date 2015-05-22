@@ -4,6 +4,8 @@
     <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 <?php 
 
+	global $user;
+	
 	//Get all the authors for this node
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
@@ -120,7 +122,7 @@
 						<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership) ) {?>		
 						
 							<span class="buttonMemberDesc">This is a <?php print $membership; ?> lesson</span>
-							<span class="buttonMember"><a href="http://idp.kabbalah.com/user">upgrade your membership</a></span>
+							<span class="buttonMember"><a href="http://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
 						
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
@@ -173,7 +175,7 @@
 						<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership) ) {?>		
 						
 							<span class="buttonMemberDesc">This is a <?php print $membership; ?> lesson</span>
-							<span class="buttonMember"><a href="http://idp.kabbalah.com/user">upgrade your membership</a></span>
+							<span class="buttonMember"><a href="http://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
 						
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
@@ -409,7 +411,7 @@
 		<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership)) {?>		
 			<div class="wrapperLoginBloc" id="wrapperPrice">
 				<span class="buttonMemberDesc">This is a <?php print $membership; ?> course</span>
-				<span class="buttonMember"><a href="http://idp.kabbalah.com/user">upgrade your membership</a></span>
+				<span class="buttonMember"><a href="http://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
 			</div>
 				<?php } elseif( !user_is_logged_in()) { ?>
 			<div class="wrapperLoginBloc" id="wrapperPrice">
