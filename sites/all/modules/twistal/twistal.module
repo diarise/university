@@ -333,8 +333,8 @@ function twistal_field_formatter_view($entity_type, $entity, $field, $instance, 
 	
 	if (arg(0) == 'node' && is_numeric(arg(1))) $nodeid = arg(1);
     $relatedVideos="/twistage/getnode/".$nodeid.".xml";
-	//return array(array('#markup'=>theme('jwplayer_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
-	return array(array('#markup'=>theme('sublime_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
+	return array(array('#markup'=>theme('jwplayer_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
+	//return array(array('#markup'=>theme('sublime_video', array('video'=>$video, 'width'=>$profile->width, 'height'=>$profile->height,'file'=>$relatedVideos, 'autoplay'=>$profile->autoplay))));
 }
 
 function twistage_hooks(){
