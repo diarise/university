@@ -75,11 +75,11 @@
 			$user_role = "";
 			if (array_key_exists('7', $user->roles) ) {	return $user_role = $user->roles['7'];	}
 			else 
-			if ( array_key_exists('6', $user->roles) || array_key_exists('17', $user->roles) ) {	return $user_role = $user->roles['6'];	}
+			if ( ( array_key_exists('6', $user->roles) ) || ( array_key_exists('17', $user->roles) ) ) {	return $user_role = $user->roles['6'];	}
 			else 
-			if ( array_key_exists('4', $user->roles) || array_key_exists('18', $user->roles) ) {	return $user_role = $user->roles['4']; }
+			if ( ( array_key_exists('4', $user->roles) ) || ( array_key_exists('18', $user->roles) ) ) {	return $user_role = $user->roles['4']; }
 			else
-			if ( array_key_exists('5', $user->roles) || array_key_exists('19', $user->roles) ) {	return $user_role = $user->roles['5']; }
+			if ( ( array_key_exists('5', $user->roles) ) || ( array_key_exists('19', $user->roles) ) ) {	return $user_role = $user->roles['5']; }
 		}
 		else 
 		{
