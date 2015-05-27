@@ -72,6 +72,7 @@
 		if( user_is_logged_in() )
 		{
 			global $user;
+			print_r( $user );
 			$user_role = "";
 			if (array_key_exists('7', $user->roles) ) {	return $user_role = $user->roles['7'];	}
 			else 
