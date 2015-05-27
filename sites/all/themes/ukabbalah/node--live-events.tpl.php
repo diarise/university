@@ -1,6 +1,7 @@
 <!-- test log in  -->
 
 <?php				
+	
 	$oDate = new DateTime($node->field_event_date['und'][0]['value']);
 	//$oDate->modify("-25200 second");
 	$sDate = $oDate->format('F jS, Y g:i A'); // Event Start Date Y H:i A
@@ -14,6 +15,8 @@
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
     global $user;
+	
+	print_r( $user );
 
 ?>
 
