@@ -36,6 +36,17 @@
 		$players[]=$player_id;
 		if(!is_string($video)) $jwplayer['video']=$video;
 		
+		
+		// Adding the audio download link
+		
+		$audio_download = '<div id="wrapperDownloadAudio">
+							<div class="buttonDownloadAudio">
+								<a href="http://twistassets.kabbalah.com/videos/'.$video->vid.'/formats/Small_640x360_300kbps_64kbps_h264/file.mp3" target="_blank"><span>Download audio	</span> <img src="/sites/all/themes/ukabbalah/images/audioDownloadBtn.jpg" alt="download audio"></a>
+							</div>
+						   </div>';
+		
+		
+		
 		  $ga_array = array();
 		  $ga_array['idstring'] = 'title';
 		  $ga_array['trackingobject'] = 'pageTracker';
@@ -55,6 +66,9 @@
 			'modes'=>$mode,
 			'ga'=> $ga_array,
 			);
+			
+		$jwplayer['suffix'][]= $audio_download;
+		
 		drupal_alter('jwplayer_settings',$jwplayer);
 		
 		if( _is_imobile() && $jwplayer['video']->dotsub_settings['autostart_subtitles'] == 0 )
@@ -65,6 +79,7 @@
 			$html = "<video src='".$video_url_for_html5."' controls preload='auto' poster='".$video_image_for_html5."' height='435' width='800'>
 						Your browser does not support the <code>video</code> element.
 					</video>";
+			$html .= $audio_download;		
 		}
 		else 
 		{
