@@ -15,8 +15,6 @@
 	$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 12 );
 	foreach( $vocab_terms as $t )	{	$article_membership = $t->name; }
     global $user;
-	
-	print_r( $user );
 
 ?>
 
