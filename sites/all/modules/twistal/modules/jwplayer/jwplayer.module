@@ -47,8 +47,8 @@
 		  
 		$jwplayer['player_id']=$player_id;
 		$jwplayer['settings']=array(
-			'height' => 435 ,//$height,
-			'width' => 800, //$width,
+			'height' => 528 ,//$height,
+			'width' => 940, //$width,
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
 			'skin'=> $skin,
