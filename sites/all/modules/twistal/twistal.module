@@ -166,13 +166,13 @@ function twistal_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 	
 	if($defaults['twistage_existing_videos']){
 		
-		$twistage_url = "http://twistassets.kabbalah.com/videos/".$defaults['twistage_existing_videos']."/screenshots/150w.jpg";
+		$twistage_url = "https://twistassets.kabbalah.com/videos/".$defaults['twistage_existing_videos']."/screenshots/150w.jpg";
 		$default_image = '<img src="'.$twistage_url.'" width="150">';
 		$description = '';
 		if(!isset($list_opts[$defaults['twistage_existing_videos']])){
 			$vid=$defaults['twistage_existing_videos'];
 			$api=twistal(0);
-			$video=$api->load_from_url('http://twistassets.kabbalah.com/videos/'.$vid.'.json',array());
+			$video=$api->load_from_url('https://twistassets.kabbalah.com/videos/'.$vid.'.json',array());
 			$twistvid=new twistage_video();
 			$twistvid->import($video,$api->profile->pid);
 			if(!$twistvid->save()){
@@ -342,7 +342,7 @@ function twistage_hooks(){
 }
 function import_twistal_video($vid){
 	$api=twistal(0);
-	$video=$api->load_from_url('http://twistassets.kabbalah.com/videos/'.$vid.'.json',array());
+	$video=$api->load_from_url('https://twistassets.kabbalah.com/videos/'.$vid.'.json',array());
 	$twistvid=new twistage_video();
 	$twistvid->import($video,$api->profile->pid);
 	if(!$twistvid->save()){
@@ -422,7 +422,7 @@ function twistal_jwplayer_settings_alter(&$jwplayer){
 				break;
 		}
 	}
-	$jwplayer['settings']['playlist'][0]['image']="http://twistassets.kabbalah.com/videos/$video_id/screenshots/$width"."w.jpg";
+	$jwplayer['settings']['playlist'][0]['image']="https://twistassets.kabbalah.com/videos/$video_id/screenshots/$width"."w.jpg";
 	//$jwplayer['settings']['playlist'][0]['ga']=array('idstring'=>"title",'trackingobject'=>"pageTracker");
 	$jwplayer['settings']['playlist'][0]['sources']=array();
 	if(isset($assets['mobile']) && isset($assets['medium'])) $jwplayer['settings']['playlist'][0]['sources'][] = array('file'=>str_replace('file.mp4','play.mp4',$assets[myDevice()->isMobile()?'mobile':'medium']->download_url), 'label'=>myDevice()->isMobile()?'Mobile':'Medium');
@@ -660,7 +660,7 @@ catch(exception $e){
   $relatedRss.=  '<item>';
   $relatedRss.= '<title>'.$value->title.'</title>';
   $relatedRss.= '<link> /'.drupal_get_path_alias('node/'.$value->nid).'</link>';
-  $relatedRss.=   '<media:thumbnail url="http://twistassets.kabbalah.com/videos/'.$value->field_lesson_video_twistage_existing_videos.'/screenshots/150w.jpg"/>';
+  $relatedRss.=   '<media:thumbnail url="https://twistassets.kabbalah.com/videos/'.$value->field_lesson_video_twistage_existing_videos.'/screenshots/150w.jpg"/>';
   //$relatedRss.=  '<media:content url="http://example.com/videos/28839.mp4" type="video/mp4" />';
   $relatedRss.=  '</item>';
   }
