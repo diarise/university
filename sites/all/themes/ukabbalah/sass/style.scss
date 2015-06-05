@@ -4300,3 +4300,6 @@ input[type="submit"] {
 .page-user #user-login-form .form-item.form-type-checkbox.form-item-remember-me label {
     width: 185px !important;
 }
+.page-user.page-user-password #user_page_content ul.tabs.primary{
+  display: none;
+}
