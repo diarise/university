@@ -4291,3 +4291,12 @@ input[type="submit"] {
     line-height: 1.42857;
     text-transform: uppercase;
 }
+.page-user #user-login-form .form-item.form-type-checkbox.form-item-remember-me{
+    float: left;
+}
+.page-user #user-login-form #edit-remember-me{
+    margin-left: 20px;
+}
+.page-user #user-login-form .form-item.form-type-checkbox.form-item-remember-me label {
+    width: 185px !important;
+}
