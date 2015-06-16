@@ -67,7 +67,7 @@
 			<?php if ( user_is_logged_in() ) {?>
 				
 			<?php } else {?>
-				<div id="popupNotLogin">Welcome to the Kabbalah University please <a href="/user/login">login</a> or <a href="https://idp.kabbalah.com">sign up</a> to have access to the videos <span>X</span></div>
+				<div id="popupNotLogin">Welcome to the Kabbalah University please <a href="https://idp.kabbalah.com/user/login">login</a> or <a href="https://idp.kabbalah.com">sign up</a> to have access to the videos <span>X</span></div>
 			<?php }?>
 		
 <!-- end popup -->
@@ -96,7 +96,7 @@
 				<a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="pipe">|</span>
 				<a href="https://idp.kabbalah.com/user" class="activeLink"><?php print $username; ?></a><span class="pipe">|</span><a href="/user/logout">Log Out</a>
 			<?php } else {?>
-				<a href="/user/login" class="activeLink">Log In</a><span class="pipe">|</span><a href="https://idp.kabbalah.com">Signup</a>
+				<a href="https://idp.kabbalah.com/user/login" class="activeLink">Log In</a><span class="pipe">|</span><a href="https://idp.kabbalah.com">Signup</a>
 			<?php }?>
 			</div>
 		</div>
