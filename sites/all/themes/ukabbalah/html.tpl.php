@@ -96,7 +96,7 @@
 				<a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="pipe">|</span>
 				<a href="https://idp.kabbalah.com/user" class="activeLink"><?php print $username; ?></a><span class="pipe">|</span><a href="/user/logout">Log Out</a>
 			<?php } else {?>
-				<a href="https://idp.kabbalah.com/user/login" class="activeLink">Log In</a><span class="pipe">|</span><a href="https://idp.kabbalah.com">Signup</a>
+				<a href="/user/login" class="activeLink">Log In</a><span class="pipe">|</span><a href="https://idp.kabbalah.com">Signup</a>
 			<?php }?>
 			</div>
 		</div>
