@@ -45,7 +45,7 @@ if(arg(1) == 'password') {?>
                     <span class="dividerOR">or</span>
                     <span class="newAccount">CREATE AN ACCOUNT</span><br>
                     <span class="inputBtn">
-                        <a class="submitForm" href="/registration"> see membership options</a>
+                        <a class="submitForm" href="https://idp.kabbalah.com"> see membership options</a>
                     </span>
                 </div>
 
