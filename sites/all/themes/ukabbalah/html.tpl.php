@@ -97,7 +97,7 @@
             <div id="loginWrapper">
                 <div id="userInfoWrapper">
                 <?php if ( user_is_logged_in() ) {?>
-                    <span><a href="https://idp.kabbalah.com/use" class="userActive"><?php print $username; ?></a><span class="gutterPipe">|</span></span>
+                    <span><a href="https://idp.kabbalah.com/user" class="userActive"><?php print $username; ?></a><span class="gutterPipe">|</span></span>
                     <span><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="gutterPipe">|</span></span>
                     <span><a href="/user/logout">Log Out</a></span>
                 <?php } else {?>
@@ -107,7 +107,7 @@
                     <div id="userInfoWrapperResponsive">
                         <ul>
                             <?php if ( user_is_logged_in() ) {?>
-                            <li><a class="userActiveResponsive" href="https://idp.kabbalah.com/use"><?php print $username; ?></a>
+                            <li><a class="userActiveResponsive" href="https://idp.kabbalah.com/user"><?php print $username; ?></a>
 
                                 <ul>
                                     <li><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a>
