@@ -81,52 +81,73 @@
 <!-- end popup -->
 
 <!-- new header -->
-<div id="newTopHeaderWrapper">
-	<div id="logoKabblah">
-		<a href='http://kabbalah.com'><img src='/sites/all/themes/ukabbalah/images/logo_kabbalah_centre.png' alt='Kabbalah Center logo' /></a>
-	</div>
-	<div id="siteName">
-		KABBALAH UNIVERSITY
-	</div>
-	<div id="headerSearch">
-		<div id="search">
-			<?php //print $search;?>
-			<a href="/search">
-			 <img src="/sites/all/themes/ukabbalah/images/search-icon_new-1.png" alt="search">
-			</a>
-		</div>
-		<div id="usersessionsession">
-			<div class="localSite">
-				Learn Transform Connect
-			</div>
-			<div class="usersessionsession">
-				<?php if ( user_is_logged_in() ) {?>
-				<a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="pipe">|</span>
-				<a href="https://idp.kabbalah.com/user" class="activeLink"><?php print $username; ?></a><span class="pipe">|</span><a href="/user/logout">Log Out</a>
-			<?php } else {?>
-				<a href="https://idp.kabbalah.com/user/login" class="activeLink">Log In</a><span class="pipe">|</span><a href="https://idp.kabbalah.com">Signup</a>
-			<?php }?>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="outerMenu">
-	<div id="menuLocalWrapper">
-		<div id="mobileMenu">
-			<?php print render($mobileMenu);?>
-		</div>
-		<div id="desktopMenu">
-			<?php print render($menu);?>
-		</div>
-		<div id="searchFloating">
-			<a href="/search"><img src="/sites/all/themes/ukabbalah/images/search_logo_new.png" alt="search"></a>
-		</div>
-		<div id="donationWrapper">
-			<span class="languageLink"><a target="_blank" href="http://universidad.kabbalah.com">Español</a></span>
-			<span class="donate"><a target="_blank" href="https://kabbalah.com/donate">DONATE</a></span>
-		</div>
-	</div>
-</div>
+<div id="newHeaderWrapper">
+            <div id="logoWrapper">
+                <a href="http://kabbalah.com/"></a>
+                <a class="localLogo" href="/"></a>
+            </div>
+            <div id="searchWrapper">
+                <div class="searchWrapper">
+	                <form method="get" action="/search">
+	                	<input type="text" placeholder="search" name="title" />
+	                	<!-- <input type="submit" class="form-submit" value="Search" name="" id="edit-submit-search"> -->
+	                </form>
+                </div>
+            </div>
+            <div id="loginWrapper">
+                <div id="userInfoWrapper">
+                <?php if ( user_is_logged_in() ) {?>
+                    <span><a href="https://idp.kabbalah.com/use" class="userActive"><?php print $username; ?></a><span class="gutterPipe">|</span></span>
+                    <span><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="gutterPipe">|</span></span>
+                    <span><a href="/user/logout">Log Out</a></span>
+                <?php } else {?>
+                    <span><a href="https://idp.kabbalah.com/user/login" class="activeLink">Log In</a><span class="gutterPipe">|</span>
+                    </span><span><a href="https://idp.kabbalah.com">Signup</a></span>
+                <?php }?>
+                    <div id="userInfoWrapperResponsive">
+                        <ul>
+                            <?php if ( user_is_logged_in() ) {?>
+                            <li><a class="userActiveResponsive" href="https://idp.kabbalah.com/use"><?php print $username; ?></a>
+
+                                <ul>
+                                    <li><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a>
+
+                                    </li>
+                                    <li><a href="/user/logout">Log Out</a>
+
+                                    </li>
+                                </ul>
+                            </li>
+                            <?php } else {?>
+
+                             <li><a href="https://idp.kabbalah.com/user/login" class="activeLink userActiveResponsive">Log In</a>
+                                    <ul><li><a href="https://idp.kabbalah.com">Signup</a></li></ul>
+                             </li>
+                            
+                            <?php }?>
+
+                        </ul>
+                    </div>
+                </div>
+                <div id="donateBtn"><a target="_blank" href="https://kabbalah.com/donate">DONATE</a></div>
+            </div>
+        </div>
+        <div id="newHeaderMenuWrapper">
+            <div id="newHeaderWrapperMobileMenu">
+                <!-- <span class="newHeaderWrapperMobileMenuLogo"><img src="/sites/all/themes/ukabbalah/images/menu.svg" alt=""/></span> -->
+                <div id="reposiveMobileMenu"><?php print render($mobileMenu);?></div>	
+                <a href="/"><span class="newHeaderWrapperLocalMenuLogo"></span></a>
+                <a href="/search"><span class="newHeaderWrapperSearchMenuLogo"></span></a>
+            </div>
+            <div id="newHeaderWrapperMainMenu">
+            <?php print render($menu);?>
+        
+            </div>
+            <div id="newHeaderWrapperLanguage">
+                <span><a target="_blank" href="http://universidad.kabbalah.com">Español</a></span>
+            </div>
+        </div>
+<?php //print render($mobileMenu);?>
 <!-- end new header --> 
   
   
