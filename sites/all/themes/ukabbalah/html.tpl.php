@@ -55,6 +55,14 @@
 </head>
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <?php print $page_top; ?>
 <?php
 	global $user;
@@ -129,16 +137,36 @@
   	<section id="SocialMediaWrapper">
 		<div id="SocialMedia">
 			<div id="fpSocialMediaBlock1">
-				<span class="icon-twitter"></span>
-				<?php  print render($ktweet);?>
+				<div class="fpSocialMediaBlockTitle"><a href="https://twitter.com/ukabbalah" target="_blank"><img src="/sites/all/themes/ukabbalah/images/tw_small_blue.svg" alt=""> Connect to Ukabbalah</a></div>
+				<div class="fpSocialMediaWrapper">
+					<?php  print render($ktweet);?>
+				</div>	
+				
 			</div>
 			<div id="fpSocialMediaBlock2">
-				<?php  print render($kfacebook);?>
+				<div class="fpSocialMediaBlockTitle"><a href="https://www.facebook.com/ukabbalah" target="_blank"><img src="/sites/all/themes/ukabbalah/images/fb_small_blue.svg" alt=""> Like Ukabbalah</a></div>
+				<div class="fpSocialMediaWrapper">
+					<div class="centerPlugin">
+						<!-- facebook plugin -->
+						<div class="fb-page" data-href="https://www.facebook.com/ukabbalah" data-width="248" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+						    <div class="fb-xfbml-parse-ignore">
+						        <blockquote cite="https://www.facebook.com/ukabbalah"><a href="https://www.facebook.com/ukabbalah">Kabbalah University</a>
+						        </blockquote>
+						    </div>
+						</div>
+						<!-- end facebook plugin -->
+					</div>
+					
+				</div>
+				
+				<?php  //print render($kfacebook);?>
 			</div>
 		    <div id="fpSocialMediaBlock3">
-		    	<span class="icon-testimonial"></span>
-		    	<?php  print render($ktestimonials);?>
-		    </div>	      	
+		    	<div class="fpSocialMediaBlockTitle"><img src="/sites/all/themes/ukabbalah/images/testimonials_small_grey.svg" alt=""> Testimonials</div>
+			    <div class="fpSocialMediaWrapper">
+			    	<?php  print render($ktestimonials);?>
+			    </div>	
+		    </div>      	
 		</div>
 	</section>
 	<!-- End of Social Media Section -->
@@ -150,11 +178,32 @@
 			<section><?php  print render($footer2);?></section>
 			<section><?php  print render($footer3);?></section>
 			<section><?php  print render($footer4);?></section>
+			<section><?php  print render($footer5);?></section>
+			<section id="findKabbalahCentreWrapper">
+				<div id="findKabbalahCentre"><?php  print render($footer6);?></div>
+				<div id="studentSupport"><?php  print render($studentsupport);?></div>  
+			</section>
 		</nav><!--end of footerlinks-->
-		<div>
-			<?php print render($copywrite);?>
-		</div><!--end of copywrite-->
+		<!--copywrite section-->
+			<div id="copywriteWrapper">
+				<div id="copywriteSection"><?php print render($copywrite);?></div>
+				<div id="socialMediaSection"><?php print render($socialmedia);?></div>
+			</div>
+		<!--end of copywrite-->
 		<!--end of footerwrapper-->
+
+		<!-- footer by sites logo -->
+		<div id="footerBySiteIcons">
+			<div id="footerBySiteIconsWrapper">
+				<div class="footerBySiteIcons"><a href="http://www.kabbalah.com/" target="_blank">kabbalah.com</a></div>
+				<div class="footerBySiteIcons"><a href="http://livingwisdom.kabbalah.com/" target="_blank">living wisdom</a></div>
+				<div class="footerBySiteIcons"><a href="http://university.kabbalah.com/" target="_blank">kabbalah university</a></div>
+				<div class="footerBySiteIcons"><a href="http://www.zohar.com/" target="_blank">the zohar</a></div>
+				<div class="footerBySiteIcons"><a href="http://community.kabbalah.com/" target="_blank">community</a></div>
+				<div class="footerBySiteIcons"><a href="https://store.kabbalah.com/" target="_blank">online store</a></div>
+			</div>
+		</div>
+		<!-- end footer by sites logo -->
 	</footer>
 	<!-- END OF FOOTER -->
 
