@@ -1,6 +1,5 @@
 <?php 
 
-	
 	if( $row->_field_data['nid']['entity']->type == "lesson")
 	{	
 		if( $row->_field_data['nid']['entity']->field_type_of_lesson['und'][0]['tid']== 554 ) 
@@ -10,6 +9,7 @@
 			$output = $course_nid->field_image_cdn_link['und'][0]['value'];
 		} 
 	}
-	print "<span class = 'imagesCont'><img src ='".$output."' class = 'theImage'  alt=''/>";
+	if($output)	print "<span class = 'imagesCont'><img src ='".$output."' class = 'theImage'  alt=''/>";
+	else print $output;	
 	
 ?>
