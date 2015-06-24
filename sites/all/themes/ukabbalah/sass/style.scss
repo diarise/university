@@ -150,6 +150,15 @@ transition: all 3s ease-in-out;
     margin-top: 12px;
     width: 258px;
 }
+input#submitSearchBtn {
+    border: medium none !important;
+    cursor: pointer;
+    float: right;
+    margin-top: -46px !important;
+    position: relative;
+    right: -10px;
+    width: 40px !important;
+}
 .smallScreenHeader #logoWrapper > a {
     width: 52px;
 }
