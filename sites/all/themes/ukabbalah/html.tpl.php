@@ -90,7 +90,7 @@
                 <div class="searchWrapper">
 	                <form method="get" action="/search">
 	                	<input type="text" placeholder="search" name="keys" />
-	                	<input type="submit" class="form-submit" value="Search" name="" id="submitSearchBtn">
+	                	<input type="submit" class="form-submit" value="" name="" id="submitSearchBtn">
 	                </form>
                 </div>
             </div>
