@@ -1092,7 +1092,7 @@ footer>nav+div #block-block-2 a :hover {
 #footerBySiteIcons {
     background-color:#433a3a;
     float:left;
-    width:100%
+    width:100%;
 }
 #footerBySiteIconsWrapper {
     height:90px;
@@ -1102,18 +1102,19 @@ footer>nav+div #block-block-2 a :hover {
     padding-right:20px
 }
 .footerBySiteIcons {
-    float:left;
-    margin-top:24px;
-    width:16.66%
+    float: left;
+    height: 90px;
+    width: 16.66%;
 }
 .footerBySiteIcons>a {
-    color:#fff;
-    display:inline-block;
-    font-size:15px;
-    font-weight:bold;
-    height:47px;
-    padding-top:10px;
-    text-transform:capitalize
+    background-position: left center!important;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+    padding-top: 40px;
+    text-transform: capitalize;
 }
 .footerBySiteIcons:nth-child(1)>a {
     background:url("../images/kabbalah_centre_icon.svg") no-repeat;
@@ -1121,7 +1122,7 @@ footer>nav+div #block-block-2 a :hover {
 }
 .footerBySiteIcons:nth-child(2)>a {
     background:url("../images/living_wisdom_icon.svg") no-repeat;
-    padding-left:47px
+  padding-left:47px
 }
 .footerBySiteIcons:nth-child(3)>a {
     background:url("../images/ukabbalah_icon.svg") no-repeat;
