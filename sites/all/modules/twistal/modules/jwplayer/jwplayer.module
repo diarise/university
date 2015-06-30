@@ -41,7 +41,7 @@
 		
 		$audio_download = '<div id="wrapperDownloadAudio">
 							<div class="buttonDownloadAudio">
-								<a href="https://twistassets.kabbalah.com/videos/'.$video->vid.'/formats/Small_640x360_300kbps_64kbps_h264/file.mp3" target="_blank"><span>Download audio	</span> <img src="/sites/all/themes/ukabbalah/images/audioDownloadBtn.jpg" alt="download audio"></a>
+								<a href="http://twistassets.kabbalah.com/videos/'.$video->vid.'/formats/Small_640x360_300kbps_64kbps_h264/file.mp3" target="_blank"><span>Download audio	</span> <img src="/sites/all/themes/ukabbalah/images/audioDownloadBtn.jpg" alt="download audio"></a>
 							</div>
 						   </div>';
 		
