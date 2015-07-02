@@ -228,7 +228,52 @@
 	</footer>
 	<!-- END OF FOOTER -->
 
- <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+<?php if ( user_is_logged_in() ) { 
+
+	global $user;
+    $username = $user->name;
+	
+	foreach($user->roles as $key => $role){
+      $userrole = $role;
+    }
+
+?>
+
+<script type="text/javascript">
+    var _cio = _cio || [];
+    (function() {
+      var a,b,c;a=function(f){return function(){_cio.push([f].
+      concat(Array.prototype.slice.call(arguments,0)))}};b=["load","identify",
+      "sidentify","track","page"];for(c=0;c<b.length;c++){_cio[b[c]]=a(b[c])};
+      var t = document.createElement('script'),
+          s = document.getElementsByTagName('script')[0];
+      t.async = true;
+      t.id    = 'cio-tracker';
+      t.setAttribute('data-site-id', '031f2e944b86d84cf2ef');
+      t.src = 'https://assets.customer.io/assets/track.js';
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+
+<script type="text/javascript">
+    _cio.identify({
+      // Required attributes
+      id: <?php echo $user->uid;?>,           // Unique id for the currently signed in user in your application.
+      email: '<?php echo $user->mail;?>', // Email of the currently signed in user.
+      created_at: <?php echo $user->created;?>,   // Timestamp in your system that represents when
+                                // the user first signed up. You'll want to send it
+                                // as seconds since the epoch.
+
+      // Optional (these are examples. You can name attributes what you wish)
+
+        plan_name : '<?php echo $userrole; ?>' // To use the example segments, set this to 'free' or 'premium'.
+    });
+  </script>
+
+
+<?php } ?>
+	
+<script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
 <style>
   @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
 </style>
