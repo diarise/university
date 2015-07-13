@@ -545,92 +545,92 @@ a.userActiveResponsive{
 
 @media (max-width: 980px) {
 
-     #newHeaderWrapperMainMenu,.newHeaderWrapperSearchMenuLogo{
-         display: none!important;
-     }
-     .smallScreenHeader #searchWrapper{
-         display: none;
-    }
-     .smallScreenHeader #logoWrapper .localLogo{
-         display: none;
-         width: 27%;
-    }
-     #loginWrapper{
-         width: 73%;
-     }
-     .smallScreenHeader #logoWrapper {
-         width: 82px;
-     }
-     .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
-         background-position: center center;
-         background-size: 178px auto;
-         display: block;
-         margin-left: 4px;
-         width: 178px;
-     }
+    //  #newHeaderWrapperMainMenu,.newHeaderWrapperSearchMenuLogo{
+    //      display: none!important;
+    //  }
+    //  .smallScreenHeader #searchWrapper{
+    //      display: none;
+    // }
+    //  .smallScreenHeader #logoWrapper .localLogo{
+    //      display: none;
+    //      width: 27%;
+    // }
+    //  #loginWrapper{
+    //      width: 73%;
+    //  }
+    //  .smallScreenHeader #logoWrapper {
+    //      width: 82px;
+    //  }
+    //  .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
+    //      background-position: center center;
+    //      background-size: 178px auto;
+    //      display: block;
+    //      margin-left: 4px;
+    //      width: 178px;
+    //  }
 
-     .smallScreenHeader #newHeaderWrapperMobileMenu,
-     .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-         margin-right: 0;
-         width: 259px;
-     }
-     .newHeaderWrapperMobileMenuLogo {
-         margin-right: 0;
-     }
-     #newHeaderWrapperLanguage a{
-         font-size: 1em;
-         padding: 3px 22px;
-    }
-     #newHeaderWrapperLanguage > span,
-     #newHeaderWrapperLanguage,
-     #donateBtn{
-         width: auto;
-     }
-     #donateBtn a{
-         font-size: 1em;
-         padding: 3px 18px;
-     }   
+    //  .smallScreenHeader #newHeaderWrapperMobileMenu,
+    //  .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
+    //      margin-right: 0;
+    //      width: 259px;
+    //  }
+    //  .newHeaderWrapperMobileMenuLogo {
+    //      margin-right: 0;
+    //  }
+    //  #newHeaderWrapperLanguage a{
+    //      font-size: 1em;
+    //      padding: 3px 22px;
+    // }
+    //  #newHeaderWrapperLanguage > span,
+    //  #newHeaderWrapperLanguage,
+    //  #donateBtn{
+    //      width: auto;
+    //  }
+    //  #donateBtn a{
+    //      font-size: 1em;
+    //      padding: 3px 18px;
+    //  }   
 }
 @media (max-width: 377px){
-     .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
-         /*background-position: -79px;*/
-         width: 117px;
-         background: none;
-     }
-     .smallScreenHeader .newHeaderWrapperLocalMenuLogo:after{
-         color: #8dceff;
-         content: "Kabbalah University";
-         font-size: 16px;
-         font-weight: bold;
-         position: relative;
-         top: 1px;
-     }
-     .smallScreenHeader #newHeaderWrapperMobileMenu, 
-     .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-         width: 203px;
-     }
+     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
+     //     /*background-position: -79px;*/
+     //     width: 117px;
+     //     background: none;
+     // }
+     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo:after{
+     //     color: #8dceff;
+     //     content: "Kabbalah University";
+     //     font-size: 16px;
+     //     font-weight: bold;
+     //     position: relative;
+     //     top: 1px;
+     // }
+     // .smallScreenHeader #newHeaderWrapperMobileMenu, 
+     // .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
+     //     width: 203px;
+     // }
 }
 @media (max-width: 326px) {
     
-     .smallScreenHeader #loginWrapper {
-         width: 208px;
-     }
-     .smallScreenHeader #userInfoWrapper{
-         margin-left: 5px;
-     }
-     .smallScreenHeader #donateBtn{
-         margin-left: 5px;
-     }
-     .smallScreenHeader #logoWrapper {
-         width: 76px;
-     }
-     .smallScreenHeader #newHeaderWrapperMobileMenu, 
-     .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-         width: 183px;
-     }
-     .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
-         width: 100px;
-     }
+     // .smallScreenHeader #loginWrapper {
+     //     width: 208px;
+     // }
+     // .smallScreenHeader #userInfoWrapper{
+     //     margin-left: 5px;
+     // }
+     // .smallScreenHeader #donateBtn{
+     //     margin-left: 5px;
+     // }
+     // .smallScreenHeader #logoWrapper {
+     //     width: 76px;
+     // }
+     // .smallScreenHeader #newHeaderWrapperMobileMenu, 
+     // .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
+     //     width: 183px;
+     // }
+     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
+     //     width: 100px;
+     // }
 
 }
 #sidr-0 {
