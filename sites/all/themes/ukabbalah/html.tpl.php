@@ -75,7 +75,7 @@
 			<?php if ( user_is_logged_in() ) {?>
 				
 			<?php } else {?>
-				<div id="popupNotLogin">Welcome to the Kabbalah University please <a href="https://idp.kabbalah.com/user/login">login</a> or <a href="https://idp.kabbalah.com">sign up</a> to have access to the videos <span>X</span></div>
+				<div id="popupNotLogin">Welcome to the Kabbalah University please <a href="https://idp.kabbalah.com/user/login">Log In</a> or <a href="https://idp.kabbalah.com">sign up</a> to have access to the videos <span>X</span></div>
 			<?php }?>
 		
 <!-- end popup -->
@@ -102,7 +102,7 @@
                     <span><a href="/user/logout">Log Out</a></span>
                 <?php } else {?>
                     <span><a href="https://idp.kabbalah.com/user/login" class="activeLink">Log In</a><span class="gutterPipe">|</span>
-                    </span><span><a href="https://idp.kabbalah.com">Signup</a></span>
+                    </span><span><a href="https://idp.kabbalah.com">Sign Up</a></span>
                 <?php }?>
                     <div id="userInfoWrapperResponsive">
                         <ul>
@@ -121,7 +121,7 @@
                             <?php } else {?>
 
                              <li><a href="https://idp.kabbalah.com/user/login" class="activeLink userActiveResponsive">Log In</a>
-                                    <ul><li><a href="https://idp.kabbalah.com">Signup</a></li></ul>
+                                    <ul><li><a href="https://idp.kabbalah.com">Sign Up</a></li></ul>
                              </li>
                             
                             <?php }?>
@@ -154,43 +154,41 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
 
-	<!-- Social Media Section -->
-  	<section id="SocialMediaWrapper">
-		<div id="SocialMedia">
-			<div id="fpSocialMediaBlock1">
-				<div class="fpSocialMediaBlockTitle"><a href="https://twitter.com/ukabbalah" target="_blank"><img src="/sites/all/themes/ukabbalah/images/tw_small_blue.svg" alt=""> Connect to Ukabbalah</a></div>
-				<div class="fpSocialMediaWrapper">
-					<?php  print render($ktweet);?>
-				</div>	
-				
-			</div>
-			<div id="fpSocialMediaBlock2">
-				<div class="fpSocialMediaBlockTitle"><a href="https://www.facebook.com/ukabbalah" target="_blank"><img src="/sites/all/themes/ukabbalah/images/fb_small_blue.svg" alt=""> Like Ukabbalah</a></div>
-				<div class="fpSocialMediaWrapper">
-					<div class="centerPlugin">
-						<!-- facebook plugin -->
-						<div class="fb-page" data-href="https://www.facebook.com/ukabbalah" data-width="248" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
-						    <div class="fb-xfbml-parse-ignore">
-						        <blockquote cite="https://www.facebook.com/ukabbalah"><a href="https://www.facebook.com/ukabbalah">Kabbalah University</a>
-						        </blockquote>
-						    </div>
-						</div>
-						<!-- end facebook plugin -->
-					</div>
-					
-				</div>
-				
-				<?php  //print render($kfacebook);?>
-			</div>
-		    <div id="fpSocialMediaBlock3">
-		    	<div class="fpSocialMediaBlockTitle"><img src="/sites/all/themes/ukabbalah/images/testimonials_small_grey.svg" alt=""> Testimonials</div>
-			    <div class="fpSocialMediaWrapper">
-			    	<?php  print render($ktestimonials);?>
-			    </div>	
-		    </div>      	
-		</div>
-	</section>
-	<!-- End of Social Media Section -->
+  <!-- Social Media Section -->
+    <section id="SocialMediaWrapper">
+    <div id="SocialMedia">
+      <div id="fpSocialMediaBlock1">
+        <div class="fpSocialMediaBlockTitle"><a href="https://twitter.com/ukabbalah" target="_blank"></a></div>
+        <div class="fpSocialMediaWrapper">
+          <?php  print render($ktweet);?>
+        </div>  
+        
+      </div>
+      <div id="fpSocialMediaBlock2">
+        <div class="fpSocialMediaWrapper">
+
+            <!-- facebook plugin -->
+            <div class="fb-page" data-href="https://www.facebook.com/ukabbalah" data-width="420" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false">
+              <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="https://www.facebook.com/ukabbalah">
+                  <a href="https://www.facebook.com/ukabbalah">Kabbalah University</a>
+                </blockquote>
+              </div>
+            </div>
+            <!-- end facebook plugin -->
+          
+        </div>
+
+      </div>
+                
+    </div>
+    <div id="fpSocialMediaBlock3">
+      <div class="fpSocialMediaWrapper">
+          <?php  print render($ktestimonials);?>
+      </div>  
+    </div>
+  </section>
+  <!-- End of Social Media Section -->
 
 	<!-- FOOTER -->
 	<footer>

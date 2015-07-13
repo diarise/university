@@ -22,10 +22,10 @@
 
     if (scroll >= scrollHeight) {
       $("#newHeaderMenuWrapper").addClass("menuScrolling");
-      $("#newHeaderMenuWrapper").stop().fadeTo(800, 0.9); // fade back in
+      $("#newHeaderMenuWrapper").stop().fadeTo(800); // fade back in
     } else {
       $("#newHeaderMenuWrapper").removeClass("menuScrolling");
-      $("#newHeaderMenuWrapper").stop().fadeTo(800, 1); // fade out
+      $("#newHeaderMenuWrapper").stop().fadeTo(800); // fade out
     }      
                 
   });
@@ -35,15 +35,19 @@
         //if (($(window).width() <= 1450) && ($(window).width() >= 768))
         if ($(window).width() < 1450)  {
             $('#newHeaderWrapper, #newHeaderMenuWrapper').addClass('smallScreenHeader');
+            $( "ul.nice-menu > li:last-child > a" ).replaceWith( "<a href='#' class='plusIcone'>+</a>" );
         } else if ($(window).width() >= 1450) {
             $('#newHeaderWrapper, #newHeaderMenuWrapper').removeClass('smallScreenHeader');
+            $( "ul.nice-menu > li:last-child > a" ).replaceWith( "<a href='#'>KC Websites</a>" );
         }
 
         $(window).resize(function () {
             if ($(window).width() < 1450) {
                 $('#newHeaderWrapper, #newHeaderMenuWrapper').addClass('smallScreenHeader');
+                $( "ul.nice-menu > li:last-child > a" ).replaceWith( "<a href='#' class='plusIcone'>+</a>" );
             } else if ($(window).width() >= 1450) {
                 $('#newHeaderWrapper, #newHeaderMenuWrapper').removeClass('smallScreenHeader');
+                $( "ul.nice-menu > li:last-child > a" ).replaceWith( "<a href='#'>KC Websites</a>" );
             }
         });
  	    }); 
