@@ -115,11 +115,37 @@
                 "width" : ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1) ,
             });
 
+            // calculation of the twitter block width
+
+            $("#fpSocialMediaBlock1").css({
+                "width" : ($("#SocialMediaWrapper").find("#SocialMedia").outerWidth() - 500) ,
+            });
+            $("#fpSocialMediaBlock1 .fpSocialMediaWrapper").css({
+                "width" : ($("#SocialMediaWrapper").find("#fpSocialMediaBlock1").outerWidth() - 45) ,
+            });
+            $(".fpSocialMediaWrapper .views-row.views-row-1.views-row-odd.views-row-first, .fpSocialMediaWrapper .views-row.views-row-2.views-row-even.views-row-last").css({
+                "width" : ($("#SocialMediaWrapper").find("#fpSocialMediaBlock1 .fpSocialMediaWrapper").outerWidth() / 2 - 10) ,
+            });
+
         });
 
         $(window).resize(function () {
 
+            $("#newHeaderWrapperMainMenu").css({
+                "width" : ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1) ,
+            });
 
+            // calculation of the twitter block width
+
+            $("#fpSocialMediaBlock1").css({
+                "width" : ($("#SocialMediaWrapper").find("#SocialMedia").outerWidth() - 500) ,
+            });
+             $("#fpSocialMediaBlock1 .fpSocialMediaWrapper").css({
+                "width" : ($("#SocialMediaWrapper").find("#fpSocialMediaBlock1").outerWidth() - 45) ,
+            });
+            $(".fpSocialMediaWrapper .views-row.views-row-1.views-row-odd.views-row-first, .fpSocialMediaWrapper .views-row.views-row-2.views-row-even.views-row-last").css({
+                "width" : ($("#SocialMediaWrapper").find("#fpSocialMediaBlock1 .fpSocialMediaWrapper").outerWidth() / 2 - 10) ,
+            });
 
              $.each($("#loginWrapper"), function(){
                 var loginWrapperWidth = $(this).outerWidth();
