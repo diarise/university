@@ -8,9 +8,9 @@
 	
 	});
 	
-	$(window).scroll(function () {
-        $('#menuLocalWrapper').toggleClass('scrolling', $(window).scrollTop() > $('#outerMenu').offset().top);
-    });
+	// $(window).scroll(function () {
+ //        $('#menuLocalWrapper').toggleClass('scrolling', $(window).scrollTop() > $('#outerMenu').offset().top);
+ //    });
 	
 	
 	
