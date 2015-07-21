@@ -57,19 +57,8 @@
 
 
 <div id="courseMarketingPageContentWrapper" class="lessonsCourseListWrapper">
-<div class="lessonsCourseList"><p>more lessons in this course</p></div> 
-<?php print render($page['marketinglessoneventcollection']); ?>
-<!--<div class="lessonsCourseList">
-	<h1>1.6 what you desire</h1>
-	<span>teacher: Yehuda Berg</span>
-	<span>23 min</span>
-</div>
-<div class="lessonsCourseList">
-	<h1>1.7 lasting fulfillment</h1>
-	<span>teacher: Yehuda Berg</span>
-	<span>23 min</span>
-</div>-->      
-
+	<div class="lessonsCourseList"><p>more lessons in this course</p></div> 
+	<?php print render($page['marketinglessonlessoncollection']); ?>
 </div>
 
 <div id="contactMarketingPageContentWrapper">
