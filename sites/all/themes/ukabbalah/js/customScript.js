@@ -32,7 +32,7 @@
 
     
       $(document).ready(function() {
-        $("#bannerMarketingPageImg").css('background-image', 'url(' + $("#bannerMarketingPageImg img").attr("src") + ')');
+        // $("#bannerMarketingPageImg").css('background-image', 'url(' + $("#bannerMarketingPageImg img").attr("src") + ')');
         $.each($(".courseMarketingPageContent"), function(){
             $(this).find(".courseMarketingPageContentImg").css('background-image', 'url(' + $(this).find("img:hidden").attr("src") + ')');
         });
