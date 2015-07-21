@@ -30,8 +30,15 @@
                 
   });
 
-    // wind resize
+    
       $(document).ready(function() {
+        $.each($(".courseMarketingPageContent"), function(){
+            $(this).find(".courseMarketingPageContentImg").css('background-image', 'url(' + $(this).find("img:hidden").attr("src") + ')');
+        });
+        $(".courseMarketingPageContentImg").css({
+                "height" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() + 1) ,
+            });
+        // wind resize
         //if (($(window).width() <= 1450) && ($(window).width() >= 768))
         if ($(window).width() < 1450)  {
             $('#newHeaderWrapper, #newHeaderMenuWrapper').addClass('smallScreenHeader');
