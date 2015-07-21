@@ -49,6 +49,10 @@
         }
 
         $(window).resize(function () {
+            $(".courseMarketingPageContentImg").css({
+                "height" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() + 1) ,
+            });
+            
             if ($(window).width() < 1450) {
                 $('#newHeaderWrapper, #newHeaderMenuWrapper').addClass('smallScreenHeader');
                 $( "ul.nice-menu > li:last-child > a" ).replaceWith( "<a href='#' class='plusIcone'>+</a>" );
