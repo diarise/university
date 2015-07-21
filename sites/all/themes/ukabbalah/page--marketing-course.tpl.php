@@ -1,5 +1,5 @@
 <div id="bannerMarketingPage" class="bannerMarketingPageImgWrapper">
-  <div id="bannerMarketingPageImg" style="background-image: url("<?php print $node->field_image_cdn_link['und'][0]['value']; ?>");"><img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>" alt="" /></div>
+  <div id="bannerMarketingPageImg" style="background-image: url(<?php print $node->field_image_cdn_link['und'][0]['value']; ?>);"><img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>" alt="" /></div>
 <div class="bannerMarketingPageContent">
 	<div id="bannerMarketingPageTeacherInfo"><div>Teachers:</div> 
 		<span>
