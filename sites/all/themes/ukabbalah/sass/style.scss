@@ -5274,10 +5274,14 @@ a.readMoreLinkMarketing {
     height: 439px;
 }
 #bannerMarketingPageImg.videoWrapper {
+    background: rgba(0, 0, 0, 0) url("/sites/all/themes/ukabbalah/images/wrapper_player_bg.jpg") repeat-x scroll 0 0 !important;
     height: auto;
 }
 #bannerMarketingPageImg.videoWrapper .buttonDownloadAudio img {
     display: block;
     width: auto;
+}
+#bannerMarketingPageImg.videoWrapper #playerVideo .transcription {
+    border-bottom: none;
 }
 //***************end style for marketing page******************//
