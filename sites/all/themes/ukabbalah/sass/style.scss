@@ -5255,7 +5255,8 @@ a.readMoreLinkMarketing {
     float: right;
     margin-top: -24px;
 }
-.courseMarketingPageContentImg img{
+.courseMarketingPageContentImg img,
+#bannerMarketingPageImg img{
     display: none;
 }
 .courseMarketingPageContentImg > a {
