@@ -4860,6 +4860,10 @@ input[type="submit"] {
     float: left;
     margin-right: 40px;
     width: 440px;
+    text-align: center;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .courseMarketingPageContentTextWrapper {
     float: left;
@@ -5253,9 +5257,6 @@ a.readMoreLinkMarketing {
 }
 .courseMarketingPageContentImg img{
     display: none;
-}
-.courseMarketingPageContentImg {
-    text-align: center;
 }
 .courseMarketingPageContentImg > a {
     color: #fff;
