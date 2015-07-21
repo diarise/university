@@ -20,7 +20,7 @@
 		<div class="videoInfo">
 			<div class="videoInfoTeacher">
 				<div><span>teacher: </span><?php	echo implode( ", " , $authors_name ); // Author name 	?></div>
-				<div><span>duration:</span> 18 min</div>
+				<!--<div><span>duration:</span> 18 min</div>-->
 			</div>
 			<div class="videoSocialMedia">
 				<div id="courseDescription" class="sharethis">
