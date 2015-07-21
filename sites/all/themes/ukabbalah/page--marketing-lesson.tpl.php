@@ -1,0 +1,78 @@
+<?php 
+
+	//Get all the authors for this node
+	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
+	// end of all authors 
+
+?>
+
+<div id="bannerMarketingPage" class="bannerMarketingPageImgWrapper">
+	<div id="bannerMarketingPageImg" class="videoWrapper">
+	  <div id="playerVideo">
+		<?php print render($page['content']); // video player ?>
+	  </div>
+	</div>
+	<div class="bannerMarketingPageContent">
+		<div class="videoTitle">
+			<h1><?php print $node->title; ?></h1>
+		</div>     
+		<div class="videoInfo">
+			<div class="videoInfoTeacher">
+				<div><span>teacher: </span><?php	echo implode( ", " , $authors_name ); // Author name 	?></div>
+				<div><span>duration:</span> 18 min</div>
+			</div>
+			<div class="videoSocialMedia">
+				<div id="courseDescription" class="sharethis">
+					<span class='st_facebook_large' displayText='Facebook'></span>
+					<span class='st_twitter_large' displayText='Tweet' st_via='kabbalahcentre'></span>
+					<span class='st_googleplus_large' displayText='Google +'></span>
+					<span class='st_pinterest_large' displayText='Pinterest'></span>
+					<span class='st_email_large' displayText='Email'></span>
+					<span class='st_sharethis_large' displayText='ShareThis'></span>
+				</div>
+			</div>
+		</div> 
+		<div class="videoDescriptionWrapper">
+			<?php  	print strip_tags($node->body['und'][0]['value']); ?>
+		</div> 
+		
+		<?php if( sizeof( $node->field_lesson_resources) > 0  ) { ?>
+		<div class="videoResourses">
+			<span>RESOURCES </span>
+			<?php
+				// This is a way to display multiple entries for field collections 
+				$wrapper = entity_metadata_wrapper('node', $node);
+				 foreach ($wrapper->field_lesson_resources as $i)
+				 {
+					print "<a href='".$i->field_file_link->value()."' target='_blank' ><img src='/sites/all/themes/ukabbalah/images/pdfIcon.png' alt='resourceImg'/></a><a href='".$i->field_file_link->value()."' target='_blank' >".$i->field_file_description->value()."</a>";
+					//print "<span class='resourceTitle'><a href='".$i->field_file_link->value()."' target='_blank' >".$i->field_file_description->value()."</a></span>";
+				 }
+			?>		
+		</div>
+		<?php }  ?>
+		
+	</div> 
+</div>
+
+
+<div id="courseMarketingPageContentWrapper" class="lessonsCourseListWrapper">
+<div class="lessonsCourseList"><p>more lessons in this course</p></div> 
+<?php print render($page['marketinglessoneventcollection']); ?>
+<!--<div class="lessonsCourseList">
+	<h1>1.6 what you desire</h1>
+	<span>teacher: Yehuda Berg</span>
+	<span>23 min</span>
+</div>
+<div class="lessonsCourseList">
+	<h1>1.7 lasting fulfillment</h1>
+	<span>teacher: Yehuda Berg</span>
+	<span>23 min</span>
+</div>-->      
+
+</div>
+
+<div id="contactMarketingPageContentWrapper">
+<div>Interested in learning more?</div>
+<div><a href="#">Contact us</a></div>
+</div>
