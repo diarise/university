@@ -5276,16 +5276,21 @@ a.readMoreLinkMarketing {
     background-position: center center;
     background-size: cover;
     color: #fff;
-    display: inline-table;
+   
     font-family: helvetica;
     font-size: 67px;
-    height: 300px;
+    
     letter-spacing: 1px;
     line-height: 75px;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
-    width: 100%;
+    
 }
-#bannerMarketingPageImg > div{
+.bannerMarketingPagebg{
+     display: inline-table;
+     height: 300px;
+     width: 100%;
+}
+.bannerMarketingPageImgTitle{
     display: table-cell;
     vertical-align: middle;
 }
@@ -5301,7 +5306,7 @@ a.readMoreLinkMarketing {
     border-bottom: none;
 }
 @media (min-width: 1300px) {
-    #bannerMarketingPageImg{
+    .bannerMarketingPagebg{
         height: 439px;
     }
 }
