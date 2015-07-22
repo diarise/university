@@ -159,7 +159,7 @@ function twistal_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 		}
 		
 	}
-	$tags=variable_get('twistal_tags',array());
+	//$tags=variable_get('twistal_tags',array());
 	if(empty($tags)) $tags=sync_twistage_tags();
 	$default_image = '';
 	$description = 'Please choose twistage category from "Existing Category"';
