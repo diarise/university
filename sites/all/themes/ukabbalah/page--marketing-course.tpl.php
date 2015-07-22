@@ -37,10 +37,12 @@
 
 <?php } else { ?>
 
-<div class="nlvwrapperLoginBloc wrapperLoginBloc" id="wrapperPrice">
-	<div class="loginText">Join Kabbalah University to watch this video. Members get access to thousands of courses and events</div>
-	<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
-	<span class="priceLogin logColor"><a href="http://idp.kabbalah.com/user/login">Log in</a></span>
+<div class="nlvwrapperLoginBloc">
+	<div class="wrapperLoginBloc" id="wrapperPrice">
+		<div class="loginText">Join Kabbalah University to watch this video. Members get access to thousands of courses and events</div>
+		<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
+		<span class="priceLogin logColor"><a href="http://idp.kabbalah.com/user/login">Log in</a></span>
+	</div>
 </div>
 
 <?php } ?> 
