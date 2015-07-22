@@ -122,6 +122,13 @@
 
         $(window).load(function() {
 
+          var smallTextDesc = $(".smallTextDesc").height();
+          var smallTextDescHeight = 120;
+
+          if (smallTextDesc < smallTextDescHeight ) {
+              $(".readMoreLinkMarketing").addClass('removeExpand');
+          }
+
           //expand text ...
 
           $('#bannerMarketingPagedescription').find('a[href="#"]').on('click', function (e) {
