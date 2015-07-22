@@ -4857,8 +4857,10 @@ input[type="submit"] {
     padding-bottom: 35px;
 }
 .courseMarketingPageContentImg {
+    display: table;
     float: left;
     margin-right: 40px;
+    min-height: 248px;
     width: 440px;
     text-align: center;
     -webkit-background-size: cover;
@@ -5266,7 +5268,9 @@ a.readMoreLinkMarketing {
     font-weight: bold;
     line-height: 58px;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
-    display: block;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 20px;
 }
 #bannerMarketingPageImg{
     background-position: center center;
