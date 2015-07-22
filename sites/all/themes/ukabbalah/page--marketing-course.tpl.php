@@ -1,7 +1,6 @@
 <div id="bannerMarketingPage" class="bannerMarketingPageImgWrapper">
   <div id="bannerMarketingPageImg" style="background-image: url('<?php print $node->field_image_cdn_link['und'][0]['value']; ?>');">
-	
-	<?php print $node->title; ?>
+	<div><?php print $node->title; ?></div>
   </div>
 <div class="bannerMarketingPageContent">
 	<div id="bannerMarketingPageTeacherInfo"><div>Teachers:</div> 

@@ -5275,7 +5275,18 @@ a.readMoreLinkMarketing {
 #bannerMarketingPageImg{
     background-position: center center;
     background-size: cover;
+    color: #fff;
+    font-family: helvetica;
+    font-size: 67px;
     height: 439px;
+    letter-spacing: 1px;
+    line-height: 75px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
+    display: table;
+}
+#bannerMarketingPageImg > div{
+    display: table-cell;
+    vertical-align: middle;
 }
 #bannerMarketingPageImg.videoWrapper {
     background: rgba(0, 0, 0, 0) url("/sites/all/themes/ukabbalah/images/wrapper_player_bg.jpg") repeat-x scroll 0 0 !important;
