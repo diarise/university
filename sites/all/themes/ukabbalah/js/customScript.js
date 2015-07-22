@@ -122,6 +122,17 @@
 
         $(window).load(function() {
 
+          //expand text
+
+          $('#bannerMarketingPagedescription').find('a[href="#"]').on('click', function (e) {
+          e.preventDefault();
+          this.expand = !this.expand;
+          $(this).text(this.expand?"close":"expand");
+          $(this).closest('#bannerMarketingPagedescription').find('.smallTextDesc, .bigTextDesc').toggleClass('smallTextDesc bigTextDesc');
+      });
+
+      //end expend text
+
             $.each($("#loginWrapper"), function(){
                 var loginWrapperWidth = $(this).outerWidth();
                 $("#userInfoWrapper").css({
