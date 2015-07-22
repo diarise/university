@@ -122,12 +122,7 @@
 
         $(window).load(function() {
 
-          var smallTextDesc = $(".smallTextDesc").outerHeight();
-          var smallTextDescHeight = 120;
-
-          if (smallTextDesc < smallTextDescHeight ) {
-              $(".readMoreLinkMarketing").addClass('removeExpand');
-          }
+          
 
           //expand text ...
 
