@@ -122,7 +122,7 @@
 
         $(window).load(function() {
 
-          //expand text
+          //expand text ...
 
           $('#bannerMarketingPagedescription').find('a[href="#"]').on('click', function (e) {
           e.preventDefault();
@@ -131,7 +131,7 @@
           $(this).closest('#bannerMarketingPagedescription').find('.smallTextDesc, .bigTextDesc').toggleClass('smallTextDesc bigTextDesc');
       });
 
-      //end expend text
+      //end expend text ...
 
             $.each($("#loginWrapper"), function(){
                 var loginWrapperWidth = $(this).outerWidth();
