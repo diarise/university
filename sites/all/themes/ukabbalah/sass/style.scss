@@ -5276,13 +5276,14 @@ a.readMoreLinkMarketing {
     background-position: center center;
     background-size: cover;
     color: #fff;
+    display: inline-table;
     font-family: helvetica;
     font-size: 67px;
-    height: 439px;
+    height: 300px;
     letter-spacing: 1px;
     line-height: 75px;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
-    display: table;
+    width: 100%;
 }
 #bannerMarketingPageImg > div{
     display: table-cell;
@@ -5298,5 +5299,10 @@ a.readMoreLinkMarketing {
 }
 #bannerMarketingPageImg.videoWrapper #playerVideo .transcription {
     border-bottom: none;
+}
+@media (min-width: 1300px) {
+    #bannerMarketingPageImg{
+        height: 439px;
+    }
 }
 //***************end style for marketing page******************//
