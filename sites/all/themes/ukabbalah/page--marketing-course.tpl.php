@@ -1,3 +1,5 @@
+<?php  if ( user_is_logged_in() ) { ?>
+
 <div id="bannerMarketingPage" class="bannerMarketingPageImgWrapper">
   <div id="bannerMarketingPageImg" style="background-image: url('<?php print $node->field_image_cdn_link['und'][0]['value']; ?>');">
 	
@@ -30,5 +32,15 @@
 
 <div id="contactMarketingPageContentWrapper">
 	<div>Interested in learning more?</div>
-	<div><a href="#">Contact us</a></div>
+	<div><a href="https://kabbalah.com/contact-us">Contact us</a></div>
 </div>
+
+<?php } else { ?>
+
+<div class="wrapperLoginBloc" id="wrapperPrice">
+	<div class="loginText">Join Kabbalah University to watch this video. Members get access to thousands of courses and events</div>
+	<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
+	<span class="priceLogin logColor"><a href="http://idp.kabbalah.com/user/login">Log in</a></span>
+</div>
+
+<?php } ?> 
