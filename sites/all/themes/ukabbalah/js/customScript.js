@@ -122,6 +122,16 @@
 
         $(window).load(function() {
 
+          if ((".smallTextDesc").outerWidth() < 120 ) {
+
+            $(".readMoreLinkMarketing").css({
+                "display" : none
+            });
+
+          } else {
+            
+          }
+
           
 
           //expand text ...
