@@ -122,7 +122,7 @@
 
         $(window).load(function() {
 
-          var smallTextDesc = $(".smallTextDesc").height();
+          var smallTextDesc = $(".smallTextDesc").outerHeight();
           var smallTextDescHeight = 120;
 
           if (smallTextDesc < smallTextDescHeight ) {
