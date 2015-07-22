@@ -4857,8 +4857,10 @@ input[type="submit"] {
     padding-bottom: 35px;
 }
 .courseMarketingPageContentImg {
+    display: table;
     float: left;
     margin-right: 40px;
+    min-height: 248px;
     width: 440px;
     text-align: center;
     -webkit-background-size: cover;
@@ -5262,16 +5264,36 @@ a.readMoreLinkMarketing {
 .courseMarketingPageContentImg > a {
     color: #fff;
     font-family: helvetica;
-    font-size: 50px;
+    font-size: 48px;
     font-weight: bold;
-    line-height: 58px;
+    line-height: 56px;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
-    display: block;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 20px;
 }
 #bannerMarketingPageImg{
     background-position: center center;
     background-size: cover;
-    height: 439px;
+    
+    
+}
+.bannerMarketingPagebg{
+     display: inline-table;
+     height: 300px;
+     width: 100%;
+     color: #fff;
+   
+    font-family: helvetica;
+    font-size: 67px;
+    
+    letter-spacing: 1px;
+    line-height: 75px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
+}
+.bannerMarketingPageImgTitle{
+    display: table-cell;
+    vertical-align: middle;
 }
 #bannerMarketingPageImg.videoWrapper {
     background: rgba(0, 0, 0, 0) url("/sites/all/themes/ukabbalah/images/wrapper_player_bg.jpg") repeat-x scroll 0 0 !important;
@@ -5283,5 +5305,10 @@ a.readMoreLinkMarketing {
 }
 #bannerMarketingPageImg.videoWrapper #playerVideo .transcription {
     border-bottom: none;
+}
+@media (min-width: 1300px) {
+    .bannerMarketingPagebg{
+        height: 439px;
+    }
 }
 //***************end style for marketing page******************//

@@ -1,8 +1,8 @@
 <?php  if ( user_is_logged_in() ) { ?>
 
 <div id="bannerMarketingPage" class="bannerMarketingPageImgWrapper">
-  <div id="bannerMarketingPageImg" style="background-image: url('<?php print $node->field_image_cdn_link['und'][0]['value']; ?>');">
-	
+  <div id="bannerMarketingPageImg" class="bannerMarketingPagebg" style="background-image: url('<?php print $node->field_image_cdn_link['und'][0]['value']; ?>');">
+	<div class="bannerMarketingPageImgTitle"><?php print $node->title; ?></div>
   </div>
 <div class="bannerMarketingPageContent">
 	<div id="bannerMarketingPageTeacherInfo"><div>Teachers:</div> 

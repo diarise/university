@@ -39,9 +39,9 @@
         $(".courseMarketingPageContentImg").css({
                 "height" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() + 1) ,
             });
-        $(".courseMarketingPageContentImg a").css({
-                "margin-top" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() / 4) ,
-            });
+        // $(".courseMarketingPageContentImg a").css({
+        //         "margin-top" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() / 4) ,
+        //     });
         // wind resize
         //if (($(window).width() <= 1450) && ($(window).width() >= 768))
         if ($(window).width() < 1450)  {
@@ -56,9 +56,9 @@
             $(".courseMarketingPageContentImg").css({
                 "height" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() + 1) ,
             });
-            $(".courseMarketingPageContentImg a").css({
-                "margin-top" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() / 4) ,
-            });
+            // $(".courseMarketingPageContentImg a").css({
+            //     "margin-top" : ($(".courseMarketingPageContent").find(".courseMarketingPageContentTextWrapper").outerHeight() / 4) ,
+            // });
 
             if ($(window).width() < 1450) {
                 $('#newHeaderWrapper, #newHeaderMenuWrapper').addClass('smallScreenHeader');
