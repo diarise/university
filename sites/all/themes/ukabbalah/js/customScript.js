@@ -122,10 +122,11 @@
 
         $(window).load(function() {
 
-          if ((".smallTextDesc").outerHeight() < 120 ) {
+
+          if ( $(".smallTextDesc").text().length < 232 ) {
 
             $(".readMoreLinkMarketing").css({
-                "display" : none
+                "display" : none,
             });
 
           } else {
