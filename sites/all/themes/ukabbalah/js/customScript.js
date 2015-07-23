@@ -122,17 +122,18 @@
 
         $(window).load(function() {
 
-          // if ((".smallTextDesc").outerWidth() < 120 ) {
+          if ((".smallTextDesc").outerWidth() < 120 ) {
 
-          //   $(".readMoreLinkMarketing").css({
-          //       "display" : none
-          //   });
+            $(".readMoreLinkMarketing").css({
+                "display" : none
+            });
 
-          // } else {
+          } else {
 
-          // }
-          
           $(".readMoreLinkMarketing").addClass( "removeExpand" );
+          
+          }
+          
 
           //expand text ...
 
