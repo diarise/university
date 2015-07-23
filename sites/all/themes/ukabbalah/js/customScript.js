@@ -123,7 +123,7 @@
         $(window).load(function() {
 
 
-          if ( $(".smallTextDesc").text().length < 232 ) {
+          if ( $(".smallTextDesc").text().length < 310) {
 
             $(".readMoreLinkMarketing").addClass( "removeExpand" );
 
