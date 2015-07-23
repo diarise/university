@@ -4928,12 +4928,12 @@ a.readMoreLinkMarketing {
         height: 248px;
         width: 940px;
     }
-    #bannerMarketingPagedescription {
-        width: 680px;
-    }
-    #bannerMarketingPageTeacherInfo {
-        width: 220px;
-    }
+    // #bannerMarketingPagedescription {
+    //     width: 680px;
+    // }
+    // #bannerMarketingPageTeacherInfo {
+    //     width: 220px;
+    // }
     .lessonMarketingPageContentImg{
         width: 220px;
         margin-right: 30px;
@@ -5074,6 +5074,8 @@ a.readMoreLinkMarketing {
     margin-top: 35px;
     text-align: left;
     width: 27.65%;
+    font-size: 16px;
+    line-height: 22px;
 }
 #bannerMarketingPagedescription {
     color: #433a3a;
@@ -5087,10 +5089,10 @@ a.readMoreLinkMarketing {
     width: 72.34%;
 }
 
-#bannerMarketingPageTeacherInfo{   
-    font-size: 16px;
-    line-height: 22px;
-}
+// #bannerMarketingPageTeacherInfo{   
+//     font-size: 16px;
+//     line-height: 22px;
+// }
 #bannerMarketingPageTeacherInfo > div {
    color: #888888; 
 }
