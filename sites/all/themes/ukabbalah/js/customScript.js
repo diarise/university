@@ -122,7 +122,7 @@
 
         $(window).load(function() {
 
-          if ((".smallTextDesc").outerWidth() < 120 ) {
+          if ((".smallTextDesc").outerHeight() < 120 ) {
 
             $(".readMoreLinkMarketing").css({
                 "display" : none
@@ -131,7 +131,7 @@
           } else {
 
           $(".readMoreLinkMarketing").addClass( "removeExpand" );
-          
+
           }
           
 

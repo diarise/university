@@ -15,5 +15,5 @@
 
 <div id="contactMarketingPageContentWrapper">
 	<div>Interested in learning more?</div>
-	<div><a href="#">Contact us</a></div>
+	<div><a href="www.kabbalah.com/student-support">Contact us</a></div>
 </div>
