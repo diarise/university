@@ -132,7 +132,9 @@
             
           }
 
-          
+          $(".readMoreLinkMarketing").css({
+                "display" : none
+            });
 
           //expand text ...
 
