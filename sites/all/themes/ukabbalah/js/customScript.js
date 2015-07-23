@@ -125,13 +125,11 @@
 
           if ( $(".smallTextDesc").text().length < 232 ) {
 
-            $(".readMoreLinkMarketing").css({
-                "display" : none,
-            });
+            $(".readMoreLinkMarketing").addClass( "removeExpand" );
 
           } else {
 
-          $(".readMoreLinkMarketing").addClass( "removeExpand" );
+          //$(".readMoreLinkMarketing").addClass( "removeExpand" );
 
           }
           
