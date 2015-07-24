@@ -5335,4 +5335,11 @@ a.readMoreLinkMarketing {
 .readMoreLinkMarketing.removeExpand {
     display: none;
 }
+#contactMarketingPageContentWrapper > div {
+    font-family: "Roboto Condensed",sans-serif;
+    margin-top: 30px;
+}
+#contactMarketingPageContentWrapper + #SocialMediaWrapper{
+    margin-top: 0;
+}
 //***************end style for marketing page******************//
