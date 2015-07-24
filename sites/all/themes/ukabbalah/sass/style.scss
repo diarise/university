@@ -5339,7 +5339,9 @@ a.readMoreLinkMarketing {
     font-family: "Roboto Condensed",sans-serif;
     margin-top: 30px;
 }
-#contactMarketingPageContentWrapper + #SocialMediaWrapper{
+.node-type-marketing-lesson #SocialMediaWrapper,
+.page-marketing-courses #SocialMediaWrapper,
+.node-type-marketing-course #SocialMediaWrapper{
     margin-top: 0;
 }
 //***************end style for marketing page******************//
