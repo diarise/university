@@ -1,0 +1,6 @@
+name = kabbalah views role sort
+description = " Sorting Functionality based on user ROLES for views "
+core = 7.x
+version = "7.22"
+core = "7.x"
+package = Kabbalah Custom Modules
