@@ -1,0 +1,18 @@
+<?php
+
+function kabbalah_views_role_sort($userId){
+
+  $users = user_load($userId);
+  $userRole = $users->roles;
+  $arr = Array();
+
+  foreach($userRole as $row){
+    $roleID = user_role_load_by_name($row)->rid;
+    $role = user_role_load($roleID);
+    $arr[] = $role->weight;
+  }
+
+  sort($arr);
+
+  return $arr[0];
+}
