@@ -29,7 +29,7 @@ we have learned, true change can only occur by clearing and cleaning at the seed
 				<p>All roads lead to the endless. We are going to get there - lets get there together.</p>
 				<p>It’s easy and free to join us on this powerful journey to the beginning of the endless. Register now!</p>
 				<div id="registerHereWrapper">
-					<a target="_blank" href="https://idp.kabbalah.com/"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
+					<a target="_blank" href="https://idp.kabbalah.com/registration/meditation"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
 					<a target="_blank" href="https://idp.kabbalah.com/user/login"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
 				</div>
 			</div>
@@ -38,7 +38,7 @@ we have learned, true change can only occur by clearing and cleaning at the seed
 					<img src="/sites/all/themes/ukabbalah/images/28-days-title.png" alt="">
 				</div>
 				<div id="registerRightRail">
-					<a target="_blank" href="https://idp.kabbalah.com/"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
+					<a target="_blank" href="https://idp.kabbalah.com/registration/meditation"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
 				</div>
 				<div id="loginRightRail">
 					<a target="_blank" href="https://idp.kabbalah.com/user/login"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
@@ -61,7 +61,12 @@ we have learned, true change can only occur by clearing and cleaning at the seed
 				</div>
 				<div id="facebookWrapper">
 					<div class="fb-page" data-href="https://www.facebook.com/karenbergkabbalah" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/karenbergkabbalah"><a href="https://www.facebook.com/karenbergkabbalah">Karen Berg</a></blockquote></div></div>
-					<!-- <iframe style="border: none; overflow: hidden; width: 320px; height: 258px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fkarenbergkabbalah&amp;width=320&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true" frameborder="0" scrolling="no"></iframe> -->
+					
+				</div>
+				<div id="loginRightRail">
+					<a href="http://www.kabbalah.com/rh">
+						<img width="310" style="border: 1px solid black;" src="http://cdn1.kabbalah.com/kabbalah.com/images/articles/rh_2015.jpg">
+					</a>
 				</div>
 			</div>
 		</div>
