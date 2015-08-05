@@ -1,0 +1,60 @@
+#jumbotrom {
+    background: rgba(0, 0, 0, 0) url("../images/background.jpg") repeat scroll 0 0 / cover ;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+#jumbotrom img {
+    height: auto;
+    max-width: 913px;
+    width: 100%;
+}
+#journeyContentWrpper {
+    margin: -86px auto auto;
+    width: 960px;
+}
+#journeyContentText {
+    float: left;
+    margin-right: 40px;
+    margin-top: 86px;
+    padding-top: 60px;
+    width: 600px;
+}
+#journeyContentRightSide{
+	float: left;
+	width: 320px;
+}
+#registerRightRail {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#loginRightRail{
+	margin-bottom: 60px;
+}
+.KarenImg {
+    float: left;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+#journeyContentText p {
+    color: #44384f;
+    font-size: 18px;
+    line-height: 26px;
+}
+#journeyContentText .highlightText {
+    color: #8155a9;
+    display: block;
+    font-family: georgia;
+    font-size: 23px;
+    line-height: 32px;
+    margin-bottom: 35px;
+}
+#registerHereWrapper img.register_bottom {
+    margin-right: 15px;
+}
+#registerHereWrapper {
+    margin-bottom: 60px;
+}
+.highlightText::first-letter {
+    font-size: 63px;
+}
