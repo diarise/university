@@ -7,12 +7,12 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 		<div id="jumbotrom">
-			<img src="images/title.png" alt="">
+			<img src="/sites/all/themes/ukabbalah/images/title.png" alt="">
 		</div>
 		<div id="journeyContentWrpper">
 			<div id="journeyContentText">
 				<p>
-					<img class="KarenImg" src="images/karen_berg-journey.jpg" alt="">
+					<img class="KarenImg" src="/sites/all/themes/ukabbalah/images/karen_berg-journey.jpg" alt="">
 <span class="highlightText">Many of us consider ourselves to be spiritual people - yet we continue to experience the same patterns over and over again. We try to do all the right things, yet our lives stay the same...</span>	
 					A ground breaking 28 day program to create a spiritual renaissance in your life. And in the world.
 
@@ -26,7 +26,7 @@
 
 				</p>
 				<p style="margin-top: 0px; margin-bottom: 0px;">
-<img alt="" src="images/yellow_message.jpg" style="border-bottom-width: 40px; margin-top: 40px; margin-bottom: 40px;">
+<img alt="" src="/sites/all/themes/ukabbalah/images/yellow_message.jpg" style="border-bottom-width: 40px; margin-top: 40px; margin-bottom: 40px;">
 </p>
 				<p>
 				When we release energetic blockages from our past, we increasingly open ourselves to the endless world where the beneficent, mighty, steadfast energy of the universe exists. By cleaning and clearing we become an open channel to receive that Light.
@@ -36,8 +36,8 @@
 	It’s easy and free to join us on this powerful journey to the beginning of the endless
 				</p>
 				<div id="registerHereWrapper">
-					<a href="#"><img class="register_bottom" src="images/register_bottom.png" alt=""></a>
-					<a href="#"><img src="images/login_bottom.png" alt=""></a>
+					<a href="#"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
+					<a href="#"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
 				</div>
 			</div>
 			<div id="journeyContentRightSide">
@@ -45,10 +45,10 @@
 					<img src="images/28-days-title.png" alt="">
 				</div>
 				<div id="registerRightRail">
-					<a href="#"><img src="images/register_right_rail.png" alt=""></a>
+					<a href="#"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
 				</div>
 				<div id="loginRightRail">
-					<a href="#"><img src="images/login_right_rail.png" alt=""></a>
+					<a href="#"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
 				</div>
 				<div id="tweeterWrapper">
 					<a href="https://twitter.com/karen_berg_" class="twitter-timeline" data-widget-id="449631919785783297">Tweets by @karen_berg_</a><script type="text/javascript">// <![CDATA[
