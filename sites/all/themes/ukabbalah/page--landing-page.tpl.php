@@ -29,8 +29,8 @@ we have learned, true change can only occur by clearing and cleaning at the seed
 				<p>All roads lead to the endless. We are going to get there - lets get there together.</p>
 				<p>It’s easy and free to join us on this powerful journey to the beginning of the endless. Register now!</p>
 				<div id="registerHereWrapper">
-					<a href="#"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
-					<a href="#"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
+					<a target="_blank" href="https://idp.kabbalah.com/"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
+					<a target="_blank" href="https://idp.kabbalah.com/user/login"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
 				</div>
 			</div>
 			<div id="journeyContentRightSide">
@@ -38,10 +38,10 @@ we have learned, true change can only occur by clearing and cleaning at the seed
 					<img src="/sites/all/themes/ukabbalah/images/28-days-title.png" alt="">
 				</div>
 				<div id="registerRightRail">
-					<a href="#"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
+					<a target="_blank" href="https://idp.kabbalah.com/"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
 				</div>
 				<div id="loginRightRail">
-					<a href="#"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
+					<a target="_blank" href="https://idp.kabbalah.com/user/login"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
 				</div>
 				<div id="tweeterWrapper">
 					<a href="https://twitter.com/karen_berg_" class="twitter-timeline" data-widget-id="449631919785783297">Tweets by @karen_berg_</a><script type="text/javascript">// <![CDATA[
