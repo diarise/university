@@ -42,7 +42,7 @@
 			</div>
 			<div id="journeyContentRightSide">
 				<div id="28DaysTitle">
-					<img src="images/28-days-title.png" alt="">
+					<img src="/sites/all/themes/ukabbalah/images/28-days-title.png" alt="">
 				</div>
 				<div id="registerRightRail">
 					<a href="#"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
