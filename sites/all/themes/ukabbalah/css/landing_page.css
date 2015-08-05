@@ -58,3 +58,6 @@
 .highlightText::first-letter {
     font-size: 63px;
 }
+#facebookWrapper {
+    margin-top: 23px;
+}

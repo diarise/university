@@ -14,27 +14,20 @@
 				<p>
 					<img class="KarenImg" src="/sites/all/themes/ukabbalah/images/karen_berg-journey.jpg" alt="">
 <span class="highlightText">Many of us consider ourselves to be spiritual people - yet we continue to experience the same patterns over and over again. We try to do all the right things, yet our lives stay the same...</span>	
-					A ground breaking 28 day program to create a spiritual renaissance in your life. And in the world.
+					
+<p>All too often we focus solely on changing our behavior- chopping down the proverbial apple tree in hopes that an orange tree will grow. But as 
+we have learned, true change can only occur by clearing and cleaning at the seed level - in the cause, not in the effect.</p>
+	
 
-	Do you consider yourself to be a spiritual person- yet continue to experience the same patterns over and over again?
-
-	If you are like most people, you try to do all the right things, yet on many levels your life seems to stay the same.
-
-	All too often we focus solely on changing our behavior - chopping down the proverbial apple tree in hopes that an orange tree will grow. But as we have learned, true change can only occur by clearing and cleaning at the seed level - in the cause, not in the effect.
-
-	Now more than ever, spiritual technologies from different pathways are being revealed to the masses, empowering each of us to change ourselves in real and meaningful ways.
-
-				</p>
+				<p>Now more than ever, spiritual technologies from different pathways are being revealed to the masses, empowering each of us to change ourselves in real and meaningful ways.</p>
 				<p style="margin-top: 0px; margin-bottom: 0px;">
 <img alt="" src="/sites/all/themes/ukabbalah/images/yellow_message.jpg" style="border-bottom-width: 40px; margin-top: 40px; margin-bottom: 40px;">
 </p>
 				<p>
 				When we release energetic blockages from our past, we increasingly open ourselves to the endless world where the beneficent, mighty, steadfast energy of the universe exists. By cleaning and clearing we become an open channel to receive that Light.
-
-	All roads lead to the endless. Lets get there together.
-
-	It’s easy and free to join us on this powerful journey to the beginning of the endless
 				</p>
+				<p>All roads lead to the endless. We are going to get there - lets get there together.</p>
+				<p>It’s easy and free to join us on this powerful journey to the beginning of the endless. Register now!</p>
 				<div id="registerHereWrapper">
 					<a href="#"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
 					<a href="#"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
