@@ -42,7 +42,7 @@
 					<p>All roads lead to the endless. We are going to get there - lets get there together.</p>
 					<p><b>Its easy and free to join us. Register Now.</b></p>
 					<div id="registerHereWrapper">
-						<a target="_blank" href="https://idp.kabbalah.com/registration/meditation"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
+						<a target="_blank" href="https://idp.kabbalah.com/registration/journey"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
 						<a target="_blank" href="https://idp.kabbalah.com/user/login"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
 					</div>
 				</div>
@@ -51,7 +51,7 @@
 						<img src="/sites/all/themes/ukabbalah/images/28-days-title.png" alt="">
 					</div>
 					<div id="registerRightRail">
-						<a target="_blank" href="https://idp.kabbalah.com/registration/meditation"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
+						<a target="_blank" href="https://idp.kabbalah.com/registration/journey"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
 					</div>
 					<div id="loginRightRail">
 						<a target="_blank" href="https://idp.kabbalah.com/user/login"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
