@@ -6,6 +6,10 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 		<div id="jumbotrom">
 			<img src="/sites/all/themes/ukabbalah/images/title.png" alt="">
 		</div>
@@ -14,10 +18,11 @@
 
 				<div id="journeyContentText">
 					<div class="sharethisWrapperLanding">
-						<span class='st_sharethis_hcount' displayText='ShareThis'></span>
 						<span class='st_facebook_hcount' displayText='Facebook'></span>
 						<span class='st_twitter_hcount' displayText='Tweet'></span>
+						<span class='st_pinterest_hcount' displayText='Pinterest'></span>
 						<span class='st_email_hcount' displayText='Email'></span>
+						<span class='st_sharethis_hcount' displayText='ShareThis'></span>
 					</div>
 					<p>
 						<img class="KarenImg" src="/sites/all/themes/ukabbalah/images/karen_berg-journey.jpg" alt="">
