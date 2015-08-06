@@ -1,6 +1,6 @@
 #jumbotrom {
     background: rgba(0, 0, 0, 0) url("/sites/all/themes/ukabbalah/images/background.jpg") repeat scroll 0 0 / cover ;
-    margin: 0 auto;
+    display: inline-block;
     text-align: center;
     width: 100%;
 }
@@ -9,8 +9,14 @@
     max-width: 913px;
     width: 100%;
 }
+
 #journeyContentWrpper {
-    margin: -86px auto auto;
+    display: inline-block;
+    margin-top: -86px;
+    width: 100%;
+}
+#journeyContent {
+    margin: 0 auto;
     width: 960px;
 }
 #journeyContentText {
