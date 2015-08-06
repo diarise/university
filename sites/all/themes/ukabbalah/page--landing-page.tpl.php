@@ -27,7 +27,7 @@ we have learned, true change can only occur by clearing and cleaning at the seed
 
 				<p>Now more than ever, spiritual technologies from different pathways are being revealed to the masses, empowering each of us to change ourselves in real and meaningful ways.</p>
 				<p style="margin-top: 0px; margin-bottom: 0px;">
-<img alt="" src="/sites/all/themes/ukabbalah/images/yellow_message.jpg" style="border-bottom-width: 40px; margin-top: 40px; margin-bottom: 40px;">
+<img alt="" src="/sites/all/themes/ukabbalah/images/yellow_message.jpg" style="margin-bottom: 20px; margin-top: 15px;">
 </p>
 				<p>
 				When we release energetic blockages from our past, we increasingly open ourselves to the endless world where the beneficent, mighty, steadfast energy of the universe exists. By cleaning and clearing we become an open channel to receive that Light.
