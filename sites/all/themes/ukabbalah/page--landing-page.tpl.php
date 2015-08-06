@@ -27,7 +27,7 @@ we have learned, true change can only occur by clearing and cleaning at the seed
 				When we release energetic blockages from our past, we increasingly open ourselves to the endless world where the beneficent, mighty, steadfast energy of the universe exists. By cleaning and clearing we become an open channel to receive that Light.
 				</p>
 				<p>All roads lead to the endless. We are going to get there - lets get there together.</p>
-				<p>It’s easy and free to join us on this powerful journey to the beginning of the endless. Register now!</p>
+				<p><b>Its easy and free to join us. Register Now.</b></p>
 				<div id="registerHereWrapper">
 					<a target="_blank" href="https://idp.kabbalah.com/registration/meditation"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
 					<a target="_blank" href="https://idp.kabbalah.com/user/login"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
