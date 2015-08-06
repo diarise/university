@@ -12,6 +12,10 @@
 			drupal_goto('http://idp.kabbalah.com/user/'.$user->uid.'/migrate-user'); 
 		 } 
 	}
+	
+	$pageRegistrationUrl = $_SERVER["REQUEST_URI"];
+	
+	
 ?>
 <?php
 // $Id: html.tpl.php,v 1.1.2.2 2011/02/06 22:47:17 andregriffin Exp $
@@ -36,10 +40,22 @@
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a"});</script>	
-  <meta property="og:title" content="<?php print $head_title;?>" />
-  <!--<meta property="og:description" content="<?php //print $head_desc;?>" />-->
-  <meta property="og:image" content="<?php print $head_image; ?>" />
- 
+  
+  <?php if( $pageRegistrationUrl == "/journey" ) { ?>
+  
+		<meta property="og:title" content="A Journey to the Beginning of the Endless" />
+		<meta property="og:description" content="A ground breaking 28 day program to create a spiritual renaissance in your life. And in the world." />
+		<meta property="og:image" content="http://cdn1.kabbalah.com/kabbalah.com/images/articles/15-8-2-karen-berg-elul2.jpg" />
+		
+  <?php } else { ?>
+  
+	  <meta property="og:title" content="<?php print $head_title;?>" />
+	  <!--<meta property="og:description" content="<?php //print $head_desc;?>" />-->
+	  <meta property="og:image" content="<?php print $head_image; ?>" />
+	  
+  <?php } ?>
+  
+  
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
