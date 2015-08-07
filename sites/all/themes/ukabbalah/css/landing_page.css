@@ -23,7 +23,7 @@
     float: left;
     margin-right: 40px;
     margin-top: 86px;
-    padding-top: 60px;
+    padding-top: 30px;
     width: 600px;
 }
 #journeyContentRightSide{
@@ -43,12 +43,12 @@
     margin-right: 30px;
 }
 #journeyContentText p {
-    color: #44384f;
+    color: #443a3a;
     font-size: 18px;
     line-height: 26px;
 }
 #journeyContentText .highlightText {
-    color: #8155a9;
+/*    color: #8155a9;*/
     display: block;
     font-family: georgia;
     font-size: 23px;
@@ -69,4 +69,12 @@
 #facebookWrapper {
     margin-bottom: 30px;
     margin-top: 23px;
+}
+#journeyContentText p b {
+    font-size: 28px;
+}
+.sharethisWrapperLanding {
+    border-bottom: 1px solid #b3acd6;
+    margin-bottom: 50px;
+    padding-bottom: 25px;
 }

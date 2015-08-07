@@ -56,6 +56,9 @@
 					<div id="loginRightRail">
 						<a target="_blank" href="https://university.kabbalah.com/subscribe/journey"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
 					</div>
+					<div id="connectKaren">
+						Connect with Karen Berg
+					</div>
 					<div id="tweeterWrapper">
 						<a href="https://twitter.com/karen_berg_" class="twitter-timeline" data-widget-id="449631919785783297">Tweets by @karen_berg_</a><script type="text/javascript">// <![CDATA[
 	! function(d, s, id) {
