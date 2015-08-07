@@ -40,7 +40,7 @@
 					When we release energetic blockages from our past, we increasingly open ourselves to the endless world where the beneficent, mighty, steadfast energy of the universe exists. By cleaning and clearing we become an open channel to receive that Light.
 					</p>
 					<p>All roads lead to the endless. We are going to get there - lets get there together.</p>
-					<p><b>Its easy and free to join us. Register Now.</b></p>
+					<p><img class="KarenImg" src="/sites/all/themes/ukabbalah/images/last-line.png" alt=""></p>
 					<div id="registerHereWrapper">
 						<a target="_blank" href="https://idp.kabbalah.com/registration/journey"><img class="register_bottom" src="/sites/all/themes/ukabbalah/images/register_bottom.png" alt=""></a>
 						<a target="_blank" href="https://university.kabbalah.com/subscribe/journey"><img src="/sites/all/themes/ukabbalah/images/login_bottom.png" alt=""></a>
@@ -57,7 +57,7 @@
 						<a target="_blank" href="https://university.kabbalah.com/subscribe/journey"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
 					</div>
 					<div id="connectKaren">
-						Connect with Karen Berg
+						<img src="/sites/all/themes/ukabbalah/images/connect_karen.png" alt="">
 					</div>
 					<div id="tweeterWrapper">
 						<a href="https://twitter.com/karen_berg_" class="twitter-timeline" data-widget-id="449631919785783297">Tweets by @karen_berg_</a><script type="text/javascript">// <![CDATA[
