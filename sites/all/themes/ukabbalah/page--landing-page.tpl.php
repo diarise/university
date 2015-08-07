@@ -32,7 +32,7 @@
 	we have learned, true change can only occur by clearing and cleaning at the seed level - in the cause, not in the effect.</p>
 		
 					<div>
-						<script type="text/javascript" src="http://twistassets.kabbalah.com/api/script"></script>
+						<script type="text/javascript" src="https://twistassets.kabbalah.com/api/script"></script>
 <script type="text/javascript">viewNode("7f7be87bb20c1", {"server_detection": true, "width": 480, "height": 383, "player_profile": "test_jwplayer"});</script>
 					</div>
 					<p>Now more than ever, spiritual technologies from different pathways are being revealed to the masses, empowering each of us to change ourselves in real and meaningful ways.</p>
