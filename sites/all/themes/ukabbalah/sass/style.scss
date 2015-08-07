@@ -5361,3 +5361,31 @@ a.readMoreLinkMarketing {
 .page-node-6413 #mainContentWrapper footer {
     display: none
 }
+body.page-node-6419{
+    #mainContentWrapper{
+        width: 940px;
+    }
+    h1#page-title{
+        width: auto!important;
+        margin-top: 0px!important;
+    }
+    .submitted {
+        display: none;
+    }
+    #mainContentWrapper footer{
+        display: none;
+    }
+    #mainContentWrapper .webform-submit.button-primary.form-submit{
+        background: #2090dc none repeat scroll 0 0;
+        border: medium none;
+        color: #fff;
+        float: left;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 15px 50px;
+        text-align: center;
+        text-transform: capitalize;
+        width: 100px;
+    }
+}
