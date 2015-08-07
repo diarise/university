@@ -5386,6 +5386,25 @@ body.page-node-6419{
         padding: 15px 50px;
         text-align: center;
         text-transform: capitalize;
-        width: 100px;
+
+    }
+    #edit-submitted-email {
+        border: 1px solid #9e9999;
+        color: #433a3a;
+        font-size: 15px;
+        font-weight: 400;
+        height: 40px;
+        margin-left: 15px;
+        padding-left: 15px;
+        width: 260px;
+    }
+    .form-item label{
+        width: 180px;
+        color: #433a3a;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: right;
+        text-transform: capitalize;
     }
 }
