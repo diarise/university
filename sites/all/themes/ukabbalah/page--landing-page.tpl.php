@@ -7,9 +7,9 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<script type="text/javascript">var switchTo5x=true;</script>
+<!-- <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script> -->
 		<div id="jumbotrom">
 			<img src="/sites/all/themes/ukabbalah/images/title.png" alt="">
 		</div>
