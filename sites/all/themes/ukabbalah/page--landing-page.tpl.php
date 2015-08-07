@@ -31,7 +31,8 @@
 	<p>All too often we focus solely on changing our behavior- chopping down the proverbial apple tree in hopes that an orange tree will grow. But as 
 	we have learned, true change can only occur by clearing and cleaning at the seed level - in the cause, not in the effect.</p>
 		
-
+					<p><script type="text/javascript" src="http://twistassets.kabbalah.com/api/script"></script>
+					<script type="text/javascript">viewNode("7f7be87bb20c1", {"server_detection": true, "width": 600, "height": 337});</script></p>
 					<p>Now more than ever, spiritual technologies from different pathways are being revealed to the masses, empowering each of us to change ourselves in real and meaningful ways.</p>
 					<p style="margin-top: 0px; margin-bottom: 0px;">
 	<img alt="" src="/sites/all/themes/ukabbalah/images/yellow_message.jpg" style="margin-bottom: 20px; margin-top: 15px;">
