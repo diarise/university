@@ -80,5 +80,9 @@
     padding-bottom: 25px;
 }
 #connectKaren {
+    height: 42px;
     margin-bottom: 20px;
+}
+#connectKaren img{
+    display: none;
 }
