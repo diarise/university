@@ -33,7 +33,7 @@
 		
 					<div>
 						<script type="text/javascript" src="http://twistassets.kabbalah.com/api/script"></script>
-						<script type="text/javascript">viewNode("ea0bdf6c30c3e", {"server_detection": true, "width": 600, "height": 337});</script>
+						<script type="text/javascript">viewNode("7f7be87bb20c1", {"server_detection": true, "width": 600, "height": 337});</script>
 					</div>
 					<p>Now more than ever, spiritual technologies from different pathways are being revealed to the masses, empowering each of us to change ourselves in real and meaningful ways.</p>
 					<p style="margin-top: 0px; margin-bottom: 0px;">
