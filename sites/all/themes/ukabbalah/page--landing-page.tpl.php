@@ -32,8 +32,14 @@
 	we have learned, true change can only occur by clearing and cleaning at the seed level - in the cause, not in the effect.</p>
 		
 					<div>
-						<script type="text/javascript" src="https://twistassets.kabbalah.com/api/script"></script>
-						<script type="text/javascript">viewNode("7f7be87bb20c1", {"server_detection": true, "width": 600, "height": 337});</script>
+						<!--<script type="text/javascript" src="https://twistassets.kabbalah.com/api/script"></script>
+						<script type="text/javascript">viewNode("7f7be87bb20c1", {"server_detection": true, "width": 600, "height": 337});</script>-->
+						<object type="application/x-shockwave-flash" id="embedded_player_7f7be87bb20c1" name="embedded_player_7f7be87bb20c1" width="480" height="383" data="https://twistassets.kabbalah.com/plugins/player.swf" class="player-swf">
+						<param name="allowfullscreen" value="true"/>
+						<param name="allowscriptaccess" value="always"/><param name="movie" value="http://twistassets.kabbalah.com/plugins/player.swf"/>
+						<param name="base" value="https://twistassets.kabbalah.com"/>
+						<param name="flashVars" value="v=7f7be87bb20c1"/><param name="bgcolor" value=""/>
+						</object>
 					</div>
 					<p>Now more than ever, spiritual technologies from different pathways are being revealed to the masses, empowering each of us to change ourselves in real and meaningful ways.</p>
 					<p style="margin-top: 0px; margin-bottom: 0px;">
