@@ -25,16 +25,17 @@
 						<span class='st_sharethis_hcount' displayText='ShareThis'></span>
 					</div>
 					<p>
-						<img class="KarenImg" src="/sites/all/themes/ukabbalah/images/karen_berg-journey.jpg" alt="">
+						<span class="KarenImgWrapper">
+							<img class="KarenImg" src="/sites/all/themes/ukabbalah/images/karen_berg-journey.jpg" alt="" />
+							<a href="http://kabbalah.com/karen-berg" target="_blank">About Karen Berg</a>
+						</span>
 	<span class="highlightText">Many of us consider ourselves to be spiritual people - yet we continue to experience the same patterns over and over again. We try to do all the right things, yet our lives stay the same...</span>	
 						
 	<p>All too often we focus solely on changing our behavior- chopping down the proverbial apple tree in hopes that an orange tree will grow. But as 
 	we have learned, true change can only occur by clearing and cleaning at the seed level - in the cause, not in the effect.</p>
 		
 					<div>
-						<!--<script type="text/javascript" src="https://twistassets.kabbalah.com/api/script"></script>
-						<script type="text/javascript">viewNode("7f7be87bb20c1", {"server_detection": true, "width": 600, "height": 337});</script>-->
-						<object type="application/x-shockwave-flash" id="embedded_player_7f7be87bb20c1" name="embedded_player_7f7be87bb20c1" width="480" height="383" data="https://twistassets.kabbalah.com/plugins/player.swf" class="player-swf">
+						<object type="application/x-shockwave-flash" id="embedded_player_7f7be87bb20c1" name="embedded_player_7f7be87bb20c1" width="600" height="337" data="https://twistassets.kabbalah.com/plugins/player.swf" class="player-swf">
 						<param name="allowfullscreen" value="true"/>
 						<param name="allowscriptaccess" value="always"/><param name="movie" value="http://twistassets.kabbalah.com/plugins/player.swf"/>
 						<param name="base" value="https://twistassets.kabbalah.com"/>

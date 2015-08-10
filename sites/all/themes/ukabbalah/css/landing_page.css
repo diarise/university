@@ -39,7 +39,7 @@
 }
 .KarenImg {
     float: left;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     margin-right: 30px;
 }
 #journeyContentText p {
@@ -85,4 +85,13 @@
 }
 #connectKaren img{
     display: none;
+}
+.KarenImgWrapper{
+    float: left;
+}
+.KarenImgWrapper a{
+    color: #8155A9;
+    display: block;
+    font-size: 14px;
+    font-style: italic;
 }
