@@ -37,7 +37,7 @@
 					<div>
 						<object type="application/x-shockwave-flash" id="embedded_player_7f7be87bb20c1" name="embedded_player_7f7be87bb20c1" width="480" height="383" data="https://twistassets.kabbalah.com/plugins/player.swf" class="player-swf">
 						<param name="allowfullscreen" value="true"/>
-						<param name="allowscriptaccess" value="always"/><param name="movie" value="http://twistassets.kabbalah.com/plugins/player.swf"/>
+						<param name="allowscriptaccess" value="always"/><param name="movie" value="https://twistassets.kabbalah.com/plugins/player.swf"/>
 						<param name="base" value="https://twistassets.kabbalah.com"/>
 						<param name="flashVars" value="v=7f7be87bb20c1"/><param name="bgcolor" value=""/>
 						</object>
