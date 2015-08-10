@@ -35,7 +35,7 @@
 	we have learned, true change can only occur by clearing and cleaning at the seed level - in the cause, not in the effect.</p>
 		
 					<div>
-						<object type="application/x-shockwave-flash" id="embedded_player_7f7be87bb20c1" name="embedded_player_7f7be87bb20c1" width="600" height="337" data="https://twistassets.kabbalah.com/plugins/player.swf" class="player-swf">
+						<object type="application/x-shockwave-flash" id="embedded_player_7f7be87bb20c1" name="embedded_player_7f7be87bb20c1" width="480" height="383" data="https://twistassets.kabbalah.com/plugins/player.swf" class="player-swf">
 						<param name="allowfullscreen" value="true"/>
 						<param name="allowscriptaccess" value="always"/><param name="movie" value="http://twistassets.kabbalah.com/plugins/player.swf"/>
 						<param name="base" value="https://twistassets.kabbalah.com"/>
