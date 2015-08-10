@@ -27,7 +27,7 @@
 					<p>
 						<span class="KarenImgWrapper">
 							<img class="KarenImg" src="/sites/all/themes/ukabbalah/images/karen_berg-journey.jpg" alt="" />
-							<a href="http://kabbalah.com/karen-berg" target="_blank">About Karen Berg</a>
+							<a href="https://kabbalah.com/karen-berg" target="_blank">About Karen Berg</a>
 						</span>
 	<span class="highlightText">Many of us consider ourselves to be spiritual people - yet we continue to experience the same patterns over and over again. We try to do all the right things, yet our lives stay the same...</span>	
 						
@@ -90,7 +90,7 @@
 						
 					</div>
 					<div id="loginRightRail">
-						<a href="http://www.kabbalah.com/rh">
+						<a href="https://www.kabbalah.com/rh">
 							<img width="310" style="border: 1px solid black;" src="http://cdn1.kabbalah.com/kabbalah.com/images/articles/rh_2015.jpg">
 						</a>
 					</div>
