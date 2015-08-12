@@ -77,7 +77,8 @@ ul li {
    ================= HEADER =====================================
    ============================================================== */
 
-#header, #newHeaderWrapper {
+#header,
+#newHeaderWrapper {
     background: none repeat scroll 0 0 #433a3a;
     clear: both;
     float: left;
@@ -128,26 +129,20 @@ transition: all 3s ease-in-out;
     width: 33.33%;
 }
 .smallScreenHeader #searchWrapper{
-    width: 25%;
+    width: 30%;
 }
-@media (min-width: 981px) {
-    .smallScreenHeader #loginWrapper{
-      width: 36.33%;
-    }
-}
-
 #loginWrapper{
     float: right;
     height: 60px;
-    width: 31.33%;
+    width: 33.33%;
 }
 .smallScreenHeader #logoWrapper{
     background: url(../images/kc_logo_grey_no_type.svg) no-repeat scroll 24px 15px;
-    width: 38.33%;
+    width: 36.33%;
 }
-// .smallScreenHeader #loginWrapper{
-//     // background: orange none repeat scroll 0 0;
-// }
+.smallScreenHeader #loginWrapper{
+    /*background: orange none repeat scroll 0 0;*/
+}
 #logoWrapper > a {
     border-right: 1px solid #7f7979;
     display: inline-block;
@@ -169,28 +164,26 @@ input#submitSearchBtn {
     width: 52px;
 }
 .smallScreenHeader #logoWrapper .localLogo{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university.svg) no-repeat scroll center center;
+    background: url(../images/kabbalah_university.svg) no-repeat scroll 0 7px;
     border: none;
     display: inline-block;
-    width: 272px;
-    margin-left: 14px;
+    width: 240px;
+    margin-left: 18px;
 }
 a.plusIcone {
     font-size: 30px !important;
     font-weight: bolder;
     line-height: 22px;
-    position: relative;
-    top: 5px;
-    width: 40px;
+    width: 40px
 }
-// .smallScreenHeader #newHeaderWrapperMainMenu ul.nice-menu > li:last-child > a{
+/*// .smallScreenHeader #newHeaderWrapperMainMenu ul.nice-menu > li:last-child > a{
 //  visibility: hidden;
 // }
 // .smallScreenHeader #newHeaderWrapperMainMenu ul.nice-menu > li:last-child > a:before{
 //  content: url(../images/plus_white.svg);
-//  content:"\002B";
+//  // content:"\002B";
 //  visibility: visible;
-// }
+// }*/
 #logoWrapper > a.localLogo{
     display: none;
 }
@@ -247,12 +240,12 @@ a.plusIcone {
     margin-left: 14px;
     margin-right: 8px;
 }
-// #userInfoWrapperResponsive,
-// .smallScreenHeader #userInfoWrapper > span{
-//     /*display: none;*/
-// }
+#userInfoWrapperResponsive,
+.smallScreenHeader #userInfoWrapper > span{
+    display: none;
+}
 .smallScreenHeader #userInfoWrapperResponsive{
-    /*display: block;*/
+    display: block;
     float: right;
 }
 #userInfoWrapperResponsive ul {
@@ -275,10 +268,10 @@ a.plusIcone {
     font-weight: normal;
     padding-right: 10px;
 }
-// #userInfoWrapperResponsive ul ul {
+/*// #userInfoWrapperResponsive ul ul {
 //     display:none;
 //     position:relative;
-// }
+// }*/
 #userInfoWrapperResponsive ul li:hover > ul {
     display:block
 }
@@ -287,15 +280,15 @@ a.userActiveResponsive{
 }
 #userInfoWrapperResponsive{
     padding: 0 5px 5px 20px;
-    // border: 1px solid #433a3a;
+    /*// border: 1px solid #433a3a;*/
     position: relative;
     z-index: 9;
 }
-// #userInfoWrapperResponsive:hover {
+/*// #userInfoWrapperResponsive:hover {
 //     border: 1px solid #746d6d;
 //     background: #433A3A;
     
-// }
+// }*/
 #userInfoWrapperResponsive ul ul {
     background: #433a3a none repeat scroll 0 0;
     border: 1px solid #a7a2a2;
@@ -305,67 +298,33 @@ a.userActiveResponsive{
     position:relative;
 }
 #newHeaderWrapperMobileMenu{
-    // float: left;
+    float: left;
     height: 42px;
-    //width: 33%;
-    width: 380px;
-    position: absolute;
+    width: 30%;
 }
 #newHeaderWrapperMainMenu{
-    // float: left;
+    float: left;
     height: 42px;
     line-height: normal;
     text-align: center;
     vertical-align: middle;
-    // min-width: 741px;
-    // max-width: 770px;
-    position: absolute;
-    width: 100%; 
-}
-.menuScrolling #newHeaderWrapperMobileMenu{
-  width: 465px;
-}
-// @media (min-width: 1400px) and (max-width: 1490px){
-//   #newHeaderWrapperMainMenu{
-//     width: 880px!important;
-//   }
-// }
-@media (min-width: 1450px) {
-  // #newHeaderWrapperMainMenu #nice-menu-1{
-  //   width: 742px;
-  //   margin: auto;
-  // }
-  // .smallScreenHeader  #newHeaderWrapperMainMenu{
-  //   display: inline-block;
-  //   float: none;
-  // }
-}
-@media (max-width: 1449px) {
-  // #newHeaderWrapperMainMenu #nice-menu-1{
-  //   width: 682px;
-  //   margin: auto; 
-  // }
-}
-#newHeaderWrapperMainMenu ul.nice-menu li{
-  float: none;
+    min-width: 741px;
 }
 #newHeaderWrapperLanguage{
-    //float: right;
+    float: right;
     height: 42px;
     width: 101px;
-    right: 0;
-    position: absolute; 
 }
 .smallScreenHeader #newHeaderWrapperMobileMenu {
-    //margin-right: 7px;
+    margin-right: 7px;
     width: 11%;
 }
 .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
     width: 14%;
 }
-// .smallScreenHeader #newHeaderWrapperMainMenu {
-//     width: 74%;
-// }
+/*.smallScreenHeader #newHeaderWrapperMainMenu {
+    width: 74%;
+}*/
 #newHeaderWrapperLanguage a {
     border-left: 1px solid #8c8787;
     color: #fff;
@@ -394,15 +353,15 @@ a.userActiveResponsive{
 }
 
 .newHeaderWrapperLocalMenuLogo {
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university.svg) no-repeat scroll center center;
+    background: url(../images/kabbalah_university.svg) no-repeat scroll 0 13px;
     float: left;
     height: 42px;
-    width: 273px;
+    width: 241px;
 }
 .newHeaderWrapperSearchMenuLogo{
     display: none;
 }
-//.menuScrolling .newHeaderWrapperLocalMenuLogo,
+/*.menuScrolling .newHeaderWrapperLocalMenuLogo,*/
 .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
     display: none;
 }
@@ -463,7 +422,7 @@ a.userActiveResponsive{
     position: relative;
 }
 #newHeaderWrapperMainMenu ul > li ul li{
-  width: 100%; 
+  width: 100% 
 }
 #newHeaderWrapperMainMenu ul#nice-menu-1 > li {
     margin-left: 26px;
@@ -477,20 +436,17 @@ a.userActiveResponsive{
     border-top: 1px solid #7cc7ff;
     color: #8dceff;
 }
-.smallScreenHeader #newHeaderWrapperMainMenu ul > li > a{
-    padding-top: 6px;
-}
 #newHeaderWrapperMainMenu ul > li > a {
     color: #fff;
     display: block;
     font-size: 18px;
     height: 32px;
-    padding-top: 12px;
+    padding-top: 9px;
     text-shadow: 1px 1px 1px #453e3e;
-    // -webkit-transition: color .15s;
+    /*// -webkit-transition: color .15s;
     // -moz-transition: color .15s;
     // -o-transition: color .15s;
-    // transition: color .15s;
+    // transition: color .15s;*/
 }
 #newHeaderWrapperMainMenu ul > li > ul {
     opacity: 0;
@@ -503,10 +459,10 @@ a.userActiveResponsive{
     left: 50%;
     margin-left: -90px;
     width: 180px;
-    // -webkit-transition: all .3s .1s;
+    /*// -webkit-transition: all .3s .1s;
     // -moz-transition: all .3s .1s;
     // -o-transition: all .3s .1s;
-    // transition: all .3s .1s;
+    // transition: all .3s .1s;*/
     -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
     -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
@@ -520,7 +476,7 @@ a.userActiveResponsive{
 #newHeaderWrapperMainMenu ul > li > ul:before {
     content:'';
     display: block;
-    border-color: transparent transparent rgb(67, 58, 58) transparent; 
+    border-color: transparent transparent rgb(67, 58, 58) transparent; /*arrow*/
     border-style: solid;
     border-width: 10px;
     position: absolute;
@@ -539,10 +495,10 @@ a.userActiveResponsive{
     line-height: 20px;
     padding: 5px 15px 7px 16px;
     text-shadow: unset;
-    // -webkit-transition: background-color .1s;
+    /*// -webkit-transition: background-color .1s;
     // -moz-transition: background-color .1s;
     // -o-transition: background-color .1s;
-    // transition: background-color .1s;
+    // transition: background-color .1s;*/
 }
 #newHeaderWrapperMainMenu ul ul a:hover {
     background-color: #2090dc;
@@ -558,10 +514,10 @@ a.userActiveResponsive{
     background-color: rgb(250, 250, 250);
     text-align: left;
     width: 160px;
-    // -webkit-transition: all .3s;
+    /*// -webkit-transition: all .3s;
     // -moz-transition: all .3s;
     // -o-transition: all .3s;
-    // transition: all .3s;
+    // transition: all .3s;*/
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -574,82 +530,74 @@ a.userActiveResponsive{
     left: 196px;
     visibility: visible;
 }
-// #newHeaderWrapperMainMenu ul ul a:hover {
+/*// #newHeaderWrapperMainMenu ul ul a:hover {
 //     background-color: #2090dc;
 //     color: #fff;
-// }
-
-// @media (max-width: 1450px) {
-//     #newHeaderWrapperMainMenu{
-//         display: inline-block;
-//         float: none;
-//     }
-// }
+// }*/
+/*#wrapper #page #page-bgtop #page-bgbtm #content .post .entry table tr td {
+    text-align: center;
+}*/
+@media (max-width: 1450px) {
+    #newHeaderWrapperMainMenu{
+        display: inline-block;
+        float: none;
+    }
+}
 
 @media (max-width: 980px) {
 
-     #newHeaderWrapperMainMenu,.newHeaderWrapperSearchMenuLogo{
-         display: none!important;
-     }
-     .smallScreenHeader #searchWrapper{
-         display: none;
-    }
-     .smallScreenHeader #logoWrapper .localLogo{
-         display: none;
-         width: 27%;
-    }
-     #loginWrapper{
-         width: 73%;
-     }
-     .smallScreenHeader #logoWrapper {
-         width: 82px;
-     }
-     .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
-         background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-k-university.svg) no-repeat scroll center center;
-         // background-position: center center;
-         // background-size: 178px auto;
-         display: block;
-         margin-left: 4px;
-         width: 184px;
-     }
+    //  #newHeaderWrapperMainMenu,.newHeaderWrapperSearchMenuLogo{
+    //      display: none!important;
+    //  }
+    //  .smallScreenHeader #searchWrapper{
+    //      display: none;
+    // }
+    //  .smallScreenHeader #logoWrapper .localLogo{
+    //      display: none;
+    //      width: 27%;
+    // }
+    //  #loginWrapper{
+    //      width: 73%;
+    //  }
+    //  .smallScreenHeader #logoWrapper {
+    //      width: 82px;
+    //  }
+    //  .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
+    //      background-position: center center;
+    //      background-size: 178px auto;
+    //      display: block;
+    //      margin-left: 4px;
+    //      width: 178px;
+    //  }
 
-     .smallScreenHeader #newHeaderWrapperMobileMenu,
-     .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-         margin-right: 0;
-         width: 265px;
-     }
-     .newHeaderWrapperMobileMenuLogo {
-         margin-right: 0;
-     }
-     #newHeaderWrapperLanguage a{
-         font-size: 1em;
-         padding: 3px 22px;
-    }
-     #newHeaderWrapperLanguage > span,
-     #newHeaderWrapperLanguage,
-     #donateBtn{
-         width: auto;
-     }
-     #donateBtn a{
-         font-size: 1em;
-         padding: 3px 18px;
-     }   
-}
-@media (min-width: 500px) and (max-width: 980px) {
-  .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
-      background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university.svg) no-repeat center center; 
-      width: 292px; 
-  }
-  .smallScreenHeader #newHeaderWrapperMobileMenu, .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-    width: 375px;
-  }
+    //  .smallScreenHeader #newHeaderWrapperMobileMenu,
+    //  .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
+    //      margin-right: 0;
+    //      width: 259px;
+    //  }
+    //  .newHeaderWrapperMobileMenuLogo {
+    //      margin-right: 0;
+    //  }
+    //  #newHeaderWrapperLanguage a{
+    //      font-size: 1em;
+    //      padding: 3px 22px;
+    // }
+    //  #newHeaderWrapperLanguage > span,
+    //  #newHeaderWrapperLanguage,
+    //  #donateBtn{
+    //      width: auto;
+    //  }
+    //  #donateBtn a{
+    //      font-size: 1em;
+    //      padding: 3px 18px;
+    //  }   
 }
 @media (max-width: 377px){
-     .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
-         // background-position: -79px;
-         width: 117px;
-         background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku.svg) no-repeat center center; 
-     }
+     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
+     //     /*background-position: -79px;*/
+     //     width: 117px;
+     //     background: none;
+     // }
      // .smallScreenHeader .newHeaderWrapperLocalMenuLogo:after{
      //     color: #8dceff;
      //     content: "Kabbalah University";
@@ -658,32 +606,32 @@ a.userActiveResponsive{
      //     position: relative;
      //     top: 1px;
      // }
-     .smallScreenHeader #newHeaderWrapperMobileMenu, 
-     .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-         width: 203px;
-     }
+     // .smallScreenHeader #newHeaderWrapperMobileMenu, 
+     // .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
+     //     width: 203px;
+     // }
 }
 @media (max-width: 326px) {
     
-     .smallScreenHeader #loginWrapper {
-         width: 208px;
-     }
-     .smallScreenHeader #userInfoWrapper{
-         margin-left: 5px;
-     }
-     .smallScreenHeader #donateBtn{
-         margin-left: 5px;
-     }
-     .smallScreenHeader #logoWrapper {
-         width: 76px;
-     }
-     .smallScreenHeader #newHeaderWrapperMobileMenu, 
-     .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-         width: 183px;
-     }
-     .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
-         width: 100px;
-     }
+     // .smallScreenHeader #loginWrapper {
+     //     width: 208px;
+     // }
+     // .smallScreenHeader #userInfoWrapper{
+     //     margin-left: 5px;
+     // }
+     // .smallScreenHeader #donateBtn{
+     //     margin-left: 5px;
+     // }
+     // .smallScreenHeader #logoWrapper {
+     //     width: 76px;
+     // }
+     // .smallScreenHeader #newHeaderWrapperMobileMenu, 
+     // .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
+     //     width: 183px;
+     // }
+     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
+     //     width: 100px;
+     // }
 
 }
 #sidr-0 {
@@ -734,45 +682,13 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 .sidr ul li ul li a{
   color: #e9e9e9;
 }
-
+/*// ,
+// ul#nice-menu-1 ul li:hover*/
 #sidr-0 ul li a:hover{
   background:#2090dc;
 }
-// iPad 
-/* Portrait */
-// @media only screen 
-//   and (min-device-width: 768px) 
-//   and (max-device-width: 1024px) 
-//   and (orientation: portrait) 
-//   and (-webkit-min-device-pixel-ratio: 1) {
-//     #userInfoWrapperResponsive{
-//         /*display: none!important;*/
-//     }
-//     .smallScreenHeader #userInfoWrapper > span{
-//         /*display: inline!important;*/
-//     }
-// }
-@media (min-width: 480px) {
-    .smallScreenHeader #userInfoWrapper > span {
-        display: inline-block;
-    }
-    #userInfoWrapperResponsive{
-        display: none;
-    }
-}
-@media (min-width: 480px) and (max-width: 1660px){
-    #loginWrapper {
-        width: 82%;
-    }
-}
-@media (max-width: 479px) {
-    .smallScreenHeader #userInfoWrapper > span {
-        display: none;
-    }
-    #userInfoWrapperResponsive{
-        display: block;
-    }
-
+#frontLeft{
+  z-index: 1!important;
 }
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
