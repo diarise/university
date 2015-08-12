@@ -129,16 +129,24 @@ transition: all 3s ease-in-out;
     width: 33.33%;
 }
 .smallScreenHeader #searchWrapper{
-    width: 30%;
+    width: 25%;
+}
+// @media (min-width: 981px) {
+//     .smallScreenHeader #loginWrapper{
+//       width: 36.33%;
+//     }
+// }
+.smallScreenHeader #loginWrapper{
+    width: 36.33%;
 }
 #loginWrapper{
     float: right;
     height: 60px;
-    width: 33.33%;
+    width: 31.33%;
 }
 .smallScreenHeader #logoWrapper{
     background: url(../images/kc_logo_grey_no_type.svg) no-repeat scroll 24px 15px;
-    width: 36.33%;
+    width: 38.33%;
 }
 .smallScreenHeader #loginWrapper{
     /*background: orange none repeat scroll 0 0;*/
@@ -164,7 +172,7 @@ input#submitSearchBtn {
     width: 52px;
 }
 .smallScreenHeader #logoWrapper .localLogo{
-    background: url(../images/kabbalah_university.svg) no-repeat scroll 0 7px;
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university.svg) no-repeat scroll center center / contain;
     border: none;
     display: inline-block;
     width: 240px;
@@ -240,12 +248,12 @@ a.plusIcone {
     margin-left: 14px;
     margin-right: 8px;
 }
-#userInfoWrapperResponsive,
-.smallScreenHeader #userInfoWrapper > span{
-    display: none;
-}
+// #userInfoWrapperResponsive,
+// .smallScreenHeader #userInfoWrapper > span{
+//     display: none;
+// }
 .smallScreenHeader #userInfoWrapperResponsive{
-    display: block;
+    // display: block;
     float: right;
 }
 #userInfoWrapperResponsive ul {
@@ -308,8 +316,14 @@ a.userActiveResponsive{
     line-height: normal;
     text-align: center;
     vertical-align: middle;
-    min-width: 741px;
+    // min-width: 737px;
 }
+.smallScreenHeader.menuScrolling  #newHeaderWrapperMainMenu {
+        max-width: 737px;
+        width: auto!important;
+        float: left; 
+    }
+
 #newHeaderWrapperLanguage{
     float: right;
     height: 42px;
@@ -353,7 +367,7 @@ a.userActiveResponsive{
 }
 
 .newHeaderWrapperLocalMenuLogo {
-    background: url(../images/kabbalah_university.svg) no-repeat scroll 0 13px;
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university.svg) no-repeat scroll center center / contain;
     float: left;
     height: 42px;
     width: 241px;
@@ -690,7 +704,28 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 #frontLeft{
   z-index: 1!important;
 }
+@media (min-width: 480px) {
+    .smallScreenHeader #userInfoWrapper > span {
+        display: inline-block;
+    }
+    #userInfoWrapperResponsive{
+        display: none;
+    }
+}
+@media (min-width: 480px) and (max-width: 1660px){
+    // #loginWrapper {
+    //     width: 82%;
+    // }
+}
+@media (max-width: 479px) {
+    .smallScreenHeader #userInfoWrapper > span {
+        display: none;
+    }
+    #userInfoWrapperResponsive{
+        display: block;
+    }
 
+}
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
 
