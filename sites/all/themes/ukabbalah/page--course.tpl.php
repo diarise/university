@@ -136,6 +136,8 @@
 										
 										if (preg_match('/David Mats/',$author->name)) 
 										echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/David_Mats.jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 	
+										elseif (preg_match('/Yitzhak Sinwani/',$author->name)) 
+										echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/Yitzhak_Sinwani.jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 	
 										else
 										echo "<span class='authorImage'><a href='javascript:void(0)' class = '".$author->name."'><img src='/sites/all/themes/ukabbalah/images/".$name.".jpg' alt='".$author->name."' ></a><a href='javascript:void(0)' class = '".$author->name."'>" .$author->name. " </a></span>"; 
 									}	
