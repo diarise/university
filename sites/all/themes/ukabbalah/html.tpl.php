@@ -44,7 +44,7 @@
   <?php if( $pageRegistrationUrl == "/journey" ) { ?>
   
 		<meta property="og:title" content="A Journey to the Beginning of the Endless" />
-		<meta property="og:description" content="A ground breaking 28 day program to create a spiritual renaissance in your life. And in the world." />
+		<meta property="og:description" content="A FREE groundbreaking 28 day program to create a spiritual renaissance in your life. And in the world. Free for all. Please share." />
 		<meta property="og:image" content="http://cdn1.kabbalah.com/kabbalah.com/images/articles/15-8-2-karen-berg-elul2.jpg" />
 		
   <?php } else { ?>
