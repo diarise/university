@@ -170,15 +170,15 @@
 
         });
 
-          var resizeTimer;
-          $(window).resize(function () {
-              clearTimeout(resizeTimer);
-              resizeTimer = setTimeout(function () {
-                  $("#newHeaderWrapperMainMenu").css({
-                      "width": ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1),
-                  });
-              }, 1000);
-          })(jQuery);
+          // var resizeTimer;
+          // $(window).resize(function () {
+          //     clearTimeout(resizeTimer);
+          //     resizeTimer = setTimeout(function () {
+          //         $("#newHeaderWrapperMainMenu").css({
+          //             "width": ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1),
+          //         });
+          //     }, 1000);
+          // })(jQuery);
 
 
 
@@ -294,6 +294,11 @@
                         "width" : 240,
                     });
                 }
+
+                $("#newHeaderWrapperMainMenu").css({
+                    "width": ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1),
+                });
+
             }, 1000);
 
         });
