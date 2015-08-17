@@ -726,6 +726,16 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 //     }
 
 // }
+@media (max-width: 1200px) {
+    .smallScreenHeader #searchWrapper {
+        width: 15%;
+    }
+    .smallScreenHeader #searchWrapper input, 
+    .smallScreenHeader .searchWrapper {
+        width: 140px;
+    }
+
+}
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
 
