@@ -56,14 +56,14 @@
 					<?php } if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership)) {?>		
 						<div id="wrapperPrice">
 							<span class="buttonMemberDesc">This is a <?php print $membership; ?> course</span>
-							<span class="buttonMember"><a href="http://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
+							<span class="buttonMember"><a href="https://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
 						</div>
 					<?php } elseif( !user_is_logged_in()) { ?>
 						<div id="wrapperPrice">
 							<div class="loginText">Join Kabbalah University to watch this video.<br/>
 		Members get access to thousands of courses and events</div>
-							<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin logColor"><a href="http://idp.kabbalah.com/user/login">Log in</a></span>
+							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
+							<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login">Log in</a></span>
 						</div>
 
 					<?php } ?>
@@ -159,14 +159,14 @@
 		<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership)) {?>		
 						<div class="wrapperLoginBloc" id="wrapperPrice">
 							<span class="buttonMemberDesc">This is a <?php print $membership; ?> course</span>
-							<span class="buttonMember"><a href="http://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
+							<span class="buttonMember"><a href="https://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
 						</div>
 					<?php } elseif( !user_is_logged_in()) { ?>
 						<div class="wrapperLoginBloc" id="wrapperPrice">
 							<div class="loginText">Join Kabbalah University to watch this video.
 		Members get access to thousands of courses and events</div>
-							<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin logColor"><a href="http://idp.kabbalah.com/user/login">Log in</a></span>
+							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
+							<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login">Log in</a></span>
 						</div>
 					<?php } ?>
 		 

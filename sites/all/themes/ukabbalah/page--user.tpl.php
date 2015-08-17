@@ -18,7 +18,7 @@ if(user_is_logged_in() ){?>
     Already a Kabbalah University (UKABBALAH) Member? Please log in with your current username and password.
 </div>
 <div class="infoMember">
-	Forgot Username? <a target="_blank" href="http://idp.kabbalah.com/get_username">Click here</a>
+	Forgot Username? <a target="_blank" href="https://idp.kabbalah.com/get_username">Click here</a>
 </div>
 <div id="mainContentUser">
 <?php print $messages; ?>
