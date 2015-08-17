@@ -121,8 +121,8 @@
 					<div class="wrapperVideoDetailButton">
 						<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership) ) {?>		
 						
-							<span class="buttonMemberDesc">This is a <?php print $membership; ?> lesson</span>
-							<span class="buttonMember"><a href="https://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
+							<span class="buttonMemberDesc UpgradeLesson">This is a <?php print $membership; ?> lesson</span>
+							<span class="buttonMember UpgradeLesson"><a href="https://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
 						
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
