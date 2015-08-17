@@ -60,9 +60,16 @@
 					<div id="28DaysTitle">
 						<img src="/sites/all/themes/ukabbalah/images/28-days-title.png" alt="">
 					</div>
+					
+					
+					<?php if ( !user_is_logged_in() ) { ?>
+					
 					<div id="registerRightRail">
 						<a target="_blank" href="https://idp.kabbalah.com/registration/journey"><img src="/sites/all/themes/ukabbalah/images/register_right_rail.png" alt=""></a>
 					</div>
+					<?php } ?>
+					
+					
 					<div id="loginRightRail">
 						<a target="_blank" href="https://university.kabbalah.com/subscribe/journey"><img src="/sites/all/themes/ukabbalah/images/login_right_rail.png" alt=""></a>
 					</div>
