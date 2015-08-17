@@ -170,11 +170,23 @@
 
         });
 
+          // var resizeTimer;
+          // $(window).resize(function () {
+          //     clearTimeout(resizeTimer);
+          //     resizeTimer = setTimeout(function () {
+          //         $("#newHeaderWrapperMainMenu").css({
+          //             "width": ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1),
+          //         });
+          //     }, 1000);
+          // })(jQuery);
+
+
+
         $(window).resize(function () {
 
-            $("#newHeaderWrapperMainMenu").css({
-                "width" : ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1) ,
-            });
+            // $("#newHeaderWrapperMainMenu").css({
+            //     "width" : ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1) ,
+            // });
 
             // calculation of the twitter block width
 
@@ -282,6 +294,11 @@
                         "width" : 240,
                     });
                 }
+
+                $("#newHeaderWrapperMainMenu").css({
+                    "width": ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1),
+                });
+
             }, 1000);
 
         });
