@@ -704,7 +704,7 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 #frontLeft{
   z-index: 1!important;
 }
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
     .smallScreenHeader #userInfoWrapper > span {
         display: inline-block;
     }
@@ -717,15 +717,15 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     //     width: 82%;
     // }
 }
-@media (max-width: 999px) {
-    .smallScreenHeader #userInfoWrapper > span {
-        display: none;
-    }
-    #userInfoWrapperResponsive{
-        display: block;
-    }
+// @media (max-width: 999px) {
+//     .smallScreenHeader #userInfoWrapper > span {
+//         display: none;
+//     }
+//     #userInfoWrapperResponsive{
+//         display: block;
+//     }
 
-}
+// }
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
 
