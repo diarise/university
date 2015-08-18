@@ -739,6 +739,13 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     }
 
 }
+@media (max-width: 980px){
+    .smallScreenHeader #logoWrapper .localLogo{
+        background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-k-university.svg) no-repeat scroll center center;
+        width: 184px;
+        margin-left: 5px;
+    }
+}
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
 
