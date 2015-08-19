@@ -316,10 +316,11 @@ a.userActiveResponsive{
     line-height: normal;
     text-align: center;
     vertical-align: middle;
-    // min-width: 737px;
+    min-width: 739px;
 }
 .smallScreenHeader.menuScrolling  #newHeaderWrapperMainMenu {
-        max-width: 737px;
+        max-width: 739px;
+        min-width: 680px;
         width: auto!important;
         float: left; 
     }
