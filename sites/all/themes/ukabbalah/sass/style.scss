@@ -316,10 +316,11 @@ a.userActiveResponsive{
     line-height: normal;
     text-align: center;
     vertical-align: middle;
-    // min-width: 737px;
+    min-width: 739px;
 }
 .smallScreenHeader.menuScrolling  #newHeaderWrapperMainMenu {
-        max-width: 737px;
+        max-width: 739px;
+        min-width: 680px;
         width: auto!important;
         float: left; 
     }
@@ -704,7 +705,7 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 #frontLeft{
   z-index: 1!important;
 }
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
     .smallScreenHeader #userInfoWrapper > span {
         display: inline-block;
     }
@@ -717,14 +718,34 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     //     width: 82%;
     // }
 }
-@media (max-width: 999px) {
-    .smallScreenHeader #userInfoWrapper > span {
-        display: none;
+// @media (max-width: 999px) {
+//     .smallScreenHeader #userInfoWrapper > span {
+//         display: none;
+//     }
+//     #userInfoWrapperResponsive{
+//         display: block;
+//     }
+
+// }
+@media (max-width: 1200px) {
+    .smallScreenHeader #searchWrapper {
+        width: 15%;
     }
-    #userInfoWrapperResponsive{
-        display: block;
+    .smallScreenHeader #searchWrapper input, 
+    .smallScreenHeader .searchWrapper {
+        width: 140px;
+    }
+    .smallScreenHeader #loginWrapper{
+        width: 45.33%;
     }
 
+}
+@media (max-width: 980px){
+    .smallScreenHeader #logoWrapper .localLogo{
+        background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-k-university.svg) no-repeat scroll center center;
+        width: 184px;
+        margin-left: 5px;
+    }
 }
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
@@ -5443,4 +5464,20 @@ body.page-node-6419{
         text-align: right;
         text-transform: capitalize;
     }
+}
+.buttonMemberDesc.upgradeLesson {
+    margin-left: -50px;
+    text-align: center;
+    width: 252px;
+}
+.buttonMember.upgradeLesson {
+    margin-left: -50px;
+    width: 200px;
+}
+.wrapperLoginBloc.upgradeLessonBottom {
+    display: block !important;
+    height: 80px;
+}
+.wrapperLoginBloc.upgradeLessonBottom .buttonMemberDesc {
+    color: #433a3a;
 }

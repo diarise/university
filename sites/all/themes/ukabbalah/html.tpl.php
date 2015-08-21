@@ -85,16 +85,6 @@
 	$username = $user->name;
 ?>
 <!-- Header and Main Menu -->
-	
-<!-- this popup show up only when the user is not log in -->
-
-			<?php if ( user_is_logged_in() ) {?>
-				
-			<?php } else {?>
-				<div id="popupNotLogin">Welcome to the Kabbalah University please <a href="https://idp.kabbalah.com/user/login">Log In</a> or <a href="https://idp.kabbalah.com">sign up</a> to have access to the videos <span>X</span></div>
-			<?php }?>
-		
-<!-- end popup -->
 
 <!-- new header -->
 <div id="newHeaderWrapper">
