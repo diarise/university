@@ -449,7 +449,7 @@ function blueprint_css_reorder($css) {
 
 function get_current_url() 
 {
-	return "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	return urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
 }
 
 function ukabbalah_preprocess_page(&$vars) {
