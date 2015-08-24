@@ -154,9 +154,10 @@ transition: all 3s ease-in-out;
 #logoWrapper > a {
     border-right: 1px solid #7f7979;
     display: inline-block;
-    height: 29px;
+    //height: 29px;
+    height: 36px;
     margin-left: 24px;
-    margin-top: 16px;
+    margin-top: 14px;
     width: 258px;
 }
 input#submitSearchBtn {
@@ -172,7 +173,7 @@ input#submitSearchBtn {
     width: 52px;
 }
 .smallScreenHeader #logoWrapper .localLogo{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university.svg) no-repeat scroll center center / contain;
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-top.svg) no-repeat scroll left center;
     border: none;
     display: inline-block;
     width: 240px;
@@ -368,10 +369,10 @@ a.userActiveResponsive{
 }
 
 .newHeaderWrapperLocalMenuLogo {
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university.svg) no-repeat scroll center center / contain;
+     background: rgba(0, 0, 0, 0) url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-bottom.svg) no-repeat scroll center center;
     float: left;
     height: 42px;
-    width: 241px;
+    width: 270px;
 }
 .newHeaderWrapperSearchMenuLogo{
     display: none;
