@@ -466,7 +466,7 @@ $(document).ready(function(){
                                 
         var cat = $("#teachings_teachersDD").val();
         var cat_id = cat.replace('cat', '');
-        var author_name = $("#teachings_teachersDD option:selected").text().replace(' ','-');
+        var author_name = $("#teachings_teachersDD option:selected").text().replace(/\|\s/g, "").replace(/\s/g, "-");;
        //$(this).target = "_self";
         window.open('/locations/'+author_name,'_self',false);
             
