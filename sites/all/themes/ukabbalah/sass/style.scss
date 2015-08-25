@@ -3169,8 +3169,16 @@ div.jp-audio{
 #teachingsSectionHeaderBar .lessonsCourse{
     display: block;
 }
-#authorDDWrapper, #topicDDWrapper {
+#topicDDWrapper {
     float: left;
+    width: 187px  
+}
+#authorDDWrapper{
+    float: left;
+    width: 177px   
+}
+#teachingsBarInnerWrapper{
+    min-width: 940px;
 }
 #teachings_teachersDD, #teachings_topicDD,#views-exposed-form-search-page select {
     cursor: pointer;
