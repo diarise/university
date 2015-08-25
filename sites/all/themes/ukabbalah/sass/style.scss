@@ -3180,6 +3180,9 @@ div.jp-audio{
 #teachingsBarInnerWrapper{
     min-width: 940px;
 }
+#list, #grid{
+    float: left
+}
 #teachings_teachersDD, #teachings_topicDD,#views-exposed-form-search-page select {
     cursor: pointer;
     height: 29px;
