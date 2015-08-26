@@ -3486,7 +3486,10 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     text-align: center;
 }
 p.rtecenter > img {
-    float: none;
+    float: none!important;
+}
+body.page-node-5799 #page-title{
+    width: 100%!important; 
 }
 /********added style for the support tap*************/
 .ZenboxTabRight{
