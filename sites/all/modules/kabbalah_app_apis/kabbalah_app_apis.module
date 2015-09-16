@@ -621,15 +621,15 @@
 		
 	function get_clean_app_body( $body , $limit = 100 ) { // $limit = 0 means no limit
 	
-		$body = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $body);
+		/*$body = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $body);
 		$body = preg_replace('#<object(.*?)>(.*?)</object>#is', '', $body);
 		$teaser = preg_replace('#<img(.*?)>#is', '', $body);
 		$teaser = preg_replace("/&#?[a-z0-9]+;/i","",$teaser); // removeds $nbsp
 		$teaser = stripslashes($teaser);
-		$teaser = strip_tags($teaser);
+		$teaser = strip_tags($teaser);*/
 
-		if( $limit != 0 )$teaser = substr( $teaser , 0 , $limit );
-		if( $teaser != false ) return $teaser;
+		if( $limit != 0 )$body = substr( $body , 0 , $limit );
+		if( $body != false ) return $body;
 		else return "";
 	
 	}
