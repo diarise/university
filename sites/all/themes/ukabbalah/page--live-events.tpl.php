@@ -11,8 +11,6 @@
 </main><!-- end of pageregion -->
 
 <div class='commentsSection'>
-	<div class="commentingText">Please share your thoughts with our online student community. 
-	After posting, your comment will be submitted for approval and published soon. 
-	For assistance with technical problems, using the site or with your account or to share suggestions, please contact <a href="mailto:care@ukabbalah.com" target="_blank">care@ukabbalah.com</a>.</div>
+	
 	<?php print render($page['comments']); ?>
 </div> 
