@@ -1,3 +1,13 @@
+<?php
+ global $user;
+    if ($user->uid == 0){
+        $login = l("Login","user/login",array('query' => drupal_get_destination()));
+        }
+    else{
+    $logout = l("Logout","user/logout",array('query' => drupal_get_destination()));
+	}
+?>
+
 <main id="pageregion">
 	<?php print $messages; ?>
     <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
@@ -127,7 +137,8 @@
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin"><a href="<?php echo get_current_url(); ?>">Log in</a></span>
+							<!--<span class="priceLogin"><a href="<?php echo $login; ?>">Log in</a></span> -->
+							<span class="priceLogin"><?php print $login;?></span> 
 						
 					<?php } ?>
 					</div>

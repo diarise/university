@@ -449,15 +449,15 @@ function blueprint_css_reorder($css) {
 
 function get_current_url() 
 {
-	//return urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+	return urlencode("https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
 	
-	 global $user;
+	/* global $user;
     if ($user->uid == 0){
         return l("Login","user/login",array('query' => drupal_get_destination()));
         }
     else{
     return l("Logout","user/logout",array('query' => drupal_get_destination()));
-	} 
+	} */
 }
 
 function ukabbalah_preprocess_page(&$vars) {
