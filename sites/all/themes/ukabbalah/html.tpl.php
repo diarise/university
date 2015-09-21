@@ -1,22 +1,4 @@
-<?php
-	if(user_is_logged_in() )
-	{  
-		global $user;
-		if( checkLegacyUsernameAndEmailExists( $user->mail , $user->name ) ) // check if username and email exists in legacy_users table and migration_date is NULL
-		{   
-			if (isset($_GET['destination'])) 
-			{
-				unset($_GET['destination']);
-			}
-			drupal_static_reset('drupal_get_destination');
-			drupal_goto('http://idp.kabbalah.com/user/'.$user->uid.'/migrate-user'); 
-		 } 
-	}
-	
-	$pageRegistrationUrl = $_SERVER["REQUEST_URI"];
-	
-	
-?>
+
 <?php
 // $Id: html.tpl.php,v 1.1.2.2 2011/02/06 22:47:17 andregriffin Exp $
 ?><!DOCTYPE html>
@@ -67,7 +49,7 @@
 
 
   <!-- end panels -->
-<script src="//load.sumome.com/" data-sumo-site-id="772817612e0d78c7785e86cf790fff083f8f66538ac037e82ffca7e1ac748ad2" async="async"></script>
+
 </head>
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
@@ -107,7 +89,7 @@
                     <span><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="gutterPipe">|</span></span>
                     <span><a href="/user/logout">Log Out</a></span>
                 <?php } else {?>
-                    <span><a href="https://idp.kabbalah.com/user/login" class="activeLink">Log In</a><span class="gutterPipe">|</span>
+                    <span><?php print get_current_url(); ?><span class="gutterPipe">|</span>
                     </span><span><a href="https://idp.kabbalah.com">Sign Up</a></span>
                 <?php }?>
                     <div id="userInfoWrapperResponsive">
@@ -126,7 +108,7 @@
                             </li>
                             <?php } else {?>
 
-                             <li><a href="https://idp.kabbalah.com/user/login" class="activeLink userActiveResponsive">Log In</a>
+                             <li><?php print get_current_url(); ?>
                                     <ul><li><a href="https://idp.kabbalah.com">Sign Up</a></li></ul>
                              </li>
                             

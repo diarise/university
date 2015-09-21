@@ -1,12 +1,4 @@
-<?php
- global $user;
-    if ($user->uid == 0){
-        $login = l("Login","user/login",array('query' => drupal_get_destination()));
-        }
-    else{
-    $logout = l("Logout","user/logout",array('query' => drupal_get_destination()));
-	}
-?>
+
 
 <main id="pageregion">
 	<?php print $messages; ?>
@@ -138,7 +130,7 @@
 						
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
 							<!--<span class="priceLogin"><a href="<?php echo $login; ?>">Log in</a></span> -->
-							<span class="priceLogin"><?php print $login;?></span> 
+							<span class="priceLogin"><?php print get_current_url();?></span> 
 						
 					<?php } ?>
 					</div>
@@ -191,7 +183,7 @@
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
 							<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin"><a href="https://university.kabbalah.com/user/login?destination=<?php echo get_current_url(); ?>">Log in</a></span>
+							<span class="priceLogin"><?php print get_current_url();?></span>
 						
 					<?php } ?>
 					</div>
@@ -430,7 +422,7 @@
 			<div class="wrapperLoginBloc" id="wrapperPrice">
 				<div class="loginText">Join Kabbalah University to watch this video. Members get access to thousands of courses and events</div>
 				<span class="buttonMember"><a href="http://idps.kabbalah.com">Become a member</a></span>
-				<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login?destination=<?php echo get_current_url(); ?>">Log in</a></span>
+				<span class="priceLogin logColor"><?php print get_current_url();?></span>
 			</div>
 				<?php } ?>
 		 
