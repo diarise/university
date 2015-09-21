@@ -127,7 +127,7 @@
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin"><a href="https://idp.kabbalah.com/user/login?destination=<?php echo get_current_url(); ?>">Log in</a></span>
+							<span class="priceLogin"><a href="https://university.kabbalah.com/user/login?destination=<?php echo get_current_url(); ?>">Log in</a></span>
 						
 					<?php } ?>
 					</div>
