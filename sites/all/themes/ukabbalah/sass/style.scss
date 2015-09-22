@@ -749,11 +749,11 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     }
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1450px){
     .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
         display: block;
     }
-    .newHeaderWrapperLocalMenuLogo {
+    .menuScrolling .newHeaderWrapperLocalMenuLogo {
         background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku-shield-bottom.svg") no-repeat scroll left 8px center;
         float: left;
         height: 42px;
