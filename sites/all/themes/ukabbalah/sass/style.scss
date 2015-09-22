@@ -761,7 +761,11 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
         width: 36px;
     }
     .menuScrolling .newHeaderWrapperSearchMenuLogo{
-        border-left: 1px solid #8c8787;
+        border-left: 1px solid #8c8787!important;
+    }
+
+    .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu {
+        width: 18%;
     }
 }
 
