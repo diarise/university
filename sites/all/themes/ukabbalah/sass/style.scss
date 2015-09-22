@@ -748,6 +748,24 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
         margin-left: 5px;
     }
 }
+
+@media (max-width: 1500px){
+    .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
+        display: block;
+    }
+    .newHeaderWrapperLocalMenuLogo {
+        background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku-shield-bottom.svg") no-repeat scroll left 8px center;
+        float: left;
+        height: 42px;
+        margin-right: 5px;
+        width: 36px;
+    }
+    .menuScrolling .newHeaderWrapperSearchMenuLogo{
+        border-left: 1px solid #8c8787;
+    }
+}
+
+
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
 
