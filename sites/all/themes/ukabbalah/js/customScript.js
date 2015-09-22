@@ -153,7 +153,7 @@
             });
 
             $("#newHeaderWrapperMainMenu").css({
-                "width" : ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 1) ,
+                "width" : ($("#newHeaderWrapperMainMenu").find("ul#nice-menu-1").outerWidth() + 30) ,
             });
 
             // calculation of the twitter block width
