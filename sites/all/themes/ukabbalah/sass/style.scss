@@ -751,25 +751,25 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     }
 }
 
-// @media (min-width: 1200px) and (max-width: 1500px){
-//     .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
-//         display: block;
-//     }
-//     .menuScrolling .newHeaderWrapperLocalMenuLogo {
-//         background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku-shield-bottom.svg") no-repeat scroll left 8px center;
-//         float: left;
-//         height: 42px;
-//         margin-right: 5px;
-//         width: 36px;
-//     }
-//     .menuScrolling .newHeaderWrapperSearchMenuLogo{
-//         border-left: 1px solid #8c8787!important;
-//     }
+@media (min-width: 1200px) and (max-width: 1500px){
+    .smallScreenHeader.menuScrolling .newHeaderWrapperLocalMenuLogo {
+        display: block;
+    }
+    .menuScrolling .newHeaderWrapperLocalMenuLogo {
+        background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku-shield-bottom.svg") no-repeat scroll left 8px center;
+        float: left;
+        height: 42px;
+        margin-right: 5px;
+        width: 36px;
+    }
+    .menuScrolling .newHeaderWrapperSearchMenuLogo{
+        border-left: 1px solid #8c8787!important;
+    }
 
-//     .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu {
-//         width: 18%;
-//     }
-// }
+    .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu {
+        width: 18%;
+    }
+}
 
 
 /*===========================end new menu===============================*/
