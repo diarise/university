@@ -89,7 +89,7 @@
                     <span><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="gutterPipe">|</span></span>
                     <span><a href="/user/logout">Log Out</a></span>
                 <?php } else {?>
-                    <span><?php print get_current_url(); ?><span class="gutterPipe">|</span>
+                    <span><a href="https://idp.kabbalah.com/user/login" class="activeLink userActiveResponsive">Log In</a><?php //print get_current_url(); ?><span class="gutterPipe">|</span>
                     </span><span><a href="https://idp.kabbalah.com">Sign Up</a></span>
                 <?php }?>
                     <div id="userInfoWrapperResponsive">
@@ -108,7 +108,9 @@
                             </li>
                             <?php } else {?>
 
-                             <li><?php print get_current_url(); ?>
+                             <li>
+                                  <a href="https://idp.kabbalah.com/user/login" class="activeLink userActiveResponsive">Log In</a>
+                             <?php //print get_current_url(); ?>
                                     <ul><li><a href="https://idp.kabbalah.com">Sign Up</a></li></ul>
                              </li>
                             
