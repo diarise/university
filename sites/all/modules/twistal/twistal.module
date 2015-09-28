@@ -661,7 +661,7 @@ catch(exception $e){
   $relatedRss.=  '<item>';
   $relatedRss.= '<title>'.$value->title.'</title>';
   $relatedRss.= '<link> /'.drupal_get_path_alias('node/'.$value->nid).'</link>';
-  $relatedRss.=   '<media:thumbnail url="https://twistassets.kabbalah.com/videos/'.$value->field_lesson_video_twistage_existing_videos.'/screenshots/150w.jpg"/>';
+  $relatedRss.=   '<media:thumbnail url="http://twistassets.kabbalah.com/videos/'.$value->field_lesson_video_twistage_existing_videos.'/screenshots/150w.jpg"/>';
   //$relatedRss.=  '<media:content url="http://example.com/videos/28839.mp4" type="video/mp4" />';
   $relatedRss.=  '</item>';
   }
