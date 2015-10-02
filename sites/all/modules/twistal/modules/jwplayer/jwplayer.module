@@ -63,7 +63,7 @@
 			'width' => 940, //$width,
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
-			//'playlist'=>$file,
+			'playlist'=>'https://university.kabbalah.com/twistage/getnode/6499',
 			'skin'=> $skin,
 			'modes'=>$mode,
 			'ga'=> $ga_array,
