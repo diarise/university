@@ -63,7 +63,7 @@
 			'width' => 940, //$width,
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
-			'playlist'=>$file,
+			//'playlist'=>$file,
 			'skin'=> $skin,
 			'modes'=>$mode,
 			'ga'=> $ga_array,
