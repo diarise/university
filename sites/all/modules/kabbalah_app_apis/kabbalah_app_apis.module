@@ -36,12 +36,42 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		//4. Get Node Info 
+		
+		$items['k_app_api/get_info/%'] = array(
+			'page callback'    => 'getNodeInfoByNid',
+			'page arguments' => array(2),
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
 		// End of App API's
 		
 		return $items;
 	  }	
 	
 	// App Apis
+	
+	function getNodeInfoByNid( $nid ) {	 	
+		
+		$sql =  "SELECT * ".
+				"FROM {node n} ".
+				"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid ) ".
+				"WHERE n.nid = ".$nid;
+			
+		$result = db_query( $sql);
+		$node = "";
+		foreach ($result as $record) 
+		{		//$record = db_fetch_object( $result );
+			$node = node_load($record->nid , NULL, TRUE);		
+			$node->body = "";
+		}
+		header('Content-Type: application/json');
+		echo json_encode( $node );
+	}
+	
+	
+	
 	function getCoursesJsonForApp() {
 	
 		$sql = "SELECT n.*,d.field_event_date_value,d.field_event_date_value2
