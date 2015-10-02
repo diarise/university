@@ -644,7 +644,7 @@ $courseId = 'NULL';
 try{
 $result=db_query('SELECT n.nid,n.title,vid.field_lesson_video_twistage_existing_videos
 					FROM node n
-					LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid)
+					LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
 					LEFT JOIN {field_data_field_course_list courselist} ON ( nr.nid = courselist.entity_id ) 
 					LEFT JOIN {field_data_field_event_list eventlist} ON ( nr.nid = eventlist.entity_id ) 
 					LEFT JOIN {field_data_field_lesson_video vid} ON ( nr.nid = vid.entity_id )  
