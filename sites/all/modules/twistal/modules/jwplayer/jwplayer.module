@@ -29,7 +29,7 @@
 			//drupal_add_html_head($jwplayerkey,'jwplayer-key');
 			//drupal_add_js(drupal_get_path('module','jwplayer').'/includes/jwplayer.js');
 			//drupal_add_js('jwplayer.key="EMiSmgYruQJsCca0ZeZej55r95Tvni0Ldhb6XwUF+ag=";','inline');
-			drupal_add_js('https  ://content.jwplatform.com/libraries/DRDW0dXD.js', 'external');
+			drupal_add_js('https://content.jwplatform.com/libraries/DRDW0dXD.js', 'external');
 			$players=array();
 
 		}
