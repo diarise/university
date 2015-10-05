@@ -14,20 +14,20 @@ if(user_is_logged_in() ){?>
 	</div>
 <?php } else { ?> 
 
-<div class="infoMember">
+<!--<div class="infoMember">
     Already a Kabbalah University (UKABBALAH) Member? Please log in with your current username and password.
 </div>
 <div class="infoMember">
 	Forgot Username? <a target="_blank" href="https://idp.kabbalah.com/get_username">Click here</a>
-</div>
+</div>-->
 <div id="mainContentUser">
 <?php print $messages; ?>
 <?php
 if(arg(1) == 'password') {?>
 <div id="user_page_content">
 		
-		<?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
-		<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+		<!--<?php //if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php //print render($tabs); ?></div><?php //endif; ?>
+		<?php //if ($action_links): ?><ul class="action-links"><?php //print render($action_links); ?></ul><?php //endif; ?>-->
 		<?php print render($page['content']); ?>
 	</div>
 <?php } else { ?> 
