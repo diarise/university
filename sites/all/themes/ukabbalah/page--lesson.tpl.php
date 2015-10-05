@@ -129,9 +129,7 @@
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<!--<span class="priceLogin"><a href="<?php echo $login; ?>">Log in</a></span> -->
-							<span class="priceLogin"><a href="https://idp.kabbalah.com/user/login">Log In</a>
-							<?php //print get_current_url();?></span> 
+							<span class="priceLogin"><!--<a href="https://idp.kabbalah.com/user/login">Log In</a>--><?php print get_current_url();?></span> 
 						
 					<?php } ?>
 					</div>
@@ -184,7 +182,7 @@
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
 							<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin"><a href="https://idp.kabbalah.com/user/login">Log In</a><?php //print get_current_url();?></span>
+							<span class="priceLogin"><!--<a href="https://idp.kabbalah.com/user/login">Log In</a>--><?php print get_current_url();?></span>
 						
 					<?php } ?>
 					</div>
@@ -423,7 +421,7 @@
 			<div class="wrapperLoginBloc" id="wrapperPrice">
 				<div class="loginText">Join Kabbalah University to watch this video. Members get access to thousands of courses and events</div>
 				<span class="buttonMember"><a href="http://idps.kabbalah.com">Become a member</a></span>
-				<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login">Log In</a><?php //print get_current_url();?></span>
+				<span class="priceLogin logColor"><!--<a href="https://idp.kabbalah.com/user/login">Log In</a>--><?php print get_current_url();?></span>
 			</div>
 				<?php } ?>
 		 
