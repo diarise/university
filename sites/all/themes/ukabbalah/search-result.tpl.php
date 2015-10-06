@@ -85,46 +85,22 @@
  
 ?>
 
-<!-- <div class="searchContentWrapper"<?php //print $attributes; ?>>
+<div class="searchContentWrapper"<?php print $attributes; ?>>
   <div class="searchContenImage">
-      <?php //if($image_url) //print "<img src ='".$image_url."' class = 'theImage'  alt=''/>"; ?>
+      <?php if($image_url) print "<img src ='".$image_url."' class = 'theImage'  alt=''/>"; ?>
   </div>
   <div class="searchContenTitle">
-      <a href="<?php //print $url; ?>"><?php //print $title; ?></a>
+      <a href="<?php print $url; ?>"><?php print $title; ?></a>
   </div>
   <div class="searchContenText">
-      <?php //if ($snippet): ?>
-        <p class="search-snippet"<?php //print $content_attributes; ?>><?php //print $snippet; ?></p>
-      <?php //endif; ?>
-      <?php //if ($info): ?>
-        <p class="search-info"><?php //print $info; ?></p>
-      <?php //endif; ?>
+      <?php if ($snippet): ?>
+        <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
+      <?php endif; ?>
+      <?php if ($info): ?>
+        <p class="search-info"><?php print $info; ?></p>
+      <?php endif; ?>
   </div>
-</div> -->
+</div>
 
 
 
-<li class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php print render($title_prefix); ?>
-  <h3 class="title"<?php print $title_attributes; ?>>
-    <a href="<?php print $url; ?>"><?php print $title; ?></a>
-  </h3>
-  <?php print render($title_suffix); ?>
-  <div class="search-snippet-info">
-    <?php if ($snippet): ?>
-      <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
-    <?php endif; ?>
-    <?php if ($info): ?>
-      <p class="search-info"><?php print $info; ?></p>
-    <?php endif; ?>
-  </div>
-  <?php  
-  $image = field_get_items('node', $variables['node'], 'field_image_cdn_link');
-  print $image;
-  
- 
- 
-      if($image_url)  print "<div class = 'searchimage'><img src ='".$image_url."' class = 'theImage'  alt=''/>";
-  
-  ?>
-</li>
