@@ -98,12 +98,10 @@
   </div>
   <div class="searchContenTitle">
       <a href="<?php print $url; ?>"><?php print $title; ?></a>
-      <div>
-      
-        <div>teacher: <?php echo implode( ", " , $authors_name ); // Author name  ?></div>
-        <?php if ($course_title): ?><div>course : <?php print $course_title; ?></div> <?php endif; ?>
 
-      </div>
+      <div class="searchContenTeacher">Teacher: <?php echo implode( ", " , $authors_name ); // Author name  ?></div>
+      <?php if ($course_title): ?><div  class="searchContenCcourse">Course: <?php print $course_title; ?></div> <?php endif; ?>
+
   </div>
   <div class="searchContenText">
       <?php if ($snippet): ?>
