@@ -73,6 +73,7 @@
       if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']);   
       $image_url = $course_nid->field_image_cdn_link['und'][0]['value'];
       $course_title = $course_nid->field_course_list['und'][0]['node']->title;
+      print_r($course_nid);
     }else{
       
       $video_id=$node->field_lesson_video['und'][0]['twistage_existing_videos'];
