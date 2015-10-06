@@ -86,6 +86,10 @@
   $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
   foreach ( $authors as $author ) { $authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }
  
+
+
+  print_r($node->field_course_list);
+  
   if( sizeof( $node->field_course_list) > 0  )
   {
     $course_list_title = $node->field_course_list['und'][0]['node']->title;
