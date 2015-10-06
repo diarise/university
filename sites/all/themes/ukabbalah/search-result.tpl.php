@@ -67,12 +67,14 @@
  // $node = node_load($result['fields']['entity_id']);
  if( $node->type == "lesson")
   { 
-    if($node->field_type_of_lesson['und'][0]['tid']== 554 ) 
+    if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['nid']); 
+    if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']);
+    $course_title = $course_nid->title;
+    if($node->field_type_of_lesson['und'][0]['tid']== 554 )
     { 
-      if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['nid']); 
-      if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']);   
+         
       $image_url = $course_nid->field_image_cdn_link['und'][0]['value'];
-      $course_title = $course_nid->title;
+      
 
     }else{
       
