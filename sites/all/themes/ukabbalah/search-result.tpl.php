@@ -81,7 +81,10 @@
   }else{
      $image_url =$node->field_image_cdn_link['und'][0]['value'];
   }
- 
+
+  
+  $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+  foreach ( $authors as $author ) { $authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }
  
 ?>
 
@@ -91,6 +94,10 @@
   </div>
   <div class="searchContenTitle">
       <a href="<?php print $url; ?>"><?php print $title; ?></a>
+      <div>
+      
+        <div>teacher: <?php echo implode( ", " , $authors_name ); // Author name  ?></div>
+      </div>
   </div>
   <div class="searchContenText">
       <?php if ($snippet): ?>
