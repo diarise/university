@@ -85,22 +85,22 @@
  
 ?>
 
-<div class="searchContentWrapper"<?php print $attributes; ?>>
+<!-- <div class="searchContentWrapper"<?php //print $attributes; ?>>
   <div class="searchContenImage">
-      <?php if($image_url) print "<img src ='".$image_url."' class = 'theImage'  alt=''/>"; ?>
+      <?php //if($image_url) //print "<img src ='".$image_url."' class = 'theImage'  alt=''/>"; ?>
   </div>
   <div class="searchContenTitle">
-      <a href="<?php print $url; ?>"><?php print $title; ?></a>
+      <a href="<?php //print $url; ?>"><?php //print $title; ?></a>
   </div>
   <div class="searchContenText">
-      <?php if ($snippet): ?>
-        <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
-      <?php endif; ?>
-      <?php if ($info): ?>
-        <p class="search-info"><?php print $info; ?></p>
-      <?php endif; ?>
+      <?php //if ($snippet): ?>
+        <p class="search-snippet"<?php //print $content_attributes; ?>><?php //print $snippet; ?></p>
+      <?php //endif; ?>
+      <?php //if ($info): ?>
+        <p class="search-info"><?php //print $info; ?></p>
+      <?php //endif; ?>
   </div>
-</div>
+</div> -->
 
 
 
