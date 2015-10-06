@@ -82,10 +82,31 @@
      $image_url =$node->field_image_cdn_link['und'][0]['value'];
   }
 
-  
+
   $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
   foreach ( $authors as $author ) { $authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }
  
+  if( sizeof( $node->field_course_list) > 0  )
+  {
+    $course_list_title = $node->field_course_list['und'][0]['node']->title;
+    $list_subtitle = $node->field_course_list['und'][0]['node']->field_subtitle['und'][0]['value'];
+    $course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['nid']), array('absolute' => TRUE));
+  } 
+  if( sizeof( $node->field_event_list) > 0  ) 
+  {
+    $event_list_title = $node->field_event_list['und'][0]['node']->title;
+    $list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
+    $course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['nid']), array('absolute' => TRUE));
+  } 
+  if( sizeof( $node->field_event_list) > 0  ) 
+  {
+    $event_list_title = $node->field_event_list['und'][0]['node']->title;
+    $list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
+    $course_path = url(drupal_get_path_alias('node/' . $node->field_event_list['und'][0]['nid']), array('absolute' => TRUE));
+  } 
+  
+  if( $course_list_title ) {  $course_title = $course_list_title; } else { $course_title = $event_list_title; }
+
 ?>
 
 <div class="searchContentWrapper"<?php print $attributes; ?>>
@@ -97,6 +118,7 @@
       <div>
       
         <div>teacher: <?php echo implode( ", " , $authors_name ); // Author name  ?></div>
+        <div>cours : <?php print $course_title; ?></div>
       </div>
   </div>
   <div class="searchContenText">
