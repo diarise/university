@@ -72,6 +72,7 @@
       if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['nid']); 
       if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']);   
       $image_url = $course_nid->field_image_cdn_link['und'][0]['value'];
+      $course_title = $course_nid->field_course_list['und'][0]['node']->title;
     }else{
       
       $video_id=$node->field_lesson_video['und'][0]['twistage_existing_videos'];
@@ -86,31 +87,6 @@
   $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
   foreach ( $authors as $author ) { $authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }
  
-
-
-  print_r($node->field_course_list);
-  
-  if( sizeof( $node->field_course_list) > 0  )
-  {
-    $course_list_title = $node->field_course_list['und'][0]['node']->title;
-    $list_subtitle = $node->field_course_list['und'][0]['node']->field_subtitle['und'][0]['value'];
-    $course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['nid']), array('absolute' => TRUE));
-  } 
-  if( sizeof( $node->field_event_list) > 0  ) 
-  {
-    $event_list_title = $node->field_event_list['und'][0]['node']->title;
-    $list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
-    $course_path = url(drupal_get_path_alias('node/' . $node->field_course_list['und'][0]['nid']), array('absolute' => TRUE));
-  } 
-  if( sizeof( $node->field_event_list) > 0  ) 
-  {
-    $event_list_title = $node->field_event_list['und'][0]['node']->title;
-    $list_subtitle = $node->field_event_list['und'][0]['node']->field_subtitle['und'][0]['value'];
-    $course_path = url(drupal_get_path_alias('node/' . $node->field_event_list['und'][0]['nid']), array('absolute' => TRUE));
-  } 
-  
-  if( $course_list_title ) {  $course_title = $course_list_title; } else { $course_title = $event_list_title; }
-
 ?>
 
 <div class="searchContentWrapper"<?php print $attributes; ?>>
@@ -122,7 +98,8 @@
       <div>
       
         <div>teacher: <?php echo implode( ", " , $authors_name ); // Author name  ?></div>
-        <div>cours : <?php print $course_title; ?></div>
+        <?php if ($course_title): ?><div>course : <?php print $course_title; ?></div> <?php endif; ?>
+
       </div>
   </div>
   <div class="searchContenText">
