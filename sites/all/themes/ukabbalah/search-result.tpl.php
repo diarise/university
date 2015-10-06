@@ -102,17 +102,7 @@
   </div>
 </div>
 
-<div class="searchContentWrapper">
-  <div class="searchContenImage">
-      <img alt="" class="theImage" src="http://cdn1.kabbalah.com/university/class-images/zohar_class_2.jpg">  </div>
-  <div class="searchContenTitle">
-      <a href="https://universidad.kabbalah.com/clase-de-z%C3%B3har">Clase de Zóhar </a>
-  </div>
-  <div class="searchContenText">
-              <p class="search-snippet"> El Zóhar es la fuente primaria de sabiduría Kabbalística. Escrito hace 2,000 años por Rav Shimón Bar Yojái, el Zóhar explica todos los secretos de la Biblia. La clase de Zóhar&nbsp; es un viaje semanal que nos permite entender la energía y desafíos que nos enc ...</p>
-                    <p class="search-info">2014-02-20 14:43 - This site (Universidad de Kabbalah)</p>
-        </div>
-</div>
+
 
 
 

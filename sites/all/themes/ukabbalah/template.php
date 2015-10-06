@@ -529,3 +529,34 @@ function ukabbalah_preprocess_html(&$variables) {
   
   }
 }
+
+
+
+/**
+ * Process variables for search-result.tpl.php.
+ *
+ * @see search-result.tpl.php
+ */
+function ukabbalah_preprocess_search_result(&$variables) {
+  // Add node object to result, so we can display imagefield images in results.
+  $n = node_load($variables['result']['fields']['entity_id']);
+  $n && ($variables['node'] = $n);
+}
+
+
+
+function ukabbalah_facetapi_link_inactive($variables) {
+  $accessible_vars = array(
+    'text' => $variables['text'],
+    'active' => FALSE,
+  );
+  $accessible_markup = theme('facetapi_accessible_markup', $accessible_vars);
+  $sanitize = empty($variables['options']['html']);
+  $variables['text'] = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+  if (isset($variables['count'])) {
+    $variables['text'] .= ' <span class="nbrKeyWord">' . theme('facetapi_count', $variables) . '</span>';
+  }
+  $variables['text'] .= $accessible_markup;
+  $variables['options']['html'] = TRUE;
+  return theme_link($variables);
+}
