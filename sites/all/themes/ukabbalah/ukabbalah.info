@@ -58,6 +58,10 @@ regions[marketingcourselessoncollection] = Marketing Course Lesson Collection
 regions[marketinglessonlessoncollection] = Marketing Lesson Lessons Collection
 
 
+regions[searchfilterdetail] = Search detail by filter
+regions[searchcontentresult] = Search content result
+
+
 regions[ktweet] = K tweet
 regions[kfacebook] = K facebook
 regions[ktestimonials] = K testimonials

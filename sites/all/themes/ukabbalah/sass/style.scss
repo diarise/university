@@ -5523,3 +5523,278 @@ body.page-node-6419{
 .wrapperLoginBloc.upgradeLessonBottom .buttonMemberDesc {
     color: #433a3a;
 }
+
+
+
+// custom search page
+
+#custonSearchWrapper {
+    margin: auto;
+    width: 900px;
+}
+#searchFilterDetail {
+    border-right: 1px solid #ccc;
+    float: left;
+    margin-right: 40px;
+    margin-top: 65px;
+    width: 269px;
+}
+#searchContentResult {
+    float: left;
+    margin-top: 60px;
+    width: 590px;
+}
+section.block.block-facetapi:first-child h2 {
+    margin-top: 0;
+}
+.current-search-item-results h3 {
+    color: #433a3a;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+.block-facetapi > h2 {
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: 25px;
+}
+.block-facetapi .facetapi-checkbox, .block-facetapi li {
+    color: #433a3a;
+    font-size: 18px;
+    line-height: 30px;
+}
+.block-facetapi li {
+    list-style: outside none none !important;
+    margin-left: 0 !important;
+}
+.searchContentWrapper {
+    // border-top: 1px dashed #b5b5b5;
+    float: left;
+    padding-bottom: 20px;
+    // padding-top: 36px;
+    width: 100%;
+}
+.searchContenImage {
+    float: left;
+    margin-right: 25px;
+    width: 300px;
+}
+.searchContenImage img {
+    height: auto;
+    width: 100%;
+}
+.searchContenTitle {
+    float: left;
+    width: 265px;
+}
+.searchContenTitle > a {
+    color: #433a3a;
+    font-size: 28px;
+}
+.searchContenText {
+    float: left;
+    padding-top: 15px;
+    width: 100%;
+}
+.searchContenText p {
+    font-family: georgia;
+}
+.block.block-facetapi {
+    border-bottom: 1px dashed #b5b5b5;
+    padding-bottom: 30px;
+}
+.block-facetapi .facetapi-limit-link {
+    color: #208fdc;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nbrKeyWord {
+    color: #777;
+    font-size: 12px;
+}
+#searchFilterDetail input.facetapi-checkbox{
+    display: none;
+}
+#searchFilterDetail label.element-invisible{
+    border: 1px solid #433a3a;
+    color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    margin-right: 10px;
+    position: relative !important;
+    top: 4px;
+    width: 18px;  
+}
+#searchFilterDetail label.element-invisible.checked:before {
+    color: #433a3a;
+    content: "\2713 ";
+    font-size: 20px;
+    left: 2px;
+    position: relative;
+    top: -5px;
+    z-index: 100;
+}
+#searchFilterDetail input.facetapi-checkbox:checked {
+    color: #99a1a7;
+    content: "✔";
+    font-size: 14px;
+    left: 3px;
+    position: absolute;
+    top: 0;
+}
+#block-current-search-standard > h2 {
+    font-size: 26px;
+    letter-spacing: 3px;
+    margin-top: 0;
+    padding-top: 0;
+}
+.current-search-item-active-items .item-list ul li {
+    background: #f1f0f0 none repeat scroll 0 0;
+    color: #433a3a;
+    font-size: 18px;
+    margin-left: 0;
+    padding: 15px 0 15px 15px;
+}
+.current-search-item-active-items .item-list ul li a {
+    border-left: 1px solid #fff;
+    color: transparent;
+    float: right;
+    height: 40px;
+    margin-top: -15px;
+    padding-right: 16px;
+    padding-top: 11px;
+}
+.current-search-item-active-items .item-list ul li a:after{
+    color: #9c9c9c;
+    content: "\2716";  
+}
+#edit-basic.container-inline.form-wrapper {
+    background: #f1f0f0 url("http://cdn1.kabbalah.com/university/icons/grey-arrow2.svg") no-repeat scroll right center;
+    margin-top: 30px;
+    padding: 39px 30px;
+}
+#edit-basic.container-inline.form-wrapper label {
+    display: none;
+}
+#edit-basic.container-inline.form-wrapper input#edit-keys {
+    -moz-border-bottom-colors: none !important;
+    -moz-border-left-colors: none !important;
+    -moz-border-right-colors: none !important;
+    -moz-border-top-colors: none !important;
+    background: #f1f0f0 none repeat scroll 0 0 !important;
+    border-color: -moz-use-text-color -moz-use-text-color #433a3a !important;
+    border-image: none !important;
+    border-style: none none solid !important;
+    border-width: medium medium 2px !important;
+    color: #208fdc;
+    font-family: georgia;
+    font-size: 24px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    width: 500px !important;
+}
+#edit-basic.container-inline.form-wrapper input#edit-submit.form-submit {
+    background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
+    border: medium none;
+    color: transparent;
+    cursor: pointer;
+    height: 28px;
+    margin-left: -33px;
+    position: relative;
+    top: -4px;
+    width: 26px;
+}
+#search-form > div {
+    border-bottom: 1px dashed #b5b5b5;
+    // border-top: 1px dashed #b5b5b5;
+    // margin-top: 40px;
+    padding-bottom: 30px;
+}
+.spelling-suggestions{
+    background: #f1f0f0 none repeat scroll 0 0;
+    padding: 5px 30px;
+    strong {
+        color: #433a3a;
+        font-family: proxiregular;
+        font-size: 18px;
+        text-transform: lowercase;
+    }
+    dt {
+        float: left;
+        margin-right: 10px;
+    }
+    dd a {
+        color: #208fdc;
+        font-size: 18px;
+    }
+}
+.spelling-suggestions + ul{
+    border-bottom: 1px dashed #b5b5b5;
+    padding-bottom: 20px;
+    padding-left: 0;
+}
+#searchContentResult .region.region-searchcontentresult {
+    border-bottom: 1px dashed #b5b5b5;
+    padding-bottom: 20px;
+}
+#block-apachesolr-search-sort > h2 {
+    float: left;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-top: 0;
+    text-transform: lowercase;
+}
+#block-apachesolr-search-sort{
+    height: 56px;
+}
+#block-apachesolr-search-sort ul:hover li{
+    display: block !important;
+}
+#block-apachesolr-search-sort ul{
+    position: relative;
+    z-index: 100;
+}
+#block-apachesolr-search-sort ul li a.active {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    // color: #433a3a !important;
+    // display: inline-block;
+    font-size: 18px;
+    padding: 11px 15px;
+    // width: 100px;
+}
+#block-apachesolr-search-sort li.first {
+    display: block !important;
+}
+#block-apachesolr-search-sort li {
+    display: none;
+    margin: 0;
+}
+#block-apachesolr-search-sort .content {
+    display: inline-block;
+}
+#block-apachesolr-search-sort a {
+    background: #f1f0f0 none repeat scroll 0 0;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: #433a3a;
+    display: inline-block;
+    padding: 5px 15px;
+    width: 100px;
+}
+.searchContenTeacher{
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+.searchContenTeacher, .searchContenTeacher a, .searchContenCcourse {
+    color: #433a3a;
+    font-size: 15px;
+    line-height: 18px;   
+}

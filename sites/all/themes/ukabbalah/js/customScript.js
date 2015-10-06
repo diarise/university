@@ -262,6 +262,17 @@
     })(jQuery);
 
     (function($){
+
+      // using jquery to style the checkboox for the search page
+      
+      $(window).load(function() {
+          $("ul.facetapi-facetapi-checkbox-links li input.facetapi-checkbox").click(function(){
+            $(this).siblings("label.element-invisible").toggleClass("checked");       
+          });
+          $( "ul.facetapi-facetapi-checkbox-links li a.facetapi-active").siblings("label.element-invisible").addClass("checked");
+        });
+
+      // end
         setTimeout(function(){
                 if ($(window).width() <= 980){
 

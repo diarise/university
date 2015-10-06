@@ -66,50 +66,54 @@
  
  // $node = node_load($result['fields']['entity_id']);
  if( $node->type == "lesson")
-	{	
-		if($node->field_type_of_lesson['und'][0]['tid']== 554 ) 
-		{ 
-			if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['nid']); 
-			if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']); 	
-			$image_url = $course_nid->field_image_cdn_link['und'][0]['value'];
-		}else{
-			
-			$video_id=$node->field_lesson_video['und'][0]['twistage_existing_videos'];
-			$image_url = 'http://twistassets.kabbalah.com/videos/'.$video_id.'/screenshots/300w.jpg';
-		}
-		
-	}else{
-		 $image_url =$node->field_image_cdn_link['und'][0]['value'];
-	}
- 
+  { 
+    if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['nid']); 
+    if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']);
+    $course_title = $course_nid->title;
+    if($node->field_type_of_lesson['und'][0]['tid']== 554 )
+    { 
+         
+      $image_url = $course_nid->field_image_cdn_link['und'][0]['value'];
+      
+
+    }else{
+      
+      $video_id=$node->field_lesson_video['und'][0]['twistage_existing_videos'];
+      $image_url = 'http://twistassets.kabbalah.com/videos/'.$video_id.'/screenshots/300w.jpg';
+    }
+    
+  }else{
+     $image_url =$node->field_image_cdn_link['und'][0]['value'];
+  }
+
+
+  $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
+  foreach ( $authors as $author ) { $authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }
  
 ?>
-<li class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php print render($title_prefix); ?>
-  <h3 class="title"<?php //print $title_attributes; ?>>
-    <a href="<?php print $url; ?>"><?php print $title; ?></a>
-  </h3>
-  <?php print render($title_suffix); ?>
-  <div class="search-snippet-info">
-    <?php if ($snippet): ?>
-      <p class="search-snippet"<?php print $content_attributes; ?>><?php //print $snippet; ?></p>
-    <?php endif; ?>
-    <?php if ($info): ?>
-      <p class="search-info"><?php print $info; ?></p>
-    <?php endif; ?>
+
+<div class="searchContentWrapper"<?php print $attributes; ?>>
+  <div class="searchContenImage">
+      <?php if($image_url) print "<img src ='".$image_url."' class = 'theImage'  alt=''/>"; ?>
   </div>
-  <?php  
-  //$image = field_get_items('node', $variables['node'], 'field_image_cdn_link');
-  //print $image;
-  
- 
- 
-  		if($image_url)	print "<div class = 'searchimage'><img src ='".$image_url."' class = 'theImage'  alt=''/>";
-  
-  ?>
-</li>
-<pre>
-<?php
-//print_r($node);
-?>
-</pre>
+  <div class="searchContenTitle">
+      <a href="<?php print $url; ?>"><?php print $title; ?></a>
+
+      <div class="searchContenTeacher">Teacher: <?php echo implode( ", " , $authors_name ); // Author name  ?></div>
+      <?php if ($course_title): ?><div  class="searchContenCcourse">Course: <?php print $course_title; ?></div> <?php endif; ?>
+
+  </div>
+  <div class="searchContenText">
+      <?php if ($snippet): ?>
+        <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
+      <?php endif; ?>
+      <?php if ($info): ?>
+        <p class="search-info"><?php print $info_split['date']; ?></p>
+      <?php endif; ?>
+  </div>
+</div>
+
+
+
+
+
