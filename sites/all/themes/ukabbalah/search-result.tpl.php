@@ -97,7 +97,7 @@
         <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
       <?php endif; ?>
       <?php if ($info): ?>
-        <p class="search-info"><?php print $info; ?></p>
+        <p class="search-info"><?php print $info_split['date']; ?></p>
       <?php endif; ?>
   </div>
 </div>
