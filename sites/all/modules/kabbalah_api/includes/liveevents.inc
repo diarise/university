@@ -48,14 +48,18 @@
 					
 					$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 					foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }
-
+					
+					$content_membership = "";
+				    if( kabbalah_content_access_get_article_membership($membership) == FALSE ) $content_membership = $membership;
+					
+					
 					$vname_articles[] = array(  'title' => $title , 
 												'image_link' => $image_link ,
 												'path' => $path , 
 												'teaser' => $teaser , 
 												'author' => $author_name , 
 												'date_created' => $sDate ,
-												'membership' => $membership,
+												'membership' => $content_membership,
 												//'media_type' => $media_type
 											  );							  	
 			}
