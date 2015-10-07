@@ -43,6 +43,9 @@
 					}
 				}
 				
+				$content_membership = "";
+				if( kabbalah_content_access_get_article_membership($membership) == FALSE ) $content_membership = $membership;
+					
 				$result_array[$vname][] = array( 'title' => $title , 
 												 'image_link' => $record->field_image_cdn_link_value ,
 												 'path' => $path , 
@@ -50,7 +53,7 @@
 												 'author' => $author_name , 
 												 'date_created' => date( 'F jS, Y',$record->changed ),
 												 'primary_topic' => $primary_topic ,
-												 'membership' => $membership,
+												 'membership' => $content_membership,
 												 'media_type' => $media_type												 
 										  ); 
 			}

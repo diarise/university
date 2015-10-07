@@ -38,12 +38,15 @@
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
 			
+			$content_membership = "";
+			if( kabbalah_content_access_get_article_membership($membership->name) == FALSE ) $content_membership = $membership->name;
+			
 			$result_array[] = array(  'node_type' => $node->type,
 									  'title' => $title , 
 									  'author' => $author->name ,
 									  'path' => $path , 
 									  'teaser' => $teaser,		
-									  'membership' => $membership->name,
+									  'membership' => $content_membership,
 									  'image' => $image_link,
 									  'created' => date('F jS, Y',$recorded_date),
 									  'media_type' => $media_type->name

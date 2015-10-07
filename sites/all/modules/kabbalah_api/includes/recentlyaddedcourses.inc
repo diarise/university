@@ -32,12 +32,15 @@
 				$media_type = 'bothAdVdImg';
 			}
 			
+			$content_membership = "";
+			if( kabbalah_content_access_get_article_membership($membership->name) == FALSE ) $content_membership = $membership->name;
+			
 			$result_array[] = array(  'node_type' => $node->type,
 									  'title' => $title , 
 									  'author' => $author->name ,
 									  'path' => $path , 
 									  'teaser' => $teaser,		
-									  'membership' => $membership->name,
+									  'membership' => $content_membership,
 									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,
 									  'created' => date('F jS, Y',$node->created),
 									  'media_type' => $media_type
