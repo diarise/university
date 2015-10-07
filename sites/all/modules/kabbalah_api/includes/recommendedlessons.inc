@@ -65,7 +65,8 @@
 			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
 			if( $recorded_date == "" ) $recorded_date = $node->changed;
 			
-			
+			$content_membership = "";
+			if( kabbalah_content_access_get_article_membership($membership->name) == FALSE ) $content_membership = $membership->name;
 			
 			if( $month == 1)
 			{
@@ -76,7 +77,7 @@
 											  'author' => $author->name ,
 											  'path' => $path , 
 											  'teaser' => $teaser,		
-											  'membership' => $membership->name,
+											  'membership' => $content_membership,
 											  'image' => $image_link,
 											  'created' => date('F jS, Y',$recorded_date),
 											  'media_type' => $media_type->name
@@ -91,7 +92,7 @@
 											  'author' => $author->name ,
 											  'path' => $path , 
 											  'teaser' => $teaser,		
-											  'membership' => $membership->name,
+											  'membership' => $content_membership,
 											  'image' => $image_link,
 											  'created' => date('F jS, Y',$recorded_date),
 											  'media_type' => $media_type->name
