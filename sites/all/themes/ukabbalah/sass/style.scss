@@ -5740,29 +5740,29 @@ section.block.block-facetapi:first-child h2 {
 #block-apachesolr-search-sort{
     height: 56px;
 }
-#block-apachesolr-search-sort ul:hover li{
-    display: block !important;
-}
-#block-apachesolr-search-sort ul{
-    position: relative;
-    z-index: 100;
-}
-#block-apachesolr-search-sort ul li a.active {
-    background: #fff url("/sites/all/themes/ukabbalah/images/dd_arrow.png") no-repeat scroll right center !important;
-    border: 1px solid #ccc;
-    // color: #433a3a !important;
-    // display: inline-block;
-    font-size: 18px;
-    padding: 11px 15px;
-    // width: 100px;
-}
-#block-apachesolr-search-sort li.first {
-    display: block !important;
-}
-#block-apachesolr-search-sort li {
-    display: none;
-    margin: 0;
-}
+// #block-apachesolr-search-sort ul:hover li{
+//     display: block !important;
+// }
+// #block-apachesolr-search-sort ul{
+//     position: relative;
+//     z-index: 100;
+// }
+// #block-apachesolr-search-sort ul li a.active {
+//     background: #fff url("/sites/all/themes/ukabbalah/images/dd_arrow.png") no-repeat scroll right center !important;
+//     border: 1px solid #ccc;
+//     // color: #433a3a !important;
+//     // display: inline-block;
+//     font-size: 18px;
+//     padding: 11px 15px;
+//     // width: 100px;
+// }
+// #block-apachesolr-search-sort li.first {
+//     display: block !important;
+// }
+// #block-apachesolr-search-sort li {
+//     display: none;
+//     margin: 0;
+// }
 #block-apachesolr-search-sort .content {
     display: inline-block;
 }
