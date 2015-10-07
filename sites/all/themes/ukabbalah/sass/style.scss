@@ -3148,14 +3148,48 @@ div.jp-audio{
   @extend .vidImg;
 }
 .Premium{
-    @extend .vidImg;
-    @include icon-sprite("icon_lock");
-    width: 11px;
+    background: #808080;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.1) inset;
     float: right;
+    height: 18px;
+    line-height: 17px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #5E5D5D;
+    width: 39px; 
+}
+.Premium:before {
+    color: #FFFFFF;
+    content: "Premium";
+    font-size: 11px;
+    font-weight: bold;
 }
 .Basic{
-  @extend .Premium ;
+    background: #808080;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.1) inset;
+    float: right;
+    height: 18px;
+    line-height: 17px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #5E5D5D;
+    width: 39px; 
 }
+.Basic:before {
+    color: #FFFFFF;
+    content: "Basic";
+    font-size: 11px;
+    font-weight: bold;
+}
+// .Premium{
+//     @extend .vidImg;
+//     @include icon-sprite("icon_lock");
+//     width: 11px;
+//     float: right;
+// }
+// .Basic{
+//   @extend .Premium ;
+// }
 .audioImg{
     @extend .vidImg;
     @include icon-sprite("icon_audio");
