@@ -5740,6 +5740,16 @@ section.block.block-facetapi:first-child h2 {
 #block-apachesolr-search-sort{
     height: 56px;
 }
+#block-apachesolr-search-sort .content, #block-apachesolr-search-sort li{
+    float: left;
+}
+#block-apachesolr-search-sort li a {
+    color: #ccc;
+    font-size: 18px;
+}
+#block-apachesolr-search-sort li a.active{
+    color: #208fdc !important;
+}
 // #block-apachesolr-search-sort ul:hover li{
 //     display: block !important;
 // }
