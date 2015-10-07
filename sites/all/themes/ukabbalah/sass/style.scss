@@ -5628,25 +5628,11 @@ section.block.block-facetapi:first-child h2 {
     height: 18px;
     margin-right: 10px;
     position: relative !important;
-    top: 4px;
+    top: 3px;
     width: 18px;  
 }
-#searchFilterDetail label.element-invisible.checked:before {
-    color: #433a3a;
-    content: "\2713 ";
-    font-size: 20px;
-    left: 2px;
-    position: relative;
-    top: -5px;
-    z-index: 100;
-}
-#searchFilterDetail input.facetapi-checkbox:checked {
-    color: #99a1a7;
-    content: "✔";
-    font-size: 14px;
-    left: 3px;
-    position: absolute;
-    top: 0;
+#searchFilterDetail label.element-invisible.checked{
+    background: #ccc;
 }
 #block-current-search-standard > h2 {
     font-size: 26px;
@@ -5761,7 +5747,7 @@ section.block.block-facetapi:first-child h2 {
     z-index: 100;
 }
 #block-apachesolr-search-sort ul li a.active {
-    background: #fff none repeat scroll 0 0;
+    background: #fff url("/sites/all/themes/ukabbalah/images/dd_arrow.png") no-repeat scroll right center !important;
     border: 1px solid #ccc;
     // color: #433a3a !important;
     // display: inline-block;
