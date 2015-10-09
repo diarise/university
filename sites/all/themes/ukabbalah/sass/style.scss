@@ -5841,3 +5841,51 @@ section.block.block-facetapi:first-child h2 {
     font-size: 15px;
     line-height: 18px;   
 }
+// 
+#searchWrapper input.apachesolr-autocomplete{
+    background: #433a3a url("/sites/all/themes/spukabbalah/images/mag_glass_grey.svg") no-repeat scroll right 10px center;
+    border: 1px solid #a7a2a2;
+    color: #b2b2b2;
+    font-family: proxiregular;
+    font-size: 16px;
+    height: 32px;
+    margin: -6px auto;
+    padding-left: 9px;
+    width: 278px;
+}
+#searchWrapper .form-submit{
+    background: transparent none repeat scroll 0 0;
+    border: medium none !important;
+    color: transparent;
+    cursor: pointer;
+    float: right;
+    height: 34px;
+    margin-top: -64px !important;
+    position: relative;
+    right: -20px;
+    width: 40px !important;
+}
+#searchWrapper .form-actions.form-wrapper{
+    margin: 0;
+}
+.ac_results{
+    border: 1px solid #f1f0f0 !important;
+    width: 288px !important;
+}
+.ac_results .ac_odd {
+    background-color: #f1f0f0 !important;
+}
+.ac_results .apachesolr_autocomplete {
+    color: #433a3a !important;
+    font-size: 14px !important;
+    strong {
+        color: #208fdc !important;
+        font-family: proxilight !important;
+    }
+}
+.ac_results .ac_over {
+    background-color: #433a3a !important;
+    .apachesolr_autocomplete.suggestion,.apachesolr_autocomplete.message {
+        color: #a7a2a2 !important;
+    }
+}

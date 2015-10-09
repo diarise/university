@@ -485,6 +485,8 @@ function _taxonomy_node_get_terms_by_vocabulary($node, $vid, $key = 'tid') {
 }
 
 function ukabbalah_preprocess_html(&$variables) {
+
+  $variables['customsearchform'] = block_get_blocks_by_region('customsearchform');
   
   $variables['menu'] = block_get_blocks_by_region('menu');
   $variables['mobileMenu'] = block_get_blocks_by_region('mobileMenu');

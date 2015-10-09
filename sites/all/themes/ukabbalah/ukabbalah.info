@@ -26,6 +26,7 @@ regions[search] = Search
 regions[menu]          = Local Menu
 regions[mobileMenu] = Mobile Menu
 
+regions[customsearchform]= Custom Search Form header
 regions[slideshow]= Slideshow
 regions[aboutusleft] = About us Left
 regions[aboutusright] = About us Right

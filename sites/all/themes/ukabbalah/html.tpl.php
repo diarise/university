@@ -76,10 +76,7 @@
             </div>
             <div id="searchWrapper">
                 <div class="searchWrapper">
-	                <form method="get" action="/search">
-	                	<input type="text" placeholder="search" name="keys" />
-	                	<input type="submit" class="form-submit" value="" name="" id="submitSearchBtn">
-	                </form>
+	                <?php  print render($customsearchform);?>
                 </div>
             </div>
             <div id="loginWrapper">
@@ -127,7 +124,7 @@
                 <!-- <span class="newHeaderWrapperMobileMenuLogo"><img src="/sites/all/themes/ukabbalah/images/menu.svg" alt=""/></span> -->
                 <div id="reposiveMobileMenu"><?php print render($mobileMenu);?></div>	
                 <a href="/"><span class="newHeaderWrapperLocalMenuLogo"></span></a>
-                <a href="/search"><span class="newHeaderWrapperSearchMenuLogo"></span></a>
+                <a href="/search/site/"><span class="newHeaderWrapperSearchMenuLogo"></span></a>
             </div>
             <div id="newHeaderWrapperMainMenu">
             <?php print render($menu);?>
