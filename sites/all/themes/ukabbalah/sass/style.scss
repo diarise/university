@@ -203,7 +203,7 @@ a.plusIcone {
     font-family: proxiregular;
     font-size: 16px;
     height: 32px;
-    margin: 13px auto;
+    margin:  auto;
     padding-left: 9px;
     width: 278px;
 }
@@ -736,7 +736,7 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     }
     .smallScreenHeader #searchWrapper input, 
     .smallScreenHeader .searchWrapper {
-        width: 140px;
+        width: 145px;
     }
     .smallScreenHeader #loginWrapper{
         width: 45.33%;
@@ -5842,24 +5842,24 @@ section.block.block-facetapi:first-child h2 {
     line-height: 18px;   
 }
 // 
-#searchWrapper input.apachesolr-autocomplete{
-    background: #433a3a url("/sites/all/themes/spukabbalah/images/mag_glass_grey.svg") no-repeat scroll right 10px center;
-    border: 1px solid #a7a2a2;
-    color: #b2b2b2;
-    font-family: proxiregular;
-    font-size: 16px;
-    height: 32px;
-    margin: -6px auto;
-    padding-left: 9px;
-    width: 278px;
-}
+// #searchWrapper input.apachesolr-autocomplete{
+//     background: #433a3a url("/sites/all/themes/spukabbalah/images/mag_glass_grey.svg") no-repeat scroll right 10px center;
+//     border: 1px solid #a7a2a2;
+//     color: #b2b2b2;
+//     font-family: proxiregular;
+//     font-size: 16px;
+//     height: 32px;
+//     margin: -6px auto;
+//     padding-left: 9px;
+//     width: 278px;
+// }
 #searchWrapper .form-submit{
     border: medium none !important;
     color: transparent;
     cursor: pointer;
     float: right;
     height: 34px;
-    margin-top: -45px !important;
+    margin-top: -51px !important;
     position: relative;
     right: -11px;
     width: 40px !important;
