@@ -5899,3 +5899,17 @@ section.block.block-facetapi:first-child h2 {
         color: #a7a2a2 !important;
     }
 }
+#block-custom-search-blocks-2 input.apachesolr-autocomplete::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #208fdc;
+}
+#block-custom-search-blocks-2 input.apachesolr-autocomplete:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #208fdc;
+   opacity:  1;
+}
+#block-custom-search-blocks-2 input.apachesolr-autocomplete::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #208fdc;
+   opacity:  1;
+}
+#block-custom-search-blocks-2 input.apachesolr-autocomplete:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #208fdc;
+}
