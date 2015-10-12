@@ -32,7 +32,7 @@
 									  'subtitle' => $subtitle ,
 									  'teaser' => $teaser,		
 									  'field_color_selector_value' => $record->field_color_selector_value , 
-									  'field_image_link_value' => $record->field_event_image_cdn_link_value );	
+									  'field_image_link_value' => image_style_url('slideshow_image', imagecache_external_generate_path( $record->field_event_image_cdn_link_value ) ) );	
 		}
 		echo json_encode( $result_array );	
 	}
