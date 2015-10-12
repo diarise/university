@@ -38,6 +38,8 @@
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
 			
+			$image_link = image_style_url('carousal_image', imagecache_external_generate_path($image_link) ) ;
+			
 			$content_membership = "";
 			if( kabbalah_content_access_get_article_membership($membership->name) == FALSE ) $content_membership = $membership->name;
 			
