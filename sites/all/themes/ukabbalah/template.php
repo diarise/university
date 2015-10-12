@@ -487,7 +487,7 @@ function ukabbalah_preprocess_page(&$vars) {
 	elseif ($node->type == 'course')
 	{
 		$image_url = $node->field_image_cdn_link['und'][0]['value'];
-		$vars['course_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'course_node_image','alt' => 'test',)); 	
+		$vars['course_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'course_node_image','alt' => $node->title,)); 	
 	}
 	// End of Image Cache Logic 
   
