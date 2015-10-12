@@ -461,14 +461,15 @@ function get_current_url()
 }
 
 function ukabbalah_preprocess_page(&$vars) {
-  if (isset($vars['node']->type)) {
-    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
-  }
+	
+	if (isset($vars['node']->type)) {
+	$vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+	}
   
     // Image Cache Logic 
 	$node = &$vars['node'];
-	if ($node->type == 'lesson') {
-		
+	if ($node->type == 'lesson') 
+	{	
 		if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['nid']); 
 		if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']);
 		
@@ -482,6 +483,11 @@ function ukabbalah_preprocess_page(&$vars) {
 		}	
 		
 		$vars['lesson_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'node_video_overlay','alt' => $node->title,)); 
+	}
+	elseif ($node->type == 'course')
+	{
+		$image_url = $node->field_image_cdn_link['und'][0]['value'];
+		$vars['course_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'course_node_image','alt' => 'test',)); 	
 	}
 	// End of Image Cache Logic 
   
