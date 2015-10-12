@@ -197,7 +197,7 @@
 		<div id="wrapperVideoSection">
 	<div class="wrapperCours">
 		<div id="contentAuthorImages">
-			<img src="<?php print $node->field_image_cdn_link['und'][0]['value']; ?>" alt="">
+			<?php print $course_image; ?>
 		</div>
 		<div id="contentAuthorInfo">
 				<div id="wrapperInfoCour">

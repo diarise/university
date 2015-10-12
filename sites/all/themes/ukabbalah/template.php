@@ -501,6 +501,11 @@ function ukabbalah_preprocess_node(&$variables) {
       $path = drupal_get_path('theme', 'ukabbalah');
       drupal_add_js($path . '/js/activelesson.js', array('nodeinfo'=>array('nodepath'=>$path)),'setting');
     }
+	elseif ($node->type == 'course'|| $node->type == 'live_events' )
+	{
+		$image_url = $node->field_image_cdn_link['und'][0]['value'];
+		$variables['course_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'course_node_image','alt' => $node->title,)); 	
+	}
   }
 }
 
