@@ -464,6 +464,27 @@ function ukabbalah_preprocess_page(&$vars) {
   if (isset($vars['node']->type)) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
   }
+  
+    // Image Cache Logic 
+	$node = &$vars['node'];
+	if ($node->type == 'lesson') {
+		
+		if( sizeof( $node->field_course_list) > 0  ) $course_nid = node_load($node->field_course_list['und'][0]['nid']); 
+		if( sizeof( $node->field_event_list) > 0  )  $course_nid = node_load($node->field_event_list['und'][0]['nid']);
+		
+		if($node->field_type_of_lesson['und'][0]['tid']== 554 )
+		{ 	 
+		  $image_url = $course_nid->field_image_cdn_link['und'][0]['value'];
+		}else{
+		  
+		  $video_id=$node->field_lesson_video['und'][0]['twistage_existing_videos'];
+		  $image_url = 'http://twistassets.kabbalah.com/videos/'.$video_id.'/screenshots/1000w.jpg';
+		}	
+		
+		$vars['lesson_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'node_video_overlay','alt' => $node->title,)); 
+	}
+	// End of Image Cache Logic 
+  
 }
 
 function ukabbalah_preprocess_node(&$variables) {

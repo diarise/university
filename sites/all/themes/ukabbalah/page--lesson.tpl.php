@@ -103,7 +103,7 @@
 		
 		<div class="preVideoImg">
 					<div class="overImageOpacity"></div>
-					<img src="<?php print $course_nid->field_image_cdn_link['und'][0]['value']; ?>" alt="" > <!--image for audio preview-->					
+					<?php print $lesson_image; ?>
 				</div><!--end of preVideoImg-->
 				<div class="preVideoDetail">
 					<div class="wrapperVideoDetailText">
@@ -156,7 +156,7 @@
 		<div id="wrapperVideoSection" class="wrapperPreviewLesson noLoginBg">
 				<div class="preVideoImg">
 					<div class="overImageOpacity"></div>
-					<img src="http://twistassets.kabbalah.com/videos/<?php print $node->field_lesson_video['und'][0]['twistage_existing_videos'];?>/screenshots/620w.jpg" alt="" > <!--image for video preview-->					
+					<?php print $lesson_image; ?>
 				</div><!--end of preVideoImg-->
 				<div class="preVideoDetail">
 					<div class="wrapperVideoDetailText">
