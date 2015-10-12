@@ -5675,11 +5675,32 @@ section.block.block-facetapi:first-child h2 {
 #searchFilterDetail label.element-invisible.checked{
     background: url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
 }
+// #searchFilterDetail label.element-invisible.checked:before {
+//     color: #433a3a;
+//     content: "\2713 ";
+//     font-size: 20px;
+//     left: 2px;
+//     position: relative;
+//     //top: -5px;
+//     z-index: 100;
+// }
+// #searchFilterDetail input.facetapi-checkbox:checked {
+//     color: #99a1a7;
+//     content: "✔";
+//     font-size: 14px;
+//     left: 3px;
+//     position: absolute;
+//     top: 0;
+// }
+#searchContentResult section#block-system-main.block.block-system{
+    border-top: 1px dashed #b5b5b5;
+}
 #block-current-search-standard > h2 {
+    border-top: 1px dashed #b5b5b5;
     font-size: 26px;
     letter-spacing: 3px;
     margin-top: 0;
-    padding-top: 0;
+    padding-top: 20px;
 }
 .current-search-item-active-items .item-list ul li {
     background: #f1f0f0 none repeat scroll 0 0;
@@ -5706,10 +5727,21 @@ section.block.block-facetapi:first-child h2 {
     margin-top: 30px;
     padding: 39px 30px;
 }
-#edit-basic.container-inline.form-wrapper label {
+#block-custom-search-blocks-2 {
+    background: #f1f0f0 url("http://cdn1.kabbalah.com/university/icons/grey-arrow2.svg") no-repeat scroll right center;
+    height: 42px;
+    margin-bottom: 30px;
+    margin-top: 6px;
+    padding: 39px 30px;
+}
+#block-custom-search-blocks-2 .form-item.form-type-textfield.form-item-custom-search-blocks-form-2{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#edit-basic.container-inline.form-wrapper label, #block-custom-search-blocks-2 label {
     display: none;
 }
-#edit-basic.container-inline.form-wrapper input#edit-keys {
+#edit-basic.container-inline.form-wrapper input#edit-keys, #block-custom-search-blocks-2 input.apachesolr-autocomplete{
     -moz-border-bottom-colors: none !important;
     -moz-border-left-colors: none !important;
     -moz-border-right-colors: none !important;
@@ -5725,6 +5757,19 @@ section.block.block-facetapi:first-child h2 {
     letter-spacing: 1px;
     padding-bottom: 10px;
     width: 500px !important;
+}
+#block-custom-search-blocks-2 input#edit-submit.form-submit {
+    background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
+    border: medium none;
+    color: transparent;
+    cursor: pointer;
+    float: right;
+    height: 28px;
+    margin-left: 0;
+    position: relative;
+    right: 30px;
+    top: -58px;
+    width: 26px;
 }
 #edit-basic.container-inline.form-wrapper input#edit-submit.form-submit {
     background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
@@ -5745,6 +5790,7 @@ section.block.block-facetapi:first-child h2 {
 }
 .spelling-suggestions{
     background: #f1f0f0 none repeat scroll 0 0;
+    margin-top: 20px;
     padding: 5px 30px;
     strong {
         color: #433a3a;
@@ -5766,10 +5812,10 @@ section.block.block-facetapi:first-child h2 {
     padding-bottom: 20px;
     padding-left: 0;
 }
-#searchContentResult .region.region-searchcontentresult {
-    border-bottom: 1px dashed #b5b5b5;
-    padding-bottom: 20px;
-}
+// #searchContentResult .region.region-searchcontentresult {
+//     border-bottom: 1px dashed #b5b5b5;
+//     padding-bottom: 20px;
+// }
 #block-apachesolr-search-sort > h2 {
     float: left;
     font-size: 18px;
@@ -5796,42 +5842,6 @@ section.block.block-facetapi:first-child h2 {
 #block-apachesolr-search-sort li a.active{
     color: #208fdc !important;
 }
-// #block-apachesolr-search-sort ul:hover li{
-//     display: block !important;
-// }
-// #block-apachesolr-search-sort ul{
-//     position: relative;
-//     z-index: 100;
-// }
-// #block-apachesolr-search-sort ul li a.active {
-//     background: #fff url("/sites/all/themes/ukabbalah/images/dd_arrow.png") no-repeat scroll right center !important;
-//     border: 1px solid #ccc;
-//     // color: #433a3a !important;
-//     // display: inline-block;
-//     font-size: 18px;
-//     padding: 11px 15px;
-//     // width: 100px;
-// }
-// #block-apachesolr-search-sort li.first {
-//     display: block !important;
-// }
-// #block-apachesolr-search-sort li {
-//     display: none;
-//     margin: 0;
-// }
-// #block-apachesolr-search-sort .content {
-//     display: inline-block;
-// }
-// #block-apachesolr-search-sort a {
-//     background: #f1f0f0 none repeat scroll 0 0;
-//     border-bottom: 1px solid #ccc;
-//     border-left: 1px solid #ccc;
-//     border-right: 1px solid #ccc;
-//     color: #433a3a;
-//     display: inline-block;
-//     padding: 5px 15px;
-//     width: 100px;
-// }
 .searchContenTeacher{
     margin-bottom: 5px;
     margin-top: 15px;
@@ -5854,6 +5864,7 @@ section.block.block-facetapi:first-child h2 {
 //     width: 278px;
 // }
 #searchWrapper .form-submit{
+    background: transparent none repeat scroll 0 0;
     border: medium none !important;
     color: transparent;
     cursor: pointer;
@@ -5861,7 +5872,7 @@ section.block.block-facetapi:first-child h2 {
     height: 34px;
     margin-top: -51px !important;
     position: relative;
-    right: -10px;
+    right: -20px;
     width: 40px !important;
 }
 #searchWrapper .form-actions.form-wrapper{
