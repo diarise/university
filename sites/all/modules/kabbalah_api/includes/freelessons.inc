@@ -48,6 +48,9 @@
 				if(!$course_nid) $course_nid = node_load( $nid = $node->field_event_list['und'][0]['nid'] );
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
+			
+			$image_link = image_style_url('carousal_image', imagecache_external_generate_path($image_link) ) ;
+			
 			$result_array[] = array(  'node_type' => $node->type,
 										  'title' => $title , 
 										  'author' => $author->name ,

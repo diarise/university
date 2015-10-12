@@ -41,7 +41,7 @@
 									  'path' => $path , 
 									  'teaser' => $teaser,		
 									  'membership' => $content_membership,
-									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,
+									  'image' => image_style_url('carousal_image', imagecache_external_generate_path($node->field_image_cdn_link['und'][0]['value']) ) ,
 									  'created' => date('F jS, Y',$node->created),
 									  'media_type' => $media_type
 									);

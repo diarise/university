@@ -62,6 +62,8 @@
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];	
 			}
 			
+			$image_link = image_style_url('carousal_image', imagecache_external_generate_path($image_link) ) ;
+			
 			$recorded_date = strtotime($node->field_recorded_date['und'][0]['value']);
 			if( $recorded_date == "" ) $recorded_date = $node->changed;
 			
