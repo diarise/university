@@ -100,9 +100,9 @@
 				"display": "inline-block",
 				"width": 320
 			});
-			divId.find(".theImage").css({
-				"width":300
-			});
+			// divId.find(".theImage").css({
+			// 	"width":300
+			// });
 			divId.find(".rightArrowStyleHome").css({
 				"float": "right",
 				"margin-top": -120,
