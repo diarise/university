@@ -47,7 +47,7 @@
 				if( kabbalah_content_access_get_article_membership($membership) == FALSE ) $content_membership = $membership;
 					
 				$result_array[$vname][] = array( 'title' => $title , 
-												 'image_link' => image_style_url('slideshow_image', imagecache_external_generate_path( $record->field_image_cdn_link_value ) ),
+												 'image_link' => image_style_url('carousal_image', imagecache_external_generate_path( $record->field_image_cdn_link_value ) ),
 												 'path' => $path , 
 												 'teaser' => $teaser , 
 												 'author' => $author_name , 
