@@ -73,6 +73,8 @@
 				foreach( $vocab_terms3 as $t )	{	$author_name = $t->name; }					  
 				$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
 				
+				$content_membership = "";
+				if( kabbalah_content_access_get_article_membership($membership->name) == FALSE ) $content_membership = $membership->name;
 				
 				$resultHTML .= "<li class='masonry-brick'>";
 				$resultHTML .= "<span class = 'imagesCont'>";
@@ -105,7 +107,7 @@
                 $resultHTML .= $author_name;
                 $resultHTML .= " | ";
                 $resultHTML .= date( 'F jS, Y',$record->changed );
-                $resultHTML .= "<span class= '".$membership->name."'></span>";
+                $resultHTML .= "<span class= '".$content_membership."'></span>";
 				$resultHTML .= "</span>";
 				$resultHTML .= "<span class='theTeaser'>";
                 $resultHTML .= "<span>".$teaser." ... </span>";
