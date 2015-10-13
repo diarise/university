@@ -32,6 +32,8 @@
 					$node = node_load($record->nid , NULL, TRUE);
 					$image_link = $record->field_image_cdn_link_value;
 					
+					$image_link = image_style_url('carousal_image', imagecache_external_generate_path($image_link) ) ;
+					
 					$oDate = new DateTime($record->field_event_date_value);
 					//$oDate->modify("-25200 second");
 					$sDate = $oDate->format('F jS, Y'); // Event Start Date
