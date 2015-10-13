@@ -182,6 +182,7 @@ function processPageQueryResultsForApi( $result , $vid ) {
 			$content_membership = "";
 		    if( kabbalah_content_access_get_article_membership($membership) == FALSE ) $content_membership = $membership;
 			
+			$image_link = image_style_url('carousal_image', imagecache_external_generate_path($image_link) ) ;
 			
 			$vname_articles[] = array(  'title' => $title , 
 										'image_link' => $image_link ,
