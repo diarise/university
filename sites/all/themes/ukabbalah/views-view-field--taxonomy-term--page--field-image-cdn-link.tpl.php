@@ -7,9 +7,11 @@
 			if( sizeof( $row->_field_data['nid']['entity']->field_course_list) > 0  ) $course_nid = node_load($row->_field_data['nid']['entity']->field_course_list['und'][0]['nid']); 
 			if( sizeof( $row->_field_data['nid']['entity']->field_event_list) > 0  )  $course_nid = node_load($row->_field_data['nid']['entity']->field_event_list['und'][0]['nid']); 	
 			$output = $course_nid->field_image_cdn_link['und'][0]['value'];
+			$output = theme('imagecache_external', array('path' => $output ,'style_name'=> 'carousal_image' ,'class' => 'theImage' )); 
 		} 
 	}
-	if($output)	print "<span class = 'imagesCont'><img src ='".$output."' class = 'theImage'  alt=''/>";
+	//if($output)	print "<span class = 'imagesCont'><img src ='".$output."' class = 'theImage'  alt=''/>";
+	if($output)	print "<span class = 'imagesCont'>".$output;
 	else print $output;	
 	
 ?>
