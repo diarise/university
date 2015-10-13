@@ -15,7 +15,8 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-		
+
+   <?php print $scripts; ?>		
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a"});</script>	
@@ -184,8 +185,6 @@
 	<!-- end footer by sites logo -->
 </footer>
 <!-- END OF FOOTER -->
-
-<?php print $scripts; ?>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
