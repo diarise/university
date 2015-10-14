@@ -11,6 +11,7 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  <?php print $scripts; ?>
   <?php print $head_scripts; ?>
   
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -187,7 +188,7 @@
 </footer>
 <!-- END OF FOOTER -->
 
-<?php print $scripts; ?>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
