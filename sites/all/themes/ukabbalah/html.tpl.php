@@ -187,6 +187,8 @@
 </footer>
 <!-- END OF FOOTER -->
 
+<?php print $scripts; ?>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -257,6 +259,6 @@
   ga('send', 'pageview');
 
 </script>
-<?php print $scripts; ?>
+
 </body>
 </html>
