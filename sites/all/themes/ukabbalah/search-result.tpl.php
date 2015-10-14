@@ -87,7 +87,7 @@
   }
 
   
-  $image_url = image_style_url('course_node_image', imagecache_external_generate_path($image_url) ) ;
+  $image_url = image_style_url('carousal_image', imagecache_external_generate_path($image_url) ) ;
 
   $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
   foreach ( $authors as $author ) { $authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }
