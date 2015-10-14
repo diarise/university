@@ -5916,18 +5916,11 @@ section.block.block-facetapi:first-child h2 {
 
 // comments css
 
-#disqus_thread .active .publisher-nav-color::after {
-    background: #2691db none repeat scroll 0 0 !important;
-}
-#disqus_thread #conversation #no-posts {
-    line-height: 20px!important;
-}
-
-#disqus_thread .title.line-truncate {
-    color: #433a3a!important;
-    font-size: 14px!important;
-}
-
-#disqus_thread .discovery-post .line-truncate {
-    font-size: 13px!important;
+.commentingText {
+    background: url("http://cdn1.kabbalah.com/university/icons/comment-box.png") no-repeat;
+    font-size: 14px;
+    height: 64px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding: 17px 33px;
 }
