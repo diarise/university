@@ -86,6 +86,8 @@
      $image_url =$node->field_image_cdn_link['und'][0]['value'];
   }
 
+  
+  $image_url = image_style_url('course_node_image', imagecache_external_generate_path($image_url) ) ;
 
   $authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
   foreach ( $authors as $author ) { $authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }
@@ -94,7 +96,7 @@
 
 <div class="searchContentWrapper"<?php print $attributes; ?>>
   <div class="searchContenImage">
-      <?php if($image_url) theme('imagecache_external', array('path' => $image_url,'style_name'=> 'course_node_image','alt' => $title,));  ?>
+      <?php if($image_url) echo '<img src="'.$image_url.'" alt="searchImg" />';  ?>
   </div>
   <div class="searchContenTitle">
       <a href="<?php print $url; ?>"><?php print $title; ?></a>
