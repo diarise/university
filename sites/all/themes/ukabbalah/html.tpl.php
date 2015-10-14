@@ -16,26 +16,18 @@
   
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
    
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a"});</script>	
   
-  <?php if( $pageRegistrationUrl == "/journey" ) { ?>
-  
-		<meta property="og:title" content="A Journey to the Beginning of the Endless" />
-		<meta property="og:description" content="A FREE groundbreaking 28 day program to create a spiritual renaissance in your life. And in the world. Free for all. Please share." />
-		<meta property="og:image" content="http://cdn1.kabbalah.com/kabbalah.com/images/articles/15-8-2-karen-berg-elul2.jpg" />
-		
-  <?php } else { ?>
-  
+
 	  <meta property="og:title" content="<?php print $head_title;?>" />
 	  <!--<meta property="og:description" content="<?php //print $head_desc;?>" />-->
 	  <meta property="og:image" content="<?php print $head_image; ?>" />
 	  
-  <?php } ?>
   
   <!-- end panels -->
 
