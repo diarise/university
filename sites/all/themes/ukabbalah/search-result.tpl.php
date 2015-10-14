@@ -94,7 +94,7 @@
 
 <div class="searchContentWrapper"<?php print $attributes; ?>>
   <div class="searchContenImage">
-      <?php if($image_url) print "<img src ='".$image_url."' class = 'theImage'  alt=''/>"; ?>
+      <?php if($image_url) theme('imagecache_external', array('path' => $image_url,'style_name'=> 'course_node_image','alt' => $title,));  ?>
   </div>
   <div class="searchContenTitle">
       <a href="<?php print $url; ?>"><?php print $title; ?></a>
