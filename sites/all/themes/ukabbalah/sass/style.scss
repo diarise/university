@@ -5913,3 +5913,21 @@ section.block.block-facetapi:first-child h2 {
 #block-custom-search-blocks-2 input.apachesolr-autocomplete:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    #208fdc;
 }
+
+// comments css
+
+header .active .publisher-nav-color::after {
+    background: #2691db none repeat scroll 0 0 !important;
+}
+#conversation #no-posts {
+    line-height: 20px!important;
+}
+
+header h3 .title.line-truncate {
+    color: #433a3a!important;
+    font-size: 14px!important;
+}
+
+li.discovery-post .line-truncate {
+    font-size: 13px!important;
+}
