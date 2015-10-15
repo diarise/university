@@ -518,7 +518,7 @@ function _taxonomy_node_get_terms_by_vocabulary($node, $vid, $key = 'tid') {
 
 function ukabbalah_preprocess_html(&$variables) {
 
-  $variables['head_scripts'] = drupal_get_js('head_scripts');	
+  //$variables['head_scripts'] = drupal_get_js('head_scripts');	
 
   $variables['customsearchform'] = block_get_blocks_by_region('customsearchform');
   

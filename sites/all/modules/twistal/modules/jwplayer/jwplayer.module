@@ -35,7 +35,7 @@
 			//$inline_script = '<script src="https://content.jwplatform.com/libraries/DRDW0dXD.js"></script>';
 			//drupal_add_html_head($inline_script, $key = NULL);
 			
-			drupal_add_js('https://content.jwplatform.com/libraries/DRDW0dXD.js',’external’);
+			drupal_add_js('https://content.jwplatform.com/libraries/DRDW0dXD.js','external');
 			$players=array();
 
 		}
