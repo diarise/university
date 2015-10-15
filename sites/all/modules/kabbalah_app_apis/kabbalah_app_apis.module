@@ -1,4 +1,5 @@
 <?php
+	require_once 'sites/all/modules/twistal/includes/twistal.admin.inc';
 	
 	function kabbalah_app_apis_menu() {
 			
@@ -65,13 +66,17 @@
 		{		//$record = db_fetch_object( $result );
 			$node = node_load($record->nid , NULL, TRUE);		
 			$node->body = "";
+			if( $node->type == 'lesson' ) 
+			{  
+					$node->video_info = twistal_video_data_ipad_view( $node->field_lesson_video['und'][0]['twistage_existing_videos'] );
+			}
 		}
-		header('Content-Type: application/json');
-		echo json_encode( $node );
+		//header('Content-Type: application/json');
+		set_mycustom_api_headers();
+		echo $_GET['callback']."(".json_encode($node).")";
+		//echo json_encode( $node );
 	}
-	
-	
-	
+		
 	function getCoursesJsonForApp() {
 	
 		$sql = "SELECT n.*,d.field_event_date_value,d.field_event_date_value2
@@ -185,7 +190,8 @@
 		}
 		//header('Content-type: application/json');
 		set_mycustom_api_headers();
-		echo json_encode( $result_array );				
+		//echo json_encode( $result_array );
+		echo $_GET['callback']."(".json_encode($result_array).")";	
 	}
 	
 	function getLessonsByCourseIdJsonForApp( $course_id ) {
@@ -317,8 +323,9 @@
 		}
 		//header('Content-type: application/json');
 		set_mycustom_api_headers();
-		echo json_encode( $result_array );				
-
+		//echo json_encode( $result_array );
+		echo $_GET['callback']."(".json_encode($result_array).")";		
+		
 	}
 	
 	function getCoursesByLiveEventsDataForApp() {

@@ -39,6 +39,17 @@ function twistal_menu(){
 		'access arguments' => array('administer twistal'),
 		'file' => 'includes/twistal.admin.inc'
 	);
+	
+	$items['admin/settings/twistal/ipad_video/%']=array(
+		'title' => 'Twistal iPad Video Data',
+		'type' => MENU_CALLBACK,
+		'page callback' => 'twistal_video_data_ipad_view',
+		'page arguments' => array(4),
+		'access arguments' => array('administer twistal'),
+		'file' => 'includes/twistal.admin.inc'
+	);
+	
+	
 	$items['admin/settings/twistal/video']=array(
 		'title' => 'Twistal Video Search',
 		'type' => MENU_CALLBACK,
@@ -47,6 +58,7 @@ function twistal_menu(){
 		'access arguments' => array('administer twistal'),
 		'file' => 'includes/twistal.admin.inc'
 	);
+	
 	$items['twistage/hook'] = array(
 		'type' => MENU_CALLBACK,
 		'page callback' => 'twistage_hooks',
