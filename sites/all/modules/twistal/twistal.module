@@ -266,6 +266,16 @@ function twistal_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 			'#options' => array('1' => 'On', '0' => 'Off'),
 			'#default_value' => $defaults['autostart_transcript']
 		);
+		
+		$element['available_languages'] = array(
+			'#title' => 'Available Languages',
+			'#type' => 'hidden',
+			//'#options' => $langs,
+			//'#prefix' => '<div id="dotsub_lang_select_wrapper">',
+			//'#suffix' => '</div>',
+			'#default_value' => serialize($langs),
+		);
+		
 	//}
 	//$element['dotsub']=$dotsub;
   return $element;
@@ -281,7 +291,8 @@ function twistal_field_schema($field) {
 	  $columns['autostart_subtitles'] = array('type' => 'int', 'length' => 1, 'sortable' => TRUE, 'default' => 0);
 	  $columns['autostart_transcript'] = array('type' => 'int', 'length' => 1, 'sortable' => TRUE, 'default' => 0);
 	  $columns['default_language'] = array('type' => 'varchar', 'length' => 10, 'not null' => FALSE, 'sortable' => TRUE, 'default' => null);
-      return array('columns' => $columns);
+      $columns['available_languages'] = array('type' => 'varchar', 'length' => 255, 'not null' => FALSE, 'sortable' => TRUE, 'default' => '');
+	  return array('columns' => $columns);
   }
 }
 function twistal_element_info() {
