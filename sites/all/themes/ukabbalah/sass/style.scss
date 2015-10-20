@@ -5913,6 +5913,12 @@ section.block.block-facetapi:first-child h2 {
 .not-logged-in.page-user form#user-login-form .item-list ul{
     display: none;
 }
+.not-logged-in.page-user #login_form > a {
+    text-align: center;
+    display: block;
+    margin-left: 53px;
+    color: #a33a3a;
+}
 // comments css
 
 .commentingText {
