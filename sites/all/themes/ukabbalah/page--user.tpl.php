@@ -41,6 +41,7 @@ if(arg(1) == 'password') {?>
 		            $userLoginForm = drupal_get_form('user_login_block');
 		    		print drupal_render($userLoginForm); 
     		  ?>
+    		  <a href="https://idp.kabbalah.com/user/password" title="Request new password via e-mail.">Request new password</a>
 				<div class="inputWrapper">
                     <span class="dividerOR">or</span>
                     <span class="newAccount">CREATE AN ACCOUNT</span><br>
