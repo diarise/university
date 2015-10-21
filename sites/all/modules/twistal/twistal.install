@@ -187,16 +187,16 @@ function _twistal_profile(){
 /**
  * Add new field to field data and revision tables.
  */
-function twistal_update_7100(&$sandbox) {
+function twistal_update_7102(&$sandbox) {
   $spec = array(
     'type' => 'varchar',
     'description' => "Available Languages",
     'length' => 255,
     'not null' => FALSE,
   );
-  $data_table_name = 'field_data_field_lesson_video';
-  $revision_table_name = 'field_revision_field_lesson_video';
-  $field_name = 'field_lesson_video_available_languages';
+  $data_table_name = 'field_data_field_preview_video';
+  $revision_table_name = 'field_revision_field_preview_video';
+  $field_name = 'field_preview_video_available_languages';
 
   db_add_field($data_table_name, $field_name, $spec);
   db_add_field($revision_table_name, $field_name, $spec); 
