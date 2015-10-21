@@ -73,8 +73,8 @@
 		}
 		//header('Content-Type: application/json');
 		set_mycustom_api_headers();
-		echo $_GET['callback']."(".json_encode($node).")";
-		//echo json_encode( $node );
+		//echo $_GET['callback']."(".json_encode($node).")";
+		echo json_encode( $node );
 	}
 		
 	function getCoursesJsonForApp() {
@@ -323,8 +323,8 @@
 		}
 		//header('Content-type: application/json');
 		set_mycustom_api_headers();
-		//echo json_encode( $result_array );
-		echo $_GET['callback']."(".json_encode($result_array).")";		
+		echo json_encode( $result_array );
+		//echo $_GET['callback']."(".json_encode($result_array).")";		
 		
 	}
 	
