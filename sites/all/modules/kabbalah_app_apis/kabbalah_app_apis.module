@@ -190,8 +190,8 @@
 		}
 		//header('Content-type: application/json');
 		set_mycustom_api_headers();
-		//echo json_encode( $result_array );
-		echo $_GET['callback']."(".json_encode($result_array).")";	
+		echo json_encode( $result_array );
+		//echo $_GET['callback']."(".json_encode($result_array).")";	
 	}
 	
 	function getLessonsByCourseIdJsonForApp( $course_id ) {
