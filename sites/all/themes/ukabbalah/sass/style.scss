@@ -4206,9 +4206,9 @@ body.node-type-course .messages.error {
 }
 .authorImage img {
     float: left;
-    // height: 70px;
+    height: 70px;
     margin-right: 10px;
-    // width: 70px;
+    width: 70px;
 }
 .theCourseAuthor {
     margin-top: 25px;
@@ -5918,6 +5918,7 @@ section.block.block-facetapi:first-child h2 {
     float: left;
     margin-left: 215px;
     margin-top: -86px;
+    position: relative;
 }
 // comments css
 
