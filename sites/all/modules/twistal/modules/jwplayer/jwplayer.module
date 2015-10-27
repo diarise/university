@@ -14,13 +14,13 @@
 		$file = $args['file'];
 		static $players;
 		if(!is_array($players)){
-			$jwplayerjs = array(
+			/*$jwplayerjs = array(
 			  '#tag' => 'script',
 			  '#attributes' => array(
 				'src' => '/'.drupal_get_path('module','jwplayer').'/includes/jwplayer.js',
 				'type' => 'text/javascript',
 			  ),
-			);
+			);*/
 			//$jwplayerkey = array(
 			//  '#tag' => 'markup',
 			  //'#markup' => '<script type="text/javascript">jwplayer.key="EMiSmgYruQJsCca0ZeZej55r95Tvni0Ldhb6XwUF+ag=";</script>'
