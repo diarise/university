@@ -5743,7 +5743,7 @@ section.block.block-facetapi:first-child h2 {
     -moz-border-left-colors: none !important;
     -moz-border-right-colors: none !important;
     -moz-border-top-colors: none !important;
-    background: #f1f0f0 none repeat scroll 0 0 !important;
+    background: #e7f0f7 none repeat scroll 0 0 !important;
     border-color: -moz-use-text-color -moz-use-text-color #433a3a !important;
     border-image: none !important;
     border-style: none none solid !important;
@@ -5813,7 +5813,16 @@ section.block.block-facetapi:first-child h2 {
 //     border-bottom: 1px dashed #b5b5b5;
 //     padding-bottom: 20px;
 // }
-#block-apachesolr-search-sort > h2 {
+#block-apachesolr-search-sort > h2{
+    float: left;
+    font-size: 16px;
+    margin-right: 20px;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#block-apachesolr-search-sort {
     border-bottom: 1px dashed #b5b5b5;
     border-top: 1px dashed #b5b5b5;
     float: left;
