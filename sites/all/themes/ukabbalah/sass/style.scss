@@ -5689,9 +5689,9 @@ section.block.block-facetapi:first-child h2 {
 //     position: absolute;
 //     top: 0;
 // }
-#searchContentResult section#block-system-main.block.block-system{
-    border-top: 1px dashed #b5b5b5;
-}
+// #searchContentResult section#block-system-main.block.block-system{
+//     border-top: 1px dashed #b5b5b5;
+// }
 #block-current-search-standard > h2 {
     border-top: 1px dashed #b5b5b5;
     font-size: 26px;
@@ -5725,7 +5725,7 @@ section.block.block-facetapi:first-child h2 {
     padding: 39px 30px;
 }
 #block-custom-search-blocks-2 {
-    background: #f1f0f0 url("http://cdn1.kabbalah.com/university/icons/grey-arrow2.svg") no-repeat scroll right center;
+    background: #e7f0f7 url("http://cdn1.kabbalah.com/university/icons/blue-arrow.svg") no-repeat scroll right center;
     height: 42px;
     margin-bottom: 30px;
     margin-top: 6px;
@@ -5814,11 +5814,11 @@ section.block.block-facetapi:first-child h2 {
 //     padding-bottom: 20px;
 // }
 #block-apachesolr-search-sort > h2 {
+    border-bottom: 1px dashed #b5b5b5;
+    border-top: 1px dashed #b5b5b5;
     float: left;
-    font-size: 18px;
-    margin-right: 20px;
-    margin-top: 0;
-    text-transform: lowercase;
+    margin-bottom: 20px;
+    width: 100%;
 }
 #block-apachesolr-search-sort{
     height: 56px;
@@ -5826,18 +5826,27 @@ section.block.block-facetapi:first-child h2 {
 #block-apachesolr-search-sort ul{
    margin-top: -5px; 
 }
-#block-apachesolr-search-sort .content, #block-apachesolr-search-sort li{
+#block-apachesolr-search-sort .content{
+    float: right;
+    margin: 0; 
+} 
+#block-apachesolr-search-sort li{
     float: left;
+    margin: 0; 
 }
 #block-apachesolr-search-sort li img{
     display: none;
 }
 #block-apachesolr-search-sort li a {
-    color: #ccc;
-    font-size: 18px;
+    color: #433a3a;
+    float: left;
+    font-size: 17px;
+    padding: 10px 13px 13px;
+    text-transform: lowercase;
 }
 #block-apachesolr-search-sort li a.active{
-    color: #208fdc !important;
+    background: #e7f0f7 none repeat scroll 0 0;
+    font-weight: bold;
 }
 .searchContenTeacher{
     margin-bottom: 5px;
