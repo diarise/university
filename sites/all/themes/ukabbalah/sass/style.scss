@@ -5816,11 +5816,11 @@ section.block.block-facetapi:first-child h2 {
 #block-apachesolr-search-sort > h2{
     float: left;
     font-size: 16px;
-    margin-right: 20px;
-    margin-top: 0;
-    text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
+    margin: 0;
+    padding-top: 4px;
+    text-transform: uppercase;
 }
 #block-apachesolr-search-sort {
     border-bottom: 1px dashed #b5b5b5;
@@ -5829,11 +5829,11 @@ section.block.block-facetapi:first-child h2 {
     margin-bottom: 20px;
     width: 100%;
 }
-#block-apachesolr-search-sort{
-    height: 56px;
-}
+// #block-apachesolr-search-sort{
+//     height: 56px;
+// }
 #block-apachesolr-search-sort ul{
-   margin-top: -5px; 
+   margin: 0; 
 }
 #block-apachesolr-search-sort .content{
     float: right;
