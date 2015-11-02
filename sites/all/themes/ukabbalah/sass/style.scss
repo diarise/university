@@ -5596,16 +5596,16 @@ section.block.block-facetapi:first-child h2 {
     text-transform: lowercase;
 }
 .block-facetapi > h2 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 0;
+    letter-spacing: 0.4px;
     line-height: 20px;
     margin-top: 25px;
 }
 .block-facetapi .facetapi-checkbox, .block-facetapi li {
     color: #433a3a;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 25px;
 }
 .block-facetapi li {
     list-style: outside none none !important;
@@ -5629,7 +5629,8 @@ section.block.block-facetapi:first-child h2 {
 }
 .searchContenTitle > a {
     color: #433a3a;
-    font-size: 28px;
+    font-size: 25px;
+    line-height: 28px;
 }
 .searchContenText {
     float: left;
@@ -5638,6 +5639,8 @@ section.block.block-facetapi:first-child h2 {
 }
 .searchContenText p {
     font-family: georgia;
+    font-size: 18px;
+    line-height: 27px;
 }
 .block.block-facetapi {
     border-bottom: 1px dashed #b5b5b5;
@@ -5751,7 +5754,7 @@ section.block.block-facetapi:first-child h2 {
     color: #208fdc;
     font-family: georgia;
     font-size: 24px;
-    letter-spacing: 1px;
+    // letter-spacing: 1px;
     padding-bottom: 10px;
     width: 500px !important;
 }
