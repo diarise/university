@@ -5954,3 +5954,8 @@ section.block.block-facetapi:first-child h2 {
 .commentingText > a {
     color: #007ed3;
 }
+// test to fix the player size for ios 
+
+#playerbase {
+    min-width: 940px;
+}
