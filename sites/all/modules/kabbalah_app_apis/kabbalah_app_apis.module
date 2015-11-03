@@ -48,8 +48,186 @@
 		
 		// End of App API's
 		
+		
+		// NEW API CALLS //
+		
+		$items['k_app_api/get_categories'] = array(              
+			'page callback'      => 'getPrimaryTopicsJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		$items['k_app_api/get_authors'] = array(              
+			'page callback'      => 'getAuthorsJson',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		$items['k_app_api/get_courses_by_vid_tid/%/%'] = array(
+			'page callback'    => 'getCoursesByVidTidJson',
+			'page arguments' => array(2,3),
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
+		
+		// END OF NEW API CALLS //
+		
+		
 		return $items;
 	  }	
+	
+	// NEW API CALLS //
+	
+	
+	function getPrimaryTopicsJson() {
+		
+		$result = array();
+		$vnames = getTermNamesForApp( 14 );
+		foreach( $vnames as $k=>$v )
+		{
+			$result[] = array( 'vid'=> 14 , 'tid' => $k , 'name'=> $v );		
+		}
+		set_mycustom_api_headers();
+		echo $_GET['callback']."(".json_encode($result).")";
+	}
+	
+	function getAuthorsJson() {
+		
+		$result = array();
+		$vnames = getTermNamesForApp( 7 );
+		foreach( $vnames as $k=>$v )
+		{
+			$result[] = array( 'vid'=> 7 , 'tid' => $k , 'name'=> $v );		
+		}
+		set_mycustom_api_headers();
+		echo $_GET['callback']."(".json_encode($result).")";
+	}
+	
+	function getCoursesByVidTidJson( $vid , $tid ) {
+		
+		$sql = "SELECT n.*,d.field_event_date_value,d.field_event_date_value2
+				FROM {node n}
+				LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid AND n.vid = nr.vid )
+				LEFT JOIN {field_data_field_event_date d} ON ( nr.nid = d.entity_id AND nr.vid = d.revision_id )
+				LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid )
+				LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid)
+				WHERE n.status =1
+				AND td.vid = ".$vid."
+				AND td.tid = ".$tid."
+				AND n.type = 'course'
+				ORDER BY n.changed DESC";
+		
+		$result = db_query( $sql );
+		$result_array = array();
+		
+		$i = 0;
+		
+		foreach ($result as $record) 
+		{	
+			$node = node_load($nid = $record->nid );
+			
+			$comma_separated_author_names = "";
+			$author_names = array();
+			if( sizeof($node->field_author) > 0 )
+			{
+				foreach( $node->field_author['und'] as $author )	
+				{	
+					$author = taxonomy_term_load( $author['tid'] );
+					$author_names[] = $author->name; 
+				}
+				$comma_separated_author_names = implode( ", " , $author_names );
+			}
+			
+			$comma_separated_add_author_names = "";
+			$additional_author_names = array();
+			if( sizeof($node->field_additiona_authors) > 0 )
+			{
+				foreach( $node->field_additiona_authors['und'] as $add_author )	
+				{	
+					$add_author = taxonomy_term_load( $add_author['tid'] );
+					$additional_author_names[] = $add_author->name; 
+				}
+				$comma_separated_add_author_names = implode( ", " , $additional_author_names );
+			}
+		   
+			$path = url(drupal_get_path_alias('node/' . $record->nid), array('absolute' => TRUE));
+			$title = $node->title;
+			$title = preg_replace("/&#?[a-z0-9]+;/i","",$title); // removes $nbsp
+			$membership = taxonomy_term_load($node->field_lesson_group['und'][0]['tid']);
+			$teaser="";
+			if( sizeof($node->body) > 0 ) $teaser  = get_clean_app_body( $node->body['und'][0]['value'] , 0 );
+			$subtitle = "";
+			if( sizeof($node->field_subtitle) > 0 ) $subtitle = $node->field_subtitle['und'][0]['value'];
+			
+			$vocab_terms = _taxonomy_node_get_terms_by_vocabulary($node, 14 );
+			foreach( $vocab_terms as $t )	{	$primary_topic = $t->name; }
+			
+			$secondary_topics = array();
+			$vocab_terms1 = _taxonomy_node_get_terms_by_vocabulary($node, 13 );
+			foreach( $vocab_terms1 as $t )	{	$secondary_topics[] = $t->name; }
+			
+			
+			$vocab_terms3 = _taxonomy_node_get_terms_by_vocabulary($node, 11 );
+			foreach( $vocab_terms3 as $t )	{	$type_of_course = $t->name; }
+			
+			if( $record->field_event_date_value == NULL )
+			{
+				$sDate = "";
+			} 
+			else
+			{
+				$oDate = new DateTime($record->field_event_date_value);
+				//$sDate = $oDate->format('F jS, Y'); // Event Start Date
+				$sDate = $oDate->getTimestamp(); // Event Start Date
+			}
+			
+			if( $record->field_event_date_value2 == NULL )
+			{
+				$sDate2 = "";
+			} 
+			else
+			{
+				$oDate2 = new DateTime($record->field_event_date_value2);
+				//$sDate2 = $oDate2->format('F jS, Y'); // Event End Date
+				$sDate2 = $oDate2->getTimestamp();
+			}
+			
+			$result_array[] = array(  'course_id' => $node->nid,
+									  'course_type' => $type_of_course,	
+									  'title' => $title ,
+									  'subtitle' => $subtitle,									  									  
+									  'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
+									  'description' => $teaser,
+									  'authors' => $comma_separated_author_names ,
+									  'authors_array' => $author_names ,
+									  'additional_authors' => $comma_separated_add_author_names ,	
+									  'additional_authors_array' => $additional_author_names ,	
+									  'primary_topic' => $primary_topic,
+									  'secondary_topics' => implode( ", " , $secondary_topics ),					
+									  'secondary_topics_array' => $secondary_topics,					
+									  'membership' => $membership->name,
+									  'web_path' => $path ,					  
+									  'created' => $node->created,
+									  'modified' => $node->changed,
+									  'event_start_date' => $sDate,
+									  'event_end_date' => $sDate2,
+									  'location address' =>	$node->field_location_address['und'][0]['value'],
+									  'location city' => $node->field_location_city['und'][0]['value'],
+									  'location zip code' => $node->field_location_zipcode['und'][0]['value'],
+									  'location country' =>	$node->field_location_country['und'][0]['value']	
+									);
+		
+		}
+		
+		set_mycustom_api_headers();
+		echo json_encode( $result_array );	
+		
+	}
+	
+	// END OF NEW API CALLS //
+	
 	
 	// App Apis
 	
