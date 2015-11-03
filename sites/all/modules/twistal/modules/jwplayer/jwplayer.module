@@ -7,10 +7,10 @@
 	}
 	function theme_jwplayer_video($args){
 		$video=$args['video'];
-		$width = isset($args['width'])?$args['width']:512;
-		$height = isset($args['height'])?$args['height']:288;
+		//$width = isset($args['width'])?$args['width']:512;
+		//$height = isset($args['height'])?$args['height']:288;
 		$autoplay = isset($args['autoplay'])?$args['autoplay']:NULL;
-		$skin ='/'.drupal_get_path('module','jwplayer').'/includes/five.xml';
+		//$skin ='/'.drupal_get_path('module','jwplayer').'/includes/five.xml';
 		$file = $args['file'];
 		static $players;
 		if(!is_array($players)){
@@ -65,8 +65,8 @@
 		  
 		$jwplayer['player_id']=$player_id;
 		$jwplayer['settings']=array(
-			'height' => 528 ,//$height,
-			'width' => 940, //$width,
+			'aspectratio' => '16:9' ,//$height,
+			'width' => '100%', //$width,
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
 			//'playlist'=>'https://university.kabbalah.com/twistage/getnode/6499',
