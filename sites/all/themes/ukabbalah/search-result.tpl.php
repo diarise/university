@@ -96,7 +96,7 @@
 
 <div class="searchContentWrapper"<?php print $attributes; ?>>
   <div class="searchContenImage">
-      <?php if($image_url) echo '<img src="'.$image_url.'" alt="searchImg" />';  ?>
+      <?php if($image_url) echo '<a href="'.print $url.'"><img src="'.$image_url.'" alt="searchImg" /></a>';  ?>
   </div>
   <div class="searchContenTitle">
       <a href="<?php print $url; ?>"><?php print $title; ?></a>
