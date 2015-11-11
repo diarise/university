@@ -5590,10 +5590,12 @@ section.block.block-facetapi:first-child h2 {
 }
 .current-search-item-results h3 {
     color: #433a3a;
-    font-size: 26px;
+    font-size: 16px;
     font-weight: bold;
+    letter-spacing: 0.4px;
+    line-height: 20px;
     min-width: 100%;
-    text-transform: lowercase;
+    text-transform: uppercase;
 }
 .block-facetapi > h2 {
     font-size: 16px;
@@ -5697,8 +5699,9 @@ section.block.block-facetapi:first-child h2 {
 // }
 #block-current-search-standard > h2 {
     border-top: 1px dashed #b5b5b5;
-    font-size: 26px;
-    letter-spacing: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
     margin-top: 0;
     padding-top: 20px;
 }
@@ -5747,7 +5750,7 @@ section.block.block-facetapi:first-child h2 {
     -moz-border-right-colors: none !important;
     -moz-border-top-colors: none !important;
     background: #e7f0f7 none repeat scroll 0 0 !important;
-    border-color: -moz-use-text-color -moz-use-text-color #433a3a !important;
+    border-color: -moz-use-text-color -moz-use-text-color #208fdc !important;
     border-image: none !important;
     border-style: none none solid !important;
     border-width: medium medium 2px !important;
@@ -5790,8 +5793,10 @@ section.block.block-facetapi:first-child h2 {
 }
 .spelling-suggestions{
     background: #f1f0f0 none repeat scroll 0 0;
+    float: left;
     margin-top: 20px;
     padding: 5px 30px;
+    width: 530px;
     strong {
         color: #433a3a;
         font-family: proxiregular;
