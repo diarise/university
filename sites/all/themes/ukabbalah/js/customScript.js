@@ -10,7 +10,10 @@
   });
 
   //replace text
-  $( "#user-login-form .form-item-remember-me label.option" ).replaceWith( "<div class='option'>Keep Me Singed in</div>" );
+  $(document).ready(function() {
+    $( "#user-login-form .form-item-remember-me label.option" ).replaceWith( "<div class='option'>Keep Me Singed in</div>" );
+  });
+  
  
 
   $(window).scroll(function() {
