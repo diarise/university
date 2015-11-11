@@ -18,7 +18,7 @@ function remember_me_admin_settings($form, &$form_state) {
   $vars = array(
     'remember' => array(
       '#type' => 'item',
-      '#title' => t('Keep Me Singed in'),
+      '#title' => t('Remember me'),
       '#value' => isset($user->data['remember_me']) ? t('Yes') : t('No'),
       '#description' => t('Current user chose at log in.'),
     ),
