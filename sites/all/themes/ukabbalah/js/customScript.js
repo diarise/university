@@ -11,7 +11,7 @@
 
   //replace text
   $(document).ready(function() {
-    $( "#user-login-form .form-item-remember-me label.option" ).replaceWith( "<div class='option'>Keep Me Singed in</div>" );
+    $( "#user-login-form .form-item-remember-me label.option" ).replaceWith( "<label class='option'>Keep Me Singed in</label>" );
   });
   
  
