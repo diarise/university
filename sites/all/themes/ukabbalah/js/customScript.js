@@ -10,7 +10,7 @@
   });
 
   //replace text
-  $( "#user-login-form .form-item-remember-me label.option" ).replaceWith( "<label class='option' for='edit-persistent-login--2'>Keep Me Singed in</label>" );
+  $( "#user-login-form .form-item-remember-me label.option" ).replaceWith( "<div class='option'>Keep Me Singed in</div>" );
  
 
   $(window).scroll(function() {
