@@ -181,10 +181,10 @@ input#submitSearchBtn {
     margin-left: 18px;
 }
 a.plusIcone {
-    font-size: 30px !important;
-    font-weight: bolder;
-    line-height: 22px;
-    width: 40px
+    background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/plus_white.svg") no-repeat scroll center center;
+    color: transparent !important;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+    width: 40px;
 }
 /*// .smallScreenHeader #newHeaderWrapperMainMenu ul.nice-menu > li:last-child > a{
 //  visibility: hidden;
