@@ -425,9 +425,18 @@
 			</div>
 				<?php } ?>
 		 
-		<script>
-			$( "#tabs" ).tabs({ active: 1 });
-		</script>
+		<?php
+			drupal_add_library ( 'system' , 'ui.tabs' );
+		?>
+		<?php
+			drupal_add_js ( 'jQuery(document).ready(function(){
+				jQuery("#tabs").tabs({ active: 1 });
+			});
+			' , 'inline' );
+		?>
+		<!-- <script>
+			//$( "#tabs" ).tabs({ active: 1 });
+		</script> -->
 		
 	</div>
 </div>
