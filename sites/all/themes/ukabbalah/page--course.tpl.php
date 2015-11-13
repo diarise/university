@@ -170,20 +170,12 @@
 						</div>
 					<?php } ?>
 		 
-		<?php
-			drupal_add_library ( 'system' , 'ui.tabs' );
-		?>
-		<?php
-			drupal_add_js ( 'jQuery(document).ready(function(){
-				jQuery("#tabs").tabs();
-			});
-			' , 'inline' );
-		?>
-
-		<!-- <script>
-		//$( "#tabs" ).tabs();
 		
-		</script> -->
+
+		<script>
+		$( "#tabs" ).tabs();
+		
+		</script>
 		
 	</div>
 </div>
