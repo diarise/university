@@ -5806,7 +5806,7 @@ section.block.block-facetapi:first-child h2 {
     float: left;
     height: 20px;
     margin-top: 20px;
-    padding: 15px 30px;
+    padding: 15px;
     width: 530px;
     dl{
         margin-bottom: 0;
@@ -5828,9 +5828,12 @@ section.block.block-facetapi:first-child h2 {
     }
 }
 .spelling-suggestions + ul{
-    border-bottom: 1px dashed #b5b5b5;
-    padding-bottom: 20px;
-    padding-left: 0;
+    border: 1px solid #b5b5b5;
+    color: #d44545;
+    float: left;
+    font-size: 17px;
+    margin-top: 30px;
+    padding: 20px;
 }
 // #searchContentResult .region.region-searchcontentresult {
 //     border-bottom: 1px dashed #b5b5b5;
