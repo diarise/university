@@ -5836,6 +5836,16 @@ section.block.block-facetapi:first-child h2 {
     margin-top: 30px;
     padding: 20px;
 }
+#searchContentResult ul.pager{
+    color: #208fdc;
+    .pager-item{
+        margin-left: 0 !important;
+        a{
+            color: #208fdc;
+            font-size: 19px; 
+        }
+    }
+}
 // #searchContentResult .region.region-searchcontentresult {
 //     border-bottom: 1px dashed #b5b5b5;
 //     padding-bottom: 20px;
