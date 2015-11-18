@@ -5760,7 +5760,7 @@ section.block.block-facetapi:first-child h2 {
     -moz-border-right-colors: none !important;
     -moz-border-top-colors: none !important;
     background: #e7f0f7 none repeat scroll 0 0 !important;
-    border-color: -moz-use-text-color -moz-use-text-color #208fdc !important;
+    border-color: -moz-use-text-color -moz-use-text-color #433a3a !important;
     border-image: none !important;
     border-style: none none solid !important;
     border-width: medium medium 2px !important;
@@ -5836,6 +5836,7 @@ section.block.block-facetapi:first-child h2 {
     margin-top: 30px;
     padding: 20px;
     li {
+        line-height: 22px;
         margin-bottom: 15px;
     }
     li:last-child{
