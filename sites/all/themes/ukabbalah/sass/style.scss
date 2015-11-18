@@ -5836,6 +5836,30 @@ section.block.block-facetapi:first-child h2 {
     margin-top: 30px;
     padding: 20px;
 }
+#searchContentResult ul.pager .pager-first.first{
+    margin-left: 0;
+    padding-left: 0;
+}
+#searchContentResult ul.pager .pager-current{
+    background: #f1f0f0 none repeat scroll 0 0;
+    color: #433a3a;
+    font-size: 19px;
+    font-weight: normal;
+    margin-left: 0;
+}
+#searchContentResult ul.pager .pager-previous,
+#searchContentResult ul.pager .pager-ellipsis,
+#searchContentResult ul.pager .pager-next,
+#searchContentResult ul.pager .pager-last.last{
+    margin-left: 0;
+}
+#searchContentResult ul.pager .pager-first.first > a,
+#searchContentResult ul.pager .pager-previous > a,
+#searchContentResult ul.pager .pager-next > a,
+#searchContentResult ul.pager .pager-last.last > a{
+    color: #208fdc;
+    font-size: 16px;
+}
 #searchContentResult ul.pager{
     color: #208fdc;
     .pager-item{
