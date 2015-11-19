@@ -5732,7 +5732,8 @@ section.block.block-facetapi:first-child h2 {
     padding-top: 11px;
 }
 .current-search-item-active-items .item-list ul li a:after{
-    color: #9c9c9c;
+    background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
+    color: transparent;
     content: "\2716";  
 }
 #edit-basic.container-inline.form-wrapper {
@@ -5755,15 +5756,9 @@ section.block.block-facetapi:first-child h2 {
     display: none;
 }
 #edit-basic.container-inline.form-wrapper input#edit-keys, #block-custom-search-blocks-2 input.apachesolr-autocomplete{
-    -moz-border-bottom-colors: none !important;
-    -moz-border-left-colors: none !important;
-    -moz-border-right-colors: none !important;
-    -moz-border-top-colors: none !important;
+    border: none;
     background: #e7f0f7 none repeat scroll 0 0 !important;
-    border-color: -moz-use-text-color -moz-use-text-color #433a3a !important;
-    border-image: none !important;
-    border-style: none none solid !important;
-    border-width: medium medium 2px !important;
+    border-bottom: 2px solid #433a3a;
     color: #208fdc;
     font-family: georgia;
     font-size: 24px;
