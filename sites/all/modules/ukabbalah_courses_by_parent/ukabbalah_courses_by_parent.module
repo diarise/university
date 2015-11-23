@@ -31,7 +31,7 @@
 	
 		// Code to check if referer URI contains author
 	
-			$temp = str_replace( 'http://'.$_SERVER['HTTP_HOST'] , '' , $_SERVER['HTTP_REFERER'] );
+			$temp = str_replace( 'https://'.$_SERVER['HTTP_HOST'] , '' , $_SERVER['HTTP_REFERER'] );
 			$temp = explode("/", $temp);	
 			if(strstr($temp[2], '?') )
 			{
