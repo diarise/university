@@ -29,21 +29,67 @@
 	
 	function kabbalah_courses_grid_view_show() {
 	
+		// Code to check if referer URI contains author
+	
+			$temp = str_replace( 'http://'.$_SERVER['HTTP_HOST'] , '' , $_SERVER['HTTP_REFERER'] );
+			$temp = explode("/", $temp);	
+			if(strstr($temp[2], '?') )
+			{
+				$temp = explode("?", $temp[2]);	
+				$author_name = str_replace('-',' ',$temp[0]);
+			}
+			else
+			{
+				$author_name = str_replace('-',' ',$temp[2]);
+			}
+			
+			$result1 = db_query("SELECT t.* FROM {taxonomy_term_data} t WHERE t.name='".$author_name."'");
+			$tid = 0;
+			foreach( $result1 as $record1 )	{ $tid = $record1->tid;	}
+			
+		// End of Code to check if referer URI contains author
+		
+		
+		
 		$node = menu_get_object();
 		if ($node && $node->nid && $node->type == 'parent_course') 
 		{
 			$parent_nid = $node->nid;
-			$sql =  "SELECT n.nid,n.type,n.title,st.field_subtitle_value,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed ".
-					"FROM {node n} ".
-					"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid) ".
-					"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
-					"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
-					"LEFT JOIN {field_data_field_subtitle st} ON ( nr.nid = st.entity_id AND nr.vid = st.revision_id ) ".
-					"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
-					"WHERE n.status =1 ".
-					"AND n.type in ('course') ". 
-					"AND pc.field_parent_course_nid =".$parent_nid." ".
-					"ORDER BY n.changed DESC";
+			
+			if( $tid == 0 )
+			{	
+				$sql =  "SELECT n.nid,n.type,n.title,st.field_subtitle_value,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed ".
+						"FROM {node n} ".
+						"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid) ".
+						"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+						"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+						"LEFT JOIN {field_data_field_subtitle st} ON ( nr.nid = st.entity_id AND nr.vid = st.revision_id ) ".
+						"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
+						"WHERE n.status =1 ".
+						"AND n.type in ('course') ". 
+						"AND pc.field_parent_course_nid =".$parent_nid." ".
+						"ORDER BY n.changed DESC";
+			}
+			else
+			{
+				$sql =  "SELECT n.nid,n.type,n.title,st.field_subtitle_value,il.field_image_cdn_link_value,n.nid,b.body_value,n.changed ".
+						"FROM {node n} ".
+						"LEFT JOIN {node_revision nr} ON ( n.nid = nr.nid and n.vid = nr.vid) ".
+						"LEFT JOIN {field_data_field_image_cdn_link il} ON ( nr.nid = il.entity_id AND nr.vid = il.revision_id ) ".
+						"LEFT JOIN {field_revision_body b} ON ( nr.nid = b.entity_id AND nr.vid = b.revision_id ) ".
+						"LEFT JOIN {field_data_field_subtitle st} ON ( nr.nid = st.entity_id AND nr.vid = st.revision_id ) ".
+						"LEFT JOIN {field_revision_field_parent_course pc} ON ( nr.nid = pc.entity_id AND nr.vid = pc.revision_id ) ".
+						"LEFT JOIN {taxonomy_index ti} ON( nr.nid = ti.nid ) ".
+						"LEFT JOIN {taxonomy_term_data td} ON( ti.tid = td.tid) ".
+						"WHERE n.status =1 ".
+						"AND td.tid = ".$tid." ".
+						"AND n.type in ('course') ". 
+						"AND pc.field_parent_course_nid =".$parent_nid." ".
+						"ORDER BY n.changed DESC";
+					
+			}		
+			
+			
 		
 			$result = "";
 			$result = db_query( $sql );
