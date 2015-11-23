@@ -5594,9 +5594,9 @@ section.block.block-facetapi:first-child h2 {
     font-weight: bold;
     letter-spacing: 0.4px;
     line-height: 20px;
-    margin-top: 30px;
+    margin-top: 37px;
     min-width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 11px;
     text-transform: uppercase;
 }
 .block-facetapi > h2 {
@@ -5616,7 +5616,7 @@ section.block.block-facetapi:first-child h2 {
     margin-left: 0 !important;
 }
 .searchContentWrapper:first-child {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .searchContentWrapper {
     border-bottom: 1px dashed #b5b5b5;
@@ -5648,6 +5648,10 @@ section.block.block-facetapi:first-child h2 {
     font-family: georgia;
     font-size: 18px;
     line-height: 27px;
+    margin-bottom: 9px;
+}
+.search-info {
+    margin-bottom: 5px !important;
 }
 .block.block-facetapi {
     border-bottom: 1px dashed #b5b5b5;
@@ -5707,8 +5711,9 @@ section.block.block-facetapi:first-child h2 {
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.4px;
+    margin-bottom: 15px;
     margin-top: 0;
-    padding-top: 20px;
+    padding-top: 24px;
 }
 .current-search-item-active-items .item-list ul li {
     background: #f1f0f0 none repeat scroll 0 0;
@@ -5727,7 +5732,8 @@ section.block.block-facetapi:first-child h2 {
     padding-top: 11px;
 }
 .current-search-item-active-items .item-list ul li a:after{
-    color: #9c9c9c;
+    background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
+    color: transparent;
     content: "\2716";  
 }
 #edit-basic.container-inline.form-wrapper {
@@ -5750,15 +5756,9 @@ section.block.block-facetapi:first-child h2 {
     display: none;
 }
 #edit-basic.container-inline.form-wrapper input#edit-keys, #block-custom-search-blocks-2 input.apachesolr-autocomplete{
-    -moz-border-bottom-colors: none !important;
-    -moz-border-left-colors: none !important;
-    -moz-border-right-colors: none !important;
-    -moz-border-top-colors: none !important;
+    border: none;
     background: #e7f0f7 none repeat scroll 0 0 !important;
-    border-color: -moz-use-text-color -moz-use-text-color #208fdc !important;
-    border-image: none !important;
-    border-style: none none solid !important;
-    border-width: medium medium 2px !important;
+    border-bottom: 2px solid #433a3a;
     color: #208fdc;
     font-family: georgia;
     font-size: 24px;
@@ -5799,9 +5799,14 @@ section.block.block-facetapi:first-child h2 {
 .spelling-suggestions{
     background: #f1f0f0 none repeat scroll 0 0;
     float: left;
+    height: 20px;
     margin-top: 20px;
-    padding: 5px 30px;
-    width: 530px;
+    padding: 15px;
+    width: 560px;
+    dl{
+        margin-bottom: 0;
+        margin-top: 0; 
+    }
     strong {
         color: #433a3a;
         font-family: proxiregular;
@@ -5818,9 +5823,57 @@ section.block.block-facetapi:first-child h2 {
     }
 }
 .spelling-suggestions + ul{
-    border-bottom: 1px dashed #b5b5b5;
-    padding-bottom: 20px;
+    border: 1px solid #b5b5b5;
+    color: #d44545;
+    float: left;
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding: 20px;
+    li {
+        line-height: 22px;
+        margin-bottom: 15px;
+    }
+    li:last-child{
+        margin-bottom: 0;
+    }
+}
+#searchContentResult ul.pager li{
+    padding: 7px;
+}
+#searchContentResult ul.pager .pager-first.first{
+    margin-left: 0;
     padding-left: 0;
+}
+#searchContentResult ul.pager .pager-current{
+    background: #f1f0f0 none repeat scroll 0 0;
+    color: #433a3a;
+    font-size: 19px;
+    font-weight: normal;
+    margin-left: 0;
+}
+#searchContentResult ul.pager .pager-previous,
+#searchContentResult ul.pager .pager-ellipsis,
+#searchContentResult ul.pager .pager-next,
+#searchContentResult ul.pager .pager-last.last{
+    margin-left: 0;
+}
+#searchContentResult ul.pager .pager-first.first > a,
+#searchContentResult ul.pager .pager-previous > a,
+#searchContentResult ul.pager .pager-next > a,
+#searchContentResult ul.pager .pager-last.last > a{
+    color: #208fdc;
+    font-size: 16px;
+}
+#searchContentResult ul.pager{
+    color: #208fdc;
+    .pager-item{
+        margin-left: 0 !important;
+        a{
+            color: #208fdc;
+            font-size: 19px; 
+        }
+    }
 }
 // #searchContentResult .region.region-searchcontentresult {
 //     border-bottom: 1px dashed #b5b5b5;
