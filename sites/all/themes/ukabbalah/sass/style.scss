@@ -5599,7 +5599,7 @@ section.block.block-facetapi:first-child h2 {
     padding-bottom: 11px;
     text-transform: uppercase;
 }
-.block-facetapi > h2 {
+.block-facetapi > h2, .block-apachesolr-stats > h2  {
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.4px;
