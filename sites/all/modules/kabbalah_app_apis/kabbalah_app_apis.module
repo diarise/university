@@ -583,9 +583,13 @@
 					$event_resources[] = array( "resource_link" => $i->field_file_link->value() , "resource_description" => $i->field_file_description->value() );
 				 }
 				
+				if(isset($node->field_streamer_link)) $streamer_link = $node->field_streamer_link['und'][0]['value'];
+				else $streamer_link = NULL;
+				
 				$location_events[] = array( 'event_id' => $node->nid,
 										   'title' => $title ,
-										   'subtitle' => $subtitle,									  									  
+										   'subtitle' => $subtitle,
+										   'streamer_link' => $node->field_streamer_link['und'][0]['value'] ,										   
 										   'image' => $node->field_image_cdn_link['und'][0]['value'] ,									  		
 										   'description' => $teaser,
 										   'authors' => $comma_separated_author_names ,
