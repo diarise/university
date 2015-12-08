@@ -153,7 +153,9 @@
 				</div>
 				<script type="text/javascript">
 					jwplayer("jwplayer1").on('complete', function(e) {
+						console.log("intercom testing");
 						Intercom('lesson-watched', '<?php echo $title; ?>' );
+						
 					});				
 				</script>	
 			</div>
