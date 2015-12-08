@@ -11,6 +11,10 @@
 	//Get all the authors for this node
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
+	
+	foreach ( $authors as $author ) {	$intercom_authors_name[] = $author->name; }	
+	
+	
 	// end of all authors 
 
 	// Get all the secondary topics for this node
@@ -153,6 +157,19 @@
 				</div>	
 			</div>
 		</div>
+		<script type="text/javascript">
+		console.log("outside intercom testing");
+		jwplayer("jwplayer1").on('complete', function(e) {
+			console.log("inside intercom testing");
+			var metadata = {
+			  lesson_title: '<?php echo $node->title; ?>',
+			  lesson_authors: '<?php echo implode( ", " , $intercom_authors_name );?>',
+			  lesson_url:'<?php echo url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)); ?>'
+			};
+			window.Intercom('trackEvent', 'lesson-watched', metadata);
+				
+		});				
+		</script>
 	<?php } else { ?>
 		<div id="wrapperVideoSection" class="wrapperPreviewLesson noLoginBg">
 				<div class="preVideoImg">
