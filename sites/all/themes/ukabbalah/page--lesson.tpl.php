@@ -151,7 +151,11 @@
 				<div id="video-control">
 					<?php print render($page['content']); // video player?>
 				</div>
-					
+				<script type="text/javascript">
+					jwplayer("jwplayer1").on('complete', function(e) {
+						Intercom('lesson-watched', <?php echo $title; ?> );
+					});				
+				</script>	
 			</div>
 		</div>
 	<?php } else { ?>
