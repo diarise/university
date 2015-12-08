@@ -158,9 +158,9 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-		console.log("outside intercom testing");
+		//console.log("outside intercom testing");
 		jwplayer("jwplayer1").on('complete', function(e) {
-			console.log("inside intercom testing");
+			//console.log("inside intercom testing");
 			var metadata = {
 			  lesson_title: '<?php echo $node->title; ?>',
 			  lesson_authors: '<?php echo implode( ", " , $intercom_authors_name );?>',
