@@ -44,6 +44,7 @@
 
 	// get cours title
 	$title = $node->title;
+	$course_list_title ="";
 	
 	if( sizeof( $node->field_course_list) > 0  )
 	{
@@ -64,7 +65,7 @@
 		$course_path = url(drupal_get_path_alias('node/' . $node->field_event_list['und'][0]['nid']), array('absolute' => TRUE));
 	}	
 	
-	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
+	if( $course_list_title != "") {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
 	// end of cours title
 	
 	// Video or Audio Display
