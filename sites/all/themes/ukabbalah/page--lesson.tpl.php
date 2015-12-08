@@ -150,15 +150,7 @@
 			<div id="videoSocialIconeWrapper">
 				<div id="video-control">
 					<?php print render($page['content']); // video player?>
-				</div>
-				<script type="text/javascript">
-					console.log("intercom testing");
-					jwplayer("jwplayer1").on('complete', function(e) {
-						console.log("intercom testing");
-						Intercom('lesson-watched', '<?php echo $title; ?>' );
-						
-					});				
-				</script>	
+				</div>	
 			</div>
 		</div>
 	<?php } else { ?>

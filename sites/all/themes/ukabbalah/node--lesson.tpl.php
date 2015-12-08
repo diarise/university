@@ -9,7 +9,18 @@
 	}elseif( $field_type_of_lesson == 'Video' ) {
 
 	print render($content['field_lesson_video']);
-
+?>	
+	<script type="text/javascript">
+		console.log("intercom testing");
+		jwplayer("jwplayer1").on('complete', function(e) {
+			console.log("intercom testing");
+			Intercom('lesson-watched', '<?php echo $title; ?>' );
+			
+		});				
+	</script>
+	
+	
+<?php
 	}
 
 ?>
