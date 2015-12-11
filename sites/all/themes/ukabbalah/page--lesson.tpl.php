@@ -172,10 +172,21 @@
 		</script>
 	<?php } else { ?>
 		<div id="wrapperVideoSection" class="wrapperPreviewLesson noLoginBg">
-				<div class="preVideoImg">
-					<div class="overImageOpacity"></div>
-					<?php print $lesson_image; ?>
-				</div><!--end of preVideoImg-->
+				
+				
+				<!-- Preview video for non logged in users -->
+				<div id="videoPreview" class="preVideoImg">
+					<div id="previewVideoStash"></div>
+					<div id="video-control"><?php print render($page['content']); // video player?></div>
+				</div>
+				
+				<?php 
+					drupal_add_js(array('lesson_image' => $lesson_image), 'setting');
+					drupal_add_js(path_to_theme().'/js/videopreview.js'); 
+				?>
+				<!-- End of Preview video for non logged in users -->
+				
+				
 				<div class="preVideoDetail">
 					<div class="wrapperVideoDetailText">
 						<div id="titleMultimedia"><?php print $title; // Title ?></div>
