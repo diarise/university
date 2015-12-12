@@ -482,7 +482,7 @@ function ukabbalah_preprocess_page(&$vars) {
 		  $image_url = 'http://twistassets.kabbalah.com/videos/'.$video_id.'/screenshots/1000w.jpg';
 		}	
 		
-		$vars['lesson_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'node_video_overlay','alt' => $node->title,)); 
+		$vars['lesson_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'node_video_overlay','alt' => $node->title,'class'=>'lesson_image_preview')); 
 	}
 	elseif ($node->type == 'course')
 	{
