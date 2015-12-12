@@ -3270,6 +3270,13 @@ div.jp-audio{
     clear: none;
     margin-top: 0;
 }
+#previewVideoStash{
+    background: #FFF;
+    height: 200px;
+    position: absolute;
+    width: 200px;
+    z-index: 10;   
+}
 .preVideoImg #titleMultimedia,
 .preVideoImg #courseNameMultimedia,
 .preVideoImg #pipe,
