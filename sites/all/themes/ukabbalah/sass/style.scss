@@ -4345,12 +4345,12 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .wrapperPreviewLesson .preVideoImg{
     margin-top:0!important;  
 }
-// .wrapperPreviewLesson .preVideoImg img {
-//     // height: 564px !important;
-//     position: absolute;
-//     top: 0;
-//     // width: 100% !important;
-// }
+.wrapperPreviewLesson .preVideoImg .lesson_image_preview {
+    // height: 564px !important;
+    position: absolute;
+    top: 0;
+    // width: 100% !important;
+}
 .overImageOpacity {
     background: none repeat scroll 0 0 rgba(67, 58, 58, 0.36);
     height: 564px;
