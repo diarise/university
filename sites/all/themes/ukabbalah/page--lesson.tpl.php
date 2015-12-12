@@ -135,7 +135,7 @@
 						
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
 							<!--<span class="priceLogin"><a href="https://idp.kabbalah.com/user/login">Log In</a></span> -->
-							<?php print get_current_url();?></span> 
+							<span class="priceLogin"><?php print get_current_url();?></span> 
 						
 					<?php } ?>
 					</div>
