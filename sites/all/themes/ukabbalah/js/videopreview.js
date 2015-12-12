@@ -10,7 +10,7 @@ Drupal.behaviors.videoPreview = {
 		{
 			jwplayer("jwplayer1").remove();
 			$( "#videoPreview" ).remove();
-			$( "#wrapperVideoSection" ).prepend( "<div id='videoPreviewImage' class='preVideoImg'><div class='overImageOpacity'></div>"+Drupal.settings.lesson_image+"</div>");
+			$( "#wrapperVideoSection" ).prepend( "<div id='videoPreviewImage' class='preVideoImg'><div class='overImageOpacity'>"+Drupal.settings.lesson_image+"</div></div>");
 		}	
 	});	
 	
