@@ -8,9 +8,14 @@ Drupal.behaviors.videoPreview = {
 	{	
 		if( Math.round(e.position) > '120' )
 		{
-			jwplayer("jwplayer1").remove();
-			$( "#videoPreview" ).remove();
-			$( "#wrapperVideoSection" ).prepend( "<div id='videoPreviewImage' class='preVideoImg'><div class='overImageOpacity'></div>"+Drupal.settings.lesson_image+"</div>");
+			$( "#videoPreview" ).fadeOut( 2000 , function() {
+				jwplayer("jwplayer1").remove();
+				$( "#videoPreviewImage" ).fadeIn( 2000 , function() {
+					$( "#videoPreview" ).remove();
+				});	
+			});
+	
+			$( "#wrapperVideoSection" ).prepend( "<div id='videoPreviewImage' class='preVideoImg' style= 'display: none'><div class='overImageOpacity'></div>"+Drupal.settings.lesson_image+"</div>");	
 		}	
 	});	
 	
