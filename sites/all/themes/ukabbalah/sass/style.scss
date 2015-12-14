@@ -4345,7 +4345,8 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .wrapperPreviewLesson .preVideoImg{
     margin-top:0!important;  
 }
-.wrapperPreviewLesson .preVideoImg .lesson_image_preview {
+.wrapperPreviewLesson .preVideoImg .lesson_image_preview,
+.preVideoImg .overImageOpacity + img {
     // height: 564px !important;
     position: absolute;
     top: 0;
