@@ -110,7 +110,11 @@
         <p class="search-snippet"<?php print $content_attributes; ?>><?php print $snippet; ?></p>
       <?php endif; ?>
       <?php if ($info): ?>
-        <p class="search-info"><?php print $info_split['date']; ?></p>
+        <p class="search-info">
+          <?php //print $info_split['date']; ?>
+          <?php if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value']));?>
+                
+       </p>
       <?php endif; ?>
   </div>
 </div>
