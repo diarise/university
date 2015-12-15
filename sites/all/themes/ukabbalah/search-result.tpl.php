@@ -112,7 +112,7 @@
       <?php if ($info): ?>
         <p class="search-info">
           <?php //print $info_split['date']; ?>
-          <?php print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value']));?>
+          <?php if( sizeof($node->field_recorded_date) > 0 ) print date('F jS, Y ',strtotime($node->field_recorded_date['und'][0]['value']));?>
                 
        </p>
       <?php endif; ?>
