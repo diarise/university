@@ -59,7 +59,7 @@
             <div id="loginWrapper">
                 <div id="userInfoWrapper">
                 <?php if ( user_is_logged_in() ) {?>
-                    <span><a href="https://idp.kabbalah.com/user" class="userActive"><?php print $username; ?></a><span class="gutterPipe">|</span></span>
+                    <span><a href="https://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-profile" class="userActive" target="_blank"><?php print $username; ?></a><span class="gutterPipe">|</span></span>
                     <span><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="gutterPipe">|</span></span>
                     <span><a href="/user/logout">Log Out</a></span>
                 <?php } else {?>
