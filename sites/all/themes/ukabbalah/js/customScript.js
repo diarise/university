@@ -279,10 +279,8 @@
           $( "ul.facetapi-facetapi-checkbox-links li a.facetapi-active").siblings("label.element-invisible").addClass("checked");
 
           // clear input field on page lesson search field
-          //$('#wrappperLeftBloc').find("input#edit-title").val('');
-          var resetInput = document.getElementById('edit-title');
-
-              resetInput.value = '';
+          $('#wrappperLeftBloc').find("input#edit-title").val('');
+          
         });
 
       // end
