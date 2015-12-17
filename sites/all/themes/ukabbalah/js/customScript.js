@@ -5,7 +5,11 @@
     $(".contentTeachersPage").click(function() {
         window.location = $(this).find("a").attr("href"); 
         return false;
-    });          
+    });
+
+    // clear input field on page lesson search field
+
+    $('#wrappperLeftBloc input.form-text.form-autocomplete.ctools-auto-submit-processed').val('');          
     
   });
 
