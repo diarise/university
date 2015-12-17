@@ -6,10 +6,7 @@
         window.location = $(this).find("a").attr("href"); 
         return false;
     });
-
-    // clear input field on page lesson search field
-
-    $('#wrappperLeftBloc input.form-text.form-autocomplete.ctools-auto-submit-processed').val('');          
+         
     
   });
 
@@ -280,6 +277,9 @@
             $(this).siblings("label.element-invisible").toggleClass("checked");       
           });
           $( "ul.facetapi-facetapi-checkbox-links li a.facetapi-active").siblings("label.element-invisible").addClass("checked");
+
+          // clear input field on page lesson search field
+          $('#wrappperLeftBloc').find("input#edit-title").val('');
         });
 
       // end
