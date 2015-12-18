@@ -9,7 +9,7 @@
 @import "font"; // We import the fonts on separate file. The file is called "_font.scss". 
                 // In our case we just called "font", because COMPASS recognize all sass file. 
                 // And we put "_" do not duplicate the file in our css directory.
-@import "sprite"; // we import the sprit background
+
 @import "jquery.mCustomScrollbar"; // we import the custom scroll bar style
 @import url("https://fonts.googleapis.com/css?family=Gochi+Hand"); 
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700"); 
@@ -119,8 +119,7 @@ transition: all 3s ease-in-out;
     
 }
 #logoWrapper{
-    //background: url(../images/kc_logo_grey.svg) no-repeat scroll 24px 15px;
-    background-position: 24px 15px;
+    background: url(../images/kc_logo_grey.svg) no-repeat scroll 24px 15px;
     float: left;
     height: 60px;
     width: 33.33%;
@@ -141,22 +140,18 @@ transition: all 3s ease-in-out;
 .smallScreenHeader #loginWrapper{
     width: 36.33%;
 }
-.smallScreenHeader #logoWrapper a:first-child{
-    background-position: 0 -70px;
-}
 #loginWrapper{
     float: right;
     height: 60px;
     width: 31.33%;
 }
 .smallScreenHeader #logoWrapper{
-    //background: url(../images/kc_logo_grey_no_type.svg) no-repeat scroll 24px 15px;
-    background: none;
+    background: url(../images/kc_logo_grey_no_type.svg) no-repeat scroll 24px 15px;
     width: 38.33%;
 }
-// .smallScreenHeader #loginWrapper{
-//     background: orange none repeat scroll 0 0;
-// }
+.smallScreenHeader #loginWrapper{
+    /*background: orange none repeat scroll 0 0;*/
+}
 #logoWrapper > a {
     border-right: 1px solid #7f7979;
     display: inline-block;
@@ -167,23 +162,19 @@ transition: all 3s ease-in-out;
     width: 258px;
 }
 input#submitSearchBtn {
-    background-position: 14px -597px;
     border: medium none !important;
     cursor: pointer;
     float: right;
     margin-top: -46px !important;
     position: relative;
-    //right: -10px;
-    top:4px;
+    right: -10px;
     width: 40px !important;
 }
 .smallScreenHeader #logoWrapper > a {
-    vertical-align: top;
     width: 52px;
 }
 .smallScreenHeader #logoWrapper .localLogo{
-    //background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-top.svg) no-repeat scroll left center;
-    background-position: 0 -340px;
+    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-top.svg) no-repeat scroll left center;
     border: none;
     display: inline-block;
     width: 240px;
@@ -207,14 +198,13 @@ a.plusIcone {
     display: none;
 }
 #searchWrapper input {
-    //background: #433a3a url("../images/mag_glass_grey.svg") no-repeat scroll right 10px center;
-    background-color: #433a3a;
+    background: #433a3a url("../images/mag_glass_grey.svg") no-repeat scroll right 10px center;
     border: 1px solid #a7a2a2;
     color: #b2b2b2;
     font-family: proxiregular;
     font-size: 16px;
     height: 32px;
-    margin:  13px auto;
+    margin:  auto;
     padding-left: 9px;
     width: 278px;
 }
@@ -372,7 +362,6 @@ a.userActiveResponsive{
     width: 101px;
 }
 .newHeaderWrapperMobileMenuLogo {
-    background-position: 0 -833px;
     border-right: 1px solid #8c8787;
     float: left;
     margin: 7px 20px;
@@ -383,8 +372,7 @@ a.userActiveResponsive{
 }
 
 .newHeaderWrapperLocalMenuLogo {
-    //background: rgba(0, 0, 0, 0) url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-bottom.svg) no-repeat scroll center center;
-    background-position: 0 -340px;
+     background: rgba(0, 0, 0, 0) url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-bottom.svg) no-repeat scroll center center;
     float: left;
     height: 42px;
     width: 274px;
@@ -403,7 +391,7 @@ a.userActiveResponsive{
     margin-right: 0;
 }
 .menuScrolling .newHeaderWrapperSearchMenuLogo{
-    //background: url(../images/mag_glass_white.svg) no-repeat scroll center center;
+    background: url(../images/mag_glass_white.svg) no-repeat scroll center center;
     border-left: 1px solid #8c8787;
     border-right: 1px solid #8c8787;
     display: block;
@@ -414,15 +402,6 @@ a.userActiveResponsive{
     padding-right: 22px;
     padding-top: 2px;
     width: 33px;
-}
-.menuScrolling .newHeaderWrapperSearchMenuLogo:after {
-    background-position: 17px -571px;
-    content: "";
-    height: 21px;
-    margin-left: -17px;
-    margin-top: 2px;
-    position: absolute;
-    width: 37px;
 }
 .smallScreenHeader.menuScrolling .newHeaderWrapperMobileMenuLogo{
     margin: 7px 0 7px 20px;
@@ -767,8 +746,7 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 }
 @media (max-width: 980px){
     .smallScreenHeader #logoWrapper .localLogo{
-        //background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-k-university.svg) no-repeat scroll center center;
-        background-position: 0 -375px;
+        background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-k-university.svg) no-repeat scroll center center;
         width: 184px;
         margin-left: 5px;
     }
@@ -779,8 +757,7 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
         display: block;
     }
     .menuScrolling .newHeaderWrapperLocalMenuLogo {
-        //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku-shield-bottom.svg") no-repeat scroll left 8px center;
-        background-position: 0 -536px;
+        background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku-shield-bottom.svg") no-repeat scroll left 8px center;
         float: left;
         height: 42px;
         margin-right: 5px;
@@ -885,13 +862,11 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 .imgNav li {
   width: 12px;
   height: 12px;
-  background-position: 0 -984px;
-  //@include icon-sprite("active_pagination");
+  @include icon-sprite("active_pagination");
   color: transparent;
 }
 .imgNav li.activeNav {
-    background-position: 0 -967px;
-  //@include icon-sprite("no_active_pagination");
+  @include icon-sprite("no_active_pagination");
 }
 #frontMiddle .imgNav{
   padding-left: 9px!important
@@ -908,15 +883,13 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     // top: -5px;
 }
 #goRight{
-    background-position: 0 -928px;
    color: transparent;
-   //@include icon-sprite("banner_arrow_right");
+   @include icon-sprite("banner_arrow_right");
    height: 36px;
 }
 #goLeft{
-    background-position: 0 -889px;
    color: transparent;
-   //@include icon-sprite("banner_arrow_left");
+   @include icon-sprite("banner_arrow_left");
    height: 36px;
 }
 .darkyellow{
@@ -1233,73 +1206,24 @@ footer>nav+div #block-block-2 a :hover {
         padding-left:0 !important;
         padding-top:48px !important
     }
-    // .footerBySiteIcons:nth-child(1)>a {
-    //     background-position:center top !important
-    // }
-    // .footerBySiteIcons:nth-child(2)>a {
-    //     background-position:center top 5px !important
-    // }
-    // .footerBySiteIcons:nth-child(3)>a {
-    //     background-position:center top 6px !important
-    // }
-    // .footerBySiteIcons:nth-child(4)>a {
-    //     background-position:center top 11px !important
-    // }
-    // .footerBySiteIcons:nth-child(5)>a {
-    //     background-position:center top 17px !important
-    // }
-    // .footerBySiteIcons:nth-child(6)>a {
-    //     background-position:center top 10px !important
-    // }
-    .footerBySiteIcons:nth-child(1):before {
-        margin-left: 37px;
-        margin-top: 0 !important;
+    .footerBySiteIcons:nth-child(1)>a {
+        background-position:center top !important
     }
-    .footerBySiteIcons:nth-child(2):before {
-        margin-left: 30px;
-        margin-top: 8px !important;
+    .footerBySiteIcons:nth-child(2)>a {
+        background-position:center top 5px !important
     }
-    .footerBySiteIcons:nth-child(3):before {
-        margin-left: 53px;
-        margin-top: 10px !important;
+    .footerBySiteIcons:nth-child(3)>a {
+        background-position:center top 6px !important
     }
-    .footerBySiteIcons:nth-child(4):before {
-        margin-left: 10px;
-        margin-top: 12px !important;
+    .footerBySiteIcons:nth-child(4)>a {
+        background-position:center top 11px !important
     }
-    .footerBySiteIcons:nth-child(5):before {
-        margin-left: 16px;
-        margin-top: 18px !important;
+    .footerBySiteIcons:nth-child(5)>a {
+        background-position:center top 17px !important
     }
-    .footerBySiteIcons:nth-child(6):before {
-        margin-left: 20px;
-        margin-top: 10px !important;
+    .footerBySiteIcons:nth-child(6)>a {
+        background-position:center top 10px !important
     }
-}
-#socialMediaWrapper > a {
-    color: transparent;
-    display: inline-block;
-    height: 33px;
-    width: 33px;
-}
-#socialMediaWrapper > a:hover{
-    color: transparent;
-}
-#socialMediaWrapper a:nth-child(1){
-    //@include icon-sprite("facebook");
-    background-position: 0 -681px; 
-}
-#socialMediaWrapper a:nth-child(2){
-    //@include icon-sprite("twitter");
-    background-position: 0 -719px; 
-}
-#socialMediaWrapper a:nth-child(3){
-    //@include icon-sprite("googleplus");
-    background-position: 0 -757px; 
-}
-#socialMediaWrapper a:nth-child(4){
-    //@include icon-sprite("email");
-    background-position: 0 -795px; 
 }
 #studentSupport h2{
     padding-right: 0;
@@ -1332,82 +1256,28 @@ footer>nav+div #block-block-2 a :hover {
     text-transform: capitalize;
 }
 .footerBySiteIcons:nth-child(1)>a {
-    //background:url("../images/kabbalah_centre_icon.svg") no-repeat;
+    background:url("../images/kabbalah_centre_icon.svg") no-repeat;
     padding-left:36px
 }
-.footerBySiteIcons:nth-child(1):before{
-    //@include icon-sprite("kabbalah_centre_icon");
-    background-position: 0 -105px;
-    content: "";
-    height: 44px;
-    margin-top: 20px;
-    position: absolute;
-    width: 24px;
-}
 .footerBySiteIcons:nth-child(2)>a {
-    //background:url("../images/living_wisdom_icon.svg") no-repeat;
+    background:url("../images/living_wisdom_icon.svg") no-repeat;
     padding-left:47px
-}
-.footerBySiteIcons:nth-child(2):before{
-    //@include icon-sprite("living_wisdom_icon");
-    background-position: 0 -154px;
-    content: "";
-    height: 36px;
-    margin-top: 24px;
-    position: absolute;
-    width: 37px;
 }
 .footerBySiteIcons:nth-child(3)>a {
-    //background:url("../images/ukabbalah_icon.svg") no-repeat;
+    background:url("../images/ukabbalah_icon.svg") no-repeat;
     padding-left:47px
 }
-.footerBySiteIcons:nth-child(3):before{
-    //@include icon-sprite("ukabbalah_icon");
-    background-position: 0 -233px;
-    content: "";
-    height: 35px;
-    margin-top: 24px;
-    position: absolute;
-    width: 32px;
-}
 .footerBySiteIcons:nth-child(4)>a {
-    //background:url("../images/zohar_icon.svg") no-repeat;
+    background:url("../images/zohar_icon.svg") no-repeat;
     padding-left:65px
 }
-.footerBySiteIcons:nth-child(4):before{
-    //@include icon-sprite("zohar_icon");
-    background-position: 0 -273px;
-    content: "";
-    height: 30px;
-    margin-top: 26px;
-    position: absolute;
-    width: 50px;
-}
 .footerBySiteIcons:nth-child(5)>a {
-    //background:url("../images/community_icon.svg") no-repeat;
+    background:url("../images/community_icon.svg") no-repeat;
     padding-left:60px
 }
-.footerBySiteIcons:nth-child(5):before{
-    //@include icon-sprite("community_icon");
-    background-position: 0 -309px;
-    content: "";
-    height: 25px;
-    margin-top: 30px;
-    position: absolute;
-    width: 46px;
-}
 .footerBySiteIcons:nth-child(6)>a {
-    //background:url("../images/store_icon.svg") no-repeat;
+    background:url("../images/store_icon.svg") no-repeat;
     padding-left:56px
-}
-.footerBySiteIcons:nth-child(6):before{
-    //@include icon-sprite("store_icon");
-    background-position: 0 -195px;
-    content: "";
-    height: 32px;
-    margin-top: 25px;
-    position: absolute;
-    width: 38px;
 }
 #socialMediaWrapper {
     float:left
@@ -1483,18 +1353,8 @@ footer>nav+div #block-block-2 a :hover {
 #studentSupport a {
     font-size:14px
 }
-#SocialMediaWrapper:before{
-    background-position: 0 -1131px;
-    //@include icon-sprite("line-seperation");
-    background-repeat: repeat-x;
-    content: "";
-    height: 9px;
-    margin-top: -43px;
-    position: absolute;
-    width: 100%;
-}
 #SocialMediaWrapper {
-    //background:url(../images/3-lines.png) repeat-x top;
+    background:url(../images/3-lines.png) repeat-x top;
     float: left;
     margin-top: 80px;   
     padding: 43px 0 24px;
@@ -1534,8 +1394,7 @@ footer>nav+div #block-block-2 a :hover {
     line-height: 23px;
 }
 #fpSocialMediaBlock1 .fpSocialMediaBlockTitle a{
-    background-position: 0 -658px;
-    //background: url(../images/tw_small_blue.svg) no-repeat;
+    background: url(../images/tw_small_blue.svg) no-repeat;
     display: block;
     height: 18px;
     margin-right: 15px;
@@ -1570,16 +1429,7 @@ footer>nav+div #block-block-2 a :hover {
     margin: auto;
     width: 940px;
 
-    //background: url(../images/testimonials_small_grey2.svg) no-repeat top 6px left;
-}
-#fpSocialMediaBlock3 .fpSocialMediaWrapper:before{
-    background-position: 0 -623px;
-    //@include icon-sprite("testimonials_small_grey2"); 
-    content: "";
-    height: 30px;
-    margin-top: 7px;
-    position: absolute;
-    width: 18px;
+    background: url(../images/testimonials_small_grey2.svg) no-repeat top 6px left;
 }
 #fpSocialMediaBlock3 .fpSocialMediaWrapper > section{
     margin-left: 40px;
@@ -3528,7 +3378,7 @@ div.jp-audio{
 
 /**end scrollling filter**/
 
-@import "tooltipster"; //  The file is called "_tooltipster.scss". 
+@import "tooltipster"; // We import the fonts on separate file. The file is called "_tooltipster.scss". 
 
 
 /**agenda**/
@@ -6174,22 +6024,6 @@ section.block.block-facetapi:first-child h2 {
 }
 .commentingText > a {
     color: #007ed3;
-}
-#viewByList{
-    //@include icon-sprite("view_icon_linear");
-    background-position:0 -1228px;
-    float: left;
-    height: 17px;
-    margin: 7px 0 10px 10px;
-    width: 24px;
-}
-#viewByGrid{
-    //@include icon-sprite("view_icon_table");
-    background-position: 0 -1206px;
-    float: left;
-    height: 17px;
-    margin: 7px 0 10px 10px;
-    width: 26px;
 }
 // test to fix the player size for ios 
 
