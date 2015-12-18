@@ -63,7 +63,8 @@
 							<div class="loginText">Join Kabbalah University to watch this video.<br/>
 		Members get access to thousands of courses and events</div>
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login">Log In</a></span>
+							<!--<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login">Log In</a></span>-->
+							<span class="priceLogin logColor"><?php print get_current_url();?></span>
 						</div>
 
 					<?php } ?>
@@ -166,7 +167,8 @@
 							<div class="loginText">Join Kabbalah University to watch this video.
 		Members get access to thousands of courses and events</div>
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login" >Log In</a></span>
+							<!--<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login">Log In</a></span>-->
+							<span class="priceLogin logColor"><?php print get_current_url();?></span>
 						</div>
 					<?php } ?>
 		 
