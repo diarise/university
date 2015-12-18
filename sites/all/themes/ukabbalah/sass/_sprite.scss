@@ -1,0 +1,62 @@
+#logoWrapper,
+.smallScreenHeader #logoWrapper a:first-child,
+.smallScreenHeader #logoWrapper .localLogo,
+.newHeaderWrapperLocalMenuLogo,
+.newHeaderWrapperMobileMenuLogo,
+.menuScrolling .newHeaderWrapperSearchMenuLogo:after,
+input#submitSearchBtn,
+#fpSocialMediaBlock3 .fpSocialMediaWrapper:before,
+#fpSocialMediaBlock1 .fpSocialMediaBlockTitle a,
+.footerBySiteIcons:before,
+#socialMediaWrapper a,
+#goRight,
+#goLeft,
+.imgNav li,
+.imgNav li.activeNav,
+.rightArrowStyleHome,
+.rightArrowStyle,
+.leftArrowStyleHome,
+.leftArrowStyle,
+#SocialMediaWrapper:before,
+#viewByList,
+#viewByGrid{
+    background-image: url("/sites/all/themes/ukabbalah/images/all_eng_sm.png");
+    background-repeat: no-repeat;
+}
+
+// --- a new sprite will be load for mobile device only --- //
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+    	#logoWrapper,
+		.smallScreenHeader #logoWrapper a:first-child,
+		.smallScreenHeader #logoWrapper .localLogo,
+		.newHeaderWrapperLocalMenuLogo,
+		.newHeaderWrapperMobileMenuLogo,
+		.menuScrolling .newHeaderWrapperSearchMenuLogo:after,
+		input#submitSearchBtn,
+		#fpSocialMediaBlock3 .fpSocialMediaWrapper:before,
+		#fpSocialMediaBlock1 .fpSocialMediaBlockTitle a,
+		.footerBySiteIcons:before,
+		#socialMediaWrapper a,
+		#goRight,
+		#goLeft,
+		.imgNav li,
+		.imgNav li.activeNav,
+		.rightArrowStyleHome,
+		.rightArrowStyle,
+		.leftArrowStyleHome,
+		.leftArrowStyle,
+		#SocialMediaWrapper:before,
+		#viewByList,
+		#viewByGrid{
+			background-image: url("/sites/all/themes/ukabbalah/images/all_eng_large.png");
+	        background-size: 323px 1246px;
+		}
+		.newHeaderWrapperMobileMenuLogo{
+			background-position: 0 -834px;
+		}
+        
+}
