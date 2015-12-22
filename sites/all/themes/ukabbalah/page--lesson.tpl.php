@@ -456,10 +456,12 @@
 			</div>
 				<?php } ?>
 		 
-		
-		<script>
+		<?php
+			ukabbalah_tabs(1);
+		?>
+		<!-- <script>
 			$( "#tabs" ).tabs({ active: 1 });
-		</script>
+		</script> -->
 		
 	</div>
 </div>

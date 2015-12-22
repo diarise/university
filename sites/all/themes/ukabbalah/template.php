@@ -460,6 +460,20 @@ function get_current_url()
 	} 
 }
 
+
+function ukabbalah_tabs($variable){
+
+      drupal_add_library ( 'system' , 'ui.tabs' );
+
+      drupal_add_js(array('ukabbalahtabs' => array('var' => $variable)), array('type' => 'setting'));
+
+      drupal_add_js ( 'jQuery(document).ready(function(){
+        jQuery("#tabs").tabs({ active: Drupal.settings.ukabbalahtabs.var });
+      });
+      ' , 'inline' );
+}
+
+
 function ukabbalah_preprocess_page(&$vars) {
 	
 	if (isset($vars['node']->type)) {

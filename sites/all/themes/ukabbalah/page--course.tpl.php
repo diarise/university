@@ -173,11 +173,13 @@
 					<?php } ?>
 		 
 		
-
-		<script>
+		<?php
+			ukabbalah_tabs(0);
+		?>
+		<!-- <script>
 		$( "#tabs" ).tabs();
 		
-		</script>
+		</script> -->
 		
 	</div>
 </div>
