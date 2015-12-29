@@ -3240,6 +3240,9 @@ div.jp-audio{
     }
     #teachersDD, #topicDD{
         width: 210px;
+        select{
+            width: 100%; 
+        }
     }
 
 }
