@@ -235,7 +235,7 @@
 			<?php } elseif( !user_is_logged_in()) { ?>
 				<div id="wrapperPrice">
 					<span class="buttonMember"><a href="https://idp.kabbalah.com">become a member</a></span>
-					<!--<span class="priceLogin"><a href="https://idp.kabbalah.com/user/login">log-in</a></span>-->
+					
 					<span class="priceLogin logColor"><?php print get_current_url();?></span>
 				</div>
 			<?php } ?>
