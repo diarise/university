@@ -403,6 +403,31 @@ span.lessonsCourse,
 	    color: #208fdc !important;
 	    font-family: proxilight !important;
 	}
+	#searchFilterDetail {
+
+		.item-list ul {
+		    margin: 0 0 0.75em;
+		    padding: 0;
+		}
+
+		.item-list ul li {
+		    margin: 0 0 0.25em 1.5em;
+		    padding: 0;
+		}
+		.element-invisible {
+		    clip: rect(1px, 1px, 1px, 1px);
+		    // height: 1px;
+		    overflow: hidden;
+		    position: absolute !important;
+		}
+		label {
+		    // display: block;
+		    font-weight: bold;
+		}
+		.facetapi-checkbox {
+	    	margin-right: 0.5em;
+		}
+	}
 
 }
 .logged-in{
