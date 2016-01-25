@@ -341,6 +341,69 @@ span.lessonsCourse,
 	    font-weight: bold;
 	}
 
+
+	.ac_results {
+	    border: 1px solid #f1f0f0 !important;
+	    width: 288px !important;
+	    background-color: white;
+	    // border: 1px solid black;
+	    overflow: hidden;
+	    padding: 0;
+	    z-index: 99999;
+	}
+	.ac_results ul {
+	    list-style: outside none none;
+	    margin: 0;
+	    padding: 0;
+	    width: 100%;
+	}
+	.ac_results li {
+	    cursor: default;
+	    display: block;
+	    font-size: 12px;
+	    line-height: 16px;
+	    margin: 0;
+	    overflow: hidden;
+	    padding: 2px 5px;
+	}
+
+	.ac_results .ac_over {
+	    background-color: #433a3a !important;
+	}
+	.ac_results .ac_odd {
+	    background-color: #f1f0f0 !important;
+	}
+	div.ac_results li {
+	    background-image: none !important;
+	    list-style: outside none none;
+	}
+	.ac_over {
+	    background-color: #0a246a;
+	    color: white;
+	}
+	div.apachesolr_autocomplete.suggestion {
+	    display: inline;
+	    float: left;
+	}
+	.ac_results .apachesolr_autocomplete {
+	    color: #433a3a !important;
+	    font-size: 14px !important;
+	}
+	.ac_results .ac_over .apachesolr_autocomplete.suggestion, .ac_results .ac_over .apachesolr_autocomplete.message {
+	    color: #a7a2a2 !important;
+	}
+	.apachesolr_autocomplete.count {
+	    float: right;
+	}
+	.apachesolr_autocomplete.message {
+	    color: #888;
+	    font-size: 80%;
+	}
+	.ac_results .apachesolr_autocomplete strong {
+	    color: #208fdc !important;
+	    font-family: proxilight !important;
+	}
+
 }
 .logged-in{
 	.form-item.form-type-textfield.form-item-custom-search-blocks-form-1 {
