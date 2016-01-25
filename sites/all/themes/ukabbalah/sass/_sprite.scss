@@ -8,7 +8,7 @@ input#submitSearchBtn,
 #fpSocialMediaBlock3 .fpSocialMediaWrapper:before,
 #fpSocialMediaBlock1 .fpSocialMediaBlockTitle a,
 .footerBySiteIcons:before,
-#socialMediaWrapper a,
+#socialMediaWrapperIcone a,
 #goRight,
 #goLeft,
 .imgNav li,
@@ -19,12 +19,40 @@ input#submitSearchBtn,
 .leftArrowStyle,
 #SocialMediaWrapper:before,
 #viewByList,
-#viewByGrid{
-    background-image: url("/sites/all/themes/ukabbalah/images/all_eng_sm.png");
+#viewByGrid,
+.Basic,
+.Free,
+.Premium,
+.Premium.Plus,
+.Videos,
+.Video, 
+.vidImg,
+.Audios,
+.Audio,
+.bothAdVdImg,
+.Both,
+.expand > a,
+a.collapse,
+span.downloadAudio,
+.customSelectDropdown:after,
+.ccLesson span,
+#courseDescription .stLarge,
+.socialMediaIcon .stLarge,
+#eSocial .stLarge,
+.resourceFile,
+.wrapperLesson.activeLesson:after,
+.activeTap,
+.streaming,
+.membership,
+.lessonCollectionSection input#edit-title,
+#searchWrapper .form-submit,
+#previewVideoStash,
+span.lessonsCourse,
+#reposiveMobileMenu{
+    background-image: url("/sites/all/themes/ukabbalah/images/all_eng_sm_new.png")!important;
+    //background-image: url("http://cdn1.kabbalah.com/university/icons/all_eng_sm_new.png")!important;
     background-repeat: no-repeat;
 }
-
-// --- a new sprite will be load for mobile device only --- //
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (-o-min-device-pixel-ratio: 3/2),
@@ -40,7 +68,7 @@ input#submitSearchBtn,
 		#fpSocialMediaBlock3 .fpSocialMediaWrapper:before,
 		#fpSocialMediaBlock1 .fpSocialMediaBlockTitle a,
 		.footerBySiteIcons:before,
-		#socialMediaWrapper a,
+		#socialMediaWrapperIcone a,
 		#goRight,
 		#goLeft,
 		.imgNav li,
@@ -51,12 +79,279 @@ input#submitSearchBtn,
 		.leftArrowStyle,
 		#SocialMediaWrapper:before,
 		#viewByList,
-		#viewByGrid{
-			background-image: url("/sites/all/themes/ukabbalah/images/all_eng_large.png");
-	        background-size: 323px 1246px;
+		#viewByGrid,
+		.Basic,
+		.Free,
+		.Premium,
+		.Premium.Plus,
+		.Videos,
+		.Video, 
+		.vidImg,
+		.Audios,
+		.Audio,
+		.bothAdVdImg,
+		.Both,
+		.expand > a,
+		a.collapse,
+		span.downloadAudio,
+		.customSelectDropdown:after,
+		.ccLesson span,
+		#courseDescription .stLarge,
+		.socialMediaIcon .stLarge,
+		#eSocial .stLarge,
+		.resourceFile,
+		.wrapperLesson.activeLesson:after,
+		.activeTap,
+		.streaming,
+		.membership,
+		.lessonCollectionSection input#edit-title,
+		#searchWrapper .form-submit,
+		#previewVideoStash,
+		span.lessonsCourse,
+		#reposiveMobileMenu{
+			background-image: url("/sites/all/themes/ukabbalah/images/all_eng_large_new.png")!important;
+			//background-image: url("http://cdn1.kabbalah.com/university/icons/all_eng_large_new.png")!important; 
+	        background-size: 322px 2320px; // those size should be the half on the original size
 		}
 		.newHeaderWrapperMobileMenuLogo{
+			// height: 24px;
 			background-position: 0 -834px;
 		}
         
 }
+
+.not-logged-in{
+	.sidr {
+    background: #333 none repeat scroll 0 0;
+    box-shadow: 0 0 5px 5px #222 inset;
+    color: #fff;
+    display: none;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size: 15px;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 260px;
+    z-index: 999999;
+	}
+	.sidr .sidr-inner {
+	    padding: 0 0 15px;
+	}
+	.sidr .sidr-inner > p {
+	    margin-left: 15px;
+	    margin-right: 15px;
+	}
+	.sidr.right {
+	    left: auto;
+	    right: -260px;
+	}
+	.sidr.left {
+	    left: -260px;
+	    right: auto;
+	}
+	.sidr h1, .sidr h2, .sidr h3, .sidr h4, .sidr h5, .sidr h6 {
+	    background-image: linear-gradient(#4d4d4d, #1a1a1a);
+	    box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
+	    color: #fff;
+	    font-size: 11px;
+	    font-weight: normal;
+	    line-height: 24px;
+	    margin: 0 0 5px;
+	    padding: 0 15px;
+	}
+	.sidr p {
+	    font-size: 13px;
+	    margin: 0 0 12px;
+	}
+	.sidr p a {
+	    color: rgba(255, 255, 255, 0.9);
+	}
+	.sidr > p {
+	    margin-left: 15px;
+	    margin-right: 15px;
+	}
+	.sidr ul {
+	    border-bottom: 1px solid #4d4d4d;
+	    border-top: 1px solid #1a1a1a;
+	    display: block;
+	    margin: 0 0 15px;
+	    padding: 0;
+	}
+	.sidr ul li {
+	    border-bottom: 1px solid #1a1a1a;
+	    border-top: 1px solid #4d4d4d;
+	    display: block;
+	    line-height: 48px;
+	    margin: 0;
+	}
+	.sidr ul li:hover, .sidr ul li.active, .sidr ul li.sidr-class-active {
+	    border-top: medium none;
+	    line-height: 49px;
+	}
+	.sidr ul li:hover > a, .sidr ul li:hover > span, .sidr ul li.active > a, .sidr ul li.active > span, .sidr ul li.sidr-class-active > a, .sidr ul li.sidr-class-active > span {
+	    box-shadow: 0 0 15px 3px #222 inset;
+	}
+	.sidr ul li a, .sidr ul li span {
+	    color: #fff;
+	    display: block;
+	    padding: 0 15px;
+	    text-decoration: none;
+	}
+	.sidr ul li ul {
+	    border-bottom: medium none;
+	    margin: 0;
+	}
+	.sidr ul li ul li {
+	    font-size: 13px;
+	    line-height: 40px;
+	}
+	.sidr ul li ul li:last-child {
+	    border-bottom: medium none;
+	}
+	.sidr ul li ul li:hover, .sidr ul li ul li.active, .sidr ul li ul li.sidr-class-active {
+	    border-top: medium none;
+	    line-height: 41px;
+	}
+	.sidr ul li ul li:hover > a, .sidr ul li ul li:hover > span, .sidr ul li ul li.active > a, .sidr ul li ul li.active > span, .sidr ul li ul li.sidr-class-active > a, .sidr ul li ul li.sidr-class-active > span {
+	    box-shadow: 0 0 15px 3px #222 inset;
+	}
+	.sidr ul li ul li a, .sidr ul li ul li span {
+	    color: rgba(255, 255, 255, 0.8);
+	    padding-left: 30px;
+	}
+	.sidr form {
+	    margin: 0 15px;
+	}
+	.sidr label {
+	    font-size: 13px;
+	}
+	.sidr input[type="text"], .sidr input[type="password"], .sidr input[type="date"], .sidr input[type="datetime"], .sidr input[type="email"], .sidr input[type="number"], .sidr input[type="search"], .sidr input[type="tel"], .sidr input[type="time"], .sidr input[type="url"], .sidr textarea, .sidr select {
+	    background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+	    border: medium none;
+	    border-radius: 2px;
+	    box-sizing: border-box;
+	    clear: both;
+	    color: rgba(255, 255, 255, 0.6);
+	    display: block;
+	    font-size: 13px;
+	    margin: 0 0 10px;
+	    padding: 5px;
+	    width: 100%;
+	}
+	.sidr input[type="checkbox"] {
+	    clear: none;
+	    display: inline;
+	    width: auto;
+	}
+	.sidr input[type="button"], .sidr input[type="submit"] {
+	    background: #fff none repeat scroll 0 0;
+	    color: #333;
+	}
+	.sidr input[type="button"]:hover, .sidr input[type="submit"]:hover {
+	    background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
+	}
+
+
+
+
+	// 
+
+	.ui-helper-clearfix::before, .ui-helper-clearfix::after {
+	    border-collapse: collapse;
+	    content: "";
+	    display: table;
+	}
+	.ui-helper-clearfix::after {
+	    clear: both;
+	}
+	.ui-helper-clearfix::before, .ui-helper-clearfix::after {
+	    border-collapse: collapse;
+	    content: "";
+	    display: table;
+	}
+	.ui-tabs .ui-tabs-nav li {
+	    border-bottom-width: 0;
+	    float: left;
+	    list-style: outside none none;
+	    margin: 1px 0.2em 0 0;
+	    padding: 0;
+	    position: relative;
+	    top: 0;
+	    white-space: nowrap;
+	}
+	.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	    margin-bottom: -1px;
+	    padding-bottom: 1px;
+	}
+	.ui-widget-header {
+	    border: 1px solid #aaaaaa;
+	}
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-widget-content{
+		border: 1px solid;
+	}
+	.ui-tabs .ui-tabs-panel {
+	    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	    border-width: 0;
+	    display: block;
+	    padding: 1em 1.4em;
+	}
+	//
+	.view-filters.searchThisCourse .views-exposed-widget.views-submit-button {
+	    display: none;
+	}
+	#searchWrapper input{
+		margin-top: 12px;
+	}
+	#searchWrapper .form-submit{
+		top: -40px;
+	}
+	#loginWrapper a{
+		font-size: 13px;
+	    font-weight: bold;
+	    letter-spacing: 0.5px;
+	    text-transform: uppercase;
+	}
+	#donateBtn a{
+		font-size: 16px;
+    	letter-spacing: 0;
+	}
+	// #userInfoWrapper > span:nth-child(2){
+	// 	margin-left: 4px;
+	// }
+	.item-list .pager {
+    clear: both;
+    text-align: center;
+	}
+	.item-list ul {
+	    margin: 0 0 0.75em;
+	    padding: 0;
+	}
+	.item-list .pager li {
+    background-image: none;
+    display: inline;
+    list-style-type: none;
+    padding: 0.5em;
+	}
+	.item-list ul li {
+	    margin: 0 0 0.25em 1.5em;
+	    padding: 0;
+	}
+	.pager-current {
+	    font-weight: bold;
+	}
+
+}
+.logged-in{
+	.form-item.form-type-textfield.form-item-custom-search-blocks-form-1 {
+	    margin-bottom: 0;
+	    margin-top: 13px;
+	}
+	#searchWrapper .form-submit{
+		top: -28px;
+	}
+	#searchWrapper input{
+		margin-top: -1px; 
+	}
+}
+

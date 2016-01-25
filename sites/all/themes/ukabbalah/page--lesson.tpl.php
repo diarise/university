@@ -91,7 +91,7 @@
 				</div>
 					<div id="wrapperDownloadAudio" class="audioWrapperDownload">
 						<div class="buttonDownloadAudio">
-							<a href='<?php print $node->field_audio_link['und'][0]['value'];?>' target='_blank'><span>Download audio	</span> <img alt="download audio" src="/sites/all/themes/ukabbalah/images/audioDownloadBtn.jpg"></a>
+							<a href='<?php print $node->field_audio_link['und'][0]['value'];?>' target='_blank'><span>Download audio	</span> <span class="downloadAudio"></span></a>
 						</div>
 					</div>
 				</div>	<!--End of videocontent-->	
@@ -156,6 +156,8 @@
 					<?php print render($page['content']); // video player?>
 				</div>	
 			</div>
+			<div class="blackBackgroundColorPlayer"></div>
+			<div class="grayBackgroundColorTranscript"></div>
 		</div>
 		<script type="text/javascript">
 		//console.log("outside intercom testing");
@@ -167,7 +169,6 @@
 			  lesson_url:'<?php echo url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)); ?>'
 			};
 			window.Intercom('trackEvent', 'lesson-watched', metadata);
-			window.Intercom('trackEvent','<?php echo $node->title; ?>', metadata);
 				
 		});				
 		</script>
@@ -453,7 +454,7 @@
 				<div class="loginText">Join Kabbalah University to watch this video. Members get access to thousands of courses and events</div>
 				<span class="buttonMember"><a href="http://idps.kabbalah.com">Become a member</a></span>
 				
-				<span class="priceLogin logColor"><?php print get_current_url();?></span> 
+				<span class="loginBtnBottom"><?php print get_current_url();?></span> 
 			</div>
 				<?php } ?>
 		 

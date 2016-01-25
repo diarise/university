@@ -523,7 +523,20 @@ function ukabbalah_preprocess_node(&$variables) {
   }
 }
 
+function ukabbalah_css_alter(&$css) {
+  global $user;
 
+  foreach ($css as $key => $value) {
+    if ($value['group'] != CSS_THEME) {
+      $exclude[$key] = FALSE;
+    }
+  }
+  if (!(bool)$GLOBALS['user']->uid ){
+    $css = array_diff_key($css, $exclude);
+  }
+  
+
+}
 
 function _taxonomy_node_get_terms_by_vocabulary($node, $vid, $key = 'tid') {
   $result = db_query('SELECT t.tid, t.* FROM {taxonomy_term_data} t INNER JOIN {taxonomy_index} r ON r.tid = t.tid WHERE t.vid = :vid AND r.nid = :node_nid ORDER BY weight', array(':vid' => $vid, ':node_nid' => $node->nid));

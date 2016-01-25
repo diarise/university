@@ -133,47 +133,40 @@
 				if( kabbalah_content_access_get_article_membership($membership->name) == FALSE ) $content_membership = $membership->name;
 				
 				$resultHTML .= "<li class='masonry-brick'>";
-				$resultHTML .= "<span class = 'imagesCont'>";
-                $resultHTML .= theme('imagecache_external', array('path' => $record->field_image_cdn_link_value,'style_name'=> 'carousal_image','alt' => $title,));
-				//$resultHTML .= "<img src = '".$record->field_image_cdn_link_value."' class = 'theImage' alt=''>";
-                $resultHTML .= "<a href =".$path.">"; 
-                $resultHTML .= "<span class ='theDescCont'>";
-                $resultHTML .= "<span class='theTitle'>";
-           
-				if( sizeof($node->field_this_course_contains) > 0 )
-				{
-					if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
-					else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
-					else $media_type = 'bothAdVdImg';
-				} else {
-
-					$media_type = 'bothAdVdImg';
-				}	
-				
-				$resultHTML .= "<span class= '".$media_type."'></span>";
-				if( $subtitle != "" )
-				{
-				 $resultHTML .= "<span class = 'theJsonTitle'>".$subtitle."</span>";
-				} else {
-				 $resultHTML .= "<span class = 'theJsonTitle'>".$title."</span>";
-				}
-                $resultHTML .= "</span>";
-
-                $resultHTML .= "<span class='teachingsTopicAndDate'>";
-                $resultHTML .= $author_name;
-                $resultHTML .= " | ";
-                $resultHTML .= date( 'F jS, Y',$record->changed );
-                $resultHTML .= "<span class= '".$content_membership."'></span>";
+				$resultHTML .= "<span class='lessonBlockWrapper'>";	
+				$resultHTML .= "<a href =".$path.">";	
+				$resultHTML .= "<span class='lessonBlockImage'>";	
+				$resultHTML .= "<span class='lessonBlockImageHover'></span>";	
+				$resultHTML .= "<img src = '".$record->field_image_cdn_link_value."' class = 'imageCover' alt='".$title."' />";	
 				$resultHTML .= "</span>";
-				$resultHTML .= "<span class='theTeaser'>";
-                $resultHTML .= "<span>".$teaser." ... </span>";
-                $resultHTML .= "<span class = 'readMore'>";
-                $resultHTML .= " read more"; 
-                $resultHTML .="</span>";
-                $resultHTML .="</span>";
-                $resultHTML .="</span>";
-                $resultHTML .="</a>";
-                $resultHTML .="</span>"; 
+				if( $subtitle != "" )
+								{	
+				$resultHTML .= "<span class='lessonBlockTitle'>".$subtitle."</span>";
+				} else {
+				$resultHTML .= "<span class='lessonBlockTitle'>".$title."</span>";
+				}	
+				$resultHTML .= "<span class='lessonBlockTeacherInfo'>";	
+				$resultHTML .= "<span>".$author_name."</span>";	
+				$resultHTML .= "</span>";	
+				$resultHTML .= "<span class='lessonBlockDetail'>";	
+				$resultHTML .= "<span class= '".$membership->name."'></span>";
+				if( sizeof($node->field_this_course_contains) > 0 )
+								{
+									if( $node->field_this_course_contains['und'][0]['value'] == 1 ) $media_type = 'audioImg';
+									else if( $node->field_this_course_contains['und'][0]['value'] == 0 ) $media_type = 'vidImg';
+									else $media_type = 'bothAdVdImg';
+								} else {
+
+									$media_type = 'bothAdVdImg';
+								}	
+				$resultHTML .= "<span class= '".$media_type."'></span>";	
+					
+				$resultHTML .= "<span class='lessonBlockInfo'>";
+				$resultHTML .= date( 'F jS, Y',$record->changed );
+				$resultHTML .= "</span>";	
+				$resultHTML .= "</span>";	
+				$resultHTML .= "</a>";	
+				$resultHTML .= "</span>";
 				$resultHTML .= "</li>";																			  
 			
 			}

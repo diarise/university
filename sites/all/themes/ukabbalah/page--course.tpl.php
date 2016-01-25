@@ -23,13 +23,7 @@
 								<?php  print $node->field_subtitle['und'][0]['value']; ?>
 							</span>
 							<?php } ?>
-							<!-- <span id="topicCourseTitle"> Topic:</span>
-							<span id="topicCourse"> 
-							<?php	
-								//foreach ($node->field_primary_topic as $term) 	{ $primary_topic = l( t($term[0]['taxonomy_term']->name) , 'taxonomy/term/' . $term[0]['taxonomy_term']->tid); }
-								//print $primary_topic; // Primary Topic 
-							?>
-							</span> -->
+							
 							<span class = "theCourseAuthorTitle">Teacher:
 								<span class = "theCourseAuthor">
 								<?php
@@ -78,8 +72,6 @@
 							$prereq_array[] = "<a href='/node/".$p['nid']."'>".$p['node']->title ."</a>";
 						}
 					?>
-						<!-- <span id="preReqsTitle"> Prerequisites Courses :</span>
-						<span id="preReqs"><?php //print implode(", " , $prereq_array ); ?></span> --> 
 					<?php } ?>
 
 				</div>
@@ -167,8 +159,7 @@
 							<div class="loginText">Join Kabbalah University to watch this video.
 		Members get access to thousands of courses and events</div>
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<!--<span class="priceLogin logColor"><a href="https://idp.kabbalah.com/user/login">Log In</a></span>-->
-							<span class="priceLogin logColor"><?php print get_current_url();?></span>
+							<span class="loginBtnBottom"><?php print get_current_url();?></span>
 						</div>
 					<?php } ?>
 		 
@@ -176,10 +167,7 @@
 		<?php
 			ukabbalah_tabs(0);
 		?>
-		<!-- <script>
-		$( "#tabs" ).tabs();
-		
-		</script> -->
+
 		
 	</div>
 </div>

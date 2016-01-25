@@ -18,8 +18,7 @@
 			dataType: "json",
 			success: function(data){
 
-				var contsLists = "";
-				var theSlideWrapper= "<div class = 'imageslide'><div class = 'rowStyle'><img class='leftArrowStyleHome' src='/sites/all/modules/ukabbalah_fp_carousals/images/arrow-left.png'/><div class = 'slideWrapper'><ul class = 'ulStyle carrouselFix'></ul></div><img class='rightArrowStyleHome' src='/sites/all/modules/ukabbalah_fp_carousals/images/arrow-right.png'/></div></div>";
+				var theSlideWrapper= "<div class = 'imageslide'><div class = 'rowStyle'><span class='leftArrowStyleHome'></span><span class='rightArrowStyleHome'></span><div class = 'slideWrapper'><ul class = 'ulStyle carrouselFix'></ul></div></div></div>";
 				divId.html(theSlideWrapper);
 				if(data !== null)
 					startDisplay(data);
@@ -36,49 +35,42 @@
                 $.each(data, function(i){      // add all images of each row
 
                     rowContent += "<li>"
-                                    + "<span class='imagesCont'>"   
-                                        + "<img src = " + data[i].image + " class = 'theImage'>"
-                                        + "<a href =" + data[i].path + ">"                       
-                                        	+ "<span class ='theDescCont'>"
-
-                                                + "<span class='theTitle'>"
-                                                    + "<span class= '" + data[i].media_type +"'></span>"                                                         
-                                                    + "<span class = 'theJsonTitle'>"
-                                                            + data[i].title
-                                                    + "</span>" 
-                                                + "</span>"
-
-                                                + "<span class='teachingsTopicAndDate'>"
-                                                    + data[i].author
-                                                    + " | "
-                                                    + data[i].created
-                                                    + "<span class='"+data[i].membership +"'></span>"
-                                                + "</span>"
+									+ "<span class = 'lessonBlockWrapper'>"
+										+ "<a href =" + data[i].path + ">"
+											+ "<span class='lessonBlockImage'>"
+									            + "<span class='lessonBlockImageHover'></span>"
+												+ "<img src = " + data[i].image + " class = 'imageCover' />"
+											+ "</span>"
+											+ "<span class='lessonBlockTitle'>"
+												+ data[i].title
+											+ "</span>"
+											+ "<span class='lessonBlockTeacherInfo'>"
 												
-                                                + "<span class='theTeaser'>"
-                                                    + data[i].teaser;
-													
-                        
-						if( data[i].node_type == 'course' ) rowContent += "<span class ='readMore'> read more </span>"; 
-						else rowContent += "<span class ='readMore'> watch now </span>";
-                        
-						
-						rowContent += "</span>"
-                                            + "</span>"
-                                        + "</a>"
-                                    + "</span>" 
+												+ "<span>"
+												+ data[i].author
+												+ "</span>"
+											+ "</span>"
+											+ "<span class='lessonBlockDetail'>"
+												+ "<span class= '" + data[i].membership +"'></span>"
+												+ "<span class= '" + data[i].media_type +"'></span>"
+												+ "<span class='lessonBlockInfo'>"
+												+ data[i].created
+												+ "</span>"
+											+ "</span>"
+										+ "</a>"
+									+ "</span>"
                                + "</li>";    
-                });
+				});
                 
             setSlideContent.html(rowContent);
 		};
 
 		var styleCarousel = function(){
 			var globalImgCount = divId.find("ul").children("li").length;
-			var rightImgCount = globalImgCount- contsDisplayNum;
-			var leftImgCount = 0;
+			var rightImgCount = globalImgCount - contsDisplayNum;
 
 			divId.find(".leftArrowStyleHome").hide();
+
 			if(rightImgCount <= 0) {
 				divId.find(".rightArrowStyleHome").hide()
 			} else {
@@ -92,26 +84,19 @@
 				"width": 960
 			});
 			divId.find("ul").css({
-				"width":imageWidth*globalImgCount,
+				"width":imageWidth * globalImgCount,
 				"padding": 0,
 				"position":"relative"
 			});
-			divId.find("li").css({
-				"display": "inline-block",
-				"width": 320
-			});
-			// divId.find(".theImage").css({
-			// 	"width":300
-			// });
 			divId.find(".rightArrowStyleHome").css({
-				"float": "right",
-				"margin-top": -120,
+				"position": "absolute",
+				"right": 0,
+				"margin-top": 138,
 				"z-index": 120,
 				"cursor": "pointer"
 			});
 			divId.find(".leftArrowStyleHome").css({
-				"float": "left",
-				"margin-top": 71,
+				"margin-top": 138,
 				"position": "absolute",
 				"z-index": 120,
 				"cursor": "pointer"
@@ -132,7 +117,7 @@
 				divId.find("ul").animate({
 					left: "-=" + imageWidth*contsDisplayNum
 				}, 500, (function(callee){
-					return function(){$(this).parent().next().click(callee);}
+					return function(){$(this).parent().prev().click(callee);}
 				})
 				(arguments.callee));
 
@@ -150,7 +135,7 @@
 				divId.find("ul").animate({
 					left:"+=" + imageWidth*contsDisplayNum
 				}, 500, (function(callee){
-					return function(){$(this).parent().prev().click(callee);}
+					return function(){$(this).parent().prev().prev().click(callee);}
 				})
 				(arguments.callee));
 
@@ -161,34 +146,7 @@
 		};
 
 		var hoverDesc = function (){
-			$("#recentlyAddedCourses").show();
-			$.each($(".ulStyle li"), function(){
-		        var titleHeight = $(this).find(".theJsonTitle").outerHeight();
-		        var dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
-		      
-		        $(this).find(".theDescCont").css ({
-		            "margin-top": -(titleHeight + dateHeight + 13),
-		            "height" : 180,
-		        });		        
-	        	
-		        $(this).hover(
-		          	function(){
-			            $(this).find(".theDescCont").stop().animate({
-			             	marginTop: "-180px",
-			            },220);
-		           },
-
-		            function(){
-
-			            titleHeight = $(this).find(".theJsonTitle").outerHeight();
-			            dateHeight = $(this).find(".teachingsTopicAndDate").outerHeight();
-
-			            $(this).find(".theDescCont").stop().animate({
-			             	marginTop: -(titleHeight + dateHeight + 13),
-			            },220);
-      				}
-      			)
-   			});	
+			$("#recentlyAddedCourses").show();	
    			$("#recentlyAddedCourses").hide();   						
 		};
 	}
