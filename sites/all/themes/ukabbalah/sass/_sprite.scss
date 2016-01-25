@@ -404,28 +404,11 @@ span.lessonsCourse,
 	    font-family: proxilight !important;
 	}
 
-	#searchFilterDetail .item-list ul {
-		    margin: 0 0 0.75em;
-		    padding: 0;
-		}
-
-	#searchFilterDetail .item-list ul li {
-		    margin: 0 0 0.25em 1.5em;
-		    padding: 0;
-		}
 	#searchFilterDetail .element-invisible {
-		    clip: rect(1px, 1px, 1px, 1px);
-		    // height: 1px;
-		    overflow: hidden;
-		    position: absolute !important;
-		}
-	#searchFilterDetail label {
-		    // display: block;
-		    font-weight: bold;
-		}
-	#searchFilterDetail .facetapi-checkbox {
-	    	margin-right: 0.5em;
-		}
+	    display: none;
+	    float: left;
+	    overflow: hidden;
+	}
 
 }
 .logged-in{
