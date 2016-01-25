@@ -5858,3 +5858,10 @@ span.downloadAudio {
 #jwplayer1:focus {
     outline:0;
 }
+
+
+#searchFilterDetail .element-invisible {
+    display: none;
+    float: left;
+    overflow: hidden;
+}
