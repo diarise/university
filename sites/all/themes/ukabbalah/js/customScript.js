@@ -60,7 +60,14 @@
 
             $("#courseDescription .bookmark label + label, .form-item .description").remove();
 
-            //
+            // using jquery to style the checkboox for the search page
+
+              $("ul.facetapi-facetapi-checkbox-links li input.facetapi-checkbox").click(function() {
+                $(this).siblings("label.element-invisible").toggleClass("checked");
+              });
+              $("ul.facetapi-facetapi-checkbox-links li a.facetapi-active").siblings("label.element-invisible").addClass("checked");
+
+            // end
 
             $("div.view-lesson-collection .view-filters").addClass("searchThisCourse");
             $('.searchThisCourse input[name$="title"]').attr('placeholder', 'search this course');
