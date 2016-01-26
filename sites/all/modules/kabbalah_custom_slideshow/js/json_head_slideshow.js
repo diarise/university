@@ -110,7 +110,7 @@
 					});
 					$("#goLeft").css({
 						"margin-top" : 156,
-						"margin-left" : 15,
+						"margin-left" : 20,
 						"position" : "absolute",
 						"left" : 0,
 						"z-index" : 120,
@@ -119,7 +119,7 @@
 					});
 					$("#goRight").css({
 						"margin-top" : 156,
-						"margin-right" : 15,
+						"margin-right" : 3,
 						"position" : "absolute",
 						"right" : 0,
 						"z-index" : 120,
