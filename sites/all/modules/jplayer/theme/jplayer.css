@@ -66,7 +66,8 @@ div.jp-interface ul.jp-controls li {
 div.jp-interface ul.jp-controls a {
 	position: absolute;
 	overflow:hidden;
-	text-indent:-9999px;
+	/*text-indent:-9999px;*/
+	color:transparent;
 }
 a.jp-play,
 a.jp-pause {
@@ -107,15 +108,31 @@ div.jp-video-360p div.jp-type-playlist a.jp-play,
 div.jp-video-360p div.jp-type-playlist a.jp-pause {
 	left:300px;
 }
-a.jp-play,a.jp-pause {
-	background: url("play.png")no-repeat scroll 0 15px rgba(0, 0, 0, 0);
+a.jp-play:after,a.jp-pause:after {
+	/*background: url("play.png")no-repeat scroll 0 15px rgba(0, 0, 0, 0);*/
+	background-position: 0 -2519px;
+    color: transparent;
+    content: "";
+    height: 18px;
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    width: 22px;
 }
 /*a.jp-play:hover {
 	background: url("http://cdn1.kabbalah.com/university/icons/pause_blue.png") no-repeat;
 }*/
 a.jp-pause {
-	background: url("pause.png ")no-repeat scroll 0 15px rgba(0, 0, 0, 0);
+	/*background: url("pause.png ")no-repeat scroll 0 15px rgba(0, 0, 0, 0);*/
 	display: none;
+}
+a.jp-pause:after {
+	/*background: url("pause.png ")no-repeat scroll 0 15px rgba(0, 0, 0, 0);*/
+	background-position: 0 -2542px;
+	content: "";
+    height: 18px;
+    position: absolute;
+    width: 22px;
 }
 /*a.jp-pause:hover {
 	background: url("http://cdn1.kabbalah.com/university/icons/play_blue.png") no-repeat;
@@ -277,14 +294,30 @@ div.jp-video-360p div.jp-type-playlist a.jp-mute,
 div.jp-video-360p div.jp-type-playlist a.jp-unmute {
 	left:443px;
 }
-a.jp-mute {
-	background: url("sound-max.png ")35px 15px no-repeat;
+a.jp-mute:after {
+	/*background: url("sound-max.png ")35px 15px no-repeat;*/
+	background-position: 0 -2565px;
+    content: "";
+    height: 20px;
+    position: absolute;
+    top: 14px;
+    width: 26px;
 }
 /*a.jp-mute:hover {
 	background: url("http://cdn1.kabbalah.com/university/icons/volume_min_blue.png")4px 10px no-repeat;
 }*/
-a.jp-unmute {
-	background: url("sound-none.png")35px 15px no-repeat;
+a.jp-unmute:after {
+	/*background: url("sound-none.png")35px 15px no-repeat;*/
+	background-position: 0 -2590px;
+	content: "";
+    height: 20px;
+    position: absolute;
+    right: 7px;
+    top: 15px;
+    width: 26px;
+	
+}
+a.jp-unmute{
 	display: none;
 }
 /*a.jp-unmute:hover {
