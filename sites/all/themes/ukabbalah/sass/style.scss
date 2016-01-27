@@ -5450,7 +5450,8 @@ section.block.block-facetapi:first-child h2 {
     padding-top: 11px;
 }
 .current-search-item-active-items .item-list ul li a:after{
-    background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
+    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
+    background-position: 0 -2352px; 
     color: transparent;
     content: "\2716";  
 }
