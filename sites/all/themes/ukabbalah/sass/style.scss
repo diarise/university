@@ -3116,7 +3116,8 @@ div.jp-audio{
     width: 18px;
 }
 #courseDescription .bookmark label.checked {
-    background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
+    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
+    background-position: 0 -2335px; 
 }
 // #courseDescription .bookmark label + label{
 //     display: none; 
