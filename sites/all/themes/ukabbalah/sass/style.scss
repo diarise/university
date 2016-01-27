@@ -5451,7 +5451,7 @@ section.block.block-facetapi:first-child h2 {
 }
 .current-search-item-active-items .item-list ul li a:after{
     //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
-    background-position: 0 -2352px; 
+    background-position: 0 -2350px; 
     color: transparent;
     content: "\2716";  
 }
@@ -5462,11 +5462,22 @@ section.block.block-facetapi:first-child h2 {
     padding: 39px 30px;
 }
 #block-custom-search-blocks-2 {
-    background: #e7f0f7 url("http://cdn1.kabbalah.com/university/icons/blue-arrow.svg") no-repeat scroll right center;
+    background: #e7f0f7;
     height: 42px;
     margin-bottom: 30px;
     margin-top: 6px;
     padding: 39px 30px;
+}
+#block-custom-search-blocks-2:after {
+    background-position: 2373px; 
+    bottom: 0;
+    content: "";
+    height: 120px;
+    margin: auto;
+    position: absolute;
+    right: -9px;
+    top: 0;
+    width: 60px; 
 }
 #block-custom-search-blocks-2 .form-item.form-type-textfield.form-item-custom-search-blocks-form-2{
     margin-bottom: 0;
