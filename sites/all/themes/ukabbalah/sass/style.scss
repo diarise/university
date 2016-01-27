@@ -5467,17 +5467,16 @@ section.block.block-facetapi:first-child h2 {
     margin-bottom: 30px;
     margin-top: 6px;
     padding: 39px 30px;
+    position: relative; 
 }
 #block-custom-search-blocks-2:after {
-    background-position: 2373px; 
-    bottom: 0;
+    background-position: 0 -2373px;
     content: "";
     height: 120px;
-    margin: auto;
     position: absolute;
-    right: -9px;
+    right: 0;
     top: 0;
-    width: 60px; 
+    width: 60px;
 }
 #block-custom-search-blocks-2 .form-item.form-type-textfield.form-item-custom-search-blocks-form-2{
     margin-bottom: 0;
