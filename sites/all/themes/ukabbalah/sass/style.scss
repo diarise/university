@@ -5319,6 +5319,7 @@ body.page-node-6419{
 }
 #searchContentResult {
     float: left;
+    margin-bottom: 85px;
     margin-top: 60px;
     width: 590px;
 }
@@ -5437,8 +5438,8 @@ section.block.block-facetapi:first-child h2 {
     background: #f1f0f0 none repeat scroll 0 0;
     color: #433a3a;
     font-size: 18px;
-    margin-left: 0;
-    padding: 15px 0 15px 15px;
+    margin-left: 0!important;
+    padding: 15px 0 15px 15px!important;
 }
 .current-search-item-active-items .item-list ul li a {
     border-left: 1px solid #fff;
