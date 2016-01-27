@@ -5485,7 +5485,7 @@ section.block.block-facetapi:first-child h2 {
 #edit-basic.container-inline.form-wrapper label, #block-custom-search-blocks-2 label {
     display: none;
 }
-#edit-basic.container-inline.form-wrapper input#edit-keys, #block-custom-search-blocks-2 input.apachesolr-autocomplete{
+#edit-basic.container-inline.form-wrapper input#edit-keys, #block-custom-search-blocks-2 input.custom-search-box.form-text{
     border: none;
     background: #e7f0f7 none repeat scroll 0 0 !important;
     border-bottom: 2px solid #433a3a;
@@ -5503,7 +5503,7 @@ section.block.block-facetapi:first-child h2 {
     color: transparent;
     cursor: pointer;
     float: right;
-    height: 28px;
+    height: 26px;
     margin-left: 0;
     position: relative;
     right: 30px;
