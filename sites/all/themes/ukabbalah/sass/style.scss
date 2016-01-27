@@ -5496,7 +5496,8 @@ section.block.block-facetapi:first-child h2 {
     width: 500px !important;
 }
 #block-custom-search-blocks-2 input#edit-submit.form-submit {
-    background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
+    //background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
+    background-position: 0 -1847px; 
     border: medium none;
     color: transparent;
     cursor: pointer;
