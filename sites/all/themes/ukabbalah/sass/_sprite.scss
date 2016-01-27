@@ -52,7 +52,8 @@ span.lessonsCourse,
 a.jp-play:after, 
 a.jp-pause:after,
 a.jp-mute:after,
-a.jp-unmute:after{
+a.jp-unmute:after,
+a.plusIcone{
     //background-image: url("/sites/all/themes/ukabbalah/images/all_eng_sm_new.png")!important;
     background-image: url("http://cdn1.kabbalah.com/university/icons/all_eng_sm_new.png")!important;
     background-repeat: no-repeat;
@@ -116,7 +117,8 @@ a.jp-unmute:after{
 		a.jp-play:after, 
 		a.jp-pause:after,
 		a.jp-mute:after,
-		a.jp-unmute:after{
+		a.jp-unmute:after,
+		a.plusIcone{
 			//background-image: url("/sites/all/themes/ukabbalah/images/all_eng_large_new.png")!important;
 			background-image: url("http://cdn1.kabbalah.com/university/icons/all_eng_large_new.png")!important; 
 	        background-size: 322px 2607px; // those size should be the half on the original size
@@ -127,6 +129,5 @@ a.jp-unmute:after{
 		}
         
 }
-
 
 // 

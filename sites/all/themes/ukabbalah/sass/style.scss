@@ -179,9 +179,13 @@ input#submitSearchBtn {
     // margin-left: 14px;
 }
 a.plusIcone {
-    background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/plus_white.svg") no-repeat scroll center center;
+    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/plus_white.svg") no-repeat scroll center center;
+    background-position: 0 -2498px;
     color: transparent !important;
+    height: 12px !important;
+    position: relative;
     text-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+    top: 11px;
     width: 16px;
 }
 
