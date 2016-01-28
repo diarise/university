@@ -5441,21 +5441,25 @@ section.block.block-facetapi:first-child h2 {
     font-size: 18px;
     margin-left: 0!important;
     padding: 15px 0 15px 15px!important;
+    position: relative; 
 }
 .current-search-item-active-items .item-list ul li a {
     border-left: 1px solid #fff;
     color: transparent;
     float: right;
-    height: 40px;
+    height: 50px;
     margin-top: -15px;
-    padding-right: 16px;
-    padding-top: 11px;
+    width: 50px;
 }
 .current-search-item-active-items .item-list ul li a:after{
-    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
     background-position: 0 -2350px; 
     color: transparent;
-    content: "\2716";  
+    content: "\2716";
+    height: 16px;
+    position: absolute;
+    right: 17px;
+    top: 16px;
+    width: 16px;  
 }
 
 #edit-basic.container-inline.form-wrapper {
