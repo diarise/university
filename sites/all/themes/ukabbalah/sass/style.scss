@@ -1268,6 +1268,7 @@ footer>nav+div #block-block-2 a :hover {
 #fpSocialMediaBlock3 {
     background-color: #fff;
     float: left;
+    height: 80px;
     margin-top: 25px;
     width: 100%;
 }
@@ -5421,8 +5422,8 @@ section.block.block-facetapi:first-child h2 {
     width: 18px;  
 }
 #searchFilterDetail label.element-invisible.checked{
-    background: url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
-    //background-position: 1px -2332px; 
+    //background: url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
+    background-position: 1px -2332px; 
 }
 
 #block-current-search-standard > h2 {
@@ -5451,8 +5452,8 @@ section.block.block-facetapi:first-child h2 {
     padding-top: 11px;
 }
 .current-search-item-active-items .item-list ul li a:after{
-    background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
-    //background-position: 0 -2350px; 
+    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/grey-x.svg") no-repeat scroll center center;
+    background-position: 0 -2350px; 
     color: transparent;
     content: "\2716";  
 }
@@ -5497,8 +5498,8 @@ section.block.block-facetapi:first-child h2 {
     width: 500px !important;
 }
 #block-custom-search-blocks-2 input#edit-submit.form-submit {
-    background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
-    //background-position: 0 -2613px;
+    //background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
+    background-position: 0 -2613px;
     background-color: transparent;  
     border: medium none;
     color: transparent;
