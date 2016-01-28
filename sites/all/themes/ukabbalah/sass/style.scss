@@ -176,10 +176,8 @@ input#submitSearchBtn {
     display: inline-block;
     height: 35px;
     width: 272px;
-    // margin-left: 14px;
 }
 a.plusIcone {
-    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/plus_white.svg") no-repeat scroll center center;
     background-position: 0 -2498px;
     color: transparent !important;
     height: 12px !important;
@@ -210,7 +208,6 @@ a.plusIcone {
     cursor: pointer;
     float: right;
     height: 21px;
-    // margin-top: -45px !important;
     position: relative;
     width: 19px !important;
 }
@@ -292,9 +289,6 @@ a.plusIcone {
 #userInfoWrapperResponsive ul li:hover > ul {
     display:block
 }
-// a.userActiveResponsive{
-//     background: url("../images/white_arrow.svg") no-repeat scroll right top 6px;
-// }
 #userInfoWrapperResponsive{
     padding: 0 5px 5px 20px;
     position: relative;
@@ -309,7 +303,6 @@ a.plusIcone {
     position:relative;
 }
 #newHeaderWrapperMobileMenu{
-    //float: left;
     height: 42px;
     left: 0;
     position: absolute;
@@ -317,7 +310,6 @@ a.plusIcone {
     z-index: 10;
 }
 #newHeaderWrapperMainMenu{
-    //float: left;
     height: 42px;
     line-height: normal;
     margin: auto;
@@ -326,16 +318,8 @@ a.plusIcone {
     text-align: center;
     vertical-align: middle;
     width: 100% !important;
-    // z-index: 100; 
 }
-.smallScreenHeader.menuScrolling  #newHeaderWrapperMainMenu {
-        // max-width: 739px;
-        // min-width: 680px;
-        // width: auto!important;
-    }
-
 #newHeaderWrapperLanguage{
-    //float: right;
     height: 42px;
     position: absolute;
     right: 0;
@@ -374,7 +358,6 @@ a.plusIcone {
     padding-right: 23px;
     width: 33px;
 }
-
 .newHeaderWrapperLocalMenuLogo {
     background-position: 0 -340px;
     float: left;
@@ -425,9 +408,7 @@ a.plusIcone {
     .wrapperLesson{
         padding-top: 15px !important;
     }
-
 }
-
 #reposiveMobileMenu ul.menu {
     display: none;
 }
@@ -478,11 +459,9 @@ a.plusIcone {
 #newHeaderWrapperMainMenu ul#nice-menu-1 > li {
     margin-left: 20px;
     cursor: pointer; 
-
 }
 #newHeaderWrapperMainMenu ul#nice-menu-1 > li:first-child {
     margin-left: 0;
-
 }
 #newHeaderWrapperMainMenu ul > li > a.active{
     border-top: 1px solid #7cc7ff;
@@ -566,12 +545,6 @@ a.plusIcone {
     left: 196px;
     visibility: visible;
 }
-// @media (max-width: 1660px) {
-//     #newHeaderWrapperMainMenu{
-//         display: inline-block;
-//         float: none;
-//     }
-// }
 #sidr-0 {
     background: none repeat scroll 0 0 #564e4e;
     box-shadow: none;
@@ -655,7 +628,6 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
         width: 184px;
     }
 }
-
 @media (min-width: 1070px) and (max-width: 1676px){
     .smallScreenHeader.menuScrolling .newHeaderWrapperLocalMenuLogo {
         display: block;
@@ -671,10 +643,6 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     .menuScrolling .newHeaderWrapperSearchMenuLogo{
         border-left: 1px solid #8c8787!important;
     }
-
-    // .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu {
-    //     width: 18%;
-    // }
 }
 
 #userInfoWrapperResponsive{
@@ -783,8 +751,7 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     position: relative;
     width: 100%;
     float: left;
-    margin-bottom: 26px;
-    
+    margin-bottom: 26px;  
 }
 #goRight{
     background-position: 0 -928px;
@@ -1239,14 +1206,10 @@ footer>nav+div #block-block-2 a :hover {
     width: 100%;
 }
 #SocialMediaWrapper {  
-    float: left;
-    // margin-top: 80px;   
+    float: left;  
     padding: 43px 0 24px;
     width: 100%;
 }
-// body.front #SocialMediaWrapper{
-//     margin-top: 0;
-// }
 #SocialMedia {
     margin: 0 auto;
     max-width: 1340px;
@@ -1305,7 +1268,6 @@ footer>nav+div #block-block-2 a :hover {
 #block-views-tweets-block .views-field.views-field-created-time em {
     font-style: normal;
 }
-
 #fpSocialMediaBlock3 p:last-child {
     font-family: proxiregular;
     font-size: 14px;
@@ -1330,7 +1292,6 @@ footer>nav+div #block-block-2 a :hover {
 }
 
 /* ================= END FOOTER =========================== */
-
 
 
 /* ==============================================================
@@ -2008,22 +1969,6 @@ h3 {
 .optionAudio #downloadAudio a{
     color: $colorWhite!important;
 }
-// #downloadAudio{
-//     background: url("http://cdn1.kabbalah.com/university/icons/dropdown_arrow_blue.png") no-repeat scroll 115px 10px!important;
-//     display: inline-block;
-//     height: 27px;
-//     width: 170px;
-//     margin: -28px 0 0 -35px;
-// }
-// #downloadAudio a{
-//     color: $colorWhite;
-//     font-size: 14px;
-//     font-weight: normal;
-//     line-height: 26px;
-// }
-// #downloadAudio a span{
-//     color: $colorBlue;
-// }
 #titleMultimedia{
     font-weight:normal; 
     font-size:25px;
@@ -2253,9 +2198,6 @@ h3 {
     margin-top: 9px;
     text-align: center;
 }
-// .priceLogin.logColor a {
-//     color: #4ab5ff !important; 
-// }
 #wrapperInfoCour > span {
     display: block;
     color: #bababa;
@@ -2316,15 +2258,12 @@ h3 {
 #infoCourse{
     line-height: 25px;
 }
-
 .eventsLocation,.eventsDate{
   margin-top: 5px;
 }
-
 .eventsDate{
   display: block;
 }
-
 .lessonCollectionSection h2,
 .liveEventCollectionSection h2{
     font-size: 15px;
@@ -2500,23 +2439,15 @@ h3 {
   background-position: 0 -1448px;
 }
  .views-field-twistage-subtitles.activeLesson span, .subtitle-width.activeLesson span{
-     //background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px!important;
       color: transparent;
       }
 .views-field-twistage-subtitles span,
 .subtitle-width span{
-    //background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png) no-repeat 8px 9px;
     color: transparent;
 }
 .lessonCollectionSection tr:hover,{
   font-weight: bold;
   background: #e1edf1;
-    .Video{
-        //background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px;
-      }
-    .views-field-twistage-subtitles span, .subtitle-width span{
-     //background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
-      }
 }
 .liveEventCollectionSection tr:hover{
   font-weight: bold;
@@ -2590,12 +2521,8 @@ h3 {
 #mainContentWrapper select option{
   width:150px;
 }
-// span.lessonsCourse{
-    
-// }
 
 span.lessonsCourse {
-    //background: url("../images/dd_arrow.png") no-repeat scroll right 10px #fff!important;
     background-position: 182px -2300px; 
     border: 1px solid $colorGray;
     color: $colorBrown;
@@ -2813,13 +2740,6 @@ div.jp-audio{
     margin-right: 35px;
     vertical-align: super;
 }
-// .resourceFile {
-//     //@include icon-sprite("icon_pdf");
-//     margin-right: 14px;
-//     display: inline-block;
-//     height: 24px;
-//     width: 24px;
-// }
 #classesDescription > p {
     color: $colorBrown;
     font-size: 16px;
@@ -2840,7 +2760,6 @@ div.jp-audio{
 }
 
 .lessonCollectionSection tr:hover .Audio{
-    //background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
     height: 13px;
     width: 25px;
 } 
@@ -2901,7 +2820,6 @@ div.jp-audio{
     z-index: -10;
 }
 .topicTextWrapper {
-    //background: url("../images/sliding_white_bg_3.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 180px;
     padding-top: 15px;
@@ -2910,12 +2828,6 @@ div.jp-audio{
 .sticky-header{
     display: none!important;
 }
-// #list img,#grid img {
-//     float: left;
-//     height: 17px;
-//     margin: 7px 0 10px 10px;
-//     width: 26px;
-// }
 
 /**home page**/
 
@@ -2951,22 +2863,7 @@ div.jp-audio{
 }
 .audioImg{
     @extend .vidImg;
-    // @include icon-sprite("icon_audio");
 }
-// .Audios{
-//   @extend .audioImg;
-// }
-// .theDescCont .Audio{
-//   @extend .audioImg;
-// }
-// .bothAdVdImg{
-//     @extend .vidImg;
-//     @include icon-sprite("media");
-//     width: 35px;
-// }
-// .Both{
-//   @extend .bothAdVdImg;
-// }
 .teachingsTopicAndDate .Premium{
     margin-right: 0;
     margin-top: 0;
@@ -3044,7 +2941,6 @@ div.jp-audio{
 }
 
 #previewVideoStash{
-    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/preview1.jpg") no-repeat scroll 0 0;
     background-position: 0 -2069px; 
     height: 192px;
     position: absolute;
@@ -3116,12 +3012,9 @@ div.jp-audio{
     width: 18px;
 }
 #courseDescription .bookmark label.checked {
-    //background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
     background-position: 1px -2332px; 
 }
-// #courseDescription .bookmark label + label{
-//     display: none; 
-// }
+
 /**start scrollling filter**/
 .scrollingTitle{
   background: #fff;
@@ -3142,7 +3035,6 @@ div.jp-audio{
 
 
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
-  // background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
     top: 46px;
     width: 100%!important;
@@ -3238,7 +3130,6 @@ div.jp-audio{
     margin-bottom: -1px; 
 }
 .quicktabs-tabs.quicktabs-style-zen > li.active {
-    // background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
     display: inline-block;
     height: 41px;
     a{
@@ -3557,7 +3448,6 @@ body.page-search #block-system-main .views-row {
  #carousal5Wrapper {
     clear: both;
     margin: auto;
-    // padding-top: 1px;
     width: 940px;
 } 
 #carousal5Wrapper h2{
@@ -3585,8 +3475,7 @@ body.page-search #block-system-main .views-row {
     float: right;
     height: 16px;
     margin-top: 2px;
-    width: 20px;
-      
+    width: 20px;     
 }
 .membership {
     background-position: 0 -1145px;
@@ -3819,8 +3708,6 @@ ul.nice-menu li.menuparent ul li {
 /////////****************** new style for  lesson and cours page ******/////////
 
 
-
-// 
 body.page-admin .messages.error,
 body.node-type-course .messages.error {
     display: none;
@@ -4055,9 +3942,6 @@ body.node-type-course .messages.error {
     margin-left: 0;
     margin-top: 5px;
 }
-// .ccLesson > span {
-//     height: 24px;
-// }
 .wrapperLesson:hover .wrappercontentLessonDetail{
   border-top-color: #9B9B9B; 
 }
@@ -4065,7 +3949,6 @@ body.node-type-course .messages.error {
   text-align: right;  
 }
 .expand{
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+24&0.09+0,0.2+7,0.72+13,0.92+19,1+24 */
     background: -moz-linear-gradient(top,  rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.2) 7%, rgba(255,255,255,0.72) 13%, rgba(255,255,255,0.92) 19%, rgba(255,255,255,1) 24%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0.2) 7%,rgba(255,255,255,0.72) 13%,rgba(255,255,255,0.92) 19%,rgba(255,255,255,1) 24%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0.2) 7%,rgba(255,255,255,0.72) 13%,rgba(255,255,255,0.92) 19%,rgba(255,255,255,1) 24%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -4090,13 +3973,6 @@ a.collapse{
     display: none;
 }
 .wrapperPreviewLesson {
-    //background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
-    // /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+92,e2e2e2+92,e2e2e2+92,e2e2e2+100 */
-    // background: #000000; /* Old browsers */
-    // background: -moz-linear-gradient(top,  #000000 0%, #000000 92.161%, #e2e2e2 92.161%, #e2e2e2 92.161%, #e2e2e2 100%)!important; /* FF3.6-15 */
-    // background: -webkit-linear-gradient(top,  #000000 0%,#000000 92.161%,#e2e2e2 92.161%,#e2e2e2 92.161%,#e2e2e2 100%)!important; /* Chrome10-25,Safari5.1-6 */
-    // background: linear-gradient(to bottom,  #000000 0%,#000000 92.161%,#e2e2e2 92.161%,#e2e2e2 92.161%,#e2e2e2 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#e2e2e2',GradientType=0 )!important; /* IE6-9 */
     padding: 0 !important;
 }
 .wrapperPreviewLesson .preVideoImg{
@@ -4169,8 +4045,7 @@ a.collapse{
     font-size: 32px !important;
     line-height: 38px !important;
     margin-bottom: 5px;
-    margin-top: -6px;
-    
+    margin-top: -6px;   
 }
 .gutter {
     font-size: 18px;
@@ -4308,7 +4183,6 @@ a.collapse{
     font-weight: normal;
     line-height: 26px;
 }
-
 .view-filters.searchThisCourse,
 .lessonCollectionSection .view-filters,
 #block-views-lesson-collection-block .view-filters,
@@ -4361,7 +4235,6 @@ a.collapse{
     padding: 0;
     text-decoration: none;
 }
-
 #wrappperRightBloc #tabs ul.ui-tabs-nav > li a span{
     height: 45px; 
     display: table-cell;
@@ -4394,8 +4267,7 @@ a.collapse{
 .form-item.form-type-select {
     margin: auto;
     float: left;
-    position: relative;
-    
+    position: relative;   
 }
 .trans-lang-select.form-select {
     border: none;
@@ -4459,7 +4331,6 @@ a.collapse{
 #audio-control{
     margin: 60px auto 0px;
 }
-
 .liveEventCollectionSection {
     margin: auto;
     width: 940px;
@@ -4640,7 +4511,6 @@ body.node-type-live-events .courseDescriptionWrapper {
 .page-user #user-login-form .form-wrapper {
     border: medium none;
 }
-
 .page-user #user-login-form .form-submit, .page-user #user-pass .form-submit {
     background: none repeat scroll 0 0 #328a9a;
     border: medium none;
@@ -4739,7 +4609,6 @@ input[type="submit"] {
     color: #433a3a;
     display: inline-block;
     font-family: ProxiRegular;
-    //font-size: 2vw;
     font-size: 19px; 
     margin-bottom: 10px;
     margin-top: 2vw;
@@ -5421,7 +5290,6 @@ section.block.block-facetapi:first-child h2 {
     width: 18px;  
 }
 #searchFilterDetail label.element-invisible.checked{
-    //background: url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
     background-position: 1px -2332px; 
 }
 
@@ -5501,7 +5369,6 @@ section.block.block-facetapi:first-child h2 {
     width: 500px !important;
 }
 #block-custom-search-blocks-2 input#edit-submit.form-submit {
-    //background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
     background-position: 0 -2613px;
     background-color: transparent;  
     border: medium none;
@@ -5860,7 +5727,6 @@ span.downloadAudio {
     width: 26px;
 }
 // bookmark
-// test 
 
 .grayBackgroundColorTranscript {
     background: #e2e2e2 none repeat scroll 0 0;
@@ -6030,9 +5896,6 @@ span.downloadAudio {
         background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
     }
 
-
-
-
     // 
 
     .ui-helper-clearfix::before, .ui-helper-clearfix::after {
@@ -6094,9 +5957,6 @@ span.downloadAudio {
         font-size: 16px;
         letter-spacing: 0;
     }
-    // #userInfoWrapper > span:nth-child(2){
-    //  margin-left: 4px;
-    // }
     .item-list .pager {
     clear: both;
     text-align: center;
@@ -6124,7 +5984,6 @@ span.downloadAudio {
         border: 1px solid #f1f0f0 !important;
         width: 288px !important;
         background-color: white;
-        // border: 1px solid black;
         overflow: hidden;
         padding: 0;
         z-index: 99999;
