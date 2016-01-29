@@ -64,7 +64,7 @@
 			$result = runPageQueryForApi( 14 , $vname , 562 ); // Basic Course : 562
 			$vname_articles = array();
 			$vname_articles	= processPageQueryResultsForApi( $result , 14 ) ; 
-			if( sizeof($vname_articles) > 0  ) $result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );	
+			if( sizeof( $vname_articles['articles']) > 0 ) $result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $vname_articles['term_description'] , "term_articles" => $vname_articles['articles'] );	
 		}	
 		echo json_encode( $result_array );
 	}
