@@ -251,22 +251,22 @@ var Slide = function(elem, options){
           $(window).resize(function() {       // the number of images changes while the window is resizing
               var num = 0;
               
-              if ($(window).width() >= 1580) { 
+              if ($(window).width() >= 1620) { 
                   num = imageNum;    
                   getContWidth = (imageSizeWidth + marginLeft + marginRight)*num; 
                   $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
               }
-              else if ($(window).width() < 1580 && $(window).width() >= 1580 - (imageSizeWidth + marginLeft + marginRight)) {
+              else if ($(window).width() < 1620 && $(window).width() >= 1620 - (imageSizeWidth + marginLeft + marginRight)) {
                   num = imageNum - 1;
                   getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
                   $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
               }
-              else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight) && $(window).width() >= 1580- (imageSizeWidth + marginLeft + marginRight)*2) {
+              else if ($(window).width() < 1620- (imageSizeWidth + marginLeft + marginRight) && $(window).width() >= 1620- (imageSizeWidth + marginLeft + marginRight)*2) {
                    num = imageNum - 2;  
                   getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
                   $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
               }
-              else if ($(window).width() < 1580- (imageSizeWidth + marginLeft + marginRight)*2 && $(window).width() >= 980) {
+              else if ($(window).width() < 1620- (imageSizeWidth + marginLeft + marginRight)*2 && $(window).width() >= 980) {
                   num = 3;
                   getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
                   $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
@@ -288,22 +288,22 @@ var Slide = function(elem, options){
         var num = 0;
         var window_width = $(window).width();
 
-        if ( window_width >= 1580) {
+        if ( window_width >= 1620) {
             num = imageNum;
             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;  
             $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
         }
-        else if (window_width < 1580 && window_width >= 1580 - (imageSizeWidth + marginLeft + marginRight)) {
+        else if (window_width < 1620 && window_width >= 1620 - (imageSizeWidth + marginLeft + marginRight)) {
             num = imageNum - 1;
             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
             $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
         }
-        else if (window_width < 1580- (imageSizeWidth + marginLeft + marginRight) && window_width >= 1580- (imageSizeWidth + marginLeft + marginRight)*2) {
+        else if (window_width < 1620- (imageSizeWidth + marginLeft + marginRight) && window_width >= 1620- (imageSizeWidth + marginLeft + marginRight)*2) {
             num = imageNum - 2; 
             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
             $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
         }
-        else if (window_width < 1580- (imageSizeWidth + marginLeft + marginRight)*2 && window_width >= 980) {
+        else if (window_width < 1620- (imageSizeWidth + marginLeft + marginRight)*2 && window_width >= 980) {
             num = 3;
             getContWidth = (imageSizeWidth + marginLeft + marginRight)*num;
             $(".slideWrapper, .parent_topic, .descriptionEvents, #teachingsControlSection, #teachingsSectionHeaderBar").css("width", getContWidth);
