@@ -66,7 +66,7 @@
 											  );							  	
 			}
 			
-			$result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $p_topic_description  , "term_articles" => $vname_articles );
+			if( sizeof( $vname_articles ) > 0 ) $result_array[$vname] = array( "term_name" => $vname , "term_desc" =>  $p_topic_description  , "term_articles" => $vname_articles );
 			
 		}	
 		
