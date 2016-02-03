@@ -306,7 +306,8 @@ a.plusIcone {
     height: 42px;
     left: 0;
     position: absolute;
-    width: 32%;
+    // width: 32%;
+    width:  auto; 
     z-index: 10;
 }
 #newHeaderWrapperMainMenu{
@@ -326,10 +327,10 @@ a.plusIcone {
     width: 101px;
 }
 .smallScreenHeader #newHeaderWrapperMobileMenu {
-    width: 11%;
+    // width: 11%;
 }
 .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-    width: 20%;
+    // width: 20%;
 }
 #newHeaderWrapperLanguage a {
     border-left: 1px solid #8c8787;
