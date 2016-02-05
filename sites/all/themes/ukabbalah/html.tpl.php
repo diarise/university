@@ -48,32 +48,7 @@
                     <span class="gutterPipeLogin">|</span>
                     <span><a href="https://idp.kabbalah.com">sign up</a></span>
                 <?php }?>
-                    <div id="userInfoWrapperResponsive">
-                        <ul>
-                            <?php if ( user_is_logged_in() ) {?>
-                            <li><a class="userActiveResponsive" href="https://idp.kabbalah.com/user">MY PROFILE<?php //print $username; ?></a>
-
-                                <ul>
-                                    <li><a href="/user/<?php print $user->uid; ?>/bookmarks">bookmarks</a>
-
-                                    </li>
-                                    <li><a href="/user/logout">log out</a>
-
-                                    </li>
-                                </ul>
-                            </li>
-                            <?php } else {?>
-
-                             <li>
-                                  <a href="https://idp.kabbalah.com/user/login" class="activeLink userActiveResponsive">log in</a>
-                             <?php //print get_current_url(); ?>
-                                    <ul><li><a href="https://idp.kabbalah.com">sign up</a></li></ul>
-                             </li>
-                            
-                            <?php }?>
-
-                        </ul>
-                    </div>
+                    
                 </div>
                 <div id="donateBtn"><a target="_blank" href="https://kabbalah.com/donate">DONATE</a></div>
             </div>
