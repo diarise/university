@@ -13,7 +13,7 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   	<meta property="og:title" content="<?php print $head_title;?>" />
-	<meta property="og:image" content="<?php print $head_image; ?>" />
+	<?php if(isset($head_image)) { ?><meta property="og:image" content="<?php print $head_image; ?>" /><?php } ?>
   <?php print $styles; ?>
 
   <?php print $scripts; ?>
