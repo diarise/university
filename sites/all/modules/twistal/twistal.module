@@ -658,8 +658,10 @@ function myDevice(){
 
 function twistage_getnode($getnode){
 $nid = node_load($getnode);
-$courseId= $nid->field_course_list['und'][0]['nid'];
-$eventId= $nid->field_event_list['und'][0]['nid'];
+
+if( isset($nid->field_course_list['und']) ) $courseId= $nid->field_course_list['und'][0]['nid'];
+if( isset($nid->field_event_list['und']) )  $eventId= $nid->field_event_list['und'][0]['nid'];
+
 if($courseId ){
 $eventId = 'NULL';
 }else{
