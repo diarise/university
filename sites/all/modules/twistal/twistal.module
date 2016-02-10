@@ -498,7 +498,8 @@ function twistal_preprocess_node(&$vars){
 		if(isset($vars[$field]) && isset($vars[$field][0])){
 			$video_subtitles=array();
 			$video=new twistage_video($vars[$field][0]['twistage_existing_videos']);
-			$asset=array_shift(array_values($video->assets));
+			$video_assets = array_values($video->assets);
+			$asset=array_shift($video_assets);
 			$video_length = gmdate("H:i:s", $asset->duration);
 			
 			$dotsub=new DotsubApi($video->vid);
