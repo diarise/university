@@ -1,6 +1,8 @@
 <?php
-	global $user;
-	$username = $user->name;
+	if ( user_is_logged_in() ) {
+		global $user;
+		$username = $user->name;
+	}
 ?>
 <?php
 // $Id: html.tpl.php,v 1.1.2.2 2011/02/06 22:47:17 andregriffin Exp $
