@@ -18,14 +18,17 @@
 	// end of all authors 
 
 	// Get all the secondary topics for this node
-	$secondary_parent_topics = array();
-	foreach ($node->field_secondary_topic['und'] as $term) 	
-	{ 
-		if( sizeof( taxonomy_get_parents($term['taxonomy_term']->tid) ) == 0  )
-		{
-			$secondary_parent_topics[] = l( t($term['taxonomy_term']->name) , 'taxonomy/term/' . $term['taxonomy_term']->tid);
+	if( isset($node->field_secondary_topic['und'] ) )
+	{
+		$secondary_parent_topics = array();
+		foreach ($node->field_secondary_topic['und'] as $term) 	
+		{ 
+			if( sizeof( taxonomy_get_parents($term['taxonomy_term']->tid) ) == 0  )
+			{
+				$secondary_parent_topics[] = l( t($term['taxonomy_term']->name) , 'taxonomy/term/' . $term['taxonomy_term']->tid);
+			}
 		}
-	}
+	}	
 	// end of secondary topics
 
 	// get it primary topic
@@ -428,7 +431,7 @@
 			<!-- End of Class Resources -->
 			
 			<!-- Class Keywords -->
-			<?php if($secondary_parent_topics) { ?>
+			<?php if( isset($secondary_parent_topics) ) { ?>
 				<div class="wrapperTags">
 				<span class="tagsLabel">tags</span>
 					<?php echo implode( ", " , $secondary_parent_topics ); ?>
