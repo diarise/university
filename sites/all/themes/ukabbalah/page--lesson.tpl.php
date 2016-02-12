@@ -172,6 +172,7 @@
 			  lesson_url:'<?php echo url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)); ?>'
 			};
 			window.Intercom('trackEvent', 'lesson-watched', metadata);
+			window.Intercom('trackEvent', '<?php $node->title;?>', metadata);
 				
 		});				
 		</script>
