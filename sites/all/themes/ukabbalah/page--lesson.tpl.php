@@ -171,8 +171,9 @@
 			  lesson_authors: '<?php echo implode( ", " , $intercom_authors_name );?>',
 			  lesson_url:'<?php echo url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)); ?>'
 			};
+			var event_title ='<?php echo $node->title; ?>';
 			window.Intercom('trackEvent', 'lesson-watched', metadata);
-			window.Intercom('trackEvent', '<?php $node->title;?>', metadata);
+			window.Intercom('trackEvent',event_title, metadata);
 				
 		});				
 		</script>
