@@ -1323,8 +1323,8 @@ footer>nav+div #block-block-2 a :hover {
     width: 300px;
 }
 ul.masonry{
+    margin: auto auto 40px;
     padding-left: 0;
-    margin: auto;
 }
 #teachingsControlSection{
     clear: both;
@@ -5711,7 +5711,9 @@ span.downloadAudio {
     width: 45px;
 }
 
-
+.lessonBlockImage {
+    height: 170px;
+}
 
 #viewByList{
     background-position:0 -1228px;
