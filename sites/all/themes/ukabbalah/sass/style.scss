@@ -6075,3 +6075,15 @@ span.downloadAudio {
 #views-exposed-form-taxonomy-term-lesson-page span.lessonsCourse{
     width: 183px;
 }
+// scholarship banner
+.scholarshipWrapper {
+    float: left;
+    width: 100%;
+}
+.scholarshipWrapper > div {
+    margin: 14px auto 30px;
+    width: 940px;
+}
+.scholarshipWrapper img {
+    display: block;
+}
