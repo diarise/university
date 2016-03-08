@@ -10,6 +10,15 @@
 	<?php  print render($page['slideshow']);?>
 </div> <!--end of slideshow-->
 	
+<!-- scholarship banner -->
+<div class="scholarshipWrapper">
+	<div>
+		<a href="http://kabbalah.com/Kabbalah-University-Scholarship-Application" target="_blank">
+			<img src="http://cdn1.kabbalah.com/university/scholarship-banner.png" alt="">
+		</a>
+	</div>
+</div>
+<!-- end scholarship banner -->
 
 <?php if ( user_is_logged_in() ) { ?>
 	

@@ -23,13 +23,7 @@
 								<?php  print $node->field_subtitle['und'][0]['value']; ?>
 							</span>
 							<?php } ?>
-							<!-- <span id="topicCourseTitle"> Topic:</span>
-							<span id="topicCourse"> 
-							<?php	
-								//foreach ($node->field_primary_topic as $term) 	{ $primary_topic = l( t($term[0]['taxonomy_term']->name) , 'taxonomy/term/' . $term[0]['taxonomy_term']->tid); }
-								//print $primary_topic; // Primary Topic 
-							?>
-							</span> -->
+							
 							<span class = "theCourseAuthorTitle">Teacher:
 								<span class = "theCourseAuthor">
 								<?php
@@ -63,7 +57,8 @@
 							<div class="loginText">Join Kabbalah University to watch this video.<br/>
 		Members get access to thousands of courses and events</div>
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin logColor"><!--<a href="https://idp.kabbalah.com/user/login">Log In</a>--><?php print get_current_url();?></span>
+							
+							<span class="priceLogin logColor"><?php print get_current_url();?></span>
 						</div>
 
 					<?php } ?>
@@ -77,8 +72,6 @@
 							$prereq_array[] = "<a href='/node/".$p['nid']."'>".$p['node']->title ."</a>";
 						}
 					?>
-						<!-- <span id="preReqsTitle"> Prerequisites Courses :</span>
-						<span id="preReqs"><?php //print implode(", " , $prereq_array ); ?></span> --> 
 					<?php } ?>
 
 				</div>
@@ -157,7 +150,7 @@
 		  </div>
 		</div>
 		<?php if (user_is_logged_in() && !kabbalah_content_access_get_article_membership($membership)) {?>		
-						<div class="wrapperLoginBloc" id="wrapperPrice">
+						<div class="wrapperLoginBloc upgradeLessonBottom" id="wrapperPrice">
 							<span class="buttonMemberDesc">This is a <?php print $membership; ?> course</span>
 							<span class="buttonMember"><a href="https://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-subscription">upgrade your membership</a></span>
 						</div>
@@ -166,14 +159,15 @@
 							<div class="loginText">Join Kabbalah University to watch this video.
 		Members get access to thousands of courses and events</div>
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin logColor"><!--<a href="https://idp.kabbalah.com/user/login" >Log In</a>--><?php print get_current_url();?></span>
+							<span class="loginBtnBottom"><?php print get_current_url();?></span>
 						</div>
 					<?php } ?>
 		 
-		<script>
-		$( "#tabs" ).tabs();
 		
-		</script>
+		<?php
+			ukabbalah_tabs(0);
+		?>
+
 		
 	</div>
 </div>

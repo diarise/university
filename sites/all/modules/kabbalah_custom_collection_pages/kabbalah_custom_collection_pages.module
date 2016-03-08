@@ -47,8 +47,9 @@
 		$resultHTML.="<div id='teachingsControlSection'>";
 		$resultHTML.="<div id='teachingsControlSectionInnerWrapper'>";
 		$resultHTML.="<span id='teachingsSectionTitle'>".t('COURSES')."</span>";
-		$resultHTML.="<span id ='list'><a href = 'javascript:void(0)'><img src = 'http://cdn1.kabbalah.com/university/icons/view_icon_linear.svg' alt = 'view by list'></a></span>";
-		$resultHTML.="<span id ='grid'><a href = 'javascript:void(0)'><img src = 'http://cdn1.kabbalah.com/university/icons/view_icon_table.svg' alt = 'view by grid'></a></span>";	
+		$resultHTML.="<span class='displayOption'>show page as: </span>";
+		$resultHTML.="<span id ='list'><a id ='viewByList' href = 'javascript:void(0)' alt = 'view by list'></a></span>";
+		$resultHTML.="<span id ='grid'><a id ='viewByGrid' href = 'javascript:void(0)' alt = 'view by grid'></a></span>";	
 		$resultHTML.="</div>";
 		$resultHTML.="</div>";
 		$resultHTML.= headerBarSectionHTML();

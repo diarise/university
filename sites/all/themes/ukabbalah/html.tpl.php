@@ -1,6 +1,8 @@
 <?php
-	global $user;
-	$username = $user->name;
+	if ( user_is_logged_in() ) {
+		global $user;
+		$username = $user->name;
+	}
 ?>
 <?php
 // $Id: html.tpl.php,v 1.1.2.2 2011/02/06 22:47:17 andregriffin Exp $
@@ -10,24 +12,12 @@
 <head>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
+  	<meta property="og:title" content="<?php print $head_title;?>" />
+	<?php if(isset($head_image)) { ?><meta property="og:image" content="<?php print $head_image; ?>" /><?php } ?>
   <?php print $styles; ?>
 
-   
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-
-  <?php print $scripts; ?>	
-  <script type="text/javascript">var switchTo5x=true;</script>
-  <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a"});</script>	
-  
-
-	  <meta property="og:title" content="<?php print $head_title;?>" />
-	  <!--<meta property="og:description" content="<?php //print $head_desc;?>" />-->
-	  <meta property="og:image" content="<?php print $head_image; ?>" />
-	  
-  
+  <?php print $scripts; ?>
+	 
   <!-- end panels -->
 
 </head>
@@ -52,39 +42,15 @@
             <div id="loginWrapper">
                 <div id="userInfoWrapper">
                 <?php if ( user_is_logged_in() ) {?>
-                    <span><a href="https://idp.kabbalah.com/user" class="userActive"><?php print $username; ?></a><span class="gutterPipe">|</span></span>
-                    <span><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a><span class="gutterPipe">|</span></span>
-                    <span><a href="/user/logout">Log Out</a></span>
+                    <span><a href="https://idp.kabbalah.com/user/<?php print $user->uid; ?>/manage-profile" class="userActive" target="_blank">MY PROFILE<?php //print $username; ?></a><span class="gutterPipe">|</span></span>
+                    <span><a href="/user/<?php print $user->uid; ?>/bookmarks">bookmarks</a><span class="gutterPipe">|</span></span>
+                    <span><a href="/user/logout">log out</a></span>
                 <?php } else {?>
-                    <span><a href="https://idp.kabbalah.com/user/login" class="activeLink">Log In</a><?php //print get_current_url(); ?><span class="gutterPipe">|</span>
-                    </span><span><a href="https://idp.kabbalah.com">Sign Up</a></span>
+                    <span><?php print get_current_url(); ?></span>
+                    <span class="gutterPipeLogin">|</span>
+                    <span><a href="https://idp.kabbalah.com">sign up</a></span>
                 <?php }?>
-                    <div id="userInfoWrapperResponsive">
-                        <ul>
-                            <?php if ( user_is_logged_in() ) {?>
-                            <li><a class="userActiveResponsive" href="https://idp.kabbalah.com/user"><?php print $username; ?></a>
-
-                                <ul>
-                                    <li><a href="/user/<?php print $user->uid; ?>/bookmarks">Bookmarks</a>
-
-                                    </li>
-                                    <li><a href="/user/logout">Log Out</a>
-
-                                    </li>
-                                </ul>
-                            </li>
-                            <?php } else {?>
-
-                             <li>
-                                  <a href="https://idp.kabbalah.com/user/login" class="activeLink userActiveResponsive">Log In</a>
-                             <?php //print get_current_url(); ?>
-                                    <ul><li><a href="https://idp.kabbalah.com">Sign Up</a></li></ul>
-                             </li>
-                            
-                            <?php }?>
-
-                        </ul>
-                    </div>
+                    
                 </div>
                 <div id="donateBtn"><a target="_blank" href="https://kabbalah.com/donate">DONATE</a></div>
             </div>
@@ -92,7 +58,6 @@
 
 <div id="newHeaderMenuWrapper">
 	<div id="newHeaderWrapperMobileMenu">
-		<!-- <span class="newHeaderWrapperMobileMenuLogo"><img src="/sites/all/themes/ukabbalah/images/menu.svg" alt=""/></span> -->
 		<div id="reposiveMobileMenu"><?php print render($mobileMenu);?></div>	
 		<a href="/"><span class="newHeaderWrapperLocalMenuLogo"></span></a>
 		<a href="/search/site/"><span class="newHeaderWrapperSearchMenuLogo"></span></a>
@@ -180,7 +145,6 @@
 <!-- END OF FOOTER -->
 
 
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -241,5 +205,13 @@
     });
   }
 </script>
+<script type="text/javascript">
+	(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;
+		s.src='https://widget.intercom.io/widget/bjxhjpkh';
+		var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+</script>
+<script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "df95500a-25b4-417c-9c13-13bb7406613a"});</script>	
 </body>
 </html>

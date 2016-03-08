@@ -381,7 +381,7 @@ function twistal_video_data_view($vid){
 	$main='<h3>'.t('Basic Information').'<h3>';
 	$main.=theme('table',array('header'=>array(),'rows'=>$basic));
 	return $main.$fields.$assets.$shots;
-}
+}function twistal_video_data_ipad_view($vid){		$api=twistal(0);	$video=$api->load_from_url('http://twistassets.kabbalah.com/videos/'.$vid.'.json',array());	$twistvid=new twistage_video();	$twistvid->import($video,$api->profile->pid);	if(!$twistvid->save()){		if(user_access('administer twistal')) drupal_set_message(t('There was a problem syncing this video'));	}	$result = array();		foreach($video->assets as $asset)	{		if( $asset->video_format_name == 'ipad_compatible_512x288_250k_96k' ) $result['ipad_compatible_512x288_250k_96k'] = array( "download_url" => $asset->download_url , "duration" => $asset->duration );		if( $asset->video_format_name == 'MP4_audio' ) $result['MP4_audio'] = array( "download_url" => $asset->download_url , "duration" => $asset->duration );	}		return $result ;}
 function twistal_load_video($vid){
 	static $videos;
 	if($videos[$vid]) return $videos[$vid];

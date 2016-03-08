@@ -39,6 +39,17 @@ function twistal_menu(){
 		'access arguments' => array('administer twistal'),
 		'file' => 'includes/twistal.admin.inc'
 	);
+	
+	$items['admin/settings/twistal/ipad_video/%']=array(
+		'title' => 'Twistal iPad Video Data',
+		'type' => MENU_CALLBACK,
+		'page callback' => 'twistal_video_data_ipad_view',
+		'page arguments' => array(4),
+		'access arguments' => array('administer twistal'),
+		'file' => 'includes/twistal.admin.inc'
+	);
+	
+	
 	$items['admin/settings/twistal/video']=array(
 		'title' => 'Twistal Video Search',
 		'type' => MENU_CALLBACK,
@@ -47,6 +58,7 @@ function twistal_menu(){
 		'access arguments' => array('administer twistal'),
 		'file' => 'includes/twistal.admin.inc'
 	);
+	
 	$items['twistage/hook'] = array(
 		'type' => MENU_CALLBACK,
 		'page callback' => 'twistage_hooks',
@@ -254,6 +266,16 @@ function twistal_field_widget_form(&$form, &$form_state, $field, $instance, $lan
 			'#options' => array('1' => 'On', '0' => 'Off'),
 			'#default_value' => $defaults['autostart_transcript']
 		);
+		
+		$element['available_languages'] = array(
+			'#title' => 'Available Languages',
+			'#type' => 'hidden',
+			//'#options' => $langs,
+			//'#prefix' => '<div id="dotsub_lang_select_wrapper">',
+			//'#suffix' => '</div>',
+			'#default_value' => serialize($langs),
+		);
+		
 	//}
 	//$element['dotsub']=$dotsub;
   return $element;
@@ -269,7 +291,8 @@ function twistal_field_schema($field) {
 	  $columns['autostart_subtitles'] = array('type' => 'int', 'length' => 1, 'sortable' => TRUE, 'default' => 0);
 	  $columns['autostart_transcript'] = array('type' => 'int', 'length' => 1, 'sortable' => TRUE, 'default' => 0);
 	  $columns['default_language'] = array('type' => 'varchar', 'length' => 10, 'not null' => FALSE, 'sortable' => TRUE, 'default' => null);
-      return array('columns' => $columns);
+      $columns['available_languages'] = array('type' => 'varchar', 'length' => 255, 'not null' => FALSE, 'sortable' => TRUE, 'default' => '');
+	  return array('columns' => $columns);
   }
 }
 function twistal_element_info() {
@@ -475,7 +498,8 @@ function twistal_preprocess_node(&$vars){
 		if(isset($vars[$field]) && isset($vars[$field][0])){
 			$video_subtitles=array();
 			$video=new twistage_video($vars[$field][0]['twistage_existing_videos']);
-			$asset=array_shift(array_values($video->assets));
+			$video_assets = array_values($video->assets);
+			$asset=array_shift($video_assets);
 			$video_length = gmdate("H:i:s", $asset->duration);
 			
 			$dotsub=new DotsubApi($video->vid);
@@ -634,8 +658,10 @@ function myDevice(){
 
 function twistage_getnode($getnode){
 $nid = node_load($getnode);
-$courseId= $nid->field_course_list[und][0][nid];
-$eventId= $nid->field_event_list[und][0][nid];
+
+if( isset($nid->field_course_list['und']) ) $courseId= $nid->field_course_list['und'][0]['nid'];
+if( isset($nid->field_event_list['und']) )  $eventId= $nid->field_event_list['und'][0]['nid'];
+
 if($courseId ){
 $eventId = 'NULL';
 }else{

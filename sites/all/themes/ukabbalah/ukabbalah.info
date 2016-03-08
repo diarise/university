@@ -7,18 +7,14 @@ engine = phptemplate
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/landing_page.css
 
-scripts[] = js/hover.js
-scripts[] = js/persistheader.js
-scripts[] = js/custum_select_drop_down.js 
-scripts[] = js/isotope.js
-scripts[] = js/jquery.isotope.min.js
-scripts[] = js/jquery.masonry.min.js
+scripts[] = js/masonry.pkgd.min.js
+scripts[] = js/isotope.pkgd.js
 scripts[] = js/flag.js
 scripts[] = js/jquery.tooltipster.min.js
-scripts[] = js/author_tooltip.js
-scripts[] = js/welcome_text.js
-scripts[] = js/readmore.js
-scripts[] = js/customScript.js
+;scripts[] = js/author_tooltip.js
+scripts[] = js/author_tooltip.min.js
+;scripts[] = js/customScript.js
+scripts[] = js/customScript.min.js
 scripts[] = js/jquery.mCustomScrollbar.concat.min.js
 
 regions[search] = Search

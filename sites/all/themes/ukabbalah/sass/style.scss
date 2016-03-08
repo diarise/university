@@ -9,7 +9,7 @@
 @import "font"; // We import the fonts on separate file. The file is called "_font.scss". 
                 // In our case we just called "font", because COMPASS recognize all sass file. 
                 // And we put "_" do not duplicate the file in our css directory.
-
+@import "sprite"; // all icons will be uploaded one time with the same and unique file by using sprite.
 @import "jquery.mCustomScrollbar"; // we import the custom scroll bar style
 @import url("https://fonts.googleapis.com/css?family=Gochi+Hand"); 
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700"); 
@@ -53,7 +53,6 @@ p {
     line-height: 25px;
 }
 a {
-  // color: $colorRed;
   color: $colorBrown; 
   text-decoration: none;
 }
@@ -93,6 +92,7 @@ ul li {
     float: left;
     height: 42px;
     margin-top: 0;
+    min-width: 980px;
     position: static;
     text-align: center;
     top: auto;
@@ -119,9 +119,9 @@ transition: all 3s ease-in-out;
     
 }
 #logoWrapper{
-    background: url(../images/kc_logo_grey.svg) no-repeat scroll 24px 15px;
+    background-position: 24px 15px;
     float: left;
-    height: 60px;
+    height: 45px;
     width: 33.33%;
 }
 #searchWrapper{
@@ -132,81 +132,87 @@ transition: all 3s ease-in-out;
 .smallScreenHeader #searchWrapper{
     width: 25%;
 }
-// @media (min-width: 981px) {
-//     .smallScreenHeader #loginWrapper{
-//       width: 36.33%;
-//     }
-// }
 .smallScreenHeader #loginWrapper{
     width: 36.33%;
+}
+.smallScreenHeader #logoWrapper a:first-child{
+    background-position: 0 -70px;
 }
 #loginWrapper{
     float: right;
     height: 60px;
     width: 31.33%;
 }
-.smallScreenHeader #logoWrapper{
-    background: url(../images/kc_logo_grey_no_type.svg) no-repeat scroll 24px 15px;
+#newHeaderWrapper.smallScreenHeader #logoWrapper{
+    background: none !important;
     width: 38.33%;
-}
-.smallScreenHeader #loginWrapper{
-    /*background: orange none repeat scroll 0 0;*/
 }
 #logoWrapper > a {
     border-right: 1px solid #7f7979;
     display: inline-block;
-    //height: 29px;
-    height: 36px;
+    height: 30px;
     margin-left: 24px;
-    margin-top: 14px;
+    margin-top: 15px;
     width: 258px;
 }
 input#submitSearchBtn {
+    background-position: 14px -597px;
     border: medium none !important;
     cursor: pointer;
     float: right;
+    height: 21px !important;
     margin-top: -46px !important;
     position: relative;
-    right: -10px;
-    width: 40px !important;
+    top: 4px;
+    width: 34px !important;
 }
 .smallScreenHeader #logoWrapper > a {
+    vertical-align: top;
     width: 52px;
 }
 .smallScreenHeader #logoWrapper .localLogo{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-top.svg) no-repeat scroll left center;
+    background-position: 0 -340px;
     border: none;
     display: inline-block;
-    width: 240px;
-    margin-left: 18px;
+    height: 35px;
+    width: 272px;
 }
 a.plusIcone {
-    font-size: 30px !important;
-    font-weight: bolder;
-    line-height: 22px;
-    width: 40px
+    background-position: 0 -2498px;
+    color: transparent !important;
+    height: 12px !important;
+    position: relative;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+    top: 11px;
+    width: 16px;
 }
-/*// .smallScreenHeader #newHeaderWrapperMainMenu ul.nice-menu > li:last-child > a{
-//  visibility: hidden;
-// }
-// .smallScreenHeader #newHeaderWrapperMainMenu ul.nice-menu > li:last-child > a:before{
-//  content: url(../images/plus_white.svg);
-//  // content:"\002B";
-//  visibility: visible;
-// }*/
+
 #logoWrapper > a.localLogo{
     display: none;
 }
 #searchWrapper input {
-    background: #433a3a url("../images/mag_glass_grey.svg") no-repeat scroll right 10px center;
+    background-color: #433a3a;
     border: 1px solid #a7a2a2;
     color: #b2b2b2;
     font-family: proxiregular;
     font-size: 16px;
     height: 32px;
-    margin:  auto;
+    margin: auto;
     padding-left: 9px;
     width: 278px;
+}
+#searchWrapper .form-submit {
+    background-position: 0 -597px;
+    border: medium none !important;
+    color: transparent;
+    cursor: pointer;
+    float: right;
+    height: 21px;
+    position: relative;
+    width: 19px !important;
+}
+#newHeaderWrapper .searchWrapper label {
+    display: none;
 }
 .smallScreenHeader #searchWrapper input,
 .smallScreenHeader .searchWrapper{
@@ -216,9 +222,9 @@ a.plusIcone {
     margin: auto;
     width: 278px;
 }
-#loginWrapper  a{
+#loginWrapper a{
     color: #fff;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
 }
 #donateBtn{
@@ -241,21 +247,23 @@ a.plusIcone {
     text-align: right;
 }
 #loginWrapper a.userActive {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
-    text-transform: capitalize;
+    letter-spacing: 0.4px;
 }
 .gutterPipe {
-    color: #828080;
-    margin-left: 14px;
-    margin-right: 8px;
+    color: #746d6d;
+    font-size: 14px;
+    margin-left: 6px;
+    margin-right: 2px;
 }
-// #userInfoWrapperResponsive,
-// .smallScreenHeader #userInfoWrapper > span{
-//     display: none;
-// }
+.gutterPipeLogin {
+    color: #746d6d;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 .smallScreenHeader #userInfoWrapperResponsive{
-    // display: block;
     float: right;
 }
 #userInfoWrapperResponsive ul {
@@ -278,29 +286,14 @@ a.plusIcone {
     font-weight: normal;
     padding-right: 10px;
 }
-/*// #userInfoWrapperResponsive ul ul {
-//     display:none;
-//     position:relative;
-// }*/
 #userInfoWrapperResponsive ul li:hover > ul {
     display:block
 }
-a.userActiveResponsive{
-    background: url("../images/white_arrow.svg") no-repeat scroll right top 6px;
-}
 #userInfoWrapperResponsive{
     padding: 0 5px 5px 20px;
-    /*// border: 1px solid #433a3a;*/
     position: relative;
     z-index: 9;
 }
-
-
-
-/*// #userInfoWrapperResponsive:hover {
-//     border: 1px solid #746d6d;
-//     background: #433A3A;   
-// }*/
 #userInfoWrapperResponsive ul ul {
     background: #433a3a none repeat scroll 0 0;
     border: 1px solid #a7a2a2;
@@ -310,40 +303,35 @@ a.userActiveResponsive{
     position:relative;
 }
 #newHeaderWrapperMobileMenu{
-    float: left;
     height: 42px;
-    width: 32%;
+    left: 0;
+    position: absolute;
+    // width: 32%;
+    width:  auto; 
+    z-index: 10;
 }
 #newHeaderWrapperMainMenu{
-    float: left;
     height: 42px;
     line-height: normal;
+    margin: auto;
+    min-width: 768px;
+    position: absolute;
     text-align: center;
     vertical-align: middle;
-    min-width: 768px;
+    width: 100% !important;
 }
-.smallScreenHeader.menuScrolling  #newHeaderWrapperMainMenu {
-        max-width: 739px;
-        min-width: 680px;
-        width: auto!important;
-        // float: left; 
-    }
-
 #newHeaderWrapperLanguage{
-    float: right;
     height: 42px;
+    position: absolute;
+    right: 0;
     width: 101px;
 }
 .smallScreenHeader #newHeaderWrapperMobileMenu {
-    // margin-right: 7px;
-    width: 11%;
+    // width: 11%;
 }
 .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-    width: 14%;
+    // width: 20%;
 }
-/*.smallScreenHeader #newHeaderWrapperMainMenu {
-    width: 74%;
-}*/
 #newHeaderWrapperLanguage a {
     border-left: 1px solid #8c8787;
     color: #fff;
@@ -362,25 +350,25 @@ a.userActiveResponsive{
     width: 101px;
 }
 .newHeaderWrapperMobileMenuLogo {
+    background-position: 0 -833px;
     border-right: 1px solid #8c8787;
     float: left;
-    margin: 7px 20px;
-    padding-bottom: 0px;
+    height: 23px;
+    margin: 9px 20px 7px;
+    padding-bottom: 0;
     padding-right: 23px;
-    padding-top: 2px;
     width: 33px;
 }
-
 .newHeaderWrapperLocalMenuLogo {
-     background: rgba(0, 0, 0, 0) url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-kabbalah-university-eng-bottom.svg) no-repeat scroll center center;
+    background-position: 0 -340px;
     float: left;
-    height: 42px;
-    width: 274px;
+    height: 30px;
+    margin-top: 7px;
+    width: 273px;
 }
 .newHeaderWrapperSearchMenuLogo{
     display: none;
 }
-/*.menuScrolling .newHeaderWrapperLocalMenuLogo,*/
 .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
     display: none;
 }
@@ -391,24 +379,50 @@ a.userActiveResponsive{
     margin-right: 0;
 }
 .menuScrolling .newHeaderWrapperSearchMenuLogo{
-    background: url(../images/mag_glass_white.svg) no-repeat scroll center center;
     border-left: 1px solid #8c8787;
     border-right: 1px solid #8c8787;
     display: block;
     float: left;
-    height: 23px;
-    margin: 7px 19px;
+    height: 19px;
+    margin: 10px 19px;
     padding-bottom: 3px;
     padding-right: 22px;
     padding-top: 2px;
     width: 33px;
 }
-.smallScreenHeader.menuScrolling .newHeaderWrapperMobileMenuLogo{
-    margin: 7px 0 7px 20px;
+.menuScrolling .newHeaderWrapperSearchMenuLogo:after {
+    background-position: 0 -571px;
+    content: "";
+    height: 21px;
+    position: absolute;
+    width: 37px;
 }
-
-
-
+.smallScreenHeader.menuScrolling .newHeaderWrapperMobileMenuLogo{
+    margin: 10px 0 7px 20px;
+}
+// this code will be fire only by IE10+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+/* IE10+ CSS styles go here */
+    .menuScrolling .newHeaderWrapperSearchMenuLogo:after{
+        background-position: 18px -571px; 
+    }
+    .wrapperLesson{
+        padding-top: 15px !important;
+    }
+}
+#reposiveMobileMenu ul.menu {
+    display: none;
+}
+#reposiveMobileMenu {
+    background-position: 0 -833px;
+    border-right: 1px solid #8c8787;
+    float: left;
+    height: 23px;
+    margin: 9px 20px 7px;
+    padding-bottom: 0;
+    padding-right: 23px;
+    width: 33px;
+}
 /*****master style for menu drop down*****/
 
 #newHeaderWrapperMainMenu ul {
@@ -444,12 +458,11 @@ a.userActiveResponsive{
   width: 100% 
 }
 #newHeaderWrapperMainMenu ul#nice-menu-1 > li {
-    margin-left: 26px;
-
+    margin-left: 20px;
+    cursor: pointer; 
 }
 #newHeaderWrapperMainMenu ul#nice-menu-1 > li:first-child {
     margin-left: 0;
-
 }
 #newHeaderWrapperMainMenu ul > li > a.active{
     border-top: 1px solid #7cc7ff;
@@ -462,10 +475,6 @@ a.userActiveResponsive{
     height: 32px;
     padding-top: 9px;
     text-shadow: 1px 1px 1px #453e3e;
-    /*// -webkit-transition: color .15s;
-    // -moz-transition: color .15s;
-    // -o-transition: color .15s;
-    // transition: color .15s;*/
 }
 #newHeaderWrapperMainMenu ul > li > ul {
     opacity: 0;
@@ -478,14 +487,10 @@ a.userActiveResponsive{
     left: 50%;
     margin-left: -90px;
     width: 180px;
-    /*// -webkit-transition: all .3s .1s;
-    // -moz-transition: all .3s .1s;
-    // -o-transition: all .3s .1s;
-    // transition: all .3s .1s;*/
     -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
     -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
-    z-index: 9999;
+    z-index: 2147483647;
 }
 #newHeaderWrapperMainMenu ul > li:hover > ul {
     opacity: 1;
@@ -514,10 +519,6 @@ a.userActiveResponsive{
     line-height: 20px;
     padding: 5px 15px 7px 16px;
     text-shadow: unset;
-    /*// -webkit-transition: background-color .1s;
-    // -moz-transition: background-color .1s;
-    // -o-transition: background-color .1s;
-    // transition: background-color .1s;*/
 }
 #newHeaderWrapperMainMenu ul ul a:hover {
     background-color: #2090dc;
@@ -533,10 +534,6 @@ a.userActiveResponsive{
     background-color: rgb(250, 250, 250);
     text-align: left;
     width: 160px;
-    /*// -webkit-transition: all .3s;
-    // -moz-transition: all .3s;
-    // -o-transition: all .3s;
-    // transition: all .3s;*/
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -548,110 +545,6 @@ a.userActiveResponsive{
     opacity: 1;
     left: 196px;
     visibility: visible;
-}
-/*// #newHeaderWrapperMainMenu ul ul a:hover {
-//     background-color: #2090dc;
-//     color: #fff;
-// }*/
-/*#wrapper #page #page-bgtop #page-bgbtm #content .post .entry table tr td {
-    text-align: center;
-}*/
-@media (max-width: 1450px) {
-    #newHeaderWrapperMainMenu{
-        display: inline-block;
-        float: none;
-    }
-}
-
-@media (max-width: 980px) {
-
-    //  #newHeaderWrapperMainMenu,.newHeaderWrapperSearchMenuLogo{
-    //      display: none!important;
-    //  }
-    //  .smallScreenHeader #searchWrapper{
-    //      display: none;
-    // }
-    //  .smallScreenHeader #logoWrapper .localLogo{
-    //      display: none;
-    //      width: 27%;
-    // }
-    //  #loginWrapper{
-    //      width: 73%;
-    //  }
-    //  .smallScreenHeader #logoWrapper {
-    //      width: 82px;
-    //  }
-    //  .smallScreenHeader .newHeaderWrapperLocalMenuLogo {
-    //      background-position: center center;
-    //      background-size: 178px auto;
-    //      display: block;
-    //      margin-left: 4px;
-    //      width: 178px;
-    //  }
-
-    //  .smallScreenHeader #newHeaderWrapperMobileMenu,
-    //  .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-    //      margin-right: 0;
-    //      width: 259px;
-    //  }
-    //  .newHeaderWrapperMobileMenuLogo {
-    //      margin-right: 0;
-    //  }
-    //  #newHeaderWrapperLanguage a{
-    //      font-size: 1em;
-    //      padding: 3px 22px;
-    // }
-    //  #newHeaderWrapperLanguage > span,
-    //  #newHeaderWrapperLanguage,
-    //  #donateBtn{
-    //      width: auto;
-    //  }
-    //  #donateBtn a{
-    //      font-size: 1em;
-    //      padding: 3px 18px;
-    //  }   
-}
-@media (max-width: 377px){
-     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
-     //     /*background-position: -79px;*/
-     //     width: 117px;
-     //     background: none;
-     // }
-     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo:after{
-     //     color: #8dceff;
-     //     content: "Kabbalah University";
-     //     font-size: 16px;
-     //     font-weight: bold;
-     //     position: relative;
-     //     top: 1px;
-     // }
-     // .smallScreenHeader #newHeaderWrapperMobileMenu, 
-     // .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-     //     width: 203px;
-     // }
-}
-@media (max-width: 326px) {
-    
-     // .smallScreenHeader #loginWrapper {
-     //     width: 208px;
-     // }
-     // .smallScreenHeader #userInfoWrapper{
-     //     margin-left: 5px;
-     // }
-     // .smallScreenHeader #donateBtn{
-     //     margin-left: 5px;
-     // }
-     // .smallScreenHeader #logoWrapper {
-     //     width: 76px;
-     // }
-     // .smallScreenHeader #newHeaderWrapperMobileMenu, 
-     // .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu{
-     //     width: 183px;
-     // }
-     // .smallScreenHeader .newHeaderWrapperLocalMenuLogo{
-     //     width: 100px;
-     // }
-
 }
 #sidr-0 {
     background: none repeat scroll 0 0 #564e4e;
@@ -701,8 +594,6 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 .sidr ul li ul li a{
   color: #e9e9e9;
 }
-/*// ,
-// ul#nice-menu-1 ul li:hover*/
 #sidr-0 ul li a:hover{
   background:#2090dc;
 }
@@ -717,62 +608,47 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
         display: none;
     }
 }
-@media (min-width: 480px) and (max-width: 1660px){
-    // #loginWrapper {
-    //     width: 82%;
-    // }
-}
-// @media (max-width: 999px) {
-//     .smallScreenHeader #userInfoWrapper > span {
-//         display: none;
-//     }
-//     #userInfoWrapperResponsive{
-//         display: block;
-//     }
-
-// }
 @media (max-width: 1200px) {
     .smallScreenHeader #searchWrapper {
         width: 15%;
     }
     .smallScreenHeader #searchWrapper input, 
     .smallScreenHeader .searchWrapper {
-        width: 145px;
+        width: 200px;
     }
     .smallScreenHeader #loginWrapper{
         width: 45.33%;
     }
-
 }
-@media (max-width: 980px){
+@media (max-width: 1120px){
     .smallScreenHeader #logoWrapper .localLogo{
-        background: url(http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-k-university.svg) no-repeat scroll center center;
+        background-position: 0 -375px;
+        height: 36px;
+        margin-left: 21px;
+        margin-top: 13px;
         width: 184px;
-        margin-left: 5px;
     }
 }
-
-@media (min-width: 1200px) and (max-width: 1500px){
+@media (min-width: 1070px) and (max-width: 1676px){
     .smallScreenHeader.menuScrolling .newHeaderWrapperLocalMenuLogo {
         display: block;
     }
     .menuScrolling .newHeaderWrapperLocalMenuLogo {
-        background: rgba(0, 0, 0, 0) url("http://cdn1.kabbalah.com/kabbalah.com/header/logos/logo-ku-shield-bottom.svg") no-repeat scroll left 8px center;
+        background-position: 0 -536px;
         float: left;
-        height: 42px;
-        margin-right: 5px;
+        height: 34px;
+        margin-left: 18px;
+        margin-right: 8px;
         width: 36px;
     }
     .menuScrolling .newHeaderWrapperSearchMenuLogo{
         border-left: 1px solid #8c8787!important;
     }
-
-    .smallScreenHeader.menuScrolling #newHeaderWrapperMobileMenu {
-        width: 18%;
-    }
 }
 
-
+#userInfoWrapperResponsive{
+    display: none;
+}
 /*===========================end new menu===============================*/
 /*================== END LOCAL MENU ============================= */
 
@@ -789,10 +665,6 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
   float: left;
   width: 980px;
 }
-// .slidesImage img{
-//     width:620px;
-//     height:349px;   
-// }
 .slidesInfoDesc {
   float: left;
   width: 360px;
@@ -862,11 +734,11 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
 .imgNav li {
   width: 12px;
   height: 12px;
-  @include icon-sprite("active_pagination");
+  background-position: 0 -984px;
   color: transparent;
 }
 .imgNav li.activeNav {
-  @include icon-sprite("no_active_pagination");
+  background-position: 0 -967px;
 }
 #frontMiddle .imgNav{
   padding-left: 9px!important
@@ -880,16 +752,16 @@ ul.sidr-class-menu li.sidr-class-expanded > a:before{
     position: relative;
     width: 100%;
     float: left;
-    // top: -5px;
+    margin-bottom: 26px;  
 }
 #goRight{
+    background-position: 0 -928px;
    color: transparent;
-   @include icon-sprite("banner_arrow_right");
    height: 36px;
 }
 #goLeft{
+    background-position: 0 -889px;
    color: transparent;
-   @include icon-sprite("banner_arrow_left");
    height: 36px;
 }
 .darkyellow{
@@ -963,100 +835,6 @@ background-color:#653a24;
 
 
 /* ==============================================================
-   ================= SOCIAL MEDIA ===============================
-   ============================================================== */
-
-// #SocialMediaWrapper{
-//     width: 100%;
-//     padding: 50px 0px;
-//     margin-top: -5px; 
-//     background:$bgSocialMdeia;
-//     float: left;
-// }
-// #SocialMedia{
-//     width: 940px;
-//     height: 300px;
-//     margin: 0 auto;     
-// }
-// #fpSocialMediaBlock1{
-//     width: 272px; 
-//     height: 260px;
-//     float: left;
-//     padding: 20px 20px 20px 8px; 
-//     margin-right: 20px;
-//     background-color:$colorWhite;   
-// }
-// #fpSocialMediaBlock3{
-//     @extend #fpSocialMediaBlock1;
-//     margin-right: 0;
-// }
-// #fpSocialMediaBlock2{
-//     float: left;
-//     margin-right: 20px;
-//     width: 300px;
-// }
-// .icon-twitter{
-//     @include icon-sprite("icon-twitter-dark");
-//     float: left;
-//     height: 41px;
-//     width: 60px;
-// }
-// .icon-testimonial{
-//     @extend .icon-twitter;
-//     @include icon-sprite("icon-qoute-dark-59x41");
-// }
-// .region.region-ktweet{
-//     float: left;
-//     width: 212px;
-// }
-// #fpSocialMediaBlock3 .icon-testimonial + .block.block-views{
-//     @extend .region.region-ktweet;
-// }
-// .twitLink a{
-//     font-style: italic;
-//     margin-left: 17px;
-// }
-// #block-views-tweets-block{
-//     color: $colorBrown;
-//     font-size: 16px;
-//     font-style: italic;
-//     line-height: 20px;
-//     margin-left: 58px;
-// }
-// #fpSocialMediaBlock3 p {
-//     font-style: italic;
-//     line-height: 20px !important;
-//     margin-top: 0;
-//     padding-top: 0;
-// }
-// #block-block-5 .content p{
-//      margin-top: 0;
-// }
-// #block-block-8 .content p{
-//      margin-top: 0;
-// }
-// #fpSocialMediaBlock2 p{
-//     background: $colorWhite;
-//     margin: 0;
-//     height: 299px;
-// }
-// #block-views-tweets-block .views-field.views-field-created-time {
-//     display: block;
-//     margin-top: 8px;
-// }
-// #block-views-tweets-block li{
-//     margin: 0 0 0 16px;
-// }
-// #kcomTestimonialsSlideshow > div { 
-//     position: absolute; 
-//     right: 0; 
-// }
-// #views_slideshow_cycle_teaser_section_front_page_testimonials-block_2{
-//     margin: 0 0 0 10px;
-// }
-/* ================= END SOCIAL MEDIA =========================== */
-
-/* ==============================================================
    ================= FOOTER =====================================
    ============================================================== */
 footer {
@@ -1122,9 +900,6 @@ footer>nav>section:last-child section.block.block-menu {
 footer>nav>section section.block.block-block{
     padding-left: 10px;
 }
-/*footer>nav>section:last-child {
-    margin:-1px 0 20px 0
-}*/
 #studentSupport{
     margin-top: 16px;
 }
@@ -1184,9 +959,6 @@ footer>nav+div #block-block-2 a :hover {
     margin-bottom:34px;
     display:none
 }
-#socialMediaWrapper img {
-    margin-right:10px
-}
 @media (max-width: 1182px) {
     #footerBySiteIconsWrapper {
         padding:0;
@@ -1206,24 +978,51 @@ footer>nav+div #block-block-2 a :hover {
         padding-left:0 !important;
         padding-top:48px !important
     }
-    .footerBySiteIcons:nth-child(1)>a {
-        background-position:center top !important
+    .footerBySiteIcons:nth-child(1):before {
+        margin-left: 37px;
+        margin-top: 0 !important;
     }
-    .footerBySiteIcons:nth-child(2)>a {
-        background-position:center top 5px !important
+    .footerBySiteIcons:nth-child(2):before {
+        margin-left: 30px;
+        margin-top: 8px !important;
     }
-    .footerBySiteIcons:nth-child(3)>a {
-        background-position:center top 6px !important
+    .footerBySiteIcons:nth-child(3):before {
+        margin-left: 53px;
+        margin-top: 10px !important;
     }
-    .footerBySiteIcons:nth-child(4)>a {
-        background-position:center top 11px !important
+    .footerBySiteIcons:nth-child(4):before {
+        margin-left: 10px;
+        margin-top: 12px !important;
     }
-    .footerBySiteIcons:nth-child(5)>a {
-        background-position:center top 17px !important
+    .footerBySiteIcons:nth-child(5):before {
+        margin-left: 16px;
+        margin-top: 18px !important;
     }
-    .footerBySiteIcons:nth-child(6)>a {
-        background-position:center top 10px !important
+    .footerBySiteIcons:nth-child(6):before {
+        margin-left: 20px;
+        margin-top: 10px !important;
     }
+}
+#socialMediaWrapperIcone > a {
+    color: transparent;
+    display: inline-block;
+    height: 33px;
+    width: 33px;
+}
+#socialMediaWrapperIcone > a:hover{
+    color: transparent;
+}
+#socialMediaWrapperIcone a:nth-child(1){
+    background-position: 0 -681px; 
+}
+#socialMediaWrapperIcone a:nth-child(2){
+    background-position: 0 -719px; 
+}
+#socialMediaWrapperIcone a:nth-child(3){
+    background-position: 0 -757px; 
+}
+#socialMediaWrapperIcone a:nth-child(4){
+    background-position: 0 -795px; 
 }
 #studentSupport h2{
     padding-right: 0;
@@ -1255,31 +1054,76 @@ footer>nav+div #block-block-2 a :hover {
     padding-top: 40px;
     text-transform: capitalize;
 }
+.footerBySiteIcons>a:hover{
+    color: #FFF;
+}
 .footerBySiteIcons:nth-child(1)>a {
-    background:url("../images/kabbalah_centre_icon.svg") no-repeat;
     padding-left:36px
 }
+.footerBySiteIcons:nth-child(1):before{
+    background-position: 0 -105px;
+    content: "";
+    height: 44px;
+    margin-top: 20px;
+    position: absolute;
+    width: 24px;
+}
 .footerBySiteIcons:nth-child(2)>a {
-    background:url("../images/living_wisdom_icon.svg") no-repeat;
     padding-left:47px
+}
+.footerBySiteIcons:nth-child(2):before{
+    background-position: 0 -154px;
+    content: "";
+    height: 36px;
+    margin-top: 24px;
+    position: absolute;
+    width: 37px;
 }
 .footerBySiteIcons:nth-child(3)>a {
-    background:url("../images/ukabbalah_icon.svg") no-repeat;
     padding-left:47px
 }
+.footerBySiteIcons:nth-child(3):before{
+    background-position: 0 -233px;
+    content: "";
+    height: 35px;
+    margin-top: 24px;
+    position: absolute;
+    width: 32px;
+}
 .footerBySiteIcons:nth-child(4)>a {
-    background:url("../images/zohar_icon.svg") no-repeat;
     padding-left:65px
 }
+.footerBySiteIcons:nth-child(4):before{
+    background-position: 0 -273px;
+    content: "";
+    height: 30px;
+    margin-top: 26px;
+    position: absolute;
+    width: 50px;
+}
 .footerBySiteIcons:nth-child(5)>a {
-    background:url("../images/community_icon.svg") no-repeat;
     padding-left:60px
 }
+.footerBySiteIcons:nth-child(5):before{
+    background-position: 0 -309px;
+    content: "";
+    height: 25px;
+    margin-top: 30px;
+    position: absolute;
+    width: 46px;
+}
 .footerBySiteIcons:nth-child(6)>a {
-    background:url("../images/store_icon.svg") no-repeat;
     padding-left:56px
 }
-#socialMediaWrapper {
+.footerBySiteIcons:nth-child(6):before{
+    background-position: 0 -195px;
+    content: "";
+    height: 32px;
+    margin-top: 25px;
+    position: absolute;
+    width: 38px;
+}
+#socialMediaWrapperIcone{
     float:left
 }
 #socialMediaSection {
@@ -1353,10 +1197,17 @@ footer>nav+div #block-block-2 a :hover {
 #studentSupport a {
     font-size:14px
 }
-#SocialMediaWrapper {
-    background:url(../images/3-lines.png) repeat-x top;
-    float: left;
-    margin-top: 80px;   
+#SocialMediaWrapper:before{
+    background-position: 0 -1131px;
+    background-repeat: repeat-x;
+    content: "";
+    height: 9px;
+    margin-top: -43px;
+    position: absolute;
+    width: 100%;
+}
+#SocialMediaWrapper {  
+    float: left;  
     padding: 43px 0 24px;
     width: 100%;
 }
@@ -1381,6 +1232,7 @@ footer>nav+div #block-block-2 a :hover {
 #fpSocialMediaBlock3 {
     background-color: #fff;
     float: left;
+    height: 80px;
     margin-top: 25px;
     width: 100%;
 }
@@ -1394,13 +1246,12 @@ footer>nav+div #block-block-2 a :hover {
     line-height: 23px;
 }
 #fpSocialMediaBlock1 .fpSocialMediaBlockTitle a{
-    background: url(../images/tw_small_blue.svg) no-repeat;
+    background-position: 0 -658px;
     display: block;
     height: 18px;
     margin-right: 15px;
     width: 25px;  
 }
-
 #block-views-tweets-block a {
     color: #007bcf;
 }
@@ -1418,7 +1269,6 @@ footer>nav+div #block-block-2 a :hover {
 #block-views-tweets-block .views-field.views-field-created-time em {
     font-style: normal;
 }
-
 #fpSocialMediaBlock3 p:last-child {
     font-family: proxiregular;
     font-size: 14px;
@@ -1428,8 +1278,14 @@ footer>nav+div #block-block-2 a :hover {
 #fpSocialMediaBlock3 .fpSocialMediaWrapper {
     margin: auto;
     width: 940px;
-
-    background: url(../images/testimonials_small_grey2.svg) no-repeat top 6px left;
+}
+#fpSocialMediaBlock3 .fpSocialMediaWrapper:before{
+    background-position: 0 -623px;
+    content: "";
+    height: 30px;
+    margin-top: 7px;
+    position: absolute;
+    width: 18px;
 }
 #fpSocialMediaBlock3 .fpSocialMediaWrapper > section{
     margin-left: 40px;
@@ -1439,77 +1295,10 @@ footer>nav+div #block-block-2 a :hover {
 /* ================= END FOOTER =========================== */
 
 
-
 /* ==============================================================
    ================= Carousel ===================================
    ============================================================== */
-.imagesCont {
-    cursor: pointer;
-    float: left;
-    height: 170px;
-    overflow: hidden;
-    width: 300px;
-    & a{
-    overflow: hidden;
-    width: 300px;
-    }
-}
-.imagesCont img {
-    float: left;
-    // height: 170px;
-    // width: 300px;
-    z-index: -10;
-}
-.theDescCont{
-    background: url("../images/sliding_white_bg_3.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
-    float: left;
-    padding-top: 5px;
-}
-.imagesCont a:hover .theDescCont{
-   background-position: 0 21%;
-}
-.theJsonTitle {
-    padding-bottom: 0px; 
-    display: block;
-    color: $colorBrown;
-    font-size: 15px;
-    font-weight: bold;
-    margin-left: 0;
-    margin-top: 10px;
-    text-align: left;
-    text-transform: uppercase;
-    width: 280px;
-}
-.teachingsTopicAndDate {
-    font-size: 12px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-bottom: 10px;
-    color: $colorBrown;
-    display: inline-block;
-    width: 283px; 
-    text-transform: capitalize;
-    float: left;
-}
-/*** adding icon for free lesson ***/
 
-.Free:before{
-    color: #FFFFFF;
-    content: "FREE";
-    font-size: 11px;
-    font-weight: bold;
-} 
-.Free{
-    background: #808080;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1) inset;
-    float: right;
-    height: 18px;
-    line-height: 17px;
-    text-align: center;
-    text-shadow: 0 -1px 0 #5E5D5D;
-    width: 39px;
-}
 .theTeaser {
     color: $colorBrown;
     display: block;
@@ -1528,22 +1317,20 @@ footer>nav+div #block-block-2 a :hover {
     margin-top: 0 !important;
 }
 .masonry li{
-    float: left;
-    height: 170px;
-    margin: 0 9px 20px;
+    min-height: 320px; 
+    margin: 0 9px 18px;
     overflow: hidden;
     width: 300px;
 }
 ul.masonry{
+    margin: auto auto 40px;
     padding-left: 0;
-    margin: auto;
 }
 #teachingsControlSection{
     clear: both;
-    margin: auto;
-    padding: 20px 0 16px 17px;
-    height:20px;
-    margin-top: 24px;
+    height: 20px;
+    margin: 0 auto;
+    padding: 45px 0 21px 17px;
 }
 #teachingsSectionTitle {
     color: #433A3A;
@@ -1567,7 +1354,7 @@ ul.masonry{
     margin-left: 10px;
 }
 #topicDDtext, #teachersDDtext, #teachersDD, #topicDD {
-    display: block;
+    display: inline-block;
     margin-bottom: 10px;
     color: #999999;
     font-size: 16px;
@@ -1674,10 +1461,10 @@ ul.masonry{
     border:1px solid #CCCCCC;
     border-right: none;
     display: inline-block;
-    height: 24px;
+    height: 23px;
     padding-left: 20px;
-    padding-top: 3px;
-    top: -31px;
+    padding-top: 4px;
+    top: -32px;
 }
 .allCourses {
     left: 321px;
@@ -1716,26 +1503,31 @@ ul.masonry{
   margin-bottom: 8px;
 }
 .activeTap{
-  background: url("../images/small_tab.png") no-repeat center bottom;
+  background-position: 16px -2023px;
   display: inline-block;
   height: 41px;
   color: $colorRed;
 }
+
 .startHere {
-    left: -47px;
-    position: relative;
     color: $colorBrown;
+    left: -45px;
+    position: relative;
+    top: 3px;
+}
+#beginnerCourse {
+    margin-top: 17px;
 }
 .recommendedHebDate {
     border:1px solid #CCCCCC;
     border-left: none;
-    padding: 3px 20px 0 4px;
+    padding: 4px 20px 0 4px;
     text-transform: uppercase;
     color:#127795;
     @extend .recommendedDate;
 }
 #maincontentTopics {
-    margin-bottom: 65px;
+    margin-bottom: 52px;
 }
 #views-exposed-form-taxonomy-term-page span.lessonsCourse,
 #views-exposed-form-beginners-course-collection-page span.lessonsCourse,
@@ -1763,6 +1555,8 @@ ul.masonry{
 }
 .termDesc {
     color: $colorBrown;
+    margin-bottom: 36px;
+    margin-top: -4px;
 }
 .view-filters #views-exposed-form-taxonomy-term-page,
 .view-filters #views-exposed-form-taxonomy-term-lesson-page{
@@ -1823,6 +1617,7 @@ h1#page-title {
     font-size: 30px;
     font-weight: normal;
     line-height: 24px;
+    margin-bottom: 23px !important;
     margin-top: 47px;
     text-transform: uppercase;
     padding-top: 50px;
@@ -2055,10 +1850,6 @@ h3 {
     float: left;
     padding-bottom: 40px;
 }
-// .logged-in.node-type-live-events #wrapperVideoSection,
-// .logged-in.node-type-lesson #wrapperVideoSection{
-//   padding-bottom:0px;
-// }
 .audiosocialmedia .sharethis{
     border: none;
     float: right;
@@ -2096,10 +1887,6 @@ h3 {
     float: left;
 }
 #videoSocialIconeWrapper #eSocial{
-    // width: auto!important;
-    // margin-left: 14px!important;
-    // margin-top: 292px!important;
-    // float: left;
     display: inline-block;
     margin: auto;
     padding-top: 10px;
@@ -2183,22 +1970,6 @@ h3 {
 .optionAudio #downloadAudio a{
     color: $colorWhite!important;
 }
-#downloadAudio{
-    background: url("http://cdn1.kabbalah.com/university/icons/dropdown_arrow_blue.png") no-repeat scroll 115px 10px!important;
-    display: inline-block;
-    height: 27px;
-    width: 170px;
-    margin: -28px 0 0 -35px;
-}
-#downloadAudio a{
-    color: $colorWhite;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 26px;
-}
-#downloadAudio a span{
-    color: $colorBlue;
-}
 #titleMultimedia{
     font-weight:normal; 
     font-size:25px;
@@ -2257,15 +2028,9 @@ h3 {
 .usersessionsession .pipe{
     color: #FFF; 
 }
-#video-control {
-    margin: 31px auto 0px;
-    width: 940px;
-    float: left;
-}
 .videocontent {
     margin: auto;
     clear: both;
-    //width: 846px;
 }
  .videoContent {
      margin: auto;
@@ -2347,12 +2112,6 @@ h3 {
     margin: 31px auto 0px;
 }
 
-/*fix broken slideshow*/
-// #slideshow{
-//     float: left;
-// }
-/**/
-
 .lessonCollectionSection,
 .liveEventCollectionSection{
     clear: both;
@@ -2365,18 +2124,6 @@ h3 {
 .not-logged-in .liveEventCollectionSection{
   padding-top:24px;
 }
-// .lessonCollectionSection,
-// .liveEventCollectionSection,
-// #block-views-lesson-collection-block, 
-// #block-views-lesson-collection-block-1,
-// #block-views-lesson-collection-block-2,
-// #block-views-lesson-collection-block-3,
-// #block-views-lesson-collection-block-4{
-//     float:left;
-//     margin: 24px 0 85px;
-//     width: 940px;
-// }
-
 /** course page**/
 .wrapperCours{
     margin: auto;
@@ -2387,18 +2134,9 @@ h3 {
     width: 460px;
     margin: 40px 40px 0 0;
 }
-// #contentAuthorInfo{
-//     float: left;
-//     height: 267px;
-//     margin: 43px 0 0;
-//     position: relative;
-//     width: 440px;
-// }
+
 #contentAuthorImages img{
-    // width: 460px;
-    // height: 259px;
     float: left;
-    // margin-bottom: 9px;
 }
 #contentAuthorImages > span {
     clear: both;
@@ -2412,13 +2150,7 @@ h3 {
     font-weight: normal;
     font-size:14px;
 }
-// #wrapperInfoCour {
-//     float: left;
-//     // min-height: 206px;
-//     min-height: 163px;
-//     width: 100%;
-//     padding-top:2px;
-// }
+
 #wrapperPrice {
   border-left: 1px solid #605858;
   display: inline-block;
@@ -2437,7 +2169,6 @@ h3 {
     margin-top: 8px;
 }
 .buttonMember{
-    // @include icon-sprite("become_member_button");
     background: none repeat scroll 0 0 #208fdc;
     border-radius: 6px;
     cursor: pointer;
@@ -2461,8 +2192,12 @@ h3 {
     margin-top: 9px;
     text-align: center;
 }
-.priceLogin.logColor a {
-    color: #4ab5ff !important; 
+.loginBtnBottom a {
+    color: #0877c4;
+    display: block;
+    font-size: 16px;
+    margin-top: 9px;
+    text-align: center;
 }
 #wrapperInfoCour > span {
     display: block;
@@ -2488,7 +2223,6 @@ h3 {
 }
 .theCourseAuthor a{
   color: #83cafb !important;
-  // text-transform: uppercase;
 }
 .divider:last-child{
   display:none;
@@ -2525,15 +2259,12 @@ h3 {
 #infoCourse{
     line-height: 25px;
 }
-
 .eventsLocation,.eventsDate{
   margin-top: 5px;
 }
-
 .eventsDate{
   display: block;
 }
-
 .lessonCollectionSection h2,
 .liveEventCollectionSection h2{
     font-size: 15px;
@@ -2570,9 +2301,6 @@ h3 {
 #edit-field-author-tid-wrapper .views-widget{
     margin-top: 10px;
 } 
-// .views-exposed-widgets > div{
-//     float: right!important;
-// }
 #edit-keys-wrapper{
   float: left;
 }
@@ -2686,35 +2414,41 @@ h3 {
 .liveEventCollectionSection table thead tr th{
     padding-right:0px; 
 }
-.Video{
-    background: url(http://cdn1.kabbalah.com/university/icons/icon_video_light_grey.png) no-repeat 6px 0px;
-    width: 32px;
-    height: 32px;
+.wrapperLesson:hover .typeLesson .Video{
+  background-position: 0 -1410px; 
+}
+.typeLesson .Video{
+    background-position: 0 -1390px; 
+    margin-right: 0;
+    margin-left: 6px;
 }
 .activeLesson .Video{
-  background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 6px 0px!important;
+  background-position: 0 -1410px; 
+}
+.lessonCollectionSection .Audio {
+    background-position: 0 -1430px;
+    height: 16px;
+    margin-left: 6px;
+    margin-right: 0;
+    margin-top: 4px;
+}
+.wrapperLesson:hover .Audio{
+   background-position: 0 -1448px;
+    height: 16px;
 }
 .activeLesson .Audio{
-  background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 6px 3px!important;
+  background-position: 0 -1448px;
 }
  .views-field-twistage-subtitles.activeLesson span, .subtitle-width.activeLesson span{
-     background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px!important;
       color: transparent;
       }
 .views-field-twistage-subtitles span,
 .subtitle-width span{
-    background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png) no-repeat 8px 9px;
     color: transparent;
 }
 .lessonCollectionSection tr:hover,{
   font-weight: bold;
   background: #e1edf1;
-    .Video{
-        background: url(http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png) no-repeat 8px 6px;
-      }
-    .views-field-twistage-subtitles span, .subtitle-width span{
-     background: url(http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png) no-repeat 8px 9px;
-      }
 }
 .liveEventCollectionSection tr:hover{
   font-weight: bold;
@@ -2779,10 +2513,8 @@ h3 {
   margin-bottom: 20px;
 }
 #courseDescription{
-    // float: left;
     height: 100%;
     width: 100%;
-    // background: #f2f1f1;
 }
 .lessonCollectionSection form select option,
 #teachingsSectionHeaderBar select option,
@@ -2790,8 +2522,9 @@ h3 {
 #mainContentWrapper select option{
   width:150px;
 }
+
 span.lessonsCourse {
-    background: url("../images/dd_arrow.png") no-repeat scroll right 10px #fff!important;
+    background-position: 182px -2300px; 
     border: 1px solid $colorGray;
     color: $colorBrown;
     cursor: pointer;
@@ -2804,6 +2537,18 @@ span.lessonsCourse {
     text-align: left;
     text-indent: 10px;
     z-index: 1;
+}
+#views-exposed-form-free-lessons-page {
+    #edit-field-portion-tid-wrapper{
+        label, .views-widget{
+            margin-right: 0;
+        }
+    }
+    
+}
+.form-item .description, 
+#views-exposed-form-free-lessons-page .views-exposed-widget.views-submit-button{
+    display: none;
 }
 .transcription .lessonsCourse,#views-exposed-form-free-lessons-page .lessonsCourse{
     display: block!important;
@@ -2911,47 +2656,47 @@ span.lessonsCourse {
     margin-left: 0!important;
 }
 .st_facebook_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/facebook_icon_white.png) no-repeat!important;
-    width: 26px!important;
+    background-position: 0 -1635px !important;
+    height: 28px !important;
+    width: 26px !important;
 }
 .st_twitter_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/twitter_icon_white.png) no-repeat!important;
-     width: 39px !important;
+    background-position: 0 -1585px !important;
+    height: 22px !important;
+    width: 39px !important;
 }
 .st_googleplus_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/googleplus_icon_white.png) no-repeat!important;
+    background-position: 0 -1536px !important;
+    height: 26px !important;
     width: 37px !important;
 }
 .st_email_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/email_icon_white.png) no-repeat!important;
+    background-position: 0 -1683px !important;
+    height: 20px !important;
     width: 34px !important;
 }
 .st_sharethis_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/social_media_icon_white.png) no-repeat!important;
+    background-position: 0 -1728px !important;
+    height: 24px !important;
     width: 37px !important;
 }
 .st_pinterest_large{
     display: none!important;
 }
 #courseDescription .st_facebook_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/facebook_icon.png) no-repeat!important;
-    width: 26px!important;
+    background-position: 0 -1607px !important;
 }
 #courseDescription .st_twitter_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/twitter_icon.png) no-repeat!important;
-     width: 39px !important;
+    background-position: 0 -1563px !important;
 }
 #courseDescription .st_googleplus_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/googleplus_icon.png) no-repeat!important;
-    width: 37px !important;
+    background-position: 0 -1509px !important;
 }
 #courseDescription .st_email_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/email_icon.png) no-repeat!important;
-    width: 34px !important;
+    background-position: 0 -1663px !important;
 }
 #courseDescription .st_sharethis_large .stLarge{
-    background: url(http://cdn1.kabbalah.com/kabbalah.com/icons/socialmedia/social_media_icon.png) no-repeat!important;
-    width: 37px !important;
+    background-position: 0 -1703px !important;
 }
 /***/
 div.jp-audio{
@@ -2989,20 +2734,12 @@ div.jp-audio{
     margin-bottom: 3px;
 }
 .resourceTitle > a{
-    color:#127795;  
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 18px;
-    text-align: left;
+    color: #007ace!important;
+    font-family: $fontFace;
+    font-size: 14px;
+    line-height: 24px;
     margin-right: 35px;
     vertical-align: super;
-}
-.resourceFile {
-    @include icon-sprite("icon_pdf");
-    margin-right: 14px;
-    display: inline-block;
-    height: 24px;
-    width: 24px;
 }
 #classesDescription > p {
     color: $colorBrown;
@@ -3022,13 +2759,8 @@ div.jp-audio{
     border-top: medium none;
     float: right;
 }
-.lessonCollectionSection .Audio {
-    background: url("../images/icon/audio_icon_light_grey.png") no-repeat 6px 3px;
-    height: 16px;
-    width: 25px;
-}
+
 .lessonCollectionSection tr:hover .Audio{
-    background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 8px 0;
     height: 13px;
     width: 25px;
 } 
@@ -3089,7 +2821,6 @@ div.jp-audio{
     z-index: -10;
 }
 .topicTextWrapper {
-    background: url("../images/sliding_white_bg_3.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
     float: left;
     height: 180px;
     padding-top: 15px;
@@ -3097,12 +2828,6 @@ div.jp-audio{
 }
 .sticky-header{
     display: none!important;
-}
-#list img,#grid img {
-    float: left;
-    height: 17px;
-    margin: 7px 0 10px 10px;
-    width: 26px;
 }
 
 /**home page**/
@@ -3119,101 +2844,26 @@ div.jp-audio{
 }
 #carousal4Wrapper{
   @extend #carousal1Wrapper;
-  margin-bottom: 40px;
 }
 #block-ukabbalah-fp-carousals-carousal1 > h2,
 #block-ukabbalah-fp-carousals-carousal2 > h2,
 #block-ukabbalah-fp-carousals-carousal3 > h2,
 #block-ukabbalah-fp-carousals-carousal4 > h2,
 #carousal5Wrapper h2{
-    margin: 39px auto 3px;
+    margin: 20px auto 3px;
     width: 940px;
     color: #999; 
+}
+#carousal5Wrapper .region.region-liveevents {
+    float: left;
+    margin-bottom: 20px;
 }
 .carrouselFix{
     margin-left: 10px;
     margin-bottom: 0;
 }
-.vidImg{
-    height: 13px;
-    width: 16px;
-    float: left;
-    margin-right: 7px;
-    margin-top: 11px;
-    @include icon-sprite("video");
-}
-.Videos{
-  @extend .vidImg;
-}
-.theDescCont .Video{
-  @extend .vidImg;
-}
-.Premium{
-    background: #808080;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.1) inset;
-    float: right;
-    height: 18px;
-    line-height: 17px;
-    text-align: center;
-    text-shadow: 0 -1px 0 #5E5D5D;
-    width: 60px; 
-}
-.Premium:before {
-    color: #FFFFFF;
-    content: "PREMIUM";
-    font-size: 11px;
-    font-weight: bold;
-}
-.Premium.Plus{
-    width: 68px; 
-}
-.Premium.Plus:before {
-    content: "PREMIUM \271A";
-}
-.Basic{
-    background: #808080;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.1) inset;
-    float: right;
-    height: 18px;
-    line-height: 17px;
-    text-align: center;
-    text-shadow: 0 -1px 0 #5E5D5D;
-    width: 39px; 
-}
-.Basic:before {
-    color: #FFFFFF;
-    content: "BASIC";
-    font-size: 11px;
-    font-weight: bold;
-}
-// .Premium{
-//     @extend .vidImg;
-//     @include icon-sprite("icon_lock");
-//     width: 11px;
-//     float: right;
-// }
-// .Basic{
-//   @extend .Premium ;
-// }
 .audioImg{
     @extend .vidImg;
-    @include icon-sprite("icon_audio");
-}
-.Audios{
-  @extend .audioImg;
-}
-.theDescCont .Audio{
-  @extend .audioImg;
-}
-.bothAdVdImg{
-    @extend .vidImg;
-    @include icon-sprite("media");
-    width: 35px;
-}
-.Both{
-  @extend .bothAdVdImg;
 }
 .teachingsTopicAndDate .Premium{
     margin-right: 0;
@@ -3226,21 +2876,43 @@ div.jp-audio{
 .teachersPath,.readMore{
     color: #127795;
 }
-.rightArrowStyleHome{
-    position: relative;
+.rightArrowStyleHome,
+.rightArrowStyle{
+    background-position: 0 -1001px;
+    height: 60px;
+    width: 52px;
+}
+.leftArrowStyleHome,
+.leftArrowStyle {
+    background-position: 0 -1066px;
+    height: 60px;
+    width: 52px;
 }
 
 /***/
 #teachingsSectionHeaderBar .lessonsCourse{
     display: block;
 }
-#topicDDWrapper {
-    float: left;
-    width: 187px  
+#teachingsSectionHeaderBar{
+    #topicDDWrapper, #authorDDWrapper {
+        float: left;
+        width: 215px;  
+    }
+    #teachersDD, #topicDD{
+        width: 210px;
+        select{
+            width: 100%; 
+        }
+    }
+
 }
-#authorDDWrapper{
+.displayOption {
+    border-left: 1px solid #ccc;
+    color: #999;
     float: left;
-    width: 177px   
+    margin-left: 20px;
+    margin-top: 6px;
+    padding-left: 20px;
 }
 #teachingsBarInnerWrapper{
     min-width: 940px;
@@ -3260,8 +2932,6 @@ div.jp-audio{
 }
 .preVideoImg img{
     float: left;
-    // height: 349px;
-    // width: 620px;
 }
 .preVideoImg .videotitles{
     float: right;
@@ -3269,6 +2939,14 @@ div.jp-audio{
     height: 199px;
     clear: none;
     margin-top: 0;
+}
+
+#previewVideoStash{
+    background-position: 0 -2069px; 
+    height: 192px;
+    position: absolute;
+    width: 192px;
+    z-index: 10;   
 }
 .preVideoImg #titleMultimedia,
 .preVideoImg #courseNameMultimedia,
@@ -3300,16 +2978,9 @@ div.jp-audio{
     right: 0;
     width: 290px; 
 }
-// .transcript-content{
-//     width: 605px;
-// }
-// .audioSection .preVideoImg img{
-//     width: 620px;
-//     height: 349px;
-// }
 .bookmark {
     float: right;
-    width: 140px;
+    width: 164px;
     color: $colorBrown;
     font-size: 15px;
     text-align: right;
@@ -3318,15 +2989,33 @@ div.jp-audio{
   }
 }
 #courseDescription .bookmark{
-    margin-top: -59px;
+    margin-top: -50px;
 }
-.flag-message{
-  left: -169px!important;
-  text-align: right;
+.flag-message {
+    left: -155px;
+    text-align: right;
+    top: 30px;
 }
 .flag-wrapper{
   width: 140px;
 }
+#bookmarkCheck{
+    display: none;
+}
+#courseDescription .bookmark label {
+    border: 1px solid #433a3a;
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+    width: 18px;
+}
+#courseDescription .bookmark label.checked {
+    background-position: 1px -2332px; 
+}
+
 /**start scrollling filter**/
 .scrollingTitle{
   background: #fff;
@@ -3347,7 +3036,6 @@ div.jp-audio{
 
 
 .scrollingFilter,.scrollingTermDesc,.scrollingView-filters {
-  background: url("../images/shadow_local_bar-1.png") repeat-x scroll center bottom rgba(0, 0, 0, 0);
     position: fixed !important;
     top: 46px;
     width: 100%!important;
@@ -3355,13 +3043,7 @@ div.jp-audio{
     z-index: 1400 !important;
 }
 .teachingsBarInnerWrapper{
-    // max-width: 1580px;
-    // min-width: 940px;
     margin: auto;
-}
-.scrollingTitle .teachingsBarInnerWrapper,
-.scrollingFilter .teachingsBarInnerWrapper{
-  // width:auto!important;
 }
 .scrollingFilter{
   padding-top:10px;
@@ -3449,7 +3131,6 @@ div.jp-audio{
     margin-bottom: -1px; 
 }
 .quicktabs-tabs.quicktabs-style-zen > li.active {
-    background: url("../images/small_tab.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
     display: inline-block;
     height: 41px;
     a{
@@ -3471,7 +3152,6 @@ ul.quicktabs-tabs.quicktabs-style-zen {
 }
 .views-exposed-widget.views-submit-button{
   float: left!important;
-  // margin-left: 10px;
   margin-left: 20px;
 }
 #views-exposed-form-search-page input.form-submit {
@@ -3525,10 +3205,6 @@ ul.quicktabs-tabs.quicktabs-style-zen {
     margin-top: 0;
     width: 495px;
 }
-// .views-exposed-widget.views-submit-button {
-//     margin-left: 20px;
-//     // margin-top: 5px;
-// }
 .page-search #edit-field-portion-tid{
   width: 300px;
 }
@@ -3566,7 +3242,6 @@ body.page-node-5799 #page-title{
     -o-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    // -webkit-box-shadow: 2px 2px 2px 2px #525252; 
 }
 #zenbox_tab img{
     background: none repeat scroll 0 0 #000000;
@@ -3603,15 +3278,11 @@ body.page-node-5799 #page-title{
 
 .commentsSection {
   clear: both;
-  margin: auto;
+  margin: auto auto 65px;
   width: 940px;
 }
 
-
-
 /*--- add style for mobile menu-----*/
-
-
 
 #kabbalahlogo {
     float: left;
@@ -3641,7 +3312,6 @@ body.page-node-5799 #page-title{
 }
 #sidr-wrapper-0{
   float: left;
-    // margin-left: 14px;
 }
 
 /*** added menu logo style**/
@@ -3689,12 +3359,7 @@ body.page-search #block-system-main .views-row {
     margin-right: 13px;
     width: 300px;
 }
-// .searchimage .theImage {
-//     height: 169px;
-//     width: 300px;
-// }
 .searchtext {
-    // float: left;
     margin-bottom: 40px;
     width: 300px;
 }
@@ -3772,7 +3437,6 @@ body.page-search #block-system-main .views-row {
   clear: both; 
 }
 
-
 /**temporary serach***/
 #search {
     margin-right: 15px;
@@ -3782,15 +3446,14 @@ body.page-search #block-system-main .views-row {
 
 /**live events front page****/
 
-
  #carousal5Wrapper {
     clear: both;
     margin: auto;
-    padding-top: 1px;
     width: 940px;
 } 
 #carousal5Wrapper h2{
   margin-bottom: 19px;
+  margin-top: 0;
 }
 .liveEventsLocation {
     float: left;
@@ -3808,13 +3471,21 @@ body.page-search #block-system-main .views-row {
     margin-bottom: 10px;
 }
 .streaming {
+    background-position: 0 -1185px;
+    color: transparent;
     float: right;
-    margin-left: 7px;
+    height: 16px;
     margin-top: 2px;
+    width: 20px;     
 }
 .membership {
+    background-position: 0 -1145px;
+    color: transparent;
     float: right;
+    height: 15px;
+    margin-left: 7px;
     margin-top: 2px;
+    width: 11px;
 }
 .liveEventsLocationTitle {
     border-bottom: 1px solid #CCCCCC;
@@ -3907,11 +3578,7 @@ ul.nice-menu li.menuparent ul li {
     cursor: default;
     pointer-events: none;
 }
-// .testLiveStream {
-//     background: none repeat scroll 0 0 #9c1f19;
-//     color: #fff;
-//     padding: 20px;
-// }
+
 /****************Text editor styles****************/
 .translation-text {
   font-family: Georgia;
@@ -4039,28 +3706,9 @@ ul.nice-menu li.menuparent ul li {
 /****************END Text editor styles****************/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////****************** new style for  lesson and cours page ******/////////
 
 
-
-
-// 
 body.page-admin .messages.error,
 body.node-type-course .messages.error {
     display: none;
@@ -4099,7 +3747,6 @@ body.node-type-course .messages.error {
     border-radius: 0!important;
 }
 .ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active{
-    //border-bottom: 1px solid #fff!important;
     border-left-width: 0!important;
     border-radius: 0!important;
     margin-right: 0!important;
@@ -4137,7 +3784,6 @@ body.node-type-course .messages.error {
 .ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all span {
   font-family: $fontFace!important;
   font-size: 18px!important; 
-  //color: $colorBrown; 
 }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited,
 .ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-stat{
@@ -4189,10 +3835,6 @@ body.node-type-course .messages.error {
     border-top: 0 none;
     padding-top: 11px;
 }
-// .authorImage img {
-//     height: 70px;
-//     width: 70px;
-// }
 .authorImage a{
     color: #007ace !important;
     display: table-cell;
@@ -4206,9 +3848,9 @@ body.node-type-course .messages.error {
 }
 .authorImage img {
     float: left;
-    // height: 70px;
+    height: 70px;
     margin-right: 10px;
-    // width: 70px;
+    width: 70px;
 }
 .theCourseAuthor {
     margin-top: 25px;
@@ -4222,7 +3864,6 @@ body.node-type-course .messages.error {
     width: 415px;
 }
 .wrapperLesson:hover{
-  // background: url("../images/wrapperLesson-hoverBG.jpg") repeat-y right #e5e5e5;
   background: #e5e5e5
 }
 .typeLesson {
@@ -4243,21 +3884,14 @@ body.node-type-course .messages.error {
     padding-left: 33px;
     width: 363px;
 }
-
-.wrapperLesson:hover .Video{
-  background: url("http://cdn1.kabbalah.com/university/icons/icon_video_dark_grey.png") no-repeat scroll 6px 0px rgba(0, 0, 0, 0); 
-}
-.wrapperLesson:hover .Audio{
-   background: url("http://cdn1.kabbalah.com/kabbalah.com/icons/audio_icon.png") no-repeat 6px 3px;
-    height: 16px;
-    width: 25px;
-}
 .ccLesson span {
-    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_light_grey.png") no-repeat scroll 8px 6px rgba(0, 0, 0, 0);
+    background-position: 0 -1873px; 
     color: transparent;
+    height: 17px;
+    margin-top: 6px; 
 }
 .wrapperLesson:hover .ccLesson span {
-    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png") no-repeat scroll 8px 6px rgba(0, 0, 0, 0);
+    background-position: 0 -1893px;
 }
 .wrapperAuthor {
     float: left;
@@ -4305,8 +3939,9 @@ body.node-type-course .messages.error {
     padding-top: 4px;
     width: 363px;
 }
-.ccLesson > span {
-    height: 24px;
+.page-user-bookmarks .wrappercontentLessonDetail {
+    margin-left: 0;
+    margin-top: 5px;
 }
 .wrapperLesson:hover .wrappercontentLessonDetail{
   border-top-color: #9B9B9B; 
@@ -4314,35 +3949,40 @@ body.node-type-course .messages.error {
 .expand{
   text-align: right;  
 }
+.expand{
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.2) 7%, rgba(255,255,255,0.72) 13%, rgba(255,255,255,0.92) 19%, rgba(255,255,255,1) 24%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0.2) 7%,rgba(255,255,255,0.72) 13%,rgba(255,255,255,0.92) 19%,rgba(255,255,255,1) 24%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0.2) 7%,rgba(255,255,255,0.72) 13%,rgba(255,255,255,0.92) 19%,rgba(255,255,255,1) 24%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    margin-top: -20px;
+    padding-top: 10px;
+    position: relative;
+    text-align: right; 
+}
 .expand > a {
     color: #0877c4!important;
     font-family: $fontFace!important;
     font-size: 14px;
     line-height: 27px;
     padding-left: 24px; 
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-image: url("../images/expand.png") ;
-    
+    background-position: 0 -1462px;    
 }
 a.collapse{
-  background-image: url("../images/collapse.png")!important;
+  background-position: 0 -1477px; 
 }
 .messages.error {
     display: none;
 }
 .wrapperPreviewLesson {
-background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     padding: 0 !important;
 }
 .wrapperPreviewLesson .preVideoImg{
     margin-top:0!important;  
 }
-.wrapperPreviewLesson .preVideoImg img {
-    // height: 564px !important;
+.wrapperPreviewLesson .preVideoImg .lesson_image_preview,
+.preVideoImg .overImageOpacity + img {
     position: absolute;
     top: 0;
-    // width: 100% !important;
 }
 .overImageOpacity {
     background: none repeat scroll 0 0 rgba(67, 58, 58, 0.36);
@@ -4391,14 +4031,22 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     padding: 0 50px;
     width: auto;
 }
+.loginBtnBottom {
+    border: 2px solid #208fdc;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    height: 37px;
+    padding: 0 50px;
+    width: auto;
+}
 .wrapperVideoDetailText #titleMultimedia {
     color: #fff !important;
     font-family: georgia;
     font-size: 32px !important;
     line-height: 38px !important;
     margin-bottom: 5px;
-    margin-top: -6px;
-    
+    margin-top: -6px;   
 }
 .gutter {
     font-size: 18px;
@@ -4415,7 +4063,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     text-transform: uppercase;
     width: 100%;
 }
-.wrapperTags > a,.resourceTitle a {
+.wrapperTags > a{
     color: #007ace!important;
     font-family: $fontFace;
     font-size: 14px;
@@ -4428,9 +4076,6 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     line-height: 27px;
     padding-left: 20px;
 }
-// .highlightsWrapper li {
-//     list-style: inside none disc!important;
-// }
 .wrapperTranscript {
     font-size: 18px;
     height: 45px;
@@ -4469,47 +4114,43 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 }
 #videoSocialIconeWrapper {
     margin: auto;
-    //width: 940px;
 }
 #video-control {
     margin: 0 auto;
     width: 940px;
-    // float: left;
+    min-height: 574px; 
 }
-// .transcript-content.free-scroll {
-//     margin: auto;
-//     width: 940px;
-// }
 .transcription {
-    //background: url("../images/transcription-bg.png") repeat-x scroll center top #fff;
     border-bottom: 1px solid #e2e2e2;
     min-height: 45px;
 }
-// .eng, .por_br, .rus, .por_pt, .ita, .ger, .fre_fr, .heb, .spa {
-//    margin-top: 20px;
-//    margin-bottom: 20px;  
-// }
-// .transcript-content.free-scroll{
-//   margin-bottom: 0!important; 
-// }
-.transcription span.lessonsCourse {
-  
-    background: url("/sites/all/themes/ukabbalah/images/white_arrow.png") no-repeat scroll 200px 17px #007ace !important;
+.customSelectDropdown {
+    background-color: #007ace;
     border: 0 none;
     color: #fff;
     cursor: pointer;
-    display: inline-block;
+    display: block;
     font-size: 18px;
     height: 45px;
     line-height: 42px;
     margin-left: 0;
     margin-top: -45px;
     padding-left: 3px;
+    padding-right: 30px;
     text-align: left;
     text-indent: 10px;
     text-transform: capitalize;
     width: 200px;
-    z-index: 1;
+    z-index: 100;
+}
+.customSelectDropdown:after {
+    background-position: 0 -1913px;
+    content: "";
+    height: 9px;
+    margin-top: 18px;
+    position: absolute;
+    right: 10px;
+    width: 18px;
 }
 #transcriptWrapper label{
     float: left;
@@ -4543,19 +4184,21 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     font-weight: normal;
     line-height: 26px;
 }
-
 .view-filters.searchThisCourse,
 .lessonCollectionSection .view-filters,
 #block-views-lesson-collection-block .view-filters,
 #block-views-lesson-collection-block-1 .view-filters, {
     float: none !important;
-    margin-top: 0 !important;
+    margin-top: -7px !important;
 }
 .lessonCollectionSection .view-filters #edit-title-wrapper,
 .view-filters.searchThisCourse #edit-title-wrapper,
-.view-filters.searchThisCourse input#edit-title,
 .lessonCollectionSection .view-filters input {
     width: 69% !important;
+    font-family: $fontFace;
+}
+.view-filters.searchThisCourse input#edit-title{
+    width: 63.57% !important;
     font-family: $fontFace;
 }
 #edit-title-wrapper{
@@ -4568,13 +4211,14 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
   margin-top: 0;
 }
 .lessonCollectionSection input#edit-title{
-    background: url("../images/search-bg.png") no-repeat scroll right center #fff !important ;
+    background-color: #FFF;
+    background-position: 12px -2264px; 
     border: 1px solid #cccccc;
     color: #a0a0a0;
     font-size: 16px;
     height: 43px;
     margin-top: 4px;
-    padding-left: 10px;
+    padding-left: 45px;
 }
 #wrapperInfoCour {
     background: none repeat scroll 0 0 #605858;
@@ -4592,7 +4236,6 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     padding: 0;
     text-decoration: none;
 }
-
 #wrappperRightBloc #tabs ul.ui-tabs-nav > li a span{
     height: 45px; 
     display: table-cell;
@@ -4601,7 +4244,6 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 }
 .buttonDownloadAudio {
     float: right;
-    //margin-top: 1px; 
 }
 .buttonDownloadAudio a{
     border: 0 none;
@@ -4626,7 +4268,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .form-item.form-type-select {
     margin: auto;
     float: left;
-    
+    position: relative;   
 }
 .trans-lang-select.form-select {
     border: none;
@@ -4635,7 +4277,7 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     width: 100%;
 }
 .resourceFile {
-    background: url("../images/pdfIcon.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background-position: 0 -1803px;
     display: inline-block;
     height: 39px;
     margin-right: 14px;
@@ -4644,35 +4286,34 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 .wrapperPreviewLesson.noLoginBg{
   background: #000!important; 
 }
-// .view-content span .wrapperLesson.activeLesson{
-//   background: url("../images/activeLessonBg.jpg") no-repeat right #d7ebf9;
-// }
-.wrapperLesson.activeLesson {
-
-    background: #d7ebf9 ; /* Old browsers selected_arrow_edge2*/
-    background-image: url("../images/selected_arrow_edge2.svg"), -moz-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* FF3.6+ */
-    //background-image: url("../images/activeLessonBg.jpg"), -webkit-gradient(left, #fff, #fff 22px, #d7ebf9 22px, #d7ebf9); /* Chrome,Safari4+ */
-    background-image: url("../images/selected_arrow_edge2.svg"), -webkit-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Chrome10+,Safari5.1+ */
-    background-image: url("../images/selected_arrow_edge2.svg"), -o-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Opera 11.10+ */
-    background-image: url("../images/selected_arrow_edge2.svg"), -ms-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* IE10+ */
-    background-image: url("../images/selected_arrow_edge2.svg"), linear-gradient(to left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* W3C */
-    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
-
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-origin: padding-box;
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: auto auto;
+.wrapperLesson.activeLesson{
+    background-color: #d7ebf9;
+    background-image: linear-gradient(to left, #ffffff, #ffffff 22px, #d7ebf9 22px, #d7ebf9) !important;/* W3C */
+    background-image: -moz-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* FF3.6+ */
+    background-image: -webkit-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(left,  #fff, #fff 22px, #d7ebf9 22px, #d7ebf9) ; /* IE10+ */
+    border-bottom: medium none;
     width: 437px; 
-    border-bottom: none; 
-
+    border-bottom: none;
+    position: relative;
+}
+.wrapperLesson.activeLesson:after{
+    background-position: 0 -1934px;
+    bottom: 0;
+    content: "";
+    height: 78px;
+    margin: auto;
+    position: absolute;
+    right: -9px;
+    top: 0;
+    width: 35px;
 }
 .wrapperLesson.activeLesson .wrappercontentLessonDetail {
     border-top: 1px dashed #9b9b9b;
 }
 .wrapperLesson.activeLesson .ccLesson span {
-    background: url("http://cdn1.kabbalah.com/university/icons/cc_icon_dark_grey.png") no-repeat scroll 8px 6px rgba(0, 0, 0, 0);
+    background-position: 0 -1893px; 
 }
 #wrapperDownloadAudio.audioWrapperDownload{
     background: none repeat scroll 0 0 #e2e2e2;
@@ -4691,7 +4332,6 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
 #audio-control{
     margin: 60px auto 0px;
 }
-
 .liveEventCollectionSection {
     margin: auto;
     width: 940px;
@@ -4700,16 +4340,9 @@ background: url("../images/wrapper_player_bg.jpg") repeat-x !important;
     float: left;
     margin-bottom: 70px;
 }
-// .lessonCollectionSection .view-content{
-//   height: 390px;
-//   width: 475px;  
-// }
 #tabs a.faq {
     color: #007ace;
 }
-// .lessonduration:before {
-//     content: "Duration : ";
-// }
 .lessonduration {
     color: #999;
     font-size: 13px;
@@ -4879,7 +4512,6 @@ body.node-type-live-events .courseDescriptionWrapper {
 .page-user #user-login-form .form-wrapper {
     border: medium none;
 }
-
 .page-user #user-login-form .form-submit, .page-user #user-pass .form-submit {
     background: none repeat scroll 0 0 #328a9a;
     border: medium none;
@@ -4978,7 +4610,6 @@ input[type="submit"] {
     color: #433a3a;
     display: inline-block;
     font-family: ProxiRegular;
-    //font-size: 2vw;
     font-size: 19px; 
     margin-bottom: 10px;
     margin-top: 2vw;
@@ -5070,12 +4701,6 @@ a.readMoreLinkMarketing {
         height: 248px;
         width: 940px;
     }
-    // #bannerMarketingPagedescription {
-    //     width: 680px;
-    // }
-    // #bannerMarketingPageTeacherInfo {
-    //     width: 220px;
-    // }
     .lessonMarketingPageContentImg{
         width: 220px;
         margin-right: 40px;
@@ -5212,7 +4837,6 @@ a.readMoreLinkMarketing {
 }
 #bannerMarketingPageTeacherInfo {
     float: left;
-    // margin-right: 40px;
     margin-top: 35px;
     text-align: left;
     width: 27.65%;
@@ -5230,11 +4854,6 @@ a.readMoreLinkMarketing {
     text-align: left;
     width: 72.34%;
 }
-
-// #bannerMarketingPageTeacherInfo{   
-//     font-size: 16px;
-//     line-height: 22px;
-// }
 #bannerMarketingPageTeacherInfo > div {
    color: #888888; 
 }
@@ -5406,17 +5025,12 @@ a.readMoreLinkMarketing {
 .smallTextDesc {
     height: 120px;
     overflow:hidden;
-    // display: inline;
-
 }
 .bigTextDesc {
     height: auto;
-    // display: inline;
-
 }
 #bannerMarketingPagedescription a.readMoreLinkMarketing {
     float: right;
-    //margin-top: -24px;
 }
 .courseMarketingPageContentImg img,
 #bannerMarketingPageImg img{
@@ -5436,22 +5050,17 @@ a.readMoreLinkMarketing {
 }
 #bannerMarketingPageImg{
     background-position: center center;
-    background-size: cover;
-    
-    
+    background-size: cover;  
 }
 .bannerMarketingPagebg{
      display: inline-table;
      height: 300px;
      width: 100%;
      color: #fff;
-   
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 67px;
-    
+    font-size: 67px;  
     letter-spacing: 1px;
     line-height: 75px;
-    //text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
     text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.2); 
 }
 .bannerMarketingPageImgTitle{
@@ -5565,8 +5174,6 @@ body.page-node-6419{
     color: #433a3a;
 }
 
-
-
 // custom search page
 
 #custonSearchWrapper {
@@ -5582,6 +5189,7 @@ body.page-node-6419{
 }
 #searchContentResult {
     float: left;
+    margin-bottom: 85px;
     margin-top: 60px;
     width: 590px;
 }
@@ -5590,32 +5198,39 @@ section.block.block-facetapi:first-child h2 {
 }
 .current-search-item-results h3 {
     color: #433a3a;
-    font-size: 26px;
+    font-size: 16px;
     font-weight: bold;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    margin-top: 37px;
     min-width: 100%;
-    text-transform: lowercase;
+    padding-bottom: 11px;
+    text-transform: uppercase;
 }
-.block-facetapi > h2 {
-    font-size: 17px;
+.block-facetapi > h2, .block-apachesolr-stats > h2  {
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 0;
+    letter-spacing: 0.4px;
     line-height: 20px;
     margin-top: 25px;
 }
 .block-facetapi .facetapi-checkbox, .block-facetapi li {
     color: #433a3a;
     font-size: 18px;
-    line-height: 30px;
+    line-height: 25px;
 }
 .block-facetapi li {
     list-style: outside none none !important;
     margin-left: 0 !important;
 }
+.searchContentWrapper:first-child {
+    margin-top: 20px;
+}
 .searchContentWrapper {
-    // border-top: 1px dashed #b5b5b5;
+    border-bottom: 1px dashed #b5b5b5;
     float: left;
+    margin-bottom: 40px;
     padding-bottom: 20px;
-    // padding-top: 36px;
     width: 100%;
 }
 .searchContenImage {
@@ -5629,7 +5244,8 @@ section.block.block-facetapi:first-child h2 {
 }
 .searchContenTitle > a {
     color: #433a3a;
-    font-size: 28px;
+    font-size: 25px;
+    line-height: 28px;
 }
 .searchContenText {
     float: left;
@@ -5638,6 +5254,12 @@ section.block.block-facetapi:first-child h2 {
 }
 .searchContenText p {
     font-family: georgia;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 9px;
+}
+.search-info {
+    margin-bottom: 5px !important;
 }
 .block.block-facetapi {
     border-bottom: 1px dashed #b5b5b5;
@@ -5650,7 +5272,6 @@ section.block.block-facetapi:first-child h2 {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
 .nbrKeyWord {
     color: #777;
     font-size: 12px;
@@ -5670,66 +5291,66 @@ section.block.block-facetapi:first-child h2 {
     width: 18px;  
 }
 #searchFilterDetail label.element-invisible.checked{
-    background: url("http://cdn1.kabbalah.com/university/icons/v.png") no-repeat scroll center 1px;
+    background-position: 1px -2332px; 
 }
-// #searchFilterDetail label.element-invisible.checked:before {
-//     color: #433a3a;
-//     content: "\2713 ";
-//     font-size: 20px;
-//     left: 2px;
-//     position: relative;
-//     //top: -5px;
-//     z-index: 100;
-// }
-// #searchFilterDetail input.facetapi-checkbox:checked {
-//     color: #99a1a7;
-//     content: "✔";
-//     font-size: 14px;
-//     left: 3px;
-//     position: absolute;
-//     top: 0;
-// }
-#searchContentResult section#block-system-main.block.block-system{
-    border-top: 1px dashed #b5b5b5;
-}
+
 #block-current-search-standard > h2 {
     border-top: 1px dashed #b5b5b5;
-    font-size: 26px;
-    letter-spacing: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    margin-bottom: 15px;
     margin-top: 0;
-    padding-top: 20px;
+    padding-top: 24px;
 }
 .current-search-item-active-items .item-list ul li {
     background: #f1f0f0 none repeat scroll 0 0;
     color: #433a3a;
     font-size: 18px;
-    margin-left: 0;
-    padding: 15px 0 15px 15px;
+    margin-left: 0!important;
+    padding: 15px 0 15px 15px!important;
+    position: relative; 
 }
 .current-search-item-active-items .item-list ul li a {
     border-left: 1px solid #fff;
     color: transparent;
     float: right;
-    height: 40px;
+    height: 50px;
     margin-top: -15px;
-    padding-right: 16px;
-    padding-top: 11px;
+    width: 50px;
 }
 .current-search-item-active-items .item-list ul li a:after{
-    color: #9c9c9c;
-    content: "\2716";  
+    background-position: 0 -2350px; 
+    color: transparent;
+    content: "\2716";
+    height: 16px;
+    position: absolute;
+    right: 17px;
+    top: 16px;
+    width: 16px;  
 }
+
 #edit-basic.container-inline.form-wrapper {
     background: #f1f0f0 url("http://cdn1.kabbalah.com/university/icons/grey-arrow2.svg") no-repeat scroll right center;
     margin-top: 30px;
     padding: 39px 30px;
 }
 #block-custom-search-blocks-2 {
-    background: #f1f0f0 url("http://cdn1.kabbalah.com/university/icons/grey-arrow2.svg") no-repeat scroll right center;
+    background: #e7f0f7;
     height: 42px;
     margin-bottom: 30px;
     margin-top: 6px;
     padding: 39px 30px;
+    position: relative; 
+}
+#block-custom-search-blocks-2:after {
+    background-position: 0 -2373px;
+    content: "";
+    height: 120px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
 }
 #block-custom-search-blocks-2 .form-item.form-type-textfield.form-item-custom-search-blocks-form-2{
     margin-bottom: 0;
@@ -5738,25 +5359,19 @@ section.block.block-facetapi:first-child h2 {
 #edit-basic.container-inline.form-wrapper label, #block-custom-search-blocks-2 label {
     display: none;
 }
-#edit-basic.container-inline.form-wrapper input#edit-keys, #block-custom-search-blocks-2 input.apachesolr-autocomplete{
-    -moz-border-bottom-colors: none !important;
-    -moz-border-left-colors: none !important;
-    -moz-border-right-colors: none !important;
-    -moz-border-top-colors: none !important;
-    background: #f1f0f0 none repeat scroll 0 0 !important;
-    border-color: -moz-use-text-color -moz-use-text-color #433a3a !important;
-    border-image: none !important;
-    border-style: none none solid !important;
-    border-width: medium medium 2px !important;
+#edit-basic.container-inline.form-wrapper input#edit-keys, #block-custom-search-blocks-2 input.custom-search-box.form-text{
+    border: none;
+    background: #e7f0f7 none repeat scroll 0 0 !important;
+    border-bottom: 2px solid #433a3a;
     color: #208fdc;
     font-family: georgia;
     font-size: 24px;
-    letter-spacing: 1px;
     padding-bottom: 10px;
     width: 500px !important;
 }
 #block-custom-search-blocks-2 input#edit-submit.form-submit {
-    background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
+    background-position: 0 -2613px;
+    background-color: transparent;  
     border: medium none;
     color: transparent;
     cursor: pointer;
@@ -5768,6 +5383,7 @@ section.block.block-facetapi:first-child h2 {
     top: -58px;
     width: 26px;
 }
+
 #edit-basic.container-inline.form-wrapper input#edit-submit.form-submit {
     background: transparent url("http://cdn1.kabbalah.com/university/icons/search-mag-glass.svg") no-repeat scroll right center;
     border: medium none;
@@ -5781,14 +5397,19 @@ section.block.block-facetapi:first-child h2 {
 }
 #search-form > div {
     border-bottom: 1px dashed #b5b5b5;
-    // border-top: 1px dashed #b5b5b5;
-    // margin-top: 40px;
     padding-bottom: 30px;
 }
 .spelling-suggestions{
     background: #f1f0f0 none repeat scroll 0 0;
+    float: left;
+    height: 20px;
     margin-top: 20px;
-    padding: 5px 30px;
+    padding: 15px;
+    width: 560px;
+    dl{
+        margin-bottom: 0;
+        margin-top: 0; 
+    }
     strong {
         color: #433a3a;
         font-family: proxiregular;
@@ -5805,39 +5426,98 @@ section.block.block-facetapi:first-child h2 {
     }
 }
 .spelling-suggestions + ul{
-    border-bottom: 1px dashed #b5b5b5;
-    padding-bottom: 20px;
+    border: 1px solid #b5b5b5;
+    color: #d44545;
+    float: left;
+    font-size: 15px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    padding: 20px;
+    li {
+        line-height: 22px;
+        margin-bottom: 15px;
+    }
+    li:last-child{
+        margin-bottom: 0;
+    }
+}
+#searchContentResult ul.pager li{
+    padding: 7px;
+}
+#searchContentResult ul.pager .pager-first.first{
+    margin-left: 0;
     padding-left: 0;
 }
-// #searchContentResult .region.region-searchcontentresult {
-//     border-bottom: 1px dashed #b5b5b5;
-//     padding-bottom: 20px;
-// }
-#block-apachesolr-search-sort > h2 {
-    float: left;
-    font-size: 18px;
-    margin-right: 20px;
-    margin-top: 0;
-    text-transform: lowercase;
+#searchContentResult ul.pager .pager-current{
+    background: #f1f0f0 none repeat scroll 0 0;
+    color: #433a3a;
+    font-size: 19px;
+    font-weight: normal;
+    margin-left: 0;
 }
-#block-apachesolr-search-sort{
-    height: 56px;
+#searchContentResult ul.pager .pager-previous,
+#searchContentResult ul.pager .pager-ellipsis,
+#searchContentResult ul.pager .pager-next,
+#searchContentResult ul.pager .pager-last.last{
+    margin-left: 0;
+}
+#searchContentResult ul.pager .pager-first.first > a,
+#searchContentResult ul.pager .pager-previous > a,
+#searchContentResult ul.pager .pager-next > a,
+#searchContentResult ul.pager .pager-last.last > a{
+    color: #208fdc;
+    font-size: 16px;
+}
+#searchContentResult ul.pager{
+    color: #208fdc;
+    .pager-item{
+        margin-left: 0 !important;
+        a{
+            color: #208fdc;
+            font-size: 19px; 
+        }
+    }
+}
+#block-apachesolr-search-sort > h2{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    padding-top: 4px;
+    text-transform: uppercase;
+}
+#block-apachesolr-search-sort {
+    border-bottom: 1px dashed #b5b5b5;
+    border-top: 1px dashed #b5b5b5;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
 }
 #block-apachesolr-search-sort ul{
-   margin-top: -5px; 
+   margin: 0; 
 }
-#block-apachesolr-search-sort .content, #block-apachesolr-search-sort li{
+#block-apachesolr-search-sort .content{
+    float: right;
+    margin: 0; 
+} 
+#block-apachesolr-search-sort li{
     float: left;
+    margin: 0; 
 }
 #block-apachesolr-search-sort li img{
     display: none;
 }
 #block-apachesolr-search-sort li a {
-    color: #ccc;
-    font-size: 18px;
+    color: #433a3a;
+    float: left;
+    font-size: 17px;
+    padding: 10px 13px 13px;
+    text-transform: lowercase;
 }
 #block-apachesolr-search-sort li a.active{
-    color: #208fdc !important;
+    background: #e7f0f7 none repeat scroll 0 0;
+    font-weight: bold;
 }
 .searchContenTeacher{
     margin-bottom: 5px;
@@ -5847,30 +5527,6 @@ section.block.block-facetapi:first-child h2 {
     color: #433a3a;
     font-size: 15px;
     line-height: 18px;   
-}
-// 
-// #searchWrapper input.apachesolr-autocomplete{
-//     background: #433a3a url("/sites/all/themes/spukabbalah/images/mag_glass_grey.svg") no-repeat scroll right 10px center;
-//     border: 1px solid #a7a2a2;
-//     color: #b2b2b2;
-//     font-family: proxiregular;
-//     font-size: 16px;
-//     height: 32px;
-//     margin: -6px auto;
-//     padding-left: 9px;
-//     width: 278px;
-// }
-#searchWrapper .form-submit{
-    background: transparent none repeat scroll 0 0;
-    border: medium none !important;
-    color: transparent;
-    cursor: pointer;
-    float: right;
-    height: 34px;
-    margin-top: -51px !important;
-    position: relative;
-    right: -20px;
-    width: 40px !important;
 }
 #searchWrapper .form-actions.form-wrapper{
     margin: 0;
@@ -5896,21 +5552,30 @@ section.block.block-facetapi:first-child h2 {
         color: #a7a2a2 !important;
     }
 }
-#block-custom-search-blocks-2 input.apachesolr-autocomplete::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+#block-custom-search-blocks-2 input.custom-search-box.form-text::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #208fdc;
 }
-#block-custom-search-blocks-2 input.apachesolr-autocomplete:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+#block-custom-search-blocks-2 input.custom-search-box.form-text:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color:    #208fdc;
    opacity:  1;
 }
-#block-custom-search-blocks-2 input.apachesolr-autocomplete::-moz-placeholder { /* Mozilla Firefox 19+ */
+#block-custom-search-blocks-2 input.custom-search-box.form-text::-moz-placeholder { /* Mozilla Firefox 19+ */
    color:    #208fdc;
    opacity:  1;
 }
-#block-custom-search-blocks-2 input.apachesolr-autocomplete:-ms-input-placeholder { /* Internet Explorer 10-11 */
+#block-custom-search-blocks-2 input.custom-search-box.form-text:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    #208fdc;
 }
-
+.not-logged-in.page-user form#user-login-form .item-list ul{
+    display: none;
+}
+.not-logged-in.page-user #login_form > a {
+    color: #a33a3a;
+    float: left;
+    margin-left: 215px;
+    margin-top: -72px;
+    position: relative;
+}
 // comments css
 
 .commentingText {
@@ -5923,4 +5588,502 @@ section.block.block-facetapi:first-child h2 {
 }
 .commentingText > a {
     color: #007ed3;
+}
+
+
+// new collection page design 
+
+.lessonBlockWrapper a > span,
+.lessonBlockWrapper{
+    display: block;
+}
+.lessonBlockWrapper {
+    margin-bottom: 18px;
+}
+.imageCover {
+    height: 170px; 
+    width: 300px;
+}
+.lessonBlockTitle {
+    font-size: 25px;
+    line-height: 26px;
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+.lessonBlockTeacherInfo {
+    font-size: 14px;
+    line-height: 18px;
+}
+.lessonBlockInfo {
+    color: #999;
+    display: inline-block;
+    font-size: 13px;
+    padding-top: 1px;
+    vertical-align: top;
+}
+.lessonBlockDetail {
+    border-top: 1px solid #ccc;
+    margin-top: 9px;
+    padding-top: 8px;
+}
+.Basic{
+    background-position: 0 -1290px;
+}
+.Basic,.Free{
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+    width: 42px;
+}
+.Free {
+    background-position: 0 -1310px;
+}
+.Premium,.Premium.Plus{
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+}
+.Premium{
+    background-position: 0 -1250px;
+    width: 58px;
+}
+.Premium.Plus{
+    background-position: 0 -1270px;
+    width: 70px;
+}
+.Videos, .Video, .vidImg{
+    display: inline-block;
+    height: 16px;
+    margin-right: 15px;
+    width: 17px;
+}
+.Audios, .Audio{
+    display: inline-block;
+    height: 14px;
+    margin-right: 15px;
+    width: 17px;
+}
+.bothAdVdImg, .Both{
+    display: inline-block;
+    height: 16px;
+    margin-right: 15px;
+    width: 42px;
+}
+.Videos,.Video, .vidImg{
+    background-position: 0 -1329px;
+}
+.Audios,.Audio{    
+    background-position: 0 -1370px;
+}
+.bothAdVdImg, .Both{
+    background-position: 0 -1350px;
+}
+.lessonBlockWrapper > a:hover{
+    color: #0580D6; 
+}
+.lessonBlockWrapper > a:hover .lessonBlockInfo{
+    color: #999; 
+}
+.lessonBlockImageHover{
+    display: none
+}
+.lessonBlockWrapper > a:hover .lessonBlockImageHover {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    display: block;
+    height: 170px;
+    position: absolute;
+    opacity:0.3;
+    width: 300px;
+}
+.ulStyle.carrouselFix > li {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 300px;
+}
+.ulStyle.carrouselFix > li:nth-child(1){
+    margin-left: 0;
+}
+span.downloadAudio {
+    background-position: 0 -1753px; 
+    height: 45px;
+    padding: 0;
+    width: 45px;
+}
+
+.lessonBlockImage {
+    height: 170px;
+}
+
+#viewByList{
+    background-position:0 -1228px;
+    float: left;
+    height: 17px;
+    margin: 7px 0 10px 10px;
+    width: 24px;
+}
+#viewByGrid{
+    background-position: 0 -1206px;
+    float: left;
+    height: 17px;
+    margin: 7px 0 10px 10px;
+    width: 26px;
+}
+// bookmark
+
+.grayBackgroundColorTranscript {
+    background: #e2e2e2 none repeat scroll 0 0;
+    height: 45px;
+    position: absolute;
+    top: 529px;
+    width: 100%;
+    z-index: -2147483648;
+}
+.blackBackgroundColorPlayer {
+    background: #000 none repeat scroll 0 0;
+    height: 529px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2147483648;
+}
+#wrapperVideoSection.wrapperPreviewLesson{
+    background: none;
+    position: relative;
+}
+#jwplayer1:focus {
+    outline:0;
+}
+
+
+#searchFilterDetail .element-invisible {
+    display: none;
+    float: left;
+    overflow: hidden;
+}
+.node-type-live-events #video-control {
+    min-height: auto;
+}
+.node-type-live-events #wrapperVideoSection {
+    padding-bottom: 0;
+}
+.not-logged-in{
+    .sidr {
+    background: #333 none repeat scroll 0 0;
+    box-shadow: 0 0 5px 5px #222 inset;
+    color: #fff;
+    display: none;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size: 15px;
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 260px;
+    z-index: 999999;
+    }
+    .sidr .sidr-inner {
+        padding: 0 0 15px;
+    }
+    .sidr .sidr-inner > p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .sidr.right {
+        left: auto;
+        right: -260px;
+    }
+    .sidr.left {
+        left: -260px;
+        right: auto;
+    }
+    .sidr h1, .sidr h2, .sidr h3, .sidr h4, .sidr h5, .sidr h6 {
+        background-image: linear-gradient(#4d4d4d, #1a1a1a);
+        box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 24px;
+        margin: 0 0 5px;
+        padding: 0 15px;
+    }
+    .sidr p {
+        font-size: 13px;
+        margin: 0 0 12px;
+    }
+    .sidr p a {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    .sidr > p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .sidr ul {
+        border-bottom: 1px solid #4d4d4d;
+        border-top: 1px solid #1a1a1a;
+        display: block;
+        margin: 0 0 15px;
+        padding: 0;
+    }
+    .sidr ul li {
+        border-bottom: 1px solid #1a1a1a;
+        border-top: 1px solid #4d4d4d;
+        display: block;
+        line-height: 48px;
+        margin: 0;
+    }
+    .sidr ul li:hover, .sidr ul li.active, .sidr ul li.sidr-class-active {
+        border-top: medium none;
+        line-height: 49px;
+    }
+    .sidr ul li:hover > a, .sidr ul li:hover > span, .sidr ul li.active > a, .sidr ul li.active > span, .sidr ul li.sidr-class-active > a, .sidr ul li.sidr-class-active > span {
+        box-shadow: 0 0 15px 3px #222 inset;
+    }
+    .sidr ul li a, .sidr ul li span {
+        color: #fff;
+        display: block;
+        padding: 0 15px;
+        text-decoration: none;
+    }
+    .sidr ul li ul {
+        border-bottom: medium none;
+        margin: 0;
+    }
+    .sidr ul li ul li {
+        font-size: 13px;
+        line-height: 40px;
+    }
+    .sidr ul li ul li:last-child {
+        border-bottom: medium none;
+    }
+    .sidr ul li ul li:hover, .sidr ul li ul li.active, .sidr ul li ul li.sidr-class-active {
+        border-top: medium none;
+        line-height: 41px;
+    }
+    .sidr ul li ul li:hover > a, .sidr ul li ul li:hover > span, .sidr ul li ul li.active > a, .sidr ul li ul li.active > span, .sidr ul li ul li.sidr-class-active > a, .sidr ul li ul li.sidr-class-active > span {
+        box-shadow: 0 0 15px 3px #222 inset;
+    }
+    .sidr ul li ul li a, .sidr ul li ul li span {
+        color: rgba(255, 255, 255, 0.8);
+        padding-left: 30px;
+    }
+    .sidr form {
+        margin: 0 15px;
+    }
+    .sidr label {
+        font-size: 13px;
+    }
+    .sidr input[type="text"], .sidr input[type="password"], .sidr input[type="date"], .sidr input[type="datetime"], .sidr input[type="email"], .sidr input[type="number"], .sidr input[type="search"], .sidr input[type="tel"], .sidr input[type="time"], .sidr input[type="url"], .sidr textarea, .sidr select {
+        background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+        border: medium none;
+        border-radius: 2px;
+        box-sizing: border-box;
+        clear: both;
+        color: rgba(255, 255, 255, 0.6);
+        display: block;
+        font-size: 13px;
+        margin: 0 0 10px;
+        padding: 5px;
+        width: 100%;
+    }
+    .sidr input[type="checkbox"] {
+        clear: none;
+        display: inline;
+        width: auto;
+    }
+    .sidr input[type="button"], .sidr input[type="submit"] {
+        background: #fff none repeat scroll 0 0;
+        color: #333;
+    }
+    .sidr input[type="button"]:hover, .sidr input[type="submit"]:hover {
+        background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
+    }
+
+    // 
+
+    .ui-helper-clearfix::before, .ui-helper-clearfix::after {
+        border-collapse: collapse;
+        content: "";
+        display: table;
+    }
+    .ui-helper-clearfix::after {
+        clear: both;
+    }
+    .ui-helper-clearfix::before, .ui-helper-clearfix::after {
+        border-collapse: collapse;
+        content: "";
+        display: table;
+    }
+    .ui-tabs .ui-tabs-nav li {
+        border-bottom-width: 0;
+        float: left;
+        list-style: outside none none;
+        margin: 1px 0.2em 0 0;
+        padding: 0;
+        position: relative;
+        top: 0;
+        white-space: nowrap;
+    }
+    .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+        margin-bottom: -1px;
+        padding-bottom: 1px;
+    }
+    .ui-widget-header {
+        border: 1px solid #aaaaaa;
+    }
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-widget-content{
+        border: 1px solid;
+    }
+    .ui-tabs .ui-tabs-panel {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border-width: 0;
+        display: block;
+        padding: 1em 1.4em;
+    }
+    //
+    .view-filters.searchThisCourse .views-exposed-widget.views-submit-button {
+        display: none;
+    }
+    #searchWrapper input{
+        margin-top: 12px;
+    }
+    #searchWrapper .form-submit{
+        top: -40px;
+    }
+    #loginWrapper a{
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+    #donateBtn a{
+        font-size: 16px;
+        letter-spacing: 0;
+    }
+    .item-list .pager {
+    clear: both;
+    text-align: center;
+    }
+    .item-list ul {
+        margin: 0 0 0.75em;
+        padding: 0;
+    }
+    .item-list .pager li {
+    background-image: none;
+    display: inline;
+    list-style-type: none;
+    padding: 0.5em;
+    }
+    .item-list ul li {
+        margin: 0 0 0.25em 1.5em;
+        padding: 0;
+    }
+    .pager-current {
+        font-weight: bold;
+    }
+
+
+    .ac_results {
+        border: 1px solid #f1f0f0 !important;
+        width: 288px !important;
+        background-color: white;
+        overflow: hidden;
+        padding: 0;
+        z-index: 99999;
+    }
+    .ac_results ul {
+        list-style: outside none none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .ac_results li {
+        cursor: default;
+        display: block;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0;
+        overflow: hidden;
+        padding: 2px 5px;
+    }
+
+    .ac_results .ac_over {
+        background-color: #433a3a !important;
+    }
+    .ac_results .ac_odd {
+        background-color: #f1f0f0 !important;
+    }
+    div.ac_results li {
+        background-image: none !important;
+        list-style: outside none none;
+    }
+    .ac_over {
+        background-color: #0a246a;
+        color: white;
+    }
+    div.apachesolr_autocomplete.suggestion {
+        display: inline;
+        float: left;
+    }
+    .ac_results .apachesolr_autocomplete {
+        color: #433a3a !important;
+        font-size: 14px !important;
+    }
+    .ac_results .ac_over .apachesolr_autocomplete.suggestion, .ac_results .ac_over .apachesolr_autocomplete.message {
+        color: #a7a2a2 !important;
+    }
+    .apachesolr_autocomplete.count {
+        float: right;
+    }
+    .apachesolr_autocomplete.message {
+        color: #888;
+        font-size: 80%;
+    }
+    .ac_results .apachesolr_autocomplete strong {
+        color: #208fdc !important;
+        font-family: proxilight !important;
+    }
+
+    .current-search-item-active-items .item-list ul li a .element-invisible {
+        display: none;
+    }
+    #searchContentResult .element-invisible {
+        display: none;
+    }
+    #views-exposed-form-taxonomy-term-lesson-page .views-exposed-widget.views-submit-button {
+        display: none;
+    }
+    .element-invisible{
+        display: none;
+    }
+
+
+}
+.logged-in{
+    .form-item.form-type-textfield.form-item-custom-search-blocks-form-1 {
+        margin-bottom: 0;
+        margin-top: 13px;
+    }
+    #searchWrapper .form-submit{
+        top: -28px;
+    }
+    #searchWrapper input{
+        margin-top: -1px; 
+    }
+}
+#views-exposed-form-taxonomy-term-lesson-page span.lessonsCourse{
+    width: 183px;
+}
+// scholarship banner
+.scholarshipWrapper {
+    float: left;
+    width: 100%;
+}
+.scholarshipWrapper > div {
+    margin: 14px auto 30px;
+    width: 940px;
+}
+.scholarshipWrapper img {
+    display: block;
 }

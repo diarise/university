@@ -9,7 +9,7 @@
 	}elseif( $field_type_of_lesson == 'Video' ) {
 
 	print render($content['field_lesson_video']);
-
+	
 	}
 
 ?>

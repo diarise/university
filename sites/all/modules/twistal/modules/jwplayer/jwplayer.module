@@ -7,20 +7,20 @@
 	}
 	function theme_jwplayer_video($args){
 		$video=$args['video'];
-		$width = isset($args['width'])?$args['width']:512;
-		$height = isset($args['height'])?$args['height']:288;
+		//$width = isset($args['width'])?$args['width']:512;
+		//$height = isset($args['height'])?$args['height']:288;
 		$autoplay = isset($args['autoplay'])?$args['autoplay']:NULL;
-		$skin ='/'.drupal_get_path('module','jwplayer').'/includes/five.xml';
+		//$skin ='/'.drupal_get_path('module','jwplayer').'/includes/five.xml';
 		$file = $args['file'];
 		static $players;
 		if(!is_array($players)){
-			$jwplayerjs = array(
+			/*$jwplayerjs = array(
 			  '#tag' => 'script',
 			  '#attributes' => array(
 				'src' => '/'.drupal_get_path('module','jwplayer').'/includes/jwplayer.js',
 				'type' => 'text/javascript',
 			  ),
-			);
+			);*/
 			//$jwplayerkey = array(
 			//  '#tag' => 'markup',
 			  //'#markup' => '<script type="text/javascript">jwplayer.key="EMiSmgYruQJsCca0ZeZej55r95Tvni0Ldhb6XwUF+ag=";</script>'
@@ -65,13 +65,14 @@
 		  
 		$jwplayer['player_id']=$player_id;
 		$jwplayer['settings']=array(
-			'height' => 528 ,//$height,
-			'width' => 940, //$width,
+			'aspectratio' => '16:9' ,//$height,
+			'width' => '100%', //$width,
 			//'autostart' => $autoplay,
 			'related'=>array('file'=>$file),
 			//'playlist'=>'https://university.kabbalah.com/twistage/getnode/6499',
-			'skin'=> $skin,
-			'modes'=>$mode,
+			//'skin'=> $skin,
+			//'modes'=>$mode,
+			'mediaid'=> $video->vid,
 			'ga'=> $ga_array,
 			);
 			
@@ -79,7 +80,7 @@
 		
 		drupal_alter('jwplayer_settings',$jwplayer);
 		
-		if( _is_imobile() && $jwplayer['video']->dotsub_settings['autostart_subtitles'] == 0 )
+		/*if( _is_imobile() && $jwplayer['video']->dotsub_settings['autostart_subtitles'] == 0 )
 		{	
 			$video_url_for_html5 = $jwplayer['settings']['playlist'][0]['sources'][0]['file'];
 			$video_image_for_html5 = $jwplayer['settings']['playlist'][0]['image'];
@@ -90,7 +91,7 @@
 			$html .= $audio_download;		
 		}
 		else 
-		{
+		{*/
 			$html='<div id="playerbase"><span id="'.$player_id.'">No video</span></div>
 				<script type="text/javascript">
 					jwplayer("'.$player_id.'").setup('.json_encode($jwplayer['settings']).');
@@ -98,7 +99,7 @@
 				
 			if(isset($jwplayer['prefix'])) $html=implode('',$jwplayer['prefix']).$html;
 			if(isset($jwplayer['suffix'])) $html.=implode('',$jwplayer['suffix']);		
-		}
+		//}
 		
 		
 		// $html='<div id="playerbase"><span id="'.$player_id.'">No video</span></div>

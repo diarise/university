@@ -11,17 +11,24 @@
 	//Get all the authors for this node
 	$authors = _taxonomy_node_get_terms_by_vocabulary($node, 7 );
 	foreach ( $authors as $author ) {	$authors_name[] = l( t($author->name) , 'taxonomy/term/' . $author->tid); }	
+	
+	foreach ( $authors as $author ) {	$intercom_authors_name[] = $author->name; }	
+	
+	
 	// end of all authors 
 
 	// Get all the secondary topics for this node
-	$secondary_parent_topics = array();
-	foreach ($node->field_secondary_topic['und'] as $term) 	
-	{ 
-		if( sizeof( taxonomy_get_parents($term['taxonomy_term']->tid) ) == 0  )
-		{
-			$secondary_parent_topics[] = l( t($term['taxonomy_term']->name) , 'taxonomy/term/' . $term['taxonomy_term']->tid);
+	if( isset($node->field_secondary_topic['und'] ) )
+	{
+		$secondary_parent_topics = array();
+		foreach ($node->field_secondary_topic['und'] as $term) 	
+		{ 
+			if( sizeof( taxonomy_get_parents($term['taxonomy_term']->tid) ) == 0  )
+			{
+				$secondary_parent_topics[] = l( t($term['taxonomy_term']->name) , 'taxonomy/term/' . $term['taxonomy_term']->tid);
+			}
 		}
-	}
+	}	
 	// end of secondary topics
 
 	// get it primary topic
@@ -44,6 +51,7 @@
 
 	// get cours title
 	$title = $node->title;
+	$course_list_title ="";
 	
 	if( sizeof( $node->field_course_list) > 0  )
 	{
@@ -64,7 +72,7 @@
 		$course_path = url(drupal_get_path_alias('node/' . $node->field_event_list['und'][0]['nid']), array('absolute' => TRUE));
 	}	
 	
-	if( $course_list_title ) {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
+	if( $course_list_title != "") {	$course_title = $course_list_title;	} else { $course_title = $event_list_title;	}	
 	// end of cours title
 	
 	// Video or Audio Display
@@ -86,7 +94,7 @@
 				</div>
 					<div id="wrapperDownloadAudio" class="audioWrapperDownload">
 						<div class="buttonDownloadAudio">
-							<a href='<?php print $node->field_audio_link['und'][0]['value'];?>' target='_blank'><span>Download audio	</span> <img alt="download audio" src="/sites/all/themes/ukabbalah/images/audioDownloadBtn.jpg"></a>
+							<a href='<?php print $node->field_audio_link['und'][0]['value'];?>' target='_blank'><span>Download audio	</span> <span class="downloadAudio"></span></a>
 						</div>
 					</div>
 				</div>	<!--End of videocontent-->	
@@ -129,7 +137,8 @@
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
 							<span class="buttonMember"><a href="https://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin"><!--<a href="https://idp.kabbalah.com/user/login">Log In</a>--><?php print get_current_url();?></span> 
+							
+							<span class="priceLogin"><?php print get_current_url();?></span> 
 						
 					<?php } ?>
 					</div>
@@ -148,16 +157,43 @@
 			<div id="videoSocialIconeWrapper">
 				<div id="video-control">
 					<?php print render($page['content']); // video player?>
-				</div>
-					
+				</div>	
 			</div>
+			<div class="blackBackgroundColorPlayer"></div>
+			<div class="grayBackgroundColorTranscript"></div>
 		</div>
+		<script type="text/javascript">
+		//console.log("outside intercom testing");
+		jwplayer("jwplayer1").on('complete', function(e) {
+			//console.log("inside intercom testing");
+			var metadata = {
+			  lesson_title: '<?php echo $node->title; ?>',
+			  lesson_authors: '<?php echo implode( ", " , $intercom_authors_name );?>',
+			  lesson_url:'<?php echo url(drupal_get_path_alias('node/' . $node->nid), array('absolute' => TRUE)); ?>'
+			};
+			var event_title ='<?php echo $node->title; ?>';
+			window.Intercom('trackEvent', 'lesson-watched', metadata);
+			window.Intercom('trackEvent',event_title, metadata);
+				
+		});				
+		</script>
 	<?php } else { ?>
 		<div id="wrapperVideoSection" class="wrapperPreviewLesson noLoginBg">
-				<div class="preVideoImg">
-					<div class="overImageOpacity"></div>
-					<?php print $lesson_image; ?>
-				</div><!--end of preVideoImg-->
+				
+				
+				<!-- Preview video for non logged in users -->
+				<div id="videoPreview" class="preVideoImg">
+					<div id="previewVideoStash"></div>
+					<div id="video-control"><?php print render($page['content']); // video player?></div>
+				</div>
+				
+				<?php 
+					drupal_add_js(array('lesson_image' => $lesson_image), 'setting');
+					drupal_add_js(path_to_theme().'/js/videopreview.js'); 
+				?>
+				<!-- End of Preview video for non logged in users -->
+				
+				
 				<div class="preVideoDetail">
 					<div class="wrapperVideoDetailText">
 						<div id="titleMultimedia"><?php print $title; // Title ?></div>
@@ -182,7 +218,8 @@
 					<?php } elseif( !user_is_logged_in()) { ?>
 						
 							<span class="buttonMember"><a href="http://idp.kabbalah.com">Become a member</a></span>
-							<span class="priceLogin"><!--<a href="https://idp.kabbalah.com/user/login">Log In</a>--><?php print get_current_url();?></span>
+							
+								<span class="priceLogin logColor"><?php print get_current_url();?></span>  
 						
 					<?php } ?>
 					</div>
@@ -396,7 +433,7 @@
 			<!-- End of Class Resources -->
 			
 			<!-- Class Keywords -->
-			<?php if($secondary_parent_topics) { ?>
+			<?php if( isset($secondary_parent_topics) ) { ?>
 				<div class="wrapperTags">
 				<span class="tagsLabel">tags</span>
 					<?php echo implode( ", " , $secondary_parent_topics ); ?>
@@ -421,13 +458,17 @@
 			<div class="wrapperLoginBloc" id="wrapperPrice">
 				<div class="loginText">Join Kabbalah University to watch this video. Members get access to thousands of courses and events</div>
 				<span class="buttonMember"><a href="http://idps.kabbalah.com">Become a member</a></span>
-				<span class="priceLogin logColor"><!--<a href="https://idp.kabbalah.com/user/login">Log In</a>--><?php print get_current_url();?></span>
+				
+				<span class="loginBtnBottom"><?php print get_current_url();?></span> 
 			</div>
 				<?php } ?>
 		 
-		<script>
+		<?php
+			ukabbalah_tabs(1);
+		?>
+		<!-- <script>
 			$( "#tabs" ).tabs({ active: 1 });
-		</script>
+		</script> -->
 		
 	</div>
 </div>

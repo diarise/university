@@ -10,7 +10,3 @@
 	</div><!--end of maincontent-->
 </main><!-- end of pageregion -->
 
-<div class='commentsSection'>
-	
-	<?php print render($page['comments']); ?>
-</div> 

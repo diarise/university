@@ -460,6 +460,20 @@ function get_current_url()
 	} 
 }
 
+
+function ukabbalah_tabs($variable){
+
+      drupal_add_library ( 'system' , 'ui.tabs' );
+
+      drupal_add_js(array('ukabbalahtabs' => array('var' => $variable)), array('type' => 'setting'));
+
+      drupal_add_js ( 'jQuery(document).ready(function(){
+        jQuery("#tabs").tabs({ active: Drupal.settings.ukabbalahtabs.var });
+      });
+      ' , 'inline' );
+}
+
+
 function ukabbalah_preprocess_page(&$vars) {
 	
 	if (isset($vars['node']->type)) {
@@ -482,7 +496,7 @@ function ukabbalah_preprocess_page(&$vars) {
 		  $image_url = 'http://twistassets.kabbalah.com/videos/'.$video_id.'/screenshots/1000w.jpg';
 		}	
 		
-		$vars['lesson_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'node_video_overlay','alt' => $node->title,)); 
+		$vars['lesson_image']=theme('imagecache_external', array('path' => $image_url,'style_name'=> 'node_video_overlay','alt' => $node->title,'class'=>'lesson_image_preview')); 
 	}
 	elseif ($node->type == 'course')
 	{
@@ -509,7 +523,20 @@ function ukabbalah_preprocess_node(&$variables) {
   }
 }
 
+function ukabbalah_css_alter(&$css) {
+  global $user;
 
+  foreach ($css as $key => $value) {
+    if ($value['group'] != CSS_THEME) {
+      $exclude[$key] = FALSE;
+    }
+  }
+  if (!(bool)$GLOBALS['user']->uid ){
+    $css = array_diff_key($css, $exclude);
+  }
+  
+
+}
 
 function _taxonomy_node_get_terms_by_vocabulary($node, $vid, $key = 'tid') {
   $result = db_query('SELECT t.tid, t.* FROM {taxonomy_term_data} t INNER JOIN {taxonomy_index} r ON r.tid = t.tid WHERE t.vid = :vid AND r.nid = :node_nid ORDER BY weight', array(':vid' => $vid, ':node_nid' => $node->nid));
@@ -551,13 +578,20 @@ function ukabbalah_preprocess_html(&$variables) {
 		
 		foreach ($node->field_type_of_lesson as $term) 	{ 	$field_type_of_lesson = $term[0]['taxonomy_term']->name; }
 		
-		if( $field_type_of_lesson == 'Video' ) 
+		if( $node->type == 'live_events' )
 		{
-			$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
-		} else{
-			
-			$course_nid= node_load($node->field_course_list['und'][0]['node']->nid);
-			$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];
+			$image_link = $node->field_image_cdn_link['und'][0]['value'];
+		}
+		else
+		{		
+			if( $field_type_of_lesson == 'Video' ) 
+			{
+				$image_link = "http://twistassets.kabbalah.com/videos/".$node->field_lesson_video['und'][0]['twistage_existing_videos']."/screenshots/620w.jpg";
+			} else{
+				
+				$course_nid= node_load($node->field_course_list['und'][0]['node']->nid);
+				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];
+			}
 		}
 		
 		$variables['head_image'] = $image_link;
