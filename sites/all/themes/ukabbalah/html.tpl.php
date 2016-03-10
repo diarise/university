@@ -10,15 +10,15 @@
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
 
 <head>
-  <?php print $head; ?>
-  <title>Kabbalah University | <?php print $head_title; ?></title>
-  <meta name="description" content="<?php print strip_tags($head_desc); ?>">
-  <meta property="og:site_name" content="<?php print ("Kabbalah University | ") ?> <?php print $head_title;?>" />
-  <?php if(isset($head_desc)) { ?><meta property="og:description" content="<?php print strip_tags($head_desc); ?>" /><?php } ?>
+  	<?php print $head; ?>
+  	<title>Kabbalah University | <?php print $head_title; ?></title>
+  	<?php if(isset($head_desc)) { ?><meta name="description" content="<?php print strip_tags($head_desc); ?>"><?php } ?>
+  	<meta property="og:title" content="<?php print ("Kabbalah University | ") ?> <?php print $head_title;?>" />
+  	<?php if(isset($head_desc)) { ?><meta property="og:description" content="<?php print strip_tags($head_desc); ?>" /><?php } ?>
 	<?php if(isset($head_image)) { ?><meta property="og:image" content="<?php print $head_image; ?>" /><?php } ?>
-  <?php print $styles; ?>
+  	<?php print $styles; ?>
 
-  <?php print $scripts; ?>
+  	<?php print $scripts; ?>
 	 
   <!-- end panels -->
 
