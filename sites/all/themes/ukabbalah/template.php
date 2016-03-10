@@ -574,7 +574,7 @@ function ukabbalah_preprocess_html(&$variables) {
     if( $node->type == 'lesson' || $node->type == 'course' || $node->type == 'live_events' )
 	{
 		$variables['head_title'] = $node->title; // find your cck field here
-		//$variables['head_desc'] = $node->body['und'][0]['value'];
+		$variables['head_desc'] = $node->body['und'][0]['value'];
 		
 		foreach ($node->field_type_of_lesson as $term) 	{ 	$field_type_of_lesson = $term[0]['taxonomy_term']->name; }
 		
