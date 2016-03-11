@@ -576,6 +576,17 @@ function ukabbalah_preprocess_html(&$variables) {
 		
 
     if ( $node->type == 'lesson' ) {
+      $course_list_title ="";
+      if( sizeof( $node->field_course_list) > 0  )
+      {
+        $course_list_title = $node->field_course_list['und'][0]['node']->title;
+      } 
+      if( sizeof( $node->field_event_list) > 0  ) 
+      {
+        $event_list_title = $node->field_event_list['und'][0]['node']->title;
+      } 
+    
+      if( $course_list_title != "") { $course_title = $course_list_title; } else { $course_title = $event_list_title; }
       $variables['head_title'] = $course_title ." | ". $node->title; // find your cck field here
     } else {
       $variables['head_title'] = $node->title; // find your cck field here
