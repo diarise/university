@@ -12,7 +12,7 @@
 <head>
   	<?php print $head; ?>
   	<title><?php if (isset($head_image)) { print ("Kabbalah University | ");  print $head_title; } else { print $head_title;} ?></title>
-  	<meta name="description" content="<?php if (isset($head_image)) { echo strip_tags($head_desc); } else{ echo "Kabbalah University is an powerful tool for spiritual connection, study and supporting a community of thousands of students around the world achieve greater spiritual growth through the wisdom of Kabbalah."; } ?>" />
+  	<meta name="description" content="<?php if (isset($head_desc)) { echo strip_tags($head_desc); } else{ echo "Kabbalah University is an powerful tool for spiritual connection, study and supporting a community of thousands of students around the world achieve greater spiritual growth through the wisdom of Kabbalah."; } ?>" />
   	<meta property="og:title" content="<?php print $head_title; ?>" />
   	<meta property="og:description" content="<?php if (isset($head_desc)) { echo strip_tags($head_desc); } else{ echo "Kabbalah University is an powerful tool for spiritual connection, study and supporting a community of thousands of students around the world achieve greater spiritual growth through the wisdom of Kabbalah."; } ?>" />
 	<?php if(isset($head_image)) { ?><meta property="og:image" content="<?php print $head_image; ?>" /><?php } ?>
