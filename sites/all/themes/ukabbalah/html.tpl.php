@@ -15,7 +15,7 @@
   	<meta name="description" content="<?php if (isset($head_desc)) { echo strip_tags($head_desc); } else{ echo "Kabbalah University is an powerful tool for spiritual connection, study and supporting a community of thousands of students around the world achieve greater spiritual growth through the wisdom of Kabbalah."; } ?>" />
   	<meta property="og:title" content="<?php print $head_title; ?>" />
   	<meta property="og:description" content="<?php if (isset($head_desc)) { echo strip_tags($head_desc); } else{ echo "Kabbalah University is an powerful tool for spiritual connection, study and supporting a community of thousands of students around the world achieve greater spiritual growth through the wisdom of Kabbalah."; } ?>" />
-  	<meta property="og:image" content="<?php if (isset($head_desc)) { print $head_image; } else { echo "http://university.kabbalah.com//sites/all/themes/ukabbalah/images/sm_thumbnail4.jpg";} ?>" />
+  	<meta property="og:image" content="<?php if (isset($head_desc)) { print $head_image; } else { echo "http://cdn1.kabbalah.com/kabbalah.com/images/home_banner/ukabbalah_thumbnail.jpg";} ?>" />
 	<!-- <?php// if(isset($head_image)) { ?><meta property="og:image" content="<?php //print $head_image; ?>" /><?php //} ?> -->
 		
   	<?php print $styles; ?>
