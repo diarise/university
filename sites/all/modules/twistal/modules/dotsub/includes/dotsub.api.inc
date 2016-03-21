@@ -39,8 +39,7 @@ class DotsubApi{
 		}
 		if($default) $langs=array_merge(array($default=>$first),$langs);
 		return $langs;
-	}
-	
+	}	
 	public function getLanguagesForCron($default=false){
 		static $langs;
 		//if(is_array($langs)) return $langs;

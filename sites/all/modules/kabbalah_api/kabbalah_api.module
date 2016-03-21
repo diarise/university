@@ -108,9 +108,49 @@ function kabbalah_api_menu() {
 		
 	// End of Profile Dashboard API's
 	
+	// Captions Cron
+	$items['get_captions'] = array(              
+		'page callback'      => 'getCaptions',
+		'access callback' => TRUE,
+	);
 
 	return $items;
 } 
+
+function getCaptions(){
+	
+	$sql1 = "SELECT entity_id , revision_id , field_lesson_video_twistage_existing_videos, field_lesson_video_default_language FROM field_data_field_lesson_video where field_lesson_video_twistage_existing_videos != '0' and field_lesson_video_default_language !='0'";
+	$result = db_query( $sql1 );
+	$i=1;
+	foreach( $result as $record )
+	{
+		$langs = '0';		
+		$ds=new DotsubApi(trim($record->field_lesson_video_twistage_existing_videos));			
+		$langs=$ds->getLanguagesForCron();
+	
+		if( sizeof($langs) > 0)
+		{
+			$langs = serialize($langs);
+		}
+		else 
+		{
+			$langs = '0';
+		}
+		
+		$sql1 = "UPDATE field_data_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
+		db_query( $sql1 );
+	
+		$sql2 = "UPDATE field_revision_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
+		db_query( $sql2 );
+		echo "<br>Node id : ".$record->entity_id." Video Id : ".$record->field_lesson_video_twistage_existing_videos." Updated available Languages : ".$langs." Language available<br>";
+	    //watchdog('Language Update', " Video : ".$record->field_lesson_video_twistage_existing_videos." i : ".$i." <br>" );	
+		$i = $i + 1;
+	}
+	
+	watchdog('Language Update', " No of entries updated : ".$i." <br>" );	
+	exit;
+	
+}
 	
 function runPageQueryForApi( $vid , $vname , $type_of_course_tid ) {
 	
