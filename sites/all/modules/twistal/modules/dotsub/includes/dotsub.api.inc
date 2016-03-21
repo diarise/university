@@ -40,6 +40,23 @@ class DotsubApi{
 		if($default) $langs=array_merge(array($default=>$first),$langs);
 		return $langs;
 	}
+	
+	public function getLanguagesForCron($default=false){
+		static $langs;
+		//if(is_array($langs)) return $langs;
+		$meta=$this->getDotsubMeta();
+		if(!is_object($meta)) return array();
+		$default=isset($this->settings['default_language'])?$this->settings['default_language']:false;
+		foreach($meta->languages as $language){
+			if($language->workflowStatus=='PUBLISHED'){
+				if($default && $default==$language->languageCode) $first=$language->languageName;
+				else $langs[$language->languageCode]=$language->languageName;
+			}
+		}
+		if($default) $langs=array_merge(array($default=>$first),$langs);
+		return $langs;
+	}
+	
 	public function getDotsubCaptionURL($lang){
 		return 'http://www.dotsub.com/api/user/'.$this->user.'/media/'.$this->ref.'/captions?language='.$lang;
 	}
