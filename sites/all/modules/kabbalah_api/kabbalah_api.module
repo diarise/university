@@ -130,7 +130,8 @@ function getCaptions(){
 	
 		if( sizeof($langs) > 0)
 		{
-			$langs = serialize($langs);
+			//$langs = serialize($langs);
+			$langs = "spanish";
 		}
 		else 
 		{
