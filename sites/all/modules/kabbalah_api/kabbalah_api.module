@@ -130,21 +130,36 @@ function getCaptions(){
 	
 		if( sizeof($langs) > 0)
 		{
-			$langs = addslashes(serialize($langs));
+			$langs = serialize($langs);
 		}
 		else 
 		{
 			$langs = '0';
 		}
 		
-		$sql1 = "UPDATE field_data_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
-		db_query( $sql1 );
-	
-		$sql2 = "UPDATE field_revision_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
-		db_query( $sql2 );
 		
-		echo "<br>".$sql1."<br>";
-		echo "<br>".$sql2."<br>";
+		db_update('field_data_field_lesson_video') // Table name no longer needs {}
+		  ->fields(array(
+			'field_lesson_video_available_languages' => $langs
+		  ))
+		  ->condition('field_lesson_video_twistage_existing_videos', $record->field_lesson_video_twistage_existing_videos , '=')
+		  ->execute();
+		  
+		db_update('field_revision_field_lesson_video') // Table name no longer needs {}
+		  ->fields(array(
+			'field_lesson_video_available_languages' => $langs
+		  ))
+		  ->condition('field_lesson_video_twistage_existing_videos', $record->field_lesson_video_twistage_existing_videos , '=')
+		  ->execute();  
+		
+		// $sql1 = "UPDATE field_data_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
+		// db_query( $sql1 );
+	
+		// $sql2 = "UPDATE field_revision_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
+		// db_query( $sql2 );
+		
+		// echo "<br>".$sql1."<br>";
+		// echo "<br>".$sql2."<br>";
 		echo "<br>Node id : ".$record->entity_id." Video Id : ".$record->field_lesson_video_twistage_existing_videos." Updated available Languages : ".$langs." Language available<br>";
 	    //watchdog('Language Update', " Video : ".$record->field_lesson_video_twistage_existing_videos." i : ".$i." <br>" );	
 		$i = $i + 1;
