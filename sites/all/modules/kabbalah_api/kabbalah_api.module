@@ -138,10 +138,10 @@ function getCaptions(){
 			$langs = '0';
 		}
 		
-		$sql1 = "UPDATE field_data_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
+		$sql1 = "UPDATE field_data_field_lesson_video SET field_lesson_video_available_languages='a:2:s:3:\"eng\";s:7:\"English\";s:3:\"spa\";s:7:\"Spanish\";' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
 		db_query( $sql1 );
 	
-		$sql2 = "UPDATE field_revision_field_lesson_video SET field_lesson_video_available_languages='".$langs."' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
+		$sql2 = "UPDATE field_revision_field_lesson_video SET field_lesson_video_available_languages='a:2:s:3:\"eng\";s:7:\"English\";s:3:\"spa\";s:7:\"Spanish\";' WHERE field_lesson_video_twistage_existing_videos='".$record->field_lesson_video_twistage_existing_videos."'";
 		db_query( $sql2 );
 		
 		echo "<br>".$sql1."<br>";
