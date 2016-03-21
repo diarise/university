@@ -119,7 +119,7 @@ function kabbalah_api_menu() {
 
 function getCaptions(){
 	
-	$sql1 = "SELECT entity_id , revision_id , field_lesson_video_twistage_existing_videos, field_lesson_video_default_language FROM field_data_field_lesson_video where field_lesson_video_twistage_existing_videos != '0' and field_lesson_video_default_language !='0'";
+	$sql1 = "SELECT entity_id , revision_id , field_lesson_video_twistage_existing_videos, field_lesson_video_default_language FROM field_data_field_lesson_video where field_lesson_video_twistage_existing_videos != '0' and field_lesson_video_default_language !='0' and entity_id = 3285";
 	$result = db_query( $sql1 );
 	$i=1;
 	foreach( $result as $record )
