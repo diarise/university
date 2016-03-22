@@ -149,7 +149,7 @@
 		$final_portion = getFinalPortion();
 		
 		$resultHTML = "";
-		$resultHTML.="<div class='termDesc'>According to Kabbalah, every week comes woven with its own energy and opportunities for transformation. When you connect with each week's energy and its lessons, you'll be empowered to make major shifts in your life. Learn more with the lessons recommended for the energy of this week. <span id='weeksPortion'><a href='/lessons/".str_replace(" ", "-", $final_portion )."'>View All Lessons on this week's portion ".$final_portion."</a></span></div>"; 	
+		$resultHTML.="<div class='termDesc'>According to Kabbalah, every week comes woven with its own energy and opportunities for transformation. When you connect with each week's energy and its lessons, you'll be empowered to make major shifts in your life. Learn more with the lessons recommended for the energy of this week. <span style='color:#127795;'><a href='/lessons/".str_replace(" ", "-", $final_portion )."'>View All Lessons on this week's portion ".$final_portion."</a></span></div>"; 	
 		$resultHTML.="<ul class='masonry ulStyle'>";
 		
 		
