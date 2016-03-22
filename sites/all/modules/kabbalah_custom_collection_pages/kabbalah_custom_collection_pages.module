@@ -34,6 +34,12 @@
 			'type'             => MENU_CALLBACK,
 		);
 		
+		$items['recommended-lessons'] = array(               // Made this a PAGE
+			'page callback'      => 'getRecommendedLessonsHtmlStructure',
+			'access callback' => TRUE,
+			'type'             => MENU_CALLBACK,
+		);
+		
 			
 		return $items;
 		
@@ -123,6 +129,13 @@
 		$resultHTML.="</div>";
 		$resultHTML.="<div id='teachingResultSection'></div>";
 		return $resultHTML;	
+	}
+	
+	// REcommended Lessons Page HTML
+	
+	function getRecommendedLessonsHtmlStructure() {
+		
+		return "test";
 	}
 	
 
