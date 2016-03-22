@@ -146,8 +146,12 @@
 		$lessons = json_decode( $server_output );
 
 		$resultHTML = "";
+		$resultHTML.="<ul class='masonry ulStyle'>";
+		
+		
 		foreach( $lessons as $lesson )
 		{
+			$resultHTML.="<li class='masonry-brick eachCont'>";
 			$resultHTML.="<span class='lessonBlockWrapper'>";
 			$resultHTML.="<a href=".$lesson->path.">";
 			$resultHTML.="<span class='lessonBlockImage'>";
@@ -164,7 +168,10 @@
 			$resultHTML.="</span>";
 			$resultHTML.="</a>";
 			$resultHTML.="</span>";	
+			$resultHTML.="</li>";
 		}
+		
+		$resultHTML.="</ul>";
 		
 		return $resultHTML;
 	}
