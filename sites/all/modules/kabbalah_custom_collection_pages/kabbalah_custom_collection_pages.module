@@ -144,10 +144,29 @@
 		curl_close ($ch);
 		$lessons = array();
 		$lessons = json_decode( $server_output );
+
+		$resultHTML = "";
+		foreach( $lessons as $lesson )
+		{
+			$resultHTML.="<span class='lessonBlockWrapper'>";
+			$resultHTML.="<a href=".$lesson->path.">";
+			$resultHTML.="<span class='lessonBlockImage'>";
+			$resultHTML.="<span class='lessonBlockImageHover'></span><img src='".$lesson->image."' alt='lesson_img'/></span>";
+			$resultHTML.="<span class='lessonBlockTitle'>".$lesson->title."</span>";
+			$resultHTML.="<span class='lessonBlockTeacherInfo'>";
+			$resultHTML.="<span>Teacher:</span>";
+			$resultHTML.="<span>".$lesson->author."</span>";
+			$resultHTML.="</span>";
+			$resultHTML.="<span class='lessonBlockDetail'>";
+			$resultHTML.="<span class='".$lesson->membership."'></span>";
+			$resultHTML.="<span class=".$lesson->media_type."></span>";
+			$resultHTML.="<span class='lessonBlockInfo'>".$lesson->created." </span>";
+			$resultHTML.="</span>";
+			$resultHTML.="</a>";
+			$resultHTML.="</span>";	
+		}
 		
-		print_r( $lessons );
-		exit;
-		//return "test";
+		return $resultHTML;
 	}
 	
 
