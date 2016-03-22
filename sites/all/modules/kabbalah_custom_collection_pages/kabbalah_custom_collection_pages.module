@@ -146,8 +146,8 @@
 		$lessons = json_decode( $server_output );
 		
 		print_r( $lessons );
-		
-		return "test";
+		exit;
+		//return "test";
 	}
 	
 
