@@ -147,6 +147,7 @@
 		$lessons = json_decode( $server_output );
 
 		$resultHTML = "";
+		$resultHTML.="<div class='termDesc'>According to Kabbalah, every week comes woven with its own energy and opportunities for transformation. When you connect with each week's energy and its lessons, you'll be empowered to make major shifts in your life. Learn more with the lessons recommended for the energy of this week.</div>"; 
 		$resultHTML.="<ul class='masonry ulStyle'>";
 		
 		
