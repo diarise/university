@@ -35,6 +35,7 @@
 		);
 		
 		$items['recommended-lessons'] = array(               // Made this a PAGE
+			'title' => 'Recommended Lessons For This Week',
 			'page callback'      => 'getRecommendedLessonsHtmlStructure',
 			'access callback' => TRUE,
 			'type'             => MENU_CALLBACK,
