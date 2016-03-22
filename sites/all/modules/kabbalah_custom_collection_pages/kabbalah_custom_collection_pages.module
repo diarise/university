@@ -162,7 +162,7 @@
 			$resultHTML.="<span class='lessonBlockImageHover'></span><img src='".$lesson->image."' alt='lesson_img'/></span>";
 			$resultHTML.="<span class='lessonBlockTitle'>".$lesson->title."</span>";
 			$resultHTML.="<span class='lessonBlockTeacherInfo'>";
-			$resultHTML.="<span>Teacher:</span>";
+			$resultHTML.="<span>Teacher: </span>";
 			$resultHTML.="<span>".$lesson->author."</span>";
 			$resultHTML.="</span>";
 			$resultHTML.="<span class='lessonBlockDetail'>";
