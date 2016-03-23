@@ -78,66 +78,15 @@
 	
 		function kabbalah_carousal3_show() {
 	
-		//$jsonurl1 = '/k_api/recommended_lsns/1/0';
 		$jsonurl2 = '/k_api/rest/v__1/recommended_lsns/0/1';
 		
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_fp_carousals') .'/js/fp_carousal.js');	// adding the js file for the module	
-		//drupal_add_js(array('fp_vars3' => array('divid' => 'recommendedCourses','jsonurl'=>$jsonurl1)), 'setting');
 		drupal_add_js(array('fp_vars6' => array('divid' => 'recommendedCoursesWeekly','jsonurl'=>$jsonurl2)), 'setting');
 		
 		$final_portion = getFinalPortion();
-		
-		// $today_date_month = date('n',time());
-		// $today_date_year = date('Y',time());
-		// $today_date_day = date('d',time());
-		
-		// $ch = curl_init();
-		// curl_setopt($ch, CURLOPT_URL,"http://www.hebcal.com/converter/?cfg=json&i=ON&gd=".$today_date_day."&gy=".$today_date_year."&gm=".$today_date_month."&g2h=1");
-		// // receive server response ...
-		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		// $server_output = curl_exec ($ch);
-		// curl_close ($ch);
-		// $heb_date_info = json_decode($server_output);
-		
-		// $heb_date = $heb_date_info->hm.' '.$heb_date_info->hy;
-		
-		// $portions = explode(" ",$heb_date_info->events[0]);
-		
-		// /* Test added new */
-		
-		// unset( $portions[0]);
-		// $portion = implode(" ",$portions);
-		// //$portion = str_replace("ch","j",$portion);
-		
-		// // Get the taxonomy term for the Portions vocabulary
-		
-		// $sql =  "SELECT d.name FROM {taxonomy_term_data d} WHERE d.vid=15";
-		// $result = db_query( $sql );			
-		// $local_portions = array();
-		// foreach( $result as $record )	{ $local_portions[] = $record->name; }
-		
-		// $match_percent = array();
-		// foreach( $local_portions as $lp )
-		// {
-			// similar_text($portion, $lp, $percent);
-			// $match_percent[$lp] = $percent;
-		// }
-		
-		// $final_portion = "";
-		// $max_percent = max( $match_percent );
-		// foreach( $match_percent as $k => $v )
-		// {
-			// if( $v == $max_percent ) $final_portion = $k;
-		
-		// }
-		
-		
-		//return "<div id='recommendedCoursesWeekly'></div>";
 		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/lessons/".str_replace(" ", "-", $final_portion )."'>This weeks portion : ".$final_portion."</a></span></div><div id='recommendedCoursesWeekly'></div>";
 		
 		//return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/lessons/vayakhel-pekudei'>This weeks portion : vayakhel-pekudei </a></span></div><div id='recommendedCoursesWeekly'></div>";
-		
-		
 		/* End of Test added new */
 		
 		//if ( in_array($portions[1], $portion_terms) ) 
@@ -146,10 +95,8 @@
 		//} else {
 		//	return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'>This weeks portion : ".$portions[1]."</span></div><div id='recommendedCoursesWeekly'></div>";
 		//}
-		
 		//return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span></div><div id='recommendedCoursesWeekly'></div>";
 		
-	
 	}
 	
 	function getFinalPortion() {
