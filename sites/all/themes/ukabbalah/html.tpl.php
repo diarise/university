@@ -181,6 +181,14 @@
 		analytics.load("yQPqfpi70A7nyMdvipx3Byj5WcEWdBLK");
 		analytics.page()
 		}}();
+
+	analytics.identify('<?php echo $user->uid;?>', {
+		  email: '<?php echo $user->mail;?>',
+		  name: '<?php echo $user->name;?>',
+		  plan: '<?php echo $userrole; ?>',
+		  createdAt: 'Thu Mar 24 2016 17:46:45 GMT+0000 (UTC)',
+		  last_seen_at: '<?php echo $user->access; ?>'
+		});
 	</script>
 	<script>//(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/bjxhjpkh';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
 
