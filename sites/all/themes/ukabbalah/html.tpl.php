@@ -168,27 +168,27 @@
   
 	<!-- LOGGED IN USER INTERCOM.IO Tracking -->
 	<script>
-	  window.intercomSettings = {
-		app_id: "bjxhjpkh",
-		name: '<?php echo $user->name;?>', // Full name
-		email: '<?php echo $user->mail;?>', // Email address
-		user_id: <?php echo $user->uid;?>,
-		created_at: <?php echo $user->created;?>, // Signup date as a Unix timestamp
-		"plan": '<?php echo $userrole; ?>', // role
-		"last_seen_at": <?php echo $user->access; ?>, // login date as a Unix timestamp
-	  };
-	//  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
-	// 	analytics.load("yQPqfpi70A7nyMdvipx3Byj5WcEWdBLK");
-	// 	analytics.page()
-	// 	}}();
+	  // window.intercomSettings = {
+		// app_id: "bjxhjpkh",
+		// name: '<?php echo $user->name;?>', // Full name
+		// email: '<?php echo $user->mail;?>', // Email address
+		// user_id: <?php echo $user->uid;?>,
+		// created_at: <?php echo $user->created;?>, // Signup date as a Unix timestamp
+		// "plan": '<?php echo $userrole; ?>', // role
+		// "last_seen_at": <?php echo $user->access; ?>, // login date as a Unix timestamp
+	  // };
+	 !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+		analytics.load("yQPqfpi70A7nyMdvipx3Byj5WcEWdBLK");
+		analytics.page()
+		}}();
 
-	// analytics.identify('<?php echo $user->uid;?>', {
-	// 	  email: '<?php echo $user->mail;?>',
-	// 	  name: '<?php echo $user->name;?>',
-	// 	  plan: '<?php echo $userrole; ?>',
-	// 	  createdAt: 'Thu Mar 24 2016 17:46:45 GMT+0000 (UTC)',
-	// 	  last_seen_at: '<?php echo $user->access; ?>'
-	// 	});
+	analytics.identify('<?php echo $user->uid;?>', {
+		  email: '<?php echo $user->mail;?>',
+		  name: '<?php echo $user->name;?>',
+		  plan: '<?php echo $userrole; ?>',
+		  createdAt: <?php echo $user->created;?>,
+		  last_seen_at: '<?php echo $user->access; ?>'
+		});
 	</script>
 	<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/bjxhjpkh';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
 
