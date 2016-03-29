@@ -52,7 +52,7 @@
 				"WHERE n.status =1 ".
 				"AND n.type in ('lesson') ". 
 				"AND l.field_lesson_video_available_languages LIKE '%".$collection_language."%' ".
-				"ORDER BY n.created DESC LIMIT 15";
+				"ORDER BY n.created DESC LIMIT 100";
 		
 		$result = "";
 		$result = db_query( $sql );
