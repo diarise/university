@@ -41,7 +41,7 @@ class DotsubApi{
 		return $langs;
 	}	
 	public function getLanguagesForCron($default=false){
-		static $langs;
+		$langs = array();
 		//if(is_array($langs)) return $langs;
 		$meta=$this->getDotsubMeta();
 		if(!is_object($meta)) return array();
