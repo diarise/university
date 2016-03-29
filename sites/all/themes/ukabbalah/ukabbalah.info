@@ -37,6 +37,7 @@ regions[fpfreelessons] = Front Page Free Lessons Carousal
 regions[liveevents] = Front Page Live Events 
 
 regions[coursesforparentcourse] = Course By Parent Course Collection
+regions[lessonsforlanguage] = Lessons By Language Collection
 
 
 regions[content] = Content
