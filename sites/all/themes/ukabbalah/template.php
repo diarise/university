@@ -622,7 +622,10 @@ function ukabbalah_preprocess_html(&$variables) {
 			}
 		}
     
-		$image_link = $node->field_image_cdn_link['und'][0]['value'];
+		if( $node->type == 'course' || $node->type == 'live_events' ) {
+      $image_link = $node->field_image_cdn_link['und'][0]['value'];
+    }
+    
 		$variables['head_image'] = $image_link;
 	}
   
