@@ -621,7 +621,8 @@ function ukabbalah_preprocess_html(&$variables) {
 				$image_link = $course_nid->field_image_cdn_link['und'][0]['value'];
 			}
 		}
-		
+    
+		$image_link = $node->field_image_cdn_link['und'][0]['value'];
 		$variables['head_image'] = $image_link;
 	}
   
