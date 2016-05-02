@@ -83,7 +83,7 @@
 		drupal_add_js(drupal_get_path('module', 'ukabbalah_fp_carousals') .'/js/fp_carousal.js');	// adding the js file for the module	
 		drupal_add_js(array('fp_vars6' => array('divid' => 'recommendedCoursesWeekly','jsonurl'=>$jsonurl2)), 'setting');
 		
-		$final_portion = getFinalPortion();
+		$final_portion = getFinalIsraelPortion();
 		return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>&nbsp;".$heb_date."</span><span id='weeksPortion'><a href='/lessons/".str_replace(" ", "-", $final_portion )."'>This weeks portion : ".$final_portion."</a></span></div><div id='recommendedCoursesWeekly'></div>";
 		
 		//return "<div id='recommendedDateWrapper'><span class='recommendedDate'>For this week: ".date('M j',strtotime('sunday last week'))." - ".date('M j',strtotime('saturday this week')).", ".date('Y',time())." | </span><span class='recommendedHebDate'>".$heb_date."</span><span id='weeksPortion'><a href='/lessons/vayakhel-pekudei'>This weeks portion : vayakhel-pekudei </a></span></div><div id='recommendedCoursesWeekly'></div>";
@@ -150,6 +150,51 @@
 		
 	}
 	
+	function getFinalIsraelPortion() {
+		
+		$ch = curl_init();		
+		curl_setopt($ch, CURLOPT_URL,"http://www.hebcal.com/shabbat/?cfg=json&geonameid=281184&m=42");
+		
+		// receive server response ...
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$server_output = curl_exec ($ch);
+		curl_close ($ch);
+		$heb_date_info = json_decode($server_output);
+		
+		foreach( $heb_date_info->items as $item )
+		{
+			if( $item->category == 'parashat' ) $portion = $item->title;
+		}
+		
+		$portion = str_replace("Parashat ","",$portion);
+		
+		// Get the taxonomy term for the Portions vocabulary
+		
+		$sql =  "SELECT d.name FROM {taxonomy_term_data d} WHERE d.vid=15";
+		$result = db_query( $sql );			
+		$local_portions = array();
+		foreach( $result as $record )	{ $local_portions[] = $record->name; }
+		
+		$match_percent = array();
+		foreach( $local_portions as $lp )
+		{
+			similar_text($portion, $lp, $percent);
+			$match_percent[$lp] = $percent;
+		}
+		
+		$final_portion = "";
+		$max_percent = max( $match_percent );
+		foreach( $match_percent as $k => $v )
+		{
+			if( $v == $max_percent ) $final_portion = $k;
+		
+		}
+		
+		return $final_portion;
+		
+		
+	}
+		
 	function kabbalah_carousal4_show() {
 	
 		$jsonurl = '/k_api/rest/v__1/free_lsns';
