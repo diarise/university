@@ -4126,6 +4126,9 @@ a.collapse{
 }
 .customSelectDropdown {
     background-color: #007ace;
+    background-image: url("/sites/all/themes/ukabbalah/images/transript-arrow-bg.png");
+    background-position: right center;
+    background-repeat: no-repeat;
     border: 0 none;
     color: #fff;
     cursor: pointer;
@@ -4143,15 +4146,15 @@ a.collapse{
     width: 200px;
     z-index: 100;
 }
-.customSelectDropdown:after {
-    background-position: 0 -1913px;
-    content: "";
-    height: 9px;
-    margin-top: 18px;
-    position: absolute;
-    right: 10px;
-    width: 18px;
-}
+// .customSelectDropdown:after {
+//     background-position: 0 -1913px;
+//     content: "";
+//     height: 9px;
+//     margin-top: 18px;
+//     position: absolute;
+//     right: 10px;
+//     width: 18px;
+// }
 #transcriptWrapper label{
     float: left;
     font-size: 16px;
