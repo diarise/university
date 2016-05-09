@@ -161,9 +161,9 @@
 								}	
 				$resultHTML .= "<span class= '".$media_type."'></span>";	
 					
-				$resultHTML .= "<span class='lessonBlockInfo'>";
-				$resultHTML .= date( 'F jS, Y',$record->changed );
-				$resultHTML .= "</span>";	
+				//$resultHTML .= "<span class='lessonBlockInfo'>";
+				//$resultHTML .= date( 'F jS, Y',$record->changed );
+				//$resultHTML .= "</span>";	
 				$resultHTML .= "</span>";	
 				$resultHTML .= "</a>";	
 				$resultHTML .= "</span>";
