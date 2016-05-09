@@ -226,7 +226,7 @@
 				</div>
 				<div class="transcript">
 					<div class="wrapperTranscript">
-						Transcript is available	
+							
 					</div>
 				</div>
 			</div>
