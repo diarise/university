@@ -113,9 +113,32 @@ function kabbalah_api_menu() {
 		'page callback'      => 'getCaptions',
 		'access callback' => TRUE,
 	);
+	
+	$items['k_api/get_user_profile_by_id/%'] = array(               // Made this a PAGE
+		'page callback'      => 'getUserProfileByIDFromIDP',
+		'page arguments' => array(2),
+		'access callback' => TRUE,
+		'type'             => MENU_CALLBACK,
+	);
+	
+	
 
 	return $items;
 } 
+
+function getUserProfileByIDFromIDP( $user_id ) {
+	
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,"https://idp.kabbalah.com/user_profile_by_id/".$user_id);
+	//curl_setopt($ch, CURLOPT_POST, 1);
+	// receive server response ...
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$server_output = curl_exec ($ch);
+	curl_close ($ch);	
+	print $server_output;
+	
+}
+
 
 function getCaptions(){
 	
