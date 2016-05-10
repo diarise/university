@@ -182,13 +182,13 @@
 		analytics.page()
 		}}();
 
-		analytics.identify('<?php echo $user->uid;?>', {
-		  email: '<?php echo $user->mail;?>',
-		  name: '<?php echo $user->name;?>',
-		  plan: '<?php echo $userrole; ?>',
-		  createdAt: <?php echo $user->created;?>,
-		  last_seen_at: '<?php echo $user->access; ?>'
-		});
+		// analytics.identify('<?php echo $user->uid;?>', {
+		//   email: '<?php echo $user->mail;?>',
+		//   name: '<?php echo $user->name;?>',
+		//   plan: '<?php echo $userrole; ?>',
+		//   createdAt: <?php echo $user->created;?>,
+		//   last_seen_at: '<?php echo $user->access; ?>'
+		// });
 
 		var user_id = '<?php echo $user->uid;?>'
 		var _link = "/k_api/get_user_profile_by_id/" + user_id;
@@ -210,7 +210,10 @@
 	    function alertContents() {
 		    if (httpRequest.readyState === XMLHttpRequest.DONE) {
 		      if (httpRequest.status === 200) {
-		        console.log(httpRequest.responseText);
+		      	var response = httpRequest.responseText;
+		        console.log(typeof httpRequest.responseText);
+
+		      
 		      } else {
 		        console.log('There was a problem with the request.');
 		      }
