@@ -210,9 +210,24 @@
 	    function alertContents() {
 		    if (httpRequest.readyState === XMLHttpRequest.DONE) {
 		      if (httpRequest.status === 200) {
-		      	var response = JSON.stringfy(httpRequest.responseText);
+		      	var response = JSON.parse(httpRequest.responseText);
 		        console.log(typeof response, response);
 
+		        analytics.identify('<?php echo $user->uid;?>', {
+						  email: '<?php echo $user->mail;?>',
+						  name: '<?php echo $user->name;?>',
+						  plan: '<?php echo $userrole; ?>',
+						  createdAt: <?php echo $user->created;?>,
+						  last_seen_at: '<?php echo $user->access; ?>',
+						  gender: response.gender,
+						  dob: response.dob_month + "/" + response.dob_day + "/" + response.dob_year,
+						  city: response.city,
+						  state: response.state,
+						  country: response.country,
+						  language: response.language,
+						  teacher: response.teacher,
+						  phone: response.phone
+						});
 		      
 		      } else {
 		        console.log('There was a problem with the request.');
