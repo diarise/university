@@ -210,8 +210,8 @@
 	    function alertContents() {
 		    if (httpRequest.readyState === XMLHttpRequest.DONE) {
 		      if (httpRequest.status === 200) {
-		      	var response = httpRequest.responseText;
-		        console.log(typeof httpRequest.responseText);
+		      	var response = JSON.stringfy(httpRequest.responseText);
+		        console.log(typeof response, response);
 
 		      
 		      } else {
