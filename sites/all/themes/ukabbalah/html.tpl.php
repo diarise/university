@@ -191,7 +191,7 @@
 		});
 
 		var user_id = '<?php echo $user->uid;?>'
-		var _link = "https://www.kabbalah.com/k_api/user_profile_by_id/" + user_id;
+		var _link = "/k_api/user_profile_by_id/" + user_id;
 		
 		makeRequest(_link);
 
