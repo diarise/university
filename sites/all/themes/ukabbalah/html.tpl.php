@@ -210,8 +210,8 @@
 	    function alertContents() {
 		    if (httpRequest.readyState === XMLHttpRequest.DONE) {
 		      if (httpRequest.status === 200) {
+		      	
 		      	var response = JSON.parse(httpRequest.responseText);
-		        console.log(typeof response, response);
 
 		        analytics.identify('<?php echo $user->uid;?>', {
 						  email: '<?php echo $user->mail;?>',
