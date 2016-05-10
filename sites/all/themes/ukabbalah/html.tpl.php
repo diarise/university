@@ -168,27 +168,10 @@
   
 	<!-- LOGGED IN USER INTERCOM.IO Tracking -->
 	<script>
-	  // window.intercomSettings = {
-		// app_id: "bjxhjpkh",
-		// name: '<?php echo $user->name;?>', // Full name
-		// email: '<?php echo $user->mail;?>', // Email address
-		// user_id: <?php echo $user->uid;?>,
-		// created_at: <?php echo $user->created;?>, // Signup date as a Unix timestamp
-		// "plan": '<?php echo $userrole; ?>', // role
-		// "last_seen_at": <?php echo $user->access; ?>, // login date as a Unix timestamp
-	  // };
 	 !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
 		analytics.load("yQPqfpi70A7nyMdvipx3Byj5WcEWdBLK");
 		analytics.page()
 		}}();
-
-		// analytics.identify('<?php echo $user->uid;?>', {
-		//   email: '<?php echo $user->mail;?>',
-		//   name: '<?php echo $user->name;?>',
-		//   plan: '<?php echo $userrole; ?>',
-		//   createdAt: <?php echo $user->created;?>,
-		//   last_seen_at: '<?php echo $user->access; ?>'
-		// });
 
 		var user_id = '<?php echo $user->uid;?>'
 		var _link = "/k_api/get_user_profile_by_id/" + user_id;
