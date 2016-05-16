@@ -182,7 +182,6 @@
 			var httpRequest = new XMLHttpRequest();
 
 	    if (!httpRequest) {
-	      console.log('Cannot create an XMLHTTP instance');
 	      return false;
 	    }
 
@@ -202,6 +201,8 @@
 						  plan: '<?php echo $userrole; ?>',
 						  createdAt: <?php echo $user->created;?>,
 						  last_seen_at: '<?php echo $user->access; ?>',
+						  firstname: response.firstname,
+						  lastname: response.lastname,
 						  gender: response.gender,
 						  dob: response.dob_month + "/" + response.dob_day + "/" + response.dob_year,
 						  city: response.city,
@@ -213,7 +214,7 @@
 						});
 		      
 		      } else {
-		        console.log('There was a problem with the request.');
+		        throw new Error('There was a problem with the request.');
 		      }
 		    }
 			}
