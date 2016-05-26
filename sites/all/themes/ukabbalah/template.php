@@ -453,7 +453,8 @@ function get_current_url()
 	
 	 global $user;
     if ($user->uid == 0){
-        return l("Login","user/login",array('query' => drupal_get_destination()));
+        //return l("Login","user/login",array('query' => drupal_get_destination()));
+        return l("Login","user");
         }
     else{
     return l("Logout","user/logout",array('query' => drupal_get_destination()));
